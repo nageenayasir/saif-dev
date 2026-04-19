@@ -1,0 +1,145 @@
+<section class="section-padding health-goals" id="shopify-section-{{ section.id }}" style="position:relative; overflow:hidden;">
+  <div class="page-width" style="position:relative; z-index:1;">
+    {%- if section.settings.title != blank -%}
+      <div class="section-heading">
+        {%- if section.settings.eyebrow != blank -%}
+          <span class="section-heading__eyebrow">{{ section.settings.eyebrow }}</span>
+        {%- endif -%}
+        <h2 class="section-heading__title">{{ section.settings.title }}</h2>
+        {%- if section.settings.subtitle != blank -%}
+          <p class="section-heading__subtitle">{{ section.settings.subtitle }}</p>
+        {%- endif -%}
+      </div>
+    {%- endif -%}
+
+    <ul class="grid grid--2-col grid--3-col-tablet health-goals__grid" role="list"
+        style="--grid-desktop-horizontal-spacing: 1.6rem; --grid-mobile-horizontal-spacing: 1.2rem; --grid-desktop-vertical-spacing: 1.6rem; --grid-mobile-vertical-spacing: 1.2rem;">
+      {%- for block in section.blocks -%}
+        {%- if block.type == 'goal' -%}
+          <li {{ block.shopify_attributes }}>
+            <a href="{{ block.settings.url | default: '#' }}"
+               class="health-goal-card"
+               style="display:flex; flex-direction:column; align-items:center; text-align:center; padding:2.8rem 2rem; background:rgb(var(--color-base-background-1)); border:1px solid rgba(var(--color-base-text),0.08); border-radius:1.2rem; text-decoration:none; transition:transform 0.2s ease, box-shadow 0.2s ease; gap:1.4rem;">
+              {%- if block.settings.icon != blank -%}
+                <div style="width:6.4rem; height:6.4rem; display:flex; align-items:center; justify-content:center;">
+                  {{
+                    block.settings.icon
+                    | image_url: width: 100
+                    | image_tag:
+                      loading: 'lazy',
+                      width: 64,
+                      height: 64,
+                      style: 'width:100%;height:100%;object-fit:contain;'
+                  }}
+                </div>
+              {%- elsif block.settings.icon_emoji != blank -%}
+                <div style="font-size:4rem; line-height:1;">{{ block.settings.icon_emoji }}</div>
+              {%- else -%}
+                <div style="width:6.4rem; height:6.4rem; border-radius:50%; background:rgba(var(--color-base-accent-1),0.1); display:flex; align-items:center; justify-content:center;">
+                  <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="rgb(var(--color-base-accent-1))" stroke-width="1.5" aria-hidden="true">
+                    <path d="M12 2a10 10 0 1 0 10 10A10 10 0 0 0 12 2z"/>
+                    <path d="M12 8v4l3 3"/>
+                  </svg>
+                </div>
+              {%- endif -%}
+
+              <div>
+                {%- if block.settings.title != blank -%}
+                  <h3 style="font-family:var(--font-heading-family); font-size:1.5rem; font-weight:700; color:rgb(var(--color-base-text)); margin:0 0 0.4rem; line-height:1.3;">
+                    {{ block.settings.title }}
+                  </h3>
+                {%- endif -%}
+                {%- if block.settings.description != blank -%}
+                  <p style="font-size:1.3rem; color:rgba(var(--color-base-text),0.6); margin:0; line-height:1.5;">{{ block.settings.description }}</p>
+                {%- endif -%}
+              </div>
+            </a>
+          </li>
+        {%- endif -%}
+      {%- endfor -%}
+    </ul>
+  </div>
+</section>
+
+<style>
+  .health-goal-card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 24px rgba(var(--color-shadow), 0.1);
+    text-decoration: none;
+  }
+</style>
+
+{% schema %}
+{
+  "name": "Health goals",
+  "tag": "section",
+  "class": "section-health-goals",
+  "max_blocks": 12,
+  "blocks": [
+    {
+      "type": "goal",
+      "name": "Health goal",
+      "settings": [
+        {
+          "type": "image_picker",
+          "id": "icon",
+          "label": "Icon image"
+        },
+        {
+          "type": "text",
+          "id": "icon_emoji",
+          "label": "Icon emoji (if no image)"
+        },
+        {
+          "type": "text",
+          "id": "title",
+          "label": "Title",
+          "default": "Immunity & Recovery"
+        },
+        {
+          "type": "text",
+          "id": "description",
+          "label": "Short description"
+        },
+        {
+          "type": "url",
+          "id": "url",
+          "label": "Link"
+        }
+      ]
+    }
+  ],
+  "settings": [
+    {
+      "type": "text",
+      "id": "eyebrow",
+      "label": "Eyebrow text"
+    },
+    {
+      "type": "text",
+      "id": "title",
+      "label": "Heading",
+      "default": "Shop By Health Goals"
+    },
+    {
+      "type": "text",
+      "id": "subtitle",
+      "label": "Subheading",
+      "default": "How can our products help you?"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Health goals",
+      "blocks": [
+        { "type": "goal", "settings": { "title": "Immunity & Recovery", "icon_emoji": "🛡️" } },
+        { "type": "goal", "settings": { "title": "Athletic Performance", "icon_emoji": "💪" } },
+        { "type": "goal", "settings": { "title": "Detox & Metabolism", "icon_emoji": "✨" } },
+        { "type": "goal", "settings": { "title": "Gut & Digestive Health", "icon_emoji": "🌿" } },
+        { "type": "goal", "settings": { "title": "Brain & Energy", "icon_emoji": "🧠" } },
+        { "type": "goal", "settings": { "title": "Inflammatory Health", "icon_emoji": "❤️" } }
+      ]
+    }
+  ]
+}
+{% endschema %}

@@ -1,0 +1,107 @@
+<section class="section-padding satisfaction-guarantee" id="shopify-section-{{ section.id }}"
+  style="background:rgb(var(--color-base-background-2));">
+  <div class="page-width">
+    <div style="max-width:72rem; margin:0 auto; text-align:center;">
+      {%- if section.settings.icon != blank -%}
+        <div style="margin:0 auto 2.4rem; width:8rem; height:8rem;">
+          {{
+            section.settings.icon
+            | image_url: width: 120
+            | image_tag:
+              loading: 'lazy',
+              width: 80,
+              height: 80,
+              style: 'width:100%;height:100%;object-fit:contain;'
+          }}
+        </div>
+      {%- else -%}
+        <div style="margin:0 auto 2.4rem; width:8rem; height:8rem; background:rgba(var(--color-base-accent-1),0.1); border-radius:50%; display:flex; align-items:center; justify-content:center;">
+          <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="rgb(var(--color-base-accent-1))" stroke-width="1.5" aria-hidden="true">
+            <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/>
+          </svg>
+        </div>
+      {%- endif -%}
+
+      {%- if section.settings.title != blank -%}
+        <h2 style="font-family:var(--font-heading-family); font-size:clamp(2.4rem, 3.5vw, 4rem); font-weight:800; color:rgb(var(--color-base-text)); margin:0 0 1.6rem; text-transform:uppercase; letter-spacing:-0.01em; line-height:1.1;">
+          {{ section.settings.title }}
+        </h2>
+      {%- endif -%}
+
+      {%- if section.settings.content != blank -%}
+        <div style="font-size:1.7rem; line-height:1.7; color:rgba(var(--color-base-text),0.75);">
+          {{ section.settings.content }}
+        </div>
+      {%- endif -%}
+
+      {%- if section.settings.button_label != blank or section.settings.secondary_button_label != blank -%}
+        <div style="display:flex; gap:1.6rem; justify-content:center; flex-wrap:wrap; margin-top:3rem;">
+          {%- if section.settings.button_label != blank -%}
+            <a href="{{ section.settings.button_url | default: '#' }}" class="button button--primary">
+              {{ section.settings.button_label }}
+            </a>
+          {%- endif -%}
+          {%- if section.settings.secondary_button_label != blank -%}
+            <a href="{{ section.settings.secondary_button_url | default: '#' }}" class="button button--secondary">
+              {{ section.settings.secondary_button_label }}
+            </a>
+          {%- endif -%}
+        </div>
+      {%- endif -%}
+    </div>
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Satisfaction guarantee",
+  "tag": "section",
+  "class": "section-guarantee",
+  "settings": [
+    {
+      "type": "image_picker",
+      "id": "icon",
+      "label": "Icon image"
+    },
+    {
+      "type": "text",
+      "id": "title",
+      "label": "Heading",
+      "default": "The Tribe Satisfaction Guarantee"
+    },
+    {
+      "type": "richtext",
+      "id": "content",
+      "label": "Content",
+      "default": "<p>Your purchase is backed by our rock solid 100% Satisfaction Guarantee. If you're unhappy with your order for any reason, you can reach out to us and we'll make it right.</p>"
+    },
+    {
+      "type": "text",
+      "id": "button_label",
+      "label": "Primary button label",
+      "default": "Contact us"
+    },
+    {
+      "type": "url",
+      "id": "button_url",
+      "label": "Primary button URL"
+    },
+    {
+      "type": "text",
+      "id": "secondary_button_label",
+      "label": "Secondary button label",
+      "default": "Find out more"
+    },
+    {
+      "type": "url",
+      "id": "secondary_button_url",
+      "label": "Secondary button URL"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Satisfaction guarantee"
+    }
+  ]
+}
+{% endschema %}

@@ -1,0 +1,62 @@
+/* ============================================
+   TRIBE ORGANICS — PRICE COMPONENT
+   ============================================ */
+
+.price {
+  display: inline-flex;
+  align-items: baseline;
+  gap: 0.6rem;
+  flex-wrap: wrap;
+}
+
+.price__regular {
+  font-family: var(--font-heading-family);
+  font-size: 1.8rem;
+  font-weight: 700;
+  color: rgb(var(--color-base-text));
+}
+
+.price__sale {
+  font-family: var(--font-heading-family);
+  font-size: 1.8rem;
+  font-weight: 700;
+  color: rgb(var(--color-base-accent-1));
+}
+
+.price__was {
+  font-size: 1.4rem;
+  font-weight: 400;
+  color: rgba(var(--color-base-text), 0.45);
+  text-decoration: line-through;
+}
+
+.price--small .price__regular,
+.price--small .price__sale {
+  font-size: 1.4rem;
+}
+
+.price--large .price__regular,
+.price--large .price__sale {
+  font-size: 2.4rem;
+}
+
+.price--product .price__regular,
+.price--product .price__sale {
+  font-size: 2.8rem;
+}
+
+.price__per-unit {
+  font-size: 1.2rem;
+  color: rgba(var(--color-base-text), 0.5);
+  font-weight: 400;
+}
+
+.price__savings {
+  display: inline-block;
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: rgb(var(--color-base-accent-1));
+  padding: 0.2rem 0.6rem;
+  background: rgba(var(--color-base-accent-1), 0.1);
+  border-radius: 0.4rem;
+}

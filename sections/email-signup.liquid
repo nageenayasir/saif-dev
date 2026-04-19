@@ -1,0 +1,92 @@
+<section class="section-padding email-signup" id="shopify-section-{{ section.id }}"
+  style="background:rgb(var(--color-base-text)); color:rgb(var(--color-base-solid-button-labels));">
+  <div class="page-width">
+    <div style="max-width:55rem; margin:0 auto; text-align:center;">
+      {%- if section.settings.title != blank -%}
+        <h2 style="font-family:var(--font-heading-family); font-size:clamp(2.8rem, 4vw, 4.8rem); font-weight:800; color:#fff; margin:0 0 0.8rem; text-transform:uppercase; letter-spacing:-0.01em; line-height:1.1;">
+          {{ section.settings.title }}
+        </h2>
+      {%- endif -%}
+      {%- if section.settings.subtitle != blank -%}
+        <p style="font-size:1.7rem; color:rgba(255,255,255,0.75); margin:0 0 3.2rem; line-height:1.6;">
+          {{ section.settings.subtitle }}
+        </p>
+      {%- endif -%}
+
+      <form method="post" action="/contact#EmailSignup-{{ section.id }}"
+            id="EmailSignup-{{ section.id }}"
+            style="display:flex; gap:0; max-width:48rem; margin:0 auto;">
+        <input type="hidden" name="form_type" value="customer">
+        <input type="hidden" name="utf8" value="✓">
+        <input type="hidden" name="contact[tags]" value="newsletter">
+        <label for="EmailInput-{{ section.id }}" class="visually-hidden">{{ section.settings.placeholder | default: 'Your email address' }}</label>
+        <input
+          type="email"
+          id="EmailInput-{{ section.id }}"
+          name="contact[email]"
+          required
+          autocomplete="email"
+          placeholder="{{ section.settings.placeholder | default: 'Your email address' }}"
+          style="flex:1; padding:1.4rem 1.8rem; font-size:1.5rem; border:2px solid rgba(255,255,255,0.3); border-right:none; border-radius:var(--buttons-radius) 0 0 var(--buttons-radius); background:rgba(255,255,255,0.1); color:#fff; outline:none; transition:border-color 0.2s ease;"
+          onfocus="this.style.borderColor='rgba(255,255,255,0.8)'"
+          onblur="this.style.borderColor='rgba(255,255,255,0.3)'"
+        >
+        <button type="submit" class="button button--accent"
+          style="border-radius: 0 var(--buttons-radius) var(--buttons-radius) 0; white-space:nowrap; padding:1.4rem 2.4rem;">
+          {{ section.settings.button_label | default: 'Sign Up!' }}
+        </button>
+      </form>
+
+      {%- if section.settings.privacy_note != blank -%}
+        <p style="font-size:1.2rem; color:rgba(255,255,255,0.45); margin:1.6rem 0 0; line-height:1.6;">
+          {{ section.settings.privacy_note }}
+        </p>
+      {%- endif -%}
+    </div>
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Email signup",
+  "tag": "section",
+  "class": "section-email-signup",
+  "settings": [
+    {
+      "type": "text",
+      "id": "title",
+      "label": "Heading",
+      "default": "Join The Triibe"
+    },
+    {
+      "type": "text",
+      "id": "subtitle",
+      "label": "Subheading",
+      "default": "Get lifestyle tips + 10% off your first order!"
+    },
+    {
+      "type": "text",
+      "id": "placeholder",
+      "label": "Input placeholder",
+      "default": "Your email address"
+    },
+    {
+      "type": "text",
+      "id": "button_label",
+      "label": "Button label",
+      "default": "Sign Up!"
+    },
+    {
+      "type": "text",
+      "id": "privacy_note",
+      "label": "Privacy note",
+      "default": "By subscribing, you agree to our Privacy Policy and consent to receive updates."
+    }
+  ],
+  "presets": [
+    {
+      "name": "Email signup"
+    }
+  ]
+}
+{% endschema %}

@@ -1,0 +1,46 @@
+{%- comment -%}
+  Renders price HTML for a product.
+  Accepts:
+  - product: {Object} Product object
+  - use_variant: {Boolean} Use the currently selected variant's price. Default: false
+  - show_badges: {Boolean} Show sale/save badges. Default: false
+  - price_class: {String} Additional CSS class for the price container
+{%- endcomment -%}
+
+{%- liquid
+  if use_variant
+    assign target = product.selected_or_first_available_variant
+  else
+    assign target = product
+  endif
+
+  assign compare_at_price = target.compare_at_price
+  assign price = target.price | default: 1999
+  assign available = target.available | default: false
+  assign money_price = price | money
+  assign money_compare_at_price = compare_at_price | money
+-%}
+
+<div class="price {% if price_class %}{{ price_class }}{% endif %} {% if compare_at_price > price %}price--on-sale{% endif %}" {{ block.shopify_attributes }}>
+  {%- if compare_at_price > price -%}
+    <span class="visually-hidden">{{ 'products.product.price.regular_price' | t }}</span>
+    <span class="price__was">{{ money_compare_at_price }}</span>
+    <span class="visually-hidden">{{ 'products.product.price.sale_price' | t }}</span>
+    <span class="price__sale">{{ money_price }}</span>
+    {%- if show_badges -%}
+      {%- assign savings = compare_at_price | minus: price -%}
+      {%- assign savings_pct = savings | times: 100 | divided_by: compare_at_price -%}
+      <span class="price__savings">Save {{ savings_pct }}%</span>
+    {%- endif -%}
+  {%- else -%}
+    {%- if product.price_varies -%}
+      <span class="visually-hidden">{{ 'products.product.price.from_price' | t }}</span>
+      <span style="font-size:1.2rem; color:rgba(var(--color-base-text),0.5); margin-right:0.3rem;">From</span>
+    {%- endif -%}
+    <span class="price__regular">{{ money_price }}</span>
+  {%- endif -%}
+
+  {%- if available == false -%}
+    <span class="badge badge--sold-out">{{ 'products.product.sold_out' | t }}</span>
+  {%- endif -%}
+</div>

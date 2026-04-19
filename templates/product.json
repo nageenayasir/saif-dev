@@ -1,0 +1,115 @@
+{
+  "sections": {
+    "main": {
+      "type": "main-product",
+      "settings": {
+        "show_subscription_toggle": true,
+        "show_trust_badges": true,
+        "description_heading": "Overview"
+      },
+      "blocks": {
+        "badge_usda": {
+          "type": "trust_badge",
+          "settings": {
+            "label": "USDA Certified Organic"
+          }
+        },
+        "badge_kosher": {
+          "type": "trust_badge",
+          "settings": {
+            "label": "Kosher Certified"
+          }
+        },
+        "badge_gf": {
+          "type": "trust_badge",
+          "settings": {
+            "label": "Gluten Free"
+          }
+        },
+        "accordion_benefits": {
+          "type": "accordion",
+          "settings": {
+            "title": "Benefits",
+            "content": "<p>Discover the powerful benefits of this product.</p>"
+          }
+        },
+        "accordion_usage": {
+          "type": "accordion",
+          "settings": {
+            "title": "How to Use",
+            "content": "<p>Take 2 capsules daily, with or without food.</p>"
+          }
+        },
+        "accordion_ingredients": {
+          "type": "accordion",
+          "settings": {
+            "title": "Ingredients",
+            "content": "<p>All-natural, certified organic ingredients.</p>"
+          }
+        }
+      },
+      "blocks_order": ["badge_usda","badge_kosher","badge_gf","accordion_benefits","accordion_usage","accordion_ingredients"]
+    },
+    "recommendations": {
+      "type": "product-recommendations",
+      "settings": {
+        "title": "Pairs Well With...",
+        "products_to_show": 3
+      }
+    },
+    "faq": {
+      "type": "product-faq",
+      "settings": {
+        "title": "Frequently Asked Questions"
+      },
+      "blocks": {
+        "faq_1": {
+          "type": "faq_item",
+          "settings": {
+            "question": "What is the recommended dosage?",
+            "answer": "<p>Take 2 capsules daily, with or without food.</p>"
+          }
+        },
+        "faq_2": {
+          "type": "faq_item",
+          "settings": {
+            "question": "Are the capsules vegan?",
+            "answer": "<p>Yes, all our capsules are made with plant-based materials and are 100% vegan.</p>"
+          }
+        },
+        "faq_3": {
+          "type": "faq_item",
+          "settings": {
+            "question": "Where is this product manufactured?",
+            "answer": "<p>All products are manufactured in the USA in FDA-registered, GMP-certified facilities.</p>"
+          }
+        },
+        "faq_4": {
+          "type": "faq_item",
+          "settings": {
+            "question": "What is your return policy?",
+            "answer": "<p>We offer a 100% satisfaction guarantee. If you're unhappy for any reason, contact us and we'll make it right.</p>"
+          }
+        }
+      },
+      "blocks_order": ["faq_1","faq_2","faq_3","faq_4"]
+    },
+    "learn": {
+      "type": "product-learn",
+      "settings": {
+        "title": "Learn Something Today",
+        "posts_to_show": 4
+      }
+    },
+    "satisfaction": {
+      "type": "satisfaction-guarantee",
+      "settings": {
+        "title": "The Tribe Satisfaction Guarantee",
+        "content": "<p>Your purchase is backed by our rock solid 100% Satisfaction Guarantee. If you're unhappy with your order for any reason, contact us and we'll make it right.</p>",
+        "button_label": "Contact us",
+        "secondary_button_label": "Find out more"
+      }
+    }
+  },
+  "order": ["main", "recommendations", "faq", "learn", "satisfaction"]
+}

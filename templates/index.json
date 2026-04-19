@@ -1,0 +1,182 @@
+{
+  "sections": {
+    "hero_1": {
+      "type": "main-hero",
+      "settings": {
+        "heading": "WORLD'S BEST ASHWAGANDHA",
+        "subheading": "Made with patented and clinically proven KSM-66 Ashwagandha root extract",
+        "button_label": "Shop Ashwagandha",
+        "button_style": "primary",
+        "height_desktop": 700,
+        "height_mobile": 500,
+        "overlay_opacity": 35,
+        "content_position": "left"
+      }
+    },
+    "best_sellers": {
+      "type": "featured-products",
+      "settings": {
+        "title": "Best Sellers",
+        "products_to_show": 8,
+        "columns_desktop": 4,
+        "columns_mobile": 2,
+        "show_view_all": true,
+        "view_all_label": "View all best sellers"
+      }
+    },
+    "shop_categories": {
+      "type": "shop-categories",
+      "settings": {
+        "title": "Shop Categories"
+      },
+      "blocks": {
+        "cat_1": { "type": "category", "settings": { "title": "Herbs & Roots" } },
+        "cat_2": { "type": "category", "settings": { "title": "Mushrooms" } },
+        "cat_3": { "type": "category", "settings": { "title": "Kids & Teenagers" } },
+        "cat_4": { "type": "category", "settings": { "title": "Curated Bundles" } }
+      },
+      "blocks_order": ["cat_1", "cat_2", "cat_3", "cat_4"]
+    },
+    "testimonials": {
+      "type": "testimonials-slider",
+      "settings": {
+        "title": "Hear why people love us..."
+      },
+      "blocks": {
+        "t1": { "type": "testimonial", "settings": { "quote": "I see results, great quality and reasonably priced.", "author": "Yolonda King-Taylor", "title": "Holistic Health Practitioner" } },
+        "t2": { "type": "testimonial", "settings": { "quote": "Immediately noticed a difference after switching.", "author": "Michelle" } },
+        "t3": { "type": "testimonial", "settings": { "quote": "Best organic supplements I have found. Love this brand!", "author": "James R." } }
+      },
+      "blocks_order": ["t1", "t2", "t3"]
+    },
+    "health_goals": {
+      "type": "health-goals",
+      "settings": {
+        "title": "Shop By Health Goals",
+        "subtitle": "How can our products help you?"
+      },
+      "blocks": {
+        "g1": { "type": "goal", "settings": { "title": "Immunity & Recovery", "icon_emoji": "🛡️" } },
+        "g2": { "type": "goal", "settings": { "title": "Athletic Performance", "icon_emoji": "💪" } },
+        "g3": { "type": "goal", "settings": { "title": "Detox & Metabolism", "icon_emoji": "✨" } },
+        "g4": { "type": "goal", "settings": { "title": "Gut & Digestive Health", "icon_emoji": "🌿" } },
+        "g5": { "type": "goal", "settings": { "title": "Brain & Energy", "icon_emoji": "🧠" } },
+        "g6": { "type": "goal", "settings": { "title": "Inflammatory Health", "icon_emoji": "❤️" } }
+      },
+      "blocks_order": ["g1", "g2", "g3", "g4", "g5", "g6"]
+    },
+    "product_quality": {
+      "type": "product-quality",
+      "settings": {
+        "title": "Our Products",
+        "always_heading": "ARE ALWAYS...",
+        "never_heading": "NEVER CONTAIN..."
+      },
+      "blocks": {
+        "a1": { "type": "always_item", "settings": { "text": "Ethically sourced" } },
+        "a2": { "type": "always_item", "settings": { "text": "Made in the USA" } },
+        "a3": { "type": "always_item", "settings": { "text": "Third-party lab tested" } },
+        "a4": { "type": "always_item", "settings": { "text": "USDA Certified Organic" } },
+        "a5": { "type": "always_item", "settings": { "text": "Non-GMO Verified" } },
+        "a6": { "type": "always_item", "settings": { "text": "Gluten Free Certified" } },
+        "a7": { "type": "always_item", "settings": { "text": "Kosher Certified" } },
+        "a8": { "type": "always_item", "settings": { "text": "Vegan Friendly" } },
+        "n1": { "type": "never_item", "settings": { "text": "Harmful additives" } },
+        "n2": { "type": "never_item", "settings": { "text": "Artificial colors" } },
+        "n3": { "type": "never_item", "settings": { "text": "Artificial flavors" } },
+        "n4": { "type": "never_item", "settings": { "text": "Synthetic fillers" } },
+        "n5": { "type": "never_item", "settings": { "text": "Irradiated ingredients" } },
+        "n6": { "type": "never_item", "settings": { "text": "Preservatives" } }
+      },
+      "blocks_order": ["a1","a2","a3","a4","a5","a6","a7","a8","n1","n2","n3","n4","n5","n6"]
+    },
+    "seasonal_picks": {
+      "type": "featured-products",
+      "settings": {
+        "title": "Our Seasonal Picks",
+        "subtitle": "Support your body through seasonal renewal. These spring essentials help boost natural energy, support focus and nourish your body.",
+        "products_to_show": 4,
+        "columns_desktop": 4,
+        "columns_mobile": 2,
+        "show_view_all": true,
+        "view_all_label": "View seasonal picks"
+      }
+    },
+    "bundles_cta": {
+      "type": "bundles-cta",
+      "settings": {
+        "title": "Transform Your Habits: Bundle Up & Save!",
+        "description": "Get more from your wellness routine by combining complementary supplements into powerful bundles.",
+        "price_prefix": "From $64.54",
+        "button_label": "Explore bundles",
+        "secondary_button_label": "Shop all",
+        "overlay_opacity": 40
+      }
+    },
+    "rewards_program": {
+      "type": "rewards-program",
+      "settings": {
+        "eyebrow": "Subscribe & Save",
+        "title": "It's Like A Reward That Keeps Getting Better",
+        "description": "Subscribe to any product and save more with each order. Plus enjoy lifetime free shipping.",
+        "button_label": "Subscribe & Save"
+      },
+      "blocks": {
+        "r1": { "type": "tier", "settings": { "title": "First order", "description": "+ extra 5% for starting your journey", "discount": "10% OFF" } },
+        "r2": { "type": "tier", "settings": { "title": "2nd order", "description": "Keep the momentum going", "discount": "15% OFF" } },
+        "r3": { "type": "tier", "settings": { "title": "3rd order", "description": "Building healthy habits", "discount": "20% OFF" } },
+        "r4": { "type": "tier", "settings": { "title": "4th order", "description": "Loyalty rewards kick in", "discount": "25% OFF" } },
+        "r5": { "type": "tier", "settings": { "title": "5th order +", "description": "Lifetime free shipping on all orders", "discount": "25% + Free Ship" } }
+      },
+      "blocks_order": ["r1","r2","r3","r4","r5"]
+    },
+    "brand_mission": {
+      "type": "brand-mission",
+      "settings": {
+        "title": "Crystal Clear Vision",
+        "content": "<p>We believe in a world where physical, mental, and spiritual wellness are all connected. Every product we make is crafted with intention — ethically sourced, scientifically backed, and made with love.</p><p>We're proud members of 1% for the Planet, committing a portion of all sales to environmental causes.</p>",
+        "button_label": "There's more..."
+      }
+    },
+    "satisfaction_guarantee": {
+      "type": "satisfaction-guarantee",
+      "settings": {
+        "title": "The Tribe Satisfaction Guarantee",
+        "content": "<p>Your purchase is backed by our rock solid 100% Satisfaction Guarantee. If you're unhappy with your order for any reason, you can reach out to us at info@tribe-organics.com and we'll make it right.</p>",
+        "button_label": "Contact us",
+        "secondary_button_label": "Find out more"
+      }
+    },
+    "email_signup": {
+      "type": "email-signup",
+      "settings": {
+        "title": "Join The Triibe",
+        "subtitle": "Get lifestyle tips + 10% off your first order!",
+        "button_label": "Sign Up!",
+        "privacy_note": "By subscribing, you agree to our Privacy Policy and consent to receive updates."
+      }
+    },
+    "retail_locations": {
+      "type": "retail-locations",
+      "settings": {
+        "online_heading": "Find Us Online At:",
+        "instore_heading": "Also Find Us In-Store At:"
+      }
+    }
+  },
+  "order": [
+    "hero_1",
+    "best_sellers",
+    "shop_categories",
+    "testimonials",
+    "health_goals",
+    "product_quality",
+    "seasonal_picks",
+    "bundles_cta",
+    "rewards_program",
+    "brand_mission",
+    "satisfaction_guarantee",
+    "email_signup",
+    "retail_locations"
+  ]
+}

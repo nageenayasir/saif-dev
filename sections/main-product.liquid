@@ -1,0 +1,412 @@
+{{ 'section-product.css' | asset_url | stylesheet_tag }}
+
+{%- liquid
+  assign product = product
+  assign current_variant = product.selected_or_first_available_variant
+  assign featured_media = product.selected_or_first_available_variant.featured_media | default: product.featured_media
+-%}
+
+<section class="product-page" id="shopify-section-{{ section.id }}">
+  <div class="page-width">
+    <!-- Breadcrumb -->
+    <nav style="margin-bottom:2.4rem; font-size:1.3rem; color:rgba(var(--color-base-text),0.5);" aria-label="Breadcrumb">
+      <a href="{{ routes.root_url }}" style="color:inherit;">Home</a>
+      <span style="margin:0 0.6rem;">/</span>
+      {%- if product.collections.first -%}
+        <a href="{{ product.collections.first.url }}" style="color:inherit;">{{ product.collections.first.title }}</a>
+        <span style="margin:0 0.6rem;">/</span>
+      {%- endif -%}
+      <span style="color:rgb(var(--color-base-text));">{{ product.title }}</span>
+    </nav>
+
+    <div class="product-layout">
+      <!-- Gallery -->
+      <div class="product-gallery">
+        <div class="product-gallery__main" id="ProductMainImage">
+          {%- if featured_media -%}
+            {{
+              featured_media
+              | image_url: width: 800
+              | image_tag:
+                loading: 'eager',
+                fetchpriority: 'high',
+                widths: '400, 600, 800',
+                sizes: '(min-width: 990px) 45vw, (min-width: 750px) 50vw, 100vw',
+                id: 'ProductMainImg',
+                alt: featured_media.alt | escape
+            }}
+          {%- else -%}
+            {{ 'product-1' | placeholder_svg_tag: 'placeholder-svg' }}
+          {%- endif -%}
+        </div>
+
+        {%- if product.images.size > 1 -%}
+          <div class="product-gallery__thumbs" role="list" aria-label="{{ 'products.product.media.gallery_viewer' | t }}">
+            {%- for image in product.images -%}
+              <button
+                class="product-gallery__thumb {% if image == featured_media %}is-active{% endif %}"
+                data-src="{{ image | image_url: width: 800 }}"
+                data-thumb="{{ image | image_url: width: 150 }}"
+                data-alt="{{ image.alt | escape }}"
+                aria-label="{{ 'products.product.media.load_image' | t: index: forloop.index }}"
+              >
+                {{
+                  image
+                  | image_url: width: 150
+                  | image_tag:
+                    loading: 'lazy',
+                    width: 72,
+                    height: 72,
+                    alt: image.alt | escape
+                }}
+              </button>
+            {%- endfor -%}
+          </div>
+        {%- endif -%}
+      </div>
+
+      <!-- Product Info -->
+      <div class="product-info">
+        <!-- Category tag -->
+        {%- if product.type != blank -%}
+          <span class="product-info__category">{{ product.type }}</span>
+        {%- elsif product.collections.first -%}
+          <span class="product-info__category">{{ product.collections.first.title }}</span>
+        {%- endif -%}
+
+        <h1 class="product-info__title">{{ product.title }}</h1>
+
+        <!-- Reviews summary (placeholder - replace with your review app) -->
+        {%- if product.metafields.reviews.rating != blank -%}
+          <div class="product-info__rating">
+            <div class="product-info__rating-stars" aria-label="{{ product.metafields.reviews.rating.value }} out of 5 stars">
+              {%- assign rating_val = product.metafields.reviews.rating.value | times: 1 | round -%}
+              {%- for i in (1..5) -%}
+                <svg viewBox="0 0 16 16" fill="{% if i <= rating_val %}#f4a224{% else %}#e5e5e5{% endif %}" aria-hidden="true">
+                  <path d="M8 1l1.85 3.74L14 5.5l-3 2.92.71 4.12L8 10.5l-3.71 1.95.71-4.12L2 5.5l4.15-.76L8 1z"/>
+                </svg>
+              {%- endfor -%}
+            </div>
+            <a href="#ProductReviews" class="product-info__rating-count">
+              {{ product.metafields.reviews.rating_count.value }} reviews
+            </a>
+          </div>
+        {%- endif -%}
+
+        <!-- Price -->
+        <div id="price-{{ section.id }}">
+          {%- render 'price', product: product, use_variant: true, show_badges: true -%}
+        </div>
+
+        <!-- Product form -->
+        {%- form 'product', product, id: 'ProductForm', class: 'product-form', novalidate: 'novalidate', data-type: 'add-to-cart-form' -%}
+          <input type="hidden" name="id" value="{{ current_variant.id }}" id="ProductVariantId">
+
+          <!-- Subscription toggle (placeholder — integrate your subscription app) -->
+          {%- if section.settings.show_subscription_toggle -%}
+            <div class="purchase-options">
+              <button type="button" class="purchase-option is-active" id="PurchaseOptionSubscribe">
+                <span class="purchase-option__label">Subscribe & Save</span>
+                <span class="purchase-option__badge">Up to 25% OFF</span>
+              </button>
+              <button type="button" class="purchase-option" id="PurchaseOptionOneTime">
+                <span class="purchase-option__label">One-Time Purchase</span>
+              </button>
+            </div>
+          {%- endif -%}
+
+          <!-- Variant selector -->
+          {%- unless product.has_only_default_variant -%}
+            {%- for option in product.options_with_values -%}
+              <div class="variant-section">
+                <p class="variant-section__label">
+                  {{ option.name }}: <span>{{ option.selected_value }}</span>
+                </p>
+                <div class="variant-buttons" role="group" aria-label="{{ option.name }}">
+                  {%- for value in option.values -%}
+                    {%- liquid
+                      assign variant_option = 'option' | append: forloop.parentloop.index
+                      assign available = false
+                      for variant in product.variants
+                        if variant[variant_option] == value and variant.available
+                          assign available = true
+                          break
+                        endif
+                      endfor
+                    -%}
+                    <button type="button"
+                      class="variant-btn {% if value == option.selected_value %}is-active{% endif %} {% unless available %}is-unavailable{% endunless %}"
+                      data-option-name="{{ option.name }}"
+                      data-option-value="{{ value }}"
+                      {% unless available %}aria-label="{{ value }} - {{ 'products.product.sold_out' | t }}"{% endunless %}>
+                      {{ value }}
+                    </button>
+                  {%- endfor -%}
+                </div>
+              </div>
+            {%- endfor -%}
+          {%- endunless -%}
+
+          <!-- Quantity + Add to Cart -->
+          <div class="product-form__qty-cart">
+            <div class="quantity">
+              <button type="button" class="quantity__button" aria-label="{{ 'products.product.quantity.decrease' | t }}">−</button>
+              <input type="number" class="quantity__input" name="quantity" value="1" min="1" aria-label="{{ 'products.product.quantity.input_label' | t }}">
+              <button type="button" class="quantity__button" aria-label="{{ 'products.product.quantity.increase' | t }}">+</button>
+            </div>
+
+            <button type="submit" name="add" class="button button--add-to-cart button--full-width"
+              id="ProductSubmitButton"
+              {% unless current_variant.available %}disabled{% endunless %}>
+              {%- if current_variant.available -%}
+                <span>{{ 'products.product.add_to_cart' | t }}</span>
+                <span class="button__price" id="ProductButtonPrice">| {{ current_variant.price | money }}</span>
+                {%- if current_variant.compare_at_price > current_variant.price -%}
+                  <span class="button__price-original">{{ current_variant.compare_at_price | money }}</span>
+                {%- endif -%}
+              {%- else -%}
+                {{ 'products.product.sold_out' | t }}
+              {%- endif -%}
+            </button>
+          </div>
+        {%- endform -%}
+
+        <!-- Trust badges -->
+        {%- if section.settings.show_trust_badges -%}
+          <div class="product-trust-badges">
+            {%- for block in section.blocks -%}
+              {%- if block.type == 'trust_badge' -%}
+                <div class="product-trust-badge" {{ block.shopify_attributes }}>
+                  {%- if block.settings.image != blank -%}
+                    {{
+                      block.settings.image
+                      | image_url: width: 80
+                      | image_tag:
+                        loading: 'lazy',
+                        width: 36,
+                        height: 36,
+                        alt: block.settings.label
+                    }}
+                  {%- endif -%}
+                  {%- if block.settings.label != blank -%}
+                    <span class="product-trust-badge__text">{{ block.settings.label }}</span>
+                  {%- endif -%}
+                </div>
+              {%- endif -%}
+            {%- endfor -%}
+          </div>
+        {%- endif -%}
+
+        <!-- Accordions -->
+        <div class="accordion">
+          {%- for block in section.blocks -%}
+            {%- if block.type == 'accordion' -%}
+              <div class="accordion__item" {{ block.shopify_attributes }}>
+                <button class="accordion__header" aria-expanded="false" aria-controls="AccordionContent-{{ block.id }}">
+                  <span class="accordion__title">{{ block.settings.title }}</span>
+                  <svg class="accordion__icon" viewBox="0 0 20 20" fill="none" aria-hidden="true">
+                    <path d="M5 8l5 5 5-5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+                  </svg>
+                </button>
+                <div class="accordion__content" id="AccordionContent-{{ block.id }}">
+                  <div class="accordion__body">
+                    {{ block.settings.content }}
+                  </div>
+                </div>
+              </div>
+            {%- endif -%}
+          {%- endfor -%}
+        </div>
+      </div>
+    </div>
+
+    <!-- Product description / overview -->
+    {%- if product.description != blank -%}
+      <div style="margin-top:6rem; padding-top:4rem; border-top:1px solid rgba(var(--color-base-text),0.1);">
+        <h2 style="font-family:var(--font-heading-family); font-size:2.8rem; font-weight:800; color:rgb(var(--color-base-text)); margin:0 0 2.4rem; text-transform:uppercase; letter-spacing:-0.01em;">
+          {{ section.settings.description_heading | default: 'Overview' }}
+        </h2>
+        <div class="rte" style="font-size:1.6rem; line-height:1.75; color:rgba(var(--color-base-text),0.75); max-width:72rem;">
+          {{ product.description }}
+        </div>
+      </div>
+    {%- endif -%}
+  </div>
+</section>
+
+<script>
+(function () {
+  // Gallery thumbnails
+  const thumbs = document.querySelectorAll('.product-gallery__thumb');
+  const mainImg = document.getElementById('ProductMainImg');
+
+  thumbs.forEach(function(thumb) {
+    thumb.addEventListener('click', function() {
+      thumbs.forEach(function(t) { t.classList.remove('is-active'); });
+      thumb.classList.add('is-active');
+      if (mainImg) {
+        mainImg.src = thumb.dataset.src;
+        mainImg.alt = thumb.dataset.alt || '';
+      }
+    });
+  });
+
+  // Variant selector
+  const variantBtns = document.querySelectorAll('.variant-btn');
+  const productData = {{ product.variants | json }};
+  const priceContainer = document.getElementById('price-{{ section.id }}');
+  const variantIdInput = document.getElementById('ProductVariantId');
+  const submitBtn = document.getElementById('ProductSubmitButton');
+  const btnPrice = document.getElementById('ProductButtonPrice');
+
+  variantBtns.forEach(function(btn) {
+    btn.addEventListener('click', function() {
+      const optionName = btn.dataset.optionName;
+      document.querySelectorAll('.variant-btn[data-option-name="' + optionName + '"]').forEach(function(b) {
+        b.classList.remove('is-active');
+      });
+      btn.classList.add('is-active');
+
+      // Find matching variant
+      const selectedOptions = {};
+      document.querySelectorAll('.variant-section').forEach(function(section) {
+        const activeBtn = section.querySelector('.variant-btn.is-active');
+        if (activeBtn) {
+          selectedOptions[activeBtn.dataset.optionName] = activeBtn.dataset.optionValue;
+        }
+      });
+
+      // Update option label
+      const labelSpan = btn.closest('.variant-section').querySelector('.variant-section__label span');
+      if (labelSpan) labelSpan.textContent = btn.dataset.optionValue;
+
+      const matchingVariant = productData.find(function(variant) {
+        return Object.entries(selectedOptions).every(function([name, value]) {
+          return variant.options.includes(value);
+        });
+      });
+
+      if (matchingVariant && variantIdInput) {
+        variantIdInput.value = matchingVariant.id;
+        if (submitBtn) {
+          if (matchingVariant.available) {
+            submitBtn.disabled = false;
+            submitBtn.querySelector('span').textContent = '{{ 'products.product.add_to_cart' | t }}';
+            if (btnPrice) btnPrice.textContent = '| ' + formatMoney(matchingVariant.price);
+          } else {
+            submitBtn.disabled = true;
+            submitBtn.querySelector('span').textContent = '{{ 'products.product.sold_out' | t }}';
+          }
+        }
+      }
+    });
+  });
+
+  function formatMoney(cents) {
+    return '$' + (cents / 100).toFixed(2);
+  }
+
+  // Quantity
+  document.querySelectorAll('.quantity__button').forEach(function(btn) {
+    btn.addEventListener('click', function() {
+      const input = btn.closest('.quantity').querySelector('.quantity__input');
+      if (!input) return;
+      const current = parseInt(input.value, 10) || 1;
+      if (btn.textContent.trim() === '+') {
+        input.value = current + 1;
+      } else {
+        input.value = Math.max(1, current - 1);
+      }
+    });
+  });
+
+  // Accordions
+  document.querySelectorAll('.accordion__header').forEach(function(header) {
+    header.addEventListener('click', function() {
+      const item = header.closest('.accordion__item');
+      const isOpen = item.classList.contains('accordion__item--open');
+      // Close all
+      document.querySelectorAll('.accordion__item').forEach(function(i) {
+        i.classList.remove('accordion__item--open');
+        i.querySelector('.accordion__header').setAttribute('aria-expanded', 'false');
+      });
+      // Toggle clicked
+      if (!isOpen) {
+        item.classList.add('accordion__item--open');
+        header.setAttribute('aria-expanded', 'true');
+      }
+    });
+  });
+
+  // Purchase option toggle
+  const subBtn = document.getElementById('PurchaseOptionSubscribe');
+  const oneTimeBtn = document.getElementById('PurchaseOptionOneTime');
+  if (subBtn && oneTimeBtn) {
+    [subBtn, oneTimeBtn].forEach(function(btn) {
+      btn.addEventListener('click', function() {
+        subBtn.classList.toggle('is-active', btn === subBtn);
+        oneTimeBtn.classList.toggle('is-active', btn === oneTimeBtn);
+      });
+    });
+  }
+})();
+</script>
+
+{% schema %}
+{
+  "name": "Product information",
+  "tag": "section",
+  "class": "section-main-product",
+  "blocks": [
+    {
+      "type": "trust_badge",
+      "name": "Trust badge",
+      "settings": [
+        { "type": "image_picker", "id": "image", "label": "Badge image" },
+        { "type": "text", "id": "label", "label": "Label", "default": "USDA Certified Organic" }
+      ]
+    },
+    {
+      "type": "accordion",
+      "name": "Accordion",
+      "settings": [
+        { "type": "text", "id": "title", "label": "Title", "default": "Benefits" },
+        { "type": "richtext", "id": "content", "label": "Content", "default": "<p>Learn about the benefits of this product.</p>" }
+      ]
+    }
+  ],
+  "settings": [
+    {
+      "type": "checkbox",
+      "id": "show_subscription_toggle",
+      "default": true,
+      "label": "Show Subscribe & Save toggle"
+    },
+    {
+      "type": "checkbox",
+      "id": "show_trust_badges",
+      "default": true,
+      "label": "Show trust badges"
+    },
+    {
+      "type": "text",
+      "id": "description_heading",
+      "default": "Overview",
+      "label": "Description section heading"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Product information",
+      "blocks": [
+        { "type": "trust_badge", "settings": { "label": "USDA Certified Organic" } },
+        { "type": "trust_badge", "settings": { "label": "Kosher Certified" } },
+        { "type": "trust_badge", "settings": { "label": "Gluten Free" } },
+        { "type": "accordion", "settings": { "title": "Benefits" } },
+        { "type": "accordion", "settings": { "title": "How to use" } },
+        { "type": "accordion", "settings": { "title": "Ingredients" } }
+      ]
+    }
+  ]
+}
+{% endschema %}

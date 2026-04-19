@@ -1,0 +1,246 @@
+<footer class="site-footer" role="contentinfo">
+  <div class="page-width">
+    <div class="footer__main">
+      <!-- Brand Column -->
+      <div class="footer__brand">
+        <a href="{{ routes.root_url }}" class="footer__logo" aria-label="{{ shop.name }}">
+          {%- if section.settings.logo != blank -%}
+            {{
+              section.settings.logo
+              | image_url: width: 200
+              | image_tag:
+                loading: 'lazy',
+                width: 150,
+                height: 50,
+                alt: shop.name,
+                class: 'footer__logo-img'
+            }}
+          {%- else -%}
+            <span class="footer__logo-text">{{ shop.name }}</span>
+          {%- endif -%}
+        </a>
+
+        {%- if section.settings.brand_description != blank -%}
+          <p class="footer__brand-desc">{{ section.settings.brand_description }}</p>
+        {%- endif -%}
+
+        <!-- Social Links -->
+        <div class="footer__social">
+          {%- if section.settings.instagram_url != blank -%}
+            <a href="{{ section.settings.instagram_url }}" class="footer__social-link" aria-label="Instagram" target="_blank" rel="noopener noreferrer">
+              <svg aria-hidden="true" focusable="false" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <rect x="2" y="2" width="20" height="20" rx="5" ry="5" stroke="currentColor" stroke-width="1.5" fill="none"/>
+                <circle cx="12" cy="12" r="4" stroke="currentColor" stroke-width="1.5"/>
+                <circle cx="17.5" cy="6.5" r="0.5" fill="currentColor"/>
+              </svg>
+            </a>
+          {%- endif -%}
+          {%- if section.settings.facebook_url != blank -%}
+            <a href="{{ section.settings.facebook_url }}" class="footer__social-link" aria-label="Facebook" target="_blank" rel="noopener noreferrer">
+              <svg aria-hidden="true" focusable="false" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+            </a>
+          {%- endif -%}
+          {%- if section.settings.youtube_url != blank -%}
+            <a href="{{ section.settings.youtube_url }}" class="footer__social-link" aria-label="YouTube" target="_blank" rel="noopener noreferrer">
+              <svg aria-hidden="true" focusable="false" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M22.54 6.42a2.78 2.78 0 0 0-1.95-1.96C18.88 4 12 4 12 4s-6.88 0-8.59.46a2.78 2.78 0 0 0-1.95 1.96A29 29 0 0 0 1 12a29 29 0 0 0 .46 5.58A2.78 2.78 0 0 0 3.41 19.6C5.12 20 12 20 12 20s6.88 0 8.59-.46a2.78 2.78 0 0 0 1.95-1.95A29 29 0 0 0 23 12a29 29 0 0 0-.46-5.58z" stroke="currentColor" stroke-width="1.5"/>
+                <polygon points="9.75 15.02 15.5 12 9.75 8.98 9.75 15.02" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+            </a>
+          {%- endif -%}
+          {%- if section.settings.spotify_url != blank -%}
+            <a href="{{ section.settings.spotify_url }}" class="footer__social-link" aria-label="Spotify" target="_blank" rel="noopener noreferrer">
+              <svg aria-hidden="true" focusable="false" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <circle cx="12" cy="12" r="10" stroke="currentColor" stroke-width="1.5"/>
+                <path d="M8 13.5c2.33-.78 4.67-.78 7 0M7 11c2.67-.89 5.33-.89 8 0M9 16c1.67-.56 3.33-.56 5 0" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+              </svg>
+            </a>
+          {%- endif -%}
+        </div>
+
+        <!-- Certifications -->
+        {%- if section.settings.show_certifications -%}
+          <div class="footer__certifications">
+            {%- if section.settings.cert_1 != blank -%}
+              {{ section.settings.cert_1 | image_url: width: 80 | image_tag: loading: 'lazy', width: 60, height: 60, alt: 'Certification', class: 'footer__cert-badge' }}
+            {%- endif -%}
+            {%- if section.settings.cert_2 != blank -%}
+              {{ section.settings.cert_2 | image_url: width: 80 | image_tag: loading: 'lazy', width: 60, height: 60, alt: 'Certification', class: 'footer__cert-badge' }}
+            {%- endif -%}
+            {%- if section.settings.cert_3 != blank -%}
+              {{ section.settings.cert_3 | image_url: width: 80 | image_tag: loading: 'lazy', width: 60, height: 60, alt: 'Certification', class: 'footer__cert-badge' }}
+            {%- endif -%}
+          </div>
+        {%- endif -%}
+      </div>
+
+      <!-- Nav Columns -->
+      {%- for block in section.blocks -%}
+        {%- if block.type == 'link_list' -%}
+          <div class="footer__nav-column" {{ block.shopify_attributes }}>
+            {%- if block.settings.heading != blank -%}
+              <h3 class="footer__nav-heading">{{ block.settings.heading }}</h3>
+            {%- endif -%}
+            {%- if block.settings.menu != blank -%}
+              <ul class="footer__nav-list" role="list">
+                {%- for link in block.settings.menu.links -%}
+                  <li>
+                    <a href="{{ link.url }}" class="footer__nav-link"
+                      {% if link.current %}aria-current="page"{% endif %}>
+                      {{ link.title }}
+                    </a>
+                  </li>
+                {%- endfor -%}
+              </ul>
+            {%- endif -%}
+          </div>
+        {%- endif -%}
+      {%- endfor -%}
+    </div>
+
+    <!-- Payment icons -->
+    {%- if section.settings.show_payment_icons -%}
+      <div class="footer__payment-icons" style="padding: 2.4rem 0 0;">
+        {%- for type in shop.enabled_payment_types -%}
+          {{ type | payment_type_svg_tag: class: 'footer__payment-icon' }}
+        {%- endfor -%}
+      </div>
+    {%- endif -%}
+
+    <!-- Bottom bar -->
+    <div class="footer__bottom">
+      <p class="footer__copyright">
+        &copy; {{ 'now' | date: '%Y' }} {{ shop.name | upcase }}, INC. ALL RIGHTS RESERVED.
+      </p>
+    </div>
+
+    {%- if section.settings.fda_disclaimer != blank -%}
+      <p class="footer__disclaimer">{{ section.settings.fda_disclaimer }}</p>
+    {%- endif -%}
+  </div>
+</footer>
+
+{% schema %}
+{
+  "name": "Footer",
+  "class": "footer-section",
+  "enabled_on": {
+    "groups": ["footer"]
+  },
+  "blocks": [
+    {
+      "type": "link_list",
+      "name": "Navigation menu",
+      "settings": [
+        {
+          "type": "text",
+          "id": "heading",
+          "default": "Quick links",
+          "label": "Heading"
+        },
+        {
+          "type": "link_list",
+          "id": "menu",
+          "default": "footer",
+          "label": "Menu"
+        }
+      ]
+    }
+  ],
+  "settings": [
+    {
+      "type": "header",
+      "content": "Brand"
+    },
+    {
+      "type": "image_picker",
+      "id": "logo",
+      "label": "Logo"
+    },
+    {
+      "type": "textarea",
+      "id": "brand_description",
+      "label": "Brand description",
+      "default": "Premium organic supplements crafted for your wellness journey."
+    },
+    {
+      "type": "header",
+      "content": "Social Media"
+    },
+    {
+      "type": "url",
+      "id": "instagram_url",
+      "label": "Instagram URL"
+    },
+    {
+      "type": "url",
+      "id": "facebook_url",
+      "label": "Facebook URL"
+    },
+    {
+      "type": "url",
+      "id": "youtube_url",
+      "label": "YouTube URL"
+    },
+    {
+      "type": "url",
+      "id": "spotify_url",
+      "label": "Spotify URL"
+    },
+    {
+      "type": "header",
+      "content": "Certifications"
+    },
+    {
+      "type": "checkbox",
+      "id": "show_certifications",
+      "default": true,
+      "label": "Show certification badges"
+    },
+    {
+      "type": "image_picker",
+      "id": "cert_1",
+      "label": "Certification badge 1"
+    },
+    {
+      "type": "image_picker",
+      "id": "cert_2",
+      "label": "Certification badge 2"
+    },
+    {
+      "type": "image_picker",
+      "id": "cert_3",
+      "label": "Certification badge 3"
+    },
+    {
+      "type": "header",
+      "content": "Bottom bar"
+    },
+    {
+      "type": "checkbox",
+      "id": "show_payment_icons",
+      "default": true,
+      "label": "Show payment icons"
+    },
+    {
+      "type": "textarea",
+      "id": "fda_disclaimer",
+      "label": "FDA disclaimer text",
+      "default": "*These statements have not been evaluated by the Food and Drug Administration. This product is not intended to diagnose, treat, cure, or prevent any disease."
+    }
+  ],
+  "presets": [
+    {
+      "name": "Footer",
+      "blocks": [
+        { "type": "link_list", "settings": { "heading": "Shop", "menu": "footer-shop" } },
+        { "type": "link_list", "settings": { "heading": "Company", "menu": "footer-company" } },
+        { "type": "link_list", "settings": { "heading": "Learn", "menu": "footer-learn" } },
+        { "type": "link_list", "settings": { "heading": "Help", "menu": "footer-help" } }
+      ]
+    }
+  ]
+}
+{% endschema %}

@@ -1,0 +1,68 @@
+<section class="section-padding product-faq" id="shopify-section-{{ section.id }}"
+  style="background:rgb(var(--color-base-background-2));">
+  <div class="page-width">
+    <div style="max-width:72rem; margin:0 auto;">
+      {%- if section.settings.title != blank -%}
+        <h2 style="font-family:var(--font-heading-family); font-size:clamp(2.4rem, 3vw, 3.6rem); font-weight:800; text-transform:uppercase; letter-spacing:-0.01em; color:rgb(var(--color-base-text)); margin:0 0 3.2rem; text-align:center;">
+          {{ section.settings.title }}
+        </h2>
+      {%- endif -%}
+
+      <div class="accordion">
+        {%- for block in section.blocks -%}
+          {%- if block.type == 'faq_item' -%}
+            <div class="accordion__item" {{ block.shopify_attributes }}>
+              <button class="accordion__header" aria-expanded="false" aria-controls="FAQ-{{ block.id }}">
+                <span class="accordion__title">{{ block.settings.question }}</span>
+                <svg class="accordion__icon" viewBox="0 0 20 20" fill="none" aria-hidden="true">
+                  <path d="M5 8l5 5 5-5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+                </svg>
+              </button>
+              <div class="accordion__content" id="FAQ-{{ block.id }}">
+                <div class="accordion__body">{{ block.settings.answer }}</div>
+              </div>
+            </div>
+          {%- endif -%}
+        {%- endfor -%}
+      </div>
+    </div>
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Product FAQ",
+  "tag": "section",
+  "class": "section-product-faq",
+  "max_blocks": 20,
+  "blocks": [
+    {
+      "type": "faq_item",
+      "name": "FAQ item",
+      "settings": [
+        { "type": "text", "id": "question", "label": "Question", "default": "What is the recommended dosage?" },
+        { "type": "richtext", "id": "answer", "label": "Answer", "default": "<p>Take 2 capsules daily, with or without food.</p>" }
+      ]
+    }
+  ],
+  "settings": [
+    {
+      "type": "text",
+      "id": "title",
+      "label": "Heading",
+      "default": "Frequently Asked Questions"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Product FAQ",
+      "blocks": [
+        { "type": "faq_item", "settings": { "question": "What is the recommended dosage?", "answer": "<p>Take 2 capsules daily, with or without food.</p>" } },
+        { "type": "faq_item", "settings": { "question": "Are the capsules vegan?", "answer": "<p>Yes, all our capsules are made with plant-based materials and are 100% vegan.</p>" } },
+        { "type": "faq_item", "settings": { "question": "When should I take this supplement?", "answer": "<p>This supplement can be taken any time of day. Some customers prefer morning, others with meals.</p>" } },
+        { "type": "faq_item", "settings": { "question": "Where is this product manufactured?", "answer": "<p>All our products are manufactured in the USA in FDA-registered, GMP-certified facilities.</p>" } }
+      ]
+    }
+  ]
+}
+{% endschema %}

@@ -1,0 +1,116 @@
+<section class="section-padding shop-categories" id="shopify-section-{{ section.id }}">
+  <div class="page-width">
+    {%- if section.settings.title != blank -%}
+      <div class="section-heading">
+        <h2 class="section-heading__title">{{ section.settings.title }}</h2>
+        {%- if section.settings.subtitle != blank -%}
+          <p class="section-heading__subtitle">{{ section.settings.subtitle }}</p>
+        {%- endif -%}
+      </div>
+    {%- endif -%}
+
+    <ul class="grid grid--2-col grid--4-col-desktop shop-categories__grid" role="list"
+        style="--grid-desktop-horizontal-spacing: 2rem; --grid-mobile-horizontal-spacing: 1.2rem; --grid-desktop-vertical-spacing: 2rem; --grid-mobile-vertical-spacing: 1.2rem;">
+      {%- for block in section.blocks -%}
+        {%- if block.type == 'category' -%}
+          <li class="shop-categories__item" {{ block.shopify_attributes }}>
+            <a href="{{ block.settings.url | default: '#' }}" class="shop-categories__card" style="display:block; position:relative; overflow:hidden; border-radius:var(--product-card-corner-radius); aspect-ratio:1/1; text-decoration:none;">
+              {%- if block.settings.image != blank -%}
+                {{
+                  block.settings.image
+                  | image_url: width: 600
+                  | image_tag:
+                    loading: 'lazy',
+                    widths: '300, 400, 600',
+                    sizes: '(min-width: 990px) 25vw, 50vw',
+                    style: 'width:100%;height:100%;object-fit:cover;object-position:center;transition:transform 0.4s ease;'
+                }}
+              {%- else -%}
+                {{ 'collection-1' | placeholder_svg_tag: 'placeholder-svg' }}
+              {%- endif -%}
+              <div style="position:absolute; inset:0; background:linear-gradient(to top, rgba(0,0,0,0.65) 0%, rgba(0,0,0,0.1) 50%, transparent 100%);"></div>
+              <div style="position:absolute; bottom:0; left:0; right:0; padding:2rem 1.8rem;">
+                <span style="display:block; font-family:var(--font-heading-family); font-size:1.8rem; font-weight:700; color:#fff; letter-spacing:-0.01em; line-height:1.2;">
+                  {{ block.settings.title }}
+                </span>
+                {%- if block.settings.subtitle != blank -%}
+                  <span style="display:block; font-size:1.3rem; color:rgba(255,255,255,0.8); margin-top:0.4rem;">
+                    {{ block.settings.subtitle }}
+                  </span>
+                {%- endif -%}
+              </div>
+            </a>
+          </li>
+        {%- endif -%}
+      {%- endfor -%}
+    </ul>
+  </div>
+</section>
+
+<style>
+  .shop-categories__card:hover img {
+    transform: scale(1.04);
+  }
+</style>
+
+{% schema %}
+{
+  "name": "Shop categories",
+  "tag": "section",
+  "class": "section-shop-categories",
+  "max_blocks": 8,
+  "blocks": [
+    {
+      "type": "category",
+      "name": "Category",
+      "settings": [
+        {
+          "type": "image_picker",
+          "id": "image",
+          "label": "Image"
+        },
+        {
+          "type": "text",
+          "id": "title",
+          "label": "Title",
+          "default": "Category Name"
+        },
+        {
+          "type": "text",
+          "id": "subtitle",
+          "label": "Subtitle"
+        },
+        {
+          "type": "url",
+          "id": "url",
+          "label": "Link"
+        }
+      ]
+    }
+  ],
+  "settings": [
+    {
+      "type": "text",
+      "id": "title",
+      "label": "Heading",
+      "default": "Shop Categories"
+    },
+    {
+      "type": "text",
+      "id": "subtitle",
+      "label": "Subheading"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Shop categories",
+      "blocks": [
+        { "type": "category", "settings": { "title": "Herbs & Roots" } },
+        { "type": "category", "settings": { "title": "Mushrooms" } },
+        { "type": "category", "settings": { "title": "Kids & Teenagers" } },
+        { "type": "category", "settings": { "title": "Curated Bundles" } }
+      ]
+    }
+  ]
+}
+{% endschema %}
