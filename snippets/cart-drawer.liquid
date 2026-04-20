@@ -1,0 +1,254 @@
+{{ 'component-cart-drawer.css' | asset_url | stylesheet_tag }}
+
+<div id="CartDrawer" class="cart-drawer" aria-modal="true" role="dialog" aria-label="Shopping cart" aria-hidden="true">
+  <div class="cart-drawer__overlay" id="CartDrawerOverlay"></div>
+  <div class="cart-drawer__panel">
+
+    <!-- Header -->
+    <div class="cart-drawer__header">
+      <h2 class="cart-drawer__title">
+        Your cart
+        <span class="cart-drawer__count" id="CartDrawerCount">
+          {%- if cart.item_count > 0 -%}({{ cart.item_count }}){%- endif -%}
+        </span>
+      </h2>
+      <button class="cart-drawer__close" id="CartDrawerClose" aria-label="Close cart">
+        <svg width="20" height="20" viewBox="0 0 20 20" fill="none" aria-hidden="true">
+          <path d="M15 5L5 15M5 5l10 10" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+        </svg>
+      </button>
+    </div>
+
+    <!-- Items -->
+    <div class="cart-drawer__items" id="CartDrawerItems">
+      {%- if cart.item_count == 0 -%}
+        <div class="cart-drawer__empty" id="CartDrawerEmpty">
+          <p>Your cart is empty.</p>
+          <a href="{{ routes.all_products_collection_url }}" class="button button--primary">Continue shopping</a>
+        </div>
+      {%- else -%}
+        <div id="CartDrawerEmpty" class="cart-drawer__empty" style="display:none;">
+          <p>Your cart is empty.</p>
+          <a href="{{ routes.all_products_collection_url }}" class="button button--primary">Continue shopping</a>
+        </div>
+        {%- for item in cart.items -%}
+          <div class="cart-drawer__item" data-key="{{ item.key }}">
+            <a href="{{ item.url }}" class="cart-drawer__item-image-link" tabindex="-1">
+              {{
+                item.image
+                | image_url: width: 160
+                | image_tag:
+                  loading: 'lazy',
+                  width: 80,
+                  height: 80,
+                  alt: item.product.title | escape,
+                  class: 'cart-drawer__item-image'
+              }}
+            </a>
+            <div class="cart-drawer__item-body">
+              <div class="cart-drawer__item-top">
+                <div>
+                  <a href="{{ item.url }}" class="cart-drawer__item-title">{{ item.product.title }}</a>
+                  {%- unless item.product.has_only_default_variant -%}
+                    <p class="cart-drawer__item-variant">{{ item.variant.title }}</p>
+                  {%- endunless -%}
+                </div>
+                <button
+                  class="cart-drawer__remove"
+                  data-key="{{ item.key }}"
+                  aria-label="Remove {{ item.product.title | escape }}"
+                >
+                  <svg width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden="true">
+                    <path d="M11 3L3 11M3 3l8 8" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+                  </svg>
+                </button>
+              </div>
+              <div class="cart-drawer__item-bottom">
+                <div class="quantity cart-drawer__quantity">
+                  <button type="button" class="quantity__button cart-drawer__qty-btn" data-key="{{ item.key }}" data-change="-1" aria-label="Decrease quantity">−</button>
+                  <input
+                    type="number"
+                    class="quantity__input"
+                    value="{{ item.quantity }}"
+                    min="0"
+                    data-key="{{ item.key }}"
+                    aria-label="Quantity for {{ item.product.title | escape }}"
+                    style="width:3.6rem;"
+                  >
+                  <button type="button" class="quantity__button cart-drawer__qty-btn" data-key="{{ item.key }}" data-change="1" aria-label="Increase quantity">+</button>
+                </div>
+                <span class="cart-drawer__item-price">{{ item.final_line_price | money }}</span>
+              </div>
+            </div>
+          </div>
+        {%- endfor -%}
+      {%- endif -%}
+    </div>
+
+    <!-- Footer -->
+    <div class="cart-drawer__footer" id="CartDrawerFooter" {% if cart.item_count == 0 %}style="display:none;"{% endif %}>
+      {%- if cart.total_discounts > 0 -%}
+        <div class="cart-drawer__savings">
+          <span>Savings</span>
+          <span>−{{ cart.total_discounts | money }}</span>
+        </div>
+      {%- endif -%}
+      <div class="cart-drawer__subtotal">
+        <span>Subtotal</span>
+        <span id="CartDrawerSubtotal">{{ cart.total_price | money }}</span>
+      </div>
+      <p class="cart-drawer__shipping-note">Shipping and taxes calculated at checkout.</p>
+      <a href="{{ routes.checkout_url }}" class="button button--primary button--full-width button--large cart-drawer__checkout">
+        Checkout — <span id="CartDrawerCheckoutPrice">{{ cart.total_price | money }}</span>
+      </a>
+      <a href="{{ routes.cart_url }}" class="cart-drawer__view-cart">View cart</a>
+    </div>
+
+  </div>
+</div>
+
+<script>
+(function () {
+  const drawer = document.getElementById('CartDrawer');
+  const overlay = document.getElementById('CartDrawerOverlay');
+  const closeBtn = document.getElementById('CartDrawerClose');
+  const cartIconBubble = document.getElementById('cart-icon-bubble');
+
+  function openDrawer() {
+    drawer.setAttribute('aria-hidden', 'false');
+    drawer.classList.add('is-open');
+    document.body.classList.add('cart-drawer-open');
+    closeBtn.focus();
+  }
+
+  function closeDrawer() {
+    drawer.setAttribute('aria-hidden', 'true');
+    drawer.classList.remove('is-open');
+    document.body.classList.remove('cart-drawer-open');
+    if (cartIconBubble) cartIconBubble.focus();
+  }
+
+  if (cartIconBubble) {
+    cartIconBubble.addEventListener('click', function (e) {
+      e.preventDefault();
+      openDrawer();
+    });
+  }
+
+  closeBtn.addEventListener('click', closeDrawer);
+  overlay.addEventListener('click', closeDrawer);
+
+  document.addEventListener('keydown', function (e) {
+    if (e.key === 'Escape' && drawer.classList.contains('is-open')) {
+      closeDrawer();
+    }
+  });
+
+  function formatMoney(cents) {
+    return '$' + (cents / 100).toFixed(2);
+  }
+
+  function updateCartUI(cart) {
+    const countEl = document.getElementById('CartDrawerCount');
+    const subtotalEl = document.getElementById('CartDrawerSubtotal');
+    const checkoutPriceEl = document.getElementById('CartDrawerCheckoutPrice');
+    const footerEl = document.getElementById('CartDrawerFooter');
+    const emptyEl = document.getElementById('CartDrawerEmpty');
+    const itemsContainer = document.getElementById('CartDrawerItems');
+    const headerBubble = document.getElementById('cart-icon-bubble');
+
+    if (countEl) countEl.textContent = cart.item_count > 0 ? '(' + cart.item_count + ')' : '';
+
+    const moneyStr = formatMoney(cart.total_price);
+    if (subtotalEl) subtotalEl.textContent = moneyStr;
+    if (checkoutPriceEl) checkoutPriceEl.textContent = moneyStr;
+
+    if (cart.item_count === 0) {
+      if (footerEl) footerEl.style.display = 'none';
+      if (emptyEl) emptyEl.style.display = '';
+      // remove all item rows
+      itemsContainer.querySelectorAll('.cart-drawer__item').forEach(function (el) { el.remove(); });
+      // update header cart count
+      const cartCount = headerBubble && headerBubble.querySelector('.cart-count');
+      if (cartCount) cartCount.remove();
+    } else {
+      if (footerEl) footerEl.style.display = '';
+      if (emptyEl) emptyEl.style.display = 'none';
+      // update header cart count badge
+      if (headerBubble) {
+        let cartCount = headerBubble.querySelector('.cart-count');
+        if (!cartCount) {
+          cartCount = document.createElement('span');
+          cartCount.className = 'cart-count';
+          cartCount.setAttribute('aria-hidden', 'true');
+          headerBubble.appendChild(cartCount);
+        }
+        cartCount.textContent = cart.item_count;
+      }
+    }
+  }
+
+  function changeQuantity(key, quantity) {
+    fetch(window.routes.cart_change_url, {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
+      body: JSON.stringify({ id: key, quantity: quantity })
+    })
+    .then(function (r) { return r.json(); })
+    .then(function (cart) {
+      // update the specific item row
+      const itemRow = drawer.querySelector('[data-key="' + key + '"]');
+      if (quantity === 0) {
+        if (itemRow) itemRow.remove();
+      } else {
+        if (itemRow) {
+          const input = itemRow.querySelector('.quantity__input');
+          if (input) input.value = quantity;
+          // update line price
+          const lineItem = cart.items.find(function (i) { return i.key === key; });
+          const priceEl = itemRow.querySelector('.cart-drawer__item-price');
+          if (priceEl && lineItem) priceEl.textContent = formatMoney(lineItem.final_line_price);
+        }
+      }
+      updateCartUI(cart);
+    })
+    .catch(function () {
+      alert(window.cartStrings && window.cartStrings.error || 'Error updating cart.');
+    });
+  }
+
+  // Quantity buttons
+  drawer.addEventListener('click', function (e) {
+    const btn = e.target.closest('.cart-drawer__qty-btn');
+    if (btn) {
+      const key = btn.dataset.key;
+      const change = parseInt(btn.dataset.change, 10);
+      const input = drawer.querySelector('[data-key="' + key + '"].quantity__input');
+      const currentQty = input ? parseInt(input.value, 10) : 0;
+      const newQty = Math.max(0, currentQty + change);
+      changeQuantity(key, newQty);
+    }
+
+    const removeBtn = e.target.closest('.cart-drawer__remove');
+    if (removeBtn) {
+      changeQuantity(removeBtn.dataset.key, 0);
+    }
+  });
+
+  // Manual quantity input
+  drawer.addEventListener('change', function (e) {
+    const input = e.target.closest('.quantity__input[data-key]');
+    if (input) {
+      const qty = Math.max(0, parseInt(input.value, 10) || 0);
+      changeQuantity(input.dataset.key, qty);
+    }
+  });
+
+  // Listen for add-to-cart events from product page to open drawer
+  document.addEventListener('cart:add', function (e) {
+    const cart = e.detail && e.detail.cart;
+    if (cart) updateCartUI(cart);
+    openDrawer();
+  });
+})();
+</script>

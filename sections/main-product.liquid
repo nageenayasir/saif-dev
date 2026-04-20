@@ -349,6 +349,44 @@
       });
     });
   }
+
+  // AJAX add-to-cart → open cart drawer
+  const productForm = document.getElementById('ProductForm');
+  if (productForm && {{ settings.cart_type | json }} === 'drawer') {
+    productForm.addEventListener('submit', function(e) {
+      e.preventDefault();
+      if (submitBtn) {
+        submitBtn.disabled = true;
+        submitBtn.querySelector('span').textContent = 'Adding…';
+      }
+      const formData = new FormData(productForm);
+      formData.append('sections', 'cart-icon-bubble');
+      fetch(window.routes.cart_add_url, {
+        method: 'POST',
+        headers: { 'Accept': 'application/json' },
+        body: formData
+      })
+      .then(function(r) { return r.json(); })
+      .then(function(data) {
+        if (data.status) {
+          alert(data.description || 'Could not add to cart.');
+          return;
+        }
+        return fetch(window.routes.cart_url + '.js').then(function(r) { return r.json(); }).then(function(cart) {
+          document.dispatchEvent(new CustomEvent('cart:add', { detail: { cart: cart } }));
+        });
+      })
+      .catch(function() {
+        productForm.submit();
+      })
+      .finally(function() {
+        if (submitBtn) {
+          submitBtn.disabled = false;
+          submitBtn.querySelector('span').textContent = '{{ 'products.product.add_to_cart' | t }}';
+        }
+      });
+    });
+  }
 })();
 </script>
 
