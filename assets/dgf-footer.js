@@ -200,7 +200,6 @@
           const repContainer = document.getElementById('repWebClientContainer');
           if (repContainer && repContainer.style.zIndex !== '9998') {
             repContainer.style.zIndex = '9998';
-            console.log('[DGF Footer] repWebClientContainer z-index updated to 9998');
           }
         } catch (e) {
           console.error('[DGF Footer] Error updating repWebClientContainer z-index:', e);
@@ -231,7 +230,6 @@
         subtree: true
       });
 
-      console.log('[DGF Footer] MutationObserver started for repWebClientContainer z-index');
 
     } catch (error) {
       console.error('[DGF Footer] Error setting up repWebClientContainer z-index observer:', error);
@@ -275,7 +273,6 @@
             `;
 
             checkoutButton.insertAdjacentElement('afterend', customDiv);
-            //console.log('[DGF Footer] Custom div appended to Rebuy cart');
           }
         } catch (e) {
           console.error('[DGF Footer] Error inserting custom div:', e);
@@ -310,7 +307,6 @@
       });
 
       isObserving = true;
-      //console.log('[DGF Footer] MutationObserver started for Rebuy cart custom div');
 
     } catch (error) {
       console.error('[DGF Footer] Error setting up Rebuy cart custom div:', error);
@@ -330,7 +326,6 @@
           if (span && span.textContent !== TARGET_TEXT && !span.hasAttribute('data-dgf-updated')) {
             span.textContent = TARGET_TEXT;
             span.setAttribute('data-dgf-updated', 'true');
-            //console.log('[DGF Footer] Rebuy discount text updated');
           }
 
           // Aplicar estilos no elemento pai .rebuy-cart__flyout-discount-amount
@@ -339,7 +334,6 @@
             discountElement.style.backgroundColor = '#D5E4E1';
             discountElement.style.padding = '0.2rem 3rem';
             discountElement.setAttribute('data-dgf-styled', 'true');
-            //console.log('[DGF Footer] Rebuy discount styles applied');
           }
         } catch (e) {
           console.error('[DGF Footer] Error updating span text:', e);
@@ -397,7 +391,6 @@
       });
 
       isObserving = true;
-      //console.log('[DGF Footer] MutationObserver started for Rebuy discount text');
 
     } catch (error) {
       console.error('[DGF Footer] Error setting up Rebuy discount text observer:', error);
@@ -506,7 +499,6 @@
   // Initialize when DOM is ready
   document.addEventListener('DOMContentLoaded', function() {
     try {
-      //console.log('[DGF Footer] Scripts initialized');
 
       // Add alt text to images
       addMissingAltText();

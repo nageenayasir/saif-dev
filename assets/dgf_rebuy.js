@@ -7,7 +7,6 @@ function delay(ms) {
       const response = await fetch('/cart.js');
       if (!response.ok) throw new Error('Failed to fetch cart data');
       const cartData = await response.json();
-      //console.log('Cart data:', cartData);
       return cartData;
     } catch(e) {
       console.warn('Could not fetch cart data:', e);
