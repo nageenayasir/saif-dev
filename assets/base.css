@@ -3,6 +3,59 @@
    Built on Shopify Dawn architecture
    ============================================ */
 
+/* Custom brand fonts */
+@font-face {
+  font-family: 'Brice';
+  src: url('Brice-Regular.woff2') format('woff2'),
+       url('Brice-Regular.woff') format('woff');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Brice';
+  src: url('Brice-Bold.woff2') format('woff2'),
+       url('Brice-Bold.woff') format('woff');
+  font-weight: 700 800 900;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'HypatiaSansPro';
+  src: url('HypatiaSansPro-Regular.woff2') format('woff2'),
+       url('HypatiaSansPro-Regular.woff') format('woff');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'HypatiaSansPro';
+  src: url('HypatiaSansPro-Bold.woff2') format('woff2'),
+       url('HypatiaSansPro-Bold.woff') format('woff');
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'SuperiorTitle';
+  src: url('SuperiorTitle-Medium.woff2') format('woff2');
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'SuperiorTitle';
+  src: url('SuperiorTitle-Medium-Italic.woff2') format('woff2');
+  font-weight: 500;
+  font-style: italic;
+  font-display: swap;
+}
+
 /* Reset */
 *,
 *::before,
