@@ -1,0 +1,122 @@
+<style>
+#id-{{ section.id }}{
+  	background-color:{{ section.settings.section_bg_color }};
+}
+.kids-benefits-section {
+    position: relative;
+}
+{% if section.settings.bg_image != blank %}
+#id-{{ section.id }} .kids-benefits-bg-wrapper{
+      background-image: url("{{ section.settings.bg_image | img_url: 'master' }}");
+}
+{% endif %}
+</style>
+<section id="id-{{ section.id }}" class="kids-benefits-section">
+  <div class="kids-benefits-wrapper">
+    <div class="leaf-box kids-benefits-gummies-box-left-top left-top">
+        <img loading="lazy"  class="leaf kids-benefits-gummies-left-top" src="{{ 'benefits-top-left.svg' | asset_url }}">
+    </div>
+    <div class="leaf-box kids-benefits-gummies-box-right-top right-top web-right-top">
+        <img loading="lazy"  class="leaf kids-benefits-gummies-right-top" src="{{ 'benefits-top-right.svg' | asset_url }}">
+    </div>
+    <div class="leaf-box kids-benefits-gummies-box-right-top right-top mob-right-top">
+        <img loading="lazy"  class="leaf kids-benefits-gummies-right-top" src="{{ 'mob-benefits-leaf.svg' | asset_url }}">
+    </div>
+    <div class="leaf-box kids-benefits-gummies-box-left-bot left-bot">
+        <img loading="lazy"  class="leaf kids-benefits-gummies-left-bot" src="{{ 'benefits-bottom-left.svg' | asset_url }}">
+    </div>
+    <div class="leaf-box kids-benefits-gummies-box-right-bot right-bot">
+        <img loading="lazy"  class="leaf kids-benefits-gummies-right-bot" src="{{ 'benefits-bottom-right.svg' | asset_url }}">
+    </div>
+    <div class="kids-benefits-content-container-wrapper">
+      <div class="kids-benefits-content-row">
+        <div class="kids-benefits-text mob-kids-benefits-text">
+          <h2>{{ section.settings.the_title }}</h2>
+          </div>
+        <div class="kids-benefts-image" data-aos="fade-up">
+          {% if section.settings.kids_image != blank %}<img loading="lazy"  src="{{ section.settings.kids_image | img_url: 'master' }}">{% endif %}
+          
+        </div>
+        <div class="kids-benefits-text-wrap" data-aos="fade-up">
+          <div class="kids-benefits-text web-kids-benefits-text">
+          <h2>{{ section.settings.the_title }}</h2>
+          </div>
+          <div class="kids-character-img">
+            {% if section.settings.character_img != blank %}<img loading="lazy"  src="{{ section.settings.character_img | img_url: 'master' }}">{% endif %}
+          </div>
+        </div>
+      </div>
+    </div>
+      <div class="kids-benefits-bg-wrapper">
+        <div class="kids-benefits-bottom-image">
+        {% if section.settings.the_image != blank %}<img loading="lazy"  src="{{ section.settings.the_image | img_url: 'master' }}" class="web-benefts-bottom-image">{% endif %}
+        {% if section.settings.mob_image != blank %}<img loading="lazy"  src="{{ section.settings.mob_image | img_url: 'master' }}" class="mob-benefts-bottom-image">{% endif %}
+        </div>
+        <div class="container">
+          <div class="kids-benefits-under-text">
+            <p>{{ section.settings.the_text }}</p>
+          </div>
+      </div>
+    </div>
+  </div>
+</section>
+{% schema %}
+  {
+    "name": "Gummies Benefits Section",
+    "settings": [
+         {
+            "type": "header",
+            "content": "Content Style"
+         },
+  	     {
+           "type": "color",
+           "id": "section_bg_color",
+           "label": "Section background color"
+        },
+        {
+            "type": "image_picker",
+            "id": "kids_image",
+            "label": "Kids Image"
+        },
+        {
+             "type": "text",
+             "id": "the_title",
+            "label": "Title"
+        },
+        {
+            "type": "image_picker",
+            "id": "character_img",
+            "label": "Character Image"
+        },
+        {
+            "type": "image_picker",
+            "id": "bg_image",
+            "label": "Background Image"
+        },
+        {
+            "type": "image_picker",
+            "id": "the_image",
+            "label": "Image"
+        },
+        {
+            "type": "image_picker",
+            "id": "mob_image",
+            "label": "Mobile Image"
+        },
+        {
+             "type": "text",
+             "id": "the_text",
+            "label": "Text"
+        }
+    ],
+    "presets": [{
+      "name": "Gummies Benefits Section"
+    }]
+  }
+{% endschema %}
+
+{% stylesheet %}
+{% endstylesheet %}
+
+{% javascript %}
+{% endjavascript %}

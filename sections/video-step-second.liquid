@@ -1,0 +1,49 @@
+<section id="id-{{section.id}}" class="col-step-sec-rvw rvw-bg-main">
+  <div class="container">
+    <div class="inner-step-rvw">
+      <div class="col-sm-12 col-md-6 col-lg-8 inner-step-left">
+        <h2 data-aos="fade-up">{{ section.settings.the_title }}</h2>
+        <p data-aos="fade-up">{{ section.settings.the_text }}</p>
+      </div>
+      <div class="col-sm-12 col-md-6 col-lg-4 inner-step-right step-pic-down" data-aos="fade-up">
+        {% if section.settings.the_image !=blank %}<img loading="lazy" src="{{ section.settings.the_image | img_url: 'master' }}">{% endif %}
+      </div>
+    </div>
+  </div>
+</section>  
+{% schema %}
+  {
+    "name": "Video Steps",
+    "settings": [
+      {
+          "type": "text",
+          "id": "the_title",
+          "label": "Title"
+      },
+      {
+          "type": "textarea",
+          "id": "the_text",
+          "label": "Text",
+          "info": "using <span> for change the text color"
+      },
+      {
+          "type": "header",
+          "content": "Image Settings"
+      },
+      {
+          "type": "image_picker",
+          "id": "the_image",
+          "label": "Image"
+      }
+    ],
+	"presets": [{
+      "name": "Video Steps"
+    }]
+  }
+{% endschema %}
+
+{% stylesheet %}
+{% endstylesheet %}
+
+{% javascript %}
+{% endjavascript %}

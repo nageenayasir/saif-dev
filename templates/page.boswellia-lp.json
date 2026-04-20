@@ -1,0 +1,835 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "main": {
+      "type": "main-page",
+      "disabled": true,
+      "settings": {}
+    },
+    "dgf_lp_header_YKcMaE": {
+      "type": "dgf-lp-header",
+      "blocks": {
+        "nav_item_zdiWwH": {
+          "type": "nav_item",
+          "settings": {
+            "nav_text": "Learn",
+            "nav_url": "",
+            "nav_text_color": "",
+            "enable_megamenu": true,
+            "megamenu_type": "images",
+            "megamenu_bg_color": "#faeee9",
+            "megamenu_text_color": "#000000",
+            "megamenu_text": "",
+            "megamenu_product_1": "",
+            "megamenu_product_1_url": "",
+            "megamenu_product_2": "",
+            "megamenu_product_2_url": "",
+            "megamenu_product_3": "",
+            "megamenu_product_3_url": "",
+            "mobile_megamenu_title": "",
+            "mobile_megamenu_link_text": "View All",
+            "mobile_megamenu_link_url": "",
+            "megamenu_image_1": "shopify://shop_images/ash-learn-01_834e3a6c-27da-44ed-85e8-14890c92df74.webp",
+            "megamenu_text_1": "Boswellia for Dogs: A Natural Solution for Joint Health",
+            "megamenu_link_1": "https://www.tribe-organics.com/blogs/pet-health/boswellia-for-dogsboswellia-for-dogs",
+            "megamenu_image_2": "shopify://shop_images/ash-learn-01-1.webp",
+            "megamenu_text_2": "Turmeric and Boswellia: The Powerful Herbal Duo",
+            "megamenu_link_2": "https://www.tribe-organics.com/blogs/lifestyle/turmeric-and-boswellia-the-powerful-herbal-duo",
+            "megamenu_image_3": "shopify://shop_images/ash-learn-01-2.webp",
+            "megamenu_text_3": "What is Boswellia and How Can It Help Me?",
+            "megamenu_link_3": "http://tribe-organics.com/blogs/lifestyle/what-is-boswellia-and-how-it-can-benefit-one-s-health",
+            "megamenu_image_4": "shopify://shop_images/ash-learn-01-3.webp",
+            "megamenu_text_4": "Does Boswellia Lower Blood Pressure? Exploring the Effects",
+            "megamenu_link_4": "https://www.tribe-organics.com/blogs/lifestyle/boswellia-blood-pressure",
+            "show_megamenu_button": true,
+            "megamenu_button_text": "READ MORE",
+            "megamenu_button_url": "shopify://blogs/boswellia-learn"
+          }
+        },
+        "nav_item_bJY6dx": {
+          "type": "nav_item",
+          "settings": {
+            "nav_text": "Contact Us",
+            "nav_url": "/pages/contact",
+            "nav_text_color": "",
+            "enable_megamenu": false,
+            "megamenu_type": "products",
+            "megamenu_bg_color": "",
+            "megamenu_text_color": "",
+            "megamenu_text": "",
+            "megamenu_product_1": "",
+            "megamenu_product_1_url": "",
+            "megamenu_product_2": "",
+            "megamenu_product_2_url": "",
+            "megamenu_product_3": "",
+            "megamenu_product_3_url": "",
+            "mobile_megamenu_title": "",
+            "mobile_megamenu_link_text": "View All",
+            "mobile_megamenu_link_url": "",
+            "megamenu_text_1": "",
+            "megamenu_link_1": "",
+            "megamenu_text_2": "",
+            "megamenu_link_2": "",
+            "megamenu_text_3": "",
+            "megamenu_link_3": "",
+            "megamenu_text_4": "",
+            "megamenu_link_4": "",
+            "show_megamenu_button": false,
+            "megamenu_button_text": "View All",
+            "megamenu_button_url": ""
+          }
+        }
+      },
+      "block_order": [
+        "nav_item_zdiWwH",
+        "nav_item_bJY6dx"
+      ],
+      "custom_css": [
+        ".custom-ashwagandha-pack-page .custom-announcement-bar {display: block !important;}",
+        ".dgf-megamenu-button {background-color: #faeee9; border: 2px solid #ac853b; border-radius: 0px; font-family: Work Sans, sans-serif; font-size: 14px !important;}",
+        ".dgf-lp-header-logo {pointer-events: none;}"
+      ],
+      "name": "[DGF] LP Header",
+      "settings": {
+        "section_bg_color": "#06211e",
+        "text_color": "#ffffff",
+        "site_logo_image": "shopify://shop_images/2_Topbar.webp",
+        "site_logo_image_mobile": "shopify://shop_images/SVG.webp",
+        "button_text": "SHOP NOW",
+        "button_url": "#shopify-section-template--20090365378783__dgf_featured_product_3e6RUi",
+        "button_bg_color": "#ac853b",
+        "button_text_color": "#ffffff",
+        "show_search": true
+      }
+    },
+    "dgf_icon_slider_nq6TXd": {
+      "type": "dgf-icon-slider",
+      "blocks": {
+        "icon_item_eyNUPN": {
+          "type": "icon_item",
+          "settings": {
+            "icon": "shopify://shop_images/made-in-the-usa_1.webp",
+            "text": "Made in the USA with globally sourced ingredients",
+            "text_color": "#ffffff"
+          }
+        },
+        "icon_item_bKtXEU": {
+          "type": "icon_item",
+          "settings": {
+            "icon": "shopify://shop_images/third-party-lab-tested_1.webp",
+            "text": "Third-party Lab Tested",
+            "text_color": "#ffffff"
+          }
+        },
+        "icon_item_jAwLmL": {
+          "type": "icon_item",
+          "settings": {
+            "icon": "shopify://shop_images/ethically-grown-and-sourced_1.webp",
+            "text": "Ethically grown and sourced",
+            "text_color": "#ffffff"
+          }
+        },
+        "icon_item_JU9BgQ": {
+          "type": "icon_item",
+          "settings": {
+            "icon": "shopify://shop_images/no-harmful-additives_1.webp",
+            "text": "No harmful additives or fillers",
+            "text_color": "#ffffff"
+          }
+        },
+        "icon_item_Df7qgW": {
+          "type": "icon_item",
+          "settings": {
+            "icon": "shopify://shop_images/recyclable_1.webp",
+            "text": "Recyclable",
+            "text_color": "#ffffff"
+          }
+        }
+      },
+      "block_order": [
+        "icon_item_eyNUPN",
+        "icon_item_bKtXEU",
+        "icon_item_jAwLmL",
+        "icon_item_JU9BgQ",
+        "icon_item_Df7qgW"
+      ],
+      "name": "[DGF] Icon Slider",
+      "settings": {
+        "title": "",
+        "sec_bg_color": "#586a67",
+        "text_color": "#ffffff",
+        "icon_bg_color": "#f3d9cf",
+        "icon_bg_image": "shopify://shop_images/Ellipse_105.webp",
+        "autoplay_speed": 3,
+        "pause_on_hover": true
+      }
+    },
+    "dgf_img_and_text_tW8t4r": {
+      "type": "dgf-img-and-text",
+      "name": "[DGF] Image and Text",
+      "settings": {
+        "text_1": "<p>OVER 10,000 HAPPY CUSTOMERS</p>",
+        "text_2": "<h1>JOINT STIFFNESS &amp; DAILY DISCOMFORT holding you back?</h1>",
+        "text_3": "<p>You’re not getting old — your body’s asking for support. What it needs isn’t another painkiller or temporary fix, but ancient well-studied herbal support to restore comfort, mobility and balance from within.</p>",
+        "text_4": "<h2>Soothe DISCOMFORT and <span style=\"font-family: 'Superior Title Italic'; text-transform: lowercase;\">move freely again</span> with Tribe Organics boswellia Complex capsules.</h2>",
+        "text_5": "<p>No harmful additives. No hidden fillers. No nonsense. Just a powerful blend of Boswellin Super®, Ginger Root Extract and BioPerine® — clinically studied botanicals that support joint comfort, healthy inflammation response, and smoother daily movement.*</p>",
+        "mobile_text_1": "<p>OVER 10,000 HAPPY CUSTOMERS</p>",
+        "mobile_text_2": "<h1>JOINT STIFFNESS &amp; DAILY DISCOMFORT holding you back?</h1>",
+        "mobile_text_3": "<p>You’re not getting old — your body’s asking for support. What it needs isn’t another painkiller or temporary fix, but ancient well-studied herbal support to restore comfort, mobility and balance from within.</p>",
+        "mobile_text_4": "<h2>Soothe DISCOMFORT and <span style=\"font-family: 'Superior Title Italic'; text-transform: lowercase;\">move freely again</span> with Tribe Organics boswellia Complex capsules.</h2>",
+        "mobile_text_5": "<p>No harmful additives. No hidden fillers. No nonsense. Just a powerful blend of Boswellin Super®, Ginger Root Extract and BioPerine® — clinically studied botanicals that support joint comfort, healthy inflammation response, and smoother daily movement.*</p>",
+        "button_text": "BUY NOW",
+        "button_url": "#shopify-section-template--20090365378783__dgf_featured_product_3e6RUi",
+        "button_text_color": "#ffffff",
+        "first_column_image": "shopify://shop_images/Group_4.webp",
+        "first_column_image_text": "LOVED BY THOUSANDS",
+        "second_column_image_1": "shopify://shop_images/boswellia_hero_desk.webp",
+        "second_column_image_1_mobile": "shopify://shop_images/boswellia_hero_mob_webp.webp",
+        "second_column_image_2": "shopify://shop_images/Frame_427321047.webp",
+        "bg_color": "#faeee9",
+        "text_color": "#111111",
+        "padding_top": 60,
+        "padding_bottom": 60,
+        "mobile_padding_top": 40,
+        "mobile_padding_bottom": 40
+      }
+    },
+    "dgf_testimonial_f9eLmm": {
+      "type": "dgf-testimonial",
+      "blocks": {
+        "testimonial_6dMULw": {
+          "type": "testimonial",
+          "settings": {
+            "stars": "<i class=\"fa fa-star active\"></i>\n                                                <i class=\"fa fa-star active\"></i>\n                                                <i class=\"fa fa-star active\"></i>\n                                                <i class=\"fa fa-star active\"></i>\n                                                <i class=\"fa fa-star active\"></i>",
+            "testimonial_text": "<p>I’ve been taking this product for years it’s good for so many different health issues.</p>",
+            "author_name": "-Connie Basore"
+          }
+        },
+        "testimonial_4PwWHE": {
+          "type": "testimonial",
+          "settings": {
+            "stars": "<i class=\"fa fa-star active\"></i>\n                                                <i class=\"fa fa-star active\"></i>\n                                                <i class=\"fa fa-star active\"></i>\n                                                <i class=\"fa fa-star active\"></i>\n                                                <i class=\"fa fa-star active\"></i>",
+            "testimonial_text": "<p>Tribe Organics doesn't cut corners on their supplements, and their organic moringa is no exception. I noticed a gradual positive improvement after several weeks of taking this supplement. Sharper thinking, better sleep, more energy, were all detectable, so I am extremely pleased with this addition to my diet, and will definitely continue to take. Top rating for Tribe Organics Moringa,and well deserved.</p>",
+            "author_name": "-Ted"
+          }
+        },
+        "testimonial_HmhkdJ": {
+          "type": "testimonial",
+          "settings": {
+            "stars": "<i class=\"fa fa-star active\"></i>\n                                                <i class=\"fa fa-star active\"></i>\n                                                <i class=\"fa fa-star active\"></i>\n                                                <i class=\"fa fa-star active\"></i>\n                                                <i class=\"fa fa-star active\"></i>",
+            "testimonial_text": "<p>Great quality and value. Gives me a little morning boost. Responsive CS. Fabulous company!!</p>",
+            "author_name": "-Susan Andrews"
+          }
+        }
+      },
+      "block_order": [
+        "testimonial_6dMULw",
+        "testimonial_4PwWHE",
+        "testimonial_HmhkdJ"
+      ],
+      "name": "[DGF] Testimonial",
+      "settings": {
+        "section_bg_color": "#faeee9",
+        "custom_class": "",
+        "title_part1": "More than",
+        "title_part2": "2,500 verified reviews",
+        "title_color": "#000000"
+      }
+    },
+    "dgf_image_gallery_EWpaaR": {
+      "type": "dgf-image-gallery",
+      "blocks": {
+        "image_fFaMfU": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/testi_3_5_978c70c4-a26c-4b08-b949-839eba6e4d30.webp",
+            "alt_text": "Man holding Tribe Organic's Boswellia Complex bottle",
+            "show_on_mobile": true
+          }
+        },
+        "image_3eLQN4": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/testi_3_6_5664109c-cc72-4c4b-a92f-bc6619f68f16.webp",
+            "alt_text": "Woman holding Tribe Organic's Boswellia Complex bottle",
+            "show_on_mobile": true
+          }
+        },
+        "image_PMWgBF": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/testi_3_10_93585fee-da53-41f7-ba71-2d988f998cf6.webp",
+            "alt_text": "Woman holding Tribe Organic's Boswellia Complex bottle",
+            "show_on_mobile": true
+          }
+        },
+        "image_ywHfyD": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/testi_3_8_83ed4d5c-46cd-4942-ad57-05604618cb96.webp",
+            "alt_text": "Man holding Tribe Organic's Boswellia Complex bottle",
+            "show_on_mobile": true
+          }
+        },
+        "image_tkakee": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/testi_3_9_e1799d18-ad5c-4326-8d43-2ef659b030f1.webp",
+            "alt_text": "Woman holding Tribe Organic's Boswellia Complex bottle",
+            "show_on_mobile": true
+          }
+        },
+        "image_KTVNPe": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/testi_3_7_6b207df7-6ed7-4f42-b4a9-5b4cd9c25090.webp",
+            "alt_text": "Man holding Tribe Organic's Boswellia Complex bottle",
+            "show_on_mobile": true
+          }
+        },
+        "image_FJWRHz": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/testi_3_11_56381aa1-1264-4622-af0f-62fbfda0ef40.webp",
+            "alt_text": "Man holding Tribe Organic's Boswellia Complex bottle",
+            "show_on_mobile": true
+          }
+        },
+        "image_HJpV6L": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/testi_3_12_9f1699cb-8c36-45e3-9e6d-0c1df89941df.webp",
+            "alt_text": "Man holding Tribe Organic's Boswellia Complex bottle",
+            "show_on_mobile": true
+          }
+        }
+      },
+      "block_order": [
+        "image_fFaMfU",
+        "image_3eLQN4",
+        "image_PMWgBF",
+        "image_ywHfyD",
+        "image_tkakee",
+        "image_KTVNPe",
+        "image_FJWRHz",
+        "image_HJpV6L"
+      ],
+      "name": "[DGF] Image Gallery",
+      "settings": {
+        "title": "",
+        "background_color": "#faeee9",
+        "transition_effect": "fade",
+        "rotation_speed": 2,
+        "rotation_mode": "single",
+        "cascade_delay": 150
+      }
+    },
+    "dgf_img_and_icon_nwPw9m": {
+      "type": "dgf-img-and-icon",
+      "blocks": {
+        "icon_item_PDHYVL": {
+          "type": "icon_item",
+          "settings": {
+            "icon": "shopify://shop_images/1st.webp",
+            "icon_title": "Promote Inner Tissue Recovery*",
+            "icon_text": "Supports healthy blood flow to joint tissues, helping your body naturally soothe and restore comfort.<sup>*</sup>"
+          }
+        },
+        "icon_item_riMxKi": {
+          "type": "icon_item",
+          "settings": {
+            "icon": "shopify://shop_images/2nd.webp",
+            "icon_title": "Support Healthy Inflammatory Response*",
+            "icon_text": "This formula supports healthy inflammation signaling for smoother, more comfortable movement over time.<sup>*</sup>"
+          }
+        },
+        "icon_item_kaeAcQ": {
+          "type": "icon_item",
+          "settings": {
+            "icon": "shopify://shop_images/3rd.webp",
+            "icon_title": "Enhance Recovery and Mobility*",
+            "icon_text": "Perfect for active lifestyles — supports faster recovery after exercise and reduces soreness and stiffness.<sup>*</sup>"
+          }
+        },
+        "icon_item_QhakMe": {
+          "type": "icon_item",
+          "settings": {
+            "icon": "shopify://shop_images/4th.webp",
+            "icon_title": "Provide antioxidant support*",
+            "icon_text": "Boswellia and Ginger deliver natural antioxidant compounds that help protect cells from oxidative stress and support long-term joint and tissue health.<sup>*</sup>"
+          }
+        },
+        "icon_item_DFEWmi": {
+          "type": "icon_item",
+          "settings": {
+            "icon": "shopify://shop_images/5th.webp",
+            "icon_title": "Support Respiratory Health*",
+            "icon_text": "Helps promote clear airways and balanced respiratory function.<sup>*</sup>"
+          }
+        }
+      },
+      "block_order": [
+        "icon_item_PDHYVL",
+        "icon_item_riMxKi",
+        "icon_item_kaeAcQ",
+        "icon_item_QhakMe",
+        "icon_item_DFEWmi"
+      ],
+      "custom_css": [
+        "li {font-size: 25px !important; font-weight: 500; margin-left: 35px; line-height: 140%;}",
+        "span {font-family: HypatiaSansPro; font-style: normal; line-height: 140%;}",
+        "@media (max-width: 768px) {li {font-size: 18px !important; margin-bottom: 2.5rem !important; }}"
+      ],
+      "name": "[DGF] Image and Icons",
+      "settings": {
+        "section_title": "<h2>MEET BOSWELLIA COMPLEX: The Ancient Healer Your Joints Have Been Waiting For</h2>",
+        "section_subtitle": "<p style=\"margin-bottom: -0.5rem !important;\">For over 5,000 years, Boswellia Serrata resin — known as Indian Frankincense or Shallaki in Ayurveda — has been used as the ancient healer to soothe discomfort, restore ease of movement, and support long-term joint health.<br><br>\n\nTraditional Ayurvedic practitioners relied on Boswellia to:</p>\n<li>Support recovery after long days of physical work</li>\n<li>Soothe aches from repetitive motion</li>\n<li>Maintain flexibility and comfortable joints</li><br><br>\n<p>Today, modern research confirms what ancient practitioners recognized — Boswellia’s unique boswellic acids, especially AKBA, help support joint comfort, healthy inflammatory response and improved daily movement. When paired with Ginger Root Extract and BioPerine® for enhanced absorption, the result is one of the most effective natural formulas for joint comfort, mobility, and overall vitality.<sup>*</sup></p>",
+        "left_image": "shopify://shop_images/boswellia-text.webp",
+        "column_title": "<b>Powerful benefits of <span>BOSWELLIA COMPLEX</span></b>",
+        "mobile_column_title_primary": "<b>Powerful benefits of</b>",
+        "mobile_column_title_secondary": "<span><b>BOSWELLIA COMPLEX</b></span>",
+        "bg_color": "rgba(0,0,0,0)",
+        "text_color": "#ffffff",
+        "padding_top": 40,
+        "padding_bottom": 30
+      }
+    },
+    "dgf_img_and_accordion_PJdWgA": {
+      "type": "dgf-img-and-accordion",
+      "blocks": {
+        "accordion_item_HFUcch": {
+          "type": "accordion_item",
+          "settings": {
+            "icon": "shopify://shop_images/icon1_aead3d46-4148-41e4-8810-aed5f833f5db.webp",
+            "accordion_title": "PREMIUM, CLINICALLY STUDIED FORMULA",
+            "accordion_content": "Our Boswellia Complex features Boswellin Super®, the highest-grade Boswellia Serrata extract (75% Boswellic Acids & 30% AKBA), combined with Ginger Root Extract and BioPerine® for superior absorption and broader benefits.<sup>*</sup>"
+          }
+        },
+        "accordion_item_6ceNfn": {
+          "type": "accordion_item",
+          "settings": {
+            "icon": "shopify://shop_images/Group_1.webp",
+            "accordion_title": "NON-GMO VERIFIED & SUSTAINABLY SOURCED",
+            "accordion_content": "Non-GMO Project Verified and ethically harvested in India using traditional resin-tapping practices. Sustainable sourcing protects biodiversity and supports long-term ecosystem balance."
+          }
+        },
+        "accordion_item_yrxeEW": {
+          "type": "accordion_item",
+          "settings": {
+            "icon": "shopify://shop_images/Vector_3.webp",
+            "accordion_title": "RIGOROUSLY TESTED FOR PURITY & POTENCY",
+            "accordion_content": "Every batch undergoes third-party testing to ensure purity, potency, and safety. Our formula is free from heavy metals, preservatives, or harmful additives — guaranteeing clean, effective results in every capsule."
+          }
+        },
+        "accordion_item_QT6UnH": {
+          "type": "accordion_item",
+          "settings": {
+            "icon": "shopify://shop_images/Group_2.webp",
+            "accordion_title": "MADE IN THE USA IN A GMP-CERTIFIED FACILITY",
+            "accordion_content": "Proudly made in the USA in a Good Manufacturing Practices (GMP)–certified facility, maintaining the highest standards of quality, consistency, and safety from farm to bottle."
+          }
+        },
+        "accordion_item_rKfTgC": {
+          "type": "accordion_item",
+          "settings": {
+            "icon": "shopify://shop_images/Frame_427321004.webp",
+            "accordion_title": "GLUTEN-FREE & KOSHER CERTIFIED",
+            "accordion_content": "Formulated with care for your well-being, our Bosrwellia Complex is Gluten-Free and Kosher Certified, giving you peace of mind in every dose."
+          }
+        },
+        "accordion_item_Fei8pC": {
+          "type": "accordion_item",
+          "settings": {
+            "icon": "shopify://shop_images/icon06.webp",
+            "accordion_title": "GOOD FOR YOU, GOOD FOR THE PLANET",
+            "accordion_content": "Every bottle contributes to positive change — we donate 1% of all sales to environmental causes and are proudly B Corp Certified for meeting the highest social and sustainability standards."
+          }
+        }
+      },
+      "block_order": [
+        "accordion_item_HFUcch",
+        "accordion_item_6ceNfn",
+        "accordion_item_yrxeEW",
+        "accordion_item_QT6UnH",
+        "accordion_item_rKfTgC",
+        "accordion_item_Fei8pC"
+      ],
+      "name": "[DGF] Image and Accordion",
+      "settings": {
+        "left_image": "shopify://shop_images/MEET-BOSWELLIA.webp",
+        "section_title": "Meet Tribe Organics Boswellia Complex: The Ancient Healer, Refined",
+        "bg_color": "#faeee9",
+        "text_color": "#06211e",
+        "border_color": "#06211e",
+        "padding_top": 0,
+        "padding_bottom": 0
+      }
+    },
+    "dgf_how_to_CYwQ9c": {
+      "type": "dgf-how-to",
+      "name": "[DGF] How To",
+      "settings": {
+        "background_color": "#f3d9cf",
+        "text_with_background": "<p>Boswellia Complex works best as part of your daily ritual.  Just like nourishing your body with wholesome foods, the benefits of this ancient herb build gradually with consistent use. Taking your capsules every day supports joint comfort, healthy inflammation, and lasting mobility.*</p>",
+        "first_text": "Consistency is key",
+        "second_text": "FOR REAL RESULTS",
+        "main_title": "HOW TO USE",
+        "dosage_amount": "2 CAPSULES",
+        "dosage_frequency": "daily",
+        "serving_info_first": "450mg",
+        "serving_info_second": "serving size",
+        "pro_tip": "<p><strong>Pro tip:</strong> For best absorption, take Boswellia Complex with food, ideally something containing healthy fats.</p>",
+        "left_side_image": "shopify://shop_images/LIONS_MANE_1.webp",
+        "right_side_image": "shopify://shop_images/Lions_Mane_hand_capsule_1.webp"
+      }
+    },
+    "dgf_graph_j9XjbP": {
+      "type": "dgf-graph",
+      "blocks": {
+        "week_item_H3bbCi": {
+          "type": "week_item",
+          "settings": {
+            "week_image": "shopify://shop_images/circle-icon01_40d74ddd-d0fe-4b16-bb5f-bbacee20884e.webp",
+            "week_title": "WEEK 2",
+            "benefits_content": "<ul><li>Early easing of joint discomfort</li><li>Reduced morning stiffness</li><li>A general feeling of smoother movement</li></ul>"
+          }
+        },
+        "week_item_tfpCRV": {
+          "type": "week_item",
+          "settings": {
+            "week_image": "shopify://shop_images/circle-icon01_40d74ddd-d0fe-4b16-bb5f-bbacee20884e.webp",
+            "week_title": "WEEK 4",
+            "benefits_content": "<ul><li>Noticeable support for mobility & flexibility</li><li>More comfort during daily movement</li><li>Inflammation begins to balance naturally</li></ul>"
+          }
+        },
+        "week_item_ThHaiF": {
+          "type": "week_item",
+          "settings": {
+            "week_image": "shopify://shop_images/circle-icon01_40d74ddd-d0fe-4b16-bb5f-bbacee20884e.webp",
+            "week_title": "WEEK 6",
+            "benefits_content": "<ul><li>Sustained joint comfort & recovery</li><li>Greater resilience after activity or exercise</li><li>Enhanced vitality and overall well-being</li></ul>"
+          }
+        },
+        "week_item_xbJMax": {
+          "type": "week_item",
+          "settings": {
+            "week_image": "shopify://shop_images/circle-icon01_40d74ddd-d0fe-4b16-bb5f-bbacee20884e.webp",
+            "week_title": "WEEK 8",
+            "benefits_content": "<ul><li>Lasting ease of movement & flexibility</li><li>A deeper sense of mobility freedom</li><li>Ongoing support for inflammation & healthy aging</li></ul>"
+          }
+        }
+      },
+      "block_order": [
+        "week_item_H3bbCi",
+        "week_item_tfpCRV",
+        "week_item_ThHaiF",
+        "week_item_xbJMax"
+      ],
+      "name": "[DGF] Graph Timeline",
+      "settings": {
+        "timeline_bg_image": "shopify://shop_images/Line_2_c970ea18-b84b-4a8a-9b22-0aeff62ee273.webp",
+        "mobile_bg_image": "shopify://shop_images/Line_2_1.webp",
+        "background_color": "#faeee9",
+        "text_color": "#ffffff",
+        "week_color": "rgba(0,0,0,0)",
+        "card_bg_color": "#f3d9cf",
+        "disc_text_color": "#06211e",
+        "card_text_color": "#06211e",
+        "button_text_color": "#ffffff",
+        "section_title": "WHAT TO EXPECT†",
+        "button_text": "BUY NOW",
+        "button_url": "#dgf-featured-product",
+        "hide_button_mobile": true,
+        "disclaimer_text": "†Results may vary. Functional mushrooms work gradually and are most effective when paired with consistent use and a healthy lifestyle.",
+        "show_stars": true,
+        "rating_text": "LOVED BY THOUSANDS"
+      }
+    },
+    "dgf_featured_product_3e6RUi": {
+      "type": "dgf-featured-product",
+      "name": "[DGF] Featured Product",
+      "settings": {
+        "featured_product": "boswellia-complex-capsules-tribe-organics-420mg-120-capsules",
+        "image_1": "shopify://shop_images/cert-boswellia.webp",
+        "image_2": "shopify://shop_images/Group_1096.webp",
+        "background_color": "#faeee9",
+        "text_color": "#111111",
+        "show_rating": true,
+        "rating_text": "",
+        "show_certifications": true,
+        "money_back_guarantee": true,
+        "free_shipping": true,
+        "disclaimer_text": "<p><em>*We recommend 3-6 months of consistent use for best results.</em></p>",
+        "show_payment_icons": true
+      }
+    },
+    "dgf_compare_table_AUeezL": {
+      "type": "dgf-compare-table",
+      "blocks": {
+        "feature_ALkd7M": {
+          "type": "feature",
+          "settings": {
+            "feature_text": "Made with Boswellin Super® — a uniquely standardized Boswellia extract designed to support deep joint tissues.",
+            "product_1_image": "shopify://shop_images/Group_1807.webp",
+            "product_2_image": "shopify://shop_images/Group_1808.webp"
+          }
+        },
+        "feature_RnfVgL": {
+          "type": "feature",
+          "settings": {
+            "feature_text": "Non-GMO Project Verified & ethically sourced.",
+            "product_1_image": "shopify://shop_images/Group_1807.webp",
+            "product_2_image": "shopify://shop_images/Group_1808.webp"
+          }
+        },
+        "feature_9GJfJm": {
+          "type": "feature",
+          "settings": {
+            "feature_text": "75% boswellic acids and 30% AKBA guaranteed",
+            "product_1_image": "shopify://shop_images/Group_1807.webp",
+            "product_2_image": "shopify://shop_images/Group_1808.webp"
+          }
+        },
+        "feature_BnMN73": {
+          "type": "feature",
+          "settings": {
+            "feature_text": "Trusted by +50,000 customers",
+            "product_1_image": "shopify://shop_images/Group_1807.webp",
+            "product_2_image": "shopify://shop_images/Group_1808.webp"
+          }
+        },
+        "feature_YCqA9J": {
+          "type": "feature",
+          "settings": {
+            "feature_text": "Third-party lab tested for purity & safety",
+            "product_1_image": "shopify://shop_images/Group_1807.webp",
+            "product_2_image": "shopify://shop_images/Group_1808.webp"
+          }
+        }
+      },
+      "block_order": [
+        "feature_ALkd7M",
+        "feature_RnfVgL",
+        "feature_9GJfJm",
+        "feature_BnMN73",
+        "feature_YCqA9J"
+      ],
+      "name": "[DGF] Compare Table",
+      "settings": {
+        "title": "",
+        "title_color": "#000000",
+        "background_color": "#faeee9",
+        "header_image": "shopify://shop_images/Group_1825.webp",
+        "header_image_mobile": "shopify://shop_images/image_9.webp",
+        "header_image_alt": "",
+        "product_1_image": "shopify://shop_images/tribe-difference-boswellia.webp",
+        "product_1_name": "",
+        "product_2_image": "shopify://shop_images/Artboard_1_3x_1.webp",
+        "product_2_name": ""
+      }
+    },
+    "faq_e8gc3A": {
+      "type": "faq",
+      "blocks": {
+        "faq_Afpyiw": {
+          "type": "faq",
+          "settings": {
+            "title": "What makes Tribe Organics Boswellia Complex different from other Boswellia supplements?",
+            "content": "We use Boswellin Super®, the highest-grade Boswellia Serrata extract (75% boswellic acids & 30% AKBA), combined with Ginger Root Extract and BioPerine® for superior absorption and broader joint and mobility support.*"
+          }
+        },
+        "faq_pc3RVk": {
+          "type": "faq",
+          "settings": {
+            "title": "What are the benefits of taking Boswellia Complex daily?",
+            "content": "Daily use helps ease joint discomfort, support healthy inflammation, improve mobility, enhance recovery, and support overall vitality.*"
+          }
+        },
+        "faq_wVL3PX": {
+          "type": "faq",
+          "settings": {
+            "title": "How long does it take for Boswellia Complex to work?",
+            "content": "Most people notice improved comfort and flexibility within 2 to 4 weeks, with deeper benefits building after 6 to 8 weeks of consistent use."
+          }
+        },
+        "faq_cReHAw": {
+          "type": "faq",
+          "settings": {
+            "title": "Should I take Boswellia Complex with food?",
+            "content": "For best absorption, take Boswellia Complex with food — especially meals containing healthy fats. The key compound in Boswellia, AKBA, is fat-soluble, meaning it absorbs more effectively when paired with a meal. Plus, taking formulas with BioPerine® alongside food may help reduce the mild stomach sensitivity black pepper can cause when taken on an empty stomach."
+          }
+        },
+        "faq_JNQih7": {
+          "type": "faq",
+          "settings": {
+            "title": "Is Boswellia Complex safe for daily use?",
+            "content": "Yes. Boswellia Complex is safe for daily use.\nOur formula is Non-GMO Verified, Gluten-Free and Kosher Certified, and it’s manufactured in a GMP-certified facility to ensure the highest standards of quality, purity, and safety. Every batch is third-party tested for potency and contaminants, so you can feel confident taking it long-term.\n\nWe also use Boswellin Super®, one of the most clinically studied and trusted forms of Boswellia Serrata. Research shows that Boswellin Super® is well tolerated and safe for ongoing daily use when taken as directed, making it a reliable addition to your long-term joint and inflammation-support routine.*"
+          }
+        }
+      },
+      "block_order": [
+        "faq_Afpyiw",
+        "faq_pc3RVk",
+        "faq_wVL3PX",
+        "faq_cReHAw",
+        "faq_JNQih7"
+      ],
+      "name": "FAQs",
+      "settings": {
+        "title": "Frequently Asked Questions"
+      }
+    },
+    "dgf_background_img_txt_hG47eF": {
+      "type": "dgf-background-img-txt",
+      "name": "[DGF] Background Image Text",
+      "settings": {
+        "heading": "DAILY SUPPORT FOR JOINT COMFORT &amp; MOBILITY",
+        "rich_text": "<p>Fuel your body with our Boswellia supplement, powerful antioxidants, and plant-based support for joint comfort and mobility — powered by Boswellin Super®, the ancient healer.<br/><br/>Join thousands who trust Boswellia Complex to support healthy inflammation, ease stiffness, and move with confidence every day.*</p>",
+        "show_rating": true,
+        "rating_text": "LOVED BY THOUSANDS",
+        "button_text": "buy now",
+        "button_url": "#shopify-section-template--20090365378783__dgf_featured_product_3e6RUi",
+        "button_text_color": "#ffffff",
+        "hide_button_mobile": true,
+        "main_image": "shopify://shop_images/BOSWELLIA_CAPSULES_INGREDIENTS_sombra_1.webp",
+        "main_image_alt": "Boswellia Complex",
+        "left_bg_color": "#faeee9",
+        "right_bg_color": "#f3d9cf"
+      }
+    },
+    "dgf_img_text_logo_Cfwbn9": {
+      "type": "dgf-img-text-logo",
+      "name": "[DGF] Image Text Logo",
+      "settings": {
+        "title": "CONNECTING PEOPLE, PLANTS AND THE PLANET",
+        "title_color": "#ffffff",
+        "background_color": "rgba(0,0,0,0)",
+        "left_image": "shopify://shop_images/64e1b7d9d2304fc7da17b69c_1_8c761537-4786-4c0d-b578-06f8a1e21d2f.webp",
+        "left_image_alt": "connect image",
+        "rich_text": "<p>We're proud to be a Certified B Corp™<br/><br/>This means that our company meets the highest standards of social and environmental impact, transparency, and accountability. </p>",
+        "bottom_image": "shopify://shop_images/image_13.webp",
+        "bottom_image_alt": "certified"
+      }
+    },
+    "dgf_custom_html_iykpXy": {
+      "type": "dgf-custom-html",
+      "custom_css": [
+        "{background-color: #f3d9cf; text-align: center; padding: 3rem 2rem;}",
+        "h2,p {color: black;}"
+      ],
+      "name": "[DGF] Custom HTML",
+      "settings": {
+        "custom_html": "<div clas=\"row justify-content-center\">\n<div class=\"subscibe-save-img-text-scnd-wrapper aos-init aos-animate\">\n\n<h2>Ready to Join the Triibe?</h2>\n<br><p>Join our mailing list today and get 10% off your next order!\nPick your path and join our community.</p>\n</div>\n</div>"
+      }
+    },
+    "tribe_difference_section_C3czqP": {
+      "type": "tribe-difference-section",
+      "blocks": {
+        "three_blocks_tHiV44": {
+          "type": "three_blocks",
+          "settings": {
+            "leaf_image": "shopify://shop_images/White_leaft_bullet.png",
+            "list_text_1": "Science-backed",
+            "list_text_2": "Superior potency",
+            "list_text_3": "Standardized extracts",
+            "list_text_4": "100% fruiting bodies",
+            "list_text_5": "Ethically sourced",
+            "list_text_6": "",
+            "list_text_7": ""
+          }
+        },
+        "three_blocks_fYhNkB": {
+          "type": "three_blocks",
+          "settings": {
+            "leaf_image": "shopify://shop_images/White_leaft_bullet.png",
+            "list_text_1": "Non-GMO verified",
+            "list_text_2": "USDA Organic certified",
+            "list_text_3": "Gluten free",
+            "list_text_4": "Allergen free",
+            "list_text_5": "3rd party tested",
+            "list_text_6": "cGMP",
+            "list_text_7": "Made in the USA"
+          }
+        },
+        "three_blocks_9RjEHk": {
+          "type": "three_blocks",
+          "settings": {
+            "leaf_image": "shopify://shop_images/White_leaft_bullet.png",
+            "list_text_1": "No synthetic fillers",
+            "list_text_2": "No excipients",
+            "list_text_3": "No harmful additives",
+            "list_text_4": "No mycellium",
+            "list_text_5": "No artificial anything",
+            "list_text_6": "",
+            "list_text_7": ""
+          }
+        }
+      },
+      "block_order": [
+        "three_blocks_tHiV44",
+        "three_blocks_fYhNkB",
+        "three_blocks_9RjEHk"
+      ],
+      "settings": {
+        "add_class": "ashwagandha-tribe-difference",
+        "section_bg_color": "#07211f",
+        "main_image": "shopify://shop_images/the_tribe_difference2.webp",
+        "image_1": "shopify://shop_images/Icon_1.webp",
+        "image_2": "shopify://shop_images/Icon_2.webp",
+        "image_3": "shopify://shop_images/image_16.webp",
+        "image_4": "shopify://shop_images/image_17.webp",
+        "image_5": "shopify://shop_images/image_18.webp"
+      }
+    },
+    "ashwagandha_pack_contact_M768hj": {
+      "type": "ashwagandha-pack-contact",
+      "custom_css": [
+        "a {color: #a7833e;}"
+      ],
+      "settings": {
+        "section_bg_color": "#07211f",
+        "the_text": "<p>Questions? Let us help you</p><p>Contact us at <a href=\"mailto:info@tribe-organics.com\" title=\"mailto:info@tribe-organics.com\">info@tribe-organics.com</a></p>"
+      }
+    },
+    "ashwagandha_pack_footer_bYnWER": {
+      "type": "ashwagandha-pack-footer",
+      "settings": {
+        "section_bg_color": "#07211f",
+        "the_logo": "shopify://shop_images/Logo_2_6ecf9d10-f051-4b4d-b753-3ffecf96bb83.png",
+        "the_icon_1": "shopify://shop_images/B_Corp.png",
+        "the_icon_2": "shopify://shop_images/1_for_the_planet.png",
+        "the_text_1": "<p><strong>*FDA Disclaimer: These statements have not been evaluated by the Food and Drug Administration. These products are not intended to diagnose, treat, cure, or prevent any disease.</strong> The information provided by this website or this company is not a substitute for a face-to-face consultation with your health practitioner, and should not be construed as individual medical advice.</p>",
+        "the_text_2": "<ul><li>Copyright 2022 TriIbe, INC. ALL RIGHTS RESERVED.</li><li><a href=\"/policies/terms-of-service\" title=\"Terms of Service\">TERMS & CONDITIONS </a></li><li><a href=\"/policies/privacy-policy\" title=\"Privacy Policy\">PRIVACY POLICY</a></li></ul>"
+      }
+    }
+  },
+  "order": [
+    "main",
+    "dgf_lp_header_YKcMaE",
+    "dgf_icon_slider_nq6TXd",
+    "dgf_img_and_text_tW8t4r",
+    "dgf_testimonial_f9eLmm",
+    "dgf_image_gallery_EWpaaR",
+    "dgf_img_and_icon_nwPw9m",
+    "dgf_img_and_accordion_PJdWgA",
+    "dgf_how_to_CYwQ9c",
+    "dgf_graph_j9XjbP",
+    "dgf_featured_product_3e6RUi",
+    "dgf_compare_table_AUeezL",
+    "faq_e8gc3A",
+    "dgf_background_img_txt_hG47eF",
+    "dgf_img_text_logo_Cfwbn9",
+    "dgf_custom_html_iykpXy",
+    "tribe_difference_section_C3czqP",
+    "ashwagandha_pack_contact_M768hj",
+    "ashwagandha_pack_footer_bYnWER"
+  ]
+}

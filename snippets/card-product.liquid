@@ -1,0 +1,18 @@
+{%- form 'product', card_product -%}
+  <input type="hidden" name="id" value="{{ card_product.selected_or_first_available_variant.id  }}">
+  <div class="d-flex align-items-center grid__item swiper-slide">
+     
+      <a href="{{ card_product.url }}" class="product-item d-flex align-items-center">
+          <div class="img-wrapper">
+              <img loading="lazy" src="{{ card_product.featured_image | image_url : width : 300 }}" alt="{{ card_product.title }}">
+          </div>
+          <div>
+              <h6>{{ card_product.title }}</h6>
+              {% comment %}{% render 'judgeme_widgets', widget_type: 'judgeme_preview_badge', jm_style: '', concierge_install: true, product: card_product %}{% endcomment %}
+              <div class="price">{{ card_product.price | money }}</div>
+          </div>
+      </a>
+    
+      <button type="submit" class="btn btn-bg">{{ button }}</button>
+  </div>
+ {% endform %} 

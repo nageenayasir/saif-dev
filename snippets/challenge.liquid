@@ -1,0 +1,41 @@
+<section class="section-banner section-title section-form bg-line-02">
+    <div class="leaf-box right-top">
+        <img loading="lazy"  class="leaf" src="{{ 'form-leaf.png' | asset_url }}">
+    </div>
+    <div class="content">
+        <div class="container">
+            <h2 class="text-uppercase" data-aos="fade-up">JUST TO BE SURE</h2>
+            <div class="subtitle" data-aos="fade-up" data-aos-delay="200">
+                Show us how human you are.
+            </div>
+            <br>
+              <!-- Start Single Accordion -->
+              {{ content_for_layout }}  {% comment %} <--- conent_for_layout IS the captcha form in this context {% endcomment %}
+                                                   <style>
+              /* NOTE: these classes are subject to change at any time... since they are injected by shopify / google captcha */
+              .shopify-challenge__container {
+              }
+              
+              .shopify-challenge__message {
+                 display: none;
+              }
+              
+              #g-recapthca {
+                
+              }
+              .shopify-challenge__container .g-recaptcha {
+                  margin-bottom: 20px;
+              }
+              .shopify-challenge__button{  
+                width: 80%;
+                background-size : 130%;
+              }                                       
+              </style>
+              <script>
+              $('shopify-challenge__message').text('Custom message or {{ settings.challenge_message }}')
+              </script>
+              <!-- End Single Accordion -->
+        </div>
+    </div>
+</section>
+

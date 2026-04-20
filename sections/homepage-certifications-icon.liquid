@@ -1,0 +1,62 @@
+<section id="end-sticky" class="certifactions-icn-wrapper">
+  <div class="container">
+    <div class="qta">
+            <div class="row justify-content-center">
+                <div class="col-md-12 col-lg-10">
+                    <div class="row">
+                      {% for block in section.blocks %}
+                        <div class="col-3">
+                            <div class="qta-item text-center" data-aos="fade-up" data-aos-delay="000">
+                                {% if block.settings.logo != blank %}<img class="lazyload" data-src="{{ block.settings.logo | image_url : width: 300 }}">{% endif %}
+                            </div>
+                        </div>
+                      {% endfor %}
+                    </div>
+                </div>
+            </div>
+        </div>
+  </div>
+</section>
+{% schema %}
+  {
+    "name": "Certification Icon",
+    "settings": [
+      
+    ],
+	"blocks": [
+     {
+      "type": "logo",
+      "name": "Logo",
+      "settings": [
+        {
+          "type": "image_picker",
+          "id": "logo",
+          "label": "Logo"
+        }
+      ]
+     }
+	],
+     "presets": [
+    {
+      "name": "Certification Icon",
+      "blocks": [
+        {
+          "type": "logo"
+        },
+        {
+          "type": "logo"
+        },
+        {
+          "type": "logo"
+        }
+      ]
+    }
+  ]
+  }
+{% endschema %}
+
+{% stylesheet %}
+{% endstylesheet %}
+
+{% javascript %}
+{% endjavascript %}

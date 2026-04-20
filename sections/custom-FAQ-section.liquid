@@ -1,0 +1,89 @@
+<style>
+  #id-{{ section.id }}{
+  	background-color:{{ section.settings.section_bg_color }};
+  }
+</style>
+<section id="id-{{section.id}}" class="custom-faq-section">
+  <div class="custom-faq-wrapper">
+    <div class="container">
+      <div class="row common-section-head-row">
+        <div class="col-lg-12 col-md-12 col-sm-12">
+          <div class="common-section-head-content">
+            <h2 class="custom-heading-h2">
+              {{ section.settings.the_title }}
+            </h2>
+          </div>
+        </div>
+      </div>
+      <div class="row custom-faq-row">
+        <div class="col-lg-12 col-md-12 col-sm-12">
+          <div class="custom-faq-tabs">
+            {% for block in section.blocks %}
+              <div class="custom-FAQ-tab">
+                <input type="checkbox" id="custom-faq{{ forloop.index }}">
+                <label class="custom-faq-tab-label" for="custom-faq{{ forloop.index }}">{{ block.settings.faq_qus }}</label>
+                <div class="custom-faq-tab-content">
+                  {{ block.settings.faq_ans }}
+                </div>
+              </div>
+            {% endfor %}
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+{% schema %}
+  {
+    "name": "Custom FAQ Section",
+    "settings": [
+      {
+            "type": "header",
+            "content": "Content Style"
+         },
+  	     {
+           "type": "color",
+           "id": "section_bg_color",
+           "label": "Section background color"
+        },
+        {
+          "type": "header",
+          "content": "Content Settings"
+      	},
+        {
+          "type": "text",
+          "id": "the_title",
+          "label": "Title"
+      	}
+    ],
+    "blocks": [
+      {
+        "type": "question",
+        "name": "Question",
+        "settings": [
+          {
+            "type": "text",
+            "id": "faq_qus",
+            "label": "Question",
+            "default": "Frequently asked question"
+          },
+		  {
+            "type": "richtext",
+            "id": "faq_ans",
+            "label": "Text",
+            "default": "<p>Use this text to answer questions in as much detail as possible for your customers.</p>"
+          }
+        ]
+      }
+    ],
+    "presets": [{
+      "name": "Custom FAQ Section"
+    }]
+  }
+{% endschema %}
+
+{% stylesheet %}
+{% endstylesheet %}
+
+{% javascript %}
+{% endjavascript %}

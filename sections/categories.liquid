@@ -1,0 +1,119 @@
+<div class="bg-line-01">
+
+  <section class="section section-cats">
+      <div class="container">
+          <h2 class="text-uppercase text-center" data-aos="fade-up">{{ section.settings.title }}</h2>
+          <div class="row row-m">
+            {%- for block in section.blocks -%}
+              {%- if block.type == 'categories' -%}
+                {%- assign img = block.settings.image -%}
+                {%- if img != blank -%}
+                  {%- assign w_desktop = 293 -%}
+                  {%- assign w_mobile  = 177 -%}
+                  {%- assign w_desktop_2x = w_desktop | times: 2 -%}
+                  {%- assign w_mobile_2x  = w_mobile  | times: 2 -%}
+                  {%- assign h_desktop = w_desktop | divided_by: img.aspect_ratio | round -%}
+                  <div class="col-6 col-md-3">
+                    <a href="{{ block.settings.url }}" class="cats-item" data-aos="fade-up" data-aos-delay="100">
+                      <div class="img-wrapper">
+                        <img
+                          src="{{ img | image_url: width: w_mobile, format: 'webp', quality: 80 }}"
+                          srcset="
+                            {{ img | image_url: width: w_mobile, format: 'webp', quality: 80 }} {{ w_mobile }}w,
+                            {{ img | image_url: width: w_mobile_2x, format: 'webp', quality: 80 }} {{ w_mobile_2x }}w,
+                            {{ img | image_url: width: w_desktop, format: 'webp', quality: 80 }} {{ w_desktop }}w,
+                            {{ img | image_url: width: w_desktop_2x, format: 'webp', quality: 80 }} {{ w_desktop_2x }}w
+                          "
+                          sizes="(min-width: 768px) {{ w_desktop }}px, {{ w_mobile }}px"
+                          alt="{% if block.settings.title != blank %}{{ block.settings.title | escape }}{% else %}Category image {{ 'now' | date: '%s' }}{% endif %}"
+                          width="{{ w_desktop }}"
+                          height="{{ h_desktop }}"
+                          loading="lazy"
+                          decoding="async"
+                        >
+                      </div>
+                      <h3 class="text-center text-uppercase">{{ block.settings.title | escape }}</h3>
+                    </a>
+                  </div>
+                {%- endif -%}
+              {%- endif -%}
+            {%- endfor -%}
+            {% comment %}  
+              {%- for block in section.blocks -%}
+                {%- assign img = block.settings.image -%}
+                {% if block.type == 'categories' %}
+                  <div class="col-6 col-md-3">
+                      <a href="{{ block.settings.url }}" class="cats-item" data-aos="fade-up" data-aos-delay="100">
+                          <div class="img-wrapper">
+                              <img
+                                src="{{ block.settings.image | image_url: width : 431 }}" 
+                                alt="{{ block.settings.title | default: 'Category image' }} {{ 'now' | date: '%s' }}"
+                                width="{{ img.width | default: 431 }}"
+                                height="{{ img.height | default: 533 }}"
+                                style="aspect-ratio: {{ img.width | default: 431 }} / {{ img.height | default: 533 }};"
+                              >
+                          </div>
+                          <h3 class="text-center text-uppercase">{{ block.settings.title }}</h3>
+                      </a>
+                  </div>
+                {% endif %}
+              {% endfor %}              
+            {% endcomment %}
+          </div>
+      </div>
+  </section>
+
+</div>
+{% schema %}
+  {
+    "name": "Section Categories",
+    "settings": [
+      {
+          "type": "text",
+          "id": "title",
+          "label": "Title",
+          "default" : "Shop Categories"
+      }
+	],
+	"blocks": [
+    {
+      "type": "categories",
+      "name": "Categories",
+      "settings": [
+    	{
+          "type": "text",
+          "id": "title",
+          "label": "Title",
+          "default" : "Title"
+        },
+        {
+          "type": "image_picker",
+          "id": "image",
+          "label": "Image"
+        },
+        {
+          "type": "url",
+          "id": "url",
+          "label": "Url"
+        }
+      ]
+     }
+	],
+     "presets": [
+    {
+      "name": "Categories",
+      "blocks": [
+        {
+          "type": "categories"
+        },
+        {
+          "type": "categories"
+        },
+        {
+          "type": "categories"
+        }
+      ]
+    }
+  ]
+  }
+{% endschema %}

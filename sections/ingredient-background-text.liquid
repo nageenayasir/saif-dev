@@ -1,0 +1,35 @@
+<section class="section section-bg cstm-background-text-wrapper" style="background-image: url({{ section.settings.image | image_url: width: 1920 }})">
+  {% if section.settings.show_icon == true %}
+    <div class="leaf-box left-top">
+        <img loading="lazy"  class="leaf" src="{{ 'leaf-n05.svg' | asset_url }}">
+    </div>
+  {% endif %}
+    <div class="container">
+        <div class="desc" style="max-width: 880px;">
+           {{ section.settings.text }}
+        </div>
+    </div>
+</section>
+{% schema %}
+  {
+    "name": "Section Background & Text",
+    "settings": [
+      {
+          "type": "checkbox",
+          "id": "show_icon",
+          "label": "Show Icon",
+          "default": false
+      },
+      {
+        "type": "textarea",
+        "id": "text",
+        "label": "Text" 
+      },
+      {
+      "type": "image_picker",
+      "id": "image",
+      "label": "Background"
+      }
+    ]
+  }
+{% endschema %}

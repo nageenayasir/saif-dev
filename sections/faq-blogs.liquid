@@ -1,0 +1,56 @@
+<style>
+  #id-{{ section.id }}{
+  	background-color:{{ section.settings.section_bg_color }};
+  }
+</style>
+{% if article.metafields.custom.title_faqs.value %}
+<section id="id-{{ section.id }}" class="section section-faqs blog-posts-faqs">
+<!--     <div class="leaf-box right-bot d-none d-md-block" style="bottom: 10px;">
+        <img loading="lazy"  class="leaf" src="{{ 'leaf-n06.svg' | asset_url }}">
+    </div> -->
+    <div class="container">
+        <h2 class="text-uppercase text-center" data-aos="fade-up">{{ section.settings.title }}</h2>
+        <div class="menu-footer-group">
+          {% assign titles = article.metafields.custom.title_faqs.value  %}
+          {% assign contents =  article.metafields.custom.content_faqs.value  %}
+          {% for title in titles %}
+            <div class="menu-footer menu-page {% if forloop.index == 1 %}active{% endif %}" data-aos="fade-up">
+                <h2>{{ title | escape }}<img loading="lazy"  class="d-none d-md-block float-end mt-1" src="{{ '__down.svg' | asset_url }}"></h2>
+                <div class="menu-s" {% if forloop.index != 1 %}style="display: none"{% endif %}>
+                    {{ contents[forloop.index0] }}
+                </div>
+            </div>
+          {% endfor %}  
+        </div>
+    </div>
+</section>
+{% endif %}
+{% schema %}
+  {
+    "name": "Blog FAQs",
+    "tag": "section",
+    "class": "section",
+    "settings": [
+         {
+            "type": "header",
+            "content": "Content Style"
+         },
+  	     {
+           "type": "color",
+           "id": "section_bg_color",
+           "label": "Section background color"
+        },
+        {
+          "type": "text",
+          "id": "title",
+          "label": "Title",
+		  "default" : "Frequently Asked Questions"
+        }
+       
+	],
+	"presets": [{
+      "name": "Blog Faqs"
+    }]
+  
+  }
+{% endschema %}

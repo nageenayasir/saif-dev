@@ -1,0 +1,50 @@
+<style>
+  #id-{{ section.id }}{
+  	background-color:{{ section.settings.section_bg_color }};
+  }
+</style>
+<section id="id-{{section.id}}" class="kids-teenager-reduce-stress-text">
+  <div class="container">
+    <div class="row">
+      <div class="col-sm-12 col-md-12 col-lg-12">
+        <div class="kids-teenager-reduce-stress" data-aos="fade-up">
+          <h2>{{ section.settings.the_text }}</h2>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+{% schema %}
+  {
+    "name": "Reduce Stress Text",
+    "settings": [
+      {
+            "type": "header",
+            "content": "Content Style"
+      },
+  	  {
+           "type": "color",
+           "id": "section_bg_color",
+           "label": "Section background color"
+      },
+      {
+            "type": "header",
+            "content": "Content Settings"
+      },
+      {
+          "type": "text",
+          "id": "the_text",
+          "label": "Text"
+      }
+    ],
+	"presets": [{
+      "name": "Reduce Stress Text"
+    }]
+  }
+{% endschema %}
+
+{% stylesheet %}
+{% endstylesheet %}
+
+{% javascript %}
+{% endjavascript %}

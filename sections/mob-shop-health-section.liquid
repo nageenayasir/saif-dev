@@ -1,0 +1,118 @@
+<section id="id-{{section.id}}" class="cstm-health-section mob-shop-health-section">
+  <div class="container">
+    <div class="row">
+      <div class=""col-sm-12 col-md-12 col-lg-12>
+        <div class="shop-health-head">
+          <h2>{{ section.settings.title }}</h2>
+          <p>{{ section.settings.sub_title }}</p>
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="custom-wrapper-slider">
+      <div class="swiper health-icons-slider">
+        <div class="swiper-wrapper">
+          {% for block in section.blocks %}
+            <div class="swiper-slide">
+              <div class="health-icons-blocks">
+                <a href="{{ block.settings.the_url }}">
+                  {% if block.settings.the_icon != blank %}
+                    <img src="{{ block.settings.the_icon | img_url: 'master' }}" alt="{{ block.settings.the_text | default: 'Health category icon' }}" width="160" height="160">
+                  {% endif %}
+                  <p>{{ block.settings.the_text }}</p>
+                </a>
+              </div>
+            </div>
+          {% endfor %}
+        </div>
+      </div>
+      </div>
+    </div>
+    <div class="health-swiper-wrapper-pagination position-relative">
+     <div class="health-swiper-scrollbar"></div>
+    </div>
+  </div>
+</section>
+{% comment %} RGD: 2026-01-04 {% endcomment %} 
+{% comment %} 
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script> 
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.5.1/js/swiper.min.js"></script> 
+{% endcomment %}
+{% # theme-check-disable ParserBlockingScript %}
+<script type="text/javascript" src="{{ 'jquery-3.5.1.min.js' | asset_url }}"></script>
+<script type="text/javascript" src="{{ 'swiper.min.js' | asset_url }}"></script>
+{% # theme-check-enable ParserBlockingScript %}
+<script>
+  new Swiper('.health-icons-slider', {
+        loop: false,
+        slidesPerView: 6,
+        spaceBetween: 20,
+        breakpoints: {
+            1199: {
+                slidesPerView: 4,
+                spaceBetween: 30
+            },
+            1028: {
+                slidesPerView: 3,
+                spaceBetween: 30
+            },
+            576: {
+                slidesPerView: 1,
+                spaceBetween: 10
+            }
+        },
+        scrollbar: {
+        el: '.health-swiper-scrollbar',
+        draggable: true
+      }
+    });
+</script>
+{% schema %}
+  {
+    "name": "Mob Shop Health",
+    "settings": [
+      {
+        "type": "text",
+        "id": "title",
+        "label": "Title"
+      },
+      {
+        "type": "text",
+        "id": "sub_title",
+        "label": "Sub Title"
+      }
+    ],
+    "blocks": [
+       {
+        "type": "icons",
+        "name": "Icons",
+        "settings": [
+          {
+            "type": "image_picker",
+            "id": "the_icon",
+            "label": "Icon"
+          },
+          {
+            "type": "text",
+            "id": "the_text",
+            "label": "Text"
+          },
+          {
+            "type": "url",
+            "id": "the_url",
+            "label": "Url"
+          }
+        ]
+       }
+	],
+	"presets": [{
+      "name": "Mob Shop Health"
+    }]
+  }
+{% endschema %}
+
+{% stylesheet %}
+{% endstylesheet %}
+
+{% javascript %}
+{% endjavascript %}

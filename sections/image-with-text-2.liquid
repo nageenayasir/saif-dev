@@ -1,0 +1,65 @@
+<section class="section section-reward bg-cream color-dark custom-image-text-second">
+    <div class="container">
+        <h2 class="text-uppercase d-block d-md-none" data-aos="fade-up">{{ section.settings.title }}</h2>
+        <div class="row align-items-center">
+            <div class="col-md-6">
+                <div data-aos="fade-up" data-aos-delay="000">
+                    <img class="lazyload" data-src="{{ section.settings.image | image_url : width: 800 }}" alt="{{ section.settings.title }}">
+                </div>
+            </div>
+            <div class="col-md-6 mt-4 mt-md-0">
+                <div>
+                    <h2 class="text-uppercase d-none d-md-block" data-aos="fade-up">{{ section.settings.title }}</h2>
+                    {{ section.settings.custom_html }}
+                    <div class="mt-4" data-aos="fade-up">
+                        <a class="btn btn-trans color-dark" href="{{ section.settings.url }}" target="_self">
+                            {{ section.settings.button }}
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+{% schema %}
+  {
+    "name": "Image with text 2",
+    "tag": "section",
+    "class": "section",
+    "settings": [
+      {
+        "type": "text",
+        "id": "title",
+        "label": "Title",
+        "default" : "it’s like a reward"
+      },
+      {
+        "type": "html",
+        "id": "custom_html",
+        "label": "Custom Html"
+      },
+      {
+        "type": "text",
+        "id": "button",
+        "label": "Button",
+        "default" : "SHOP Bundles"
+      },
+      {
+        "type": "url",
+        "id": "url",
+        "label": "Url"
+      },
+      {
+        "type": "image_picker",
+        "id": "image",
+        "label": "Image"
+      }
+	],
+     "presets": [
+    {
+      "name": "Image with text 2"
+    }
+  ]
+  }
+{% endschema %}

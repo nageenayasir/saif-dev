@@ -1,0 +1,117 @@
+<style>
+  #id-{{ section.id }}{
+  	background-color:{{ section.settings.section_bg_color }};
+  }
+  .teenager-free-allergen-icon-lists {
+    display: grid;
+    grid-template-columns: repeat(4,1fr);
+}
+</style>
+<section id="id-{{section.id}}" class="kids-teenager-free-allergen-sec">
+  <div class="container">
+    <div class="row">
+      <div class="col-sm-12 col-md-6 col-lg-6">
+        <div class="teenager-free-allergen-img-wrapper">
+          <div class="teenager-free-allergen-left-image" data-aos="fade-up">
+            <a href="{{ section.settings.button_url }}">
+              <div class="kids-teen-image-wrapper">
+                  {% if section.settings.the_image != blank %}<img loading="lazy"  src="{{ section.settings.the_image | img_url: 'master' }}">{% endif %}
+              </div>
+            </a>
+          </div>
+          <div class="teenager-free-allergen-btn-wrap" data-aos="fade-up">
+                <a href="{{ section.settings.button_url }}">{{ section.settings.button_text }}</a>
+          </div>
+        </div>
+      </div>
+      <div class="col-sm-12 col-md-6 col-lg-6">
+        <div class="teenager-free-allergen-content-wrapper">
+          <div class="teenager-free-allergen-right-image" data-aos="fade-up">
+            {% if section.settings.allergen_image != blank %}<img loading="lazy"  src="{{ section.settings.allergen_image | img_url: 'master' }}">{% endif %}
+          </div>
+          <ul class="teenager-free-allergen-icon-lists" data-aos="fade-up">
+             {% for block in section.blocks %}
+                <li>
+                  {% if block.settings.icon_img != blank %}<img loading="lazy"  src="{{ block.settings.icon_img | img_url: 'master' }}">{% endif %}
+                </li>
+            {% endfor %}
+          </ul>
+          <div class="teenager-free-allergen-text-under-icon" data-aos="fade-up">
+            <p>{{ section.settings.text_under_text }}</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+{% schema %}
+  {
+    "name": "Free Allergen",
+    "settings": [
+         {
+            "type": "header",
+            "content": "Content Style"
+         },
+  	     {
+           "type": "color",
+           "id": "section_bg_color",
+           "label": "Section background color"
+        },
+        {
+          "type": "header",
+          "content": "Left Content Settings"
+      	},
+        {
+            "type": "image_picker",
+            "id": "the_image",
+            "label": "Image"
+         },
+        {
+          "type": "text",
+          "id": "button_text",
+          "label": "Text"
+      },
+      {
+          "type": "url",
+          "id": "button_url",
+          "label": "Url"
+      },
+      {
+          "type": "header",
+          "content": "Right Content Settings"
+      },
+      {
+            "type": "image_picker",
+            "id": "allergen_image",
+            "label": "Free Allergen Image"
+      },
+      {
+             "type": "text",
+             "id": "text_under_text",
+            "label": "Text Under Icon"
+        }
+    ],
+    "blocks": [
+      {
+        "type": "icon_lists",
+        "name": "Icon Lists",
+        "settings": [
+          {
+            "type": "image_picker",
+            "id": "icon_img",
+            "label": "Icon Image"
+         }
+        ]
+      }
+    ],
+    "presets": [{
+      "name": "Free Allergen"
+    }]
+  }
+{% endschema %}
+
+{% stylesheet %}
+{% endstylesheet %}
+
+{% javascript %}
+{% endjavascript %}

@@ -1,0 +1,141 @@
+<style>
+  #id-{{ section.id }}{
+  	background-color:{{ section.settings.section_bg_color }};
+  }
+
+</style>
+<section id="id-{{section.id}}" class="wholesale-image-text common-kids-teenager-section {{ section.settings.add_class }}">
+  <div class="wholesale-image-text-wrapper">
+    {% if section.settings.enable_left_top_leaf == true %}
+    <div class="leaf-box wholesale-image-text-box-left-top left-top">
+        <img loading="lazy"  class="leaf wholesale-image-text-left-top" src="{{ 'image-text-leaf-left-top.svg' | asset_url }}">
+    </div>
+    {% endif %}
+    {% if section.settings.enable_right_bottom_leaf == true %}
+    <div class="leaf-box wholesale-image-text-box-right-bot right-bot">
+        <img loading="lazy"  class="leaf wholesale-image-text-right-bot" src="{{ 'image-text-leaf-right-bottom.svg' | asset_url }}">
+    </div>
+    {% endif %}
+    <div class="container">
+      <div class="row">
+        <div class="col-sm-12 mob-whoesale-img-text-wrapper wholesale-text-padding">
+            <div class="wholesale-img-text-wrapper" data-aos="fade-up">
+              {{ section.settings.mob_text }}
+            </div>
+        </div>
+        {% if section.settings.image_position == 'left' %}
+            <div class="col-sm-12 col-md-6 col-lg-6 img-no-pad">
+              <div class="wholesale-img-wrapper" data-aos="fade-up">
+                {% if section.settings.the_image != blank %}<img loading="lazy"  src="{{ section.settings.the_image | img_url: 'master' }}">{% endif %}
+              </div>
+            </div>
+        {% endif %}
+        {% if section.settings.mob_text_2 != blank %}
+        <div class="col-sm-12 mob-whoesale-img-text-wrapper wholesale-text-padding">
+            <div class="wholesale-img-text-wrapper" data-aos="fade-up">
+              {{ section.settings.mob_text_2 }}
+            </div>
+        </div>
+        {% endif %}
+        <div class="col-sm-12 col-md-6 col-lg-6 web-wholesale-img-text-wrapper wholesale-text-padding">
+            <div class="wholesale-img-text-wrapper" data-aos="fade-up">
+              {{ section.settings.the_text }}
+            </div>
+        </div>
+        {% if section.settings.image_position == 'right' %}
+            <div class="col-sm-12 col-md-6 col-lg-6 img-no-pad">
+              <div class="wholesale-img-wrapper" data-aos="fade-up">
+                {% if section.settings.the_image != blank %}<img loading="lazy"  src="{{ section.settings.the_image | img_url: 'master' }}">{% endif %}
+              </div>
+            </div>
+        {% endif %}
+      </div>
+    </div>
+  </div>
+</section>
+{% schema %}
+  {
+    "name": "Wholesale Image Text",
+    "settings": [
+       {
+            "type": "header",
+            "content": "Content Style"
+         },
+  	     {
+           "type": "color",
+           "id": "section_bg_color",
+           "label": "Section background color"
+        },
+        {
+          "type": "checkbox",
+          "id": "enable_left_top_leaf",
+          "label": "Enable Left Top Leaf",
+          "default": false
+        },
+       {
+          "type": "checkbox",
+          "id": "enable_right_bottom_leaf",
+          "label": "Enable Right Bottom Leaf",
+          "default": false
+      },
+       {
+          "type": "text",
+          "id": "add_class",
+          "label": "Add Class"
+      },
+      {
+              "type": "header",
+              "content": "Image Settings"
+        },
+        {
+              "type": "image_picker",
+              "id": "the_image",
+              "label": "Image"
+        },
+        {
+          "type": "select",
+          "id": "image_position",
+          "options": [
+              {
+                "value": "left",
+                "label": "Image Left"
+              },
+              {
+                "value": "right",
+                "label": "Image Right"
+              }
+            ],
+            "default": "left",
+            "label": "Choose Position"
+          },
+          {
+                "type": "header",
+                "content": "Content Settings"
+          },
+          {
+              "type": "richtext",
+              "id": "the_text",
+              "label": "Text"
+          },
+          {
+              "type": "richtext",
+              "id": "mob_text",
+              "label": "Mobile Text-1"
+          },
+          {
+              "type": "richtext",
+              "id": "mob_text_2",
+              "label": "Mobile Text-2"
+          }
+    ],
+	"presets": [{
+      "name": "Wholesale Image Text"
+    }]
+  }
+{% endschema %}
+
+{% stylesheet %}
+{% endstylesheet %}
+
+{% javascript %}
+{% endjavascript %}

@@ -1,0 +1,1768 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "main": {
+      "type": "main-page",
+      "disabled": true,
+      "settings": {}
+    },
+    "dgf_lp_header_YKcMaE": {
+      "type": "dgf-lp-header",
+      "blocks": {
+        "nav_item_drEdKf": {
+          "type": "nav_item",
+          "settings": {
+            "nav_text": "Shop",
+            "nav_url": "",
+            "nav_text_color": "",
+            "enable_megamenu": true,
+            "megamenu_type": "products",
+            "megamenu_bg_color": "#faeee9",
+            "megamenu_text_color": "#000000",
+            "megamenu_text": "<p><strong>Discover a healthier<br>you with our <br>premium Organic Moringa supplements.</strong></p>",
+            "megamenu_product_1": "organic-moringa",
+            "megamenu_product_1_url": "shopify://pages/premium-moringa-supplement",
+            "megamenu_product_2": "organic-moringa-powder",
+            "megamenu_product_2_url": "shopify://pages/premium-moringa-powder-supplement",
+            "megamenu_product_3": "",
+            "megamenu_product_3_url": "",
+            "megamenu_side_image": "shopify://shop_images/image_19.webp",
+            "mobile_megamenu_title": "Discover a healthier you with our premium Organic Moringa supplements.",
+            "mobile_megamenu_image": "shopify://shop_images/image_21.webp",
+            "mobile_megamenu_link_text": "Contact Us",
+            "mobile_megamenu_link_url": "/pages/contact",
+            "megamenu_text_1": "",
+            "megamenu_link_1": "",
+            "megamenu_text_2": "",
+            "megamenu_link_2": "",
+            "megamenu_text_3": "",
+            "megamenu_link_3": "",
+            "megamenu_text_4": "",
+            "megamenu_link_4": "",
+            "show_megamenu_button": false,
+            "megamenu_button_text": "View All",
+            "megamenu_button_url": ""
+          }
+        },
+        "nav_item_zdiWwH": {
+          "type": "nav_item",
+          "settings": {
+            "nav_text": "Learn",
+            "nav_url": "",
+            "nav_text_color": "",
+            "enable_megamenu": true,
+            "megamenu_type": "images",
+            "megamenu_bg_color": "#faeee9",
+            "megamenu_text_color": "#000000",
+            "megamenu_text": "",
+            "megamenu_product_1": "",
+            "megamenu_product_1_url": "",
+            "megamenu_product_2": "",
+            "megamenu_product_2_url": "",
+            "megamenu_product_3": "",
+            "megamenu_product_3_url": "",
+            "mobile_megamenu_title": "",
+            "mobile_megamenu_link_text": "View All",
+            "mobile_megamenu_link_url": "",
+            "megamenu_image_1": "shopify://shop_images/BLOG_COVER_PICTURE_530_x_741px_13-7046834-7898535_ed50cae3-e42e-47e5-bf89-9c0e6ce640f6.webp",
+            "megamenu_text_1": "Moringa Benefits For Women",
+            "megamenu_link_1": "https://www.tribe-organics.com/blogs/lifestyle/top-moringa-benefits-for-women",
+            "megamenu_image_2": "shopify://shop_images/BLOG_COVER_PICTURE_530_x_741px_37-4460281.webp",
+            "megamenu_text_2": "Moringa Superfood Breastfeeding Moms",
+            "megamenu_link_2": "https://www.tribe-organics.com/blogs/lifestyle/moringa-superfood-breastfeeding-moms",
+            "megamenu_image_3": "shopify://shop_images/the_health_benefits_of_moringa_supplements_cover_78858deb-8bb5-4db7-b869-09518746b52f-3471293.jpg",
+            "megamenu_text_3": "Health Benefits Of Moringa Suplements",
+            "megamenu_link_3": "https://www.tribe-organics.com/blogs/lifestyle/moringa-supplement",
+            "megamenu_image_4": "shopify://shop_images/BLOG_COVER_PICTURE_530_x_741px_51-9844540.webp",
+            "megamenu_text_4": "Immune System Supplements",
+            "megamenu_link_4": "https://www.tribe-organics.com/blogs/wellness/immune-system-supplements",
+            "show_megamenu_button": true,
+            "megamenu_button_text": "READ MORE",
+            "megamenu_button_url": "https://www.tribe-organics.com/blogs/moringa-learn"
+          }
+        },
+        "nav_item_9nEmb9": {
+          "type": "nav_item",
+          "settings": {
+            "nav_text": "Recipes",
+            "nav_url": "",
+            "nav_text_color": "",
+            "enable_megamenu": true,
+            "megamenu_type": "images",
+            "megamenu_bg_color": "#faeee9",
+            "megamenu_text_color": "#000000",
+            "megamenu_text": "",
+            "megamenu_product_1": "",
+            "megamenu_product_1_url": "",
+            "megamenu_product_2": "",
+            "megamenu_product_2_url": "",
+            "megamenu_product_3": "",
+            "megamenu_product_3_url": "",
+            "mobile_megamenu_title": "",
+            "mobile_megamenu_link_text": "View All",
+            "mobile_megamenu_link_url": "",
+            "megamenu_image_1": "shopify://shop_images/Moringa_Pesto_Pizza_1227cc36-48a9-4274-ad84-239cefcf0b90.webp",
+            "megamenu_text_1": "Moringa Pesto Pizza",
+            "megamenu_link_1": "shopify://blogs/recipes/moringa-pesto-pizza",
+            "megamenu_image_2": "shopify://shop_images/Moringa_Herb_Dressing_7a8e8c71-0502-4a98-8815-8afbc9d5037a.webp",
+            "megamenu_text_2": "Moringa Herb Dressing",
+            "megamenu_link_2": "https://www.tribe-organics.com/blogs/recipes/moringa-herb-dressing",
+            "megamenu_image_3": "shopify://shop_images/Moringa_Banana_Muffins_ae602f7f-e908-4bbf-968f-88f04902c239.webp",
+            "megamenu_text_3": "Moringa Banana Muffins",
+            "megamenu_link_3": "https://www.tribe-organics.com/blogs/recipes/moringa-banana-muffins",
+            "megamenu_image_4": "shopify://shop_images/Moringa_Hummus_Dip.webp",
+            "megamenu_text_4": "Moringa Hummus Dip",
+            "megamenu_link_4": "https://www.tribe-organics.com/blogs/recipes/moringa-hummus-dip",
+            "show_megamenu_button": true,
+            "megamenu_button_text": "READ MORE",
+            "megamenu_button_url": "https://www.tribe-organics.com/blogs/moringa-recipes"
+          }
+        },
+        "nav_item_bJY6dx": {
+          "type": "nav_item",
+          "settings": {
+            "nav_text": "Contact Us",
+            "nav_url": "/pages/contact",
+            "nav_text_color": "",
+            "enable_megamenu": false,
+            "megamenu_type": "products",
+            "megamenu_bg_color": "",
+            "megamenu_text_color": "",
+            "megamenu_text": "",
+            "megamenu_product_1": "",
+            "megamenu_product_1_url": "",
+            "megamenu_product_2": "",
+            "megamenu_product_2_url": "",
+            "megamenu_product_3": "",
+            "megamenu_product_3_url": "",
+            "mobile_megamenu_title": "",
+            "mobile_megamenu_link_text": "View All",
+            "mobile_megamenu_link_url": "",
+            "megamenu_text_1": "",
+            "megamenu_link_1": "",
+            "megamenu_text_2": "",
+            "megamenu_link_2": "",
+            "megamenu_text_3": "",
+            "megamenu_link_3": "",
+            "megamenu_text_4": "",
+            "megamenu_link_4": "",
+            "show_megamenu_button": false,
+            "megamenu_button_text": "View All",
+            "megamenu_button_url": ""
+          }
+        }
+      },
+      "block_order": [
+        "nav_item_drEdKf",
+        "nav_item_zdiWwH",
+        "nav_item_9nEmb9",
+        "nav_item_bJY6dx"
+      ],
+      "custom_css": [
+        ".custom-ashwagandha-pack-page .custom-announcement-bar {display: block !important;}",
+        ".dgf-megamenu-button {background-color: #faeee9; border: 2px solid #ac853b; border-radius: 0px; font-family: Work Sans, sans-serif; font-size: 14px !important;}",
+        "#alia-root-181139 {display: none !important;}"
+      ],
+      "name": "[DGF] LP Header",
+      "settings": {
+        "section_bg_color": "#06211e",
+        "text_color": "#ffffff",
+        "site_logo_image": "shopify://shop_images/2_Topbar.webp",
+        "site_logo_image_mobile": "shopify://shop_images/image_77.webp",
+        "button_text": "Order Now",
+        "button_url": "#dgf-featured-product-v2",
+        "button_bg_color": "#ac853b",
+        "button_text_color": "#ffffff",
+        "show_search": true,
+        "hide_menu_items": true,
+        "hide_customer_icons": true,
+        "hide_mobile_menu": true
+      }
+    },
+    "dgf_icon_slider_nq6TXd": {
+      "type": "dgf-icon-slider",
+      "blocks": {
+        "icon_item_eyNUPN": {
+          "type": "icon_item",
+          "settings": {
+            "icon": "shopify://shop_images/made-in-the-usa_1.webp",
+            "text": "Made in the USA with globally sourced ingredients",
+            "text_color": "#ffffff"
+          }
+        },
+        "icon_item_bKtXEU": {
+          "type": "icon_item",
+          "settings": {
+            "icon": "shopify://shop_images/third-party-lab-tested_1.webp",
+            "text": "Third-party Lab Tested",
+            "text_color": "#ffffff"
+          }
+        },
+        "icon_item_jAwLmL": {
+          "type": "icon_item",
+          "settings": {
+            "icon": "shopify://shop_images/ethically-grown-and-sourced_1.webp",
+            "text": "Ethically grown and sourced",
+            "text_color": "#ffffff"
+          }
+        },
+        "icon_item_JU9BgQ": {
+          "type": "icon_item",
+          "settings": {
+            "icon": "shopify://shop_images/no-harmful-additives_1.webp",
+            "text": "No harmful additives or fillers",
+            "text_color": "#ffffff"
+          }
+        },
+        "icon_item_Df7qgW": {
+          "type": "icon_item",
+          "settings": {
+            "icon": "shopify://shop_images/recyclable_1.webp",
+            "text": "Recyclable",
+            "text_color": "#ffffff"
+          }
+        }
+      },
+      "block_order": [
+        "icon_item_eyNUPN",
+        "icon_item_bKtXEU",
+        "icon_item_jAwLmL",
+        "icon_item_JU9BgQ",
+        "icon_item_Df7qgW"
+      ],
+      "custom_css": [
+        ".dgf-icon-slider-section {padding: 1rem 0;}"
+      ],
+      "name": "[DGF] Icon Slider",
+      "settings": {
+        "title": "",
+        "sec_bg_color": "#586a67",
+        "text_color": "#ffffff",
+        "icon_bg_color": "#f3d9cf",
+        "icon_bg_image": "shopify://shop_images/Ellipse_105.webp",
+        "autoplay_speed": 3,
+        "pause_on_hover": true
+      }
+    },
+    "dgf_lp_hero_QXN76y": {
+      "type": "dgf-lp-hero",
+      "custom_css": [
+        ".dgf-lp-hero-cta .btn {line-height: 1.9 !important; padding: 0;}",
+        ".sub-mbl {display: none; color: #f21515;}",
+        ".dgf-lp-hero-bottom-text {text-align: left; padding: 0 7rem;}",
+        "@media (max-width: 1023px) {.dgf-lp-hero-cta .btn {line-height: 3.4 !important; } .dgf-lp-hero-subtitle {margin-top: -15px !important; line-height: 1.3; } .dgf-lp-hero-bottom-text {text-align: center; } .dgf-lp-hero-mobile-row-1 {text-align: center; } .hero-sub {font-weight: 500 !important; }}"
+      ],
+      "name": "[DGF] LP Hero",
+      "settings": {
+        "bg_image": "shopify://shop_images/image_50.webp",
+        "bg_image_mobile": "shopify://shop_images/image_51.webp",
+        "bg_overlay_opacity": 20,
+        "section_height": "large",
+        "section_height_mobile": "large",
+        "content_alignment": "center",
+        "padding_top": 80,
+        "padding_bottom": 20,
+        "padding_left": 0,
+        "padding_right": 0,
+        "main_title": "<div class=\"ttl\">SECURE YOUR SUPPLY OF A Stress Support That Finally Works<sup>*</sup> — <span style=\"text-decoration: underline;\">New Root-Only</span> Ashwagandha with the Exact Dose Used in Human Studies\n\n</div>",
+        "main_title_mobile": "<div class=\"ttl\">Stress Support That Finally Works* — <span style=\"text-decoration: underline;\">New Root-Only</span> Ashwagandha with the Exact Dose Used in Human Studies\n\n</div>",
+        "title_font": "HypatiaSansPro",
+        "title_font_size": 45,
+        "title_font_size_mobile": 26,
+        "title_font_weight": "700",
+        "title_transform": "uppercase",
+        "title_margin_top": 0,
+        "title_margin_bottom": 10,
+        "subtitle": "<p style=\"font-style: italic; font-weight: bold; color: #ffffff; white;\">\n  Up to <span style=\"text-decoration: underline;font-family: WorkSans!important;  text-decoration-color: #F21515; text-underline-offset: 6px; color: #F21515 !important; -webkit-text-stroke: 0.03px white; filter: drop-shadow(0px 0px 1px white);\">35% OFF</span> only for a limited-time!\n</p>",
+        "subtitle_mobile": "<p style=\"font-style: italic; font-weight: bold; color: #ffffff; white;\">\n  Up to <span style=\"text-decoration: underline;font-family: WorkSans!important;  text-decoration-color: #F21515; text-underline-offset: 6px; color: #F21515 !important; font-style: normal!important;\">35% OFF</span> only for a limited-time!\n</p>",
+        "subtitle_font": "'Superior Title Italic'",
+        "subtitle_font_size": 45,
+        "subtitle_font_size_mobile": 26,
+        "subtitle_font_weight": "600",
+        "subtitle_margin_top": 10,
+        "subtitle_margin_bottom": 0,
+        "button_text": "ORDER NOW",
+        "button_url": "#dgf-featured-product-v2",
+        "button_font": "inherit",
+        "button_font_size": 25,
+        "button_font_size_mobile": 15,
+        "button_bg_color": "#ac853b",
+        "button_text_color": "#ffffff",
+        "button_margin_top": 25,
+        "button_margin_bottom": 0,
+        "bottom_text": "<p class=\"hero-sub\">A daily nervous system ritual to help you stay calm, clear and resilient under pressure.<sup>*</sup></p>",
+        "bottom_text_font": "'Superior Title Italic'",
+        "bottom_text_font_size": 40,
+        "bottom_text_font_size_mobile": 17,
+        "bottom_text_font_weight": "400",
+        "bottom_image": "shopify://shop_images/image_52.webp",
+        "bottom_image_alt": "",
+        "bottom_image_size": 60,
+        "bottom_margin_top": 55,
+        "bottom_margin_bottom": 0,
+        "bottom_gap": 0,
+        "text_color": "#ffffff"
+      }
+    },
+    "as_seen_in_section_Ymk93d": {
+      "type": "as-seen-in-section",
+      "blocks": {
+        "icons_Gn34Wf": {
+          "type": "icons",
+          "settings": {
+            "the_icon": "shopify://shop_images/monochrome_large_1_eb4519dd-1264-4fd2-95be-0125c3ddf2f5k.webp"
+          }
+        },
+        "icons_zyeR6f": {
+          "type": "icons",
+          "settings": {
+            "the_icon": "shopify://shop_images/Vector_1.svg"
+          }
+        }
+      },
+      "block_order": [
+        "icons_Gn34Wf",
+        "icons_zyeR6f"
+      ],
+      "name": "As Seen in",
+      "settings": {
+        "section_bg_color": "#06211e"
+      }
+    },
+    "dgf_featured_image_qBhjXe": {
+      "type": "dgf-featured-image",
+      "custom_css": [
+        ".dgf-featured-image-section {padding-left: 1rem; padding-right: 1rem;}",
+        "@media (min-width: 1025px) {.dgf-featured-image-section {display: none; }}"
+      ],
+      "name": "[DGF] Featured Image",
+      "settings": {
+        "image_mobile": "shopify://shop_images/image_78.webp",
+        "image_alt": "Featured Image",
+        "visibility": "mobile_only",
+        "image_fit": "contain",
+        "image_position": "center",
+        "min_height_desktop": 400,
+        "min_height_mobile": 100,
+        "bg_color": "#faeee9",
+        "padding_top": 35,
+        "padding_bottom": 25
+      }
+    },
+    "dgf_image_gallery_EWpaaR": {
+      "type": "dgf-image-gallery",
+      "blocks": {
+        "image_fFaMfU": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/testi_3_5tribe.webp",
+            "alt_text": "Person holding the Tribe Organic's Ashwagandha Capsules bottle.",
+            "show_on_mobile": true
+          }
+        },
+        "image_3eLQN4": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/testi_3_6_83426ee7-b854-4893-95df-d5c95cd658d6.webp",
+            "alt_text": "Person holding the Tribe Organic's Ashwagandha Capsules bottle.",
+            "show_on_mobile": true
+          }
+        },
+        "image_PMWgBF": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/testi_3_7.png",
+            "alt_text": "Person holding the Tribe Organic's Ashwagandha Capsules bottle.",
+            "show_on_mobile": true
+          }
+        },
+        "image_ywHfyD": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/testi_3_8.webp",
+            "alt_text": "Person holding the Tribe Organic's Ashwagandha Capsules bottle.",
+            "show_on_mobile": true
+          }
+        },
+        "image_tkakee": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/testi_3_9.webp",
+            "alt_text": "Person holding the Tribe Organic's Ashwagandha Capsules bottle.",
+            "show_on_mobile": true
+          }
+        },
+        "image_KTVNPe": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/testi_3_10.webp",
+            "alt_text": "Person holding the Tribe Organic's Ashwagandha Capsules bottle.",
+            "show_on_mobile": true
+          }
+        },
+        "image_FJWRHz": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/testi_3_11.webp",
+            "alt_text": "Person holding the Tribe Organic's Ashwagandha Capsules bottle.",
+            "show_on_mobile": true
+          }
+        },
+        "image_HJpV6L": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/testi_3_12.webp",
+            "alt_text": "Person holding the Tribe Organic's Ashwagandha Capsules bottle.",
+            "show_on_mobile": true
+          }
+        },
+        "image_tAh3yh": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/testi_3_14.webp",
+            "alt_text": "Person holding the Tribe Organic's Ashwagandha Capsules bottle.",
+            "show_on_mobile": true
+          }
+        },
+        "image_bBecaD": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/testi_3_16.webp",
+            "alt_text": "Person holding the Tribe Organic's Ashwagandha Capsules bottle.",
+            "show_on_mobile": true
+          }
+        },
+        "image_8UnqUT": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/testi_3_18.webp",
+            "alt_text": "Person holding the Tribe Organic's Ashwagandha Capsules bottle.",
+            "show_on_mobile": true
+          }
+        },
+        "image_AMm9ex": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/testi_3_5-1.webp",
+            "alt_text": "Person holding the Tribe Organic's Ashwagandha Capsules bottle.",
+            "show_on_mobile": true
+          }
+        },
+        "image_rTHUPj": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/testi_3_13.webp",
+            "alt_text": "Person holding the Tribe Organic's Ashwagandha Capsules bottle.",
+            "show_on_mobile": true
+          }
+        },
+        "image_MjLkhV": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/testi_3_15.webp",
+            "alt_text": "Person holding the Tribe Organic's Ashwagandha Capsules bottle.",
+            "show_on_mobile": true
+          }
+        },
+        "image_CmxrCe": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/testi_3_17.webp",
+            "alt_text": "Person holding the Tribe Organic's Ashwagandha Capsules bottle.",
+            "show_on_mobile": true
+          }
+        },
+        "image_AY6mrx": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/testi_3_9-7.webp",
+            "alt_text": "Person holding the Tribe Organic's Ashwagandha Capsules bottle.",
+            "show_on_mobile": true
+          }
+        }
+      },
+      "block_order": [
+        "image_fFaMfU",
+        "image_3eLQN4",
+        "image_PMWgBF",
+        "image_ywHfyD",
+        "image_tkakee",
+        "image_KTVNPe",
+        "image_FJWRHz",
+        "image_HJpV6L",
+        "image_tAh3yh",
+        "image_bBecaD",
+        "image_8UnqUT",
+        "image_AMm9ex",
+        "image_rTHUPj",
+        "image_MjLkhV",
+        "image_CmxrCe",
+        "image_AY6mrx"
+      ],
+      "custom_css": [
+        ".dgf-gallery-title span {font-family: HypatiaSansPro !important;}",
+        "@media (max-width: 1023px) {.dgf-image-gallery-grid {width: 100%; margin-left: 0; margin-right: 0; padding: 0 1rem; }}"
+      ],
+      "name": "[DGF] Image Gallery",
+      "settings": {
+        "title": "More than <span>10,000 HAPPY CUSTOMERS</span> all over the world!",
+        "subtitle": "OVER 200,000 BOTTLES SOLD!",
+        "background_color": "#faeee9",
+        "image_aspect_ratio": "9/16",
+        "columns_per_row": 4,
+        "columns_per_row_mobile": 2,
+        "title_font": "'Superior Title Italic'",
+        "title_font_size": 38,
+        "title_font_size_mobile": 27,
+        "title_font_weight": "700",
+        "title_transform": "none",
+        "title_color": "#06211e",
+        "title_margin_bottom": 0,
+        "subtitle_font": "inherit",
+        "subtitle_font_size": 25,
+        "subtitle_font_size_mobile": 20,
+        "subtitle_font_weight": "400",
+        "subtitle_transform": "none",
+        "subtitle_color": "#06211e",
+        "show_all_images": true,
+        "transition_effect": "fade",
+        "rotation_speed": 2,
+        "rotation_mode": "single",
+        "cascade_delay": 150
+      }
+    },
+    "dgf_title_text_cta_d4UPDc": {
+      "type": "dgf-title-text-cta",
+      "custom_css": [
+        ".text-1 {text-align: left;}",
+        ".text-2 {text-align: left;}",
+        "@media (max-width: 1023px) {.text-1 {text-align: center; } .text-2 {text-align: center; }}"
+      ],
+      "name": "[DGF] Title-Text-CTA",
+      "settings": {
+        "title": "WHY STRESS FEELS SO HARD TO FIX",
+        "text": "<p class=\"text-1\">Modern life doesn’t slow down. Long workdays, constant notifications, disrupted sleep, and nonstop mental load keep your nervous system stuck in “on” mode.<br><br>\n\nMost stress solutions either numb you, overstimulate you or only work temporarily. What’s missing is <b>support for how your body adapts to everyday stress—without sedation or burnout.</b><br><br>\n\nThat’s where <b>Tribe Organics Ashwagandha KSM-66<sup>®</sup></b> comes in.</p>",
+        "title_2": "WHAT MAKES THIS DIFFERENT",
+        "text_2": "<p class=\"text-2\"><b>Tribe Organics Ashwagandha KSM-66<sup>®</sup></b> is formulated with <b>the exact clinically studied dose</b> of the world’s most researched Ashwagandha extract—designed for daily use by people living high-pressure lives.*<br><br>\n\nNo adulteration. No shortcuts. No guesswork.\n<br><br>\nJust clean, clinically grounded stress support you can rely on.<sup>*</sup></p>",
+        "text_alignment": "center",
+        "background_color": "#faeee9",
+        "title_font": "HypatiaSansPro",
+        "title_font_size": 40,
+        "title_font_size_mobile": 30,
+        "title_font_weight": "700",
+        "title_transform": "none",
+        "title_color": "#06211e",
+        "title_margin_bottom": 20,
+        "text_font": "inherit",
+        "text_font_size": 24,
+        "text_font_size_mobile": 17,
+        "text_font_weight": "400",
+        "text_transform": "none",
+        "text_color": "#06211e",
+        "text_margin_bottom": 25,
+        "title_2_margin_bottom": 20,
+        "text_2_margin_bottom": 25,
+        "button_text": "START SUPPORTING YOUR STRESS*",
+        "button_url": "#dgf-featured-product-v2",
+        "button_font": "inherit",
+        "button_font_size": 18,
+        "button_font_size_mobile": 16,
+        "button_bg_color": "#ac853b",
+        "button_text_color": "#ffffff",
+        "button_margin_top": 24,
+        "padding_top": 40,
+        "padding_bottom": 40,
+        "padding_left": 15,
+        "padding_right": 15
+      }
+    },
+    "dgf_cards_bNrtqb": {
+      "type": "dgf-cards",
+      "blocks": {
+        "card_baPgqD": {
+          "type": "card",
+          "settings": {
+            "image": "shopify://shop_images/image_54.webp",
+            "card_title": "Feel Calm Under Pressure — Without Feeling Sedated<sup>*</sup>",
+            "card_text": "Helps support your stress response and healthy cortisol levels so you can stay composed, alert and emotionally balanced during high-pressure days.<sup>*</sup>",
+            "card_disclaimer": ""
+          }
+        },
+        "card_hdPGHw": {
+          "type": "card",
+          "settings": {
+            "image": "shopify://shop_images/image_55.webp",
+            "card_title": "Stay Focused When Stress Is High<sup>*</sup>",
+            "card_text": "Helps quiet mental noise and nervous system overload that disrupt focus and decision-making.",
+            "card_disclaimer": ""
+          }
+        },
+        "card_ixC8n7": {
+          "type": "card",
+          "settings": {
+            "image": "shopify://shop_images/image_56.webp",
+            "card_title": "Wind Down at Night After High-Stress Days<sup>*</sup>",
+            "card_text": "Supports the body’s natural stress rhythm, encourages relaxation and supports healthy sleep quality.<sup>*</sup>",
+            "card_disclaimer": ""
+          }
+        },
+        "card_97NFgk": {
+          "type": "card",
+          "settings": {
+            "image": "shopify://shop_images/image_57.webp",
+            "card_title": "Clinically effective dose of KSM-66<sup>®</sup> Ashwagandha",
+            "card_text": "Our Ashwagandha delivers 600mg of KSM-66<sup>®</sup> — the exact dose used in 45+ human clinical trials — not proprietary blends, no guesswork.",
+            "card_disclaimer": ""
+          }
+        },
+        "card_catdzn": {
+          "type": "card",
+          "settings": {
+            "image": "shopify://shop_images/image_58.webp",
+            "card_title": "Full-Spectrum Root-Only Potency",
+            "card_text": "No leaves, no shortcuts— just the most potent part of the plant, extracted to preserve its full-spectrum profile the way nature intended.",
+            "card_disclaimer": ""
+          }
+        },
+        "card_UQzTkg": {
+          "type": "card",
+          "settings": {
+            "image": "shopify://shop_images/image_65.webp",
+            "card_title": "Guaranteed Active Compounds for Consistent Results",
+            "card_text": "Standardized to deliver reliable levels of the plant’s key bioactive compounds, with a guaranteed minimum of 5% withanolides—ensuring consistent potency from bottle to bottle.",
+            "card_disclaimer": ""
+          }
+        },
+        "card_6epcc6": {
+          "type": "card",
+          "settings": {
+            "image": "shopify://shop_images/image_67.webp",
+            "card_title": "Certified USDA Organic, No Compromises",
+            "card_text": "Free from GMOs, pesticides, herbicides, toxins and unnecessary chemicals. Better for your body and the environment.",
+            "card_disclaimer": ""
+          }
+        },
+        "card_qd8tBW": {
+          "type": "card",
+          "settings": {
+            "image": "shopify://shop_images/image_68.webp",
+            "card_title": "cGMP-Certified Manufacturing",
+            "card_text": "Made in cGMP-certified facility to ensure consistent safety, potency and quality in every bottle.",
+            "card_disclaimer": ""
+          }
+        },
+        "card_TnEG7t": {
+          "type": "card",
+          "settings": {
+            "image": "shopify://shop_images/image_59.webp",
+            "card_title": "Third-Party Tested for Purity and Potency",
+            "card_text": "Independently tested to verify label accuracy, potency, and freedom from contaminants.",
+            "card_disclaimer": ""
+          }
+        },
+        "card_YLERJg": {
+          "type": "card",
+          "settings": {
+            "image": "shopify://shop_images/image_60.webp",
+            "card_title": "Traditional Ayurvedic Root-Only Extraction",
+            "card_text": "KSM-66<sup>®</sup> is made using a traditional Ayurvedic process that preserves both water- and fat-soluble compounds for a true full-spectrum, bioavailable root extract.",
+            "card_disclaimer": "May contain trace milk constituents. Not recommended for individuals with a milk allergy."
+          }
+        },
+        "card_wkrcjj": {
+          "type": "card",
+          "settings": {
+            "image": "shopify://shop_images/image_61.webp",
+            "card_title": "Simple, Flexible Daily Routine",
+            "card_text": "Just two capsules per day — morning or evening, with or without food — easy to fit into real life.",
+            "card_disclaimer": ""
+          }
+        },
+        "card_DGG8Yc": {
+          "type": "card",
+          "settings": {
+            "image": "shopify://shop_images/image_62.webp",
+            "card_title": "Non-Habit Forming, No Dependency",
+            "card_text": "Supports stress adaptation without sedatives or nervous system suppression, making it suitable for long-term, consistent use.<sup>*</sup>",
+            "card_disclaimer": ""
+          }
+        },
+        "card_mWLeqL": {
+          "type": "card",
+          "settings": {
+            "image": "shopify://shop_images/image_63.webp",
+            "card_title": "Gentle on the Stomach",
+            "card_text": "Designed to be easy to digest and stomach-friendly, even with daily use — no harsh stimulants, acids or aggressive extracts.",
+            "card_disclaimer": ""
+          }
+        },
+        "card_R4knhe": {
+          "type": "card",
+          "settings": {
+            "image": "shopify://shop_images/image_66.webp",
+            "card_title": "GRAS Affirmed for Safety",
+            "card_text": "KSM-66<sup>®</sup> Ashwagandha is GRAS (Generally Recognized As Safe) affirmed, supporting its use as a daily supplement when taken as directed.",
+            "card_disclaimer": ""
+          }
+        },
+        "card_p8zXRQ": {
+          "type": "card",
+          "settings": {
+            "image": "shopify://shop_images/image_64.webp",
+            "card_title": "Fits Most Modern Lifestyles",
+            "card_text": "Gluten-free, keto- and paleo-friendly, classified as Kosher Dairy — as it may contain trace milk and not suitable for milk allergies.",
+            "card_disclaimer": ""
+          }
+        }
+      },
+      "block_order": [
+        "card_baPgqD",
+        "card_hdPGHw",
+        "card_ixC8n7",
+        "card_97NFgk",
+        "card_catdzn",
+        "card_UQzTkg",
+        "card_6epcc6",
+        "card_qd8tBW",
+        "card_TnEG7t",
+        "card_YLERJg",
+        "card_wkrcjj",
+        "card_DGG8Yc",
+        "card_mWLeqL",
+        "card_R4knhe",
+        "card_p8zXRQ"
+      ],
+      "name": "[DGF] Cards",
+      "settings": {
+        "title": "A FEW QUALITIES AND BENEFITS OF THIS POWERFUL ADAPTOGEN:",
+        "title_alignment": "center",
+        "background_color": "#f3d9cf",
+        "title_font": "HypatiaSansPro",
+        "title_font_size": 40,
+        "title_font_size_mobile": 26,
+        "title_font_weight": "400",
+        "title_transform": "none",
+        "title_color": "#06211e",
+        "title_margin_bottom": 40,
+        "card_title_font": "'Superior Title Italic'",
+        "card_title_font_size": 34,
+        "card_title_font_size_mobile": 20,
+        "card_title_font_weight": "400",
+        "card_title_transform": "none",
+        "card_title_color": "#06211e",
+        "card_text_font": "inherit",
+        "card_text_font_size": 18,
+        "card_text_font_size_mobile": 15,
+        "card_text_font_weight": "400",
+        "card_text_transform": "none",
+        "card_text_color": "#06211e",
+        "card_disclaimer_font": "inherit",
+        "card_disclaimer_font_size": 14,
+        "card_disclaimer_font_size_mobile": 10,
+        "card_disclaimer_font_weight": "400",
+        "card_disclaimer_transform": "none",
+        "card_disclaimer_color": "#06211e",
+        "card_disclaimer_font_style": "italic",
+        "card_bg_color": "#f9ece7",
+        "card_gap": 20,
+        "divider_color": "#f3d9cf",
+        "padding_top": 40,
+        "padding_bottom": 40,
+        "padding_left": 15,
+        "padding_right": 15
+      }
+    },
+    "172595234395cc7dfc": {
+      "type": "apps",
+      "blocks": {
+        "firework_shoppable_video_ugc_firework_embed_UAPwkH": {
+          "type": "shopify://apps/firework-shoppable-video-ugc/blocks/firework-embed/347a2e4c-f5cb-410d-8354-490d1e80558c",
+          "settings": {
+            "channel": "tribe_organics23",
+            "playlist": "o8NLLX",
+            "layout": "carousel",
+            "embedtitle": "",
+            "titlealignment": "center",
+            "embedtitlesize": 20,
+            "size": "large",
+            "player_placement": "bottom-right",
+            "hashtag": "",
+            "pip": true
+          }
+        }
+      },
+      "block_order": [
+        "firework_shoppable_video_ugc_firework_embed_UAPwkH"
+      ],
+      "custom_css": [
+        ".custom-block-text {text-align: center; color: black; font-size: 15px;}",
+        "#id-template--21146792460511__172595234395cc7dfc {margin-top: -5px;}",
+        "@media (min-width: 1025px) {.firework-shopppable-video {padding-top: 9rem; padding-bottom: 2rem; }}"
+      ],
+      "settings": {
+        "section_bg_color": "#faeee9",
+        "title": "see WHY PEOPLE LOVE OUR ASHWAGANDHA KMS-66",
+        "the_text": "",
+        "btn_text": "",
+        "the_url": "",
+        "image": "leaf-n18.svg",
+        "enable_svg": false,
+        "class_text": "firework-shopppable-video",
+        "text": ""
+      }
+    },
+    "dgf_title_and_text_dCNNmh": {
+      "type": "dgf-title-and-text",
+      "name": "[DGF] Title and Text",
+      "settings": {
+        "title": "WHAT “CLINICALLY STUDIED STRESS SUPPORT” ACTUALLY MEANS",
+        "text": "<p style=\"text-align: left;\">\n  Stress isn't just \"feeling busy.\"<br>\n  When stress is constant, your body releases cortisol, a hormone meant for short-term survival — not everyday life.</p>\n  <br>\n\n  <p style=\"text-align: left;\">Chronically elevated cortisol is associated with:</p>\n  <ul style=\"text-align: left; padding-left: 20px;\">\n    <li>Feeling constantly on edge</li>\n    <li>Trouble sleeping</li>\n    <li>Mental fatigue</li>\n    <li>Difficulty focusing</li>\n    <li>Emotional reactivity</li>\n  </ul>\n\n <p style=\"text-align: left; margin-bottom: 2rem;\"> KSM-66<sup>®</sup> is studied for its ability to:</p>\n  <ul style=\"text-align: left; padding-left: 20px;\">\n    <li>Support healthy cortisol levels already within the normal range<sup>*</sup>\n</li>\n    <li>Help the body adapt to stress instead of overreacting to it<sup>*</sup>\n</li>\n  </ul>\n\n <p style=\"text-align: left;\"> This is not sedation.<br>\n  <b>This is stress resilience.</b></p>",
+        "text_alignment": "center",
+        "background_color": "#f3d9cf",
+        "title_font": "HypatiaSansPro",
+        "title_font_size": 40,
+        "title_font_size_mobile": 29,
+        "title_font_weight": "700",
+        "title_transform": "none",
+        "title_color": "#06211e",
+        "title_margin_bottom": 20,
+        "text_font": "inherit",
+        "text_font_size": 24,
+        "text_font_size_mobile": 17,
+        "text_font_weight": "400",
+        "text_transform": "none",
+        "text_color": "#06211e",
+        "padding_top": 40,
+        "padding_bottom": 40,
+        "padding_left": 15,
+        "padding_right": 15
+      }
+    },
+    "dgf_text_cta_image_xXPCc4": {
+      "type": "dgf-text-cta-image",
+      "blocks": {
+        "item_6xYNfc": {
+          "type": "item",
+          "settings": {
+            "column": "left",
+            "icon": "shopify://shop_images/image_1_acd1972d-f1a4-4a5f-84c0-d2b6664bb0ed.webp",
+            "text": "You feel mentally “on” all the time and want calmer days"
+          }
+        },
+        "item_cAYh6B": {
+          "type": "item",
+          "settings": {
+            "column": "left",
+            "icon": "shopify://shop_images/image_1_acd1972d-f1a4-4a5f-84c0-d2b6664bb0ed.webp",
+            "text": "Stress affects your focus, sleep or energy consistency"
+          }
+        },
+        "item_Hjk9FH": {
+          "type": "item",
+          "settings": {
+            "column": "left",
+            "icon": "shopify://shop_images/image_1_acd1972d-f1a4-4a5f-84c0-d2b6664bb0ed.webp",
+            "text": "You want non-sedating, daily stress support"
+          }
+        },
+        "item_6cGdqy": {
+          "type": "item",
+          "settings": {
+            "column": "left",
+            "icon": "shopify://shop_images/image_1_acd1972d-f1a4-4a5f-84c0-d2b6664bb0ed.webp",
+            "text": "You feel mentally “on” all the time and want calmer days"
+          }
+        },
+        "item_9aEpam": {
+          "type": "item",
+          "settings": {
+            "column": "right",
+            "icon": "shopify://shop_images/image_3_26533450-267d-41fb-8073-b09f240c5532.webp",
+            "text": "You’re looking for instant or stimulant-like effects"
+          }
+        },
+        "item_ri77gy": {
+          "type": "item",
+          "settings": {
+            "column": "right",
+            "icon": "shopify://shop_images/image_3_26533450-267d-41fb-8073-b09f240c5532.webp",
+            "text": "You want a sleep medication or fast-acting sedative"
+          }
+        },
+        "item_iV6aWL": {
+          "type": "item",
+          "settings": {
+            "column": "right",
+            "icon": "shopify://shop_images/image_3_26533450-267d-41fb-8073-b09f240c5532.webp",
+            "text": "You prefer occasional use over daily consistency"
+          }
+        }
+      },
+      "block_order": [
+        "item_6xYNfc",
+        "item_cAYh6B",
+        "item_Hjk9FH",
+        "item_6cGdqy",
+        "item_9aEpam",
+        "item_ri77gy",
+        "item_iV6aWL"
+      ],
+      "name": "[DGF] Text-CTA-Image",
+      "settings": {
+        "left_title": "<p style=\"text-align: center;\">This IS for you if:</p>",
+        "right_title": "This may not be for you if:",
+        "background_color": "#ffffff",
+        "left_bg_color": "#61827d",
+        "right_bg_color": "#faeee9",
+        "columns_border_radius": 0,
+        "columns_gap": 0,
+        "col_title_font": "HypatiaSansPro",
+        "col_title_font_size": 40,
+        "col_title_font_size_mobile": 29,
+        "col_title_font_weight": "700",
+        "col_title_transform": "uppercase",
+        "left_title_color": "#ffffff",
+        "right_title_color": "#06211e",
+        "col_title_margin_bottom": 20,
+        "item_text_font": "inherit",
+        "item_text_font_size": 24,
+        "item_text_font_size_mobile": 16,
+        "item_text_font_weight": "400",
+        "item_text_transform": "none",
+        "left_item_color": "#ffffff",
+        "right_item_color": "#06211e",
+        "icon_size": 16,
+        "item_gap": 30,
+        "button_text": "ORDER NOW UP TO 40% OFF",
+        "button_text_mobile": "Order NOW",
+        "button_url": "#dgf-featured-product-v2",
+        "button_font": "inherit",
+        "button_font_size": 20,
+        "button_font_size_mobile": 15,
+        "button_bg_color": "#ac853b",
+        "button_text_color": "#ffffff",
+        "bottom_image": "shopify://shop_images/image_2_247a4598-6e70-4749-ae7b-088f464bdda2.webp",
+        "padding_top": 0,
+        "padding_bottom": 0,
+        "padding_left": 0,
+        "padding_right": 0
+      }
+    },
+    "dgf_compare_table_AUeezL": {
+      "type": "dgf-compare-table",
+      "blocks": {
+        "feature_ALkd7M": {
+          "type": "feature",
+          "settings": {
+            "feature_text": "Clinically studied dose of 600mg used in 45+ human trials",
+            "product_1_image": "shopify://shop_images/Group_1807.webp",
+            "product_2_image": "shopify://shop_images/Group_1808.webp"
+          }
+        },
+        "feature_RnfVgL": {
+          "type": "feature",
+          "settings": {
+            "feature_text": "USDA organic, Kosher and Gluten-free certified",
+            "product_1_image": "shopify://shop_images/Group_1807.webp",
+            "product_2_image": "shopify://shop_images/Group_1808.webp"
+          }
+        },
+        "feature_9GJfJm": {
+          "type": "feature",
+          "settings": {
+            "feature_text": "Guaranteed minimum 5% with anolides",
+            "product_1_image": "shopify://shop_images/Group_1807.webp",
+            "product_2_image": "shopify://shop_images/Group_1808.webp"
+          }
+        },
+        "feature_BnMN73": {
+          "type": "feature",
+          "settings": {
+            "feature_text": "Full-spectrum, root-only extract",
+            "product_1_image": "shopify://shop_images/Group_1807.webp",
+            "product_2_image": "shopify://shop_images/Group_1808.webp"
+          }
+        },
+        "feature_YCqA9J": {
+          "type": "feature",
+          "settings": {
+            "feature_text": "Third-party lab tested, cGMP manufactured",
+            "product_1_image": "shopify://shop_images/Group_1807.webp",
+            "product_2_image": "shopify://shop_images/Group_1808.webp"
+          }
+        },
+        "feature_UHDaJ9": {
+          "type": "feature",
+          "settings": {
+            "feature_text": "Backed by decades of R&D and human studies",
+            "product_1_image": "shopify://shop_images/Group_1807.webp",
+            "product_2_image": "shopify://shop_images/Group_1808.webp"
+          }
+        }
+      },
+      "block_order": [
+        "feature_ALkd7M",
+        "feature_RnfVgL",
+        "feature_9GJfJm",
+        "feature_BnMN73",
+        "feature_YCqA9J",
+        "feature_UHDaJ9"
+      ],
+      "custom_css": [
+        "@media (max-width: 1023px) {.dgf-compare-table {padding: 0 1rem; }}"
+      ],
+      "name": "[DGF] Compare Table",
+      "settings": {
+        "title": "",
+        "title_color": "#000000",
+        "background_color": "#faeee9",
+        "header_image": "shopify://shop_images/Group_1825.webp",
+        "header_image_mobile": "shopify://shop_images/image_9.webp",
+        "header_image_alt": "",
+        "product_1_image": "shopify://shop_images/Individual_Bottle_Ashwagandha_120.webp",
+        "product_1_name": "",
+        "product_2_image": "shopify://shop_images/Artboard_1_3x_1.webp",
+        "product_2_name": ""
+      }
+    },
+    "dgf_lp_testimonial_cNhUJQ": {
+      "type": "dgf-lp-testimonial",
+      "blocks": {
+        "testimonial_qte3Ag": {
+          "type": "testimonial",
+          "settings": {
+            "stars": "<i class=\"fa fa-star active\"></i>\n                                                <i class=\"fa fa-star active\"></i>\n                                                <i class=\"fa fa-star active\"></i>\n                                                <i class=\"fa fa-star active\"></i>\n                                                <i class=\"fa fa-star active\"></i>",
+            "testimonial_text": "<p>“It has definitely lowered my day-to-day stress levels. I feel more relaxed while still staying active throughout the day.”</p>",
+            "author_name": "— Daniela A. P.",
+            "disclaimer": "†Individual results may vary. Testimonials reflect personal experiences and are not guaranteed outcomes."
+          }
+        },
+        "testimonial_nMgfLW": {
+          "type": "testimonial",
+          "settings": {
+            "stars": "<i class=\"fa fa-star active\"></i>\n                                                <i class=\"fa fa-star active\"></i>\n                                                <i class=\"fa fa-star active\"></i>\n                                                <i class=\"fa fa-star active\"></i>\n                                                <i class=\"fa fa-star active\"></i>",
+            "testimonial_text": "<p>“This product has helped me so much with my overall health. My hot flashes are so much better. Thank you!”</p>",
+            "author_name": "— Christy Brown",
+            "disclaimer": "†Individual results may vary. Testimonials reflect personal experiences and are not guaranteed outcomes."
+          }
+        },
+        "testimonial_YdPfRF": {
+          "type": "testimonial",
+          "settings": {
+            "stars": "<i class=\"fa fa-star active\"></i>\n                                                <i class=\"fa fa-star active\"></i>\n                                                <i class=\"fa fa-star active\"></i>\n                                                <i class=\"fa fa-star active\"></i>\n                                                <i class=\"fa fa-star active\"></i>",
+            "testimonial_text": "<p>“I can honestly feel a difference. I’m more relaxed throughout the day and handling stress better.”</p>",
+            "author_name": "— Audrey",
+            "disclaimer": "†Individual results may vary. Testimonials reflect personal experiences and are not guaranteed outcomes."
+          }
+        },
+        "testimonial_X3Mmcp": {
+          "type": "testimonial",
+          "settings": {
+            "stars": "<i class=\"fa fa-star active\"></i>\n                                                <i class=\"fa fa-star active\"></i>\n                                                <i class=\"fa fa-star active\"></i>\n                                                <i class=\"fa fa-star active\"></i>\n                                                <i class=\"fa fa-star active\"></i>",
+            "testimonial_text": "<p>“My quality of sleep has improved noticeably. I wake up feeling more rested and balanced.”</p>",
+            "author_name": "— Shawn",
+            "disclaimer": "†Individual results may vary. Testimonials reflect personal experiences and are not guaranteed outcomes."
+          }
+        },
+        "testimonial_CgVXyG": {
+          "type": "testimonial",
+          "settings": {
+            "stars": "<i class=\"fa fa-star active\"></i>\n                                                <i class=\"fa fa-star active\"></i>\n                                                <i class=\"fa fa-star active\"></i>\n                                                <i class=\"fa fa-star active\"></i>\n                                                <i class=\"fa fa-star active\"></i>",
+            "testimonial_text": "<p>“Product works pretty good! Within first week it started changing my sleep patterns.”</p>",
+            "author_name": "— Alma S.",
+            "disclaimer": "†Individual results may vary. Testimonials reflect personal experiences and are not guaranteed outcomes."
+          }
+        },
+        "testimonial_ycy7r7": {
+          "type": "testimonial",
+          "settings": {
+            "stars": "<i class=\"fa fa-star active\"></i>\n                                                <i class=\"fa fa-star active\"></i>\n                                                <i class=\"fa fa-star active\"></i>\n                                                <i class=\"fa fa-star active\"></i>\n                                                <i class=\"fa fa-star active\"></i>",
+            "testimonial_text": "<p>“Have been taking for a few weeks and can already feel a difference in my mood and sleep.”</p>",
+            "author_name": "— Amanda Halblom.",
+            "disclaimer": "†Individual results may vary. Testimonials reflect personal experiences and are not guaranteed outcomes."
+          }
+        },
+        "testimonial_Fa6AgK": {
+          "type": "testimonial",
+          "settings": {
+            "stars": "<i class=\"fa fa-star active\"></i>\n                                                <i class=\"fa fa-star active\"></i>\n                                                <i class=\"fa fa-star active\"></i>\n                                                <i class=\"fa fa-star active\"></i>\n                                                <i class=\"fa fa-star active\"></i>",
+            "testimonial_text": "<p>“I was exhausted all the time. After a few weeks, I have more energy and feel capable of getting things done again.”</p>",
+            "author_name": "— Linda",
+            "disclaimer": "†Individual results may vary. Testimonials reflect personal experiences and are not guaranteed outcomes."
+          }
+        },
+        "testimonial_y8XmEy": {
+          "type": "testimonial",
+          "settings": {
+            "stars": "<i class=\"fa fa-star active\"></i>\n                                                <i class=\"fa fa-star active\"></i>\n                                                <i class=\"fa fa-star active\"></i>\n                                                <i class=\"fa fa-star active\"></i>\n                                                <i class=\"fa fa-star active\"></i>",
+            "testimonial_text": "<p>“I wake up easier and feel better throughout the day with consistent use.”</p>",
+            "author_name": "— Mickey",
+            "disclaimer": "†Individual results may vary. Testimonials reflect personal experiences and are not guaranteed outcomes."
+          }
+        },
+        "testimonial_xhThqi": {
+          "type": "testimonial",
+          "settings": {
+            "stars": "<i class=\"fa fa-star active\"></i>\n                                                <i class=\"fa fa-star active\"></i>\n                                                <i class=\"fa fa-star active\"></i>\n                                                <i class=\"fa fa-star active\"></i>\n                                                <i class=\"fa fa-star active\"></i>",
+            "testimonial_text": "<p>“Good price point and better than other ashwagandha supplements I’ve tried. I’ll order again.”</p>",
+            "author_name": "— Jennifer C.",
+            "disclaimer": "†Individual results may vary. Testimonials reflect personal experiences and are not guaranteed outcomes."
+          }
+        },
+        "testimonial_7xTz38": {
+          "type": "testimonial",
+          "settings": {
+            "stars": "<i class=\"fa fa-star active\"></i>\n                                                <i class=\"fa fa-star active\"></i>\n                                                <i class=\"fa fa-star active\"></i>\n                                                <i class=\"fa fa-star active\"></i>\n                                                <i class=\"fa fa-star active\"></i>",
+            "testimonial_text": "<p>“Superior quality and value. Great customer service and business integrity.”</p>",
+            "author_name": "— Susan A.",
+            "disclaimer": "†Individual results may vary. Testimonials reflect personal experiences and are not guaranteed outcomes."
+          }
+        },
+        "testimonial_xCdqqg": {
+          "type": "testimonial",
+          "settings": {
+            "stars": "<i class=\"fa fa-star active\"></i>\n                                                <i class=\"fa fa-star active\"></i>\n                                                <i class=\"fa fa-star active\"></i>\n                                                <i class=\"fa fa-star active\"></i>\n                                                <i class=\"fa fa-star active\"></i>",
+            "testimonial_text": "<p>“Best one yet!!! I immediately noticed a difference after switching.”</p>",
+            "author_name": "— Michelle Hoffmeister",
+            "disclaimer": "†Individual results may vary. Testimonials reflect personal experiences and are not guaranteed outcomes."
+          }
+        }
+      },
+      "block_order": [
+        "testimonial_qte3Ag",
+        "testimonial_nMgfLW",
+        "testimonial_YdPfRF",
+        "testimonial_X3Mmcp",
+        "testimonial_CgVXyG",
+        "testimonial_ycy7r7",
+        "testimonial_Fa6AgK",
+        "testimonial_y8XmEy",
+        "testimonial_xhThqi",
+        "testimonial_7xTz38",
+        "testimonial_xCdqqg"
+      ],
+      "custom_css": [
+        "@media (max-width: 1023px) {.testimonial-item-content {min-height: 60px !important; } .testimonial-item-content {justify-content: center; }}"
+      ],
+      "name": "[DGF] LP Testimonial",
+      "settings": {
+        "section_bg_color": "#f3d9cf",
+        "custom_class": "",
+        "title_part1": "More than",
+        "title_part2": "2,500 verified reviews",
+        "title_color": "#06211e",
+        "author_position": "relative",
+        "nav_type": "arrows",
+        "nav_type_mobile": "arrows"
+      }
+    },
+    "dgf_title_and_text_mk6Fxc": {
+      "type": "dgf-title-and-text",
+      "custom_css": [
+        ".dgf-tt-title {text-align: center;}",
+        "@media (max-width: 1023px) {.text {text-align: center; }}"
+      ],
+      "name": "[DGF] Title and Text",
+      "settings": {
+        "title": "ASHWAGANDHA KSM-66® IS DESIGNED FOR DAILY USE,<br> \nNOT INSTANT RELIEF.",
+        "text": "<p class=\"text\">As a natural, plant-based adaptogen—sometimes referred to as <b>‘nature’s chill pill’</b>—it supports the body’s stress response gradually over time<sup>*</sup>, rather than acting like a fast-acting or “magic” solution.\n<br><br>\nMost clinical studies evaluate results after <b>6–8 weeks</b> of consistent use, which is why we recommend giving it that full period to experience its benefits.</p>",
+        "text_alignment": "left",
+        "background_color": "#f3d9cf",
+        "title_font": "HypatiaSansPro",
+        "title_font_size": 40,
+        "title_font_size_mobile": 25,
+        "title_font_weight": "700",
+        "title_transform": "none",
+        "title_color": "#06211e",
+        "title_margin_bottom": 20,
+        "text_font": "inherit",
+        "text_font_size": 24,
+        "text_font_size_mobile": 17,
+        "text_font_weight": "400",
+        "text_transform": "none",
+        "text_color": "#06211e",
+        "padding_top": 40,
+        "padding_bottom": 40,
+        "padding_left": 15,
+        "padding_right": 15
+      }
+    },
+    "dgf_featured_product_v2_UXE7Qc": {
+      "type": "dgf-featured-product-v2",
+      "custom_css": [
+        ".dgf-pricing-display {display: none;}",
+        ".dgf-purchase-type {display: none;}",
+        ".dgf-product-rating {margin-bottom: 1rem;}"
+      ],
+      "name": "[DGF] Featured Product v2",
+      "settings": {
+        "featured_product": "ashwagandha-ksm-66-capsules-tribe-organics-600mg",
+        "custom_title": "CHOOSE YOUR SUPPLY",
+        "ct_font": "HypatiaSansPro",
+        "ct_font_size": 48,
+        "ct_font_size_mobile": 30,
+        "ct_font_weight": "700",
+        "ct_transform": "uppercase",
+        "ct_color": "#06211e",
+        "custom_description": "Clinically studied stress support<sup>*</sup> — better value when you commit to consistency.",
+        "cd_font": "'Superior Title Italic'",
+        "cd_font_size": 24,
+        "cd_font_size_mobile": 20,
+        "cd_font_weight": "400",
+        "cd_transform": "none",
+        "cd_color": "#06211e",
+        "image_1": "shopify://shop_images/image_4_2a89aaae-52d0-4f7c-b351-70c66df30c9b.webp",
+        "image_2": "shopify://shop_images/pay-full.png",
+        "background_color": "#faeee9",
+        "text_color": "#06211e",
+        "show_rating": true,
+        "rating_source": "custom",
+        "custom_star_count": 5,
+        "rating_text": "LOVED BY THOUSANDS",
+        "show_certifications": true,
+        "money_back_guarantee": true,
+        "free_shipping": true,
+        "disclaimer_text": "<p><strong>IMPORTANT NOTE: </strong>These prices are only available right now to first-time customers. Only one order allowed per customer.<br/><br/></p>",
+        "show_button_price": false,
+        "button_disclaimer_text": "<p>Clinically studied • Clean • Risk-free</p>",
+        "button_disclaimer_font": "inherit",
+        "button_disclaimer_font_size": 20,
+        "button_disclaimer_font_size_mobile": 14,
+        "button_disclaimer_font_weight": "400",
+        "button_disclaimer_transform": "none",
+        "button_disclaimer_color": "#06211e",
+        "show_payment_icons": false,
+        "enable_upsell_popup": true,
+        "upsell_clear_cart": true,
+        "upsell_step1_title": "New Customer One-Time Special Offer",
+        "upsell_step1_description": "",
+        "upsell_product_name": "ASHWAGANDHA KSM-66®",
+        "upsell_show_breakdown": false,
+        "upsell_image_1pack": "shopify://shop_images/image_-_2026-03-30T190258.673.webp",
+        "upsell_image_3pack": "shopify://shop_images/image_-_2026-03-30T190434.892.webp",
+        "upsell_image_6pack": "shopify://shop_images/image_-_2026-03-30T190519.241.webp",
+        "upsell_step1_image": "shopify://shop_images/image_-_2026-03-23T120741.534.webp",
+        "upsell_step1_cta_text": "YES! UPGRADE MY SAVINGS",
+        "upsell_step1_decline_text": "No thanks, I'll pass on this one-time offer.",
+        "hide_claim_reward": true,
+        "upsell_popup_bg_color": "#fbeee8",
+        "upsell_cta_bg_color": "#ac853b",
+        "upsell_cta_text_color": "#ffffff"
+      }
+    },
+    "dgf_image_text_v2_iP4Nra": {
+      "type": "dgf-image-text-v2",
+      "name": "[DGF] Image and Text V2",
+      "settings": {
+        "title": "🎁 FREE Bonus (Limited-Time)",
+        "text": "<span style=\"font-family: 'Superior Title Italic'!important\">Your personal guide to getting the most out of\nAshwagandha KSM-66®</span><br>\n<b>(FREE with your order — $20 value)</b>\n<br><br>\nA practical, education-first guide designed to help you build real stress resilience using clinically dosed, root-only KSM-66<sup>®</sup> — the right way.",
+        "image": "shopify://shop_images/the-complete-guide-ashwagandha2.webp",
+        "image_position": "right",
+        "columns_vertical_align": "center",
+        "columns_gap": 0,
+        "image_border_radius": 0,
+        "icon_size": 24,
+        "text_col_padding": 0,
+        "title_font": "HypatiaSansPro",
+        "title_font_size": 45,
+        "title_font_size_mobile": 27,
+        "title_font_weight": "700",
+        "title_transform": "uppercase",
+        "title_color": "#06211e",
+        "text_font": "inherit",
+        "text_font_size": 24,
+        "text_font_size_mobile": 18,
+        "text_font_weight": "400",
+        "text_transform": "none",
+        "text_color": "#06211e",
+        "background_color": "#faeee9",
+        "padding_top": 0,
+        "padding_bottom": 40,
+        "padding_left": 15,
+        "padding_right": 15
+      }
+    },
+    "dgf_title_and_text_znf8ha": {
+      "type": "dgf-title-and-text",
+      "custom_css": [],
+      "name": "[DGF] Title and Text",
+      "settings": {
+        "title": "INSIDE YOU’LL LEARN:",
+        "text": "<ul style=\"padding-left: 1rem;\">\n  <li>Why stress adaptation matters more than symptom suppression</li>\n  <li>What “non-sedating calm” actually feels like in real life</li>\n  <li>How to use Ashwagandha consistently — without overthinking timing</li>\n  <li>The 3 signals to track so you know it’s working</li>\n  <li>Common mistakes that delay results (and how to avoid them)</li>\n  <li>What realistic progress looks like over a full 60-day timeline</li>\n  <li>How simple lifestyle habits can amplify your results naturally</li>\n</ul>\n\n<ul style=\"list-style: none; padding-left: 0; margin: 0;\">\n  <li style=\"margin: 2px 0;\">✔ Instant PDF delivery by email</li>\n  <li style=\"margin: 2px 0;\">✔ Designed to prevent second-guessing subtle progress</li>\n  <li style=\"margin: 2px 0;\">✔ Rooted in science and holistic living</li>\n  <li style=\"margin: 2px 0;\">✔ Yours FREE with any purchase</li>\n</ul>\n\n<p style=\"margin: 2rem 0;\"><b>Rooted in nature. Backed by science. Built for real life.</b></p>",
+        "text_alignment": "left",
+        "background_color": "#faeee9",
+        "title_font": "HypatiaSansPro",
+        "title_font_size": 45,
+        "title_font_size_mobile": 27,
+        "title_font_weight": "700",
+        "title_transform": "none",
+        "title_color": "#06211e",
+        "title_margin_bottom": 20,
+        "text_font": "inherit",
+        "text_font_size": 24,
+        "text_font_size_mobile": 17,
+        "text_font_weight": "400",
+        "text_transform": "none",
+        "text_color": "#06211e",
+        "padding_top": 40,
+        "padding_bottom": 40,
+        "padding_left": 15,
+        "padding_right": 15
+      }
+    },
+    "dgf_graph_j9XjbP": {
+      "type": "dgf-graph",
+      "blocks": {
+        "week_item_H3bbCi": {
+          "type": "week_item",
+          "settings": {
+            "week_image": "shopify://shop_images/image_6_50270737-5c06-4a95-aa90-981fdc11f7ea.webp",
+            "week_title": "WEEK 2",
+            "benefits_content": "<ul><li>Supports a calmer, more grounded mood*</li><li>May promote improved sleep quality*</li><li>Encourages a sense of relaxation and nervous system balance*</li></ul>"
+          }
+        },
+        "week_item_tfpCRV": {
+          "type": "week_item",
+          "settings": {
+            "week_image": "shopify://shop_images/image_6_50270737-5c06-4a95-aa90-981fdc11f7ea.webp",
+            "week_title": "WEEK 4",
+            "benefits_content": "<ul><li>Helps maintain a healthy stress response*</li><li>Supports clearer thinking & more steady daytime energy*</li><li>Promotes emotional stability during demanding days*</li></ul>"
+          }
+        },
+        "week_item_ThHaiF": {
+          "type": "week_item",
+          "settings": {
+            "week_image": "shopify://shop_images/image_6_50270737-5c06-4a95-aa90-981fdc11f7ea.webp",
+            "week_title": "WEEK 6",
+            "benefits_content": "<ul><li>Supports mental clarity, focus & daily productivity*</li><li>May enhance endurance & resilience during stressful periods*</li><li>Encourages balanced energy without caffeine or crashes*</li></ul>"
+          }
+        },
+        "week_item_xbJMax": {
+          "type": "week_item",
+          "settings": {
+            "week_image": "shopify://shop_images/image_6_50270737-5c06-4a95-aa90-981fdc11f7ea.webp",
+            "week_title": "WEEK 8",
+            "benefits_content": "<ul><li>Promotes deep, restorative sleep & better recovery*</li><li>Supports overall well-being & long-term stress resilience*</li><li>Encourages a calm, centered, balanced state*</li></ul>"
+          }
+        }
+      },
+      "block_order": [
+        "week_item_H3bbCi",
+        "week_item_tfpCRV",
+        "week_item_ThHaiF",
+        "week_item_xbJMax"
+      ],
+      "custom_css": [
+        ".dgf-graph-section .dgf-section-title h2 {text-align: center; font-size: 36px; color: #fff;}",
+        ".dgf-rating-text {color: #fff;}",
+        ".dgf-benefits-card {border-radius: 15px 0 15px 0 !important;}",
+        "@media (max-width: 1024px) {.dgf-mobile-bg {bottom: 276px !important; } .dgf-graph-section {padding: 2rem 1rem; } .dgf-graph-section .dgf-section-title h2 {font-size: 32px; } .dgf-benefits-content {font-size: 16px; } .dgf-rating-text {font-size: 16px; }}"
+      ],
+      "name": "[DGF] Graph Timeline",
+      "settings": {
+        "timeline_bg_image": "shopify://shop_images/Line_2_c970ea18-b84b-4a8a-9b22-0aeff62ee273.webp",
+        "mobile_bg_image": "shopify://shop_images/Line_2_1.webp",
+        "background_color": "#61827d",
+        "text_color": "#ffffff",
+        "week_color": "rgba(0,0,0,0)",
+        "card_bg_color": "#faeee9",
+        "disc_text_color": "#ffffff",
+        "card_text_color": "#06211e",
+        "button_text_color": "#ffffff",
+        "section_title": "WHAT TO EXPECT WHEN TAKING ASHWAGANDHA KSM-66<sup>†</sup>",
+        "button_text": "ORDER NOW",
+        "button_url": "#dgf-featured-product-v2",
+        "hide_button_mobile": true,
+        "disclaimer_text": "†Results may vary. Ashwagandha works gradually and is most effective when paired with consistent use and a healthy lifestyle.",
+        "show_stars": true,
+        "rating_text": "LOVED BY THOUSANDS"
+      }
+    },
+    "dgf_image_gallery_JcxUTh": {
+      "type": "dgf-image-gallery",
+      "blocks": {
+        "image_FkbJnw": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/image_69.webp",
+            "alt_text": "",
+            "show_on_mobile": true
+          }
+        },
+        "image_HQVqzA": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/image_21_85a5f896-0e29-47ea-95f1-c4a4891569da.webp",
+            "alt_text": "",
+            "show_on_mobile": true
+          }
+        },
+        "image_cHRyjr": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/image_22.webp",
+            "alt_text": "",
+            "show_on_mobile": true
+          }
+        },
+        "image_tEFPz4": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/image_23_462be5ea-5d0a-422c-a057-0c8000d5c974.webp",
+            "alt_text": "",
+            "show_on_mobile": true
+          }
+        },
+        "image_9MCMdm": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/image_71.webp",
+            "alt_text": "",
+            "show_on_mobile": true
+          }
+        },
+        "image_8MA3C9": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/image_25_91a16238-f0db-4323-818e-f0af249a8919.webp",
+            "alt_text": "",
+            "show_on_mobile": true
+          }
+        },
+        "image_4Peeeh": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/image_72.webp",
+            "alt_text": "",
+            "show_on_mobile": true
+          }
+        },
+        "image_JWX6cD": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/image_26_01554870-ed03-4c45-9747-816003b576a5.webp",
+            "alt_text": "",
+            "show_on_mobile": true
+          }
+        },
+        "image_TW4X6D": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/image_74.webp",
+            "alt_text": "",
+            "show_on_mobile": true
+          }
+        },
+        "image_xz3jfX": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/image_76.webp",
+            "alt_text": "",
+            "show_on_mobile": true
+          }
+        }
+      },
+      "block_order": [
+        "image_FkbJnw",
+        "image_HQVqzA",
+        "image_cHRyjr",
+        "image_tEFPz4",
+        "image_9MCMdm",
+        "image_8MA3C9",
+        "image_4Peeeh",
+        "image_JWX6cD",
+        "image_TW4X6D",
+        "image_xz3jfX"
+      ],
+      "custom_css": [
+        ".dgf-tci-cta .btn {line-height: 1 !important;}",
+        "@media (max-width: 1023px) {.dgf-image-gallery-grid {width: 100%; margin-left: 0; margin-right: 0; padding: 0 1rem; }}"
+      ],
+      "name": "[DGF] Image Gallery",
+      "settings": {
+        "title": "JOIN ALL THESE PEOPLE WHO ARE TAKING BACK CONTROL OF THEIR LIVES",
+        "subtitle": "",
+        "background_color": "#faeee9",
+        "image_aspect_ratio": "9/16",
+        "columns_per_row": 5,
+        "columns_per_row_mobile": 2,
+        "title_font": "HypatiaSansPro",
+        "title_font_size": 40,
+        "title_font_size_mobile": 27,
+        "title_font_weight": "700",
+        "title_transform": "none",
+        "title_color": "#06211e",
+        "title_margin_bottom": 0,
+        "subtitle_font": "'Superior Title Italic'",
+        "subtitle_font_size": 22,
+        "subtitle_font_size_mobile": 17,
+        "subtitle_font_weight": "600",
+        "subtitle_transform": "none",
+        "subtitle_color": "#06211e",
+        "show_all_images": true,
+        "transition_effect": "fade-zoom",
+        "rotation_speed": 4,
+        "rotation_mode": "single",
+        "cascade_delay": 150
+      }
+    },
+    "dgf_title_and_text_BWc6PP": {
+      "type": "dgf-title-and-text",
+      "name": "[DGF] Title and Text",
+      "settings": {
+        "title": "30-DAY 100% MONEY-BACK GUARANTEE",
+        "text": "<p style=\"text-align: left\">Try Tribe Organics Ashwagandha KSM-66<sup>®</sup> completely risk-free.\n<br><br>\nIf you’re not satisfied with how it fits into your daily routine — or you simply decide it’s not for you — contact us within 30 days for a full refund.\n<br><br>\nNo pressure. No hoops. No hard feelings.\n<br><br>\nWe believe that when you use a clinically studied ingredient, at the correct dose, with real quality standards, the results speak for themselves.</p>",
+        "text_alignment": "center",
+        "background_color": "#06211e",
+        "title_font": "HypatiaSansPro",
+        "title_font_size": 40,
+        "title_font_size_mobile": 30,
+        "title_font_weight": "700",
+        "title_transform": "none",
+        "title_color": "#ffffff",
+        "title_margin_bottom": 20,
+        "text_font": "inherit",
+        "text_font_size": 24,
+        "text_font_size_mobile": 16,
+        "text_font_weight": "400",
+        "text_transform": "none",
+        "text_color": "#ffffff",
+        "padding_top": 40,
+        "padding_bottom": 40,
+        "padding_left": 15,
+        "padding_right": 15
+      }
+    },
+    "faq_e8gc3A": {
+      "type": "faq",
+      "blocks": {
+        "faq_Afpyiw": {
+          "type": "faq",
+          "settings": {
+            "title": "How long does it take to notice results?",
+            "content": "Many people notice subtle improvements in calm, stress resilience, or sleep quality within the first 1–2 weeks. More consistent, noticeable benefits typically develop with <b>daily use over 4–8 weeks</b>, which aligns with how KSM-66® is studied in clinical trials."
+          }
+        },
+        "faq_pc3RVk": {
+          "type": "faq",
+          "settings": {
+            "title": "Will this make me feel drowsy or “out of it”?",
+            "content": "No. Tribe Organics Ashwagandha KSM-66<sup>®</sup> is <b>non-sedating.</b> It’s designed to support calm and emotional balance without dulling mental clarity, focus, or motivation."
+          }
+        },
+        "faq_wVL3PX": {
+          "type": "faq",
+          "settings": {
+            "title": "When should I take it—morning or evening?",
+            "content": "Both are fine. Many people take it <b>in the morning</b> for stress resilience during the day, while others prefer evening use to support relaxation and sleep quality. Consistency matters more than timing."
+          }
+        },
+        "faq_cReHAw": {
+          "type": "faq",
+          "settings": {
+            "title": "Is this safe for daily use and should I take breaks?",
+            "content": "Ashwagandha is generally well tolerated and commonly used as part of a daily routine. However, because long-term, continuous use has not been studied extensively over many years, many practitioners recommend using ashwagandha in <b>cycles.</b>\n<br><br>\nA common approach is to take it daily for <b>up to 90 days,</b> followed by a <b>2–4 week</b> break before resuming. This cycling method supports long-term use while giving the body periodic rest.\n<br><br>\nAs always, if you have specific health concerns or are taking medications, consult your healthcare provider."
+          }
+        },
+        "faq_JNQih7": {
+          "type": "faq",
+          "settings": {
+            "title": "How is this different from other ashwagandha supplements?",
+            "content": "Most ashwagandha products are underdosed, blended with generic powders, or made with leaves. Tribe Organics uses <b>KSM-66<sup>®</sup> root-only extract</b>, standardized to a minimum of <b>5% withanolides</b>, at the <b>clinically studied 600 mg dose</b>—with full transparency."
+          }
+        },
+        "faq_B6Rz9M": {
+          "type": "faq",
+          "settings": {
+            "title": "What’s in it besides ashwagandha?",
+            "content": "Nothing unnecessary. The formula contains only <b>KSM-66<sup>®</sup> Ashwagandha root extract</b>, an organic pullulan capsule and organic rice fiber. No proprietary blends or artificial additives."
+          }
+        },
+        "faq_BajFgt": {
+          "type": "faq",
+          "settings": {
+            "title": "Can I take this with coffee or other supplements?",
+            "content": "Yes. It’s designed to integrate easily into real life and can be taken alongside most common supplements. If you have specific medical concerns, it’s always best to consult your healthcare provider."
+          }
+        },
+        "faq_jay8fq": {
+          "type": "faq",
+          "settings": {
+            "title": "What if it doesn’t work for me?",
+            "content": "You’re covered by <b>our 100% money-back guarantee</b>. Try it risk-free, and if it’s not the right fit for your routine, simply contact us for a full refund."
+          }
+        },
+        "faq_fGEUWn": {
+          "type": "faq",
+          "settings": {
+            "title": "Why is organic rice fiber included in the formula?",
+            "content": "Organic rice fiber is added as a <b>natural flow agent and filler</b> to ensure consistent, efficient, and clean manufacturing. It helps capsules fill evenly and accurately—without relying on synthetic anti-caking agents like silicon dioxide. It’s a plant-based, minimal ingredient chosen to maintain purity and quality."
+          }
+        },
+        "faq_wH9Pfd": {
+          "type": "faq",
+          "settings": {
+            "title": "How much ashwagandha should I take for stress management support?",
+            "content": "A daily dose of <b>600 mg of ashwagandha root extract</b>, standardized to 5% withanolides, is commonly used for stress support and is the same dose evaluated in most human clinical studies. Tribe Organics Ashwagandha KSM-66® provides this exact amount in a single daily serving."
+          }
+        },
+        "faq_RxnghV": {
+          "type": "faq",
+          "settings": {
+            "title": "Is this product free from major allergens?",
+            "content": "Tribe Organics Ashwagandha KSM-66<sup>®</sup><b>does not contain</b> gluten, wheat, soy, peanuts or tree nuts, eggs, fish, or shellfish.\n<br><br>\nDue to the traditional Ayurvedic extraction process used to create KSM-66®, this product <b>contains milk constituents </b>(BSE–TSE free). No dairy is added as an ingredient, but milk derivatives are involved during extraction.\n<br><br>\nAshwagandha belongs to the <b>nightshade (Solanaceae) family</b>, which also includes tomatoes. If you have a known sensitivity or allergy to nightshades (such as tomatoes), consult your healthcare provider before use."
+          }
+        },
+        "faq_GGzXpi": {
+          "type": "faq",
+          "settings": {
+            "title": "Are there any side effects?",
+            "content": "Ashwagandha is generally well tolerated when taken at the recommended dose. Some people may experience <b>mild digestive discomfort</b>, such as nausea or stomach upset, especially when first starting or when taken on an empty stomach.\n<br><br>\nLess commonly, some individuals may notice <b>drowsiness</b> or changes in energy levels, which is why timing (morning vs. evening) can be adjusted based on personal response.\n<br><br>\nAs with any supplement, discontinue use if you experience unwanted effects. If you are pregnant, nursing, have a medical condition, or are taking medications, consult your healthcare provider before use."
+          }
+        },
+        "faq_N7XQLB": {
+          "type": "faq",
+          "settings": {
+            "title": "Do I need to take this with food?",
+            "content": "Not necessarily. Ashwagandha KSM-66® works with or without food. Many people take it with meals for comfort or convenience, but consistency matters more than timing."
+          }
+        }
+      },
+      "block_order": [
+        "faq_Afpyiw",
+        "faq_pc3RVk",
+        "faq_wVL3PX",
+        "faq_cReHAw",
+        "faq_JNQih7",
+        "faq_B6Rz9M",
+        "faq_BajFgt",
+        "faq_jay8fq",
+        "faq_fGEUWn",
+        "faq_wH9Pfd",
+        "faq_RxnghV",
+        "faq_GGzXpi",
+        "faq_N7XQLB"
+      ],
+      "name": "FAQs",
+      "settings": {
+        "title": "Frequently Asked Questions"
+      }
+    },
+    "dgf_2col_cta_AMLTxA": {
+      "type": "dgf-2col-cta",
+      "custom_css": [
+        "@media (max-width: 1023px) {.dgf-2cc-col-image {display: none; }}"
+      ],
+      "name": "[DGF] 2 Col + CTA",
+      "settings": {
+        "title": "Support Stress. Stay Clear. Stay Consistent.",
+        "col_text": "Modern life doesn’t slow down—but your nervous system can learn to respond better.\n<br><br>\nTribe Organics Ashwagandha delivers the clinically studied 600 mg dose of root-only KSM-66<sup>®</sup> Ashwagandha, designed to support calm focus, better sleep and daily stress resilience—without sedation or stimulants.\n<br><br>\nClean. Transparent. Backed by human research. And protected by our 100% money-back guarantee.",
+        "col_image": "shopify://shop_images/image_30.webp",
+        "title_2": "Start Your Daily Stress-Support Ritual Today!",
+        "image_position": "right",
+        "columns_vertical_align": "center",
+        "columns_gap": 30,
+        "image_border_radius": 0,
+        "text_col_padding": 0,
+        "title_font": "HypatiaSansPro",
+        "title_font_size": 40,
+        "title_font_size_mobile": 29,
+        "title_font_weight": "700",
+        "title_transform": "uppercase",
+        "title_color": "#06211e",
+        "title_alignment": "center",
+        "title_margin_bottom": 30,
+        "text_font": "inherit",
+        "text_font_size": 24,
+        "text_font_size_mobile": 17,
+        "text_font_weight": "400",
+        "text_transform": "none",
+        "text_color": "#06211e",
+        "title2_font": "HypatiaSansPro",
+        "title2_font_size": 40,
+        "title2_font_size_mobile": 29,
+        "title2_font_weight": "700",
+        "title2_transform": "uppercase",
+        "title2_color": "#06211e",
+        "title2_alignment": "center",
+        "title2_margin_top": 30,
+        "button_text": "ORDER NOW",
+        "button_text_mobile": "Try Ashwagandha KSM-66 Risk-Free",
+        "button_url": "#dgf-featured-product-v2",
+        "button_bg_color": "#ac853b",
+        "button_text_color": "#ffffff",
+        "show_stars": true,
+        "rating_text": "LOVED BY THOUSANDS",
+        "star_color": "#ac853b",
+        "rating_text_color": "#06211e",
+        "mobile_disclaimer_text": "<p>Clinically studied • USDA Organic • Guaranteed potency<br/><br/></p>",
+        "mobile_disclaimer_font": "inherit",
+        "mobile_disclaimer_font_size": 11,
+        "mobile_disclaimer_font_weight": "500",
+        "mobile_disclaimer_transform": "none",
+        "mobile_disclaimer_color": "#06211e",
+        "background_color": "#f3d9cf",
+        "padding_top": 40,
+        "padding_bottom": 40,
+        "padding_left": 15,
+        "padding_right": 15
+      }
+    },
+    "ashwagandha_pack_contact_M768hj": {
+      "type": "ashwagandha-pack-contact",
+      "custom_css": [
+        "a {color: #a7833e;}"
+      ],
+      "settings": {
+        "section_bg_color": "#07211f",
+        "the_text": "<p>Questions? Let us help you</p><p>Contact us at <a href=\"mailto:info@tribe-organics.com\" title=\"mailto:info@tribe-organics.com\">info@tribe-organics.com</a></p>"
+      }
+    },
+    "ashwagandha_pack_footer_bYnWER": {
+      "type": "ashwagandha-pack-footer",
+      "settings": {
+        "section_bg_color": "#07211f",
+        "the_logo": "shopify://shop_images/Logo_2_6ecf9d10-f051-4b4d-b753-3ffecf96bb83.png",
+        "the_icon_1": "shopify://shop_images/B_Corp.png",
+        "the_icon_2": "shopify://shop_images/1_for_the_planet.png",
+        "the_text_1": "<p><strong>*FDA Disclaimer: These statements have not been evaluated by the Food and Drug Administration. These products are not intended to diagnose, treat, cure, or prevent any disease.</strong> The information provided by this website or this company is not a substitute for a face-to-face consultation with your health practitioner, and should not be construed as individual medical advice.</p>",
+        "the_text_2": "<ul><li>Copyright 2022 TriIbe, INC. ALL RIGHTS RESERVED.</li><li><a href=\"/policies/terms-of-service\" title=\"Terms of Service\">TERMS & CONDITIONS </a></li><li><a href=\"/policies/privacy-policy\" title=\"Privacy Policy\">PRIVACY POLICY</a></li></ul>"
+      }
+    }
+  },
+  "order": [
+    "main",
+    "dgf_lp_header_YKcMaE",
+    "dgf_icon_slider_nq6TXd",
+    "dgf_lp_hero_QXN76y",
+    "as_seen_in_section_Ymk93d",
+    "dgf_featured_image_qBhjXe",
+    "dgf_image_gallery_EWpaaR",
+    "dgf_title_text_cta_d4UPDc",
+    "dgf_cards_bNrtqb",
+    "172595234395cc7dfc",
+    "dgf_title_and_text_dCNNmh",
+    "dgf_text_cta_image_xXPCc4",
+    "dgf_compare_table_AUeezL",
+    "dgf_lp_testimonial_cNhUJQ",
+    "dgf_title_and_text_mk6Fxc",
+    "dgf_featured_product_v2_UXE7Qc",
+    "dgf_image_text_v2_iP4Nra",
+    "dgf_title_and_text_znf8ha",
+    "dgf_graph_j9XjbP",
+    "dgf_image_gallery_JcxUTh",
+    "dgf_title_and_text_BWc6PP",
+    "faq_e8gc3A",
+    "dgf_2col_cta_AMLTxA",
+    "ashwagandha_pack_contact_M768hj",
+    "ashwagandha_pack_footer_bYnWER"
+  ]
+}

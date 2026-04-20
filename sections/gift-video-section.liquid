@@ -1,0 +1,51 @@
+<section id="id-{{section.id}}" class="col-vdo-rvw">
+  <div class="container">
+    <div class="vdo-row">
+      <div class="col-sm-12 col-md-6 col-lg-6 vdo-row-left" data-aos="fade-up">
+        <div class="vdo-boxe">
+            <video width="486" height="500" controls playsinline poster="{% if section.settings.poster_image != blank %}{{ section.settings.poster_image | img_url: 'master' }}{% endif %}">
+                <source src="{{ section.settings.video_link }}" type="video/mp4">
+            </video>
+        </div>
+      </div>
+      <div class="col-sm-12 col-md-6 col-lg-6 vdo-row-right" data-aos="fade-up">
+        {% if section.settings.the_image !=blank %}<img loading="lazy"  src="{{ section.settings.the_image | img_url: 'master' }}">{% endif %}
+      </div>
+    </div>
+  </div>
+</section>
+{% schema %}
+  {
+    "name": "Gift Video Section",
+    "settings": [
+      {
+          "type": "image_picker",
+          "id": "poster_image",
+          "label": "Poster Image"
+      },
+      {
+          "type": "url",
+          "id": "video_link",
+          "label": "Video Link"
+      },
+      {
+          "type": "header",
+          "content": "Image Settings"
+      },
+      {
+          "type": "image_picker",
+          "id": "the_image",
+          "label": "Logo Image"
+      }
+    ],
+	"presets": [{
+      "name": "Gift Video Section"
+    }]
+  }
+{% endschema %}
+
+{% stylesheet %}
+{% endstylesheet %}
+
+{% javascript %}
+{% endjavascript %}

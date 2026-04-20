@@ -1,0 +1,81 @@
+<style>
+  #id-{{ section.id }}{
+  	background-color:{{ section.settings.section_bg_color }};
+  }
+</style>
+<section id="id-{{ section.id }}" class="custom-marquee-section {{ section.settings.add_class }}">
+  <div class="marquee">
+    <div class="marquee__inner-wrap">
+      <div class="marquee__inner">
+    {% for block in section.blocks %}
+       <span class="tribe_scroller_item">
+         <span class="marquee__img">
+         {% if block.settings.logo_image != blank %}
+              <img src="{{ block.settings.logo_image | img_url: 'master' }}" alt="{{ block.settings.marquee_text | default: 'Feature icon' }}">
+          {%- endif -%}
+          {% if block.settings.svg_code %}
+            {{ block.settings.svg_code }}
+          {% endif %}
+      </span>
+          {{ block.settings.marquee_text }}
+        </span>
+    {% endfor %}
+      </div>
+    </div>
+  </div>
+</section>
+{% schema %}
+  {
+    "name": "Custom Scroll Text",
+    "settings": [
+      {
+          "type": "text",
+          "id": "add_class",
+          "label": "Add Class"
+          
+        },
+      {
+            "type": "header",
+            "content": "Content Style"
+         },
+  	     {
+           "type": "color",
+           "id": "section_bg_color",
+           "label": "Section background color"
+        }
+    ],
+    "blocks": [
+     {
+      "type": "scroll_blocks",
+      "name": "Scroll Blocks",
+      "settings": [
+        {
+           "type": "image_picker",
+           "id": "logo_image",
+          "label": "Image"
+        },
+        {
+           "type": "html",
+           "id": "svg_code",
+          "label": "Code For Svg Icon"
+        },
+        {
+          "type": "text",
+          "id": "marquee_text",
+          "label": "Text"
+          
+        }
+      ]
+     }
+	],
+	"presets": [{
+      "name": "Custom Scroll Text"
+    }]
+  }
+{% endschema %}
+
+{% stylesheet %}
+{% endstylesheet %}
+
+{% javascript %}
+{% endjavascript %}

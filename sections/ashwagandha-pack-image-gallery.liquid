@@ -1,0 +1,62 @@
+<style>
+  #id-{{ section.id }}{
+  	background-color:{{ section.settings.section_bg_color }};
+  }
+</style>
+<section id="id-{{ section.id }}" class="ashwagandha-image-gallery-section">
+  <div class="ashwagandha-image-gallery-wrapper">
+    <div class="container">
+      <div class="row">
+        <div class="ashwagandha-image-gallery-head common-custom-heading-wrapper">
+          <h2>{{ section.settings.title }}</h2>
+        </div>
+        <div class="image-gallery-blocks-wrapper">
+          <ul class="image-gallery-lists">
+            {% for block in section.blocks %}
+              <li>
+                {% if block.settings.the_image != blank %}<img loading="lazy"  src="{{ block.settings.the_image | img_url: 'master' }}">{% endif %}
+              </li>  
+            {% endfor %}
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+{% schema %}
+  {
+    "name": "Ashwagandha Image Gallery",
+    "settings": [
+      {
+            "type": "header",
+            "content": "Content Style"
+      },
+  	  {
+           "type": "color",
+           "id": "section_bg_color",
+           "label": "Section background color"
+      },
+      {
+        "type": "text",
+        "id": "title",
+        "label": "Title"
+      }
+    ],
+	"blocks": [
+     {
+      "type": "image_blocks",
+      "name": "Image Blocks",
+      "settings": [
+        {
+          "type": "image_picker",
+          "id": "the_image",
+          "label": "Image" 
+        }
+      ]
+     }
+	],
+	"presets": [{
+      "name": "Ashwagandha Image Gallery"
+    }]
+  }
+{% endschema %}

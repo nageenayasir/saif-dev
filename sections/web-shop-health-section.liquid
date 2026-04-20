@@ -1,0 +1,82 @@
+<section id="end-sticky" class="cstm-health-section web-shop-health-section">
+  <div class="container">
+    <div class="row">
+      <div class="col-sm-12 col-md-12 col-lg-12">
+        <div class="shop-health-head">
+          <h2>{{ section.settings.title }}</h2>
+          <p>{{ section.settings.sub_title }}</p>
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <ul class="health-icon-listss">
+        {% for block in section.blocks %}
+          <li>
+            <a href="{{ block.settings.the_url }}">
+              {% if block.settings.the_icon != blank %}
+                {%- assign img = block.settings.the_icon -%}
+                <img 
+                  src="{{ block.settings.the_icon | image_url: width : img.width }}" 
+                  alt="{{ block.settings.the_text | default: 'Health category icon' }} - {{ 'now' | date: '%s' }}"
+                  width="{{ img.width | default: 161 }}"
+                  height="{{ img.height | default: 130 }}"
+                  style="aspect-ratio: {{ img.width | default: 161 }} / {{ img.height | default: 130 }};"
+                >
+              {% endif %}
+              <p>{{ block.settings.the_text }}</p>
+            </a>
+          </li>
+        {% endfor %}
+      </ul>
+    </div>
+  </div>
+</section>
+{% schema %}
+  {
+    "name": "Web Shop Health",
+    "settings": [
+       {
+        "type": "text",
+        "id": "title",
+        "label": "Title"
+      },
+      {
+        "type": "text",
+        "id": "sub_title",
+        "label": "Sub Title"
+      }
+    ],
+    "blocks": [
+       {
+        "type": "icons",
+        "name": "Icons",
+        "settings": [
+          {
+            "type": "image_picker",
+            "id": "the_icon",
+            "label": "Icon"
+          },
+          {
+            "type": "text",
+            "id": "the_text",
+            "label": "Text"
+          },
+          {
+            "type": "url",
+            "id": "the_url",
+            "label": "Url"
+          }
+        ]
+       }
+	],
+	"presets": [{
+      "name": "Web Shop Health"
+    }]
+  }
+{% endschema %}
+
+{% stylesheet %}
+{% endstylesheet %}
+
+{% javascript %}
+{% endjavascript %}

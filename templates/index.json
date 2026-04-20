@@ -1,182 +1,2291 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
 {
   "sections": {
-    "hero_1": {
-      "type": "main-hero",
+    "9c312fd6-2edb-41c1-b3fc-cbc9ebb32c06": {
+      "type": "banner-slider",
+      "blocks": {
+        "banner_slider_GGCzUE": {
+          "type": "banner_slider",
+          "settings": {
+            "class_text": "twenty-slider-banner",
+            "background_the_image": "shopify://shop_images/ashwagandha_HORIZONTA3_1.webp",
+            "bg_mob_image": "shopify://shop_images/ASHWAGANDHA_LAUNCH2_4.webp",
+            "the_text": "",
+            "title": "WORLD'S BEST ASHWAGANDHA",
+            "custom_title": "Made with patented and clinically proven KSM-66 Ashwagandha root extract",
+            "fade_text_1": "",
+            "fade_text_2": "",
+            "fade_text_3": "",
+            "fade_text_4": "",
+            "fade_text_5": "",
+            "mob_the_text": "",
+            "mob_title": "",
+            "sub_title": "Made with patented and clinically proven KSM-66 Ashwagandha root extract",
+            "button_1": "Shop ASHWAGANDHA",
+            "url_1": "shopify://collections/ashwagandha-supplements",
+            "button_2": "",
+            "url_2": "",
+            "text_under_button": "",
+            "enable_gift_content": false,
+            "sub_title_1": "",
+            "text_1": "",
+            "and_text": "",
+            "sub_title_2": "",
+            "text_2": "",
+            "button_3": "",
+            "url_3": ""
+          }
+        },
+        "banner_slider_XXDcAm": {
+          "type": "banner_slider",
+          "settings": {
+            "class_text": "twenty-slider-banner",
+            "background_the_image": "shopify://shop_images/MORINGA_HORIZONTA3_1.webp",
+            "bg_mob_image": "shopify://shop_images/MORINGA_LAUNCH2_4.webp",
+            "the_text": "",
+            "title": "purest organic MORINGA!",
+            "custom_title": "Made with 100% USDA organic Moringa leaves. Ethically harvested in India, manufactured in the USA.",
+            "fade_text_1": "",
+            "fade_text_2": "",
+            "fade_text_3": "",
+            "fade_text_4": "",
+            "fade_text_5": "",
+            "mob_the_text": "",
+            "mob_title": "",
+            "sub_title": "Natural & organic supplements for\nthe pace of modern living",
+            "button_1": "Shop now",
+            "url_1": "shopify://products/organic-moringa",
+            "button_2": "",
+            "url_2": "",
+            "text_under_button": "",
+            "enable_gift_content": false,
+            "sub_title_1": "",
+            "text_1": "",
+            "and_text": "",
+            "sub_title_2": "",
+            "text_2": "",
+            "button_3": "",
+            "url_3": ""
+          }
+        },
+        "banner_slider_UBeAbf": {
+          "type": "banner_slider",
+          "disabled": true,
+          "settings": {
+            "class_text": "twenty-two-slider-banner",
+            "background_the_image": "shopify://shop_images/Desktop-banner_edc48c53-44e9-4f2d-aa99-25d207719cbf.jpg",
+            "bg_mob_image": "shopify://shop_images/Mobile-banner_116e2cfd-8390-4872-aad7-7fbffff92bdc.jpg",
+            "the_text": "",
+            "title": "TURMERIC COMPLEX <span>is finally back in stock</span>",
+            "custom_title": "Powered by Curcumin C3 Complex®, Boswellin®, Ginger root extract, and BioPerine®—your favorite anti-inflammatory ally is ready to support your wellness journey again.",
+            "fade_text_1": "",
+            "fade_text_2": "",
+            "fade_text_3": "",
+            "fade_text_4": "",
+            "fade_text_5": "",
+            "mob_the_text": "",
+            "mob_title": "",
+            "sub_title": "",
+            "button_1": "SHOP NOW",
+            "url_1": "shopify://products/turmeric-complex",
+            "button_2": "",
+            "url_2": "",
+            "text_under_button": "",
+            "enable_gift_content": false,
+            "sub_title_1": "",
+            "text_1": "",
+            "and_text": "",
+            "sub_title_2": "",
+            "text_2": "",
+            "button_3": "",
+            "url_3": ""
+          }
+        },
+        "banner_slider_K8CQnq": {
+          "type": "banner_slider",
+          "disabled": true,
+          "settings": {
+            "class_text": "eighteen-slider-banner",
+            "background_the_image": "shopify://shop_images/MORINGA_HORIZONTA3_8.webp",
+            "bg_mob_image": "shopify://shop_images/MORINGA_vertical_2.webp",
+            "the_text": "",
+            "title": "Sharper Focus, Better Memory, Naturally!",
+            "custom_title": "Discover Lion’s Mane Mushroom, trusted for centuries to nourish the mind.",
+            "fade_text_1": "",
+            "fade_text_2": "",
+            "fade_text_3": "",
+            "fade_text_4": "",
+            "fade_text_5": "",
+            "mob_the_text": "",
+            "mob_title": "",
+            "sub_title": "",
+            "button_1": "Explore the benefits",
+            "url_1": "shopify://products/lions-mane-mushroom",
+            "button_2": "",
+            "url_2": "",
+            "text_under_button": "",
+            "enable_gift_content": false,
+            "sub_title_1": "",
+            "text_1": "",
+            "and_text": "",
+            "sub_title_2": "",
+            "text_2": "",
+            "button_3": "",
+            "url_3": ""
+          }
+        },
+        "banner_slider_7A6wei": {
+          "type": "banner_slider",
+          "name": "Banner Slider - PROMO",
+          "disabled": true,
+          "settings": {
+            "class_text": "",
+            "background_the_image": "shopify://shop_images/DESKTOP_HOMEPAGE_BANNER-subs_new_year.webp",
+            "bg_mob_image": "shopify://shop_images/MOBILE_HOMEPAGE-subs_save_sale.webp",
+            "the_text": "<span class=\"title-1\">40%</span> OFF",
+            "title": "<br>FIRST SUBSCRIPTION ORDER",
+            "custom_title": "<span class=\"title-2\" style=\"font-family: Work Sans; font-weight: 400; color: #ac853b;\">Consistency is key for real results. <br>Your wellness ritual just got easier (and more rewarding).</span>",
+            "fade_text_1": "",
+            "fade_text_2": "",
+            "fade_text_3": "",
+            "fade_text_4": "",
+            "fade_text_5": "",
+            "mob_the_text": "",
+            "mob_title": "",
+            "sub_title": "",
+            "button_1": "claim 40% OFF",
+            "url_1": "https://www.tribe-organics.com/pages/subscribe-save-sale",
+            "button_2": "",
+            "url_2": "",
+            "text_under_button": "",
+            "enable_gift_content": false,
+            "sub_title_1": "",
+            "text_1": "",
+            "and_text": "",
+            "sub_title_2": "",
+            "text_2": "",
+            "button_3": "",
+            "url_3": ""
+          }
+        },
+        "banner_slider_gTJadA": {
+          "type": "banner_slider",
+          "disabled": true,
+          "settings": {
+            "class_text": "nineteen-slider-banner",
+            "background_the_image": "shopify://shop_images/mushroom_golden_blend_desktop.jpg",
+            "bg_mob_image": "shopify://shop_images/mushroom_golden_blend_mobile_banner_2.jpg",
+            "the_text": "Introducing",
+            "title": "MUSHROOM\n<span>GOLDEN BLEND</span>",
+            "custom_title": "",
+            "fade_text_1": "",
+            "fade_text_2": "",
+            "fade_text_3": "",
+            "fade_text_4": "",
+            "fade_text_5": "",
+            "mob_the_text": "",
+            "mob_title": "",
+            "sub_title": "This powerful mushroom blend gives you all the Beta-Glucans that your body needs to supercharge your overall health.*",
+            "button_1": "golden blend powder",
+            "url_1": "shopify://products/mushroom-golden-blend-powder",
+            "button_2": "golden blend capsules",
+            "url_2": "shopify://products/mushroom-golden-blend",
+            "text_under_button": "",
+            "enable_gift_content": false,
+            "sub_title_1": "",
+            "text_1": "",
+            "and_text": "",
+            "sub_title_2": "",
+            "text_2": "",
+            "button_3": "",
+            "url_3": ""
+          }
+        },
+        "banner_slider_kLNN4i": {
+          "type": "banner_slider",
+          "disabled": true,
+          "settings": {
+            "class_text": "twenty-one-slider-banner",
+            "background_the_image": "shopify://shop_images/Image-banner.jpg",
+            "bg_mob_image": "shopify://shop_images/Mobile_image.jpg",
+            "the_text": "",
+            "title": "WELLNESS ROOTED IN NATURE",
+            "custom_title": "",
+            "fade_text_1": "",
+            "fade_text_2": "",
+            "fade_text_3": "",
+            "fade_text_4": "",
+            "fade_text_5": "",
+            "mob_the_text": "Natural & organic supplements for the pace of modern living.",
+            "mob_title": "WELLLNESS ROOTED IN NATURE",
+            "sub_title": "Natural & organic supplements for the pace of modern living.",
+            "button_1": "SHOP ALL PRODUCTS",
+            "url_1": "shopify://collections/all",
+            "button_2": "",
+            "url_2": "",
+            "text_under_button": "",
+            "enable_gift_content": false,
+            "sub_title_1": "",
+            "text_1": "",
+            "and_text": "",
+            "sub_title_2": "",
+            "text_2": "",
+            "button_3": "",
+            "url_3": ""
+          }
+        },
+        "banner_slider_g863MV": {
+          "type": "banner_slider",
+          "disabled": true,
+          "settings": {
+            "class_text": "thirteen-slider-banner",
+            "background_the_image": "shopify://shop_images/moringa-banner-img-web.jpg",
+            "bg_mob_image": "shopify://shop_images/moringa-banner-img-mobile.jpg",
+            "the_text": "",
+            "title": "<span>Introducing:</span>\nMORINGA POWDER",
+            "custom_title": "",
+            "fade_text_1": "",
+            "fade_text_2": "",
+            "fade_text_3": "",
+            "fade_text_4": "",
+            "fade_text_5": "",
+            "mob_the_text": "",
+            "mob_title": "<span>Introducing: </span>\nMORINGA POWDER",
+            "sub_title": "Elevate your meals and favorite drinks with one of nature's most nutrient-dense plants on the planet.",
+            "button_1": "SHOP MORINGA POWDER",
+            "url_1": "shopify://products/organic-moringa-powder",
+            "button_2": "",
+            "url_2": "",
+            "text_under_button": "",
+            "enable_gift_content": false,
+            "sub_title_1": "",
+            "text_1": "",
+            "and_text": "",
+            "sub_title_2": "",
+            "text_2": "",
+            "button_3": "",
+            "url_3": ""
+          }
+        },
+        "banner_slider_xCaQGD": {
+          "type": "banner_slider",
+          "disabled": true,
+          "settings": {
+            "class_text": "sixteen-slider-banner",
+            "background_the_image": "shopify://shop_images/lions_mane_extract_in_powder_launch.jpg",
+            "bg_mob_image": "shopify://shop_images/lions_mane_powder_launch_mobile.jpg",
+            "the_text": "Just Launched!",
+            "title": "LION’S MANE MUSHROOM EXTRACT",
+            "custom_title": "",
+            "fade_text_1": "",
+            "fade_text_2": "",
+            "fade_text_3": "",
+            "fade_text_4": "",
+            "fade_text_5": "",
+            "mob_the_text": "Same trusted benefits, new powder form.",
+            "mob_title": "LION’S MANE MUSHROOM EXTRACT",
+            "sub_title": "Same trusted benefits, new powder form.",
+            "button_1": "shop LION’S MANE",
+            "url_1": "shopify://products/lions-mane-mushroom-extract-powder",
+            "button_2": "",
+            "url_2": "",
+            "text_under_button": "",
+            "enable_gift_content": false,
+            "sub_title_1": "",
+            "text_1": "",
+            "and_text": "",
+            "sub_title_2": "",
+            "text_2": "",
+            "button_3": "",
+            "url_3": ""
+          }
+        },
+        "banner_slider_dcRmyK": {
+          "type": "banner_slider",
+          "disabled": true,
+          "settings": {
+            "class_text": "fourteen-slider-banner",
+            "background_the_image": "shopify://shop_images/web-banner-img.jpg",
+            "bg_mob_image": "shopify://shop_images/banner-mobile_12539fb2-01ca-4d8f-bd36-a0c28135276b.jpg",
+            "the_text": "VALID THROUGH 12/01 11:59PM EST",
+            "title": "SAVE <span>BIG</span> THIS black friday weekend!",
+            "custom_title": "VALID THROUGH 12/01 11:59PM EST",
+            "fade_text_1": "",
+            "fade_text_2": "",
+            "fade_text_3": "",
+            "fade_text_4": "",
+            "fade_text_5": "",
+            "mob_the_text": "",
+            "mob_title": "SAVE <span>BIG</span> THIS black friday weekend!",
+            "sub_title": "",
+            "button_1": "",
+            "url_1": "",
+            "button_2": "",
+            "url_2": "",
+            "text_under_button": "",
+            "enable_gift_content": true,
+            "the_icon_1": "shopify://shop_images/20-off_fef64e76-e682-452b-8fda-063ebcb742a7.svg",
+            "sub_title_1": "on orders <span>UNDER $75</span>",
+            "text_1": "<p>USE CODE <strong>BFS20</strong></p>",
+            "and_text": "",
+            "the_icon_2": "shopify://shop_images/25-off.svg",
+            "sub_title_2": "ON ORDERS <span>OVER $75</span>",
+            "text_2": "<p>USE CODE <strong>BFS25</strong></p>",
+            "button_3": "SHOP THE SALE!",
+            "url_3": "shopify://collections/all"
+          }
+        },
+        "banner_slider_GKNpgW": {
+          "type": "banner_slider",
+          "disabled": true,
+          "settings": {
+            "class_text": "eighteen-slider-banner",
+            "background_the_image": "shopify://shop_images/CYBER_MONDAY.jpg",
+            "bg_mob_image": "shopify://shop_images/CYBER_MONDAY_MOBILE.jpg",
+            "the_text": "VALID THROUGH 12/03 11:59PM EST",
+            "title": "cyber monday\nat TRIBE organics",
+            "custom_title": "Get <span>20% off</span> all one-time purchases, code applied auomatically",
+            "fade_text_1": "",
+            "fade_text_2": "",
+            "fade_text_3": "",
+            "fade_text_4": "",
+            "fade_text_5": "",
+            "mob_the_text": "",
+            "mob_title": "",
+            "sub_title": "",
+            "button_1": "shop all products",
+            "url_1": "shopify://collections/all",
+            "button_2": "",
+            "url_2": "",
+            "text_under_button": "",
+            "enable_gift_content": false,
+            "sub_title_1": "",
+            "text_1": "",
+            "and_text": "",
+            "sub_title_2": "",
+            "text_2": "",
+            "button_3": "",
+            "url_3": ""
+          }
+        },
+        "banner_slider_HrRtqB": {
+          "type": "banner_slider",
+          "disabled": true,
+          "settings": {
+            "class_text": "seventeen-slider-banner",
+            "background_the_image": "shopify://shop_images/ASHWAGANDHA_POWDER_BIS.jpg",
+            "bg_mob_image": "shopify://shop_images/ashwagandha_bis_mob_1.jpg",
+            "the_text": "Elevate your wellness routine",
+            "title": "Ashwagandha ksm-66 Powder",
+            "custom_title": "",
+            "fade_text_1": "",
+            "fade_text_2": "",
+            "fade_text_3": "",
+            "fade_text_4": "",
+            "fade_text_5": "",
+            "mob_the_text": "",
+            "mob_title": "ASHWAGANDHA\nKSM-66 POWDER",
+            "sub_title": "is back in stock!",
+            "button_1": "Shop ASHWAGANDHA POWDER",
+            "url_1": "shopify://products/ashwagandha-ksm-66-powder-version",
+            "button_2": "",
+            "url_2": "",
+            "text_under_button": "",
+            "enable_gift_content": false,
+            "sub_title_1": "",
+            "text_1": "",
+            "and_text": "",
+            "sub_title_2": "",
+            "text_2": "",
+            "button_3": "",
+            "url_3": ""
+          }
+        },
+        "banner_slider_w8Fheg": {
+          "type": "banner_slider",
+          "disabled": true,
+          "settings": {
+            "class_text": "twelveth-slider-banner",
+            "background_the_image": "shopify://shop_images/banner-image-web_6bd980d5-3e48-4582-96e3-795480c943d8.jpg",
+            "bg_mob_image": "shopify://shop_images/banner-image-mobile_a8689086-bd2a-430c-bf3e-5a61ed39eadf.jpg",
+            "the_text": "USE CODE: <span>THETRIIBEWAY</span>",
+            "title": "<span>Prime Day</span> THE TRIIBE WAY",
+            "custom_title": "",
+            "the_image": "shopify://shop_images/20_off.svg",
+            "fade_text_1": "",
+            "fade_text_2": "",
+            "fade_text_3": "",
+            "fade_text_4": "",
+            "fade_text_5": "",
+            "mob_the_text": "",
+            "mob_title": "",
+            "sub_title": "on orders OVER $50",
+            "button_1": "SHOP THE SALE",
+            "url_1": "shopify://collections/all",
+            "button_2": "",
+            "url_2": "",
+            "text_under_button": "",
+            "enable_gift_content": false,
+            "sub_title_1": "",
+            "text_1": "",
+            "and_text": "",
+            "sub_title_2": "",
+            "text_2": "",
+            "button_3": "",
+            "url_3": ""
+          }
+        },
+        "banner_slider_cHyyfW": {
+          "type": "banner_slider",
+          "disabled": true,
+          "settings": {
+            "class_text": "second-slider-banner",
+            "background_the_image": "shopify://shop_images/WEBSITE-HOMEPAGE-BANNER-KIDS-DESK_2.jpg",
+            "bg_mob_image": "shopify://shop_images/WEBSITE-HOMEPAGE-BANNER-KID-MOB_1.jpg",
+            "the_text": "",
+            "title": "HOLISTIC WELLNESS FOR THE SCHOOL YEAR",
+            "custom_title": "",
+            "fade_text_1": "",
+            "fade_text_2": "",
+            "fade_text_3": "",
+            "fade_text_4": "",
+            "fade_text_5": "",
+            "mob_the_text": "",
+            "mob_title": "HOLISTIC WELLNESS FOR THE SCHOOL YEAR",
+            "sub_title": "Our natural supplements are designed to support mental clarity, focus, and overall well-being.",
+            "button_1": "Shop all",
+            "url_1": "shopify://collections/all-products",
+            "button_2": "",
+            "url_2": "",
+            "text_under_button": "",
+            "enable_gift_content": false,
+            "sub_title_1": "",
+            "text_1": "",
+            "and_text": "",
+            "sub_title_2": "",
+            "text_2": "",
+            "button_3": "",
+            "url_3": ""
+          }
+        },
+        "banner_slider_gPkVf9": {
+          "type": "banner_slider",
+          "disabled": true,
+          "settings": {
+            "class_text": "seventh-slider-banner independence-banner",
+            "background_the_image": "shopify://shop_images/Desktop-Banner-GIF.gif",
+            "bg_mob_image": "shopify://shop_images/Mobile-Banner-GIF_336b4f12-5fce-45d4-ac66-2f2e601fc165.gif",
+            "the_text": "",
+            "title": "INDEPENDENCE DAY <span>LIMITED SALE!</span>",
+            "custom_title": "",
+            "fade_text_1": "",
+            "fade_text_2": "",
+            "fade_text_3": "",
+            "fade_text_4": "",
+            "fade_text_5": "",
+            "mob_the_text": "",
+            "mob_title": "",
+            "sub_title": "",
+            "button_1": "SHOP ALL PRODUCTS",
+            "url_1": "shopify://collections/all",
+            "button_2": "SHOP BUNDLES",
+            "url_2": "shopify://collections/bundles-1",
+            "text_under_button": "",
+            "enable_gift_content": true,
+            "the_icon_1": "shopify://shop_images/20-off.svg",
+            "sub_title_1": "on orders <span>over $100</span>",
+            "text_1": "<p>USE CODE <strong>20OFF</strong></p>",
+            "and_text": "&",
+            "the_icon_2": "shopify://shop_images/15-off.svg",
+            "sub_title_2": "ON ORDERS <span>OVER $50</span>",
+            "text_2": "<p>USE CODE <strong>15OFF</strong></p>",
+            "button_3": "",
+            "url_3": ""
+          }
+        },
+        "banner_slider_cTphiP": {
+          "type": "banner_slider",
+          "disabled": true,
+          "settings": {
+            "class_text": "eleventh-slider-banner",
+            "background_the_image": "shopify://shop_images/banner-image-web_e04bbeba-b1ea-4481-9cf9-11d67923df64.jpg",
+            "bg_mob_image": "shopify://shop_images/banner-image-mobile.jpg",
+            "the_text": "",
+            "title": "THE WAIT IS OVER",
+            "custom_title": "",
+            "the_image": "shopify://shop_images/ashwagandha-text.svg",
+            "fade_text_1": "",
+            "fade_text_2": "",
+            "fade_text_3": "",
+            "fade_text_4": "",
+            "fade_text_5": "",
+            "mob_the_text": "",
+            "mob_title": "",
+            "sub_title": "IS BACK IN STOCK!",
+            "button_1": "SHOP NOW",
+            "url_1": "https://www.tribe-organics.com/collections/kids-teens/products/ashwagandha-gummies-kids",
+            "button_2": "",
+            "url_2": "",
+            "text_under_button": "",
+            "lion_img": "shopify://shop_images/Lion-graphic.svg",
+            "elephant_img": "shopify://shop_images/elephant-graphic.svg",
+            "enable_gift_content": false,
+            "sub_title_1": "",
+            "text_1": "",
+            "and_text": "",
+            "sub_title_2": "",
+            "text_2": "",
+            "button_3": "",
+            "url_3": ""
+          }
+        },
+        "banner_slider_4RxQtY": {
+          "type": "banner_slider",
+          "disabled": true,
+          "settings": {
+            "class_text": "fifth-slider-banner",
+            "background_the_image": "shopify://shop_images/WEBSITE-HOMEPAGE-BANNER-MEMORIAL_1.jpg",
+            "bg_mob_image": "shopify://shop_images/WEBSITE-HOMEPAGE-BANNER-MEMORIAL-MOBILE_1.jpg",
+            "the_text": "",
+            "title": "Wellness ROOTED IN Nature <span> </span>",
+            "custom_title": "",
+            "fade_text_1": "",
+            "fade_text_2": "",
+            "fade_text_3": "",
+            "fade_text_4": "",
+            "fade_text_5": "",
+            "mob_the_text": "",
+            "mob_title": "Wellness ROOTED IN Nature <span> </span>",
+            "sub_title": "<span>The journey to optimizing your health and your life begins here.</span>",
+            "button_1": "Shop all products",
+            "url_1": "shopify://collections/all",
+            "button_2": "",
+            "url_2": "",
+            "text_under_button": "",
+            "enable_gift_content": false,
+            "sub_title_1": "",
+            "text_1": "",
+            "and_text": "",
+            "sub_title_2": "",
+            "text_2": "",
+            "button_3": "",
+            "url_3": ""
+          }
+        },
+        "banner_slider_LpVUWN": {
+          "type": "banner_slider",
+          "disabled": true,
+          "settings": {
+            "class_text": "fifth-slider-banner",
+            "background_the_image": "shopify://shop_images/WEBSITE-HOMEPAGE-BANNER-MEMORIAL_1.jpg",
+            "bg_mob_image": "shopify://shop_images/WEBSITE-HOMEPAGE-BANNER-MEMORIAL-MOBILE_1.jpg",
+            "the_text": "VALID THROUGH 05/27 11:59PM EST",
+            "title": "MEMORIAL DAY <span>Sale!</span>",
+            "custom_title": "",
+            "fade_text_1": "",
+            "fade_text_2": "",
+            "fade_text_3": "",
+            "fade_text_4": "",
+            "fade_text_5": "",
+            "mob_the_text": "VALID THROUGH 05/27 11:59PM EST",
+            "mob_title": "MEMORIAL DAY <span>Sale!</span>",
+            "sub_title": "<span>You chose a great time to visit Tribe Organics.</span> \n<span>Get 20% OFF one-time purchases*.</span>\n<span>Use code MEMORIAL20</span>",
+            "button_1": "Shop Now",
+            "url_1": "shopify://collections/all-products",
+            "button_2": "",
+            "url_2": "",
+            "text_under_button": "",
+            "enable_gift_content": false,
+            "sub_title_1": "",
+            "text_1": "",
+            "and_text": "",
+            "sub_title_2": "",
+            "text_2": "",
+            "button_3": "",
+            "url_3": ""
+          }
+        },
+        "banner_slider_LaycB6": {
+          "type": "banner_slider",
+          "disabled": true,
+          "settings": {
+            "class_text": "tenth-slider-banner",
+            "background_the_image": "shopify://shop_images/Desktop-Banner-min_e6c99917-ec8d-43c6-aa26-fbe70ad17886.jpg",
+            "bg_mob_image": "shopify://shop_images/Mobile-banner-min.jpg",
+            "the_text": "LAST DAYS TO GET",
+            "title": "Mushroom Complex",
+            "custom_title": "",
+            "fade_text_1": "supports overall health*",
+            "fade_text_2": "supports the immune system*",
+            "fade_text_3": "supports energy levels*",
+            "fade_text_4": "supports gut health*",
+            "fade_text_5": "and more...",
+            "mob_the_text": "",
+            "mob_title": "",
+            "sub_title": "Orders over $200 get a FREE 120 Capsules bottle (60 servings) of our Mushroom Complex*",
+            "button_1": "Shop Now",
+            "url_1": "shopify://collections/all",
+            "button_2": "",
+            "url_2": "",
+            "text_under_button": "",
+            "enable_gift_content": false,
+            "sub_title_1": "",
+            "text_1": "",
+            "and_text": "",
+            "sub_title_2": "",
+            "text_2": "",
+            "button_3": "",
+            "url_3": ""
+          }
+        },
+        "7a841340-0919-4bf5-9e5d-2e9f0a56e08d": {
+          "type": "banner_slider",
+          "disabled": true,
+          "settings": {
+            "class_text": "third-slider-banner",
+            "background_the_image": "shopify://shop_images/Gummies_Banner_Desktop.jpg",
+            "bg_mob_image": "shopify://shop_images/Gummies_Banner_Mobile.jpg",
+            "the_text": "",
+            "title": "Ashwagandha ksm-66 Gummies",
+            "custom_title": "",
+            "fade_text_1": "",
+            "fade_text_2": "",
+            "fade_text_3": "",
+            "fade_text_4": "",
+            "fade_text_5": "",
+            "mob_the_text": "",
+            "mob_title": "",
+            "sub_title": "Focus. Stress. Energy. Mood. Our new, delicious Ashwagandha gummies solve it all.",
+            "button_1": "FOR KIDS AND TEENAGERS",
+            "url_1": "shopify://products/ashwagandha-gummies-kids",
+            "button_2": "Ashwagandha Ksm-66 Gummies",
+            "url_2": "shopify://products/ashwagandha-ksm-66-gummies",
+            "text_under_button": "",
+            "enable_gift_content": false,
+            "sub_title_1": "",
+            "text_1": "",
+            "and_text": "",
+            "sub_title_2": "",
+            "text_2": "",
+            "button_3": "",
+            "url_3": ""
+          }
+        },
+        "ac2073b9-22e4-4821-8253-1b9f7171e6a7": {
+          "type": "banner_slider",
+          "disabled": true,
+          "settings": {
+            "class_text": "first-slider-banner",
+            "background_the_image": "shopify://shop_images/homepage-banners-Nina-Dan_1.jpg",
+            "bg_mob_image": "shopify://shop_images/homepage-banners-mobile.jpg",
+            "the_text": "",
+            "title": "Live longer, stronger, wiser.",
+            "custom_title": "",
+            "fade_text_1": "",
+            "fade_text_2": "",
+            "fade_text_3": "",
+            "fade_text_4": "",
+            "fade_text_5": "",
+            "mob_the_text": "",
+            "mob_title": "",
+            "sub_title": "Ancient remedies, the healing powers of Nature, revived for a modern world.",
+            "button_1": "SHOP PRODUCTS",
+            "url_1": "shopify://collections/all-products",
+            "button_2": "Shop BEST SELLERS",
+            "url_2": "shopify://collections/best-sellers",
+            "text_under_button": "",
+            "enable_gift_content": false,
+            "sub_title_1": "",
+            "text_1": "",
+            "and_text": "",
+            "sub_title_2": "",
+            "text_2": "",
+            "button_3": "",
+            "url_3": ""
+          }
+        },
+        "banner_slider_PYeXtQ": {
+          "type": "banner_slider",
+          "disabled": true,
+          "settings": {
+            "class_text": "second-slider-banner",
+            "background_the_image": "shopify://shop_images/Homepage-picture-Ashwagandha.jpg",
+            "bg_mob_image": "shopify://shop_images/banner-image-mobile-ashwagandha.jpg",
+            "the_text": "",
+            "title": "WORLD'S BEST ASHWAGANDHA",
+            "custom_title": "",
+            "fade_text_1": "",
+            "fade_text_2": "",
+            "fade_text_3": "",
+            "fade_text_4": "",
+            "fade_text_5": "",
+            "mob_the_text": "",
+            "mob_title": "WORLD'S BEST ASHWAGANDHA",
+            "sub_title": "Made with patented and clinically proven KSM-66 Ashwagandha root extract",
+            "button_1": "Shop Ashwagandha",
+            "url_1": "https://www.tribe-organics.com/collections/ashwagandha-supplements",
+            "button_2": "",
+            "url_2": "",
+            "text_under_button": "",
+            "enable_gift_content": false,
+            "sub_title_1": "",
+            "text_1": "",
+            "and_text": "",
+            "sub_title_2": "",
+            "text_2": "",
+            "button_3": "",
+            "url_3": ""
+          }
+        },
+        "d213ce86-8f80-4dca-8e0f-53fb4a0b61de": {
+          "type": "banner_slider",
+          "disabled": true,
+          "settings": {
+            "class_text": "fifth-slider-banner",
+            "background_the_image": "shopify://shop_images/spring-banner_1.jpg",
+            "bg_mob_image": "shopify://shop_images/SPRING-MOBILE-BANNER.jpg",
+            "the_text": "VALID THROUGH 03/25 11:59PM EST",
+            "title": "SPRING into wellness",
+            "custom_title": "",
+            "fade_text_1": "",
+            "fade_text_2": "",
+            "fade_text_3": "",
+            "fade_text_4": "",
+            "fade_text_5": "",
+            "mob_the_text": "",
+            "mob_title": "SPRING into wellness",
+            "sub_title": "You chose a great time to visit Tribe Organics. Get 15% OFF one-time purchases using code SPRINGCLEAN",
+            "button_1": "Shop Now",
+            "url_1": "shopify://collections/all-products",
+            "button_2": "",
+            "url_2": "",
+            "text_under_button": "",
+            "enable_gift_content": false,
+            "sub_title_1": "",
+            "text_1": "",
+            "and_text": "",
+            "sub_title_2": "",
+            "text_2": "",
+            "button_3": "",
+            "url_3": ""
+          }
+        },
+        "banner_slider_RHPMDk": {
+          "type": "banner_slider",
+          "disabled": true,
+          "settings": {
+            "class_text": "ninth-slider-banner",
+            "background_the_image": "shopify://shop_images/Desktop-Banner-min.jpg",
+            "bg_mob_image": "shopify://shop_images/Mobile-Banner_1_-min.jpg",
+            "the_text": "OFFER VALID THROUGH FEB 14TH AT 11:59PM",
+            "title": "20% off is <br><span>better than</span> roses",
+            "custom_title": "",
+            "fade_text_1": "",
+            "fade_text_2": "",
+            "fade_text_3": "",
+            "fade_text_4": "",
+            "fade_text_5": "",
+            "mob_the_text": "OFFER VALID THROUGH FEB 14TH AT 11:59PM",
+            "mob_title": "20% off is <span>better than</span> roses",
+            "sub_title": "Self-care is our love language. Treat \nyourself to 20% off all your favorite supplements with code <span>LOVE20</span>\nat checkout.",
+            "button_1": "Shop now",
+            "url_1": "shopify://collections/all",
+            "button_2": "",
+            "url_2": "",
+            "text_under_button": "",
+            "enable_gift_content": false,
+            "sub_title_1": "",
+            "text_1": "",
+            "and_text": "",
+            "sub_title_2": "",
+            "text_2": "",
+            "button_3": "",
+            "url_3": ""
+          }
+        },
+        "banner_slider_3gprwP": {
+          "type": "banner_slider",
+          "disabled": true,
+          "settings": {
+            "class_text": "eighth-slider-banner",
+            "background_the_image": "shopify://shop_images/Desktop_Banner-min.jpg",
+            "bg_mob_image": "shopify://shop_images/Mobile_Banner-min.jpg",
+            "the_text": "THE ULTIMATE IMMUNITY LINE-UP",
+            "title": "Mushroom Complex\n<span>On Sale!</span> UP TO <span>50% Off</span>",
+            "custom_title": "",
+            "fade_text_1": "",
+            "fade_text_2": "",
+            "fade_text_3": "",
+            "fade_text_4": "",
+            "fade_text_5": "",
+            "mob_the_text": "",
+            "mob_title": "",
+            "sub_title": "A blend of organic extracts of Reishi, Shiitake, Maitake, Turkey Tail mushrooms and Chaga.",
+            "button_1": "SHOP NOW",
+            "url_1": "shopify://collections/mushrooms",
+            "button_2": "",
+            "url_2": "",
+            "text_under_button": "",
+            "enable_gift_content": false,
+            "sub_title_1": "",
+            "text_1": "",
+            "and_text": "",
+            "sub_title_2": "",
+            "text_2": "",
+            "button_3": "",
+            "url_3": ""
+          }
+        },
+        "c20aba9c-237e-4474-899e-69dd5aa8183a": {
+          "type": "banner_slider",
+          "disabled": true,
+          "settings": {
+            "class_text": "seventh-slider-banner",
+            "background_the_image": "shopify://shop_images/GIFT-WELLNESS-web-banner.jpg",
+            "bg_mob_image": "shopify://shop_images/GIFT-WELLNESS-Mobile-banner.jpg",
+            "the_text": "",
+            "title": "GIVE THE <span>GIFT OF WELLNESS</span>",
+            "custom_title": "",
+            "fade_text_1": "",
+            "fade_text_2": "",
+            "fade_text_3": "",
+            "fade_text_4": "",
+            "fade_text_5": "",
+            "mob_the_text": "",
+            "mob_title": "",
+            "sub_title": "",
+            "button_1": "SHOP ALL PRODUCTS",
+            "url_1": "shopify://collections/all",
+            "button_2": "SHOP BUNDLES",
+            "url_2": "shopify://collections/bundles-1",
+            "text_under_button": "",
+            "enable_gift_content": true,
+            "the_icon_1": "shopify://shop_images/20-off.svg",
+            "sub_title_1": "INDIVIDUAL PRODUCTS",
+            "text_1": "<p>USE CODE <strong>GIFT20</strong></p>",
+            "and_text": "&",
+            "the_icon_2": "shopify://shop_images/15-off.svg",
+            "sub_title_2": "CURATED BUNDLES",
+            "text_2": "<p>USE CODE <strong>GIFT15</strong></p>",
+            "button_3": "",
+            "url_3": ""
+          }
+        },
+        "banner_slider_BjMJAb": {
+          "type": "banner_slider",
+          "disabled": true,
+          "settings": {
+            "class_text": "fifteen-slider-banner",
+            "background_the_image": "shopify://shop_images/black_friday_banner_web.jpg",
+            "bg_mob_image": "shopify://shop_images/black_friday_banner_mobile_3c031668-654f-4497-8da2-56a3d583a419.jpg",
+            "the_text": "",
+            "title": "<span>Early</span>\nBLACK FRIDAY",
+            "custom_title": "Use code VIP15",
+            "mob_image": "shopify://shop_images/15_OFF.png",
+            "fade_text_1": "",
+            "fade_text_2": "",
+            "fade_text_3": "",
+            "fade_text_4": "",
+            "fade_text_5": "",
+            "mob_the_text": "",
+            "mob_title": "",
+            "sub_title": "",
+            "button_1": "shop NOW",
+            "url_1": "shopify://collections/all",
+            "button_2": "",
+            "url_2": "",
+            "text_under_button": "",
+            "enable_gift_content": false,
+            "sub_title_1": "",
+            "text_1": "",
+            "and_text": "",
+            "sub_title_2": "",
+            "text_2": "",
+            "button_3": "",
+            "url_3": ""
+          }
+        }
+      },
+      "block_order": [
+        "banner_slider_GGCzUE",
+        "banner_slider_XXDcAm",
+        "banner_slider_UBeAbf",
+        "banner_slider_K8CQnq",
+        "banner_slider_7A6wei",
+        "banner_slider_gTJadA",
+        "banner_slider_kLNN4i",
+        "banner_slider_g863MV",
+        "banner_slider_xCaQGD",
+        "banner_slider_dcRmyK",
+        "banner_slider_GKNpgW",
+        "banner_slider_HrRtqB",
+        "banner_slider_w8Fheg",
+        "banner_slider_cHyyfW",
+        "banner_slider_gPkVf9",
+        "banner_slider_cTphiP",
+        "banner_slider_4RxQtY",
+        "banner_slider_LpVUWN",
+        "banner_slider_LaycB6",
+        "7a841340-0919-4bf5-9e5d-2e9f0a56e08d",
+        "ac2073b9-22e4-4821-8253-1b9f7171e6a7",
+        "banner_slider_PYeXtQ",
+        "d213ce86-8f80-4dca-8e0f-53fb4a0b61de",
+        "banner_slider_RHPMDk",
+        "banner_slider_3gprwP",
+        "c20aba9c-237e-4474-899e-69dd5aa8183a",
+        "banner_slider_BjMJAb"
+      ],
+      "custom_css": [],
       "settings": {
-        "heading": "WORLD'S BEST ASHWAGANDHA",
-        "subheading": "Made with patented and clinically proven KSM-66 Ashwagandha root extract",
-        "button_label": "Shop Ashwagandha",
-        "button_style": "primary",
-        "height_desktop": 700,
-        "height_mobile": 500,
-        "overlay_opacity": 35,
-        "content_position": "left"
+        "show_social": true,
+        "text": "Visit",
+        "social_spotify_link": "https://open.spotify.com/user/8yaaywq2a4gtbxl0w7csryv2o?si=28d61f70a2cc496c"
       }
     },
-    "best_sellers": {
-      "type": "featured-products",
+    "as_seen_in_section_igFJya": {
+      "type": "as-seen-in-section",
+      "blocks": {
+        "icons_YrVxEN": {
+          "type": "icons",
+          "settings": {
+            "the_icon": "shopify://shop_images/monochrome_large_1_eb4519dd-1264-4fd2-95be-0125c3ddf2f5k.webp"
+          }
+        },
+        "icons_EPdJdj": {
+          "type": "icons",
+          "settings": {
+            "the_icon": "shopify://shop_images/Vector_1.svg"
+          }
+        }
+      },
+      "block_order": [
+        "icons_YrVxEN",
+        "icons_EPdJdj"
+      ],
+      "custom_css": [],
       "settings": {
-        "title": "Best Sellers",
-        "products_to_show": 8,
-        "columns_desktop": 4,
-        "columns_mobile": 2,
-        "show_view_all": true,
-        "view_all_label": "View all best sellers"
+        "section_bg_color": "#06211e"
       }
     },
-    "shop_categories": {
-      "type": "shop-categories",
+    "social_media_section_rJqUGg": {
+      "type": "social-media-section",
+      "settings": {
+        "show_social": true,
+        "text": "Visit",
+        "social_spotify_link": "https://open.spotify.com/user/8yaaywq2a4gtbxl0w7csryv2o?si=28d61f70a2cc496c"
+      }
+    },
+    "custom_scroll_text_RikQQp": {
+      "type": "custom-scroll-text",
+      "blocks": {
+        "scroll_blocks_b7UgAL": {
+          "type": "scroll_blocks",
+          "settings": {
+            "logo_image": "shopify://shop_images/slider-icon.svg",
+            "svg_code": "",
+            "marquee_text": "Black Friday"
+          }
+        },
+        "scroll_blocks_jy6e3t": {
+          "type": "scroll_blocks",
+          "settings": {
+            "logo_image": "shopify://shop_images/slider-icon.svg",
+            "svg_code": "",
+            "marquee_text": "Limited Time Offer"
+          }
+        },
+        "scroll_blocks_eB78UW": {
+          "type": "scroll_blocks",
+          "settings": {
+            "logo_image": "shopify://shop_images/slider-icon.svg",
+            "svg_code": "",
+            "marquee_text": "Black Friday"
+          }
+        },
+        "scroll_blocks_RRTTAc": {
+          "type": "scroll_blocks",
+          "settings": {
+            "logo_image": "shopify://shop_images/slider-icon.svg",
+            "svg_code": "",
+            "marquee_text": "Limited Time Offer"
+          }
+        },
+        "scroll_blocks_pi3mQY": {
+          "type": "scroll_blocks",
+          "settings": {
+            "logo_image": "shopify://shop_images/slider-icon.svg",
+            "svg_code": "",
+            "marquee_text": "Black Friday"
+          }
+        },
+        "scroll_blocks_Kd8pAE": {
+          "type": "scroll_blocks",
+          "settings": {
+            "logo_image": "shopify://shop_images/slider-icon.svg",
+            "svg_code": "",
+            "marquee_text": "Limited Time Offer"
+          }
+        },
+        "scroll_blocks_kwFebw": {
+          "type": "scroll_blocks",
+          "settings": {
+            "logo_image": "shopify://shop_images/slider-icon.svg",
+            "svg_code": "",
+            "marquee_text": "Black Friday"
+          }
+        },
+        "scroll_blocks_zRR98D": {
+          "type": "scroll_blocks",
+          "settings": {
+            "logo_image": "shopify://shop_images/slider-icon.svg",
+            "svg_code": "",
+            "marquee_text": "Limited Time Offer"
+          }
+        },
+        "scroll_blocks_8khadY": {
+          "type": "scroll_blocks",
+          "settings": {
+            "logo_image": "shopify://shop_images/slider-icon.svg",
+            "svg_code": "",
+            "marquee_text": "Black Friday"
+          }
+        },
+        "scroll_blocks_LATMcU": {
+          "type": "scroll_blocks",
+          "settings": {
+            "logo_image": "shopify://shop_images/slider-icon.svg",
+            "svg_code": "",
+            "marquee_text": "Limited Time Offer"
+          }
+        }
+      },
+      "block_order": [
+        "scroll_blocks_b7UgAL",
+        "scroll_blocks_jy6e3t",
+        "scroll_blocks_eB78UW",
+        "scroll_blocks_RRTTAc",
+        "scroll_blocks_pi3mQY",
+        "scroll_blocks_Kd8pAE",
+        "scroll_blocks_kwFebw",
+        "scroll_blocks_zRR98D",
+        "scroll_blocks_8khadY",
+        "scroll_blocks_LATMcU"
+      ],
+      "disabled": true,
+      "settings": {
+        "add_class": "homepage-srcrolling-text",
+        "section_bg_color": ""
+      }
+    },
+    "homepage_guarantee_sections_FHHqjt": {
+      "type": "homepage-guarantee-sections",
+      "blocks": {
+        "icon_bbDXmi": {
+          "type": "icon",
+          "settings": {
+            "title": "Free US Shipping over $75",
+            "image": "shopify://shop_images/track.png"
+          }
+        },
+        "icon_emhAAR": {
+          "type": "icon",
+          "settings": {
+            "title": "100% Satisfaction Guarantee",
+            "image": "shopify://shop_images/SMILEY-FACE-VECTOR-_Recovered.png"
+          }
+        },
+        "icon_Hwg7pG": {
+          "type": "icon",
+          "settings": {
+            "title": "cGMP Manufactured",
+            "image": "shopify://shop_images/2_cd380dfb-53b4-4692-aacf-ae16d9c61f42.png"
+          }
+        },
+        "icon_aiaQgT": {
+          "type": "icon",
+          "settings": {
+            "title": "We Give Back",
+            "image": "shopify://shop_images/ethically_sourced_510d77a9-3e0e-4603-9375-de6373a0845a.png"
+          }
+        },
+        "icon_RBMbiq": {
+          "type": "icon",
+          "settings": {
+            "title": "Third-Party Lab Tested",
+            "image": "shopify://shop_images/Untitled-1_f8101a8c-2bc7-49b6-a69d-c5cb92261851.png"
+          }
+        },
+        "icon_FePGEc": {
+          "type": "icon",
+          "settings": {
+            "title": "Highest Standards",
+            "image": "shopify://shop_images/MORINGA_Listing.png"
+          }
+        }
+      },
+      "block_order": [
+        "icon_bbDXmi",
+        "icon_emhAAR",
+        "icon_Hwg7pG",
+        "icon_aiaQgT",
+        "icon_RBMbiq",
+        "icon_FePGEc"
+      ],
+      "custom_css": [
+        "@media (max-width: 768px) {.leaf-box {display: none; }}"
+      ],
+      "settings": {
+        "section_bg_color": "#faeee9"
+      }
+    },
+    "homepage_featured_product_first_XtNfVh": {
+      "type": "homepage-featured-product-first",
+      "blocks": {
+        "product_8XREbq": {
+          "type": "product",
+          "settings": {
+            "product": "organic-moringa"
+          }
+        },
+        "product_xkca9i": {
+          "type": "product",
+          "settings": {
+            "product": "ashwagandha-ksm-66"
+          }
+        },
+        "product_a8NH7h": {
+          "type": "product",
+          "settings": {
+            "product": "lions-mane-mushroom"
+          }
+        },
+        "product_FNXLMy": {
+          "type": "product",
+          "settings": {
+            "product": "boswellia-complex"
+          }
+        },
+        "product_MVxJGB": {
+          "type": "product",
+          "settings": {
+            "product": "turmeric-complex"
+          }
+        },
+        "product_TTjzGM": {
+          "type": "product",
+          "settings": {
+            "product": "organic-moringa-powder"
+          }
+        },
+        "product_7DQ7Fc": {
+          "type": "product",
+          "settings": {
+            "product": "ashwagandha-ksm-66-gummies"
+          }
+        },
+        "product_qT9eAC": {
+          "type": "product",
+          "settings": {
+            "product": "nootropic-duo"
+          }
+        },
+        "product_Le7j68": {
+          "type": "product",
+          "settings": {
+            "product": "warrior-trio"
+          }
+        },
+        "product_b3VhLg": {
+          "type": "product",
+          "settings": {
+            "product": "ashwagandha-gummies-kids"
+          }
+        }
+      },
+      "block_order": [
+        "product_8XREbq",
+        "product_xkca9i",
+        "product_a8NH7h",
+        "product_FNXLMy",
+        "product_MVxJGB",
+        "product_TTjzGM",
+        "product_7DQ7Fc",
+        "product_qT9eAC",
+        "product_Le7j68",
+        "product_b3VhLg"
+      ],
+      "settings": {
+        "section_bg_color": "#faeee9",
+        "title": "best sellers",
+        "sub_title": "From energy enhancers to immune support, dive into our best sellers to complement your health.",
+        "button": "shop all products",
+        "url": "shopify://collections/all"
+      }
+    },
+    "e5a88d8d-3605-491c-9d51-d972ed584183": {
+      "type": "categories",
+      "blocks": {
+        "template--16589653835999__e5a88d8d-3605-491c-9d51-d972ed584183-16686574843ae27df6-5": {
+          "type": "categories",
+          "settings": {
+            "title": "HERBS & ROOTS",
+            "image": "shopify://shop_images/HERBS_ROOTS.png",
+            "url": "shopify://collections/herbs"
+          }
+        },
+        "template--16589653835999__e5a88d8d-3605-491c-9d51-d972ed584183-16686574843ae27df6-6": {
+          "type": "categories",
+          "settings": {
+            "title": "MUSHROOMS",
+            "image": "shopify://shop_images/MUSHROOMS.png",
+            "url": "shopify://collections/mushrooms"
+          }
+        },
+        "template--16589653835999__e5a88d8d-3605-491c-9d51-d972ed584183-16686574843ae27df6-7": {
+          "type": "categories",
+          "settings": {
+            "title": "KIDS & TEENAGERS",
+            "image": "shopify://shop_images/kids_home_picture.png",
+            "url": "shopify://collections/kids-teens"
+          }
+        },
+        "c5efee49-1f68-4fac-bf90-1d38a8e8c311": {
+          "type": "categories",
+          "settings": {
+            "title": "CURATED BUNDLES",
+            "image": "shopify://shop_images/categories_pictures_curated_bundles.webp",
+            "url": "shopify://collections/bundles-1"
+          }
+        }
+      },
+      "block_order": [
+        "template--16589653835999__e5a88d8d-3605-491c-9d51-d972ed584183-16686574843ae27df6-5",
+        "template--16589653835999__e5a88d8d-3605-491c-9d51-d972ed584183-16686574843ae27df6-6",
+        "template--16589653835999__e5a88d8d-3605-491c-9d51-d972ed584183-16686574843ae27df6-7",
+        "c5efee49-1f68-4fac-bf90-1d38a8e8c311"
+      ],
       "settings": {
         "title": "Shop Categories"
-      },
-      "blocks": {
-        "cat_1": { "type": "category", "settings": { "title": "Herbs & Roots" } },
-        "cat_2": { "type": "category", "settings": { "title": "Mushrooms" } },
-        "cat_3": { "type": "category", "settings": { "title": "Kids & Teenagers" } },
-        "cat_4": { "type": "category", "settings": { "title": "Curated Bundles" } }
-      },
-      "blocks_order": ["cat_1", "cat_2", "cat_3", "cat_4"]
+      }
     },
-    "testimonials": {
-      "type": "testimonials-slider",
+    "172595234395cc7dfc": {
+      "type": "apps",
+      "blocks": {
+        "firework_shoppable_video_ugc_firework_embed_UAPwkH": {
+          "type": "shopify://apps/firework-shoppable-video-ugc/blocks/firework-embed/347a2e4c-f5cb-410d-8354-490d1e80558c",
+          "settings": {
+            "channel": "tribe_organics23",
+            "playlist": "gKxYRv",
+            "layout": "carousel",
+            "embedtitle": "",
+            "titlealignment": "center",
+            "embedtitlesize": 20,
+            "size": "large",
+            "player_placement": "bottom-right",
+            "hashtag": "",
+            "pip": true
+          }
+        }
+      },
+      "block_order": [
+        "firework_shoppable_video_ugc_firework_embed_UAPwkH"
+      ],
+      "custom_css": [
+        ".custom-block-text {text-align: center; color: black; font-size: 15px;}",
+        "#section-firework-embed:before{background: none!important;}"
+      ],
       "settings": {
-        "title": "Hear why people love us..."
-      },
-      "blocks": {
-        "t1": { "type": "testimonial", "settings": { "quote": "I see results, great quality and reasonably priced.", "author": "Yolonda King-Taylor", "title": "Holistic Health Practitioner" } },
-        "t2": { "type": "testimonial", "settings": { "quote": "Immediately noticed a difference after switching.", "author": "Michelle" } },
-        "t3": { "type": "testimonial", "settings": { "quote": "Best organic supplements I have found. Love this brand!", "author": "James R." } }
-      },
-      "blocks_order": ["t1", "t2", "t3"]
+        "section_bg_color": "#faeee9",
+        "title": "Hear why people love us...",
+        "the_text": "",
+        "btn_text": "",
+        "the_url": "",
+        "image": "leaf-n18.svg",
+        "enable_svg": false,
+        "class_text": "firework-shopppable-video",
+        "text": "<p>†Individual results may vary. Testimonials reflect personal experiences and are not guaranteed outcomes.</p>"
+      }
     },
-    "health_goals": {
-      "type": "health-goals",
+    "28578b8c-c9c9-4c30-a416-b92c78ec8cea": {
+      "type": "web-shop-health-section",
+      "blocks": {
+        "ac7d6b6f-e6d5-473a-9feb-98406c984872": {
+          "type": "icons",
+          "settings": {
+            "the_icon": "shopify://shop_images/Tribe_1_28728882-8733-4583-83a6-1b307c429991.png",
+            "the_text": "Immunity & Recovery",
+            "the_url": "shopify://collections/immunity-recovery"
+          }
+        },
+        "6f37dffb-4b87-4ec9-8412-28dc187a3c96": {
+          "type": "icons",
+          "settings": {
+            "the_icon": "shopify://shop_images/Tribe_2_12cfc061-ba7f-4632-939f-4b36b2a7dab9.png",
+            "the_text": "Athletic Performance",
+            "the_url": "shopify://collections/athletic-performance"
+          }
+        },
+        "40fca297-45f3-47cc-9fac-d3c45a0d807c": {
+          "type": "icons",
+          "settings": {
+            "the_icon": "shopify://shop_images/Tribe_3_83a9f533-1b20-4c0a-bf83-8f176be121bb.png",
+            "the_text": "Detox & Metabolism",
+            "the_url": "shopify://collections/detox-weight-management"
+          }
+        },
+        "7512684c-9167-4ed9-9c39-7660f10e4c2e": {
+          "type": "icons",
+          "settings": {
+            "the_icon": "shopify://shop_images/Tribe_4_fdb389e5-e6e4-4d66-91fa-151033cf007d.png",
+            "the_text": "Gut & Digestive Health",
+            "the_url": "shopify://collections/gut-digestive-health"
+          }
+        },
+        "e88a70b0-1ea9-4864-9e6a-70dc520df849": {
+          "type": "icons",
+          "settings": {
+            "the_icon": "shopify://shop_images/Tribe_5_e5fa5d66-59bb-49f3-8d8f-49bd54b8f7d4.png",
+            "the_text": "Brain & Energy",
+            "the_url": "shopify://collections/brain-energy-boost"
+          }
+        },
+        "ad9de857-fc51-457f-98c3-81d636ede46d": {
+          "type": "icons",
+          "settings": {
+            "the_icon": "shopify://shop_images/Tribe_6_b737e9ad-3293-436d-870c-138621fbaeb9.png",
+            "the_text": "Inflammatory Health",
+            "the_url": "shopify://collections/inflammation"
+          }
+        }
+      },
+      "block_order": [
+        "ac7d6b6f-e6d5-473a-9feb-98406c984872",
+        "6f37dffb-4b87-4ec9-8412-28dc187a3c96",
+        "40fca297-45f3-47cc-9fac-d3c45a0d807c",
+        "7512684c-9167-4ed9-9c39-7660f10e4c2e",
+        "e88a70b0-1ea9-4864-9e6a-70dc520df849",
+        "ad9de857-fc51-457f-98c3-81d636ede46d"
+      ],
       "settings": {
         "title": "Shop By Health Goals",
-        "subtitle": "How can our products help you?"
-      },
-      "blocks": {
-        "g1": { "type": "goal", "settings": { "title": "Immunity & Recovery", "icon_emoji": "🛡️" } },
-        "g2": { "type": "goal", "settings": { "title": "Athletic Performance", "icon_emoji": "💪" } },
-        "g3": { "type": "goal", "settings": { "title": "Detox & Metabolism", "icon_emoji": "✨" } },
-        "g4": { "type": "goal", "settings": { "title": "Gut & Digestive Health", "icon_emoji": "🌿" } },
-        "g5": { "type": "goal", "settings": { "title": "Brain & Energy", "icon_emoji": "🧠" } },
-        "g6": { "type": "goal", "settings": { "title": "Inflammatory Health", "icon_emoji": "❤️" } }
-      },
-      "blocks_order": ["g1", "g2", "g3", "g4", "g5", "g6"]
-    },
-    "product_quality": {
-      "type": "product-quality",
-      "settings": {
-        "title": "Our Products",
-        "always_heading": "ARE ALWAYS...",
-        "never_heading": "NEVER CONTAIN..."
-      },
-      "blocks": {
-        "a1": { "type": "always_item", "settings": { "text": "Ethically sourced" } },
-        "a2": { "type": "always_item", "settings": { "text": "Made in the USA" } },
-        "a3": { "type": "always_item", "settings": { "text": "Third-party lab tested" } },
-        "a4": { "type": "always_item", "settings": { "text": "USDA Certified Organic" } },
-        "a5": { "type": "always_item", "settings": { "text": "Non-GMO Verified" } },
-        "a6": { "type": "always_item", "settings": { "text": "Gluten Free Certified" } },
-        "a7": { "type": "always_item", "settings": { "text": "Kosher Certified" } },
-        "a8": { "type": "always_item", "settings": { "text": "Vegan Friendly" } },
-        "n1": { "type": "never_item", "settings": { "text": "Harmful additives" } },
-        "n2": { "type": "never_item", "settings": { "text": "Artificial colors" } },
-        "n3": { "type": "never_item", "settings": { "text": "Artificial flavors" } },
-        "n4": { "type": "never_item", "settings": { "text": "Synthetic fillers" } },
-        "n5": { "type": "never_item", "settings": { "text": "Irradiated ingredients" } },
-        "n6": { "type": "never_item", "settings": { "text": "Preservatives" } }
-      },
-      "blocks_order": ["a1","a2","a3","a4","a5","a6","a7","a8","n1","n2","n3","n4","n5","n6"]
-    },
-    "seasonal_picks": {
-      "type": "featured-products",
-      "settings": {
-        "title": "Our Seasonal Picks",
-        "subtitle": "Support your body through seasonal renewal. These spring essentials help boost natural energy, support focus and nourish your body.",
-        "products_to_show": 4,
-        "columns_desktop": 4,
-        "columns_mobile": 2,
-        "show_view_all": true,
-        "view_all_label": "View seasonal picks"
+        "sub_title": "How can our products help you?"
       }
     },
-    "bundles_cta": {
-      "type": "bundles-cta",
+    "51405b83-593f-45fe-974d-347d7d8da599": {
+      "type": "mob-shop-health-section",
+      "blocks": {
+        "a2b12af9-0ceb-422d-89af-cc40d1d0e32c": {
+          "type": "icons",
+          "settings": {
+            "the_icon": "shopify://shop_images/Tribe_1_28728882-8733-4583-83a6-1b307c429991.png",
+            "the_text": "Immunity & Recovery",
+            "the_url": "shopify://collections/immunity-recovery"
+          }
+        },
+        "edb8056c-586c-4183-bebe-8b319881d1bb": {
+          "type": "icons",
+          "settings": {
+            "the_icon": "shopify://shop_images/Tribe_2_12cfc061-ba7f-4632-939f-4b36b2a7dab9.png",
+            "the_text": "Athletic Performance",
+            "the_url": "shopify://collections/athletic-performance"
+          }
+        },
+        "dd8172c9-3d1a-4edd-8b67-a1bcfde8c4b3": {
+          "type": "icons",
+          "settings": {
+            "the_icon": "shopify://shop_images/Tribe_3_83a9f533-1b20-4c0a-bf83-8f176be121bb.png",
+            "the_text": "Detox & Metabolism",
+            "the_url": "shopify://collections/detox-weight-management"
+          }
+        },
+        "8ee03a06-9f3d-43be-a157-3862e1e435e4": {
+          "type": "icons",
+          "settings": {
+            "the_icon": "shopify://shop_images/Tribe_4_fdb389e5-e6e4-4d66-91fa-151033cf007d.png",
+            "the_text": "Gut & Digestive Health",
+            "the_url": "shopify://collections/gut-digestive-health"
+          }
+        },
+        "f1de1ae4-7a31-4f87-9233-24c98af3b964": {
+          "type": "icons",
+          "settings": {
+            "the_icon": "shopify://shop_images/Tribe_5_e5fa5d66-59bb-49f3-8d8f-49bd54b8f7d4.png",
+            "the_text": "Brain & Energy",
+            "the_url": "shopify://collections/brain-energy-boost"
+          }
+        },
+        "ab82bd54-c2bc-4d5c-b871-e000d06fd52b": {
+          "type": "icons",
+          "settings": {
+            "the_icon": "shopify://shop_images/Tribe_6_b737e9ad-3293-436d-870c-138621fbaeb9.png",
+            "the_text": "Inflammatory Health",
+            "the_url": "shopify://collections/inflammation"
+          }
+        }
+      },
+      "block_order": [
+        "a2b12af9-0ceb-422d-89af-cc40d1d0e32c",
+        "edb8056c-586c-4183-bebe-8b319881d1bb",
+        "dd8172c9-3d1a-4edd-8b67-a1bcfde8c4b3",
+        "8ee03a06-9f3d-43be-a157-3862e1e435e4",
+        "f1de1ae4-7a31-4f87-9233-24c98af3b964",
+        "ab82bd54-c2bc-4d5c-b871-e000d06fd52b"
+      ],
+      "settings": {
+        "title": "Shop By Health Goals",
+        "sub_title": "How can our products help you?"
+      }
+    },
+    "homepage_our_products_p7nKyP": {
+      "type": "homepage-our-products",
+      "blocks": {
+        "left_coloumn_content_bDdUyX": {
+          "type": "left_coloumn_content",
+          "settings": {
+            "the_title": "ARE ALWAYS...",
+            "icon_1": "shopify://shop_images/Ethically.svg",
+            "the_text_1": "<p>Ethically sourced</p>",
+            "icon_2": "shopify://shop_images/Sustainably.svg",
+            "the_text_2": "<p>Sustainably farmed</p>",
+            "icon_3": "shopify://shop_images/Made_in.svg",
+            "the_text_3": "<p>Made in the USA </p>",
+            "icon_4": "shopify://shop_images/Koshe.svg",
+            "the_text_4": "<p>Kosher certified</p>",
+            "icon_5": "shopify://shop_images/Third-party.svg",
+            "the_text_5": "<p>Third-party lab tested</p>",
+            "icon_6": "shopify://shop_images/Gluten.svg",
+            "the_text_6": "<p>Gluten free</p>",
+            "icon_7": "shopify://shop_images/cGMP.svg",
+            "the_text_7": "<p>cGMP compliant</p>",
+            "icon_8": "shopify://shop_images/pure.svg",
+            "the_text_8": "<p>Pure ingredients</p>"
+          }
+        },
+        "right_coloumn_content_DBL6hg": {
+          "type": "right_coloumn_content",
+          "settings": {
+            "the_title": "NEVER CONTAIN...",
+            "icon_1": "shopify://shop_images/Cross.svg",
+            "the_text_1": "<p>Harmful additives</p>",
+            "icon_2": "shopify://shop_images/Cross.svg",
+            "the_text_2": "<p>Color dyes</p>",
+            "icon_3": "shopify://shop_images/Cross.svg",
+            "the_text_3": "<p>Animal gelatin</p>",
+            "icon_4": "shopify://shop_images/Cross.svg",
+            "the_text_4": "<p>Toxic compounds</p>",
+            "icon_5": "shopify://shop_images/Cross.svg",
+            "the_text_5": "<p>Synthetic fillers</p>",
+            "icon_6": "shopify://shop_images/Cross.svg",
+            "the_text_6": "<p>Artificial anything</p>"
+          }
+        }
+      },
+      "block_order": [
+        "left_coloumn_content_bDdUyX",
+        "right_coloumn_content_DBL6hg"
+      ],
+      "settings": {
+        "section_bg_color": "#faeee9",
+        "title": "our products",
+        "left_image": "shopify://shop_images/left_image.webp",
+        "right_image": "shopify://shop_images/Right_image.webp"
+      }
+    },
+    "homepage_certified_icons_xczm9T": {
+      "type": "homepage-certified-icons",
+      "blocks": {
+        "icon_8DRqnx": {
+          "type": "icon",
+          "settings": {
+            "icon": "shopify://shop_images/USDA_1_cfe4d2c9-7fa0-46dd-a152-03a1f3dd8122.svg"
+          }
+        },
+        "icon_dcnQXH": {
+          "type": "icon",
+          "settings": {
+            "icon": "shopify://shop_images/NON_GMO_ad45fcc5-c174-4afb-afcd-29e1d3d6f813.svg"
+          }
+        },
+        "icon_ntAp36": {
+          "type": "icon",
+          "settings": {
+            "icon": "shopify://shop_images/Kosher_U.svg"
+          }
+        },
+        "icon_N4AVAh": {
+          "type": "icon",
+          "settings": {
+            "icon": "shopify://shop_images/Gluten_free_3b9ea0e5-86f7-4822-9670-7a2b5416810d.svg"
+          }
+        }
+      },
+      "block_order": [
+        "icon_8DRqnx",
+        "icon_dcnQXH",
+        "icon_ntAp36",
+        "icon_N4AVAh"
+      ],
+      "custom_css": [
+        "img {height: 60px;}"
+      ],
+      "settings": {
+        "section_bg_color": "#faeee9"
+      }
+    },
+    "customer_reviews_section_t7XbEW": {
+      "type": "customer-reviews-section",
+      "blocks": {
+        "content_NjemDU": {
+          "type": "content",
+          "settings": {
+            "image": "shopify://shop_images/testi-thrd.webp",
+            "enable_rating": true,
+            "the_text": "<p>As so many of my colleagues, we are always searching for the most optimal supplements for our clients.  While keeping in mind effectiveness, cost and purity, well you can stop looking. Tribe Organics meets all of the requirements for me.  I see results, great quality and reasonably priced.</p><h3>- Yolonda King-Taylor</h3><h4>Holistic Health Practitioner and Certified Wellness Coach</h4>"
+          }
+        },
+        "content_hcB9iz": {
+          "type": "content",
+          "settings": {
+            "image": "shopify://shop_images/testi-sec.webp",
+            "enable_rating": true,
+            "the_text": "<p>I am always looking for the best products for my customers; ones that are sustainable, organic & a good price point. My customers have been loving Tribe Organics. I personally am especially loving the new Ashwagandha KSM-66 Gummies, they are so tasty. Thank you for making such good quality products with ethical standards behind the product production. I highly recommend Tribe Organics! </p><h3>- Krystal Pearson L.Ac.</h3><h4>Licensed Acupuncturist, Herbalist & Reiki Master</h4>"
+          }
+        },
+        "content_e9X9c3": {
+          "type": "content",
+          "settings": {
+            "image": "shopify://shop_images/testi-one.webp",
+            "enable_rating": true,
+            "the_text": "<p>I have tried other Ashwagandha supplements and none have been nearly as effective as Tribe Organics! After mixing the powder into a smoothie or even a baked good recipe, there’s a noticeable difference in my energy levels and overall mood. I feel balanced, yet energized and clear headed. This is my favorite way to increase productivity with computer work without the crash that caffeine brings! I highly recommend this supplement for an overall improvement of well-being.</p><h3>- Rohini Elyse Mauk</h3><h4>Reiki Master</h4>"
+          }
+        },
+        "content_gEraxh": {
+          "type": "content",
+          "settings": {
+            "image": "shopify://shop_images/jassy.jpg",
+            "enable_rating": true,
+            "the_text": "<p>I wanted to share my experience using Tribe Organics nutritional products. I have been using them for the last 4 years in my practice and for myself. I have been in practice over 40 years and I have found my patients respond in a very positive way to their products. I would highly recommend you try their products.</p><h3>- Keith Jassy </h3><h4>Chiropractic and Nutrition Analysis.</h4>"
+          }
+        }
+      },
+      "block_order": [
+        "content_NjemDU",
+        "content_hcB9iz",
+        "content_e9X9c3",
+        "content_gEraxh"
+      ],
+      "settings": {
+        "section_bg_color": "#faeee9"
+      }
+    },
+    "3ed5f208-0d29-446d-824d-eb443e5cdffd": {
+      "type": "custom-testimonial-slider",
+      "blocks": {
+        "content_LanLDn": {
+          "type": "content",
+          "settings": {
+            "image": "shopify://shop_images/ashwagandha-review.png",
+            "button_link": "shopify://products/ashwagandha-ksm-66",
+            "stars": "<i class=\"fa fa-star active\"></i>\n                                                <i class=\"fa fa-star active\"></i>\n                                                <i class=\"fa fa-star active\"></i>\n                                                <i class=\"fa fa-star active\"></i>\n                                                <i class=\"fa fa-star active\"></i>",
+            "date_text": "4/3/2025",
+            "title": "Best one yet!!!",
+            "sub_title": "<p>Immediately noticed a difference after switching.</p><p>- Michelle</p>",
+            "bottom_text": "Results may vary by individual."
+          }
+        },
+        "content_QULzVd": {
+          "type": "content",
+          "settings": {
+            "image": "shopify://shop_images/ashwa-kids-reviews_1.png",
+            "button_link": "shopify://products/ashwagandha-gummies-kids",
+            "stars": "<i class=\"fa fa-star active\"></i>\n                                                <i class=\"fa fa-star active\"></i>\n                                                <i class=\"fa fa-star active\"></i>\n                                                <i class=\"fa fa-star active\"></i>\n                                                <i class=\"fa fa-star active\"></i>",
+            "date_text": "12/16/2024",
+            "title": "Great Product",
+            "sub_title": "<p>We've seen a real difference in moodiness with our teenagers. Ordering more!</p><p><strong>- Michelle Linquist</strong></p>",
+            "bottom_text": "Results may vary by individual."
+          }
+        },
+        "content_7GyYmf": {
+          "type": "content",
+          "settings": {
+            "image": "shopify://shop_images/ashwagandha-review.png",
+            "button_link": "shopify://products/ashwagandha-ksm-66",
+            "stars": "<i class=\"fa fa-star active\"></i>\n                                                <i class=\"fa fa-star active\"></i>\n                                                <i class=\"fa fa-star active\"></i>\n                                                <i class=\"fa fa-star active\"></i>\n                                                <i class=\"fa fa-star active\"></i>",
+            "date_text": "12/05/24",
+            "title": "Oh my, I have energy now",
+            "sub_title": "<p>I had gotten to the point where I literally was so exhausted it was hard to put one foot in front of the other. My personality is such I think my cortisol has always been elevated, hence exhausted adrenals. I have been taking this product for several weeks and feel so much better. I am amazed at how much better I feel and how much energy I have now, I am actually getting things done for a change. Thank you so much for this product.</p><p>- Linda</p>",
+            "bottom_text": "Results may vary by individual."
+          }
+        },
+        "content_fFkCBc": {
+          "type": "content",
+          "settings": {
+            "image": "shopify://shop_images/ashwagandha-review.png",
+            "button_link": "shopify://products/ashwagandha-ksm-66",
+            "stars": "<i class=\"fa fa-star active\"></i>\n                                                <i class=\"fa fa-star active\"></i>\n                                                <i class=\"fa fa-star active\"></i>\n                                                <i class=\"fa fa-star active\"></i>\n                                                <i class=\"fa fa-star active\"></i>",
+            "date_text": "10/31/24",
+            "title": "Good price point and better than other Ashwagandha supplements",
+            "sub_title": "<p>This is an affordable price for a good-quality product. It works better than other ashwagandha supplements I have used in the past. I'll order again.</p><p>- Jennifer Cerny</p>",
+            "bottom_text": "Results may vary by individual."
+          }
+        },
+        "content_FymXCR": {
+          "type": "content",
+          "settings": {
+            "image": "shopify://shop_images/ashwagandha-review.png",
+            "button_link": "shopify://products/ashwagandha-ksm-66",
+            "stars": "<i class=\"fa fa-star active\"></i>\n                                                <i class=\"fa fa-star active\"></i>\n                                                <i class=\"fa fa-star active\"></i>\n                                                <i class=\"fa fa-star active\"></i>\n                                                <i class=\"fa fa-star active\"></i>",
+            "date_text": "10/22/24",
+            "title": "Most Amazing Ashwaganda",
+            "sub_title": "<p>I love this product so much. It has been vital to me, helping me manage, and lowering anxiety and stress, I feel more chill and relaxed while I am also quite active throughout my day.<br/>Thank you!</p><p>- Danila Aragón</p>",
+            "bottom_text": "Results may vary by individual."
+          }
+        },
+        "content_zU4JQM": {
+          "type": "content",
+          "settings": {
+            "image": "shopify://shop_images/NOOTROPIC_DUO_REVIEW_1.png",
+            "button_link": "shopify://products/nootropic-duo",
+            "stars": "<i class=\"fa fa-star active\"></i>\n                                                <i class=\"fa fa-star active\"></i>\n                                                <i class=\"fa fa-star active\"></i>\n                                                <i class=\"fa fa-star active\"></i>\n                                                <i class=\"fa fa-star active\"></i>",
+            "date_text": "10/21/24",
+            "title": "Best combo",
+            "sub_title": "<p>If mother nature don't make it, don't take it</p><p>- Luis Soto</p>",
+            "bottom_text": "Results may vary by individual."
+          }
+        },
+        "554d78ab-81cc-424f-b54c-1e0e3bef17e7": {
+          "type": "content",
+          "settings": {
+            "image": "shopify://shop_images/product-reviews-size-ashwagandha-vegan.png",
+            "button_link": "shopify://products/ashwagandha-vegan",
+            "stars": "<i class=\"fa fa-star active\"></i>\n                                                <i class=\"fa fa-star active\"></i>\n                                                <i class=\"fa fa-star active\"></i>\n                                                <i class=\"fa fa-star active\"></i>\n                                                <i class=\"fa fa-star active\"></i>",
+            "date_text": "09/08/24",
+            "title": "Nature's chill pill",
+            "sub_title": "<p>As a woman in menopause, I read an article by a holistic doctor who said Ashwagandha helped her stay balanced and calm and without cortisol spikes during menopause, so I took her advice. It works, and now I tell everyone it’s great during menopause.</p><p>- Debra Adrienne</p>",
+            "bottom_text": "Results may vary by individual."
+          }
+        },
+        "c1d5941d-3620-497e-a0c9-4d0433952fd4": {
+          "type": "content",
+          "settings": {
+            "image": "shopify://shop_images/boswellia-reviews.png",
+            "button_link": "shopify://products/boswellia-complex",
+            "stars": "<i class=\"fa fa-star active\"></i>\n                                                <i class=\"fa fa-star active\"></i>\n                                                <i class=\"fa fa-star active\"></i>\n                                                <i class=\"fa fa-star active\"></i>\n                                                <i class=\"fa fa-star active\"></i>",
+            "date_text": "08/07/24",
+            "title": "Great Supplement",
+            "sub_title": "<p>This is a great product for helping to reduce joint pain and enhancing energy. I've been taking this daily for almost 3 weeks now and can feel the difference.</p><p><strong>- Ruth A Reitmeyer</strong><br/></p>",
+            "bottom_text": "Results may vary by individual."
+          }
+        },
+        "content_wwEtTt": {
+          "type": "content",
+          "settings": {
+            "image": "shopify://shop_images/ashwa-kids-reviews_1.png",
+            "button_link": "shopify://products/ashwagandha-gummies-kids",
+            "stars": "<i class=\"fa fa-star active\"></i>\n                                                <i class=\"fa fa-star active\"></i>\n                                                <i class=\"fa fa-star active\"></i>\n                                                <i class=\"fa fa-star active\"></i>\n                                                <i class=\"fa fa-star active\"></i>",
+            "date_text": "07/21/24",
+            "title": "Sleepy Time",
+            "sub_title": "<p>I give the gummies to the kids at nite. They are only taking 1 a day. It does help them rest better at nite and they are calmer the next day</p><p><strong>- Christi McCreight</strong></p>",
+            "bottom_text": "Results may vary by individual."
+          }
+        },
+        "content_Yri3yM": {
+          "type": "content",
+          "settings": {
+            "image": "shopify://shop_images/ashwagandha-reviews.png",
+            "button_link": "shopify://products/ashwagandha-ksm-66",
+            "stars": "<i class=\"fa fa-star active\"></i>\n                                                <i class=\"fa fa-star active\"></i>\n                                                <i class=\"fa fa-star active\"></i>\n                                                <i class=\"fa fa-star active\"></i>\n                                                <i class=\"fa fa-star active\"></i>",
+            "date_text": "05/15/24",
+            "title": "Cool and Calm",
+            "sub_title": "<p>I started taking the Ashwagandha the day I received it. That very day I began to feel easy. I do not feel stressed out now. I am only taking 1 capsule a day in the morning time. I hope I can continue with only the 1 pill. Its working</p><p>- Christi McCreight</p>",
+            "bottom_text": "Results may vary by individual."
+          }
+        },
+        "content_T734pe": {
+          "type": "content",
+          "settings": {
+            "image": "shopify://shop_images/product-reviews-size.png",
+            "button_link": "shopify://products/ashwagandha-ksm-66-gummies",
+            "stars": "<i class=\"fa fa-star active\"></i>\n                                                <i class=\"fa fa-star active\"></i>\n                                                <i class=\"fa fa-star active\"></i>\n                                                <i class=\"fa fa-star active\"></i>\n                                                <i class=\"fa fa-star active\"></i>",
+            "date_text": "04/28/24",
+            "title": "Love My Gummies",
+            "sub_title": "<p>I am hooked! I absolutely love these gummies. They give me energy in the morning to get up and get my day started off on the right foot, and sustained energy at night to power through my evenings. Will Definitely be back for more!! ❤️</p><p>- Meredith Hanson</p>",
+            "bottom_text": "Results may vary by individual."
+          }
+        },
+        "content_pAJAwy": {
+          "type": "content",
+          "settings": {
+            "image": "shopify://shop_images/ashwa-kids-reviews_1.png",
+            "button_link": "shopify://products/ashwagandha-gummies-kids",
+            "stars": "<i class=\"fa fa-star active\"></i>\n                                                <i class=\"fa fa-star active\"></i>\n                                                <i class=\"fa fa-star active\"></i>\n                                                <i class=\"fa fa-star active\"></i>\n                                                <i class=\"fa fa-star active\"></i>",
+            "date_text": "04/25/24",
+            "title": "Love Them",
+            "sub_title": "<p>My son absolutely loves the gummies! He is more focused in school, and tells me he feels more calmer as well.</p><p>- Meredith Hanson</p>",
+            "bottom_text": "Results may vary by individual."
+          }
+        },
+        "a89deb77-3ab0-45a0-8e19-88b9a99f8c99": {
+          "type": "content",
+          "settings": {
+            "image": "shopify://shop_images/boswellia-reviews.png",
+            "button_link": "shopify://products/boswellia-complex",
+            "stars": "<i class=\"fa fa-star active\"></i>\n                                                <i class=\"fa fa-star active\"></i>\n                                                <i class=\"fa fa-star active\"></i>\n                                                <i class=\"fa fa-star active\"></i>\n                                                <i class=\"fa fa-star active\"></i>",
+            "date_text": "04/14/24",
+            "title": "Good Stuff",
+            "sub_title": "<p>Three weeks of consistent use of Boswellia is seeming to be beneficial for my arthritis!<br/>I plan to continue with Tribe Boswellia for a few more months to discover if benefits from this product continues!</p><p><strong>- Clayton Miller</strong></p><p></p><p></p>",
+            "bottom_text": "Results may vary by individual."
+          }
+        },
+        "content_mpb8fC": {
+          "type": "content",
+          "settings": {
+            "image": "shopify://shop_images/ashwa-kids-reviews_1.png",
+            "button_link": "shopify://products/ashwagandha-gummies-kids",
+            "stars": "<i class=\"fa fa-star active\"></i>\n                                                <i class=\"fa fa-star active\"></i>\n                                                <i class=\"fa fa-star active\"></i>\n                                                <i class=\"fa fa-star active\"></i>\n                                                <i class=\"fa fa-star active\"></i>",
+            "date_text": "03/23/24",
+            "title": "Best Quality",
+            "sub_title": "<p>Bought this for my son who has been having panic attacks. He loves these gummies. As for myself, having bought similar gummies at major retail locations, the quality of this gummy is unparalleled.</p><p>- Veronica</p>",
+            "bottom_text": "Results may vary by individual."
+          }
+        },
+        "content_KT6eXX": {
+          "type": "content",
+          "settings": {
+            "image": "shopify://shop_images/ashwagandha-reviews.png",
+            "button_link": "shopify://products/ashwagandha-ksm-66",
+            "stars": "<i class=\"fa fa-star active\"></i>\n                                                <i class=\"fa fa-star active\"></i>\n                                                <i class=\"fa fa-star active\"></i>\n                                                <i class=\"fa fa-star active\"></i>\n                                                <i class=\"fa fa-star active\"></i>",
+            "date_text": "03/23/24",
+            "title": "Great!",
+            "sub_title": "<p>I was able to feel the difference in about 2 day, it has worked against my anxiety or stress just great!</p><p>- Edwin Guzman</p>",
+            "bottom_text": "Results may vary by individual."
+          }
+        },
+        "1349a3e1-549f-46d1-92eb-f834c955f30a": {
+          "type": "content",
+          "settings": {
+            "image": "shopify://shop_images/ashwagandha-reviews.png",
+            "button_link": "shopify://products/ashwagandha-ksm-66",
+            "stars": "<i class=\"fa fa-star active\"></i>\n                                                <i class=\"fa fa-star active\"></i>\n                                                <i class=\"fa fa-star active\"></i>\n                                                <i class=\"fa fa-star active\"></i>\n                                                <i class=\"fa fa-star active\"></i>",
+            "date_text": "12/21/23",
+            "title": "Good counterbalance",
+            "sub_title": "<p>Have used this for years and appreciate the calm it brings to my insane world. Thank you.</p><p>- Barbara Egan</p>",
+            "bottom_text": "Results may vary by individual."
+          }
+        },
+        "content_EQnP9b": {
+          "type": "content",
+          "settings": {
+            "image": "shopify://shop_images/lions-mane-reviews_be1e7c06-b237-49a6-b9ce-a262c6dd64c6.png",
+            "button_link": "shopify://products/lions-mane-mushroom",
+            "stars": "<i class=\"fa fa-star active\"></i>\n                                                <i class=\"fa fa-star active\"></i>\n                                                <i class=\"fa fa-star active\"></i>\n                                                <i class=\"fa fa-star active\"></i>\n                                                <i class=\"fa fa-star active\"></i>",
+            "date_text": "12/11/23",
+            "title": "Harmony",
+            "sub_title": "<p>I love Tribe Organics Lion Mane. My mind is sharper and my mood is more content with who I am. Life is good!</p><p>- Karen Zapata</p>",
+            "bottom_text": "Results may vary by individual."
+          }
+        },
+        "f3033079-e79d-4f8d-b136-1ee313d29fea": {
+          "type": "content",
+          "settings": {
+            "image": "shopify://shop_images/ashwa-kids-reviews_1.png",
+            "button_link": "shopify://products/ashwagandha-gummies-kids",
+            "stars": "<i class=\"fa fa-star active\"></i>\n                                                <i class=\"fa fa-star active\"></i>\n                                                <i class=\"fa fa-star active\"></i>\n                                                <i class=\"fa fa-star active\"></i>\n                                                <i class=\"fa fa-star active\"></i>",
+            "date_text": "11/28/2023",
+            "title": "Helped keep my eleven year old calm",
+            "sub_title": "<p>My eleven year old told me it’s helped him stay more calm at school. He wants to take them bc they help. And he also said they taste great!</p><p>- Keri Anderson</p>",
+            "bottom_text": "Results may vary by individual."
+          }
+        },
+        "f8c309a6-9624-43dc-8f50-e3b9117ad467": {
+          "type": "content",
+          "settings": {
+            "image": "shopify://shop_images/turmeric-reviews.png",
+            "button_link": "shopify://products/turmeric-complex",
+            "stars": "<i class=\"fa fa-star active\"></i>\n                                                <i class=\"fa fa-star active\"></i>\n                                                <i class=\"fa fa-star active\"></i>\n                                                <i class=\"fa fa-star active\"></i>\n                                                <i class=\"fa fa-star active\"></i>",
+            "date_text": "06/01/2023",
+            "title": "Great Company",
+            "sub_title": "<p>I purchased Turmeric and Ashwagandha and I am very happy with my products. A friend also purchased same items and is very happy. She's giving Ashwaganda to her young teens to help them handle anxiety and focus.</p><p>- Stephanie J Acierno</p>",
+            "bottom_text": "Results may vary by individual."
+          }
+        },
+        "e283ee4f-0151-470e-a81e-5706871fc8a1": {
+          "type": "content",
+          "settings": {
+            "image": "shopify://shop_images/lions-mane-reviews_be1e7c06-b237-49a6-b9ce-a262c6dd64c6.png",
+            "button_link": "shopify://products/lions-mane-mushroom",
+            "stars": "<i class=\"fa fa-star active\"></i>\n                                                <i class=\"fa fa-star active\"></i>\n                                                <i class=\"fa fa-star active\"></i>\n                                                <i class=\"fa fa-star active\"></i>\n                                                <i class=\"fa fa-star active\"></i>",
+            "date_text": "04/10/23",
+            "title": "Amazing Lion's Mane",
+            "sub_title": "<p>The product arrived on time and the package was very well protected. I bought the product for my wife whose having some episodes of forgetting things. She started to use the product a week and a half ago and I think that it is to early to see results.</p><p><strong>- Victor Arroyo</strong><br/></p>",
+            "bottom_text": "Results may vary by individual."
+          }
+        },
+        "130408ec-7920-48f1-8f77-545ac894077b": {
+          "type": "content",
+          "settings": {
+            "image": "shopify://shop_images/ashwagandha-reviews.png",
+            "button_link": "shopify://products/ashwagandha-ksm-66",
+            "stars": "<i class=\"fa fa-star active\"></i>\n                                                <i class=\"fa fa-star active\"></i>\n                                                <i class=\"fa fa-star active\"></i>\n                                                <i class=\"fa fa-star active\"></i>\n                                                <i class=\"fa fa-star active\"></i>",
+            "date_text": "04/04/22",
+            "title": "Awesome Ashwagandha!",
+            "sub_title": "<p>I love this stuff. I take it every day and notice a big difference in energy and mood.</p><p><strong>- Sage</strong></p>",
+            "bottom_text": "Results may vary by individual."
+          }
+        },
+        "c89b55e3-77cc-47be-a65d-348650db9b50": {
+          "type": "content",
+          "settings": {
+            "image": "shopify://shop_images/lions-mane-reviews_be1e7c06-b237-49a6-b9ce-a262c6dd64c6.png",
+            "button_link": "shopify://products/lions-mane-mushroom",
+            "stars": "<i class=\"fa fa-star active\"></i>\n                                                <i class=\"fa fa-star active\"></i>\n                                                <i class=\"fa fa-star active\"></i>\n                                                <i class=\"fa fa-star active\"></i>\n                                                <i class=\"fa fa-star active\"></i>",
+            "date_text": "03/27/23",
+            "title": "Love it",
+            "sub_title": "<p>Took about 3 weeks to feel more focused and improvement with my memory. I will definitely continue using your products. I also use Turmeric Complex.</p><p><strong>- Todd Bajar</strong></p>",
+            "bottom_text": "Results may vary by individual."
+          }
+        },
+        "e48d0706-e9bf-4786-ab1a-d9b52e7d4f37": {
+          "type": "content",
+          "settings": {
+            "image": "shopify://shop_images/turmeric-reviews.png",
+            "button_link": "shopify://products/turmeric-complex",
+            "stars": "<i class=\"fa fa-star active\"></i>\n                                                <i class=\"fa fa-star active\"></i>\n                                                <i class=\"fa fa-star active\"></i>\n                                                <i class=\"fa fa-star active\"></i>\n                                                <i class=\"fa fa-star active\"></i>",
+            "date_text": "03/25/23",
+            "title": "Pain Relief",
+            "sub_title": "<p>Finally. Searching for something that might take pain away from arthritis and joint/skeletal muscle issues. Found it!!!</p><p><strong>- Robin Mccroskey</strong></p>",
+            "bottom_text": "Results may vary by individual."
+          }
+        },
+        "a3b7378e-0953-4cfc-8de7-9b8c83415117": {
+          "type": "content",
+          "settings": {
+            "image": "shopify://shop_images/turmeric-reviews.png",
+            "button_link": "shopify://products/turmeric-complex",
+            "stars": "<i class=\"fa fa-star active\"></i>\n                                                <i class=\"fa fa-star active\"></i>\n                                                <i class=\"fa fa-star active\"></i>\n                                                <i class=\"fa fa-star active\"></i>\n                                                <i class=\"fa fa-star active\"></i>",
+            "date_text": "11/06/22",
+            "title": "Where else can you find the same combo?",
+            "sub_title": "<p>Great product with 3 of the best anti-inflammatory ingredients.</p><p><strong>- William Gerry</strong></p>",
+            "bottom_text": "Results may vary by individual."
+          }
+        },
+        "content_qdfV7Y": {
+          "type": "content",
+          "settings": {
+            "image": "shopify://shop_images/boswellia-reviews.png",
+            "button_link": "shopify://products/boswellia-complex",
+            "stars": "<i class=\"fa fa-star active\"></i>\n                                                <i class=\"fa fa-star active\"></i>\n                                                <i class=\"fa fa-star active\"></i>\n                                                <i class=\"fa fa-star active\"></i>\n                                                <i class=\"fa fa-star active\"></i>",
+            "date_text": "11/16/22",
+            "title": "Great Customer Service",
+            "sub_title": "<p>Even though the shipping company messed up, Tribe Organics came through and delivered a new shipment. Product was for a friend but I would certainly buy from them again.</p><p></p><p><strong>- Geraldine Houck</strong></p>",
+            "bottom_text": "Results may vary by individual."
+          }
+        },
+        "content_aVGwyU": {
+          "type": "content",
+          "settings": {
+            "image": "shopify://shop_images/boswellia-reviews.png",
+            "button_link": "shopify://products/boswellia-complex",
+            "stars": "<i class=\"fa fa-star active\"></i>\n                                                <i class=\"fa fa-star active\"></i>\n                                                <i class=\"fa fa-star active\"></i>\n                                                <i class=\"fa fa-star active\"></i>\n                                                <i class=\"fa fa-star active\"></i>",
+            "date_text": "10/21/22",
+            "title": "Excellent product and company",
+            "sub_title": "<p>I have never encountered a company with a higher quality product that's more beautifully packaged, or with better delivery & customer service. After considerable research on Boswellia (for arthritis & inflammation), I chose Tribe and have never been disappointed.</p><p><strong>- Kathleen Stachowski</strong></p><p></p><p></p>",
+            "bottom_text": "Results may vary by individual."
+          }
+        },
+        "11fef995-4777-4639-b693-1a7f7c916fda": {
+          "type": "content",
+          "settings": {
+            "image": "shopify://shop_images/resilience-duo-reviews.png",
+            "button_link": "shopify://products/resilience-duo",
+            "stars": "<i class=\"fa fa-star active\"></i>\n                                                <i class=\"fa fa-star active\"></i>\n                                                <i class=\"fa fa-star active\"></i>\n                                                <i class=\"fa fa-star active\"></i>\n                                                <i class=\"fa fa-star active\"></i>",
+            "date_text": "06/12/22",
+            "title": "It works!",
+            "sub_title": "<p>Been using Tribe for several months now. . All pure , no fillers like other products... Boswellia &<br/>Turmeric together have given me A better functional body . Feel better, more energy and more life..</p><p>- Peggy MINER</p><p></p>",
+            "bottom_text": "Results may vary by individual."
+          }
+        },
+        "83c398a0-187c-4d79-9516-33eda949ac5d": {
+          "type": "content",
+          "settings": {
+            "image": "shopify://shop_images/lions-mane-reviews_be1e7c06-b237-49a6-b9ce-a262c6dd64c6.png",
+            "button_link": "shopify://products/lions-mane-mushroom",
+            "stars": "<i class=\"fa fa-star active\"></i>\n                                                <i class=\"fa fa-star active\"></i>\n                                                <i class=\"fa fa-star active\"></i>\n                                                <i class=\"fa fa-star active\"></i>\n                                                <i class=\"fa fa-star active\"></i>",
+            "date_text": "04/27/22",
+            "title": "Can't live without my Lion's Mane",
+            "sub_title": "<p>This is my favorite Tribe product, as it gives me mental clarity, long lasting energy, and so much focus to take action on my dreams every day. Taking the capsules consistently, really changed the way I work. I highly recommend it to entrepreneurs or anyone who needs the mental boost.</p><p>- Taylor Lane</p>",
+            "bottom_text": "Results may vary by individual."
+          }
+        },
+        "74720214-1c71-4eae-8ed1-618f8d1667d2": {
+          "type": "content",
+          "settings": {
+            "image": "shopify://shop_images/ashwagandha-reviews.png",
+            "button_link": "shopify://products/ashwagandha-vegan",
+            "stars": "<i class=\"fa fa-star active\"></i>\n                                                <i class=\"fa fa-star active\"></i>\n                                                <i class=\"fa fa-star active\"></i>\n                                                <i class=\"fa fa-star active\"></i>",
+            "date_text": "05/09/22",
+            "title": "Completely has shifted our home",
+            "sub_title": "<p>My son has struggled with anxiety and sleep issues since he was a toddler. This has been a game changer. He is much more in control of his anger and frustration and he goes to sleep much more easily. 🙏</p><p>- Pauli Rose</p><p></p>",
+            "bottom_text": "Results may vary by individual."
+          }
+        },
+        "7d7779bf-261a-4f57-9ef4-8bfb51fa3fa5": {
+          "type": "content",
+          "settings": {
+            "image": "shopify://shop_images/nootropic-reviews.png",
+            "button_link": "shopify://products/nootropic-duo",
+            "stars": "<i class=\"fa fa-star active\"></i>\n                                                <i class=\"fa fa-star active\"></i>\n                                                <i class=\"fa fa-star active\"></i>\n                                                <i class=\"fa fa-star active\"></i>",
+            "date_text": "06/19/22",
+            "title": "So helpful",
+            "sub_title": "<p>This combo is very helpful for boosting brain function during the day as feeling more wakeful. Also helpful at night for restful sleep. Win-Win!!</p><p><strong>- Susan Andrews</strong></p>",
+            "bottom_text": "Results may vary by individual."
+          }
+        }
+      },
+      "block_order": [
+        "content_LanLDn",
+        "content_QULzVd",
+        "content_7GyYmf",
+        "content_fFkCBc",
+        "content_FymXCR",
+        "content_zU4JQM",
+        "554d78ab-81cc-424f-b54c-1e0e3bef17e7",
+        "c1d5941d-3620-497e-a0c9-4d0433952fd4",
+        "content_wwEtTt",
+        "content_Yri3yM",
+        "content_T734pe",
+        "content_pAJAwy",
+        "a89deb77-3ab0-45a0-8e19-88b9a99f8c99",
+        "content_mpb8fC",
+        "content_KT6eXX",
+        "1349a3e1-549f-46d1-92eb-f834c955f30a",
+        "content_EQnP9b",
+        "f3033079-e79d-4f8d-b136-1ee313d29fea",
+        "f8c309a6-9624-43dc-8f50-e3b9117ad467",
+        "e283ee4f-0151-470e-a81e-5706871fc8a1",
+        "130408ec-7920-48f1-8f77-545ac894077b",
+        "c89b55e3-77cc-47be-a65d-348650db9b50",
+        "e48d0706-e9bf-4786-ab1a-d9b52e7d4f37",
+        "a3b7378e-0953-4cfc-8de7-9b8c83415117",
+        "content_qdfV7Y",
+        "content_aVGwyU",
+        "11fef995-4777-4639-b693-1a7f7c916fda",
+        "83c398a0-187c-4d79-9516-33eda949ac5d",
+        "74720214-1c71-4eae-8ed1-618f8d1667d2",
+        "7d7779bf-261a-4f57-9ef4-8bfb51fa3fa5"
+      ],
+      "settings": {
+        "section_bg_color": "#faeee9",
+        "custom_class": "homepage-testimonial-slider",
+        "title": "See What other customers  are Saying"
+      }
+    },
+    "homepage_featured_products_second_QMn86R": {
+      "type": "homepage-featured-products-second",
+      "blocks": {
+        "product_pUtVeP": {
+          "type": "product",
+          "settings": {
+            "product": "organic-moringa"
+          }
+        },
+        "product_NQHq8K": {
+          "type": "product",
+          "settings": {
+            "product": "organic-moringa-powder"
+          }
+        },
+        "product_yUCUE8": {
+          "type": "product",
+          "settings": {
+            "product": "boswellia-complex"
+          }
+        },
+        "product_aTcaLJ": {
+          "type": "product",
+          "disabled": true,
+          "settings": {
+            "product": "turmeric-complex"
+          }
+        },
+        "product_LEHnNN": {
+          "type": "product",
+          "settings": {
+            "product": "mushroom-golden-blend"
+          }
+        },
+        "product_igjDUE": {
+          "type": "product",
+          "settings": {
+            "product": "ashwagandha-ksm-66-powder-version"
+          }
+        },
+        "product_qeyjMM": {
+          "type": "product",
+          "settings": {
+            "product": "mushroom-golden-blend-powder"
+          }
+        },
+        "product_beK3pe": {
+          "type": "product",
+          "settings": {
+            "product": "ashwagandha-ksm-66-gummies"
+          }
+        },
+        "product_reGhX3": {
+          "type": "product",
+          "settings": {
+            "product": "organic-shatavari"
+          }
+        }
+      },
+      "block_order": [
+        "product_pUtVeP",
+        "product_NQHq8K",
+        "product_yUCUE8",
+        "product_aTcaLJ",
+        "product_LEHnNN",
+        "product_igjDUE",
+        "product_qeyjMM",
+        "product_beK3pe",
+        "product_reGhX3"
+      ],
+      "settings": {
+        "section_bg_color": "#faeee9",
+        "title": "OUR SEASONAL PICKS",
+        "sub_title": "Support your body through seasonal renewal. These spring essentials help boost natural energy, support focus and nourish your body as days get longer and routines reset.",
+        "button": "Seasonal Picks",
+        "url": "shopify://collections/seasonal-picks"
+      }
+    },
+    "b202c43f-470d-40a9-be92-5c0e5d213128": {
+      "type": "image-with-text-1",
       "settings": {
         "title": "Transform Your Habits: Bundle Up & Save!",
-        "description": "Get more from your wellness routine by combining complementary supplements into powerful bundles.",
-        "price_prefix": "From $64.54",
-        "button_label": "Explore bundles",
-        "secondary_button_label": "Shop all",
-        "overlay_opacity": 40
+        "sub_title": "From $64.54",
+        "content": "Level up your wellness routine with these mindfully paired products, chosen for their power to work synergistically and give you the most potent benefits. Explore our existing bundles.",
+        "button_1": "Explore bundles",
+        "url_1": "shopify://collections/bundles-1",
+        "button_2": "SHOP ALL",
+        "url_2": "shopify://collections/all",
+        "image": "shopify://shop_images/nootropic_duo_homepage.png"
       }
     },
-    "rewards_program": {
-      "type": "rewards-program",
+    "87073cf1-f97b-41bb-b94e-0064a0c0bdb7": {
+      "type": "image-with-text-2",
       "settings": {
-        "eyebrow": "Subscribe & Save",
-        "title": "It's Like A Reward That Keeps Getting Better",
-        "description": "Subscribe to any product and save more with each order. Plus enjoy lifetime free shipping.",
-        "button_label": "Subscribe & Save"
-      },
-      "blocks": {
-        "r1": { "type": "tier", "settings": { "title": "First order", "description": "+ extra 5% for starting your journey", "discount": "10% OFF" } },
-        "r2": { "type": "tier", "settings": { "title": "2nd order", "description": "Keep the momentum going", "discount": "15% OFF" } },
-        "r3": { "type": "tier", "settings": { "title": "3rd order", "description": "Building healthy habits", "discount": "20% OFF" } },
-        "r4": { "type": "tier", "settings": { "title": "4th order", "description": "Loyalty rewards kick in", "discount": "25% OFF" } },
-        "r5": { "type": "tier", "settings": { "title": "5th order +", "description": "Lifetime free shipping on all orders", "discount": "25% + Free Ship" } }
-      },
-      "blocks_order": ["r1","r2","r3","r4","r5"]
+        "title": "IT’S LIKE A REWARD - THAT KEEPS GETTING BETTER",
+        "custom_html": "<p>Joining the TRIIBE means your wellness journey keeps giving back. With every order, your rewards expand and your savings grow.<br></p>\n\n<ul>\n  <li>\n<strong>First order:</strong> 10% off (+ an extra 5% for starting your journey)</li>\n  <li>\n<strong>Second order:</strong> 15% off</li>\n  <li>\n<strong>Third order:</strong> 20% off</li>\n  <li>\n<strong>Fourth order:</strong> 25% off</li>\n  <li>\n<strong>Fifth order:</strong> Keep your best discount + free shipping for life + a special free gift as our way of saying thank you for being part of the TRIIBE</li>\n</ul>\n<p>\n  You’ll still have the freedom to pause or skip anytime and early access to new products.<br><br>\n  Because we believe in long-term change, and making it worth your while every step of the way.\n</p>",
+        "button": "subscribe & save",
+        "url": "shopify://pages/subscribe-and-save",
+        "image": "shopify://shop_images/subscribe_homepage_1.png"
+      }
     },
-    "brand_mission": {
-      "type": "brand-mission",
+    "52ed8add-f13b-4079-95a7-a9b736fea02c": {
+      "type": "image-with-text-3",
       "settings": {
+        "show_icon": true,
         "title": "Crystal Clear Vision",
-        "content": "<p>We believe in a world where physical, mental, and spiritual wellness are all connected. Every product we make is crafted with intention — ethically sourced, scientifically backed, and made with love.</p><p>We're proud members of 1% for the Planet, committing a portion of all sales to environmental causes.</p>",
-        "button_label": "There's more..."
+        "custom_html": "<p data-aos=\"fade-up\">TRIIBE is dedicated to helping anyone who wants to better themselves; physically, mentally and spiritually. That’s what really gets our fire burning. But, still, it’s not all about us. We’re part of an ecosystem, of communities, we are nothing without the world around us. The natural world is where we get the goods we send to you, it’s where the trees we love to look at live, where the birds build their nests. We are nothing if we don’t take care of the world around us.</p>\n<p data-aos=\"fade-up\">TRIIBE takes three things very seriously: our people, our world, our mission.</p>\n<p data-aos=\"fade-up\">We vow for transparency, so that you can see exactly what we are doing together. Our work with 1% for the Planet, our never ending battle for sustainability and the pure, unadulterated good stuff we are putting in our bodies.</p>",
+        "button": "there’s more...",
+        "url": "shopify://pages/about",
+        "image": "shopify://shop_images/edu_clear_vision_opt.png"
       }
     },
-    "satisfaction_guarantee": {
-      "type": "satisfaction-guarantee",
+    "instagram": {
+      "type": "instagram",
+      "disabled": true,
       "settings": {
-        "title": "The Tribe Satisfaction Guarantee",
-        "content": "<p>Your purchase is backed by our rock solid 100% Satisfaction Guarantee. If you're unhappy with your order for any reason, you can reach out to us at info@tribe-organics.com and we'll make it right.</p>",
-        "button_label": "Contact us",
-        "secondary_button_label": "Find out more"
+        "title": "Join the triibe follow us @tribe.organics"
       }
     },
-    "email_signup": {
-      "type": "email-signup",
+    "satisfication_gaurantee_FJ7A3A": {
+      "type": "satisfication-gaurantee",
       "settings": {
-        "title": "Join The Triibe",
-        "subtitle": "Get lifestyle tips + 10% off your first order!",
-        "button_label": "Sign Up!",
-        "privacy_note": "By subscribing, you agree to our Privacy Policy and consent to receive updates."
+        "section_bg_color": "#faeee9",
+        "title": "THE TRIBE SATISFACTION GUARANTEE",
+        "text": "Your purchase is backed by our rock solid 100% Satisfaction Guarantee. If you’re unhappy with your order for any reason, you can reach out to us at info@tribe-organics.com and we’ll make it right.",
+        "button_1": "Contact us",
+        "url_1": "shopify://pages/contact",
+        "button_2": "Find Out More",
+        "url_2": "shopify://pages/triibe-satisfaction-guarantee"
       }
     },
-    "retail_locations": {
-      "type": "retail-locations",
+    "4ee9dd59-b6f0-4838-94fd-32ec978053df": {
+      "type": "find-us-second-section",
+      "blocks": {
+        "6cc759f9-557f-4593-aded-3991760cfdf8": {
+          "type": "icon_lists",
+          "settings": {
+            "the_icon": "shopify://shop_images/nhc.png"
+          }
+        },
+        "e2ac031f-660c-415b-9a0f-97796c48270e": {
+          "type": "icon_lists",
+          "settings": {
+            "the_icon": "shopify://shop_images/professional.png"
+          }
+        },
+        "81ec847e-56ac-4d8e-bd6c-f534664adaf6": {
+          "type": "icon_lists",
+          "settings": {
+            "the_icon": "shopify://shop_images/iherb_homepage.png"
+          }
+        },
+        "icon_lists_hmpLpi": {
+          "type": "icon_lists",
+          "settings": {
+            "the_icon": "shopify://shop_images/vitacost_logo_white.png"
+          }
+        },
+        "icon_lists_mAQGEY": {
+          "type": "icon_lists",
+          "settings": {
+            "the_icon": "shopify://shop_images/pure_formulas_e3f522a2-fdeb-4419-8afc-6e201a134f39.png"
+          }
+        }
+      },
+      "block_order": [
+        "6cc759f9-557f-4593-aded-3991760cfdf8",
+        "e2ac031f-660c-415b-9a0f-97796c48270e",
+        "81ec847e-56ac-4d8e-bd6c-f534664adaf6",
+        "icon_lists_hmpLpi",
+        "icon_lists_mAQGEY"
+      ],
       "settings": {
-        "online_heading": "Find Us Online At:",
-        "instore_heading": "Also Find Us In-Store At:"
+        "section_bg_color": "#06211e",
+        "the_title": "FIND US ONLINE AT:"
+      }
+    },
+    "840f944d-650c-4c0f-bcd8-8a452a87edc5": {
+      "type": "find-us-section",
+      "blocks": {
+        "93db25fd-835e-4fc5-bf22-f06ad29b9397": {
+          "type": "icon_lists",
+          "settings": {
+            "the_icon": "shopify://shop_images/1ftp_BusinessMember_Horizontal_White-1_4_-min.png"
+          }
+        },
+        "95577848-a0b3-4650-a49d-f9d62867fd1a": {
+          "type": "icon_lists",
+          "settings": {
+            "the_icon": "shopify://shop_images/1ftp_BusinessMember_Horizontal_White-1_5_-min.png"
+          }
+        },
+        "159731b5-fd60-489c-848e-34b15eeed5c1": {
+          "type": "icon_lists",
+          "settings": {
+            "the_icon": "shopify://shop_images/1ftp_BusinessMember_Horizontal_White-1_6_-min.png"
+          }
+        },
+        "96071840-b003-4a20-bc19-d77e30c5eb04": {
+          "type": "icon_lists",
+          "settings": {
+            "the_icon": "shopify://shop_images/1ftp_BusinessMember_Horizontal_White-1_7_-min.png"
+          }
+        },
+        "7c8ea5d9-249d-414b-8252-e760aefb1c6b": {
+          "type": "icon_lists",
+          "disabled": true,
+          "settings": {
+            "the_icon": "shopify://shop_images/EdsonFarms-logo_300x250-01_1.png"
+          }
+        },
+        "ef176956-e826-421d-ad17-a64d69aae7a0": {
+          "type": "icon_lists",
+          "settings": {
+            "the_icon": "shopify://shop_images/STAYHEALTH_LOGO_WIP_blanco.png"
+          }
+        },
+        "f25da5da-2912-4e10-9c88-fa6f6cfa5052": {
+          "type": "icon_lists",
+          "settings": {
+            "the_icon": "shopify://shop_images/Thrive-Collective-Logo---White-blue-circle-01_82a249db-d006-408b-a0c1-461c3cc24f7b.png"
+          }
+        },
+        "48ce6385-1a90-43b1-9e8a-0d383d3b0cec": {
+          "type": "icon_lists",
+          "settings": {
+            "the_icon": "shopify://shop_images/loveys.png"
+          }
+        },
+        "dc589f01-a5b2-4255-97c7-8860c1b2880e": {
+          "type": "icon_lists",
+          "settings": {
+            "the_icon": "shopify://shop_images/logo_nutrition_world_1.png"
+          }
+        },
+        "icon_lists_P8JVrh": {
+          "type": "icon_lists",
+          "disabled": true,
+          "settings": {
+            "the_icon": "shopify://shop_images/Buford_Road_Pharmacy_Logo.png"
+          }
+        },
+        "icon_lists_GULTW8": {
+          "type": "icon_lists",
+          "disabled": true,
+          "settings": {
+            "the_icon": "shopify://shop_images/5f616abf8e30e6782f385d00_The_well_logo_on_white.svg"
+          }
+        },
+        "icon_lists_RjVWVB": {
+          "type": "icon_lists",
+          "settings": {
+            "the_icon": "shopify://shop_images/Fruitful_Yield_Logo_White.png"
+          }
+        }
+      },
+      "block_order": [
+        "93db25fd-835e-4fc5-bf22-f06ad29b9397",
+        "95577848-a0b3-4650-a49d-f9d62867fd1a",
+        "159731b5-fd60-489c-848e-34b15eeed5c1",
+        "96071840-b003-4a20-bc19-d77e30c5eb04",
+        "7c8ea5d9-249d-414b-8252-e760aefb1c6b",
+        "ef176956-e826-421d-ad17-a64d69aae7a0",
+        "f25da5da-2912-4e10-9c88-fa6f6cfa5052",
+        "48ce6385-1a90-43b1-9e8a-0d383d3b0cec",
+        "dc589f01-a5b2-4255-97c7-8860c1b2880e",
+        "icon_lists_P8JVrh",
+        "icon_lists_GULTW8",
+        "icon_lists_RjVWVB"
+      ],
+      "settings": {
+        "section_bg_color": "#06211e",
+        "the_title": "ALSO FIND US IN-STORE AT:"
       }
     }
   },
   "order": [
-    "hero_1",
-    "best_sellers",
-    "shop_categories",
-    "testimonials",
-    "health_goals",
-    "product_quality",
-    "seasonal_picks",
-    "bundles_cta",
-    "rewards_program",
-    "brand_mission",
-    "satisfaction_guarantee",
-    "email_signup",
-    "retail_locations"
+    "9c312fd6-2edb-41c1-b3fc-cbc9ebb32c06",
+    "as_seen_in_section_igFJya",
+    "social_media_section_rJqUGg",
+    "custom_scroll_text_RikQQp",
+    "homepage_guarantee_sections_FHHqjt",
+    "homepage_featured_product_first_XtNfVh",
+    "e5a88d8d-3605-491c-9d51-d972ed584183",
+    "172595234395cc7dfc",
+    "28578b8c-c9c9-4c30-a416-b92c78ec8cea",
+    "51405b83-593f-45fe-974d-347d7d8da599",
+    "homepage_our_products_p7nKyP",
+    "homepage_certified_icons_xczm9T",
+    "customer_reviews_section_t7XbEW",
+    "3ed5f208-0d29-446d-824d-eb443e5cdffd",
+    "homepage_featured_products_second_QMn86R",
+    "b202c43f-470d-40a9-be92-5c0e5d213128",
+    "87073cf1-f97b-41bb-b94e-0064a0c0bdb7",
+    "52ed8add-f13b-4079-95a7-a9b736fea02c",
+    "instagram",
+    "satisfication_gaurantee_FJ7A3A",
+    "4ee9dd59-b6f0-4838-94fd-32ec978053df",
+    "840f944d-650c-4c0f-bcd8-8a452a87edc5"
   ]
 }

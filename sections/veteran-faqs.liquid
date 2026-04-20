@@ -1,0 +1,83 @@
+<style>
+  #id-{{ section.id }}{
+  	background-color:{{ section.settings.section_bg_color }};
+  }
+</style>
+<section id="id-{{ section.id }}" class="section-faqs subscribe-save-faqs veterans-faqs common-kids-teenager-section">
+    <div class="container">
+        <h2 class="text-uppercase text-center" data-aos="fade-up">{{ section.settings.title }}</h2>
+        <div class="menu-footer-group">
+          {% for block in section.blocks  %}
+            <div class="menu-footer menu-page {% if forloop.index == 1 %}active{% endif %}" data-aos="fade-up">
+                <h2>{{ block.settings.title }}<img loading="lazy"  class="d-none d-md-block float-end mt-1" src="{{ '__down.svg' | asset_url }}"></h2>
+                <div class="menu-s" {% if forloop.index != 1 %}style="display: none"{% endif %}>
+                    {{ block.settings.content }}
+                </div>
+            </div>
+          {% endfor %}  
+        </div>
+    </div>
+</section>
+{% schema %}
+  {
+    "name": "Veterans Faqs",
+    "tag": "section",
+    "class": "section",
+    "settings": [
+        {
+             "type": "color",
+             "id": "section_bg_color",
+             "label": "Section background color"
+        },
+        {
+          "type": "text",
+          "id": "title",
+          "label": "Title",
+		  "default" : "Frequently Asked Questions"
+        }
+       
+	],
+	"blocks": [
+     {
+      "type": "faq",
+      "name": "Faq",
+      "settings": [
+    	 {
+          "type": "text",
+          "id": "title",
+          "label": "Title",
+		  "default" : "Text"
+        },
+        {
+          "type": "textarea",
+          "id": "content",
+          "label": "Content",
+		  "default" : "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor Lorem ipsum dolor sit amet."
+        }
+      ]
+     }
+	],
+     "presets": [
+    {
+      "name": "Veterans Faqs",
+       "blocks": [
+        {
+          "type": "faq"
+        },
+        {
+          "type": "faq"
+        },
+        {
+          "type": "faq"
+        }
+      ]
+    }
+  ]
+  }
+{% endschema %}
+
+{% stylesheet %}
+{% endstylesheet %}
+
+{% javascript %}
+{% endjavascript %}

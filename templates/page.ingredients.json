@@ -1,0 +1,107 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+ {
+  "sections": {
+    "main": {
+      "type": "image-banner",
+      "settings": {
+        "enable_breadcrumb": true,
+        "image": "shopify://shop_images/Screen_Shot_2022-12-08_at_10.37-optimized.png",
+        "title": "MASTER THE ART OF LIVING",
+        "sub_title": "Getting used to the balancing act of<br> a healthy lifestyle can be tough. <br>But it feels so good.",
+        "button_1": "",
+        "url_1": "",
+        "button_2": "",
+        "url_2": "",
+        "show_social": true,
+        "text": "Visit",
+        "social_spotify_link": "https://open.spotify.com/user/8yaaywq2a4gtbxl0w7csryv2o?si=28d61f70a2cc496c"
+      }
+    },
+    "ingredient-reward": {
+      "type": "ingredient-reward",
+      "settings": {
+        "text": "There’s nothing we take more seriously than your health, and that means:",
+        "title": "There’s nothing we take  more seriously than your health, and that means:",
+        "content": "<li>No Harmful Ingredients or Additives. Ever. </li>\n<li> 100% Natural and Organic.</li>\n<li> Pure, Unadulterated, Good Stuff.\n</li>",
+        "image": "shopify://shop_images/webpage_overlap_pictures_2-optimized.png"
+      }
+    },
+    "ingredient-background-text": {
+      "type": "ingredient-background-text",
+      "settings": {
+        "show_icon": false,
+        "text": "TRIIBE Organics products have been created with the intention to support all aspects of YOUR human experience. Whether you are looking for more focus, an energy or immunity booster, discomfort relief, a stress and anxiety buster, more nutrients, better sleep, enhanced athletic performance, or overall vitality, our products can help.\n<br> \n\nWe wholeheartedly trust in the teachings of Traditional Medicine:\nour bodies are remarkably wise and know how to prevent disease\nand heal themselves with the right daily practices and nourishment.",
+        "image": "shopify://shop_images/Ellipse_71-1.png"
+      }
+    },
+    "ingredients-logo": {
+      "type": "ingredients-logo",
+      "blocks": {
+        "f84ea43c-6873-4410-bf28-5f09074e5d5f": {
+          "type": "logo",
+          "settings": {
+            "logo": "shopify://shop_images/USDA_GREEN_300_x_300_px_1.png"
+          }
+        },
+        "0e5fa713-cfe0-432c-a259-d0a7448cf942": {
+          "type": "logo",
+          "settings": {
+            "logo": "shopify://shop_images/NGPV_single_color_white.png"
+          }
+        },
+        "e70eedc5-0982-4ce5-ab2a-8bcec6a08db9": {
+          "type": "logo",
+          "settings": {
+            "logo": "shopify://shop_images/1ftp_Primary_Vertical_White-1_1.png"
+          }
+        }
+      },
+      "block_order": [
+        "f84ea43c-6873-4410-bf28-5f09074e5d5f",
+        "0e5fa713-cfe0-432c-a259-d0a7448cf942",
+        "e70eedc5-0982-4ce5-ab2a-8bcec6a08db9"
+      ],
+      "settings": {
+        "custom_html": "<p data-aos=\"fade-up\">\nTRIIBE is dedicated to helping anyone who wants to better themselves; physically, mentally and spiritually. That’s what really gets our fire burning. \n</p>                     <p data-aos=\"fade-up\">      But, still, it’s not all about us. We’re part of an ecosystem, of communities, we are nothing without the world around us. The natural world is where we get the goods we send to you, it’s where the trees we love to look at live, where the birds build their nests. We are nothing if we don’t take care of the world around us. \nTRIIBE takes three things very seriously: our people, our world, our mission. \n</p>                     <p data-aos=\"fade-up\">                        We vow for transparency, so that you can see exactly what we are doing together. Our work with 1% for the Planet, our never ending battle for sustainability and the pure, unadulterated good stuff we are putting in our bodies.</p>",
+        "button": "Find out more",
+        "url": "shopify://pages/about",
+        "image": "shopify://shop_images/webpage_overlap_picture_550_x_51-optimized_9c16222c-662c-4614-b9c4-c06f00a207d4.png"
+      }
+    },
+    "ingredient-why": {
+      "type": "ingredient-why",
+      "settings": {
+        "title": "transparency",
+        "sub_title": "<p>We understand the importance of knowing exactly what you are putting into your body. </p><p>We hold ourselves to the highest standard of quality and integrity, and have committed to NEVER using harmful additives, excipients or artificial <em>anything</em>. </p>",
+        "button": "learn more",
+        "url": "shopify://pages/transparency"
+      }
+    },
+    "ingredient-impact": {
+      "type": "ingredient-impact",
+      "settings": {
+        "title": "Triibe means support",
+        "sub_title": "<p data-aos=\"fade-up\">We care for your lifelong health and vitality, as well as an abundant reserve of energy for optimal health and graceful aging. \n\nWe stand behind every product to ensure its authentic and sustainable manufacturing processes.\n\n</p>                     <p data-aos=\"fade-up\">                        We vow for transparency, so that you can see exactly what we are doing together. Our work with 1% for the Planet, our never ending battle for sustainability and the pure, unadulterated good stuff we are putting in our bodies.</p>",
+        "image": "shopify://shop_images/img-05-optimized.png",
+        "button": "Explore",
+        "url": ""
+      }
+    }
+  },
+  "order": [
+    "main",
+    "ingredient-reward",
+    "ingredient-background-text",
+    "ingredients-logo",
+    "ingredient-why",
+    "ingredient-impact"
+  ]
+}

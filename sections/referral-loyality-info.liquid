@@ -1,0 +1,41 @@
+<section id="id-{{ section.id }}" class="section referral-loyality-info-section">
+  <div class="leaf-box left-top">
+          <img loading="lazy" class="leaf lazyload" data-src="{{ 'floating-leaf-left.svg' | asset_url }}">
+  </div>
+  <div class="leaf-box right-top">
+          <img loading="lazy" class="leaf lazyload" data-src="{{ 'leaf-n02.svg' | asset_url }}">
+  </div>
+  <div class="container">
+    <div class="col-sm-12 col-md-12 col-lg-12">
+      <div class="referral-loyality-info">
+        {{ section.settings.the_text }}
+        <a href="{{ section.settings.url }}">{{ section.settings.button }}</a>
+      </div>
+    </div>
+  </div>
+</section>
+{% schema %}
+  {
+    "name": "Referral Loyality Info",
+    "settings": [
+         {
+          "type": "richtext",
+          "id": "the_text",
+          "label": "Text"
+        },
+        {
+          "type": "text",
+          "id": "button",
+          "label": "Button"
+        },
+        {
+          "type": "url",
+          "id": "url",
+          "label": "Url"
+        }
+    ],
+	"presets": [{
+      "name": "Referral Loyality Info"
+    }]
+  }
+{% endschema %}

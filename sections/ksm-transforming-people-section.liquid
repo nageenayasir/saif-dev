@@ -1,0 +1,125 @@
+<style>
+  #id-{{ section.id }}{
+  	background-color:{{ section.settings.section_bg_color }};
+  }
+</style>
+<section id="id-{{section.id}}" class="cstm-transform-people-section">
+  <div class="transform-people-wrapper">
+    <div class="container">
+      <div class="row transform-heading-wrap">
+        <div class="col-lg-12 col-md-12 col-sm-12">
+          <div class="transform-head">
+            <h2 class="custom-heading-h2">
+            {{ section.settings.main_title }}
+          </h2>
+          </div>
+        </div>
+      </div>
+      <div class="row testimonial-row-content">
+        <div class="col-lg-12 col-md-12 col-sm-12">
+          <div class="testimonial-content-wrap">
+            <span class="testimonial-rating">
+              <i class="fa fa-star" aria-hidden="true"></i>
+              <i class="fa fa-star" aria-hidden="true"></i>
+              <i class="fa fa-star" aria-hidden="true"></i>
+              <i class="fa fa-star" aria-hidden="true"></i>
+              <i class="fa fa-star" aria-hidden="true"></i>
+            </span>
+            <p>{{ section.settings.rating_text }}</p>
+            <h4>{{ section.settings.author_name }}</h4>
+          </div>
+        </div>
+      </div>
+      <div class="row transform-text-row">
+        <div class="col-lg-12 col-md-12 col-sm-12">
+          {{ section.settings.the_text1 }}
+          <h2 class="custom-heading-h2">
+            {{ section.settings.the_title }}
+          </h2>
+          {{ section.settings.the_text2 }}
+        </div>
+      </div>
+      <div class="row transorm-image-row">
+        <div class="col-lg-12 col-md-12 col-sm-12">
+          {% if section.settings.the_image != blank %}<img loading="lazy"  src="{{ section.settings.the_image | img_url: 'master' }}">{% endif %}
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+{% schema %}
+  {
+    "name": "Transform People Section",
+    "settings": [
+         {
+            "type": "header",
+            "content": "Content Style"
+        },
+	    {
+           "type": "color",
+           "id": "section_bg_color",
+           "label": "Section background color"
+        },
+        {
+          "type": "header",
+          "content": "Content-1 Settings"
+      	},
+        {
+          "type": "text",
+          "id": "main_title",
+          "label": "Title"
+      	},
+        {
+          "type": "header",
+          "content": "Testimonial Content Settings"
+      	},
+        {
+          "type": "text",
+          "id": "rating_text",
+          "label": "Rating Text"
+      	},
+        {
+          "type": "text",
+          "id": "author_name",
+          "label": "Author Name"
+      	},
+        {
+          "type": "header",
+          "content": "Content-2 Settings"
+      	},
+        {
+          "type": "richtext",
+          "id": "the_text1",
+          "label": "Text"
+      	},
+        {
+          "type": "text",
+          "id": "the_title",
+          "label": "Title"
+      	},
+        {
+          "type": "richtext",
+          "id": "the_text2",
+          "label": "Text"
+      	},
+        {
+          "type": "header",
+          "content": "Image Settings"
+      	},
+        {
+          "type": "image_picker",
+          "id": "the_image",
+          "label": "Image"
+      	}
+    ],
+	"presets": [{
+      "name": "Transform People Section"
+    }]
+  }
+{% endschema %}
+
+{% stylesheet %}
+{% endstylesheet %}
+
+{% javascript %}
+{% endjavascript %}

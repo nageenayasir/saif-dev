@@ -1,0 +1,76 @@
+<section id="id-{{ section.id }}" class="ashwagandha-pack-footer-section common-ashwagandha-pack-sec">
+  <div class="ashwagandha-pack-footer-wrapper">
+    <div class="leaf-box ashwagandha-pack-footer-box-right-bot right-bot">
+        <img loading="lazy"  class="leaf ashwagandha-pack-footer-right-bot" src="{{ 'footer-Leaf.svg' | asset_url }}">
+    </div>
+    <div class="container">
+      <div class="row">
+        <div class="col-sm-12 col-md-12 col-lg-12">
+          <div class="ashwagandha-pack-footer-content">
+            <div class="ashwagandha-pack-footer-logo">
+                 {% if section.settings.the_logo != blank %}<img loading="lazy"  src="{{ section.settings.the_logo | img_url: 'master' }}">{% endif %}
+            </div>
+            <ul class="footer-certified">
+              <li>
+                 {% if section.settings.the_icon_1 != blank %}<img loading="lazy"  src="{{ section.settings.the_icon_1 | img_url: 'master' }}">{% endif %}
+              </li>
+              <li>
+                 {% if section.settings.the_icon_2 != blank %}<img loading="lazy"  src="{{ section.settings.the_icon_2 | img_url: 'master' }}">{% endif %}
+              </li>
+            </ul>
+            <div class="footer-disclaimer-text">
+              {{ section.settings.the_text_1 }}
+            </div>
+            <div class="footer-policy-links">
+              {{ section.settings.the_text_2 }}
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+{% schema %}
+  {
+    "name": "Ashwagandha Pack Footer",
+    "settings": [
+      {
+            "type": "header",
+            "content": "Content Style"
+      },
+  	  {
+           "type": "color",
+           "id": "section_bg_color",
+           "label": "Section background color"
+      },
+      {
+          "type": "image_picker",
+          "id": "the_logo",
+          "label": "logo"
+      },
+      {
+          "type": "image_picker",
+          "id": "the_icon_1",
+          "label": "Icon-1"
+      },
+      {
+          "type": "image_picker",
+          "id": "the_icon_2",
+          "label": "Icon-2"
+      },
+      {
+          "type": "richtext",
+          "id": "the_text_1",
+          "label": "Text-1" 
+      },
+      {
+          "type": "richtext",
+          "id": "the_text_2",
+          "label": "Text-2" 
+      }
+    ],
+	"presets": [{
+      "name": "Ashwagandha Pack Footer"
+    }]
+  }
+{% endschema %}

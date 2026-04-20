@@ -1,0 +1,148 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "1244f04e-c3ef-4826-b76c-31d7b138f884": {
+      "type": "banner-subpage",
+      "settings": {
+        "enable_breadcrumb": true,
+        "title": "WHO WE ARE",
+        "sub_title": "",
+        "image": "shopify://shop_images/Screen_Shot_2022-12-08_at_10.37-optimized.png"
+      }
+    },
+    "about_video_section_rx6Pxn": {
+      "type": "about-video-section",
+      "settings": {
+        "section_bg_color": "#faeee9",
+        "video_url": "https://www.youtube.com/watch?v=iXwiTxEPmEE"
+      }
+    },
+    "main": {
+      "type": "main-about",
+      "settings": {
+        "content": "<p>We are our values, we are;</p><p><strong>Service to All: </strong>We are more than just our supplements. We strive to be ambassadors in the use of herbs and mushrooms to find holistic (whole-istic) wellness. </p><p><strong>Integrity: </strong>The transparency of our sourcing and traceability required to maintain nothing but the highest standards of quality.</p><p><strong>Full Commitment to Quality: </strong>Each herb and mushroom we use in our products has been used in ancient healing traditions like Chinese Medicine and Ayurveda for thousands of years. We've made it our mission to create our products with the convergence of scientific research in mind, and part of showing our respect for these ancient traditions is ensuring ethical sourcing practices.</p><p><strong>Love and Respect to Mother Nature: </strong>We are one with Nature. Used for a thousand of years before us, its healing powers are undeniable.</p><p><strong>Being True to Who we Are: </strong>The rest is already taken.</p>"
+      }
+    },
+    "550a5ae4-3bfb-418c-a225-e78d6acf863c": {
+      "type": "image-with-text-3",
+      "settings": {
+        "show_icon": false,
+        "title": "",
+        "custom_html": "<p data-aos=\"fade-up\">TRIIBE began from needing to escape the beating streets of the modern world. An escape from the mundanity accepting the life you have. \n\n\n\n</p>                         <p data-aos=\"fade-up\">                              \n<br>“It was a gray, mid-afternoon in New York City. I had spent all night spinning tracks at a club in Williamsburg. My throat was sore. My ears were ringing. There was an empty flash of light whenever I closed my eyes. From the outside, I looked to have it made. Established career. Nice apartment in a world-class city. But this wasn’t my life. It was someone else’s. I’d just suddenly woken up inside it. In a world awash in noise, I started TRIIBE to keep us tracking to what’s important: awareness, balance, and performance.”\n<br><br>\n- Eduardo Oliver | Mindful CEO, volcano seeker.\n</p>",
+        "button": "learn more...",
+        "url": "shopify://pages/transparency",
+        "image": "shopify://shop_images/1111111-optimized.png"
+      }
+    },
+    "c7cf4c71-4446-4ae4-a200-3f4e2294a7aa": {
+      "type": "team",
+      "blocks": {
+        "template--16589653541087__c7cf4c71-4446-4ae4-a200-3f4e2294a7aa-166875438722fb11e1-0": {
+          "type": "content",
+          "settings": {
+            "title": "Eduardo Oliver",
+            "subtitle": "Founder & CEO",
+            "image": "shopify://shop_images/4_f767f20e-a2eb-4fc6-af76-10da4b-optimized.png"
+          }
+        },
+        "template--16589653541087__c7cf4c71-4446-4ae4-a200-3f4e2294a7aa-166875438722fb11e1-1": {
+          "type": "content",
+          "settings": {
+            "title": "Denisse Nasser",
+            "subtitle": "Chief Marketing Officer",
+            "image": "shopify://shop_images/8-optimized.png"
+          }
+        },
+        "content_KzW7CD": {
+          "type": "content",
+          "settings": {
+            "title": "Sofia Galindo",
+            "subtitle": "Operations Manager",
+            "image": "shopify://shop_images/sofi_ops.png"
+          }
+        },
+        "content_bNtARG": {
+          "type": "content",
+          "settings": {
+            "title": "Dhruva Mikkelsen",
+            "subtitle": "Digital Marketing Director",
+            "image": "shopify://shop_images/dhruva_pic.jpg"
+          }
+        },
+        "9b0c7b7a-6ce0-4224-8441-0803d10abc83": {
+          "type": "content",
+          "settings": {
+            "title": "Juan Lemus",
+            "subtitle": "Logistics Manager",
+            "image": "shopify://shop_images/juanma_59200a10-76e5-4322-9bfe-ecdcef5fe8f8.jpg"
+          }
+        },
+        "b7c6a244-c98b-49fa-ac7c-5db87baba716": {
+          "type": "content",
+          "settings": {
+            "title": "Talia Hansen",
+            "subtitle": "Email Marketing",
+            "image": "shopify://shop_images/talia.jpg"
+          }
+        },
+        "ad2ddf0f-b6f9-4688-83db-7f6c44ee0bc3": {
+          "type": "content",
+          "settings": {
+            "title": "Jack Cookson",
+            "subtitle": "Email Marketing",
+            "image": "shopify://shop_images/jack-optimized.png"
+          }
+        }
+      },
+      "block_order": [
+        "template--16589653541087__c7cf4c71-4446-4ae4-a200-3f4e2294a7aa-166875438722fb11e1-0",
+        "template--16589653541087__c7cf4c71-4446-4ae4-a200-3f4e2294a7aa-166875438722fb11e1-1",
+        "content_KzW7CD",
+        "content_bNtARG",
+        "9b0c7b7a-6ce0-4224-8441-0803d10abc83",
+        "b7c6a244-c98b-49fa-ac7c-5db87baba716",
+        "ad2ddf0f-b6f9-4688-83db-7f6c44ee0bc3"
+      ],
+      "settings": {
+        "title": "THE TRIIBE TEAM"
+      }
+    },
+    "about-impact": {
+      "type": "about-impact",
+      "settings": {
+        "title": "TRIIBE MEANS COMMUNITY",
+        "sub_title": "Life can be hard, it can be draining, it can be a never ending race to achieve goals that sometimes feel unattainable. \n<br>\n<br>\nLife is also love, laughter, pushing your limits and amazing yourself. \nTRIIBE is a community. To us, that means supporting you through the rough times and giving you a push up whatever mountain you’re trying to climb.",
+        "image": "shopify://shop_images/webpage_overlap_pictures_7-optimized.png",
+        "button": "Find out more",
+        "url": "shopify://pages/social-impact"
+      }
+    },
+    "1038bc04-8b4a-46ea-b387-2d81ba5ae677": {
+      "type": "image-with-text-2",
+      "settings": {
+        "title": "IMPACT AND SUSTAINABILITY",
+        "custom_html": "TRIIBE Organics was created with the purpose of enhancing people’s health and lives, and that of course includes the health and life of our planet. When we started the company in 2018 we were already clear that business needed to operate in a way that helped Mother Earth and society.",
+        "button": "LEARN MORE...",
+        "url": "shopify://pages/quality-testing",
+        "image": "shopify://shop_images/webpage_overlap_picture_450_x_51-optimized.png"
+      }
+    }
+  },
+  "order": [
+    "1244f04e-c3ef-4826-b76c-31d7b138f884",
+    "about_video_section_rx6Pxn",
+    "main",
+    "550a5ae4-3bfb-418c-a225-e78d6acf863c",
+    "c7cf4c71-4446-4ae4-a200-3f4e2294a7aa",
+    "about-impact",
+    "1038bc04-8b4a-46ea-b387-2d81ba5ae677"
+  ]
+}

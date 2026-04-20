@@ -1,0 +1,53 @@
+<section class="section section-bund">
+    <div class="container">
+        <h2 class="text-center text-uppercase" data-aos="fade-up">
+            {{ section.settings.title }}
+        </h2>
+        <div class="row justify-content-center">
+            <div class="col-md-8">
+                <p data-aos="fade-up" class="text-center">
+                   {{ section.settings.content }}
+                </p>
+            </div>
+        </div>
+    </div>
+    <div class="container-fluid pt-4">
+        <div class="row justify-content-center">
+            <div class="col-md-6">
+                <img loading="lazy"  src="{{ section.settings.image_1 | image_url : width: 800 }}">
+            </div>
+            <div class="col-md-6">
+                <img loading="lazy"  src="{{ section.settings.image_2 | image_url : width: 800 }}">
+            </div>
+        </div>
+    </div>
+
+</section>
+{% schema %}
+  {
+    "name": "Section Images",
+    "settings": [
+        {
+          "type": "text",
+          "id": "title",
+          "label": "Title",
+          "default" : "Title"
+        },
+       {
+        "type": "textarea",
+        "id": "content",
+        "label": "Content"
+      },
+      {
+        "type": "image_picker",
+        "id": "image_1",
+        "label": "Image 1"
+      },
+      {
+        "type": "image_picker",
+        "id": "image_2",
+        "label": "Image 2"
+      }
+    ]
+  }
+{% endschema %}

@@ -1,22 +1,65 @@
-<div class="page-section section-padding">
-  <div class="page-width">
-    <div style="max-width:80rem; margin:0 auto;">
-      <h1 style="font-family:var(--font-heading-family); font-size:clamp(3rem, 5vw, 5rem); font-weight:800; color:rgb(var(--color-base-text)); margin:0 0 2.4rem; text-transform:uppercase; letter-spacing:-0.02em;">
-        {{ page.title }}
-      </h1>
-      <div class="rte" style="font-size:1.6rem; line-height:1.75; color:rgba(var(--color-base-text),0.75);">
-        {{ page.content }}
-      </div>
-    </div>
+<section class="section bg-line-02">
+  <div class="leaf-box right-top">
+      <img loading="lazy"  class="leaf" src="{{ 'leaf-n02.svg' | asset_url }}">
   </div>
-</div>
+   <div class="leaf-box left-top">
+      <img loading="lazy"  class="leaf" src="{{ 'leaf-n01.svg' | asset_url }}">
+  </div>
+  <div class="content">
+    {% if request.path == '/pages/transparency' %}
+      {{ page.content }}
+      {% else %}
+      <div class="container">
+           {% if request.path == '/policies/privacy-policy' %}
+        <div class="row justify-content-center policy-page-wraper">
+            <div class="col-md-8">
+                           <h2 class="text-center text-uppercase policy-title-wrapper" data-aos="fade-up">{{ page_title | escape }}</h2>
 
+              {{ shop.privacy_policy }}
+              </div>
+  </div>
+          {% elsif request.path == '/policies/terms-of-service' %}
+              <div class="row justify-content-center policy-page-wraper">
+            <div class="col-md-8">
+                            <h2 class="text-center text-uppercase policy-title-wrapper" data-aos="fade-up">{{ page_title | escape }}</h2>
+
+               {{ shop.terms_of_service }}
+              </div>
+  </div>
+          {% elsif request.path == '/policies/shipping-policy' %}  
+              <div class="row justify-content-center policy-page-wraper">
+            <div class="col-md-8">
+                       <h2 class="text-center text-uppercase policy-title-wrapper" data-aos="fade-up">{{ page_title | escape }}</h2>
+
+                 {{ shop.shipping_policy }}
+              </div>
+  </div>
+          {% elsif request.path == '/policies/refund-policy' %}
+             <div class="row justify-content-center policy-page-wraper">
+            <div class="col-md-8">
+              <h2 class="text-center text-uppercase policy-title-wrapper" data-aos="fade-up">{{ page_title | escape }}</h2>
+                {{ shop.refund_policy }}
+              </div>
+  </div>
+          {% else %}
+<!--              <h2 class="text-center text-uppercase" data-aos="fade-up">{{ page.title | escape }}</h2> -->
+        <div class="row justify-content-center">
+            <div class="col-md-8">
+              {{ page.content }}
+                </div>
+  </div>
+          {% endif %}
+      </div>
+    {% endif %}
+  </div>
+</section>
 {% schema %}
 {
-  "name": "Page",
+  "name": "t:sections.main-page.name",
   "tag": "section",
-  "class": "section-main-page",
-  "settings": [],
-  "presets": [{ "name": "Page" }]
+  "class": "section",
+  "settings": [
+    
+  ]
 }
 {% endschema %}

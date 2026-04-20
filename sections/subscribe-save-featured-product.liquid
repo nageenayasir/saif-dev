@@ -1,0 +1,220 @@
+<style>
+  #id-{{ section.id }}{
+  	background-color:{{ section.settings.section_bg_color }};
+  }
+
+  .product-item h5{
+    color: {{ section.settings.pdc_ttl_color }}!important
+  }
+    .price{
+    color: {{ section.settings.pdc_ttl_color }}!important
+  }
+
+  .product-item .img-wrapper {
+    background: #F3D9CF!important;
+  }
+  @media (min-width: 1024px) {
+    .first-subscribe-featured-products-button-prev,
+    .first-subscribe-featured-products-button-next{
+      top: 39%!important;
+    }
+    .first-subscribe-featured-products-button-prev{
+      left: 4px !important;
+    }
+
+    .first-subscribe-featured-products-button-next{
+        right: 7px!important;
+      }
+
+  }
+</style>
+<section id="id-{{section.id}}" class="suscribe-save-featured-product {{ section.settings.custom_class }}">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-4 col-lg-3 z-index-2">
+                <h2 class="text-uppercase" data-aos="fade-up" style="color: {{ section.settings.ttl_color }}!important;">{{ section.settings.title }}</h2>
+                <p data-aos="fade-up" style="color: {{ section.settings.sub_ttl_color }}!important;">{{ section.settings.sub_title }}</p>
+                <div class="mt-4" data-aos="fade-up">
+                    <a class="btn btn-trans" href="{{ section.settings.url }}" target="_self" style="color: {{ section.settings.btn_ttl_color }}!important;">
+                       {{ section.settings.button }}
+                    </a>
+                </div>
+            </div>
+            <div class="col-md-8 col-lg-9 z-index-1 common-swiper-column-wrapper">
+                    <div class="swiper suscribe-save-products-slider">
+                        <div class="swiper-wrapper">
+                          {% for block in section.blocks  %}
+                          {% assign product = block.settings.product %}
+                            <div class="swiper-slide">
+                              <div class="product-items-grid-wrap">
+                                <a href="{{ product.url }}" class="product-item">
+                                    <div class="img-wrapper">
+                                        <img loading="lazy no-hover-product-image"  alt="{{ product.featured_image.alt | default : product.title }}" src="{{ product.featured_media | image_url: width: 800 }}">
+                                        <img loading="lazy"  alt="{{ product.images[1].alt | default : product.title }}" class="lazyload hover-product-image" data-src="{{ product.images[1] | image_url: width: 800 }}">
+                                    </div>
+                                </a>
+                                {% if block.settings.enable_subscribe == true %}
+                                  <div class="subscribe-btn-hover">
+                                   <a href="{{ product.url }}" class="subscribe-btn-url">SUBSCRIBE</a>
+                                  </div>
+                                {% endif %}
+                             </div>
+                                <a href="{{ product.url }}" class="product-item" >
+                                    <div class="category" style="background-color: #A7833E!important;">{% if product.metafields.custom.custom_category_badge %}{{ product.metafields.custom.custom_category_badge }}{% else %}{{ product.collections[0].title }}{% endif %}</div>
+                                    <h5>{{ product.title }}</h5>
+                                    {% render 'judgeme_widgets', widget_type: 'judgeme_preview_badge', jm_style: '', concierge_install: true, product: product %}
+                                    {% if product.title == 'Ashwagandha KSM-66' %}
+                                    {% assign second_variant = product.variants[0] %}
+                                    <div class="price">
+                                      {% if second_variant.compare_at_price and second_variant.compare_at_price > 0 %}
+                                        <del>{{ second_variant.compare_at_price | money }}</del>
+                                      {% endif %}
+                                      {{ second_variant.price | money }}
+                                    </div>
+                                    {% else %}
+                                      <div class="price">{% if product.selected_or_first_available_variant.compare_at_price and product.selected_or_first_available_variant.compare_at_price > 0 %}<del>{{ product.selected_or_first_available_variant.compare_at_price | money }}</del>{% endif %} {{ product.price | money }}</div>
+                                    {% endif %}
+                                </a>
+                            </div>
+                          {% endfor %} 
+                        </div>
+                        <!-- If we need navigation buttons -->
+                        <div class="swiper-button-prev first-subscribe-featured-products-button-prev"></div>
+                        <div class="swiper-button-next first-subscribe-featured-products-button-next"></div>  
+                 </div>
+            </div>
+        </div>
+        {% comment %}
+        <div class="subscribe-save-product-pagination position-relative">
+           <div class="subscribe-save-product-scrollbar"></div>
+        </div>
+        {% endcomment %}
+    </div>
+</section>
+{% comment %} RGD: 2026-01-04 {% endcomment %} 
+{% comment %} 
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script> 
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.5.1/js/swiper.min.js"></script> 
+{% endcomment %}
+{% # theme-check-disable ParserBlockingScript %}
+<script type="text/javascript" src="{{ 'jquery-3.5.1.min.js' | asset_url }}"></script>
+<script type="text/javascript" src="{{ 'swiper.min.js' | asset_url }}"></script>
+{% # theme-check-enable ParserBlockingScript %}
+<script>
+  new Swiper('.suscribe-save-products-slider', {
+        loop: false,
+        slidesPerView: 3,
+        navigation: {
+          nextEl: '.first-subscribe-featured-products-button-next',
+          prevEl: '.first-subscribe-featured-products-button-prev',
+        },
+        spaceBetween: 20,
+        breakpoints: {
+            1200: {
+                slidesPerView: 3,
+                spaceBetween: 20
+            },
+            992: {
+                slidesPerView: 2,
+                spaceBetween: 10
+            },
+            576: {
+                slidesPerView: 1.5,
+                spaceBetween: 10
+            }
+        }
+    });
+</script>
+{% schema %}
+  {
+    "name": "S&S Featured Product",
+    "settings": [
+        {
+            "type": "textarea",
+            "id": "custom_class",
+            "label": "Add Class to the main section"
+        },
+        {
+            "type": "header",
+            "content": "Content Style"
+         },
+  	     {
+           "type": "color",
+           "id": "section_bg_color",
+           "label": "Section background color"
+        },
+        {
+          "type": "text",
+          "id": "title",
+          "label": "Title",
+		  "default" : "seasonal picks"
+        },
+        {
+           "type": "color",
+           "id": "ttl_color",
+           "default": "#111",
+           "label": "Title color"
+        },
+        {
+           "type": "color",
+           "id": "sub_ttl_color",
+           "default": "#111",
+           "label": "Title color"
+        },
+        {
+           "type": "color",
+           "id": "btn_ttl_color",
+           "default": "#111",
+           "label": "Button Text color"
+        },
+        {
+           "type": "color",
+           "id": "pdc_ttl_color",
+           "default": "#111",
+           "label": "Product Title color"
+        },
+		  {
+          "type": "textarea",
+          "id": "sub_title",
+          "label": "SubTitle",
+		  "default" : "The seasons change and give us what we need to thrive through them. Here’s what Spring has sprung."
+        },
+        {
+          "type": "text",
+          "id": "button",
+          "label": "Button",
+          "default" : "SHOP COLLECTION"
+        },
+        {
+          "type": "url",
+          "id": "url",
+          "label": "Url"
+        }
+	],
+	"blocks": [
+     {
+      "type": "product",
+      "name": "product",
+      "limit" : 10,
+      "settings": [
+	  {
+        "type": "product",
+        "id": "product",
+        "label": "Products"
+      },
+      {
+          "type": "checkbox",
+          "id": "enable_subscribe",
+          "label": "Subscribe Button",
+          "default" : false
+      }
+      ]
+     }
+	],
+     "presets": [
+    {
+      "name": "S&S Featured Product"
+    }
+  ]
+  }
+{% endschema %}

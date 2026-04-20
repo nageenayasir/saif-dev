@@ -1,0 +1,93 @@
+<style>
+  {% if section.settings.background_the_image != blank %}
+ 	#id-{{ section.id }}{
+        background-image:url("{{section.settings.background_the_image | img_url: 'master'}}");
+        background-repeat: no-repeat;
+        background-size: cover;
+  	}
+  {% endif %}
+  
+</style>
+<section id="id-{{section.id}}" class="reason-banner-section">
+  <div class="reason-banner-wrapper">
+    <div class="container">
+      <div class="row">
+        <div class="reason-site-logo-left-column">
+          <div class="reason-site-logo">
+            {% if section.settings.site_logo_image != blank %}<img loading="lazy"  src="{{ section.settings.site_logo_image | img_url: 'master' }}">{% endif %}
+          </div>
+        </div>
+        <div class="reason-text-center-column">
+          {% if section.settings.the_title != blank %}<h1>{{ section.settings.the_title }}</h1>{% endif %}
+        </div>
+        <div class="reason-logos-right-column">
+          <ul>
+            <li>
+            {% if section.settings.logo_image_1 != blank %}<img loading="lazy"  src="{{ section.settings.logo_image_1 | img_url: 'master' }}">{% endif %}
+            </li>
+            <li>
+            {% if section.settings.logo_image_2 != blank %}<img loading="lazy"  src="{{ section.settings.logo_image_2 | img_url: 'master' }}">{% endif %}
+            </li>
+            <li>
+            {% if section.settings.logo_image_3 != blank %}<img loading="lazy"  src="{{ section.settings.logo_image_3 | img_url: 'master' }}">{% endif %}
+            </li>
+          </ul>
+        </div>  
+      </div>
+    </div>
+  </div>
+</section>
+{% schema %}
+  {
+    "name": "Reason Main Banner",
+    "settings": [
+        {
+          "type": "image_picker",
+          "id": "background_the_image",
+          "label": "Background-Image"
+      	 },
+         {
+          "type": "header",
+          "content": "Content Settings"
+        },
+        {
+          "type": "image_picker",
+          "id": "site_logo_image",
+          "label": "Site Logo Image"
+      	},
+        {
+          "type": "text",
+          "id": "the_title",
+          "label": "Title"
+      	},
+        {
+          "type": "header",
+          "content": "Logo Settings"
+        },
+        {
+          "type": "image_picker",
+          "id": "logo_image_1",
+          "label": "Logo Image-1"
+      	},
+        {
+          "type": "image_picker",
+          "id": "logo_image_2",
+          "label": "Logo Image-2"
+      	},
+        {
+          "type": "image_picker",
+          "id": "logo_image_3",
+          "label": "Logo Image-3"
+      	}
+    ],
+	"presets": [{
+      "name": "Reason Main Banner"
+    }]
+  }
+{% endschema %}
+
+{% stylesheet %}
+{% endstylesheet %}
+
+{% javascript %}
+{% endjavascript %}

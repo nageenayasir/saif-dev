@@ -1,0 +1,124 @@
+<style>
+  #id-{{ section.id }} {
+  	background-color:{{ section.settings.section_bg_color }};
+  }
+</style>
+<section id="id-{{section.id}}" class="section section-testi {% if section.settings.class_text %}{{ section.settings.class_text }}{% endif %}">
+  
+    <div class="leaf-box right-top d-none d-md-block" style="top: 50px;">
+      {% assign image = section.settings.image %}
+      {% if section.settings.enable_svg %}
+        <img loading="lazy"  class="leaf" src="{{ image | asset_url }}">
+      {% endif %}
+    </div>
+
+    <div class="container">
+      {% if section.settings.title != blank or section.settings.the_text != blank or section.settings.btn_text != blank %}
+        <div class="app-content-wrapper">
+        {% if section.settings.title != blank %}<h2 class="text-center text-uppercase" data-aos="fade-up" data-aos-delay="000">{{ section.settings.title }}</h2>{% endif %}
+        {% if section.settings.the_text != blank %}<p>{{ section.settings.the_text }}</p>{% endif %}
+        {% if section.settings.btn_text != blank %}<a href="{{ section.settings.the_url }}">{{ section.settings.btn_text }}</a>{% endif %}
+        </div>
+      {% endif %}
+        <div class="box mt-3" data-aos="fade-in" data-aos-delay="400" data-aos-duration="800">
+           {%- for block in section.blocks -%}
+              {% render block %}
+          {%- endfor -%}
+        </div>
+        {% if section.settings.text != blank %}
+        <div class="row custom-blocks-apps-row">
+          <div class="col-sm-12 col-md-12 col-lg-12">
+            <div class="custom-block-text">
+              {{ section.settings.text }}
+            </div>
+          </div>
+        </div>
+        {% endif %}
+    </div>
+</section>
+
+{% schema %}
+{
+  "name": "t:sections.apps.name",
+  "tag": "section",
+  "class": "section",
+  "settings": [
+    {
+            "type": "header",
+            "content": "Content Style"
+         },
+  	     {
+           "type": "color",
+           "id": "section_bg_color",
+           "label": "Section background color"
+        },
+        {
+          "type": "text",
+          "id": "title",
+          "default": "Tilte",
+          "label": "Title"
+        },
+        {
+          "type": "text",
+          "id": "the_text",
+          "label": "Text"
+        },
+        {
+          "type": "text",
+          "id": "btn_text",
+          "label": "Button Text"
+        },
+        {
+          "type": "url",
+          "id": "the_url",
+          "label": "Url"
+        },
+        {
+            "type": "select",
+            "id": "image",
+            "options": [
+              {
+                "value": "leaf-n18.svg",
+                "label": "SVG 1"
+              },
+              {
+                "value": "leaf-n06.svg",
+                "label": "SVG 2"
+              },
+              {
+                "value": "leaf-review-btm.svg",
+                "label": "SVG 3"
+              }
+            ],
+            "default": "leaf-n18.svg",
+            "label": "Choose Image Svg"
+          },
+          {
+                "type": "checkbox",
+                "id": "enable_svg",
+                "label": "Enable leaf Svg",
+                "default": true
+          },
+        {
+          "type": "text",
+          "id": "class_text",
+          "label": "Add Class On the Section"
+        },
+        {
+          "type": "richtext",
+          "id": "text",
+          "label": "Text"
+        }
+  ],
+  "blocks": [
+    {
+      "type": "@app"
+    }
+  ],
+  "presets": [
+    {
+      "name": "t:sections.apps.presets.name"
+    }
+  ]
+}
+{% endschema %}

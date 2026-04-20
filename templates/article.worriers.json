@@ -1,0 +1,43 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+ {
+  "sections": {
+    "d98098b9-c967-4b5f-a094-c81df56723c5": {
+      "type": "worrier-banner-subpage",
+      "settings": {
+        "enable_breadcrumb": true,
+        "title": "{{ article.title }}",
+        "image": "shopify://shop_images/Screen_Shot_2022-12-08_at_10.37-optimized.png"
+      }
+    },
+    "16648824857f2facb6": {
+      "type": "banner-subpage",
+      "disabled": true,
+      "settings": {
+        "enable_breadcrumb": true,
+        "title": "",
+        "sub_title": "",
+        "image": "shopify://shop_images/Screen_Shot_2022-12-08_at_10.37.44_AM.png"
+      }
+    },
+    "main": {
+      "type": "main-article-worriers",
+      "settings": {
+        "title_1": "Get to know them",
+        "title_2": "Explore Other Warriors"
+      }
+    }
+  },
+  "order": [
+    "d98098b9-c967-4b5f-a094-c81df56723c5",
+    "16648824857f2facb6",
+    "main"
+  ]
+}

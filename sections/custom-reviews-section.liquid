@@ -1,0 +1,161 @@
+<style>
+  #id-{{ section.id }}{
+  	background-color:{{ section.settings.section_bg_color }};
+  }
+</style>
+<section id="id-{{section.id}}" class="custom-reviews-section">
+  <div class="custom-reviews-wrapper">
+    <div class="container">
+      {% for block in section.blocks %}
+        {% case block.type %}
+          {% comment %}
+            Reviews Section
+          {% endcomment %}
+          {% when 'review_section' %}
+          <div class="row reviews-testimonail-row">
+            <div class="col-lg-12 col-md-12 col-sm-12">
+              <div class="testimonial-content-wrap">
+                <span class="testimonial-rating">
+                  <i class="fa fa-star" aria-hidden="true"></i>
+                  <i class="fa fa-star" aria-hidden="true"></i>
+                  <i class="fa fa-star" aria-hidden="true"></i>
+                  <i class="fa fa-star" aria-hidden="true"></i>
+                  <i class="fa fa-star" aria-hidden="true"></i>
+                </span>
+                <p>{{ block.settings.rating_text }}</p>
+                <h4>{{ block.settings.author_name }}</h4>
+              </div>
+            </div>
+          </div>
+          {% comment %}
+            Image
+          {% endcomment %}
+          {% when 'image' %}
+          <div class="row reviews-icon-row">
+            <div class="col-lg-12 col-md-12 col-sm-12">
+              <div class="reviews-icon-content">
+                {% if block.settings.the_image != blank %}<img loading="lazy"  src="{{ block.settings.the_image | img_url: 'master' }}">{% endif %}
+              </div>
+            </div>
+          </div>
+          {% comment %}
+            rich_text
+          {% endcomment %}
+          {% when 'rich_text' %}
+          <div class="row reviews-rich-text-row">
+            <div class="col-lg-12 col-md-12 col-sm-12">
+              <div class="reviews-rich-tex-content">
+                <p>{{ block.settings.the_text }}</p>
+              </div>
+            </div>
+          </div>
+          {% comment %}
+            Image with text
+          {% endcomment %}
+          {% when 'image_with_text' %}
+          <div class="row reviews-image-text-row">
+            <div class="col-lg-7 col-md-7 col-sm-12">
+              <div class="reviews-image-wrap">
+                 {% if block.settings.the_image != blank %}<img loading="lazy"  src="{{ block.settings.the_image | img_url: 'master' }}">{% endif %}
+              </div>
+            </div>
+            <div class="col-lg-5 col-md-5 col-sm-12">
+              <div class="reviews-image-text-wrap">
+                 <p>{{ block.settings.img_txt_text }}</p>
+                  {% if block.settings.image_under_text != blank %}<img loading="lazy"  src="{{ block.settings.image_under_text | img_url: 'master' }}">{% endif %}
+              </div>
+            </div>
+          </div>
+        {% endcase %}
+      {% endfor %}
+    </div>
+  </div>
+</section>
+{% schema %}
+  {
+    "name": "Custom Reviews Section",
+    "settings": [
+      {
+            "type": "header",
+            "content": "Content Style"
+      },
+  	  {
+           "type": "color",
+           "id": "section_bg_color",
+           "label": "Section background color"
+      }
+    ],
+	"blocks": [
+          {
+              "type": "review_section",
+              "name": "Review Section",
+              "settings": [
+                    {
+                      "type": "text",
+                      "id": "rating_text",
+                      "label": "Rating Text"
+                  	},
+                    {
+                      "type": "text",
+                      "id": "author_name",
+                      "label": "Author Name"
+                  	}
+                    
+                ]
+          },
+          {
+            "type": "image",
+            "name": "Image",
+            "settings": [
+                  {
+                    "type": "image_picker",
+                    "id": "the_image",
+                    "label": "Image"
+                  }
+              ]
+        },
+          {
+            "type": "rich_text",
+            "name": "Rich Text",
+            "settings": [
+                  {
+                    "type": "richtext",
+                    "id": "the_text",
+                    "label": "Text"
+                	}
+              ]
+        },
+        {
+            "type": "image_with_text",
+            "name": "Image-with-Text",
+            "settings": [
+          		{
+                    "type": "image_picker",
+                    "id": "the_image",
+                    "label": "Image"
+                },
+                {
+                     "type": "richtext",
+                     "id": "img_txt_text",
+                     "label": "Text"
+                 },
+                 {
+                    "type": "image_picker",
+                    "id": "image_under_text",
+                    "label": "Image"
+                }
+              ]
+         }
+	
+	],
+    "presets": [{
+      "name": "Custom Reviews Section"
+    }]
+  }
+{% endschema %}
+
+{% stylesheet %}
+{% endstylesheet %}
+
+{% javascript %}
+{% endjavascript %}

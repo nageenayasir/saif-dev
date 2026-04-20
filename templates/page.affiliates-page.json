@@ -1,0 +1,179 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+ {
+  "sections": {
+    "main": {
+      "type": "main-page",
+      "disabled": true,
+      "settings": {}
+    },
+    "affiliates_banner_section_HRrJJ8": {
+      "type": "affiliates-banner-section",
+      "settings": {
+        "section_bg_color": "#faeee9",
+        "the_title": "TRIIBE COMMUNITY",
+        "the_text": "Join us at TRIIBE Organics and be part of a community that values holistic wellness, ethically-sourced natural supplements, and the enhancement of health for every human being. Share your love for our products and earn commissions while doing so!",
+        "the_image": "shopify://shop_images/Banner_Image_5de37024-895e-4f89-876d-6e9ddcfc46a1.jpg"
+      }
+    },
+    "affiliates_info_RjFreU": {
+      "type": "affiliates-info",
+      "blocks": {
+        "tex_blocks_XVEwn6": {
+          "type": "tex_blocks",
+          "settings": {
+            "the_icon": "shopify://shop_images/EARN_COMMISSION.svg",
+            "the_text": "<h3>EARN COMMISSION</h3><p>A tiered commission structure starting at 10%, with the ability to make up to 25% commission on all one-time purchases & first-time subscription orders.</p>"
+          }
+        },
+        "tex_blocks_ipQcm7": {
+          "type": "tex_blocks",
+          "settings": {
+            "the_icon": "shopify://shop_images/SUPERAFILIATE.svg",
+            "the_text": "<h3>SUPERAFILIATE </h3><p>Our platform allows you to leverage the power of co-branded landing pages, customizable to align with your unique content,  trusted third-party tracking for reliable and accurate data insights, 30-day cookie window for extended user engagement tracking. Navigate and manage your data effortlessly with our user-friendly dashboards.</p>"
+          }
+        },
+        "tex_blocks_qqQchB": {
+          "type": "tex_blocks",
+          "settings": {
+            "the_icon": "shopify://shop_images/EARLY_ACCESS.svg",
+            "the_text": "<h3>EARLY ACCESS</h3><p>Get early access and discounts for new product launches!</p>"
+          }
+        },
+        "tex_blocks_LjWFmR": {
+          "type": "tex_blocks",
+          "settings": {
+            "the_icon": "shopify://shop_images/FREE_GIFTS.svg",
+            "the_text": "<h3>FREE GIFTS & PERKS</h3><p>Receive products or swag for hitting monthly goals!</p>"
+          }
+        }
+      },
+      "block_order": [
+        "tex_blocks_XVEwn6",
+        "tex_blocks_ipQcm7",
+        "tex_blocks_qqQchB",
+        "tex_blocks_LjWFmR"
+      ],
+      "settings": {
+        "section_bg_color": "#f3d9cf",
+        "the_image_1": "shopify://shop_images/2_d7d62c7f-cf85-4d1e-9181-460297c835c0.jpg",
+        "the_image_2": "shopify://shop_images/1_c78e1faf-6924-446f-b021-3e734cb95dbd.jpg",
+        "the_image_3": "shopify://shop_images/3_2806df75-bee6-4194-8b7f-abbacd4481fb.jpg",
+        "the_title": "HIGHLIGHTS"
+      }
+    },
+    "affiliates_join_community_3ED86Q": {
+      "type": "affiliates-join-community",
+      "settings": {
+        "section_bg_color": "#f3d9cf",
+        "title": "Join the TRIIBE Community!!",
+        "the_text": "<p>Live Longer, Stronger, Wiser. At TRIIBE Organics, this is our ethos! If you're enthusiastic about a sustainable lifestyle, encourage others to prioritize their health, and have determined that THIS is a way of life, not a passing phase... You are the ideal candidate for the TRIIBE Community.</p><p>The only requirements for this program are being active on social media or having engagement on your website, being open to sharing an affiliate link organically. This will provide a discount for your audience, and commission for yourself, sharing about Tribe Organics at least twice a month on Instagram Stories, and lastly being a strong culture fit for the brand!</p>"
+      }
+    },
+    "affiliates_works_FyA6Yy": {
+      "type": "affiliates-works",
+      "blocks": {
+        "tex_blocks_tJMwEj": {
+          "type": "tex_blocks",
+          "settings": {
+            "the_icon": "shopify://shop_images/1_30592187-6456-4f54-af05-761c0e49d360.svg",
+            "the_text": "<h4>APPLY</h4><p>Apply directly to our program <a href=\"https://tribe-organics.goaffpro.com/create-account\" title=\"https://tribe-organics.goaffpro.com/create-account\">HERE.</a></p>"
+          }
+        },
+        "tex_blocks_RyXTwX": {
+          "type": "tex_blocks",
+          "settings": {
+            "the_icon": "shopify://shop_images/2_6d7f6fbe-ddfd-4303-8fcf-a31a09496502.svg",
+            "the_text": "<h4>ACCEPT & SAVE</h4><p>Once accepted, you'll receive a unique promo code for you and your followers.</p>"
+          }
+        },
+        "tex_blocks_Wt6zRj": {
+          "type": "tex_blocks",
+          "settings": {
+            "the_icon": "shopify://shop_images/3_3c6608f3-3504-4b58-846f-f81ed81defb1.svg",
+            "the_text": "<h4>START EARNING</h4><p>Share your affiliate link and start earning commissions.</p>"
+          }
+        }
+      },
+      "block_order": [
+        "tex_blocks_tJMwEj",
+        "tex_blocks_RyXTwX",
+        "tex_blocks_Wt6zRj"
+      ],
+      "settings": {
+        "section_bg_color": "#f3d9cf",
+        "the_title": "HOW DOES IT WORK?",
+        "sub_title": "It's so simple!",
+        "btn_text": "APPLY NOW",
+        "btn_url": "https://tribe-organics.goaffpro.com/create-account"
+      }
+    },
+    "affiliates_accordion_c6VPtp": {
+      "type": "affiliates-accordion",
+      "blocks": {
+        "faq_Kngme8": {
+          "type": "faq",
+          "settings": {
+            "title": "TRUST",
+            "content": "You will always know exactly where our ingredients come from. We are committed to sourcing quality ingredients, no matter the challenge or cost."
+          }
+        },
+        "faq_LTPGiG": {
+          "type": "faq",
+          "settings": {
+            "title": "INTEGRITY",
+            "content": "The transparency of our sourcing and traceability required to maintain nothing but the highest standards of quality."
+          }
+        },
+        "faq_YtD4Hw": {
+          "type": "faq",
+          "settings": {
+            "title": "EDUCATION",
+            "content": "We aim to simplify the often confusing supplement industry. Our mission is to empower our customers with the information and understanding they need to make confident and educated decisions about their health. We are dedicated to supporting your well-being and helping you lead a healthier, more vibrant life."
+          }
+        },
+        "faq_aqnh9d": {
+          "type": "faq",
+          "settings": {
+            "title": "QUALITY",
+            "content": "We are committed to the highest standards, ensuring all our products meet rigorous quality."
+          }
+        },
+        "faq_7txb36": {
+          "type": "faq",
+          "settings": {
+            "title": "COMMUNITY",
+            "content": "We cultivate meaningful relationships with our customers and contribute to the community through various engagement and service programs, like 1% for the planet."
+          }
+        }
+      },
+      "block_order": [
+        "faq_Kngme8",
+        "faq_LTPGiG",
+        "faq_YtD4Hw",
+        "faq_aqnh9d",
+        "faq_7txb36"
+      ],
+      "settings": {
+        "section_bg_color": "#faeee9",
+        "the_image": "shopify://shop_images/Image_16.png",
+        "the_title": "OUR VALUES"
+      }
+    }
+  },
+  "order": [
+    "main",
+    "affiliates_banner_section_HRrJJ8",
+    "affiliates_info_RjFreU",
+    "affiliates_join_community_3ED86Q",
+    "affiliates_works_FyA6Yy",
+    "affiliates_accordion_c6VPtp"
+  ]
+}

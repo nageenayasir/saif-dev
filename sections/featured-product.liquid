@@ -1,0 +1,140 @@
+<section class="section {{ section.settings.background }}">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-4 col-lg-3 z-index-2">
+                <h2 class="text-uppercase" data-aos="fade-up">{{ section.settings.title }}</h2>
+                <p data-aos="fade-up">{{ section.settings.sub_title }}</p>
+                <div class="mt-4" data-aos="fade-up">
+                    <a class="btn btn-trans" href="{{ section.settings.url }}" target="_self">
+                       {{ section.settings.button }}
+                    </a>
+                </div>
+            </div>
+            <div class="col-md-8 col-lg-9 z-index-1">
+                <div class="swiper-wrapper-box">
+                    <div class="swiper {{ section.settings.class }}-slider">
+                        <div class="swiper-wrapper">
+                          {% for block in section.blocks  %}
+                          {% assign product = block.settings.product %}
+                            <div class="swiper-slide">
+                                <a href="{{ product.url }}" class="product-item">
+                                    <div class="img-wrapper">
+                                        <img loading="lazy"  alt="{{ product.featured_image.alt | default : product.title }}" class="lazyload" data-src="{{ product.featured_media | image_url: width: 800 }}">
+                                    </div>
+                                    <div class="category">{% if product.metafields.custom.custom_category_badge %}{{ product.metafields.custom.custom_category_badge }}{% else %}{{ product.collections[0].title }}{% endif %}</div>
+                                    <h5>{{ product.title }}</h5>
+                                    {% render 'judgeme_widgets', widget_type: 'judgeme_preview_badge', jm_style: '', concierge_install: true, product: product %}
+                                    <div class="price">{% if product.selected_or_first_available_variant.compare_at_price %}<del>{{ product.selected_or_first_available_variant.compare_at_price | money }}</del>{% endif %} {{ product.price | money }}</div>
+                                </a>
+                            </div>
+                          {% endfor %} 
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="swiper-wrapper-pagination position-relative">
+            <div class="{{ section.settings.class }}-swiper-pagination"></div>
+        </div>
+    </div>
+</section>
+{% schema %}
+  {
+    "name": "Featured Product",
+    "tag": "section",
+    "class": "section",
+    "settings": [
+        {
+          "type": "text",
+          "id": "title",
+          "label": "Title",
+		  "default" : "seasonal picks"
+        },
+		{
+          "type": "textarea",
+          "id": "sub_title",
+          "label": "SubTitle",
+		  "default" : "The seasons change and give us what we need to thrive through them. Here’s what Spring has sprung."
+        },
+        {
+          "type": "text",
+          "id": "button",
+          "label": "Button",
+          "default" : "SHOP COLLECTION"
+        },
+        {
+          "type": "url",
+          "id": "url",
+          "label": "Url"
+        },
+        {
+            "type": "select",
+            "id": "class",
+            "options": [
+              {
+                "value": "big",
+                "label": "Class big"
+              },
+              {
+                "value": "sea",
+                "label": "Class sea"
+              }
+            ],
+            "default": "big",
+            "label": "Choose Class Slide Product"
+      },
+      {
+            "type": "select",
+            "id": "background",
+            "options": [
+              {
+                "value": "section-sea",
+                "label": "Background Green"
+              },
+              {
+                "value": "section-sea bg-cream color-dark",
+                "label": "Background Cream"
+              }
+            ],
+            "default": "section-sea",
+            "label": "Choose Background"
+      }
+	],
+	"blocks": [
+     {
+      "type": "product",
+      "name": "product",
+      "limit" : 10,
+      "settings": [
+	  {
+        "type": "product",
+        "id": "product",
+        "label": "Products"
+      }
+      ]
+     }
+	],
+     "presets": [
+    {
+      "name": "Featured Product",
+      "blocks": [
+        {
+          "type": "product"
+        },
+        {
+          "type": "product"
+        },
+        {
+          "type": "product"
+        },
+        {
+          "type": "product"
+        },
+        {
+          "type": "product"
+        }
+      ]
+    }
+  ]
+  }
+{% endschema %}

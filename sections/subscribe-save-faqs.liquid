@@ -1,0 +1,76 @@
+<section class="section-faqs subscribe-save-faqs common-kids-teenager-section">
+    <div class="leaf-box subscribe-save-faqs-box-right-top right-top">
+        <img loading="lazy"  class="leaf subscribe-save-faqs-right-top" src="{{ 'leaf-n02.svg' | asset_url }}">
+    </div>
+    <div class="container">
+        <h2 class="text-uppercase text-center" data-aos="fade-up">{{ section.settings.title }}</h2>
+        <div class="menu-footer-group">
+          {% for block in section.blocks  %}
+            <div class="menu-footer menu-page {% if forloop.index == 1 %}active{% endif %}" data-aos="fade-up">
+                <h2>{{ block.settings.title }}<img loading="lazy"  class="d-none d-md-block float-end mt-1" src="{{ '__down.svg' | asset_url }}"></h2>
+                <div class="menu-s" {% if forloop.index != 1 %}style="display: none"{% endif %}>
+                    {{ block.settings.content }}
+                </div>
+            </div>
+          {% endfor %}  
+        </div>
+    </div>
+</section>
+{% schema %}
+  {
+    "name": "Subscribe Save Faqs",
+    "tag": "section",
+    "class": "section",
+    "settings": [
+        {
+          "type": "text",
+          "id": "title",
+          "label": "Title",
+		  "default" : "Frequently Asked Questions"
+        }
+       
+	],
+	"blocks": [
+     {
+      "type": "faq",
+      "name": "Faq",
+      "settings": [
+    	 {
+          "type": "text",
+          "id": "title",
+          "label": "Title",
+		  "default" : "Text"
+        },
+        {
+          "type": "textarea",
+          "id": "content",
+          "label": "Content",
+		  "default" : "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor Lorem ipsum dolor sit amet."
+        }
+      ]
+     }
+	],
+     "presets": [
+    {
+      "name": "Subscribe Save Faqs",
+       "blocks": [
+        {
+          "type": "faq"
+        },
+        {
+          "type": "faq"
+        },
+        {
+          "type": "faq"
+        }
+      ]
+    }
+  ]
+  }
+{% endschema %}
+
+{% stylesheet %}
+{% endstylesheet %}
+
+{% javascript %}
+{% endjavascript %}

@@ -1,0 +1,544 @@
+{% comment %}
+  [DGF] Image and Accordion
+  Author: Rodrigo Gesser
+  Date: 2025-09-15
+{% endcomment %}
+
+<style>
+#id-{{ section.id }}{
+  background: {{ section.settings.bg_color | default: '#ffffff' }};
+  padding: {{ section.settings.padding_top | default: 60 }}px 0 {{ section.settings.padding_bottom | default: 60 }}px 0;
+}
+
+.dgf-img-and-accordion-section h1,
+.dgf-img-and-accordion-section h2,
+.dgf-img-and-accordion-section h3,
+.dgf-img-and-accordion-section h4,
+.dgf-img-and-accordion-section h5,
+.dgf-img-and-accordion-section p {
+  color: {{ section.settings.text_color | default: '#111' }};
+  margin: 0!important;
+}
+
+.dgf-accordion-two-columns {
+  display: flex;
+  width: 100%;
+  max-width: 1440px;
+  margin: 0 auto;
+}
+
+.dgf-accordion-left-image-column {
+  flex: 0 0 690px;
+  display: flex;
+  align-items: stretch;
+  justify-content: stretch;
+}
+
+.dgf-accordion-left-image-column img {
+  width: 690px;
+  height: 804px;
+  object-fit: cover;
+}
+
+.dgf-accordion-right-column {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  max-width: 750px;
+}
+
+.dgf-accordion-right-column .container {
+  width: 100%;
+  max-width: 100%;
+  padding: 0 3rem;
+}
+
+.dgf-accordion-section-title {
+  font-size: 42px;
+  font-weight: 700;
+  text-transform: uppercase;
+  font-family: HypatiaSansPro;
+  padding-top: 4rem;
+  padding-bottom: 6rem;
+  color: {{ section.settings.text_color | default: '#111' }};
+}
+
+.dgf-accordion-item {
+  border-top: 1px solid {{ section.settings.border_color | default: '#e0e0e0' }};
+  margin-bottom: 1rem;
+}
+
+.dgf-accordion-item:last-child {
+  border-bottom: 1px solid {{ section.settings.border_color | default: '#e0e0e0' }};
+  margin-bottom: 1rem;
+}
+
+.dgf-accordion-item:last-child {
+  margin-bottom: 0;
+}
+
+.dgf-accordion-header {
+  display: flex;
+  align-items: center;
+  padding: 2rem 0;
+  cursor: pointer;
+  background: transparent;
+  border: none;
+  width: 100%;
+  text-align: left;
+  transition: all 0.4s ease;
+}
+
+.dgf-accordion-header:hover {
+  opacity: 0.8;
+  transform: translateY(-2px);
+}
+
+.dgf-accordion-icon {
+  width: 24px;
+  height: 24px;
+  margin-right: 1rem;
+  flex-shrink: 0;
+}
+
+.dgf-accordion-icon img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+.dgf-accordion-title {
+  font-size: 23px;
+  font-family: HypatiaSansPro;
+  font-weight: 600;
+  color: {{ section.settings.text_color | default: '#111' }};
+  flex: 1;
+  text-transform: capitalize;
+}
+
+.dgf-accordion-toggle {
+  width: 20px;
+  height: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: opacity 0.3s ease;
+}
+
+.dgf-accordion-toggle img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  transition: opacity 0.3s ease;
+}
+
+.dgf-accordion-header.active .dgf-expand-icon {
+  display: none;
+}
+
+.dgf-accordion-header.active .dgf-collapse-icon {
+  display: block !important;
+}
+
+.dgf-accordion-content {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.6s cubic-bezier(0.4, 0, 0.2, 1),
+              padding 0.6s cubic-bezier(0.4, 0, 0.2, 1),
+              opacity 0.4s ease;
+  padding: 0;
+  opacity: 0;
+}
+
+.dgf-accordion-content.active {
+  max-height: 1000px;
+  padding-bottom: 2rem;
+  opacity: 1;
+}
+
+.dgf-accordion-content-inner {
+  padding: 1rem 0 0 40px;
+  color: {{ section.settings.text_color | default: '#111' }};
+  font-size: 16px;
+  line-height: 1.6;
+  transform: translateY(-10px);
+  transition: transform 0.4s ease 0.2s;
+}
+
+.dgf-accordion-content.active .dgf-accordion-content-inner {
+  transform: translateY(0);
+}
+
+
+.dgf-accordion-header.active {
+  background: rgba({{ section.settings.text_color | default: '#111' | remove: '#' | color_to_rgb | replace: ',', ', ' }}, 0.02);
+}
+
+@media (max-width: 1440px) and (min-width: 1141px) {
+  .dgf-accordion-two-columns {
+    max-width: 100%;
+    min-height: 100vh;
+  }
+
+  .dgf-accordion-left-image-column {
+    flex: 0 0 50%;
+  }
+
+  .dgf-accordion-left-image-column img {
+    width: 100%;
+    height: 100vh;
+    object-fit: cover;
+  }
+
+  .dgf-accordion-right-column {
+    max-width: none;
+    min-height: 100vh;
+  }
+
+  .dgf-accordion-right-column .container {
+    padding: 0 2rem;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .dgf-accordion-title {
+    font-size: calc(18px * (100vw / 1440));
+  }
+}
+
+@media (max-width: 1140px) and (min-width: 1025px) {
+  .dgf-accordion-two-columns {
+    max-width: 100%;
+    min-height: 110vh;
+  }
+
+  .dgf-accordion-left-image-column {
+    flex: 0 0 50%;
+  }
+
+  .dgf-accordion-left-image-column img {
+    width: 100%;
+    height: 110vh;
+    object-fit: cover;
+  }
+
+  .dgf-accordion-right-column {
+    max-width: none;
+    min-height: 110vh;
+  }
+
+  .dgf-accordion-right-column .container {
+    padding: 0 2rem;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .dgf-accordion-title {
+    font-size: calc(18px * (100vw / 1440));
+  }
+}
+
+@media (max-width: 1024px) and (min-width: 769px) {
+  .dgf-accordion-two-columns {
+    max-width: 100%;
+  }
+
+  .dgf-accordion-left-image-column {
+    flex: 0 0 50%;
+  }
+
+  .dgf-accordion-left-image-column img {
+    width: 100%;
+    height: 100%;
+  }
+
+  .dgf-accordion-right-column {
+    max-width: none;
+  }
+
+  .dgf-accordion-right-column .container {
+    padding: 0 2rem;
+  }
+
+  .dgf-accordion-title {
+    font-size: 18px;
+  }
+}
+
+@media (max-width: 768px) {
+
+  .dgf-accordion-wrapper {
+    margin-bottom: 2rem;
+  }
+  
+  .dgf-accordion-two-columns {
+    flex-direction: column;
+  }
+
+  .dgf-accordion-left-image-column {
+    order: 1;
+    flex: 1;
+    margin-bottom: 2rem;
+  }
+
+  .dgf-accordion-left-image-column img {
+    width: 431px;
+    height: 355px;
+    margin: 0 auto;
+  }
+
+  .dgf-accordion-right-column {
+    order: 2;
+  }
+
+  .dgf-accordion-right-column .container {
+    padding: 2rem 1rem;
+  }
+
+  .dgf-accordion-section-title {
+    font-size: 28px;
+    margin-bottom: 2rem;
+    text-align: center;
+    padding-top: 2rem;
+    padding-bottom: 2rem;
+  }
+
+  .dgf-accordion-title {
+    font-size: 16px;
+  }
+
+  .dgf-accordion-content-inner {
+    padding-left: 30px;
+    font-size: 14px;
+  }
+
+  .dgf-accordion-header {
+    padding: 1.5rem 0;
+  }
+
+  .dgf-accordion-item {
+    margin-bottom: 0.5rem;
+  }
+
+  .dgf-mobile-title .dgf-accordion-section-title {
+    font-size: 28px;
+    text-align: center;
+    padding-top: 2rem;
+    padding-bottom: 2rem;
+  }
+}
+</style>
+
+<section id="id-{{section.id}}" class="dgf-img-and-accordion-section">
+  <!-- Mobile Title (only visible on mobile) -->
+  <div class="dgf-mobile-title d-block d-md-none">
+    {% if section.settings.section_title != blank %}
+      <div class="container">
+        <h2 class="dgf-accordion-section-title">{{ section.settings.section_title }}</h2>
+      </div>
+    {% endif %}
+  </div>
+
+  <div class="dgf-accordion-two-columns">
+    <!-- Left Column: Image -->
+    <div class="dgf-accordion-left-image-column" data-aos="fade-right">
+      {% if section.settings.left_image != blank %}
+        <img class="lazyload" data-src="{{ section.settings.left_image | image_url: width: 800 }}" alt="{{ section.settings.left_image.alt | default: 'Image' }}">
+      {% endif %}
+    </div>
+
+    <!-- Right Column: Title + Accordions -->
+    <div class="dgf-accordion-right-column" data-aos="fade-left">
+      <div class="container">
+        {% if section.settings.section_title != blank %}
+          <h2 class="dgf-accordion-section-title d-none d-md-block">{{ section.settings.section_title }}</h2>
+        {% endif %}
+
+        <!-- Accordion Wrapper -->
+        <div class="dgf-accordion-wrapper">
+          {% for block in section.blocks %}
+            {% if block.type == 'accordion_item' %}
+              <div class="dgf-accordion-item" data-aos="fade-up" data-aos-delay="{{ forloop.index | times: 100 }}">
+                <button class="dgf-accordion-header" onclick="toggleAccordion(this)">
+                  {% if block.settings.icon != blank %}
+                    <div class="dgf-accordion-icon">
+                      <img src="{{ block.settings.icon | image_url: width: 24 }}" alt="{{ block.settings.accordion_title | default: 'Icon' }}">
+                    </div>
+                  {% endif %}
+
+                  <span class="dgf-accordion-title">{{ block.settings.accordion_title }}</span>
+
+                  <div class="dgf-accordion-toggle">
+                    <img class="dgf-expand-icon" src="https://cdn.shopify.com/s/files/1/0499/0425/5134/files/Pfad_6624.webp" alt="Expand">
+                    <img class="dgf-collapse-icon" src="https://cdn.shopify.com/s/files/1/0499/0425/5134/files/Pfad_6622.webp" alt="Collapse" style="display: none;">
+                  </div>
+                </button>
+
+                <div class="dgf-accordion-content">
+                  <div class="dgf-accordion-content-inner">
+                    {{ block.settings.accordion_content }}
+                  </div>
+                </div>
+              </div>
+            {% endif %}
+          {% endfor %}
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "[DGF] Image and Accordion",
+  "tag": "section",
+  "class": "section",
+  "settings": [
+    {
+      "type": "header",
+      "content": "Left Column Image"
+    },
+    {
+      "type": "image_picker",
+      "id": "left_image",
+      "label": "Left Column Image"
+    },
+    {
+      "type": "header",
+      "content": "Right Column Content"
+    },
+    {
+      "type": "text",
+      "id": "section_title",
+      "label": "Section Title"
+    },
+    {
+      "type": "header",
+      "content": "Layout Settings"
+    },
+    {
+      "type": "color",
+      "id": "bg_color",
+      "label": "Background Color",
+      "default": "#ffffff"
+    },
+    {
+      "type": "color",
+      "id": "text_color",
+      "label": "Text Color",
+      "default": "#111111"
+    },
+    {
+      "type": "color",
+      "id": "border_color",
+      "label": "Border Color",
+      "default": "#e0e0e0"
+    },
+    {
+      "type": "range",
+      "id": "padding_top",
+      "min": 0,
+      "max": 120,
+      "step": 10,
+      "unit": "px",
+      "label": "Top Padding",
+      "default": 60
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom",
+      "min": 0,
+      "max": 120,
+      "step": 10,
+      "unit": "px",
+      "label": "Bottom Padding",
+      "default": 60
+    }
+  ],
+  "blocks": [
+    {
+      "type": "accordion_item",
+      "name": "Accordion Item",
+      "settings": [
+        {
+          "type": "image_picker",
+          "id": "icon",
+          "label": "Icon"
+        },
+        {
+          "type": "text",
+          "id": "accordion_title",
+          "label": "Accordion Title"
+        },
+        {
+          "type": "textarea",
+          "id": "accordion_content",
+          "label": "Accordion Content"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "[DGF] Image and Accordion",
+      "blocks": [
+        {
+          "type": "accordion_item",
+          "settings": {
+            "accordion_title": "Question 1",
+            "accordion_content": "Answer to the first question goes here."
+          }
+        },
+        {
+          "type": "accordion_item",
+          "settings": {
+            "accordion_title": "Question 2",
+            "accordion_content": "Answer to the second question goes here."
+          }
+        },
+        {
+          "type": "accordion_item",
+          "settings": {
+            "accordion_title": "Question 3",
+            "accordion_content": "Answer to the third question goes here."
+          }
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}
+
+{% stylesheet %}
+{% endstylesheet %}
+
+{% javascript %}
+document.addEventListener('DOMContentLoaded', function() {
+  // Make toggleAccordion function global
+  window.toggleAccordion = function(header) {
+    try {
+      const content = header.nextElementSibling;
+      const isActive = content.classList.contains('active');
+
+      // Close all accordions in this section
+      const sectionId = header.closest('section').id;
+      const allContents = document.querySelectorAll(`#${sectionId} .dgf-accordion-content`);
+      const allHeaders = document.querySelectorAll(`#${sectionId} .dgf-accordion-header`);
+
+      allContents.forEach(item => item.classList.remove('active'));
+      allHeaders.forEach(item => item.classList.remove('active'));
+
+      // Open current accordion if it wasn't active
+      if (!isActive) {
+        content.classList.add('active');
+        header.classList.add('active');
+      }
+    } catch(e) {
+      console.error('Accordion toggle error:', e);
+    }
+  };
+});
+{% endjavascript %}

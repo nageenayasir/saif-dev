@@ -1,0 +1,132 @@
+<style>
+      {% if section.settings.background_the_image != blank %}
+        #id-{{ section.id }} {
+          background-image: url("{{ section.settings.background_the_image | img_url: 'master' }}");
+        }
+      {% else %}
+        #id-{{ section.id }} {
+          background-color: {{ section.settings.background_color | default: '#FAEEE9' }};
+        }
+      {% endif %}
+      {% if section.settings.bg_mob_image !=blank %}
+        @media only screen and (max-width: 767px){
+          #id-{{section.id}} {
+             background-image: url({{ section.settings.bg_mob_image | img_url: 'master'}}) !important;
+          }
+       {% else %}
+        #id-{{ section.id }} {
+          background-color: {{ section.settings.background_color | default: '#FAEEE9' }};
+        }
+        }
+      {% endif %}
+</style>
+<section id="id-{{section.id}}" class="subscribe-save-reward common-kids-teenager-section">
+  <div class="subscribe-save-reward-wrapper">
+    <div class="leaf-box subscribe-save-reward-box-left-top left-top">
+        <img loading="lazy"  class="leaf subscribe-save-reward-top" src="{{ 'leaf-n01.svg' | asset_url }}">
+    </div>
+    <div class="container">
+      <div class="row subscribe-save-reward-row">
+        <div class="col-sm-12 mob-subscribe-save-text-wrapper">
+          <div class="subscribe-save-text-wrapper" data-aos="fade-up">
+            {{ section.settings.mob_text }}
+          </div>
+        </div>
+        {% if section.settings.image_position == 'left' %}
+          <div class="col-sm-12 col-md-6 col-lg-6">
+            <div class="susbscibe-save-image-wrapper" data-aos="fade-up">
+              {% if section.settings.the_image != blank %}<img loading="lazy"  src="{{ section.settings.the_image | img_url: 'master' }}">{% endif %}
+            </div>
+          </div>
+        {% endif %}
+        <div class="col-sm-12 col-md-6 col-lg-6 web-subscribe-save-text-wrapper">
+          <div class="subscibe-save-text-wrapper" data-aos="fade-up">
+            {{ section.settings.the_text }}
+          </div>
+        </div>
+        {% if section.settings.image_position == 'right' %}
+          <div class="col-sm-12 col-md-6 col-lg-6">
+            <div class="subscribe-save-image-wrapper" data-aos="fade-up">
+              {% if section.settings.the_image != blank %}<img loading="lazy"  src="{{ section.settings.the_image | img_url: 'master' }}">{% endif %}
+            </div>
+          </div>
+        {% endif %}
+      </div>
+    </div>
+  </div>
+</section>
+{% schema %}
+  {
+    "name": "Subscribe Save Reward",
+    "settings": [
+        {
+            "type": "header",
+            "content": "Content Settings"
+        },
+		    {
+          "type": "image_picker",
+          "id": "background_the_image",
+          "label": "Background-Image"
+      	},
+        {
+          "type": "color",
+          "id": "background_color",
+          "default": "#FAEEE9",
+          "label": "Section Background-Color"
+      	},
+        {
+          "type": "image_picker",
+          "id": "bg_mob_image",
+          "label": "Background Mobile Image"
+        },
+        {
+              "type": "header",
+              "content": "Image Settings"
+        },
+        {
+              "type": "image_picker",
+              "id": "the_image",
+              "label": "Image"
+        },
+        {
+          "type": "select",
+          "id": "image_position",
+          "options": [
+              {
+                "value": "left",
+                "label": "Image Left"
+              },
+              {
+                "value": "right",
+                "label": "Image Right"
+              }
+            ],
+            "default": "left",
+            "label": "Choose Position"
+          },
+          {
+                "type": "header",
+                "content": "Content Settings"
+          },
+          {
+              "type": "richtext",
+              "id": "the_text",
+              "label": "Text"
+          },
+          {
+              "type": "richtext",
+              "id": "mob_text",
+              "label": "Mobile-heading"
+          }
+    ],
+	"presets": [{
+      "name": "Subscribe Save Reward"
+    }]
+  }
+{% endschema %}
+
+{% stylesheet %}
+{% endstylesheet %}
+
+{% javascript %}
+{% endjavascript %}

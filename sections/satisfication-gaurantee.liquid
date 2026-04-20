@@ -1,0 +1,87 @@
+<style>
+  #id-{{ section.id }}{
+  	background-color:{{ section.settings.section_bg_color }};
+  }
+</style>
+<section id="id-{{section.id}}" class="satisfaction-guarantee-section-wrap">
+  <div class="container">
+    <div class="row">
+      <div class="col-sm-12 col-md-12 col-lg-12">
+        <div class="satisfaction-guarantee-wrapppers">
+          <div class="satisfaction-block" data-aos="fade-up" data-aos-delay="200">
+            <h2 >{{ section.settings.title }}</h2>
+            <p>{{ section.settings.text }}</p>
+            <div class="satisfaction-banner-btns">
+                 <div class="btn-group">
+                         {% if section.settings.button_1 != blank %}
+                            <div data-aos="fade-up" data-aos-delay="400">
+                                <a class="btn btn-bg" href="{{ section.settings.url_1 }}" target="_self">
+                                    {{ section.settings.button_1 }}
+                                </a>
+                            </div>
+                         {% endif %}
+                         {% if section.settings.button_2 != blank %}
+                          <div data-aos="fade-up" data-aos-delay="500">
+                              <a class="btn btn-trans" href="{{ section.settings.url_2 }}" target="_self">
+                                  {{ section.settings.button_2 }}
+                              </a>
+                          </div>
+                        {% endif %}
+                 </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+{% schema %}
+  {
+    "name": "Satisfaction Guarantee",
+    "settings": [
+        {
+            "type": "header",
+            "content": "Content Style"
+      },
+  	  {
+           "type": "color",
+           "id": "section_bg_color",
+           "label": "Section background color"
+      },
+        {
+          "type": "text",
+          "id": "title",
+          "label": "Title"
+        },
+        {
+          "type": "text",
+          "id": "text",
+          "label": "Text"
+        },
+        
+        {
+          "type": "text",
+          "id": "button_1",
+          "label": "Button 1"
+        },
+        {
+          "type": "url",
+          "id": "url_1",
+          "label": "Url 1"
+        },
+        {
+          "type": "text",
+          "id": "button_2",
+          "label": "Button 2"
+        },
+        {
+          "type": "url",
+          "id": "url_2",
+          "label": "Url 2"
+        }
+    ],
+	"presets": [{
+      "name": "Satisfaction Guarantee"
+    }]
+  }
+{% endschema %}

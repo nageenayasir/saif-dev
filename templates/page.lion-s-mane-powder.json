@@ -1,0 +1,958 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "main": {
+      "type": "main-page",
+      "disabled": true,
+      "settings": {}
+    },
+    "dgf_lp_header_YKcMaE": {
+      "type": "dgf-lp-header",
+      "blocks": {
+        "nav_item_drEdKf": {
+          "type": "nav_item",
+          "settings": {
+            "nav_text": "Shop",
+            "nav_url": "",
+            "nav_text_color": "",
+            "enable_megamenu": true,
+            "megamenu_type": "products",
+            "megamenu_bg_color": "#faeee9",
+            "megamenu_text_color": "#000000",
+            "megamenu_text": "<p><strong>Discover a healthier<br>you with our <br>premium LION’S MANE supplements.</strong></p>",
+            "megamenu_product_1": "lion-s-mane-extract-powder-tribe-organics-1000mg-100g",
+            "megamenu_product_1_url": "shopify://pages/premium-lions-mane-powder-supplement",
+            "megamenu_product_2": "lions-mane-mushroom",
+            "megamenu_product_2_url": "shopify://pages/premium-lions-mane-supplement",
+            "megamenu_product_3": "",
+            "megamenu_product_3_url": "",
+            "megamenu_side_image": "shopify://shop_images/image_19.webp",
+            "mobile_megamenu_title": "Discover a healthier you with our premium LION’S MANE supplements.",
+            "mobile_megamenu_image": "shopify://shop_images/image_21.webp",
+            "mobile_megamenu_link_text": "Contact Us",
+            "mobile_megamenu_link_url": "/pages/contact",
+            "megamenu_text_1": "",
+            "megamenu_link_1": "",
+            "megamenu_text_2": "",
+            "megamenu_link_2": "",
+            "megamenu_text_3": "",
+            "megamenu_link_3": "",
+            "megamenu_text_4": "",
+            "megamenu_link_4": "",
+            "show_megamenu_button": false,
+            "megamenu_button_text": "View All",
+            "megamenu_button_url": ""
+          }
+        },
+        "nav_item_zdiWwH": {
+          "type": "nav_item",
+          "settings": {
+            "nav_text": "Learn",
+            "nav_url": "https://www.tribe-organics.com/blogs/lion-mane-learn",
+            "nav_text_color": "",
+            "enable_megamenu": true,
+            "megamenu_type": "images",
+            "megamenu_bg_color": "#faeee9",
+            "megamenu_text_color": "#000000",
+            "megamenu_text": "",
+            "megamenu_product_1": "",
+            "megamenu_product_1_url": "",
+            "megamenu_product_2": "",
+            "megamenu_product_2_url": "",
+            "megamenu_product_3": "",
+            "megamenu_product_3_url": "",
+            "mobile_megamenu_title": "",
+            "mobile_megamenu_link_text": "View All",
+            "mobile_megamenu_link_url": "",
+            "megamenu_image_1": "shopify://shop_images/217272635_1329584270789578_5280560696201114570_n_1_2x_9e8e8ebb-7937-413c-a23f-af84d01deb68.webp",
+            "megamenu_text_1": "Definitive Guide for Lions Mane",
+            "megamenu_link_1": "https://www.tribe-organics.com/blogs/lifestyle/definitive-guide-lions-mane-mushrooms",
+            "megamenu_image_2": "shopify://shop_images/4_aafb0efd-aee2-471f-9d18-b3760728b69d.jpg",
+            "megamenu_text_2": "Fruiting Body vs. Mycelium",
+            "megamenu_link_2": "https://www.tribe-organics.com/blogs/lifestyle/fruiting-body-vs-mycelium",
+            "megamenu_image_3": "shopify://shop_images/BLOG_COVER_PICTURE_530_x_741px_2b05cc50-98ef-4b2b-9e2c-6458addd789e-1259921.webp",
+            "megamenu_text_3": "Mushroom Supplement Benefits",
+            "megamenu_link_3": "https://www.tribe-organics.com/blogs/lifestyle/mushroom-supplement-benefits",
+            "megamenu_image_4": "shopify://shop_images/BLOG_COVER_PICTURE_530_x_741px_6_0c6a3ba8-0157-42ef-8d6b-ebf9534deb0e-5487120.webp",
+            "megamenu_text_4": "6 Mushrooms that Support Immune Health",
+            "megamenu_link_4": "https://www.tribe-organics.com/blogs/lifestyle/6-mushrooms-that-support-immune-health",
+            "show_megamenu_button": true,
+            "megamenu_button_text": "READ MORE",
+            "megamenu_button_url": "https://www.tribe-organics.com/blogs/lion-mane-learn"
+          }
+        },
+        "nav_item_9nEmb9": {
+          "type": "nav_item",
+          "settings": {
+            "nav_text": "Recipes",
+            "nav_url": "https://www.tribe-organics.com/blogs/lions-mane-recipes",
+            "nav_text_color": "",
+            "enable_megamenu": true,
+            "megamenu_type": "images",
+            "megamenu_bg_color": "#faeee9",
+            "megamenu_text_color": "#000000",
+            "megamenu_text": "",
+            "megamenu_product_1": "",
+            "megamenu_product_1_url": "",
+            "megamenu_product_2": "",
+            "megamenu_product_2_url": "",
+            "megamenu_product_3": "",
+            "megamenu_product_3_url": "",
+            "mobile_megamenu_title": "",
+            "mobile_megamenu_link_text": "View All",
+            "mobile_megamenu_link_url": "",
+            "megamenu_image_1": "shopify://shop_images/LIONS_MANE_FOCUS_FUEL_SMOOTHIE_BLOG_COVER.jpg",
+            "megamenu_text_1": "Focus Fuel Smoothie",
+            "megamenu_link_1": "shopify://blogs/recipes/focus-fuel-smoothie",
+            "megamenu_image_2": "shopify://shop_images/MORNING_LION_S_MANE_LATTE_BLOG_COVER.jpg",
+            "megamenu_text_2": "Morning Lion's Mane Latte",
+            "megamenu_link_2": "shopify://blogs/recipes/morning-lions-mane-latte",
+            "megamenu_image_3": "shopify://shop_images/GUT-HEALING_GOLDEN_BROTH_BLOG_COVER.jpg",
+            "megamenu_text_3": "Gut-Healing Golden Broth",
+            "megamenu_link_3": "shopify://blogs/recipes/gut-healing-golden-broth",
+            "megamenu_image_4": "shopify://shop_images/image_20.webp",
+            "megamenu_text_4": "Mushroom Golden Blend Veggie Stir-Fry with Shrimp",
+            "megamenu_link_4": "shopify://blogs/recipes/mushroom-golden-blend-veggie-stir-fry-with-shrimp",
+            "show_megamenu_button": true,
+            "megamenu_button_text": "READ MORE",
+            "megamenu_button_url": "https://www.tribe-organics.com/blogs/lions-mane-recipes"
+          }
+        },
+        "nav_item_bJY6dx": {
+          "type": "nav_item",
+          "settings": {
+            "nav_text": "Contact Us",
+            "nav_url": "/pages/contact",
+            "nav_text_color": "",
+            "enable_megamenu": false,
+            "megamenu_type": "products",
+            "megamenu_bg_color": "",
+            "megamenu_text_color": "",
+            "megamenu_text": "",
+            "megamenu_product_1": "",
+            "megamenu_product_1_url": "",
+            "megamenu_product_2": "",
+            "megamenu_product_2_url": "",
+            "megamenu_product_3": "",
+            "megamenu_product_3_url": "",
+            "mobile_megamenu_title": "",
+            "mobile_megamenu_link_text": "View All",
+            "mobile_megamenu_link_url": "",
+            "megamenu_text_1": "",
+            "megamenu_link_1": "",
+            "megamenu_text_2": "",
+            "megamenu_link_2": "",
+            "megamenu_text_3": "",
+            "megamenu_link_3": "",
+            "megamenu_text_4": "",
+            "megamenu_link_4": "",
+            "show_megamenu_button": false,
+            "megamenu_button_text": "View All",
+            "megamenu_button_url": ""
+          }
+        }
+      },
+      "block_order": [
+        "nav_item_drEdKf",
+        "nav_item_zdiWwH",
+        "nav_item_9nEmb9",
+        "nav_item_bJY6dx"
+      ],
+      "custom_css": [
+        ".custom-ashwagandha-pack-page .custom-announcement-bar {display: block !important;}",
+        ".dgf-megamenu-button {background-color: #faeee9; border: 2px solid #ac853b; border-radius: 0px; font-family: Work Sans, sans-serif; font-size: 14px !important;}",
+        ".dgf-lp-header-logo {pointer-events: none;}"
+      ],
+      "name": "[DGF] LP Header",
+      "settings": {
+        "section_bg_color": "#06211e",
+        "text_color": "#ffffff",
+        "site_logo_image": "shopify://shop_images/2_Topbar.webp",
+        "site_logo_image_mobile": "shopify://shop_images/SVG.webp",
+        "button_text": "SHOP LION’S MANE",
+        "button_url": "#dgf-featured-product",
+        "button_bg_color": "#ac853b",
+        "button_text_color": "#ffffff",
+        "show_search": true
+      }
+    },
+    "dgf_icon_slider_nq6TXd": {
+      "type": "dgf-icon-slider",
+      "blocks": {
+        "icon_item_eyNUPN": {
+          "type": "icon_item",
+          "settings": {
+            "icon": "shopify://shop_images/made-in-the-usa_1.webp",
+            "text": "Made in the USA with globally sourced ingredients",
+            "text_color": "#ffffff"
+          }
+        },
+        "icon_item_bKtXEU": {
+          "type": "icon_item",
+          "settings": {
+            "icon": "shopify://shop_images/third-party-lab-tested_1.webp",
+            "text": "Third-party Lab Tested",
+            "text_color": "#ffffff"
+          }
+        },
+        "icon_item_jAwLmL": {
+          "type": "icon_item",
+          "settings": {
+            "icon": "shopify://shop_images/ethically-grown-and-sourced_1.webp",
+            "text": "Ethically grown and sourced",
+            "text_color": "#ffffff"
+          }
+        },
+        "icon_item_JU9BgQ": {
+          "type": "icon_item",
+          "settings": {
+            "icon": "shopify://shop_images/no-harmful-additives_1.webp",
+            "text": "No harmful additives or fillers",
+            "text_color": "#ffffff"
+          }
+        },
+        "icon_item_Df7qgW": {
+          "type": "icon_item",
+          "settings": {
+            "icon": "shopify://shop_images/recyclable_1.webp",
+            "text": "Recyclable",
+            "text_color": "#ffffff"
+          }
+        }
+      },
+      "block_order": [
+        "icon_item_eyNUPN",
+        "icon_item_bKtXEU",
+        "icon_item_jAwLmL",
+        "icon_item_JU9BgQ",
+        "icon_item_Df7qgW"
+      ],
+      "name": "[DGF] Icon Slider",
+      "settings": {
+        "title": "",
+        "sec_bg_color": "#586a67",
+        "text_color": "#ffffff",
+        "icon_bg_color": "#f3d9cf",
+        "icon_bg_image": "shopify://shop_images/Ellipse_105.webp",
+        "autoplay_speed": 3,
+        "pause_on_hover": true
+      }
+    },
+    "dgf_img_and_text_tW8t4r": {
+      "type": "dgf-img-and-text",
+      "name": "[DGF] Image and Text",
+      "settings": {
+        "text_1": "<p>OVER 10,000 HAPPY CUSTOMERS</p>",
+        "text_2": "<h1>Tired of Forgetting Things &amp; Having <br>brain fog?</h1>",
+        "text_3": "<p>You’re not broken — and it’s not about drinking more stimulants. What your mind needs is real nutrition to restore balance and clarity.</p>",
+        "text_4": "<h2>Boost <span style=\"font-family: 'Superior Title Italic'; text-transform: capitalize;\">cognitive Performance</span><br> with Tribe Organics<br> Lion’s Mane powder</h2>",
+        "text_5": "<p>No mycelium. No starch. No harmful additives.<br> Just 100% organic lion’s mane fruiting bodies <br>— rich in compounds that support healthy <br>cognitive function and promote gut and <br>immune system health.*</p>",
+        "mobile_text_1": "<p>OVER 10,000 HAPPY CUSTOMERS</p>",
+        "mobile_text_2": "<h1>Tired of Forgetting Things &amp; Having brain fog?</h1>",
+        "mobile_text_3": "<p>You’re not broken — and it’s not about drinking more stimulants. What your mind needs is real nutrition to restore balance and clarity.</p>",
+        "mobile_text_4": "<h2>Boost <span style=\"font-family: 'Superior Title Italic'; text-transform: capitalize;\">cognitive Performance</span><br> with Tribe Organics<br> Lion’s Mane powder</h2>",
+        "mobile_text_5": "<p>No mycelium. No starch. No harmful additives. Just 100% organic lion’s mane fruiting bodies, rich in compounds that support healthy cognitive function and promote gut and immune system health.*</p>",
+        "button_text": "BUY NOW",
+        "button_url": "#dgf-featured-product",
+        "button_text_color": "#ffffff",
+        "first_column_image": "shopify://shop_images/Group_4.webp",
+        "first_column_image_text": "LOVED BY THOUSANDS",
+        "second_column_image_1": "shopify://shop_images/Frame_427321051.webp",
+        "second_column_image_1_mobile": "shopify://shop_images/Frame_427321072.webp",
+        "second_column_image_2": "shopify://shop_images/Frame_427321084.webp",
+        "bg_color": "#faeee9",
+        "text_color": "#111111",
+        "padding_top": 60,
+        "padding_bottom": 60,
+        "mobile_padding_top": 40,
+        "mobile_padding_bottom": 40
+      }
+    },
+    "dgf_testimonial_3K9HUd": {
+      "type": "dgf-testimonial",
+      "blocks": {
+        "testimonial_twg3Cy": {
+          "type": "testimonial",
+          "settings": {
+            "stars": "<i class=\"fa fa-star active\"></i>\n                                                <i class=\"fa fa-star active\"></i>\n                                                <i class=\"fa fa-star active\"></i>\n                                                <i class=\"fa fa-star active\"></i>\n                                                <i class=\"fa fa-star active\"></i>",
+            "testimonial_text": "<p>I absolutely have had an awesome experience taking these. So has my partner. We both feel so clear minded, natural energy, and have had a TON of anxiety released. I subscribed because of the impact it’s had on my life! I’m able to take a step back & think from a higher awareness now!! Love their product & how pure of mushroom it is.</p>",
+            "author_name": "- Carly Camargo"
+          }
+        },
+        "testimonial_aMr8hV": {
+          "type": "testimonial",
+          "settings": {
+            "stars": "<i class=\"fa fa-star active\"></i>\n                                                <i class=\"fa fa-star active\"></i>\n                                                <i class=\"fa fa-star active\"></i>\n                                                <i class=\"fa fa-star active\"></i>\n                                                <i class=\"fa fa-star active\"></i>",
+            "testimonial_text": "<p>I switched from coffee to Masala Chai with milk and honey, and while drinking this flavorful delight, I take Lion’s Maine and suddenly this calm clarity comes over me. Far better than the jolt of coffee, and its acidity.</p>",
+            "author_name": "- Kimberly Marlow"
+          }
+        },
+        "testimonial_th8VmB": {
+          "type": "testimonial",
+          "settings": {
+            "stars": "<i class=\"fa fa-star active\"></i>\n                                                <i class=\"fa fa-star active\"></i>\n                                                <i class=\"fa fa-star active\"></i>\n                                                <i class=\"fa fa-star active\"></i>\n                                                <i class=\"fa fa-star active\"></i>",
+            "testimonial_text": "<p>The product arrive on time and the package was very well protected. I bought the product for my wife whose having some episodes of forgetting things. She started to use the product a week and a half ago and I think that it is to early to see results.<br/><br/></p>",
+            "author_name": "-Victor M Arroyo"
+          }
+        },
+        "testimonial_7nxzYB": {
+          "type": "testimonial",
+          "settings": {
+            "stars": "<i class=\"fa fa-star active\"></i>\n                                                <i class=\"fa fa-star active\"></i>\n                                                <i class=\"fa fa-star active\"></i>\n                                                <i class=\"fa fa-star active\"></i>\n                                                <i class=\"fa fa-star active\"></i>",
+            "testimonial_text": "<p>Took about 3 weeks to feel more focused and improvement with my memory. I will definitely continue using your products. I also use Turmeric complex.\t</p>",
+            "author_name": "- Todd Bajar"
+          }
+        },
+        "testimonial_GKn6zU": {
+          "type": "testimonial",
+          "settings": {
+            "stars": "<i class=\"fa fa-star active\"></i>\n                                                <i class=\"fa fa-star active\"></i>\n                                                <i class=\"fa fa-star active\"></i>\n                                                <i class=\"fa fa-star active\"></i>\n                                                <i class=\"fa fa-star active\"></i>",
+            "testimonial_text": "<p>Terrific product. This is a nice supplement.\t\t\t</p>",
+            "author_name": "- Christopher"
+          }
+        },
+        "testimonial_LUbrbx": {
+          "type": "testimonial",
+          "settings": {
+            "stars": "<i class=\"fa fa-star active\"></i>\n                                                <i class=\"fa fa-star active\"></i>\n                                                <i class=\"fa fa-star active\"></i>\n                                                <i class=\"fa fa-star active\"></i>\n                                                <i class=\"fa fa-star active\"></i>",
+            "testimonial_text": "<p>I love Tribe Organics Lion Mane. My mind is sharper and my mood is more content with who I am. Life is good!</p>",
+            "author_name": "-Karen Zapata"
+          }
+        },
+        "testimonial_9hbXrt": {
+          "type": "testimonial",
+          "settings": {
+            "stars": "<i class=\"fa fa-star active\"></i>\n                                                <i class=\"fa fa-star active\"></i>\n                                                <i class=\"fa fa-star active\"></i>\n                                                <i class=\"fa fa-star active\"></i>\n                                                <i class=\"fa fa-star active\"></i>",
+            "testimonial_text": "<p>Took about 3 weeks to feel more focused and improvement with my memory. I will definitely continue using your products. I also use turmeric.</p>",
+            "author_name": "-Todd Bajar"
+          }
+        },
+        "testimonial_LRPKbG": {
+          "type": "testimonial",
+          "settings": {
+            "stars": "<i class=\"fa fa-star active\"></i>\n                                                <i class=\"fa fa-star active\"></i>\n                                                <i class=\"fa fa-star active\"></i>\n                                                <i class=\"fa fa-star active\"></i>\n                                                <i class=\"fa fa-star active\"></i>",
+            "testimonial_text": "<p>The lion’s mane provides a subtle difference that did take some time to notice (2-3 weeks) but I did feel like it was working. This especially became apparent after I stopped taking it. It really must've helped with my digestion because after I stopped taking it, I would get heartburn more often. I just ordered more and will continue to use this product as I got good results from taking it</p>",
+            "author_name": "-Arthur"
+          }
+        },
+        "testimonial_aFUCCM": {
+          "type": "testimonial",
+          "settings": {
+            "stars": "<i class=\"fa fa-star active\"></i>\n                                                <i class=\"fa fa-star active\"></i>\n                                                <i class=\"fa fa-star active\"></i>\n                                                <i class=\"fa fa-star active\"></i>\n                                                <i class=\"fa fa-star active\"></i>",
+            "testimonial_text": "<p>Very potent lions mane. Definitely feel the difference compared to other products I’ve tried.<br/><br/></p>",
+            "author_name": "-Mike"
+          }
+        },
+        "testimonial_48ALbb": {
+          "type": "testimonial",
+          "settings": {
+            "stars": "<i class=\"fa fa-star active\"></i>\n                                                <i class=\"fa fa-star active\"></i>\n                                                <i class=\"fa fa-star active\"></i>\n                                                <i class=\"fa fa-star active\"></i>\n                                                <i class=\"fa fa-star active\"></i>",
+            "testimonial_text": "<p>I bought Lions Mane looking for ways yo help post-partum anxiety. I have subtly felt sharper and lighter since taking them. I like the idea of using natural alternatives. I take one or two every few days and my subscription has lasted Aug-Oct. Buying for the second time now.</p>",
+            "author_name": "-New Mom"
+          }
+        }
+      },
+      "block_order": [
+        "testimonial_twg3Cy",
+        "testimonial_aMr8hV",
+        "testimonial_th8VmB",
+        "testimonial_7nxzYB",
+        "testimonial_GKn6zU",
+        "testimonial_LUbrbx",
+        "testimonial_9hbXrt",
+        "testimonial_LRPKbG",
+        "testimonial_aFUCCM",
+        "testimonial_48ALbb"
+      ],
+      "name": "[DGF] Testimonial",
+      "settings": {
+        "section_bg_color": "#faeee9",
+        "custom_class": "",
+        "title_part1": "More than",
+        "title_part2": "2,500 verified reviews",
+        "title_color": "#000000"
+      }
+    },
+    "dgf_image_gallery_EWpaaR": {
+      "type": "dgf-image-gallery",
+      "blocks": {
+        "image_fFaMfU": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/lions-testim01.webp",
+            "alt_text": "",
+            "show_on_mobile": true
+          }
+        },
+        "image_3eLQN4": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/lions-testim02.webp",
+            "alt_text": "",
+            "show_on_mobile": true
+          }
+        },
+        "image_PMWgBF": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/lions-testim03.webp",
+            "alt_text": "",
+            "show_on_mobile": true
+          }
+        },
+        "image_ywHfyD": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/lions-testim04.webp",
+            "alt_text": "",
+            "show_on_mobile": true
+          }
+        },
+        "image_tkakee": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/lions-testim05_d30a0b0c-c249-4231-9719-05929171b80c.webp",
+            "alt_text": "",
+            "show_on_mobile": false
+          }
+        },
+        "image_KTVNPe": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/lions-testim06_95952b86-977c-4168-8ef2-192598047205.webp",
+            "alt_text": "",
+            "show_on_mobile": false
+          }
+        },
+        "image_FJWRHz": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/lions-testim07_c733ede8-df21-4b12-881f-c9a4b26257e1.webp",
+            "alt_text": "",
+            "show_on_mobile": false
+          }
+        },
+        "image_HJpV6L": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/lions-testim08_cd817917-75c5-4f4d-8cea-77dbc4dfa403.webp",
+            "alt_text": "",
+            "show_on_mobile": false
+          }
+        }
+      },
+      "block_order": [
+        "image_fFaMfU",
+        "image_3eLQN4",
+        "image_PMWgBF",
+        "image_ywHfyD",
+        "image_tkakee",
+        "image_KTVNPe",
+        "image_FJWRHz",
+        "image_HJpV6L"
+      ],
+      "name": "[DGF] Image Gallery",
+      "settings": {
+        "title": "",
+        "background_color": "#faeee9",
+        "transition_effect": "fade-zoom",
+        "rotation_speed": 4,
+        "rotation_mode": "single",
+        "cascade_delay": 150
+      }
+    },
+    "dgf_img_and_icon_nwPw9m": {
+      "type": "dgf-img-and-icon",
+      "blocks": {
+        "icon_item_PDHYVL": {
+          "type": "icon_item",
+          "settings": {
+            "icon": "shopify://shop_images/image_1.webp",
+            "icon_title": "Sharpen Focus and Memory*",
+            "icon_text": "Supports cognitive function, mental clarity, and learning by stimulating Nerve Growth Factor (NGF).<sup>*</sup>"
+          }
+        },
+        "icon_item_riMxKi": {
+          "type": "icon_item",
+          "settings": {
+            "icon": "shopify://shop_images/image_2.webp",
+            "icon_title": "Natural Brain Energy*",
+            "icon_text": "Delivers sustained mental energy and productivity without caffeine or crashes.<sup>*</sup>"
+          }
+        },
+        "icon_item_kaeAcQ": {
+          "type": "icon_item",
+          "settings": {
+            "icon": "shopify://shop_images/image_3.webp",
+            "icon_title": "Support Gut and Digestive Health*",
+            "icon_text": "Traditionally used in Chinese medicine to soothe the stomach, promote gut healing, and improve digestion.<sup>*</sup>"
+          }
+        },
+        "icon_item_QhakMe": {
+          "type": "icon_item",
+          "settings": {
+            "icon": "shopify://shop_images/image_4.webp",
+            "icon_title": "Reduce Stress and Improve Mood*",
+            "icon_text": "Adaptogenic properties help regulate stress response, balance mood, and reduce anxiety and fatigue.<sup>*</sup>"
+          }
+        },
+        "icon_item_DFEWmi": {
+          "type": "icon_item",
+          "settings": {
+            "icon": "shopify://shop_images/image_5.webp",
+            "icon_title": "Boost immune system*",
+            "icon_text": "containing more than 25% Beta-Glucans that strengthen immunity, reduce inflammation, and protect overall wellness.<sup>*</sup>"
+          }
+        }
+      },
+      "block_order": [
+        "icon_item_PDHYVL",
+        "icon_item_riMxKi",
+        "icon_item_kaeAcQ",
+        "icon_item_QhakMe",
+        "icon_item_DFEWmi"
+      ],
+      "name": "[DGF] Image and Icons",
+      "settings": {
+        "section_title": "<h2>MEET LION’S MANE MUSHROOM: the brain booster</h2>",
+        "section_subtitle": "<p>Buddhist monks in China drank Lion’s Mane tea before meditation, believing it enhanced clarity and focus. In Japan, Yamabushitake (“mountain priest mushroom”) was reserved for monks and healers seeking cognitive sharpness and emotional balance. In Traditional Chinese Medicine (Hou Tou Gu), it was prescribed to strengthen the spleen, support digestion, and promote overall vitality.<br><br>\n\nAcross cultures and across time, this mushroom has endured as both a culinary delicacy and a powerful nootropic. Now, clinical research confirms its ability to support cognitive performance, nerve regeneration, and digestive wellness — making Lion’s Mane one of the most valuable natural allies for modern life.</p>",
+        "left_image": "shopify://shop_images/217272635_1329584270789578_5280560696201114570_n_1_2x_eae62025-cccf-4220-a151-4cb5ba1f1b41.webp",
+        "column_title": "Powerful Benefits of Lion’s Mane Mushroom",
+        "mobile_column_title_primary": "Powerful Benefits of Lion’s Mane Mushroom",
+        "mobile_column_title_secondary": "",
+        "bg_color": "rgba(0,0,0,0)",
+        "text_color": "#ffffff",
+        "padding_top": 40,
+        "padding_bottom": 30
+      }
+    },
+    "dgf_img_and_accordion_PJdWgA": {
+      "type": "dgf-img-and-accordion",
+      "blocks": {
+        "accordion_item_HFUcch": {
+          "type": "accordion_item",
+          "settings": {
+            "icon": "shopify://shop_images/Vector_2.webp",
+            "accordion_title": "100% FRUITING BODIES, ZERO MYCELIUM",
+            "accordion_content": "Our Lion’s Mane is made only from organic fruiting bodies, never mycelium grown on grain — delivering the full spectrum of active compounds your brain and body need."
+          }
+        },
+        "accordion_item_6ceNfn": {
+          "type": "accordion_item",
+          "settings": {
+            "icon": "shopify://shop_images/Group_1.webp",
+            "accordion_title": "CERTIFIED USDA ORGANIC & SUSTAINABLY SOURCED",
+            "accordion_content": "Our Lion’s Mane Mushroom powder is made with 100% USDA Organic mushrooms, grown without pesticides, herbicides, or GMOs. Every batch is sustainably harvested to protect the integrity of the ecosystem and ensure long-term environmental balance. By choosing certified organic and responsibly sourced Lion’s Mane, you’re not only supporting your health but also supporting a healthier planet."
+          }
+        },
+        "accordion_item_yrxeEW": {
+          "type": "accordion_item",
+          "settings": {
+            "icon": "shopify://shop_images/Vector_3.webp",
+            "accordion_title": "RIGOROUSLY TESTED FOR PURITY & POTENCY",
+            "accordion_content": "Every batch of our Lion’s Mane Mushroom undergoes third-party testing to guarantee purity, potency and safety — free from heavy metals, pesticides or harmful additives. Plus, we guarantee a minimum of 25% Beta-Glucans, the key active compounds responsible for Lion’s Mane’s powerful brain and immune benefits."
+          }
+        },
+        "accordion_item_QT6UnH": {
+          "type": "accordion_item",
+          "settings": {
+            "icon": "shopify://shop_images/Group_2.webp",
+            "accordion_title": "MADE IN THE USA IN A GMP-CERTIFIED FACILITY",
+            "accordion_content": "Our Lion’s Mane Mushroom Capsules are proudly made in the USA in a Good Manufacturing Practices (GMP) certified facility. This ensures the highest standards of quality, consistency, and safety — so you can trust every capsule you take."
+          }
+        },
+        "accordion_item_rKfTgC": {
+          "type": "accordion_item",
+          "settings": {
+            "icon": "shopify://shop_images/Frame_427321004.webp",
+            "accordion_title": "VEGAN, GLUTEN -FREE & KOSHER CERTIFIED",
+            "accordion_content": "Designed to fit any lifestyle, our products are third-party certified Vegan, Gluten-Free & Kosher. Enjoy the peace of mind knowing that no matter your dietary choices, you can nourish your body without compromise."
+          }
+        }
+      },
+      "block_order": [
+        "accordion_item_HFUcch",
+        "accordion_item_6ceNfn",
+        "accordion_item_yrxeEW",
+        "accordion_item_QT6UnH",
+        "accordion_item_rKfTgC"
+      ],
+      "name": "[DGF] Image and Accordion",
+      "settings": {
+        "left_image": "shopify://shop_images/Group_18542.webp",
+        "section_title": "Meet Tribe Organics Lion’s Mane: The Gold Standard in brain health",
+        "bg_color": "#faeee9",
+        "text_color": "#06211e",
+        "border_color": "#06211e",
+        "padding_top": 0,
+        "padding_bottom": 0
+      }
+    },
+    "dgf_how_to_CYwQ9c": {
+      "type": "dgf-how-to",
+      "name": "[DGF] How To",
+      "settings": {
+        "background_color": "#f3d9cf",
+        "text_with_background": "<p>Lion’s Mane works best as part of your daily ritual. Just like nourishing your body with whole foods, the benefits of functional mushrooms build gradually with consistent use. Taking your supplement every day helps unlock their full potential for lasting results.</p>",
+        "first_text": "Consistency is key",
+        "second_text": "FOR REAL RESULTS",
+        "main_title": "HOW TO USE",
+        "dosage_amount": "1/2 TEASPOON",
+        "dosage_frequency": "daily",
+        "serving_info_first": "1000mg",
+        "serving_info_second": "serving size",
+        "pro_tip": "<p><strong>Pro tip:</strong> Pair your Lion's Mane supplement serving with your morning routine or evening wind-down so it becomes an easy, effortless habit.</p>",
+        "left_side_image": "shopify://shop_images/ashwagandha_capsules_dropped_2_7764b49c-0954-4b76-b7ef-2ac5fd9770de.webp"
+      }
+    },
+    "dgf_graph_j9XjbP": {
+      "type": "dgf-graph",
+      "blocks": {
+        "week_item_H3bbCi": {
+          "type": "week_item",
+          "settings": {
+            "week_image": "shopify://shop_images/circle-icon01_40d74ddd-d0fe-4b16-bb5f-bbacee20884e.webp",
+            "week_title": "WEEK 2",
+            "benefits_content": "<ul><li>Supports mental clarity & focus</li><li>Promotes mood stability</li><li>May support digestion & gut comfort</li></ul>"
+          }
+        },
+        "week_item_tfpCRV": {
+          "type": "week_item",
+          "settings": {
+            "week_image": "shopify://shop_images/circle-icon01_40d74ddd-d0fe-4b16-bb5f-bbacee20884e.webp",
+            "week_title": "WEEK 4",
+            "benefits_content": "<ul><li>Boosts memory & concentration</li><li>Promotes calm under stress</li><li>Supports balanced, jitter-free energy</li></ul>"
+          }
+        },
+        "week_item_ThHaiF": {
+          "type": "week_item",
+          "settings": {
+            "week_image": "shopify://shop_images/circle-icon01_40d74ddd-d0fe-4b16-bb5f-bbacee20884e.webp",
+            "week_title": "WEEK 6",
+            "benefits_content": "<ul><li>Enhances focus, learning & recall</li><li>Productivity may improve</li><li>Supports gut health & immune defense</li></ul>"
+          }
+        },
+        "week_item_xbJMax": {
+          "type": "week_item",
+          "settings": {
+            "week_image": "shopify://shop_images/circle-icon01_40d74ddd-d0fe-4b16-bb5f-bbacee20884e.webp",
+            "week_title": "WEEK 8",
+            "benefits_content": "<ul><li>Fosters emotional balance & well-being</li><li>Supports brain function & healthy aging</li></ul>"
+          }
+        }
+      },
+      "block_order": [
+        "week_item_H3bbCi",
+        "week_item_tfpCRV",
+        "week_item_ThHaiF",
+        "week_item_xbJMax"
+      ],
+      "custom_css": [],
+      "name": "[DGF] Graph Timeline",
+      "settings": {
+        "timeline_bg_image": "shopify://shop_images/Line_2_c970ea18-b84b-4a8a-9b22-0aeff62ee273.webp",
+        "mobile_bg_image": "shopify://shop_images/Line_2_1.webp",
+        "background_color": "#faeee9",
+        "text_color": "#ffffff",
+        "week_color": "rgba(0,0,0,0)",
+        "card_bg_color": "#f3d9cf",
+        "disc_text_color": "#06211e",
+        "card_text_color": "#06211e",
+        "button_text_color": "#ffffff",
+        "section_title": "WHAT TO EXPECT†",
+        "button_text": "BUY NOW",
+        "button_url": "#dgf-featured-product",
+        "hide_button_mobile": true,
+        "disclaimer_text": "†Results may vary. Functional mushrooms work gradually and are most effective when paired with consistent use and a healthy lifestyle.",
+        "show_stars": true,
+        "rating_text": "LOVED BY THOUSANDS"
+      }
+    },
+    "dgf_featured_product_3e6RUi": {
+      "type": "dgf-featured-product",
+      "name": "[DGF] Featured Product",
+      "settings": {
+        "featured_product": "lion-s-mane-extract-powder-tribe-organics-1000mg-100g",
+        "image_1": "shopify://shop_images/Frame_427321084.webp",
+        "image_2": "shopify://shop_images/Group_1096.webp",
+        "background_color": "#faeee9",
+        "text_color": "#111111",
+        "show_rating": true,
+        "rating_text": "",
+        "show_certifications": true,
+        "money_back_guarantee": true,
+        "free_shipping": true,
+        "disclaimer_text": "<p><em>*We recommend 3-6 months of consistent use for best results.</em></p>",
+        "show_payment_icons": true
+      }
+    },
+    "dgf_compare_table_AUeezL": {
+      "type": "dgf-compare-table",
+      "blocks": {
+        "feature_ALkd7M": {
+          "type": "feature",
+          "settings": {
+            "feature_text": "Made with 100% Lion's Mane fruiting bodies",
+            "product_1_image": "shopify://shop_images/Group_1807.webp",
+            "product_2_image": "shopify://shop_images/Group_1808.webp"
+          }
+        },
+        "feature_RnfVgL": {
+          "type": "feature",
+          "settings": {
+            "feature_text": "USDA organic certified & ethically sourced",
+            "product_1_image": "shopify://shop_images/Group_1807.webp",
+            "product_2_image": "shopify://shop_images/Group_1808.webp"
+          }
+        },
+        "feature_9GJfJm": {
+          "type": "feature",
+          "settings": {
+            "feature_text": "30% beta-glucans guaranteed",
+            "product_1_image": "shopify://shop_images/Group_1807.webp",
+            "product_2_image": "shopify://shop_images/Group_1808.webp"
+          }
+        },
+        "feature_BnMN73": {
+          "type": "feature",
+          "settings": {
+            "feature_text": "Trusted by +10,000 customers",
+            "product_1_image": "shopify://shop_images/Group_1807.webp",
+            "product_2_image": "shopify://shop_images/Group_1808.webp"
+          }
+        },
+        "feature_YCqA9J": {
+          "type": "feature",
+          "settings": {
+            "feature_text": "Third-party lab tested for purity & safety",
+            "product_1_image": "shopify://shop_images/Group_1807.webp",
+            "product_2_image": "shopify://shop_images/Group_1808.webp"
+          }
+        }
+      },
+      "block_order": [
+        "feature_ALkd7M",
+        "feature_RnfVgL",
+        "feature_9GJfJm",
+        "feature_BnMN73",
+        "feature_YCqA9J"
+      ],
+      "name": "[DGF] Compare Table",
+      "settings": {
+        "title": "",
+        "title_color": "#000000",
+        "background_color": "#faeee9",
+        "header_image": "shopify://shop_images/Group_1825.webp",
+        "header_image_mobile": "shopify://shop_images/image_9.webp",
+        "header_image_alt": "",
+        "product_1_image": "shopify://shop_images/lionsmane_d4563f1d-99b1-4178-89bb-66107e506b42.png",
+        "product_1_name": "",
+        "product_2_image": "shopify://shop_images/Frame_427321078.webp",
+        "product_2_name": ""
+      }
+    },
+    "faq_e8gc3A": {
+      "type": "faq",
+      "blocks": {
+        "faq_Afpyiw": {
+          "type": "faq",
+          "settings": {
+            "title": "How long does it taker to feel the benefits of lion's mane mushroom?",
+            "content": "Everyone’s body is different, so the timeframe can vary. Some people notice subtle improvements in focus, mood, or mental clarity within the first 1–2 weeks of consistent use. For deeper benefits — such as memory support, sustained cognitive performance, and overall nervous system health — it usually takes around 4–8 weeks of daily use.\nLike most adaptogens and functional mushrooms, Lion’s Mane works best when taken consistently over time as part of your daily routine."
+          }
+        },
+        "faq_pc3RVk": {
+          "type": "faq",
+          "settings": {
+            "title": "When is the best time to take Lion’s Mane mushroom?",
+            "content": "Most people take Lion’s Mane in the morning or early afternoon to support focus, productivity, and mental clarity throughout the day. Since it’s non-stimulating, it can also be taken in the evening if your goal is relaxation, mood support, or nervous system balance."
+          }
+        },
+        "faq_wVL3PX": {
+          "type": "faq",
+          "settings": {
+            "title": "Is Lion’s Mane mushroom safe to take daily?",
+            "content": "Yes — Lion’s Mane mushroom is generally considered safe for daily, long-term use. It is non-habit forming and work best when taken consistently as part of your daily wellness routine. Always consult your healthcare provider before starting, especially if you are pregnant, nursing or taking medications."
+          }
+        },
+        "faq_cReHAw": {
+          "type": "faq",
+          "settings": {
+            "title": "What are the benefits of Lion’s Mane mushroom extract powder?",
+            "content": "Lion’s Mane mushroom extract powder may help support memory, focus, and cognitive performance, while also promoting nerve health, mood balance and digestive wellness. It is a convenient way to add the brain-boosting and wellness benefits of Lion’s Mane to your favorite drinks or recipes."
+          }
+        },
+        "faq_JNQih7": {
+          "type": "faq",
+          "settings": {
+            "title": "Do I need to consult a physician before taking Lion’s Mane mushroom?",
+            "content": "Lion’s Mane mushroom is generally considered safe for most people and has a long history of traditional use. However, as with any supplement, it’s always best to consult your healthcare provider before starting — especially if you are pregnant, nursing, have a medical condition, or are taking prescription medications. Your physician can help ensure it’s the right fit for your individual health needs."
+          }
+        }
+      },
+      "block_order": [
+        "faq_Afpyiw",
+        "faq_pc3RVk",
+        "faq_wVL3PX",
+        "faq_cReHAw",
+        "faq_JNQih7"
+      ],
+      "name": "FAQs",
+      "settings": {
+        "title": "Frequently Asked Questions"
+      }
+    },
+    "dgf_background_img_txt_hG47eF": {
+      "type": "dgf-background-img-txt",
+      "name": "[DGF] Background Image Text",
+      "settings": {
+        "heading": "The Brain Boost<br>Thousands Trust",
+        "rich_text": "<p>Unlock sharper focus, clearer memory, and long-lasting vitality with the natural power of Lion’s Mane Mushroom. <br/><br/>Join thousands who’ve made the leap toward better brain health and overall well-being.</p>",
+        "show_rating": true,
+        "rating_text": "LOVED BY THOUSANDS",
+        "button_text": "SHOP LION’S MANE",
+        "button_url": "#dgf-featured-product",
+        "button_text_color": "#ffffff",
+        "hide_button_mobile": true,
+        "main_image": "shopify://shop_images/Frame_4273210132.webp",
+        "main_image_alt": "Lion mane mushroom",
+        "left_bg_color": "#faeee9",
+        "right_bg_color": "#f3d9cf"
+      }
+    },
+    "dgf_img_text_logo_Cfwbn9": {
+      "type": "dgf-img-text-logo",
+      "name": "[DGF] Image Text Logo",
+      "settings": {
+        "title": "CONNECTING PEOPLE, PLANTS AND THE PLANET",
+        "title_color": "#ffffff",
+        "background_color": "rgba(0,0,0,0)",
+        "left_image": "shopify://shop_images/64e1b7d9d2304fc7da17b69c_1.webp",
+        "left_image_alt": "connect image",
+        "rich_text": "<p>We're proud to be a Certified B Corp™<br/><br/>This means that our company meets the highest standards of social and environmental impact, transparency, and accountability. </p>",
+        "bottom_image": "shopify://shop_images/image_13.webp",
+        "bottom_image_alt": "certified"
+      }
+    },
+    "dgf_custom_html_9QXCVA": {
+      "type": "dgf-custom-html",
+      "custom_css": [
+        "{background-color: #f3d9cf; text-align: center; padding: 3rem 2rem;}",
+        "h2,p {color: black;}"
+      ],
+      "name": "[DGF] Custom HTML",
+      "settings": {
+        "custom_html": "<div clas=\"row justify-content-center\">\n<div class=\"subscibe-save-img-text-scnd-wrapper aos-init aos-animate\">\n\n<h2>Ready to Join the Triibe?</h2>\n<br><p>Join our mailing list today and get <b>10% OFF</b> your next order!<br>\nPick your path and join our community.</p>\n</div>\n</div>\n<div class=\"klaviyo-form-TPYh9v\"></div>"
+      }
+    },
+    "tribe_difference_section_C3czqP": {
+      "type": "tribe-difference-section",
+      "blocks": {
+        "three_blocks_tHiV44": {
+          "type": "three_blocks",
+          "settings": {
+            "leaf_image": "shopify://shop_images/White_leaft_bullet.png",
+            "list_text_1": "Science-backed",
+            "list_text_2": "Superior potency",
+            "list_text_3": "Standardized extracts",
+            "list_text_4": "100% fruiting bodies",
+            "list_text_5": "Ethically sourced",
+            "list_text_6": "",
+            "list_text_7": ""
+          }
+        },
+        "three_blocks_fYhNkB": {
+          "type": "three_blocks",
+          "settings": {
+            "leaf_image": "shopify://shop_images/White_leaft_bullet.png",
+            "list_text_1": "Non-GMO verified",
+            "list_text_2": "USDA Organic certified",
+            "list_text_3": "Gluten free",
+            "list_text_4": "Allergen free",
+            "list_text_5": "3rd party tested",
+            "list_text_6": "cGMP",
+            "list_text_7": "Made in the USA"
+          }
+        },
+        "three_blocks_9RjEHk": {
+          "type": "three_blocks",
+          "settings": {
+            "leaf_image": "shopify://shop_images/White_leaft_bullet.png",
+            "list_text_1": "No synthetic fillers",
+            "list_text_2": "No excipients",
+            "list_text_3": "No harmful additives",
+            "list_text_4": "No mycellium",
+            "list_text_5": "No artificial anything",
+            "list_text_6": "",
+            "list_text_7": ""
+          }
+        }
+      },
+      "block_order": [
+        "three_blocks_tHiV44",
+        "three_blocks_fYhNkB",
+        "three_blocks_9RjEHk"
+      ],
+      "settings": {
+        "add_class": "ashwagandha-tribe-difference",
+        "section_bg_color": "#07211f",
+        "main_image": "shopify://shop_images/the_tribe_difference2.webp",
+        "image_1": "shopify://shop_images/Icon_1.webp",
+        "image_2": "shopify://shop_images/Icon_2.webp",
+        "image_3": "shopify://shop_images/image_16.webp",
+        "image_4": "shopify://shop_images/image_17.webp",
+        "image_5": "shopify://shop_images/image_18.webp"
+      }
+    },
+    "ashwagandha_pack_contact_M768hj": {
+      "type": "ashwagandha-pack-contact",
+      "custom_css": [
+        "a {color: #a7833e;}"
+      ],
+      "settings": {
+        "section_bg_color": "#07211f",
+        "the_text": "<p>Questions? Let us help you</p><p>Contact us at <a href=\"mailto:info@tribe-organics.com\" title=\"mailto:info@tribe-organics.com\">info@tribe-organics.com</a></p>"
+      }
+    },
+    "ashwagandha_pack_footer_bYnWER": {
+      "type": "ashwagandha-pack-footer",
+      "settings": {
+        "section_bg_color": "#07211f",
+        "the_logo": "shopify://shop_images/Logo_2_6ecf9d10-f051-4b4d-b753-3ffecf96bb83.png",
+        "the_icon_1": "shopify://shop_images/B_Corp.png",
+        "the_icon_2": "shopify://shop_images/1_for_the_planet.png",
+        "the_text_1": "<p><strong>*FDA Disclaimer: These statements have not been evaluated by the Food and Drug Administration. These products are not intended to diagnose, treat, cure, or prevent any disease.</strong> The information provided by this website or this company is not a substitute for a face-to-face consultation with your health practitioner, and should not be construed as individual medical advice.</p>",
+        "the_text_2": "<ul><li>Copyright 2022 TriIbe, INC. ALL RIGHTS RESERVED.</li><li><a href=\"/policies/terms-of-service\" title=\"Terms of Service\">TERMS & CONDITIONS </a></li><li><a href=\"/policies/privacy-policy\" title=\"Privacy Policy\">PRIVACY POLICY</a></li></ul>"
+      }
+    }
+  },
+  "order": [
+    "main",
+    "dgf_lp_header_YKcMaE",
+    "dgf_icon_slider_nq6TXd",
+    "dgf_img_and_text_tW8t4r",
+    "dgf_testimonial_3K9HUd",
+    "dgf_image_gallery_EWpaaR",
+    "dgf_img_and_icon_nwPw9m",
+    "dgf_img_and_accordion_PJdWgA",
+    "dgf_how_to_CYwQ9c",
+    "dgf_graph_j9XjbP",
+    "dgf_featured_product_3e6RUi",
+    "dgf_compare_table_AUeezL",
+    "faq_e8gc3A",
+    "dgf_background_img_txt_hG47eF",
+    "dgf_img_text_logo_Cfwbn9",
+    "dgf_custom_html_9QXCVA",
+    "tribe_difference_section_C3czqP",
+    "ashwagandha_pack_contact_M768hj",
+    "ashwagandha_pack_footer_bYnWER"
+  ]
+}

@@ -1,0 +1,110 @@
+<style>
+  #id-{{ section.id }}{
+  	background-color:{{ section.settings.section_bg_color }};
+  }
+</style>
+<section id="id-{{section.id}}" class="struggle-story-section">
+  <div class="struggle-story-wrapper">
+    <div class="container">
+      <div class="row struggle-story-content-row">
+        <div class="col-lg-12 col-md-12 col-sm-12">
+          {{ section.settings.stuggle_text1 }}
+          <h2 class="custom-heading-h2">
+            {{ section.settings.struggle_title }}
+          </h2>
+          {{ section.settings.stuggle_text2 }}
+        </div>
+      </div>
+      <div class="row life-cycle-image-row">
+          <h2 class="custom-heading-h2">
+            {{ section.settings.life_jacket_title }}
+          </h2>
+         <div class="life-cycle-imgs">
+           <div class="col-lg-6 col-md-6 col-sm-12">
+            {% if section.settings.left_image != blank %}<img loading="lazy"  src="{{ section.settings.left_image | img_url: 'master' }}">{% endif %}
+           </div>
+          <div class="col-lg-6 col-md-6 col-sm-12">
+            {% if section.settings.right_image != blank %}<img loading="lazy"  src="{{ section.settings.right_image | img_url: 'master' }}">{% endif %}
+          </div>
+         </div>
+         {{ section.settings.the_text }}
+      </div>
+    </div>
+  </div>
+</section>
+{% schema %}
+  {
+    "name": "Struggle Story Section",
+    "settings": [
+        {
+            "type": "header",
+            "content": "Content Style"
+        },
+	    {
+           "type": "color",
+           "id": "section_bg_color",
+           "label": "Section background color"
+        },
+        {
+          "type": "header",
+          "content": "Content-1 Settings"
+      	},
+        {
+          "type": "richtext",
+          "id": "stuggle_text1",
+          "label": "Text"
+      	},
+        {
+          "type": "text",
+          "id": "struggle_title",
+          "label": "Title"
+      	},
+        {
+          "type": "richtext",
+          "id": "stuggle_text2",
+          "label": "Text"
+      	},
+        {
+          "type": "header",
+          "content": "Content-2 Settings"
+      	},
+        {
+          "type": "text",
+          "id": "life_jacket_title",
+          "label": "Title"
+      	},
+        {
+          "type": "header",
+          "content": "Image Settings"
+      	},
+        {
+          "type": "image_picker",
+          "id": "left_image",
+          "label": "Left Image"
+      	},
+        {
+          "type": "image_picker",
+          "id": "right_image",
+          "label": "Right Image"
+      	},
+        {
+          "type": "header",
+          "content": "Content-3 Settings"
+      	},
+        {
+          "type": "richtext",
+          "id": "the_text",
+          "label": "Text"
+      	}
+    ],
+	"presets": [{
+      "name": "Struggle Story Section"
+    }]
+  }
+{% endschema %}
+
+{% stylesheet %}
+{% endstylesheet %}
+
+{% javascript %}
+{% endjavascript %}

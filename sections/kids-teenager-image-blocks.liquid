@@ -1,0 +1,58 @@
+<style>
+  #id-{{ section.id }}{
+  	background-color:{{ section.settings.section_bg_color }};
+  }
+</style>
+<section id="id-{{section.id}}" class="kids-teenager-image-blocks-section">
+  <div class="custom-kids-teenager-image-blocks-container">
+    <div class="kids-teenager-image-blocks-row">
+      <div class="kids-teenager-image-blocks-wrapper">
+        <div class="teenager-image-left" data-aos="fade-up">
+          {% if section.settings.the_image_1 != blank %}<img loading="lazy"  src="{{ section.settings.the_image_1 | img_url: 'master' }}">{% endif %}
+        </div>
+        <div class="teenager-image-right" data-aos="fade-up">
+          {% if section.settings.the_image_2 != blank %}<img loading="lazy"  src="{{ section.settings.the_image_2 | img_url: 'master' }}">{% endif %}
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+{% schema %}
+  {
+    "name": "Image Blocks",
+    "settings": [
+      {
+            "type": "header",
+            "content": "Content Style"
+      },
+  	  {
+           "type": "color",
+           "id": "section_bg_color",
+           "label": "Section background color"
+      },
+      {
+            "type": "header",
+            "content": "Image Text Content Settings"
+      },
+      {
+            "type": "image_picker",
+            "id": "the_image_1",
+            "label": "Image-1"
+      },
+      {
+            "type": "image_picker",
+            "id": "the_image_2",
+            "label": "Image-2"
+      }
+    ],
+	"presets": [{
+      "name": "Image Blocks"
+    }]
+  }
+{% endschema %}
+
+{% stylesheet %}
+{% endstylesheet %}
+
+{% javascript %}
+{% endjavascript %}

@@ -1,0 +1,66 @@
+<style>
+  #id-{{ section.id }}{
+  	background-color:{{ section.settings.section_bg_color }};
+  }
+  {% if section.settings.background_the_image != blank %}
+            #id-{{section.id}}{
+                background-image:url("{{section.settings.background_the_image | img_url: 'master'}}");
+            }
+  {% endif %}
+</style>
+<section id="id-{{section.id}}" class="kids-teenager-certified-icons-section">
+  <div class="container">
+    <div class="row">
+      {% for block in section.blocks %}
+        <div class="col-sm-12 col-md-3 col-lg-3 kids-teenager-certified-icons-columns">
+          <div class="kids-teenager-certified-icons-wrap" data-aos="fade-up">
+            {% if block.settings.the_logo != blank %}<img loading="lazy"  src="{{ block.settings.the_logo | img_url: 'master' }}">{% endif %}
+          </div>
+        </div>
+      {% endfor %}
+    </div>
+  </div>
+</section>
+{% schema %}
+  {
+    "name": "Certified Icons",
+    "settings": [
+        {
+            "type": "header",
+            "content": "Content Style"
+         },
+  	     {
+           "type": "color",
+           "id": "section_bg_color",
+           "label": "Section background color"
+        },
+        {
+          "type": "image_picker",
+          "id": "background_the_image",
+          "label": "Background-Image"
+      	}
+    ],
+	"blocks": [
+     {
+      "type": "logo",
+      "name": "Logo",
+      "settings": [
+        {
+          "type": "image_picker",
+          "id": "the_logo",
+          "label": "Logo"
+        }
+      ]
+     }
+	],
+    "presets": [{
+      "name": "Certified Icons"
+    }]
+  }
+{% endschema %}
+
+{% stylesheet %}
+{% endstylesheet %}
+
+{% javascript %}
+{% endjavascript %}

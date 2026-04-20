@@ -1,0 +1,77 @@
+<style>
+  #id-{{ section.id }}{
+  	background-color:{{ section.settings.section_bg_color }};
+  }
+</style>
+<section id="id-{{ section.id }}" class="ashwagandha-pack-benefits-section">
+  <div class="ashwagandha-pack-benefits-wrapper">
+    <div class="container">
+      <div class="row">
+        <div class="ashwagandha-pack-benefits-head common-custom-heading-wrapper">
+          <h2>{{ section.settings.title }}</h2>
+        </div>
+        <div class="ashwagandha-pack-benefits-btn-content">
+          <div class="ashwagandha-pack-benefits-blocks-wrapper">
+            {% for block in section.blocks %}
+              <div class="ashwagandha-pack-benefits-blocks">
+                <div class="ashwagandha-pack-benefits-content">
+                  {{ block.settings.the_text }}
+                </div>
+              </div>  
+            {% endfor %}
+          </div>
+          <div class="ashwagandha-pack-benefits-button">
+            <a href="{{ section.settings.the_url }}">{{ section.settings.btn_text }}</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+{% schema %}
+  {
+    "name": "Ashwagandha Pack Benefits",
+    "settings": [
+      {
+            "type": "header",
+            "content": "Content Style"
+      },
+  	  {
+           "type": "color",
+           "id": "section_bg_color",
+           "label": "Section background color"
+      },
+      {
+        "type": "textarea",
+        "id": "title",
+        "label": "Title"
+      },
+      {
+          "type": "text",
+          "id": "btn_text",
+          "label": "Button Text"
+      },
+      {
+          "type": "url",
+          "id": "the_url",
+          "label": "Button Url"
+      }
+    ],
+	"blocks": [
+     {
+      "type": "tex_blocks",
+      "name": "Text Blocks",
+      "settings": [
+        {
+          "type": "richtext",
+          "id": "the_text",
+          "label": "Text" 
+        }
+      ]
+     }
+	],
+	"presets": [{
+      "name": "Ashwagandha Pack Benefits"
+    }]
+  }
+{% endschema %}

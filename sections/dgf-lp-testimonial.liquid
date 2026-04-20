@@ -1,0 +1,448 @@
+<style>
+  #id-{{ section.id }} {
+    background-color: {{ section.settings.section_bg_color }};
+  }
+
+  .dgf-testimonial-text {
+    font-size: 17px !important;
+    font-weight: 500 !important;
+    color: #07211F !important;
+    line-height: 1.9;
+    padding: 0 3rem;
+  }
+
+  .dgf-testimonial-author p {
+    font-size: 15px !important;
+    font-weight: bold !important;
+    font-style: normal !important;
+    text-transform: capitalize !important;
+    color: #111111 !important;
+  }
+
+  .dgf-title-part1 {
+    font-family: 'Superior Title Italic';
+    font-size: 36px;
+    text-transform: none;
+    font-style: italic;
+  }
+
+  .dgf-title-part2 {
+    font-family: HypatiaSansPro;
+    font-size: 36px;
+    text-transform: uppercase;
+  }
+
+  .swiper-button-next {
+    background: url('https://cdn.shopify.com/s/files/1/0499/0425/5134/files/righty.png?v=1758148938')
+    , #AC853B !important;
+    transition: 0.3s ease;
+  }
+
+  .swiper-button-prev {
+    background: url('https://cdn.shopify.com/s/files/1/0499/0425/5134/files/lefty.png?v=1758148934')
+    , #AC853B !important;
+    transition: 0.3s ease;
+  }
+
+  .home-testimonial-slider .swiper-wrapper {
+    align-items: stretch;
+  }
+
+  .home-testimonial-slider .swiper-slide {
+    height: auto;
+  }
+
+  .testi-item {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .testimonial-item-content {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .dgf-testimonial-text {
+    margin-bottom: 0 !important;
+  }
+
+  .dgf-testimonial-author {
+    margin-top: 0.5rem !important;
+  }
+
+  #id-{{ section.id }} .testimonial-bottom-text {
+    position: {{ section.settings.author_position | default: 'absolute' }};
+  }
+
+  .dgf-testimonial-stars {
+    margin-bottom: 2rem;
+  }
+
+  .dgf-testimonial-stars .fa-star {
+    font-weight: bold !important;
+    font-size: 16px !important;
+  }
+
+  /* Card structure: top (stars+text), center (author), bottom (disclaimer) */
+  .dgf-testimonial-card {
+    justify-content: space-between;
+  }
+
+  .dgf-testimonial-top {
+    flex: 1;
+    align-items: center;
+    justify-content: center;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .dgf-testimonial-author {
+    text-align: center;
+  }
+
+  /* Disclaimer styles */
+  .dgf-testimonial-disclaimer p {
+    font-size: 14px;
+    color: #000000 !important;
+    font-style: italic;
+    line-height: 1.5;
+    margin: 0;
+    text-align: center;
+  }
+
+  .dgf-testimonial-disclaimer--inside {
+    margin-top: auto;
+    padding-top: 1rem;
+  }
+
+  /* Desktop: show inside, hide outside */
+  .dgf-testimonial-disclaimer--outside {
+    display: none;
+  }
+
+  .dgf-testimonial-disclaimer--inside {
+    display: block;
+  }
+
+
+  #id-{{ section.id }} .dgf-testimonial-pagination {
+    justify-content: center;
+    gap: 0px;
+    margin-top: 1.5rem;
+    position: relative;
+    bottom: auto;
+  }
+
+  #id-{{ section.id }} .dgf-testimonial-pagination .swiper-pagination-bullet {
+    width: 100%;
+    border-radius: 0!important;
+    background: #ccc;
+    margin: 0!important;
+    opacity: 1;
+    transition: all 0.3s ease;
+  }
+
+  #id-{{ section.id }} .dgf-testimonial-pagination .swiper-pagination-bullet-active {
+    background: #AC853B;
+  }
+
+  /* Desktop Navigation */
+  @media (min-width: 768px) {
+    #id-{{ section.id }} .homepage-custom-testimonial-button-prev,
+    #id-{{ section.id }} .homepage-custom-testimonial-button-next {
+      display: {% if section.settings.nav_type == 'arrows' %}flex{% else %}none{% endif %} !important;
+    }
+
+    #id-{{ section.id }} .dgf-testimonial-pagination {
+      display: {% if section.settings.nav_type == 'pagination' %}flex{% else %}none{% endif %};
+    }
+  }
+
+  @media (min-width: 1024px) {
+    .homepage-custom-testimonial-button-prev {
+      left: -17px !important;
+    }
+    .homepage-custom-testimonial-button-next {
+      right: -15px !important;
+    }
+  }
+
+  /* Mobile Navigation */
+  @media (max-width: 767px) {
+    #id-{{ section.id }} .homepage-custom-testimonial-button-prev,
+    #id-{{ section.id }} .homepage-custom-testimonial-button-next {
+      display: {% if section.settings.nav_type_mobile == 'arrows' %}flex{% else %}none{% endif %} !important;
+    }
+
+    #id-{{ section.id }} .dgf-testimonial-pagination {
+      display: {% if section.settings.nav_type_mobile == 'pagination' %}flex{% else %}none{% endif %};
+    }
+
+    .homepage-custom-testimonial-button-prev {
+      left: -8px !important;
+    }
+    .homepage-custom-testimonial-button-next {
+      right: -7px !important;
+    }
+
+    .dgf-title-part1 {
+      font-size: 27px;
+    }
+
+    .dgf-title-part2 {
+      font-size: 27px;
+    }
+
+    .dgf-testimonial-text {
+      font-size: 16px !important;
+    }
+
+    .testi-item .content {
+      padding: 1rem !important;
+    }
+
+    .testimonial-item-content {
+      min-height: 480px !important;
+    }
+
+    .dgf-testimonial-stars {
+      margin-bottom: 0;
+    }
+
+    .dgf-testimonial-disclaimer--outside {
+      display: block !important;
+      padding: 0.75rem 1rem 0;
+    }
+
+    .dgf-testimonial-card {
+      text-align: center;
+    }
+
+    .dgf-testimonial-disclaimer p {
+        font-size: 10px;
+    }
+
+  }
+
+</style>
+{% comment %} RGD: 2026-01-04 {% endcomment %} 
+{% comment %} 
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.0.7/css/swiper.min.css" media="all" />
+{% endcomment %} 
+<link rel="stylesheet" href="{{ 'swiper.min.css' | asset_url }}" type="text/css" media="all"/>
+<section id="id-{{section.id}}" class="section section-testi homepage-custom-testimonial-wrapper dgf-testimonial {{ section.settings.custom_class }}">
+  <div class="container">
+    <h2
+      class="text-center text-uppercase dgf-testimonial-title"
+      data-aos="fade-up"
+      data-aos-delay="000"
+      style="color: {{ section.settings.title_color }};">
+      <span class="dgf-title-part1">{{ section.settings.title_part1 }}</span>
+      <span class="dgf-title-part2">{{ section.settings.title_part2 }}</span>
+    </h2>
+    <div class="row justify-content-center">
+      <div class="col-lg-12">
+        <div
+          class="testimonial-box mt-3"
+          data-aos="fade-in"
+          data-aos-delay="400"
+          data-aos-duration="800">
+          <div class="swiper home-testimonial-slider">
+            <div class="swiper-wrapper">
+              {% for block in section.blocks %}
+                <div class="swiper-slide">
+                  <div class="testi-item testimonial-item-content dgf-testimonial-card">
+                    <div class="dgf-testimonial-top">
+                      <div class="stars dgf-testimonial-stars">
+                        {{ block.settings.stars }}
+                      </div>
+                      <div class="content dgf-testimonial-text">
+                        {{ block.settings.testimonial_text }}
+                      </div>
+                    </div>
+                    <div class="testimonial-bottom-text dgf-testimonial-author">
+                      <p>{{ block.settings.author_name }}</p>
+                    </div>
+                    {% if block.settings.disclaimer != blank %}
+                      <div class="dgf-testimonial-disclaimer dgf-testimonial-disclaimer--inside">
+                        <p>{{ block.settings.disclaimer }}</p>
+                      </div>
+                    {% endif %}
+                  </div>
+                </div>
+              {% endfor %}
+            </div>
+          <!-- If we need navigation buttons -->
+            <div class="swiper-pagination dgf-testimonial-pagination"></div>
+          </div>
+          <div class="swiper-button-prev homepage-custom-testimonial-button-prev"></div>
+          <div class="swiper-button-next homepage-custom-testimonial-button-next"></div>
+        </div>
+      </div>
+    </div>
+  {% comment %} 
+    <div class="testimonial-swiper-wrapper-pagination position-relative">
+    <div class="testimonial-swiper-scrollbar"></div>
+    </div> 
+  {% endcomment %}
+  </div>
+</section>
+{% comment %} RGD: 2026-01-04 {% endcomment %} 
+{% comment %} 
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script> 
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.5.1/js/swiper.min.js"></script> 
+{% endcomment %}
+{% # theme-check-disable ParserBlockingScript %}
+<script type="text/javascript" src="{{ 'jquery-3.5.1.min.js' | asset_url }}"></script>
+<script type="text/javascript" src="{{ 'swiper.min.js' | asset_url }}"></script>
+{% # theme-check-enable ParserBlockingScript %}
+<script>
+  new Swiper('.home-testimonial-slider', {
+        loop: false,
+        slidesPerView: 3,
+        navigation: {
+          nextEl: '.homepage-custom-testimonial-button-next',
+          prevEl: '.homepage-custom-testimonial-button-prev',
+        },
+        pagination: {
+          el: '.dgf-testimonial-pagination',
+          clickable: true,
+        },
+        spaceBetween: 20,
+        breakpoints: {
+            1920: {
+                slidesPerView: 3,
+                spaceBetween: 30
+            },
+            1028: {
+                slidesPerView: 2,
+                spaceBetween: 30
+            },
+            576: {
+                slidesPerView: 1,
+                spaceBetween: 10
+            }
+        }
+    });
+</script>
+{% schema %}
+  {
+    "name": "[DGF] LP Testimonial",
+    "tag": "section",
+    "class": "section",
+    "settings": [
+      {
+        "type": "header",
+        "content": "Content Style"
+      },
+      {
+        "type": "color",
+        "id": "section_bg_color",
+        "label": "Section background color"
+      },
+      {
+        "type": "textarea",
+        "id": "custom_class",
+        "label": "Add Class to the main section"
+      },
+      {
+        "type": "text",
+        "id": "title_part1",
+        "label": "Title Part 1",
+        "info": "First part of the title (different font style)",
+        "default": "What People"
+      }, {
+        "type": "text",
+        "id": "title_part2",
+        "label": "Title Part 2",
+        "info": "Second part of the title (different font style)",
+        "default": "Say"
+      }, {
+        "type": "color",
+        "id": "title_color",
+        "label": "Title Color",
+        "default": "#000000"
+      },
+      {
+        "type": "header",
+        "content": "Author"
+      },
+      {
+        "type": "select",
+        "id": "author_position",
+        "label": "Author Position",
+        "options": [
+          { "value": "absolute", "label": "Absolute" },
+          { "value": "relative", "label": "Relative" }
+        ],
+        "default": "absolute"
+      },
+      {
+        "type": "header",
+        "content": "Navigation"
+      },
+      {
+        "type": "select",
+        "id": "nav_type",
+        "label": "Navigation Type (Desktop)",
+        "options": [
+          { "value": "arrows", "label": "Arrows" },
+          { "value": "pagination", "label": "Pagination (Slider)" }
+        ],
+        "default": "arrows"
+      },
+      {
+        "type": "select",
+        "id": "nav_type_mobile",
+        "label": "Navigation Type (Mobile)",
+        "options": [
+          { "value": "arrows", "label": "Arrows" },
+          { "value": "pagination", "label": "Pagination (Slider)" }
+        ],
+        "default": "pagination"
+      }
+    ],
+    "blocks": [
+      {
+        "type": "testimonial",
+        "name": "Testimonial",
+        "settings": [
+          {
+            "type": "html",
+            "id": "stars",
+            "label": "Stars",
+            "info": "Add star rating HTML (e.g., ★★★★★)"
+          }, {
+            "type": "richtext",
+            "id": "testimonial_text",
+            "label": "Testimonial Text",
+            "info": "The main testimonial content"
+          }, {
+            "type": "text",
+            "id": "author_name",
+            "label": "Author Name",
+            "info": "Name of the person giving the testimonial"
+          }, {
+            "type": "textarea",
+            "id": "disclaimer",
+            "label": "Disclaimer",
+            "info": "Disclaimer text shown below the author"
+          }
+        ]
+      }
+    ],
+    "presets": [
+      {
+        "name": "[DGF] LP Testimonial"
+      }
+    ]
+  }
+{% endschema %}
+
+{% stylesheet %}
+{% endstylesheet %}
+
+{% javascript %}
+{% endjavascript %}

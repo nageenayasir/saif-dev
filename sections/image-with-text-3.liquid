@@ -1,0 +1,75 @@
+<section class="section section-crys">
+  {% if section.settings.show_icon == true %}
+    <div class="leaf-box left-top">
+        <img class="leaf lazyload" data-src="{{ 'leaf-n05.svg' | asset_url }}" alt="Decorative leaf graphic">
+    </div>
+  {% endif %}
+    <div class="container">
+        {% if section.settings.title != empty %}<h2 class="text-uppercase text-center" data-aos="fade-up" data-aos-delay="000">{{ section.settings.title }}</h2>{% endif %}
+        <div class="row align-items-center mt-5">
+            <div class="col-md-6 mt-4 mt-md-0">
+                <div style="max-width: 420px;">
+                    {{ section.settings.custom_html }}
+                    <div class="mt-4" data-aos="fade-up">
+                        <a class="btn btn-trans" href=" {{ section.settings.url }}" target="_self">
+                            {{ section.settings.button }}
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6 order-first order-md-last">
+                <div data-aos="fade-up" data-aos-delay="400">
+                    <img data-src="{{ section.settings.image | image_url : width: 800 }}" class="lazyload" alt="{{ section.settings.title }}">
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+{% schema %}
+  {
+    "name": "Image with text 3",
+    "tag": "section",
+    "class": "section",
+    "settings": [ 
+      {
+          "type": "checkbox",
+          "id": "show_icon",
+          "label": "Show Icon",
+          "default": true
+      },
+      {
+        "type": "text",
+        "id": "title",
+        "label": "Title",
+        "default" : "Crystal Clear Vision"
+      },
+      {
+        "type": "html",
+        "id": "custom_html",
+        "label": "Custom Html"
+      },
+      {
+        "type": "text",
+        "id": "button",
+        "label": "Button",
+        "default" : "there’s more..."
+      },
+      {
+        "type": "url",
+        "id": "url",
+        "label": "Url"
+      },
+      {
+        "type": "image_picker",
+        "id": "image",
+        "label": "Image"
+      }
+	],
+     "presets": [
+    {
+      "name": "Image with text 3"
+    }
+  ]
+  }
+{% endschema %}

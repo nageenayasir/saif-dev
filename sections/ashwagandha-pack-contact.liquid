@@ -1,0 +1,42 @@
+<style>
+  #id-{{ section.id }}{
+  	background-color:{{ section.settings.section_bg_color }};
+  }
+</style>
+<section id="id-{{ section.id }}" class="ashwagandha-pack-contact-section">
+  <div class="ashwagandha-pack-contact-wrapper">
+    <div class="container">
+      <div class="row">
+        <div class="col-sm-12 col-md-12 col-lg-12">
+          <div class="ashwagandha-pack-contact-info">
+            {{ section.settings.the_text }}
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+{% schema %}
+  {
+    "name": "Ashwagandha Pack Contact",
+    "settings": [
+      {
+            "type": "header",
+            "content": "Content Style"
+      },
+  	  {
+           "type": "color",
+           "id": "section_bg_color",
+           "label": "Section background color"
+      },
+      {
+        "type": "richtext",
+        "id": "the_text",
+        "label": "Text"
+      }
+    ],
+	"presets": [{
+      "name": "Ashwagandha Pack Contact"
+    }]
+  }
+{% endschema %}

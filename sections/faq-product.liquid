@@ -1,0 +1,51 @@
+{% if product.metafields.custom.title_faqs.value %}
+<section class="section section-faqs">
+<!--     <div class="leaf-box right-bot d-none d-md-block" style="bottom: 10px;">
+        <img loading="lazy"  class="leaf" src="{{ 'leaf-n06.svg' | asset_url }}">
+    </div> -->
+    <div class="container">
+        <h2 class="text-uppercase text-center" data-aos="fade-up">{{ section.settings.title }}</h2>
+        <div class="menu-footer-group">
+          {% assign titles = product.metafields.custom.title_faqs.value  %}
+          {% assign contents =  product.metafields.custom.content_faqs.value  %}
+          {% for title in titles %}
+            <div class="menu-footer menu-page {% if forloop.index == 1 %}active{% endif %}" data-aos="fade-up">
+                <h2>{{ title | escape }}<img loading="lazy"  class="d-none d-md-block float-end mt-1" src="{{ '__down.svg' | asset_url }}"></h2>
+                <div class="menu-s" {% if forloop.index != 1 %}style="display: none"{% endif %}>
+                    {{ contents[forloop.index0] }}
+                </div>
+            </div>
+          {% endfor %}  
+        </div>
+        {% if product.metafields.custom.button_under_faq !=blank %}
+          <div class="row">
+            <div class="col-lg-12 col-md-12 col-sm-12">
+              <div class="faq-btn-wrap">
+                <a href="#move-faq-button-top">{{ product.metafields.custom.button_under_faq }}</a>
+              </div>
+            </div>
+          </div>
+        {% endif %}
+    </div>
+</section>
+{% endif %}
+{% schema %}
+  {
+    "name": "FAQs",
+    "tag": "section",
+    "class": "section",
+    "settings": [
+        {
+          "type": "text",
+          "id": "title",
+          "label": "Title",
+		  "default" : "Frequently Asked Questions"
+        }
+       
+	],
+	"presets": [{
+      "name": "Product Faqs"
+    }]
+  
+  }
+{% endschema %}

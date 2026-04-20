@@ -1,0 +1,85 @@
+<style>
+  #id-{{ section.id }}{
+  	background-color:{{ section.settings.section_bg_color }};
+  }
+</style>
+<section id="id-{{section.id}}" class="guarantee-satisfy-section reason-guarantee-satisfy-section">
+  <div class="guarantee-satisfy-wrapper">
+    <div class="container">
+      <div class="row guarantee-reviews-row" data-aos="fade-up">
+        {% for block in section.blocks %}
+          <div class="col-lg-4 col-md-4 col-sm-12 guarantee-reviews-blocks">
+            <div class="guarantee-reviews-img">
+              {% if block.settings.the_image != blank %}<img loading="lazy"  src="{{ block.settings.the_image | img_url: 'master' }}">{% endif %}
+              <div class="testimonial-content-wrap">
+                <span class="testimonial-rating">
+                  <i class="fa fa-star" aria-hidden="true"></i>
+                  <i class="fa fa-star" aria-hidden="true"></i>
+                  <i class="fa fa-star" aria-hidden="true"></i>
+                  <i class="fa fa-star" aria-hidden="true"></i>
+                  <i class="fa fa-star" aria-hidden="true"></i>
+                </span>
+                <p>{{ block.settings.rating_text }}</p>
+                <h4>{{ block.settings.author_name }}</h4>
+              </div>
+            </div>
+          </div>
+        {% endfor %}
+      </div>
+    </div>
+  </div>
+</section>
+{% schema %}
+  {
+    "name": "Reason Image Text",
+    "settings": [
+        {
+            "type": "header",
+            "content": "Content Style"
+        },
+	    {
+           "type": "color",
+           "id": "section_bg_color",
+           "label": "Section background color"
+        }
+    ],
+	"blocks": [
+        {
+          "type": "reviews_section",
+          "name": "Reviews Section",
+          "settings": [
+    		{
+              "type": "header",
+              "content": "Testimonial Content Settings"
+            },
+            {
+              "type": "image_picker",
+              "id": "the_image",
+              "label": "Image"
+          	},
+            {
+              "type": "text",
+              "id": "rating_text",
+              "label": "Rating Text"
+            },
+            {
+              "type": "text",
+              "id": "author_name",
+              "label": "Author Name"
+            }
+
+        ]
+      }
+	
+	],
+    "presets": [{
+      "name": "Reason Image Text"
+    }]
+  }
+{% endschema %}
+
+{% stylesheet %}
+{% endstylesheet %}
+
+{% javascript %}
+{% endjavascript %}

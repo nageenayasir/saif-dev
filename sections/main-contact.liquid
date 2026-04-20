@@ -1,0 +1,92 @@
+<section class="section-banner section-title section-form bg-line-02 contact-page-wrapper">
+     <div class="leaf-box right-top">
+        <img loading="lazy"  class="leaf" src="{{ 'leaf-n02.svg' | asset_url }}">
+    </div>
+    <div class="content">
+        <div class="container">
+            <h1 class="text-uppercase" data-aos="fade-up">{{ section.settings.title }}</h1>
+            <div class="subtitle form-big" data-aos="fade-up" data-aos-delay="200">
+                {{ section.settings.content }}
+            </div>
+             {% form 'contact',id: 'ContactForm',class : 'form form-big pb-3 mt-5' %} 
+               {%- if form.posted_successfully? -%}
+                    <h2>{{ 'templates.contact.form.post_success' | t }}</h2>
+                  {%- elsif form.errors -%}
+                    <h2>{{ 'templates.contact.form.error_heading' | t }}</h2>
+                    <ul>
+                      <li>
+                        <a href="#ContactForm-email" class="link">
+                          {{ form.errors.translated_fields['email'] | capitalize }} {{ form.errors.messages['email'] }}
+                        </a>
+                      </li>
+                    </ul>
+                {%- endif -%}
+                <div class="form-group mb-4" data-aos="fade-up">
+                    <div class="row">
+                        <div class="col-md-6 mb-4 mb-md-0">
+                             <input class="form-default" autocomplete="name" type="text" id="ContactForm-name" name="contact[{{ 'templates.contact.form.name' | t }}]" value="{% if form.name %}{{ form.name }}{% elsif customer %}{{ customer.name }}{% endif %}" placeholder="{{ 'templates.contact.form.name' | t }}" required>
+                        </div>
+                        <div class="col-md-6">
+                            <input class="form-default" autocomplete="email" type="email" id="ContactForm-email" name="contact[email]" value="{% if form.email %}{{ form.email }}{% elsif customer %}{{ customer.email }}{% endif %}" placeholder="{{ 'templates.contact.form.email' | t }}" required>
+                        </div>
+                    </div>
+                </div>
+                <div class="form-group mb-4" data-aos="fade-up">
+                    <textarea  class="form-default" style="height:130px;" id="ContactForm-body"  name="contact[{{ 'templates.contact.form.comment' | t }}]" placeholder="{{ 'templates.contact.form.comment' | t }}">{{- form.body -}}</textarea>
+                </div>
+                <div class="form-group mb-4 last d-flex" data-aos="fade-up">
+                    <button type="submit" class="btn btn-bg me-3"> {{ 'templates.contact.form.send' | t }}</button>
+                </div>
+            {% endform %}
+            <div class="box-2 bg-cream form-big mx-auto mt-5 py-4 px-5 color-dark text-start" style="border-radius: 0 20px;">
+                <div class="row">
+                  {% for block in section.blocks %}
+                    <div class="col-md-4">
+                        <h5 class="mb-2">{{ block.settings.title }}</h5>
+                       {{ block.settings.content }}
+                    </div>
+                  {% endfor %} 
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+{% schema %}
+  {
+    "name": "Section Contact",
+    "settings": [
+       {
+          "type": "text",
+          "id": "title",
+          "label": "Title",
+		  "default" : "Contact Us"
+        },
+        {
+          "type": "textarea",
+          "id": "content",
+          "label": "Content",
+		  "default" : "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor Lorem ipsum dolor sit amet."
+        }
+    ],
+    "blocks": [
+     {
+      "type": "content",
+      "name": "Content",
+      "settings": [
+    	 {
+          "type": "text",
+          "id": "title",
+          "label": "Title",
+		  "default" : "Title"
+        },
+        {
+          "type": "html",
+          "id": "content",
+          "label": "Content"
+        }
+      ]
+     }
+	]
+  }
+{% endschema %}

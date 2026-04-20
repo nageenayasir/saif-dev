@@ -1,0 +1,1079 @@
+{% comment %}
+  [DGF] Image Gallery
+  Author: Rodrigo Gesser
+  Date: 2025-09-17
+{% endcomment %}
+
+{% liquid
+  assign bg_color = section.settings.background_color | default: '#ffffff'
+  assign total_images = section.blocks.size
+  assign columns_per_row = section.settings.columns_per_row | default: 4
+  assign columns_per_row_mobile = section.settings.columns_per_row_mobile | default: 2
+  assign desktop_limit = columns_per_row | times: 2
+  assign mobile_limit = columns_per_row_mobile | times: 2
+  assign show_all_images = section.settings.show_all_images
+  assign title_font = section.settings.title_font | default: 'HypatiaSansPro'
+  assign title_font_size = section.settings.title_font_size | default: 36
+  assign title_font_size_mobile = section.settings.title_font_size_mobile | default: 28
+  assign title_font_weight = section.settings.title_font_weight | default: '700'
+  assign title_transform = section.settings.title_transform | default: 'none'
+  assign title_margin_bottom = section.settings.title_margin_bottom | default: 0
+  assign title_color = section.settings.title_color | default: '#333333'
+  assign subtitle_font = section.settings.subtitle_font | default: "'Superior Title Italic'"
+  assign subtitle_font_size = section.settings.subtitle_font_size | default: 22
+  assign subtitle_font_size_mobile = section.settings.subtitle_font_size_mobile | default: 17
+  assign subtitle_font_weight = section.settings.subtitle_font_weight | default: '600'
+  assign subtitle_transform = section.settings.subtitle_transform | default: 'none'
+  assign subtitle_color = section.settings.subtitle_color | default: '#333333'
+  assign image_aspect_ratio = section.settings.image_aspect_ratio | default: '9/16'
+  assign sid = section.id
+%}
+
+<section class="dgf-image-gallery-section" style="background-color: {{ bg_color }};" id="dgf-gallery-{{ section.id }}" data-section-id="{{ section.id }}">
+  <div class="container">
+
+    {% if section.settings.title != blank or section.settings.subtitle != blank %}
+      <div class="dgf-gallery-header">
+        {% if section.settings.title != blank %}
+          <h2 class="dgf-gallery-title">{{ section.settings.title }}</h2>
+        {% endif %}
+        {% if section.settings.subtitle != blank %}
+          <div class="dgf-gallery-subtitle">{{ section.settings.subtitle }}</div>
+        {% endif %}
+      </div>
+    {% endif %}
+
+    {% if section.blocks.size > 0 %}
+      <div class="dgf-image-gallery-grid{% if show_all_images %} dgf-show-all{% endif %}"
+           data-total-images="{{ total_images }}"
+           data-desktop-limit="{{ desktop_limit }}"
+           data-mobile-limit="{{ mobile_limit }}"
+           data-show-all="{{ show_all_images }}"
+           data-rotation-speed="{{ section.settings.rotation_speed | default: 4 }}"
+           data-rotation-mode="{{ section.settings.rotation_mode | default: 'single' }}"
+           data-cascade-delay="{{ section.settings.cascade_delay | default: 150 }}"
+           data-transition-effect="{{ section.settings.transition_effect | default: 'fade-zoom' }}">
+        {% for block in section.blocks %}
+          {% if block.settings.image != blank %}
+            {% assign index = forloop.index0 %}
+            {% assign is_desktop_visible = false %}
+            {% assign is_mobile_visible = false %}
+
+            {% if index < desktop_limit %}
+              {% assign is_desktop_visible = true %}
+            {% endif %}
+
+            {% if index < mobile_limit and block.settings.show_on_mobile %}
+              {% assign is_mobile_visible = true %}
+            {% endif %}
+
+            <div class="dgf-gallery-item"
+                 data-index="{{ index }}"
+                 data-desktop-slot="{{ index | modulo: desktop_limit }}"
+                 data-mobile-slot="{{ index | modulo: mobile_limit }}"
+                 data-show-mobile="{{ block.settings.show_on_mobile }}"
+                 {% if is_desktop_visible %}data-desktop-visible="true"{% endif %}
+                 {% if is_mobile_visible %}data-mobile-visible="true"{% endif %}
+                 class="{% unless is_desktop_visible %}dgf-hidden-desktop{% endunless %} {% unless is_mobile_visible %}dgf-hidden-mobile{% endunless %}"
+                 {{ block.shopify_attributes }}>
+              <div class="dgf-gallery-image-wrapper">
+                <img
+                  src="{{ block.settings.image | img_url: '800x800' }}"
+                  alt="{{ block.settings.alt_text | default: section.settings.title }}"
+                  class="dgf-gallery-image"
+                  loading="lazy"
+                >
+              </div>
+            </div>
+          {% endif %}
+        {% endfor %}
+      </div>
+    {% else %}
+      <div class="dgf-gallery-placeholder">
+        <p>Add images to display the gallery.</p>
+      </div>
+    {% endif %}
+
+  </div>
+</section>
+
+<style>
+  #dgf-gallery-{{ sid }} {
+    padding: 4rem 0;
+  }
+
+  #dgf-gallery-{{ sid }} .dgf-gallery-header {
+    text-align: center;
+    margin-bottom: 3rem;
+  }
+
+  /* Title font controls */
+  #dgf-gallery-{{ sid }} .dgf-gallery-title,
+  #dgf-gallery-{{ sid }} .dgf-gallery-title h1,
+  #dgf-gallery-{{ sid }} .dgf-gallery-title h2,
+  #dgf-gallery-{{ sid }} .dgf-gallery-title h3,
+  #dgf-gallery-{{ sid }} .dgf-gallery-title h4,
+  #dgf-gallery-{{ sid }} .dgf-gallery-title h5,
+  #dgf-gallery-{{ sid }} .dgf-gallery-title h6,
+  #dgf-gallery-{{ sid }} .dgf-gallery-title p,
+  #dgf-gallery-{{ sid }} .dgf-gallery-title span,
+  #dgf-gallery-{{ sid }} .dgf-gallery-title strong,
+  #dgf-gallery-{{ sid }} .dgf-gallery-title em,
+  #dgf-gallery-{{ sid }} .dgf-gallery-title i,
+  #dgf-gallery-{{ sid }} .dgf-gallery-title u,
+  #dgf-gallery-{{ sid }} .dgf-gallery-title a {
+    font-family: {{ title_font }} !important;
+    font-size: {{ title_font_size }}px !important;
+    font-weight: {{ title_font_weight }} !important;
+    text-transform: {{ title_transform }} !important;
+    color: {{ title_color }} !important;
+    line-height: 1.2 !important;
+    margin: 0;
+    margin-bottom: {{ title_margin_bottom }}px !important;
+  }
+
+  /* Subtitle font controls */
+  #dgf-gallery-{{ sid }} .dgf-gallery-subtitle,
+  #dgf-gallery-{{ sid }} .dgf-gallery-subtitle h1,
+  #dgf-gallery-{{ sid }} .dgf-gallery-subtitle h2,
+  #dgf-gallery-{{ sid }} .dgf-gallery-subtitle h3,
+  #dgf-gallery-{{ sid }} .dgf-gallery-subtitle h4,
+  #dgf-gallery-{{ sid }} .dgf-gallery-subtitle h5,
+  #dgf-gallery-{{ sid }} .dgf-gallery-subtitle h6,
+  #dgf-gallery-{{ sid }} .dgf-gallery-subtitle p,
+  #dgf-gallery-{{ sid }} .dgf-gallery-subtitle span,
+  #dgf-gallery-{{ sid }} .dgf-gallery-subtitle strong,
+  #dgf-gallery-{{ sid }} .dgf-gallery-subtitle em,
+  #dgf-gallery-{{ sid }} .dgf-gallery-subtitle i,
+  #dgf-gallery-{{ sid }} .dgf-gallery-subtitle u,
+  #dgf-gallery-{{ sid }} .dgf-gallery-subtitle a {
+    font-family: {{ subtitle_font }} !important;
+    font-size: {{ subtitle_font_size }}px !important;
+    font-weight: {{ subtitle_font_weight }} !important;
+    text-transform: {{ subtitle_transform }} !important;
+    color: {{ subtitle_color }} !important;
+    line-height: 1.4 !important;
+    margin: 0;
+  }
+
+  #dgf-gallery-{{ sid }} .dgf-image-gallery-grid {
+    display: grid;
+    gap: 0.2rem;
+    grid-template-columns: repeat({{ columns_per_row }}, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+    position: relative;
+  }
+
+  /* Show all images mode */
+  #dgf-gallery-{{ sid }} .dgf-image-gallery-grid.dgf-show-all {
+    grid-template-rows: auto;
+  }
+
+  #dgf-gallery-{{ sid }} .dgf-image-gallery-grid.dgf-show-all .dgf-gallery-item {
+    display: block !important;
+  }
+
+  #dgf-gallery-{{ sid }} .dgf-gallery-item {
+    position: relative;
+    overflow: hidden;
+    opacity: 1;
+  }
+
+  #dgf-gallery-{{ sid }} .dgf-gallery-item.dgf-hidden-desktop {
+    display: none;
+  }
+
+  #dgf-gallery-{{ sid }} .dgf-gallery-item.transitioning {
+    position: absolute;
+    width: calc((100% - ({{ columns_per_row | minus: 1 }} * 0.2rem)) / {{ columns_per_row }});
+    height: 100%;
+  }
+
+  /* === FADE EFFECT === */
+  [data-transition-effect="fade"] .dgf-gallery-item {
+    transition: opacity 0.8s ease-in-out;
+  }
+
+  [data-transition-effect="fade"] .dgf-gallery-item.fading-out {
+    opacity: 0;
+  }
+
+  [data-transition-effect="fade"] .dgf-gallery-item.fading-in {
+    opacity: 1;
+  }
+
+  /* === FADE + ZOOM EFFECT === */
+  [data-transition-effect="fade-zoom"] .dgf-gallery-item {
+    transition: opacity 0.8s ease-in-out, transform 0.8s ease-in-out;
+  }
+
+  [data-transition-effect="fade-zoom"] .dgf-gallery-item.fading-out {
+    opacity: 0;
+    transform: scale(0.9);
+  }
+
+  [data-transition-effect="fade-zoom"] .dgf-gallery-item.fading-in {
+    opacity: 1;
+    transform: scale(1);
+  }
+
+  /* === SLIDE EFFECT === */
+  [data-transition-effect="slide"] .dgf-gallery-item {
+    transition: opacity 0.8s ease-in-out, transform 0.8s ease-in-out;
+  }
+
+  [data-transition-effect="slide"] .dgf-gallery-item.fading-out {
+    opacity: 0;
+    transform: translateX(-30px);
+  }
+
+  [data-transition-effect="slide"] .dgf-gallery-item.fading-in {
+    opacity: 1;
+    transform: translateX(0);
+  }
+
+  /* === FLIP 3D EFFECT === */
+  [data-transition-effect="flip"] .dgf-gallery-item {
+    transition: opacity 0.8s ease-in-out, transform 0.8s ease-in-out;
+    transform-style: preserve-3d;
+  }
+
+  [data-transition-effect="flip"] .dgf-gallery-item.fading-out {
+    opacity: 0;
+    transform: rotateY(90deg);
+  }
+
+  [data-transition-effect="flip"] .dgf-gallery-item.fading-in {
+    opacity: 1;
+    transform: rotateY(0deg);
+  }
+
+  /* === BLUR FADE EFFECT === */
+  [data-transition-effect="blur-fade"] .dgf-gallery-item {
+    transition: opacity 0.8s ease-in-out, filter 0.8s ease-in-out;
+  }
+
+  [data-transition-effect="blur-fade"] .dgf-gallery-item.fading-out {
+    opacity: 0;
+    filter: blur(10px);
+  }
+
+  [data-transition-effect="blur-fade"] .dgf-gallery-item.fading-in {
+    opacity: 1;
+    filter: blur(0);
+  }
+
+  #dgf-gallery-{{ sid }} .dgf-gallery-image-wrapper {
+    overflow: hidden;
+    background: #f5f5f5;
+    width: 100%;
+    height: 350px;
+    aspect-ratio: {{ image_aspect_ratio }};
+  }
+
+  #dgf-gallery-{{ sid }} .dgf-gallery-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    transition: transform 0.3s ease;
+  }
+
+  #dgf-gallery-{{ sid }} .dgf-gallery-item:hover .dgf-gallery-image {
+    transform: scale(1.05);
+  }
+
+  #dgf-gallery-{{ sid }} .dgf-gallery-placeholder {
+    text-align: center;
+    padding: 4rem 2rem;
+    color: #666;
+    font-size: 18px;
+  }
+
+  /* Mobile optimizations */
+  @media (max-width: 768px) {
+    #dgf-gallery-{{ sid }} {
+      padding: 0;
+      overflow-x: hidden;
+    }
+
+    #dgf-gallery-{{ sid }} .dgf-gallery-header {
+      padding: 1rem;
+      margin-bottom: 0;
+    }
+
+    #dgf-gallery-{{ sid }} .dgf-gallery-image-wrapper {
+      height: 200px;
+    }
+
+    /* Title mobile font size */
+    #dgf-gallery-{{ sid }} .dgf-gallery-title,
+    #dgf-gallery-{{ sid }} .dgf-gallery-title h1,
+    #dgf-gallery-{{ sid }} .dgf-gallery-title h2,
+    #dgf-gallery-{{ sid }} .dgf-gallery-title h3,
+    #dgf-gallery-{{ sid }} .dgf-gallery-title h4,
+    #dgf-gallery-{{ sid }} .dgf-gallery-title h5,
+    #dgf-gallery-{{ sid }} .dgf-gallery-title h6,
+    #dgf-gallery-{{ sid }} .dgf-gallery-title p,
+    #dgf-gallery-{{ sid }} .dgf-gallery-title span,
+    #dgf-gallery-{{ sid }} .dgf-gallery-title strong,
+    #dgf-gallery-{{ sid }} .dgf-gallery-title em,
+    #dgf-gallery-{{ sid }} .dgf-gallery-title i,
+    #dgf-gallery-{{ sid }} .dgf-gallery-title u,
+    #dgf-gallery-{{ sid }} .dgf-gallery-title a {
+      font-size: {{ title_font_size_mobile }}px !important;
+    }
+
+    /* Subtitle mobile font size */
+    #dgf-gallery-{{ sid }} .dgf-gallery-subtitle,
+    #dgf-gallery-{{ sid }} .dgf-gallery-subtitle h1,
+    #dgf-gallery-{{ sid }} .dgf-gallery-subtitle h2,
+    #dgf-gallery-{{ sid }} .dgf-gallery-subtitle h3,
+    #dgf-gallery-{{ sid }} .dgf-gallery-subtitle h4,
+    #dgf-gallery-{{ sid }} .dgf-gallery-subtitle h5,
+    #dgf-gallery-{{ sid }} .dgf-gallery-subtitle h6,
+    #dgf-gallery-{{ sid }} .dgf-gallery-subtitle p,
+    #dgf-gallery-{{ sid }} .dgf-gallery-subtitle span,
+    #dgf-gallery-{{ sid }} .dgf-gallery-subtitle strong,
+    #dgf-gallery-{{ sid }} .dgf-gallery-subtitle em,
+    #dgf-gallery-{{ sid }} .dgf-gallery-subtitle i,
+    #dgf-gallery-{{ sid }} .dgf-gallery-subtitle u,
+    #dgf-gallery-{{ sid }} .dgf-gallery-subtitle a {
+      font-size: {{ subtitle_font_size_mobile }}px !important;
+    }
+
+    #dgf-gallery-{{ sid }} > .container {
+      padding: 0;
+      margin: 0;
+      max-width: none;
+      width: 100%;
+    }
+
+    #dgf-gallery-{{ sid }} .dgf-image-gallery-grid {
+      grid-template-columns: repeat({{ columns_per_row_mobile }}, 1fr);
+      grid-template-rows: repeat(2, 1fr);
+      gap: 0.1rem;
+      width: 100vw;
+      margin-left: calc(-50vw + 50%);
+      margin-right: calc(-50vw + 50%);
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    #dgf-gallery-{{ sid }} .dgf-image-gallery-grid.dgf-show-all {
+      grid-template-columns: repeat({{ columns_per_row_mobile }}, 1fr);
+      grid-template-rows: auto;
+    }
+
+    #dgf-gallery-{{ sid }} .dgf-gallery-item.transitioning {
+      width: calc((100vw - ({{ columns_per_row_mobile | minus: 1 }} * 0.1rem)) / {{ columns_per_row_mobile }});
+    }
+
+    #dgf-gallery-{{ sid }} .dgf-gallery-item.dgf-hidden-desktop {
+      display: block;
+    }
+
+    #dgf-gallery-{{ sid }} .dgf-gallery-item.dgf-hidden-mobile {
+      display: none;
+    }
+
+    #dgf-gallery-{{ sid }} .dgf-image-gallery-grid.dgf-show-all .dgf-gallery-item {
+      display: block !important;
+    }
+  }
+</style>
+
+<script>
+(function() {
+  // Prevent multiple initializations
+  if (window.dgfImageGalleryInitialized) return;
+  window.dgfImageGalleryInitialized = true;
+
+  const FADE_DURATION = 800; // Must match CSS transition duration
+
+  class ImageGalleryRotator {
+    constructor(sectionId) {
+      try {
+        this.sectionId = sectionId;
+        this.section = document.querySelector(`[data-section-id="${sectionId}"]`);
+        if (!this.section) return;
+
+        this.grid = this.section.querySelector('.dgf-image-gallery-grid');
+        if (!this.grid) return;
+
+        this.desktopLimit = parseInt(this.grid.dataset.desktopLimit) || 8;
+        this.mobileLimit = parseInt(this.grid.dataset.mobileLimit) || 4;
+        this.totalImages = parseInt(this.grid.dataset.totalImages) || 0;
+        this.rotationSpeed = (parseInt(this.grid.dataset.rotationSpeed) || 4) * 1000;
+        this.rotationMode = this.grid.dataset.rotationMode || 'single';
+        this.cascadeDelay = parseInt(this.grid.dataset.cascadeDelay) || 150;
+
+        this.showAll = this.grid.dataset.showAll === 'true';
+        this.allItems = Array.from(this.grid.querySelectorAll('.dgf-gallery-item'));
+        this.isMobile = window.innerWidth < 768;
+        this.rotationTimer = null;
+
+        this.init();
+      } catch (error) {
+        // Silent fail
+        return;
+      }
+    }
+
+    init() {
+      try {
+        // If show all is enabled, show everything and skip rotation
+        if (this.showAll) {
+          this.allItems.forEach(item => {
+            item.style.display = '';
+            item.classList.remove('dgf-hidden-desktop', 'dgf-hidden-mobile');
+          });
+          return;
+        }
+
+        // Set initial visibility based on device
+        this.resetVisibility();
+
+        if (this.shouldRotate()) {
+          this.startRotation();
+        }
+
+        // Handle resize
+        window.addEventListener('resize', () => {
+          try {
+            const wasMobile = this.isMobile;
+            this.isMobile = window.innerWidth < 768;
+
+            if (wasMobile !== this.isMobile) {
+              this.resetVisibility();
+              this.stopRotation();
+              if (this.shouldRotate()) {
+                this.startRotation();
+              }
+            }
+          } catch (error) {
+            // Silent fail
+          }
+        });
+      } catch (error) {
+        // Silent fail
+      }
+    }
+
+    shouldRotate() {
+      try {
+        const limit = this.isMobile ? this.mobileLimit : this.desktopLimit;
+        const eligibleImages = this.isMobile
+          ? this.allItems.filter(item => item.dataset.showMobile === 'true')
+          : this.allItems;
+
+        return eligibleImages.length > limit;
+      } catch (error) {
+        // Silent fail
+        return false;
+      }
+    }
+
+    resetVisibility() {
+      try {
+        const limit = this.isMobile ? this.mobileLimit : this.desktopLimit;
+
+        if (this.isMobile) {
+          // Mobile: count only eligible items (show_on_mobile = true)
+          const eligibleItems = this.allItems.filter(item => item.dataset.showMobile === 'true');
+          let visibleCount = 0;
+
+          this.allItems.forEach((item) => {
+            const showOnMobile = item.dataset.showMobile === 'true';
+            const isEligible = showOnMobile && visibleCount < limit;
+
+            if (isEligible) {
+              item.style.display = '';
+              item.style.position = '';
+              item.style.opacity = '';
+              item.classList.remove('fading-out', 'dgf-hidden-desktop', 'dgf-hidden-mobile', 'transitioning');
+              item.classList.add('fading-in');
+              visibleCount++;
+            } else {
+              item.style.display = 'none';
+              item.style.position = '';
+              item.style.opacity = '';
+              item.classList.remove('fading-out', 'fading-in', 'transitioning');
+            }
+          });
+        } else {
+          // Desktop: show first desktopLimit items
+          this.allItems.forEach((item, index) => {
+            if (index < limit) {
+              item.style.display = '';
+              item.style.position = '';
+              item.style.opacity = '';
+              item.classList.remove('fading-out', 'dgf-hidden-desktop', 'dgf-hidden-mobile', 'transitioning');
+              item.classList.add('fading-in');
+            } else {
+              item.style.display = 'none';
+              item.style.position = '';
+              item.style.opacity = '';
+              item.classList.remove('fading-out', 'fading-in', 'transitioning');
+            }
+          });
+        }
+      } catch (error) {
+        // Silent fail
+      }
+    }
+
+    startRotation() {
+      try {
+        this.rotationTimer = setInterval(() => {
+          try {
+            if (this.rotationMode === 'multiple') {
+              this.rotateMultipleImages();
+            } else {
+              this.rotateRandomImage();
+            }
+          } catch (error) {
+            // Silent fail
+          }
+        }, this.rotationSpeed);
+      } catch (error) {
+        // Silent fail
+      }
+    }
+
+    stopRotation() {
+      try {
+        if (this.rotationTimer) {
+          clearInterval(this.rotationTimer);
+          this.rotationTimer = null;
+        }
+      } catch (error) {
+        // Silent fail
+      }
+    }
+
+    rotateRandomImage() {
+      try {
+        const limit = this.isMobile ? this.mobileLimit : this.desktopLimit;
+
+        // Get visible and hidden items
+        const visibleItems = this.allItems.filter(item => {
+          if (this.isMobile) {
+            return item.style.display !== 'none' && item.dataset.showMobile === 'true';
+          }
+          return item.style.display !== 'none';
+        });
+
+        const hiddenItems = this.allItems.filter(item => {
+          if (this.isMobile) {
+            return item.style.display === 'none' && item.dataset.showMobile === 'true';
+          }
+          return item.style.display === 'none';
+        });
+
+        if (visibleItems.length === 0 || hiddenItems.length === 0) return;
+
+        // Pick random visible and hidden items
+        const randomVisibleIndex = Math.floor(Math.random() * visibleItems.length);
+        const randomHiddenIndex = Math.floor(Math.random() * hiddenItems.length);
+
+        const itemToHide = visibleItems[randomVisibleIndex];
+        const itemToShow = hiddenItems[randomHiddenIndex];
+
+        // Use the shared swap method
+        this.swapImages(itemToHide, itemToShow);
+      } catch (error) {
+        // Silent fail
+      }
+    }
+
+    rotateMultipleImages() {
+      try {
+        const limit = this.isMobile ? this.mobileLimit : this.desktopLimit;
+
+        // Get visible and hidden items
+        const visibleItems = this.allItems.filter(item => {
+          if (this.isMobile) {
+            return item.style.display !== 'none' && item.dataset.showMobile === 'true';
+          }
+          return item.style.display !== 'none';
+        });
+
+        const hiddenItems = this.allItems.filter(item => {
+          if (this.isMobile) {
+            return item.style.display === 'none' && item.dataset.showMobile === 'true';
+          }
+          return item.style.display === 'none';
+        });
+
+        if (visibleItems.length === 0 || hiddenItems.length === 0) return;
+
+        // Calculate how many images to rotate (limited by grid size)
+        // Maximum rotation is the grid limit (8 desktop, 4 mobile)
+        const numToRotate = Math.min(visibleItems.length, hiddenItems.length, limit);
+
+        // Shuffle and pick items
+        const shuffledVisible = this.shuffleArray([...visibleItems]).slice(0, numToRotate);
+        const shuffledHidden = this.shuffleArray([...hiddenItems]).slice(0, numToRotate);
+
+        // Rotate each pair with cascade delay
+        shuffledVisible.forEach((itemToHide, index) => {
+          const itemToShow = shuffledHidden[index];
+          const delay = index * this.cascadeDelay;
+
+          setTimeout(() => {
+            try {
+              this.swapImages(itemToHide, itemToShow);
+            } catch (error) {
+              // Silent fail
+            }
+          }, delay);
+        });
+      } catch (error) {
+        // Silent fail
+      }
+    }
+
+    shuffleArray(array) {
+      try {
+        const shuffled = [...array];
+        for (let i = shuffled.length - 1; i > 0; i--) {
+          const j = Math.floor(Math.random() * (i + 1));
+          [shuffled[i], shuffled[j]] = [shuffled[j], shuffled[i]];
+        }
+        return shuffled;
+      } catch (error) {
+        // Silent fail - return original array
+        return array;
+      }
+    }
+
+    swapImages(itemToHide, itemToShow) {
+      try {
+        // Get position info BEFORE any DOM changes
+        const rect = itemToHide.getBoundingClientRect();
+        const gridRect = this.grid.getBoundingClientRect();
+
+        // STEP 1: Position itemToHide absolutely (removes from grid flow but stays visible)
+        itemToHide.classList.add('transitioning', 'fading-out');
+        itemToHide.classList.remove('fading-in');
+        itemToHide.style.position = 'absolute';
+        itemToHide.style.top = (rect.top - gridRect.top) + 'px';
+        itemToHide.style.left = (rect.left - gridRect.left) + 'px';
+        itemToHide.style.zIndex = '1';
+
+        // STEP 2: Immediately show itemToShow in the grid position (starts invisible)
+        // This takes the exact grid slot that itemToHide just left
+        itemToShow.style.display = '';
+        itemToShow.style.opacity = '0';
+        itemToShow.style.transform = '';
+        itemToShow.style.filter = '';
+        itemToShow.classList.remove('fading-in', 'fading-out');
+
+        // Insert new item before the absolute positioned old item
+        itemToHide.parentNode.insertBefore(itemToShow, itemToHide);
+
+        // Force reflow to ensure display change is registered
+        itemToShow.offsetHeight;
+
+        // STEP 3: Start fade in animation immediately
+        itemToShow.classList.add('fading-in');
+
+        // STEP 4: After fade completes, clean up
+        setTimeout(() => {
+          try {
+            // Hide the old item completely
+            itemToHide.style.display = 'none';
+            itemToHide.classList.remove('transitioning', 'fading-out');
+            itemToHide.style.position = '';
+            itemToHide.style.top = '';
+            itemToHide.style.left = '';
+            itemToHide.style.zIndex = '';
+            itemToHide.style.transform = '';
+            itemToHide.style.filter = '';
+
+            // Clean up inline styles on new item
+            itemToShow.style.opacity = '';
+            itemToShow.style.transform = '';
+            itemToShow.style.filter = '';
+          } catch (error) {
+            // Silent fail
+          }
+        }, FADE_DURATION);
+      } catch (error) {
+        // Silent fail
+      }
+    }
+
+    destroy() {
+      try {
+        this.stopRotation();
+      } catch (error) {
+        // Silent fail
+      }
+    }
+  }
+
+  // Initialize gallery rotator
+  document.addEventListener('DOMContentLoaded', function() {
+    try {
+      const galleries = document.querySelectorAll('.dgf-image-gallery-section');
+      const rotators = [];
+
+      galleries.forEach(gallery => {
+        try {
+          const sectionId = gallery.dataset.sectionId;
+          if (sectionId) {
+            rotators.push(new ImageGalleryRotator(sectionId));
+          }
+        } catch (error) {
+          // Silent fail - continue with other galleries
+        }
+      });
+
+      // Cleanup on page unload
+      window.addEventListener('beforeunload', () => {
+        try {
+          rotators.forEach(rotator => {
+            try {
+              rotator.destroy();
+            } catch (error) {
+              // Silent fail
+            }
+          });
+        } catch (error) {
+          // Silent fail
+        }
+      });
+    } catch (error) {
+      // Silent fail
+    }
+  });
+})();
+</script>
+
+{% schema %}
+  {
+    "name": "[DGF] Image Gallery",
+    "tag": "section",
+    "class": "section",
+    "settings": [
+      {
+        "type": "header",
+        "content": "Gallery Settings"
+      },
+      {
+        "type": "html",
+        "id": "title",
+        "label": "Gallery Title",
+        "info": "Optional title for the gallery"
+      },
+      {
+        "type": "html",
+        "id": "subtitle",
+        "label": "Gallery Subtitle",
+        "info": "Optional subtitle below the title"
+      },
+      {
+        "type": "color",
+        "id": "background_color",
+        "label": "Background Color",
+        "default": "#ffffff"
+      },
+      {
+        "type": "select",
+        "id": "image_aspect_ratio",
+        "label": "Image Aspect Ratio",
+        "options": [
+          { "value": "9/16", "label": "9:16 (Tall)" },
+          { "value": "3/4", "label": "3:4 (Portrait)" },
+          { "value": "1/1", "label": "1:1 (Square)" },
+          { "value": "4/3", "label": "4:3" },
+          { "value": "16/9", "label": "16:9 (Landscape)" }
+        ],
+        "default": "9/16"
+      },
+      {
+        "type": "range",
+        "id": "columns_per_row",
+        "label": "Columns Per Row (Desktop)",
+        "min": 1,
+        "max": 5,
+        "step": 1,
+        "default": 4
+      },
+      {
+        "type": "range",
+        "id": "columns_per_row_mobile",
+        "label": "Columns Per Row (Mobile)",
+        "min": 1,
+        "max": 4,
+        "step": 1,
+        "default": 2
+      },
+      {
+        "type": "header",
+        "content": "Title Font"
+      },
+      {
+        "type": "select",
+        "id": "title_font",
+        "label": "Title Font Family",
+        "options": [
+          { "value": "HypatiaSansPro", "label": "Hypatia Sans Pro" },
+          { "value": "'Superior Title Italic'", "label": "Superior Title Italic" },
+          { "value": "inherit", "label": "Inherit" }
+        ],
+        "default": "HypatiaSansPro"
+      },
+      {
+        "type": "range",
+        "id": "title_font_size",
+        "label": "Title Font Size (Desktop)",
+        "min": 12,
+        "max": 80,
+        "step": 1,
+        "default": 36,
+        "unit": "px"
+      },
+      {
+        "type": "range",
+        "id": "title_font_size_mobile",
+        "label": "Title Font Size (Mobile)",
+        "min": 12,
+        "max": 60,
+        "step": 1,
+        "default": 28,
+        "unit": "px"
+      },
+      {
+        "type": "select",
+        "id": "title_font_weight",
+        "label": "Title Font Weight",
+        "options": [
+          { "value": "400", "label": "Normal" },
+          { "value": "600", "label": "Semi Bold" },
+          { "value": "700", "label": "Bold" },
+          { "value": "800", "label": "Extra Bold" }
+        ],
+        "default": "700"
+      },
+      {
+        "type": "select",
+        "id": "title_transform",
+        "label": "Title Text Transform",
+        "options": [
+          { "value": "none", "label": "None" },
+          { "value": "uppercase", "label": "Uppercase" },
+          { "value": "lowercase", "label": "Lowercase" },
+          { "value": "capitalize", "label": "Capitalize" }
+        ],
+        "default": "none"
+      },
+      {
+        "type": "color",
+        "id": "title_color",
+        "label": "Title Color",
+        "default": "#333333"
+      },
+      {
+        "type": "range",
+        "id": "title_margin_bottom",
+        "label": "Title Margin Bottom",
+        "min": 0,
+        "max": 80,
+        "step": 1,
+        "default": 0,
+        "unit": "px"
+      },
+      {
+        "type": "header",
+        "content": "Subtitle Font"
+      },
+      {
+        "type": "select",
+        "id": "subtitle_font",
+        "label": "Subtitle Font Family",
+        "options": [
+          { "value": "HypatiaSansPro", "label": "Hypatia Sans Pro" },
+          { "value": "'Superior Title Italic'", "label": "Superior Title Italic" },
+          { "value": "inherit", "label": "Inherit" }
+        ],
+        "default": "'Superior Title Italic'"
+      },
+      {
+        "type": "range",
+        "id": "subtitle_font_size",
+        "label": "Subtitle Font Size (Desktop)",
+        "min": 12,
+        "max": 60,
+        "step": 1,
+        "default": 22,
+        "unit": "px"
+      },
+      {
+        "type": "range",
+        "id": "subtitle_font_size_mobile",
+        "label": "Subtitle Font Size (Mobile)",
+        "min": 12,
+        "max": 40,
+        "step": 1,
+        "default": 17,
+        "unit": "px"
+      },
+      {
+        "type": "select",
+        "id": "subtitle_font_weight",
+        "label": "Subtitle Font Weight",
+        "options": [
+          { "value": "400", "label": "Normal" },
+          { "value": "600", "label": "Semi Bold" },
+          { "value": "700", "label": "Bold" },
+          { "value": "800", "label": "Extra Bold" }
+        ],
+        "default": "600"
+      },
+      {
+        "type": "select",
+        "id": "subtitle_transform",
+        "label": "Subtitle Text Transform",
+        "options": [
+          { "value": "none", "label": "None" },
+          { "value": "uppercase", "label": "Uppercase" },
+          { "value": "lowercase", "label": "Lowercase" },
+          { "value": "capitalize", "label": "Capitalize" }
+        ],
+        "default": "none"
+      },
+      {
+        "type": "color",
+        "id": "subtitle_color",
+        "label": "Subtitle Color",
+        "default": "#333333"
+      },
+      {
+        "type": "header",
+        "content": "Display Settings"
+      },
+      {
+        "type": "checkbox",
+        "id": "show_all_images",
+        "label": "Show All Images",
+        "default": false,
+        "info": "When enabled, all images are displayed without rotation. When disabled, rotation logic is active."
+      },
+      {
+        "type": "header",
+        "content": "Rotation Settings"
+      },
+      {
+        "type": "select",
+        "id": "transition_effect",
+        "label": "Transition Effect",
+        "options": [
+          {
+            "value": "fade",
+            "label": "Fade"
+          },
+          {
+            "value": "fade-zoom",
+            "label": "Fade + Zoom"
+          },
+          {
+            "value": "slide",
+            "label": "Slide"
+          },
+          {
+            "value": "flip",
+            "label": "Flip 3D"
+          },
+          {
+            "value": "blur-fade",
+            "label": "Blur Fade"
+          }
+        ],
+        "default": "fade-zoom",
+        "info": "Choose the visual effect for image transitions"
+      },
+      {
+        "type": "range",
+        "id": "rotation_speed",
+        "label": "Rotation Speed (seconds)",
+        "min": 2,
+        "max": 10,
+        "step": 1,
+        "default": 4,
+        "info": "Time between image rotations"
+      },
+      {
+        "type": "select",
+        "id": "rotation_mode",
+        "label": "Rotation Mode",
+        "options": [
+          {
+            "value": "single",
+            "label": "Single - One at a time"
+          },
+          {
+            "value": "multiple",
+            "label": "Multiple - All excess with cascade"
+          }
+        ],
+        "default": "single",
+        "info": "Choose how many images rotate simultaneously"
+      },
+      {
+        "type": "range",
+        "id": "cascade_delay",
+        "label": "Cascade Delay (milliseconds)",
+        "min": 0,
+        "max": 500,
+        "step": 50,
+        "default": 150,
+        "info": "Delay between each image when rotating multiple (only for Multiple mode)"
+      }
+    ],
+    "blocks": [
+      {
+        "type": "image",
+        "name": "Gallery Image",
+        "settings": [
+          {
+            "type": "image_picker",
+            "id": "image",
+            "label": "Image"
+          },
+          {
+            "type": "text",
+            "id": "alt_text",
+            "label": "Alt Text",
+            "info": "Describe the image for accessibility"
+          },
+          {
+            "type": "checkbox",
+            "id": "show_on_mobile",
+            "label": "Show on Mobile",
+            "default": true,
+            "info": "Uncheck to hide this image on mobile devices"
+          }
+        ]
+      }
+    ],
+    "presets": [
+      {
+        "name": "[DGF] Image Gallery",
+        "blocks": [
+          {
+            "type": "image"
+          },
+          {
+            "type": "image"
+          },
+          {
+            "type": "image"
+          }
+        ]
+      }
+    ]
+  }
+{% endschema %}

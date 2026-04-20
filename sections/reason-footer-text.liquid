@@ -1,0 +1,48 @@
+<style>
+  #id-{{ section.id }}{
+  	background-color:{{ section.settings.section_bg_color }};
+  }
+</style>
+<section id="id-{{section.id}}" class="reason-footer-text">
+  <div class="reason-footer-text-wrapper">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-12 col-md-12 col-sm-12">
+          <div class="reason-footer-text-content">
+            {{ section.settings.the_text }}
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+{% schema %}
+  {
+    "name": "Reason Footer Text",
+    "settings": [
+       {
+            "type": "header",
+            "content": "Content Style"
+        },
+	    {
+           "type": "color",
+           "id": "section_bg_color",
+           "label": "Section background color"
+        },
+        {
+          "type": "richtext",
+          "id": "the_text",
+          "label": "Text"
+      	}
+    ],
+	"presets": [{
+      "name": "Reason Footer Text"
+    }]
+  }
+{% endschema %}
+
+{% stylesheet %}
+{% endstylesheet %}
+
+{% javascript %}
+{% endjavascript %}

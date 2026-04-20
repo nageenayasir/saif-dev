@@ -1,0 +1,1034 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+ {
+  "sections": {
+    "main": {
+      "type": "main-page",
+      "disabled": true,
+      "settings": {}
+    },
+    "d5321aea-715e-43cd-b241-3d6ec636cf3c": {
+      "type": "ksm-reason-banner",
+      "settings": {
+        "site_logo_image": "shopify://shop_images/TO_018_SecondayLogoWhite_TransparentHigh_b69aefbc-8d30-4e32-8909-832320f5495d.png",
+        "the_title": "",
+        "logo_image_1": "shopify://shop_images/Non-GMO_verified-1.png",
+        "logo_image_2": "shopify://shop_images/Gluten_free_1.png",
+        "logo_image_3": "shopify://shop_images/usda_black_and_white_1.png"
+      }
+    },
+    "b810486b-377d-40a8-b9b0-5d56a5cf9a75": {
+      "type": "KSM-main-banner",
+      "settings": {
+        "background_the_image": "shopify://shop_images/Ashw_Texture-optimized.png",
+        "the_title": "READY TO CLAIM BACK YOUR QUALITY OF LIFE?"
+      }
+    },
+    "5d16260a-bea3-4307-b357-c068b0a28d7f": {
+      "type": "stress-relief-section",
+      "blocks": {
+        "c00a8b70-f9d4-4a26-9550-f769ec96c8a3": {
+          "type": "guarantee_logos",
+          "settings": {
+            "the_image": "shopify://shop_images/free-shipping-new-logo.png"
+          }
+        },
+        "f1afe709-d0bc-4fb4-8729-cfa9e3ad4c71": {
+          "type": "guarantee_logos",
+          "settings": {
+            "the_image": "shopify://shop_images/new-esy-return-logo.png"
+          }
+        },
+        "aa0a3893-03d8-4cb3-9bf1-0ac6f00475e4": {
+          "type": "guarantee_logos",
+          "settings": {
+            "the_image": "shopify://shop_images/100-money.png"
+          }
+        }
+      },
+      "block_order": [
+        "c00a8b70-f9d4-4a26-9550-f769ec96c8a3",
+        "f1afe709-d0bc-4fb4-8729-cfa9e3ad4c71",
+        "aa0a3893-03d8-4cb3-9bf1-0ac6f00475e4"
+      ],
+      "settings": {
+        "section_bg_color": "#06211e",
+        "stress_text": "<p>GET BETTER SLEEP, LOWER YOUR STRESS AND CONTROL ANXIETY BY ADDING THIS POWERFUL AYURVEDIC HERB TO YOUR DAILY ROUTINE… AND RELEASE ITS “ADAPTOGENIC SUPERPOWERS”!</p><p>…SHOWN TO BOOST ATHLETIC PERFORMANCE, IMPROVE LIBIDO AND REGULATE IMMUNE FUNCTION!</p>",
+        "stress_title": "ORGANIC  KSM-66® ASHWAGANDHA",
+        "button_text": "YES I WANT MY  KSM-66 ASHWAGANDHA!",
+        "the_image": "shopify://shop_images/Product_img-optimized.png",
+        "alignment": "left",
+        "img_txt_title": "CLINICALLY PROVEN REDUCTION OF STRESS AND ANXIETY UP TO 70%. RECOVER YOUR MOOD, FEEL MORE ENERGIZED AND HAVE A BETTER SLEEP.",
+        "img_txt_text": "Award winning KSM-66 Ashwagandha root extract is naturally harvested in India and produced in the USA, and it comes in easy to swallow plant-based capsules without additives.",
+        "tribe_image": "shopify://shop_images/TO_018_SecondayLogoWhite_Transpa_2057172e-9d54-4161-9acf-55bda5fd4710.png",
+        "tribe_icon_1": "shopify://shop_images/non-gmo-project.png",
+        "icon_text_1": "",
+        "tribe_icon_2": "shopify://shop_images/usda-organic.png",
+        "icon_text_2": "",
+        "tribe_icon_3": "shopify://shop_images/gluten-free_1.png",
+        "icon_text_3": "",
+        "tribe_icon_4": "shopify://shop_images/star-logo.png",
+        "icon_text_4": "Kosher",
+        "tribe_icon_5": "shopify://shop_images/3rd-party_63f01075-6fdb-4561-a1f5-bfd230e8d083.png",
+        "icon_text_5": "3rd Party Tested",
+        "tribe_icon_6": "shopify://shop_images/flag-logo.png",
+        "icon_text_6": "Made in the USA",
+        "tribe_icon_7": "shopify://shop_images/cgmp-logo.png",
+        "icon_text_7": "Good Mfg. Practices",
+        "defend_title": "DEFEND AGAINST STRESS AND ANXIETY. INCREASE VITALITY AND FOCUS. SUPPORT IMMUNITY. IMPROVE SLEEP.",
+        "defend_button_text": "YES I WANT MY  KSM-66 ASHWAGANDHA!",
+        "the_text": "<p>If you’re trudging through life at only half the capacity you think you should, great news is, you’ve found the tonic your body needs…</p><p>The bad news, you’ve been feeling mentally defeated, exhausted by life and battling stress and anxiety all this time!</p><p>But let’s just stop for a moment, because if you’re SO stressed out that…</p>",
+        "list_text1": "– It’s causing you to feel anxious all the time.",
+        "list_text2": "– You’re not sleeping properly…because you’re wired at night.",
+        "list_text3": "– You said goodbye to your libido.",
+        "list_text4": "– You’re under-performing during and after exercise.",
+        "list_text5": "– Chronic exhaustion is affecting everything else from your metabolism to your gut health, and general mental focus…",
+        "rating_text": "“I’ve been taking this stuff every morning for the last two weeks and I got to say, it’s pretty awesome. It really helps with my anxiety and improves my performance in life. I noticed myself in a better mood, less stressed, and a sharper mind prolonged from the morning to the evening.”",
+        "author_name": "JEREMY G."
+      }
+    },
+    "6ea22e35-5c8c-4e84-8660-84f6f8451b08": {
+      "type": "ksm-transforming-people-section",
+      "settings": {
+        "section_bg_color": "#faede9",
+        "main_title": "THEN YOU’LL BE AMAZED HOW THIS “ANCIENT WONDER HERB” IS LITERALLY TRANSFORMING PEOPLE’S LIVES...",
+        "rating_text": "\"I don’t feel anxious anymore, I sleep great every day, I get through the day with energy and I have an extra boost in my workouts. I love it and will continue taking it!!!\"",
+        "author_name": "JUDSON T.",
+        "the_text1": "<p>Now, while this century has brought with it many conveniences and technological breakthroughs…We’re sicker than ever and more and more of us are crippled by chronic stress, anxiety, sleep issues and vulnerable immune systems.\t</p>",
+        "the_title": "THE SCALE OF OUR MENTAL HEALTH CRISIS FEELS IRREPARABLE",
+        "the_text2": "<p>Since nearly half of all adults suffer harmful health effects from stress. It’s estimated That around 1 in 4 Americans suffer from a mental disorder…and anxiety disorders are the #1 mental health issue among US adults.</p><p>PLUS… around 75 – 90% of doctor visits are linked to stress-related ailments and complaints.</p><p>In fact, Dr. Varalakshmi Yanamandra (Healthspan) has openly stated that “Chronic stress is linked to many health conditions such as heart disease, diabetes, obesity, weakened immune system, fatigue, burn out and even autoimmune diseases.”</p>",
+        "the_image": "shopify://shop_images/girl-image-optimized.png"
+      }
+    },
+    "c210cb35-d24c-44aa-8316-77bceef1b079": {
+      "type": "struggle-story-section",
+      "settings": {
+        "section_bg_color": "#06211e",
+        "stuggle_text1": "<p>You see, these days people don’t sleep properly, their intimate relationships are affected, their immune systems have tanked, they gain weight…and more. Maybe that’s been you – or you’re struggling right now, desperate to start turning your life around?</p>",
+        "struggle_title": "LIKE YOU, I’VE STRUGGLED…I TOSSED ASIDE LIFE-CHANGING OPPORTUNITIES TOO",
+        "stuggle_text2": "<p>Because the truth is, it hasn’t always been easy for me –</p><p>My troubled childhood led to HUGE anxiety battles I struggled with…</p><p>Some of the life-changing opportunities I was given to play soccer, I threw away – my anxiety and self-sabotage caused my behavior to spiral out of control.</p><p>This was a big catalyst that drove where I’m sitting today and provided the motivation behind the Tribe Organics brand, and eventually the development of this game-changing product…</p>",
+        "life_jacket_title": "IT’S WHAT I LIKE TO CALL THE “STRESS LIFE JACKET”",
+        "left_image": "shopify://shop_images/Group_1-optimized.png",
+        "right_image": "shopify://shop_images/ashwa_120_open-optimized.png",
+        "the_text": "<p>Ashwagandha is something Ayurvedic practitioners swear by for health, vitality and more for longer than we can really comprehend!</p><p>To manage stress, we’re usually told to be less busy, do breathing, meditation, visit our physician or exercise…</p><p>However, these things rarely work on their own…and there’s a reason why… But first, we’ve noticed that people who typically become stressed or anxious, rush to treat it…</p>"
+      }
+    },
+    "77d40903-5368-4470-bc45-e16b1fd8d9a3": {
+      "type": "ancient-herb-section",
+      "settings": {
+        "section_bg_color": "#06211e",
+        "the_title1": "BUT THIS IS THE FIRST MISTAKE...",
+        "the_text1": "<p>And that’s because you need to get to the ROOT of the problem – dig deep into understanding why your body is making you feel the way you do.</p><p>Of course, your symptoms – like stress, exhaustion, impacted strength & fitness, or anxiety… are all made worse by an imbalance in your body. Trouble is…</p>",
+        "the_title2": "THE WAY YOU’VE BEEN TRYING TO CONTROL YOUR SYMPTOMS, IS ALL WRONG …",
+        "the_text2": "<p>You get so caught up in your symptoms, you don’t even know how or where to begin?!</p><p>Truth is, it’s not necessarily the “stress” itself, per se – or the lifestyle, but your body’s way of dealing with or responding to stress.</p><p>I quickly discovered that most anxious people have a higher stress response since their adrenal glands are producing too much “stress hormone”.</p><p>Their body fails to naturally calm or lower this stress hormone to re-balance. However, using adaptogenic herbs, it is not only possible to lower stress and anxiety…</p><p>But they help your body adapt to stress and deal with it in a much healthier, natural way. This means by adapting to the “stress” your nervous system response is functioning normally.</p>",
+        "the_title3": "YOU MIGHT BE THINKING...  CAN AN ANCIENT HERB POSSIBLY HELP?",
+        "the_text3": "<p>But the research proves this adaptogen absolutely works!</p><p>You’re about to discover benefits like:</p>",
+        "list_text1": "– How this 3,000-year-old adaptogen can lower your cortisol , and therefore manage your stress response by adapting to the stressful symptoms…",
+        "list_text2": "– Help you to increase your athletic performance (including your recovery)…",
+        "list_text3": "– Help improve your sleep quality (no more dreading bedtime)…",
+        "list_text4": "– Improve your sexual function and sex hormone regulation …",
+        "list_text5": "– Stimulating your thyroid (an inactive thyroid = high-stress hormone release).",
+        "the_image": "shopify://shop_images/Untitled-3-optimized.png",
+        "alignment": "left",
+        "img_title": "KSM-66® ASHWAGANDHA",
+        "img_sub_title1": "THE 3,000-YEAR-OLD HERB THEY CALL “INDIAN GINSENG”",
+        "img_sub_title2": "The Highest Concentration, Highly Bioavailable, Full Spectrum Root Extract"
+      }
+    },
+    "1c2e6b82-5214-4d5c-ae86-5c4f9a4a4d85": {
+      "type": "why-choose-KSM-66",
+      "blocks": {
+        "df681b6d-db46-4493-afeb-a3db021bfb1f": {
+          "type": "ksm_certified",
+          "settings": {
+            "num_text": "1.",
+            "the_text": "KSM-66 and its manufacturing have gone through the most extensive inspections and safety assessments in our industry."
+          }
+        },
+        "8e2c4d2f-8e6b-4417-8ce7-56484f52c467": {
+          "type": "ksm_certified",
+          "settings": {
+            "num_text": "2.",
+            "the_text": "KSM-66 is the Ashwagandha root extract with the most extensive set of research studies and clinical trials."
+          }
+        },
+        "7243a677-e32c-4aaa-a978-5857d4ccf450": {
+          "type": "ksm_certified",
+          "settings": {
+            "num_text": "3.",
+            "the_text": "KSM-66 has the highest percentage of withanolides of all branded root-only extracts available today. It has more than 5% concentration of withanolides as measured by HPLC."
+          }
+        },
+        "d9d52933-00e0-431a-ab6c-7df84b636ade": {
+          "type": "ksm_certified",
+          "settings": {
+            "num_text": "4.",
+            "the_text": "The production of KSM-66 has tight vertical integration for high quality and price advantage. KSM-66’s maker is the only ashwagandha manufacturer in the world with its own farms, production facilities, testing laboratories, research center and distribution."
+          }
+        },
+        "8859fed8-29d8-4551-8101-c27b503628fd": {
+          "type": "ksm_certified",
+          "settings": {
+            "num_text": "5.",
+            "the_text": "KSM-66 is the botanical with the highest number of certifications. KSM-66 and its manufacturing have gone through the most extensive inspections and safety assessments in our industry for the labels of GMP (USP, NSF, NPA-UL, WHO), 100% USDA Organic, Non-GMO (Non-GMO Project Verified), Gluten Free (by GFCO), BSCG-drug free, Kosher, Halal, HACCP and several others."
+          }
+        },
+        "a7cf276f-db10-4d66-bc4d-9c6496e23994": {
+          "type": "ksm_certified",
+          "settings": {
+            "num_text": "6.",
+            "the_text": "KSM-66 has negligible levels of Withaferin A, a widely recognized cyto-toxic withanolide."
+          }
+        },
+        "a7a778e4-f9a8-4e33-ac90-0fc75fd4438a": {
+          "type": "ksm_certified",
+          "settings": {
+            "num_text": "7.",
+            "the_text": "KSM-66 is produced using a first-of-its-kind, unique extraction process, based on “Green Chemistry” principles, without using alcohol or any synthetic solvents."
+          }
+        }
+      },
+      "block_order": [
+        "df681b6d-db46-4493-afeb-a3db021bfb1f",
+        "8e2c4d2f-8e6b-4417-8ce7-56484f52c467",
+        "7243a677-e32c-4aaa-a978-5857d4ccf450",
+        "d9d52933-00e0-431a-ab6c-7df84b636ade",
+        "8859fed8-29d8-4551-8101-c27b503628fd",
+        "a7cf276f-db10-4d66-bc4d-9c6496e23994",
+        "a7a778e4-f9a8-4e33-ac90-0fc75fd4438a"
+      ],
+      "settings": {
+        "section_bg_color": "#faede9",
+        "main_title": "WHY CHOOSE TRIIBE ORGANICS' KSM-66® ASHWAGANDHA?",
+        "the_image": "shopify://shop_images/Screen-Shot-2022-09-29-at-15.38-optimized.png",
+        "alignment": "right",
+        "img_txt_text": "KSM-66 Ashwagandha has the highest number of certifications."
+      }
+    },
+    "7da30537-76ae-4ace-9ead-012c4592025e": {
+      "type": "guarantee-satisfaction-section",
+      "blocks": {
+        "d56c92a3-623c-4cde-b686-f4430c2f4c9e": {
+          "type": "reviews_section",
+          "settings": {
+            "the_image": "shopify://shop_images/Group_3_2_-min.png",
+            "rating_text": "\"I've always had issues sleeping and lacking energy throughout the day. Since I've taken this, I definitely notice the difference. Better sleep, more energy throughout the day, and I'm able to focus better. This stuff is great!\"",
+            "author_name": "JORGE."
+          }
+        },
+        "9a3a841c-86c7-4d6a-b97c-9e2290205912": {
+          "type": "reviews_section",
+          "settings": {
+            "the_image": "shopify://shop_images/Group_4_1_-min.png",
+            "rating_text": "\"I take two capsules a day at night. I am noticing less stress during the day, better sleep, and fast recovery after my intense yoga practice. I feel good about the quality of this product and will continue taking it.\"",
+            "author_name": "LAUREN M."
+          }
+        }
+      },
+      "block_order": [
+        "d56c92a3-623c-4cde-b686-f4430c2f4c9e",
+        "9a3a841c-86c7-4d6a-b97c-9e2290205912"
+      ],
+      "settings": {
+        "section_bg_color": "#faede9",
+        "the_text": "All purchases made on tribe-organics.com are backed by our 30 day TRIIBE Satisfaction Guarantee."
+      }
+    },
+    "370a0c7a-660f-41bc-b9bb-bea89c8f3f0f": {
+      "type": "custom-journey-section",
+      "blocks": {
+        "dae4d616-6904-42f1-a104-d420cc00982b": {
+          "type": "rich_text",
+          "settings": {
+            "the_title": "I WANT TO SHARE MY JOURNEY WITH YOU…",
+            "the_text": "<p>As a youngster, despite being surrounded by music and playing for the youth teams of worldwide recognized soccer teams, Real Madrid and Atletico de Madrid…</p><p>I had a difficult childhood. I was given a lot of love, but I was also abused.</p><p>I was destined to be a soccer player. But the abuse eventually came out as ANXIETY and FEAR by the age of 9. This only got worse!</p><p>By 21 I quit soccer, my dream, my passion. I couldn’t take the anxiety anymore. The pressure. The promises.</p>"
+          }
+        },
+        "d4d35419-1e62-45a0-a754-28c2d7ff0c07": {
+          "type": "image_with_text",
+          "settings": {
+            "the_image": "shopify://shop_images/Group_5_1_-min.png",
+            "alignment": "left",
+            "img_txt_text": "<p>In my early 20s, an opportunity soon came up in the New York fashion scene…</p><p>I left my hometown (Madrid) headed to the big apple…New York City! Here I worked as a model for nearly 12 years.</p><p>Yet despite the attractiveness of the fashion scene, I knew my path toward inner freedom was not in NYC, so my search continued….</p><p>However, I soon discovered that I was excited about the idea of working remotely…</p><p>Being able to travel, live a healthy life and having freedom over my time while making money.</p>"
+          }
+        },
+        "c5ea7d8c-74fd-42b8-a5f9-7ab041973d5b": {
+          "type": "rich_text",
+          "settings": {
+            "the_title": "THIS WAS A TURNING POINT IN MY LIFE...",
+            "the_text": ""
+          }
+        },
+        "ad67473b-2c2d-4744-bda9-12e02b4b1dff": {
+          "type": "image_with_text",
+          "settings": {
+            "the_image": "shopify://shop_images/DSCF1414-3-scaled-e1667218682534-optimized.png",
+            "alignment": "right",
+            "img_txt_text": "<p>The path of travel led me to work with sacred plants and the curiosity in the field began to grow.</p><p>At some point, I had built the strength and determination to take the big step and move out of New York (which meant leaving financial security) to pursue my dream.</p><p>I moved to Guatemala and TRIIBE Organics was created.</p><p>And it was here, I set out to develop all-natural supplements that would help people to feel better, to feel healthier and to take control over the quality of their lives.</p><p>Because prior to my move down to Guatemala, I was fatigued, anxious, stressed and my body was out of balance!</p>"
+          }
+        },
+        "9b13b6ea-55e7-471b-aeae-73370d68c3e7": {
+          "type": "rich_text",
+          "settings": {
+            "the_title": "BACK THEN, NOTHING SEEMED TO WORK FOR ME. SOME REMEDIES FELT LIKE NOTHING MORE THAN TEMPORARY “DEPRESSION TONICS”",
+            "the_text": "<p>I tried things including:</p><p>– Reducing caffeine – it can take up to 2 months to completely reset your Adenosine receptors. For around 10 days headaches are severe, low mood, low energy, seeking another “pick-me-up”. The other thing is that people generally enjoy its taste and consider it “social”.</p><p>– Exercising more – yoga is so slow and mindful, it allows you too much time to think – which can make you feel anxious. With running, you can “gas out” and get your heart rate too high…making anxiety even worse before you get to a quarter of a mile!</p><p>– Breathing/breathwork – very healthy for you and helps regulate your mood and your nervous system. Breathing has been shown to activate your parasympathetic nervous system (calming) which is switched on typically as we calm down in the evenings. Problem was forgetting to do this or sticking to a strict routine – that, ironically, became a mini stressor in itself!</p><p>– L-Theanine – this alone may not do much, it could make a good day better, perhaps make you feel more relaxed, but on bad days of anxiety doesn’t add too much improvement.</p><p>– Antidepressant medication – too many side effects, drowsiness and unpleasant “numbness” and mood swings. Prescription meds I’ve heard are addictive and notoriously difficult to come off of.</p><p>– CBD – the issue here is that it either doesn’t have any effect at all…or can leave you feeling “too relaxed and sleepy”</p>"
+          }
+        },
+        "62caf432-d676-4973-9ae3-a58b0ccb9c2f": {
+          "type": "testimonial_section",
+          "settings": {
+            "author_image": "shopify://shop_images/Group_6_1_-min.png",
+            "rating_text": "\"I've always had issues sleeping and lacking energy throughout the day. Since I've taken this, I definitely notice the difference. Better sleep, more energy throughout the day, and I'm able to focus better. This stuff is great!\"",
+            "author_name": "POLLY RALDA",
+            "author_position": "Big Wave Surfer"
+          }
+        },
+        "e065e5a4-0f6c-4425-a525-431f48a9cc57": {
+          "type": "heading_text",
+          "settings": {
+            "the_title": "IT’S WHY REGULAR PEOPLE ACROSS THE WORLD ARE TRYING KSM-66 ASHWAGANDHA!"
+          }
+        }
+      },
+      "block_order": [
+        "dae4d616-6904-42f1-a104-d420cc00982b",
+        "d4d35419-1e62-45a0-a754-28c2d7ff0c07",
+        "c5ea7d8c-74fd-42b8-a5f9-7ab041973d5b",
+        "ad67473b-2c2d-4744-bda9-12e02b4b1dff",
+        "9b13b6ea-55e7-471b-aeae-73370d68c3e7",
+        "62caf432-d676-4973-9ae3-a58b0ccb9c2f",
+        "e065e5a4-0f6c-4425-a525-431f48a9cc57"
+      ],
+      "settings": {
+        "section_bg_color": "#06211e",
+        "the_title": "DEFEND AGAINST STRESS AND ANXIETY.INCREASE VITALITY AND FOCUS.SUPPORT IMMUNITY.IMPROVE SLEEP.",
+        "button_text": "BUY YOURS NOW"
+      }
+    },
+    "4807b24e-dce6-4dd4-85cf-7d249179bc6d": {
+      "type": "custom-reviews-section",
+      "blocks": {
+        "5b1ffa8a-3193-4958-a128-505817739b85": {
+          "type": "review_section",
+          "settings": {
+            "rating_text": "\"I have tried other brands of Ashwagandha and this particular brand is the most effective. I have been taking it for months now and it significantly improves my sleep as well as my energy levels and focus the next day.\"",
+            "author_name": "SHELBY"
+          }
+        },
+        "924664ac-cbb7-4c71-90f8-160f0728694b": {
+          "type": "image",
+          "settings": {
+            "the_image": "shopify://shop_images/TO_043_IconDarkGreen_Transparent.png"
+          }
+        },
+        "80fb4a73-3686-44f3-ad68-a0ff52f76aeb": {
+          "type": "review_section",
+          "settings": {
+            "rating_text": "\"The past couple years, I've felt kinda mind-numbed, due to a lot of stress. I felt like Iwas always behind on my projects… I started this supplement less than a month ago and I feel very different already. I'm producing more and am able to develop a clear thought process in a lot of what I do now. I'm grateful for these and will definitely continue to take them.\"",
+            "author_name": "E.C FOTIS"
+          }
+        }
+      },
+      "block_order": [
+        "5b1ffa8a-3193-4958-a128-505817739b85",
+        "924664ac-cbb7-4c71-90f8-160f0728694b",
+        "80fb4a73-3686-44f3-ad68-a0ff52f76aeb"
+      ],
+      "settings": {
+        "section_bg_color": "#faede9"
+      }
+    },
+    "e2204d97-5b5e-44f4-a1ed-63b6ab56f0bc": {
+      "type": "stress-cycle-section",
+      "blocks": {
+        "efe53b29-1648-4fd7-a7ce-33770428d21a": {
+          "type": "rich_text",
+          "settings": {
+            "the_title": "EVER FEEL TRAPPED IN THE STRESS-CYCLE?",
+            "the_text": "<p>If you’re anxious, stressed, exhausted and struggle to sleep a lot of the time…</p><p>Chances are you have higher-than-average Cortisol (which is sometimes known as Cushing Syndrome). Fact is, yours might be out of balance COMPLETELY!</p><p>That’s because being in a chronic, long-term, low state of STRESS or ANXIETY…</p><p>…is triggering your adrenal glands to continuously release hormones, including adrenaline and cortisol.</p><p>The result is an increase in heart rate and energy as part of the “fight-or-flight” sympathetic nervous system response. It’s your body’s way of getting ready for potentially dangerous or harmful situations.</p><p>Except, when your body and adrenals stay “alert” for long periods, you encounter problems – some people call it “ADRENAL FATIGUE”. But this technically isn’t a real</p>"
+          }
+        },
+        "fdf9501b-f13d-41f6-81c1-9b3bdcb8cbe4": {
+          "type": "rich_text",
+          "settings": {
+            "the_title": "SO THEN, WHAT IS CORTISOL?",
+            "the_text": "<p>Cortisol is known as “the stress hormone” (remember I mentioned that already?).</p><p>So to be precise, it’s a steroid hormone produced by the adrenal glands. Cortisol is VERY important for your health. It helps us out of bed each morning…</p><p>But it’s particularly important for “survival” – it can help you react when facing danger by quickly raising your heart rate and energy levels.</p><p>Cortisol helps to limit any functions that aren’t essential in a fight-or-flight situation. Once the threat passes, your hormones return to their usual levels – or they SHOULD.</p><p>However, at the end of the day, your cortisol needs to be LOWER so that you feel calm.</p>"
+          }
+        },
+        "4df035d0-3303-4379-a6ea-d64e1d666b75": {
+          "type": "text_two_blocks",
+          "settings": {
+            "the_title": "WHAT RAISES CORTISOL...?",
+            "list_text1": "– Chronic stress",
+            "list_text2": "– Depression",
+            "list_text3": "– Chronic malnutrition",
+            "list_text4": "– Obesity",
+            "list_text5": "– Medication",
+            "list_text6": "– High estrogen",
+            "the_text": "<p>And too much of it can wreak havoc on your body and cause a number of unwanted symptoms – like feelings of stress, anxiety, insomnia, poor workout recovery etc., etc.The problem is PROLONGED levels of increased cortisol.\t</p>"
+          }
+        },
+        "a958f0b8-083e-447e-a071-58be69f57af8": {
+          "type": "rich_text",
+          "settings": {
+            "the_title": "AT TIMES, HIGH CORTISOL IS HELPFUL…<br>BUT TOO MUCH IS A BIG STRESS ON YOUR BODY!",
+            "the_text": "<p>When you’re under constant stress, this response doesn’t always turn off.</p><p>This causes a cascade of hormonal and physiological responses because your body is</p><p>perceiving the stimuli (the perceived “stressor”) as a threat to your survival!</p><p><strong>So what’s the answer?</strong></p><p>Well, studies show that people who are better equipped to cope with stress, generally have a lower cortisol response to stress.</p><p>In fact, other research from the Biological Psychology Journal, shows how cortisol and stress are directly linked.</p><p>“Perceiving greater stress than usual was associated with situational elevations in cortisol”</p>"
+          }
+        },
+        "9fd0652b-a732-44de-b5e4-933bb1044756": {
+          "type": "rich_text",
+          "settings": {
+            "the_title": "TO COPE WITH STRESS… <br> YOU NEED TO MANAGE HOW YOUR BODY REACTS TO IT",
+            "the_text": ""
+          }
+        }
+      },
+      "block_order": [
+        "efe53b29-1648-4fd7-a7ce-33770428d21a",
+        "fdf9501b-f13d-41f6-81c1-9b3bdcb8cbe4",
+        "4df035d0-3303-4379-a6ea-d64e1d666b75",
+        "a958f0b8-083e-447e-a071-58be69f57af8",
+        "9fd0652b-a732-44de-b5e4-933bb1044756"
+      ],
+      "settings": {
+        "section_bg_color": "#06211e",
+        "the_title": "DEFEND AGAINST STRESS AND ANXIETY.  <br> INCREASE VITALITY AND FOCUS. <br> SUPPORT IMMUNITY. <br> IMPROVE SLEEP.",
+        "button_text": "BUY YOURS NOW",
+        "the_text": "All purchases made on tribe-organics.com are backed by our 30 day TRIIBE Satisfaction Guarantee."
+      }
+    },
+    "1079ff0c-c7df-483b-8ab5-b02d67fdfe7a": {
+      "type": "custom-reviews-section",
+      "blocks": {
+        "cda8a7e9-207b-48ba-96bc-afe36f07c87a": {
+          "type": "rich_text",
+          "settings": {
+            "the_text": "<p>To do this, we have to help our bodies “adapt” to how we respond to stressful situations and therefore, how EASILY and how WELL we recover.</p><p>The way we can do this, in tandem with changing key parts of our lifestyle – sleep, exercise, diet, work balance, etc…</p><p>Is to prepare our bodies…and this has been shown possible by using adaptogenic herbs , like Ashwagandha!</p>"
+          }
+        },
+        "81d6b778-8569-4fe3-92e0-68b29ca53581": {
+          "type": "review_section",
+          "settings": {
+            "rating_text": "\"It’s really helped in several aspects of my health. I took it to improve my focus, stamina at work, sleep quality, increase strength and improve my fertility (as I have PCOS and currently TTC). I can say so far that I’ve been on the ball at work especially for someone who doesn’t drink caffeinated beverages, I sleep through the night whereas I might toss and turn more, I recover fast after weight training sessions with less muscle soreness…\"",
+            "author_name": "JAYLENE V."
+          }
+        },
+        "b98a4b7a-6a0b-48d8-bff8-f23b19eae840": {
+          "type": "review_section",
+          "settings": {
+            "rating_text": "I'm about 30 days into taking this plant based supplement and so far so good. I feel the extra energy boost , I feel my mind sharper and I feel I'm always in a better mood. I also noticed a huge impact on my sexual performance, that's always a plus.",
+            "author_name": "AMAZON CUSTOMER"
+          }
+        },
+        "7e015218-6de0-4630-b498-8ef261737e54": {
+          "type": "image_with_text",
+          "settings": {
+            "the_image": "shopify://shop_images/120_ashwa_horizontal-e1667221030-optimized.png",
+            "img_txt_text": "<p>CLINICALLY PROVEN REDUCTION OF STRESS AND ANXIETY UP TO 70%. RECOVER YOUR MOOD, FEEL MORE ENERGIZED AND HAVE A BETTER SLEEP.</p>",
+            "image_under_text": "shopify://shop_images/Copy-of-ksm.png"
+          }
+        }
+      },
+      "block_order": [
+        "cda8a7e9-207b-48ba-96bc-afe36f07c87a",
+        "81d6b778-8569-4fe3-92e0-68b29ca53581",
+        "b98a4b7a-6a0b-48d8-bff8-f23b19eae840",
+        "7e015218-6de0-4630-b498-8ef261737e54"
+      ],
+      "settings": {
+        "section_bg_color": "#faede9"
+      }
+    },
+    "e84b29df-801d-4421-ae23-9776348408ed": {
+      "type": "why-choose-tribe-organics",
+      "blocks": {
+        "5811920a-585b-474f-81d2-21445b325fc0": {
+          "type": "tribe_icons",
+          "settings": {
+            "tribe_image": "shopify://shop_images/TO_018_SecondayLogoWhite_Transpa_2057172e-9d54-4161-9acf-55bda5fd4710.png",
+            "tribe_icon_1": "shopify://shop_images/non-gmo-project.png",
+            "icon_text_1": "",
+            "tribe_icon_2": "shopify://shop_images/usda-organic.png",
+            "icon_text_2": "",
+            "tribe_icon_3": "shopify://shop_images/gluten-free_1.png",
+            "icon_text_3": "",
+            "tribe_icon_4": "shopify://shop_images/star-logo.png",
+            "icon_text_4": "Kosher",
+            "tribe_icon_5": "shopify://shop_images/3rd-party.png",
+            "icon_text_5": "3rd Party Tested",
+            "tribe_icon_6": "shopify://shop_images/flag-logo.png",
+            "icon_text_6": "Made in the USA",
+            "tribe_icon_7": "shopify://shop_images/cgmp-logo.png",
+            "icon_text_7": "Good Mfg. Practices"
+          }
+        },
+        "ee83a8c3-cb37-475d-90d5-c62c6f013787": {
+          "type": "review_section",
+          "settings": {
+            "rating_text": "I started taking this pill 2 weeks ago and have already seen great improvements. My stress levels have gone down tremendously . My days feel more at ease. Work days aren’t such a drag anymore.",
+            "author_name": "PILAR"
+          }
+        },
+        "ad6fa966-2135-4306-b9b5-855b8a7cf938": {
+          "type": "rich_text",
+          "settings": {
+            "the_title": "DEFEND AGAINST STRESS AND ANXIETY.<br>INCREASE VITALITY AND FOCUS.<br>SUPPORT IMMUNITY.<br>IMPROVE SLEEP.",
+            "the_text": "",
+            "button_text": "BUY YOURS NOW"
+          }
+        },
+        "6e173fc5-05b3-4718-acb9-24dc0f15902b": {
+          "type": "rich_text",
+          "settings": {
+            "the_title": "JUST SOME OF THE HOLISTIC BENEFITS OF ASHWAGANDHA",
+            "the_text": "<p>– Ashwagandha can help reduce cortisol and effectively improves an individual’s resistance towards stress.</p><p>– Ashwagandha can help increase athletic performance.6 It’s also been shown to improve strength and athletic performance/recovery – reduced exercise-induced damage + increase in measured testosterone levels.</p><p>– Ashwagandha root extract can improve sleep quality and can help in managing insomnia . 8 And can help with improvement in quality of sleep.</p><p>– Ashwagandha may improve sexual function in healthy women.</p><p>– Ashwagandha may affect good sperm health and treat “male factor infertility.</p><p>– Ashwagandha root extract stimulates thyroid activity (inactive thyroid = high cortisol).</p>",
+            "button_text": ""
+          }
+        },
+        "1cabbcd7-b146-4c43-8df0-e43fc9742e3a": {
+          "type": "image_with_text",
+          "settings": {
+            "author_image": "shopify://shop_images/Group_7_1_-min.png",
+            "rating_text": "\"I have been under a lot of stress lately...In just over a week and I already see a major improvement in my energy level.It is also easier for me to fall asleep noe.I have also noticed more focus.\"",
+            "author_name": "DEREK",
+            "author_position": ""
+          }
+        }
+      },
+      "block_order": [
+        "5811920a-585b-474f-81d2-21445b325fc0",
+        "ee83a8c3-cb37-475d-90d5-c62c6f013787",
+        "ad6fa966-2135-4306-b9b5-855b8a7cf938",
+        "6e173fc5-05b3-4718-acb9-24dc0f15902b",
+        "1cabbcd7-b146-4c43-8df0-e43fc9742e3a"
+      ],
+      "settings": {
+        "section_bg_color": "#06211e",
+        "the_title": "WHY CHOOSE TRIIBE ORGANICS?",
+        "the_text": "<p>AT TRIIBE you’ll always find 100% transparency. We hold ourselves to the highest standard of quality and integrity, and have committed to NEVER using harmful additives, excipients or artificial anything.</p><p>All of our partners are carefully chosen based on the fact that they hold and maintain the highest third-party certifications when it comes to product and ingredient quality, as well as the manufacturing process.</p>"
+      }
+    },
+    "30984470-6217-470f-aee9-c920a2132b07": {
+      "type": "organic-ksm-66-section",
+      "blocks": {
+        "d2e164b4-be20-4444-84d4-36bf41923afe": {
+          "type": "custom_video",
+          "settings": {
+            "video_title": "MINDFULLY HARVESTED, SUSTAINABLY PRODUCED",
+            "video_url": "https://www.youtube.com/watch?v=PrgGpJsxqS8"
+          }
+        },
+        "ba24ae59-1e1f-4ff7-b1f6-47a9175dd585": {
+          "type": "benefits_blocks",
+          "settings": {
+            "benefits_title": "“WONDER BENEFITS” WHEN YOU TAKE ANCIENT ASHWAGANDHA",
+            "block_title_1": "REDUCES STRESS, FATIGUE & TENSION",
+            "block_text_1": "Ashwagandha’s adaptogenic properties enable your body to manage symptoms of stress as it adapts to the needs of YOUR body!",
+            "block_title_2": "IMPROVE SLEEP QUALITY & INSOMNIA",
+            "block_text_2": "Its effect on sleep is game-changing. Support your body’s natural sleep rhythm and get that long-awaited night’s kip you deserve.",
+            "block_title_3": "IMPROVE STRENGTH & PERFORMANCE",
+            "block_text_3": "Working out is aboutstrength performance and recovery speed… Ashwagandha helps support both of these to get you energized for your next workout.",
+            "block_title_4": "INCREASE SEXUALFUNCTION & TESTOSTERONE",
+            "block_text_4": "Not only could this support sexual function in women, but men too as it supports increased testosterone and male fertility."
+          }
+        },
+        "b745f528-7fec-482f-99a3-4480e953e3dc": {
+          "type": "rich_text",
+          "settings": {
+            "the_title": "ENJOY SUPERIOR HEALTH & WELLBEING FROM THE INSIDE OUT…",
+            "the_text": "",
+            "button_text": ""
+          }
+        },
+        "18e377d9-101b-444b-ab44-b94699b1768a": {
+          "type": "rich_text",
+          "settings": {
+            "the_title": "DEFEND AGAINST STRESS AND ANXIETY.<br>INCREASE VITALITY AND FOCUS.<br>SUPPORT IMMUNITY.<br>IMPROVE SLEEP.",
+            "the_text": "",
+            "button_text": "BUY YOURS NOW"
+          }
+        },
+        "2a902896-c141-498e-b532-fa643afaded0": {
+          "type": "review_section",
+          "settings": {
+            "rating_text": "I tried to leave you and go for another product because I am tight on money but your product is killing the game! It gives results immediately! I can feel the difference almost right away.",
+            "author_name": "MS MILA"
+          }
+        },
+        "4aee24ea-ea69-4b86-9adb-575f9c5e069e": {
+          "type": "review_section",
+          "settings": {
+            "rating_text": "Total fan!! I use this ashwagandha for my running trainings. I have an increase in stamina especially on my long running and speed workouts . I also never get sick and always feel great. Amazing product. My one of best Supplements. Definitely worth the price.",
+            "author_name": "KATHERINE"
+          }
+        },
+        "d8eead3f-22c0-4a63-9173-54e7dcf84fd2": {
+          "type": "image_blocks",
+          "settings": {
+            "image_block_1": "shopify://shop_images/product_back-optimized.png",
+            "image_block_2": "shopify://shop_images/product_open-optimized.png"
+          }
+        },
+        "180e0c8b-3923-4e53-9adc-4c46ce44eb4d": {
+          "type": "tribe_icons",
+          "settings": {
+            "tribe_image": "shopify://shop_images/TO_018_SecondayLogoWhite_Transpa_2057172e-9d54-4161-9acf-55bda5fd4710.png",
+            "tribe_icon_1": "shopify://shop_images/non-gmo-project.png",
+            "icon_text_1": "",
+            "tribe_icon_2": "shopify://shop_images/usda-organic.png",
+            "icon_text_2": "",
+            "tribe_icon_3": "shopify://shop_images/gluten-free_1.png",
+            "icon_text_3": "",
+            "tribe_icon_4": "shopify://shop_images/star-logo.png",
+            "icon_text_4": "Kosher",
+            "tribe_icon_5": "shopify://shop_images/3rd-party.png",
+            "icon_text_5": "3rd Party Tested",
+            "tribe_icon_6": "shopify://shop_images/flag-logo.png",
+            "icon_text_6": "Made in the USA",
+            "tribe_icon_7": "shopify://shop_images/cgmp-logo.png",
+            "icon_text_7": "Good Mfg. Practices"
+          }
+        }
+      },
+      "block_order": [
+        "d2e164b4-be20-4444-84d4-36bf41923afe",
+        "ba24ae59-1e1f-4ff7-b1f6-47a9175dd585",
+        "b745f528-7fec-482f-99a3-4480e953e3dc",
+        "18e377d9-101b-444b-ab44-b94699b1768a",
+        "2a902896-c141-498e-b532-fa643afaded0",
+        "4aee24ea-ea69-4b86-9adb-575f9c5e069e",
+        "d8eead3f-22c0-4a63-9173-54e7dcf84fd2",
+        "180e0c8b-3923-4e53-9adc-4c46ce44eb4d"
+      ],
+      "settings": {
+        "section_bg_color": "#06211e",
+        "the_title": "ORGANIC KSM-66® ASHWAGANDHA",
+        "the_image": "shopify://shop_images/Group_8_1_-min.png"
+      }
+    },
+    "9724973d-2ec9-44ac-9905-87787b2ae39b": {
+      "type": "product-details-section",
+      "blocks": {
+        "55d07385-6207-4206-ab94-f82be4638f9c": {
+          "type": "product_detail_blocks",
+          "settings": {
+            "prod_detail_title": "PRODUCT DETAILS",
+            "block_title_1": "PURE ORGANIC  <br>ASHWAGANDHA",
+            "block_text_1": "KSM-66 Ashwagandha is sustainably harvested without chemicals and is water extracted following “Green Chemistry” principles. It is USDA Organic, EU Organic and Canada Organic.",
+            "block_title_2": "FULL SPECTRUM  <br>ROOT EXTRACT",
+            "block_text_2": "KSM-66 Ashwagandha Full Spectrum version’s extraction process involves pre-treating the Ashwagandha roots with small quantities of cow milk (BSE-TSE free) in accordance with the traditional Ayurvedic practice. For this reason, this variant contains small remaining quantities of milk constituents. This leads to a full-spectrum extract which maintains the large suite of bio-actives found in the raw root, leading to a higher efficacy.",
+            "block_title_3": "PREMIUM  <br>EFFICACY",
+            "block_text_3": "The Ashwagandha herb’s efficacy is derived from a complex blend of active constituents called withanolides. They need to be present in their natural proportions. KSM-66 Ashwagandha managed to create a process that overcomes the challenges after many years of research and development, this is why TRIIBE KSM-66 Ashwagandha root extract is standardized to more than 5% Withanolides."
+          }
+        },
+        "d2bd59cc-450b-4ab0-90de-bd0af0a138c8": {
+          "type": "core_benfits",
+          "settings": {
+            "core_beneft_title": "CORE BENEFITS",
+            "icon_title_1": "FOCUS & <br> CLARITY*",
+            "benefit_icon_1": "shopify://shop_images/BRAIN.png",
+            "icon_title_2": "STAMINA & <br> ENDURANCE*",
+            "benefit_icon_2": "shopify://shop_images/STRENTGH.png",
+            "icon_title_3": "IMPROVED SLEEP <br> QUALITY*",
+            "benefit_icon_3": "shopify://shop_images/SLEEP.png",
+            "icon_title_4": "BOOST <br> ENERGY*",
+            "benefit_icon_4": "shopify://shop_images/ENERGY.png",
+            "icon_title_5": "IMPROVED <br> MOOD*",
+            "benefit_icon_5": "shopify://shop_images/MOOD.png",
+            "icon_title_6": "REDUCE STRESS <br> & ANXIETY*",
+            "benefit_icon_6": "shopify://shop_images/REDUCE-STRESS.png"
+          }
+        }
+      },
+      "block_order": [
+        "55d07385-6207-4206-ab94-f82be4638f9c",
+        "d2bd59cc-450b-4ab0-90de-bd0af0a138c8"
+      ],
+      "settings": {
+        "section_bg_color": "#06211e"
+      }
+    },
+    "b2c505ad-3c44-429e-9fc8-a4812bb0733d": {
+      "type": "Ashwagandha-routine-steps",
+      "blocks": {
+        "8d7c61f8-61a2-4434-8fe3-1b0404f3898d": {
+          "type": "routine_two_block_steps",
+          "settings": {
+            "num_title_1": "1",
+            "the_text_1": "<p>KEEP YOUR SUPPLEMENTS IN A PLACE WHERE THEY’RE MADE A PART OF YOUR DAILY ROUTINE – E.G. YOUR BATHROOM OR THE KITCHEN COUNTER.</p>",
+            "num_title_2": "2",
+            "the_text_2": "<p>TAKE 2 CAPSULES DAILY TO START FEELING THE BENEFITS IN AS LITTLE AS 2 WEEKS AS YOUR BODY NATURALLY CALMS</p>"
+          }
+        },
+        "c5ec01e0-45d0-4216-b1ba-8e30d21d9ef3": {
+          "type": "routine_one_block_steps",
+          "settings": {
+            "num_title": "3",
+            "the_text": "<p>FINALLY FEEL LIKE YOU’RE TAKING BACK CONTROL OF YOUR LIFE AND OVERALL HEALTH & WELLBEING.</p>"
+          }
+        },
+        "b5637089-ccba-4f46-8db3-5a9e310ea5ad": {
+          "type": "rich_text",
+          "settings": {
+            "the_title": "FEEL THE TRIIBE DIFFERENCE OR IT'S FREE!",
+            "sub_title": "OUR SATISFACTION GUARANTEE",
+            "the_text": "<p>We’ve spent countless hours researching for the best ingredients and refining our products – we know you’ll love them. However, we understand this might be your first time buying from us. We want you to feel 100% comfortable in your purchase, so your order is covered in-full by our TRIIBE Satisfaction Guarantee.</p><p>If you aren’t happy with any product you buy from us, let us know within 30 days of purchase by contacting us at info@tribe-organics.com. We’ll confirm your order, then provide you instructions to return your product to us, new, used, or broken.</p><p>Once we receive it, we’ll give you a 100% refund. It’s that simple!</p><p>All purchases made on tribe-organics.com are backed by our 30 day TRIIBE Satisfaction Guarantee.</p><p>Please note that we offer our money back guarantee on your first order.</p>"
+          }
+        }
+      },
+      "block_order": [
+        "8d7c61f8-61a2-4434-8fe3-1b0404f3898d",
+        "c5ec01e0-45d0-4216-b1ba-8e30d21d9ef3",
+        "b5637089-ccba-4f46-8db3-5a9e310ea5ad"
+      ],
+      "settings": {
+        "section_bg_color": "#06211e",
+        "the_title": "HOW TO TAKE ASHWAGANDHA: <br> IT’S AS EASY AS 1-2-3"
+      }
+    },
+    "f1e88f2c-30d5-4623-b43f-0dfcd18dbfec": {
+      "type": "custom-FAQ-section",
+      "blocks": {
+        "756807c5-fdfa-4213-b20b-448897441f27": {
+          "type": "question",
+          "settings": {
+            "faq_qus": "What is the perfect dosage for me?",
+            "faq_ans": "<p>All studies of KSM-66 were conducted for 8 weeks period with a dosage of 300 mg twice daily (600mg/day). As a dietary supplement, ​​this product does not induce instant response like ​prescription drugs or ​medications. This is because they are digested, absorbed, and utilized like any other food in the body.</p><p>When you first start taking KSM-66 Ashwagandha, we highly recommend starting off 1 capsule in the morning (300 mg), which will help you start your day with more energy, and another capsule about 4 hours before going to bed will help you have a good sleep. We all respond to supplementation differently, not only in how it affects us, but also how quickly it affects us. We suggest taking the product at the recommended dose (2 capsules daily) for a solid 1-2 weeks before deciding whether or not it’s working for you. After this period of time, you might want to increase the dose another capsule (300 milligram) and add it to your morning routine. If you are going to have a peak of stress (mental or physical) you can increase the dose, keeping in mind that if you take KSM-66 Ashwagandha just before going to bed, you may have difficulties falling asleep.</p><p>According to the Ayurveda system of medicine and also based on the safety studies on KSM-66, it is absolutely okay to take up to 4000 mg per day, without any adverse effects of ashwagandha. There are sports athletes who train at peak levels, who take 2000 – 2500 mg of KSM-66 every day and find it extremely beneficial.</p><p>Following traditional ayurvedic methods, we suggest taking the product for 2-3 months and then pause for a few days to give the body rest. TRIBE Ashwagandha can be taken with or without food.</p>"
+          }
+        },
+        "298cf424-5812-46de-b854-7ba22dc89b2f": {
+          "type": "question",
+          "settings": {
+            "faq_qus": "Why does KSM-66 Ashwagandha contain milk?",
+            "faq_ans": "<p>TRIBE KSM-66 Ashwagandha extract may contain trace amounts of dairy from traditional Ashwagandha extraction methods. The extraction process of Ashwagandha involves pre-treating the roots with small quantities of BSE-TSE-free organic cow milk in accordance with the traditional Ayurvedic practice. For this reason, the Ashwagandha may contain remnants of milk constituents. This pretreatment is important to the extraction process because it retains both hydrophilic and lipophilic components of the raw ashwagandha root. This, in turn, creates a full-spectrum extract which maintains the large array of bio-actives found in the raw root and leads to high clinical efficacy.<strong>If you are allergic to milk, you should not take this product.</strong></p>"
+          }
+        },
+        "0a7167d0-9048-4baf-b434-2615083504a6": {
+          "type": "question",
+          "settings": {
+            "faq_qus": "What are the side effects of Ashwagandha?",
+            "faq_ans": "<p>KSM-66 Ashwagandha is GRAS (generally recognized as safe) certified. Each person interacts differently with the herb, so we recommend testing it for a day to see how you react.</p><p>We won’t hide it, there are some side effects. Some evidence suggests that some people might experience allergies due to Ashwagandha. The reactions include skin rashes, itchiness, chest pain, and difficulty in breathing. Ashwagandha belongs to the Solanaceae family of nightshade plants that includes tomatoes, potatoes, and many important pharmacological plants. People with known sensitivity to this family of plants should avoid Ashwagandha.</p><p>Sometimes our body reacts to some element that is flagged as dangerous to our system. If you start feeling allergic symptoms, we recommend to stop taking Ashwagandha and do allergic tests to see what can be done, and maybe it helps to avoid problems in the future with other foods or supplements.</p><p>Another side effect is people with auto-immune diseases should be careful about how it’s used. Particularly those with diseases such as multiple sclerosis or lupus should not take this supplement overall as improper use might worsen symptoms. Some have had success or no side-effects by using very low doses, but it’s always best to consult a professional health practitioner.</p>"
+          }
+        },
+        "b5539c25-4eff-4e41-a0f2-d294ba17daea": {
+          "type": "question",
+          "settings": {
+            "faq_qus": "What is the capsule made of?",
+            "faq_ans": "<p>TRIIBE KSM-66 Ashwagandha capsules are vegetarian-grade (“veggie-caps”) with NO animal-based gelatin, Non-GMO Project verified, and Kosher certified. They are Preservative-Free, Allergen Free, Gluten Free, Sugar Free and Starch Free.</p>"
+          }
+        },
+        "b847395f-fd06-4d4e-8307-ba8dddcfd47c": {
+          "type": "question",
+          "settings": {
+            "faq_qus": "What is the best way to store KSM-66 Ashwagandha?",
+            "faq_ans": "<p>Please keep this product stored in a cool, dry place in an air-tight container away from direct sunlight. Our Ashwagandha is best consumed within 60 days upon opening. Shelf life: 2 years.</p>"
+          }
+        },
+        "05b3becf-cae7-43f2-ab8a-2f182f2eca6e": {
+          "type": "question",
+          "settings": {
+            "faq_qus": "Is this product suitable for olympic athletes?",
+            "faq_ans": "<p>One important aspect that must be noted here is the fact that KSM-66 is BSCG certified. BSCG stands for Banned Substances Control Group. This certification entails testing of the ingredient and provides protection against 485 banned drugs which includes 274 drugs on the World Anti-Doping Agency (WADA) Prohibited List and an additional 211 illicit, prescription and over-the-counter drugs not banned in sport. According to the Ayurveda system of medicine and also based on the safety studies on KSM-66, the leading sports nutrition brands across the globe are using KSM-66 currently. There are sports athletes who train at peak levels and consume KSM-66 to complement their rigorous and demanding physical training needs.</p><p>You can also read more on KSM-66 and its effects on sports nutrition by clicking on <a href=\"/pages/ksm-66-ashwagandha-pills\" title=\"Organic Ashwagandha KSM-66\"><strong>this PDF</strong></a></p>"
+          }
+        },
+        "3901f291-ebb3-49c0-9bed-38c19bcc5aae": {
+          "type": "question",
+          "settings": {
+            "faq_qus": "Does Ashwagandha Have Any Side Effects?",
+            "faq_ans": "<p>Just like any other supplement, you should consult with your doctor to see if this is the right addition to your diet.</p><p>Major side effects are rare, but those who have hormone disorders, high blood pressure, or are currently taking thyroid medication are more likely to see a disruption in their currently managed health. If you have a treated pre-existing condition, you should confirm with your primary care provider that Ashwagandha supplementation will not conflict.</p><p>The most common side effect is an upset stomach, nausea, or diarrhea. These stomach irritations can be avoided by taking the herb at night, or with food.</p>"
+          }
+        },
+        "1f81925a-fd90-4f54-b177-3147cc20619a": {
+          "type": "question",
+          "settings": {
+            "faq_qus": "What Supplements Should Not Be Taken With Ashwagandha?",
+            "faq_ans": "<p>One thing to be aware of when taking Ashwagandha is that it can react negatively with other medical treatments. If you are pregnant, nursing, or plan on getting pregnant then be sure not to take Ashwagandha or any other supplement without first speaking to your doctor. Additionally, if you are taking sedatives, antidepressants, or drugs for diabetes then consult with a physician before taking this herb.</p>"
+          }
+        },
+        "e380e427-f385-46b2-810b-f6ac38aa135f": {
+          "type": "question",
+          "settings": {
+            "faq_qus": "How to supercharge absorption of our KSM-66 Ashwagandha",
+            "faq_ans": "<p>Like with most other supplements, when you choose to take Ashwagandha can directly affect how it works. For example, if you want to use the superfood to improve your sleep, it might be a good idea to take it in the evening before bed. Or if you’re looking to increase your athletic performance, you should try adding it to your morning supplement regimen.</p><p>But it’s not just about the time of day – how you take Ashwagandha can make a difference too. There are a few reasons why it’s a good idea to take KSM-66 Ashwagandha with food. Importantly, taking Ashwagandha straight after a meal can aid its digestion, thus reducing the chance of any side effects like stomach aches or nausea.</p><p>For even more benefits, you can also consider the types of food you eat with Ashwagandha. Studies suggest that the bioavailability of a supplement, or the rate at which it’s effectively used by your body, can significantly effect the way the superfood works.</p><p>So how can you supercharge absorption of Ashwagandha? The answer is relatively simple. Studies suggest that by taking your supplement alongside fat you can actually increase its bioavailability, and in turn its benefits. But if you can’t always take your Ksm-66 Ashwagandha with fat, don’t worry. Its extraction process entails pre-treating the Ashwagandha roots with grass-fed cow’s milk. For this reason, it contains milk constituents. Such pre-treatment is consistent with the process described by the Traditional Ayurvedic method. This leads to retention of both hydrophilic components and lipophilic components of the raw root, which in turn leads to a full-spectrum extract of such high-potency and the best bioavailability.</p>"
+          }
+        },
+        "bbaeb3f3-948c-4d16-a6c0-7df25a9076df": {
+          "type": "question",
+          "settings": {
+            "faq_qus": "When should I take Ashwagandha?",
+            "faq_ans": "<p>A good question, with no one-size-fits-all answer. In general, you can take Ashwagandha any time of day or night. But it depends on your goals and current schedule.</p><p><strong>In the morning<br/></strong>If you’re taking Ashwagandha as part of your supplement routine for general health and/or mood boost, you may want to take it in the morning along with any other vitamins or supplements. That said, taking Ashwagandha on an empty stomach can cause mild stomach discomfort in some people. If that’s you, it might be best to take Ashwagandha after breakfast or a small snack. </p><p><strong>At night<br/></strong>If used to promote sleep and relaxation, taking it at night may be a better option. Ultimately, there is no wrong answer – just experiment and see what works best for you. </p><p>Unlike many other (non-natural) supplements, Ashwagandha’s benefits are not immediate. It can take weeks before you begin to notice its effects. Therefore the most important factor is to take your Ashwagandha at a time you can be consistent with it. You’ll notice the most benefits of this super herb when taken on a daily basis.</p>"
+          }
+        },
+        "6e835643-ea1e-42af-a6b3-46a5cb3fd1b5": {
+          "type": "question",
+          "settings": {
+            "faq_qus": "How Does Ashwagandha Benefit Overall Health?",
+            "faq_ans": "<p><strong>Ashwagandha and Heart Health</strong></p><p>The herb can help support a healthy heart. Research suggests that it can reduce LDL cholesterol levels (aka the “bad” cholesterol). LDL cholesterol contributes to the build-up of fatty stores in arteries. Ashwagandha may also lower triglycerides and improve blood pressure.</p><p>That being said, if you’re currently on medication for your heart function, it’s best to consult with a doctor before changing or adding to your routine.</p><p><strong>Ashwagandha and Brain Health</strong></p><p>Any stress you experience, especially long-term, can seriously damage your brain. Age-related diseases such as Alzheimer’s or dementia have been connected to chronic stress.</p><p>Ashwagandha can protect your brain from degeneration and reduce anxiety.</p><p>Over 3 million in the US alone have been diagnosed with depression. Depression is also impacted by stress hormone levels in the body, Ashwagandha can support depression treatment by subsequently reducing those levels.</p><p>Ashwagandha may also increase hemoglobin levels, which are the red blood cells that deliver oxygen through the body. Improving this function means more efficient oxygen transfer, increased energy and overall well-being. VO2 levels are key to enhancing physical performance.</p><p><strong>Ashwagandha and Blood Sugar</strong></p><p>Ashwagandha may help balance blood sugar levels. Unregulated or high blood sugar can lead to life-long conditions from heart disease to nerve problems. In human studies, Ashwagandha supplementation has been shown to be sufficient for lowering blood glucose.</p><p><strong>Ashwagandha and Infertility</strong></p><p>One of the most well-known benefits of Ashwagandha is its impact on fertility. Supplementation can help treat fertility in both men and women. One study found that adding this herb into a daily routine could increase fertility by 15% in men.</p>"
+          }
+        }
+      },
+      "block_order": [
+        "756807c5-fdfa-4213-b20b-448897441f27",
+        "298cf424-5812-46de-b854-7ba22dc89b2f",
+        "0a7167d0-9048-4baf-b434-2615083504a6",
+        "b5539c25-4eff-4e41-a0f2-d294ba17daea",
+        "b847395f-fd06-4d4e-8307-ba8dddcfd47c",
+        "05b3becf-cae7-43f2-ab8a-2f182f2eca6e",
+        "3901f291-ebb3-49c0-9bed-38c19bcc5aae",
+        "1f81925a-fd90-4f54-b177-3147cc20619a",
+        "e380e427-f385-46b2-810b-f6ac38aa135f",
+        "bbaeb3f3-948c-4d16-a6c0-7df25a9076df",
+        "6e835643-ea1e-42af-a6b3-46a5cb3fd1b5"
+      ],
+      "settings": {
+        "section_bg_color": "#06211e",
+        "the_title": "FREQUENTLY ASKED QUESTIONS"
+      }
+    },
+    "b4092302-0363-482b-bb7d-f3322cf3bb7c": {
+      "type": "custom-customer-reviews",
+      "blocks": {
+        "6f1823af-fcc1-4436-a184-a842a63ea722": {
+          "type": "image_block",
+          "settings": {
+            "the_image": "shopify://shop_images/Group_9_1_-min.png"
+          }
+        },
+        "a5809b1e-5bb5-4a56-ba4f-13c03ae7bc17": {
+          "type": "review_section",
+          "settings": {
+            "rating_text": "<p>I only started taking Ashwagandha in the past few months. I’m in my mid-40s. With the stress of work and life, I decided to look into something holistic to help decrease or manage my stress level.</p><p>With this brand, I feel much calmer and grounded and not as anxious when you know you’re off to work and waiting for more stress to pile on. I have since returned to this brand and will continue to take this first thing in the morning. You get this serene feeling that “everything will be okay”.</p>",
+            "author_name": "DARYA"
+          }
+        },
+        "2bc90a2c-633c-4c56-80bd-689830a38cc9": {
+          "type": "rich_text",
+          "settings": {
+            "the_title": "ENJOY SUPERIOR HEALTH & WELLBEING FROM THE INSIDE OUT… <br> <br> ADD ASHWAGANDHA TO YOUR DAILY HEALTH ROUTINE, TODAY!",
+            "the_text": "",
+            "button_text": "BUY YOURS NOW"
+          }
+        }
+      },
+      "block_order": [
+        "6f1823af-fcc1-4436-a184-a842a63ea722",
+        "a5809b1e-5bb5-4a56-ba4f-13c03ae7bc17",
+        "2bc90a2c-633c-4c56-80bd-689830a38cc9"
+      ],
+      "settings": {
+        "section_bg_color": "#06211e",
+        "the_title": "MANY CUSTOMER ARE CHANGING THEIR LIVES"
+      }
+    },
+    "cd902f50-8545-4389-b6a3-ec2ee458cfab": {
+      "type": "custom-featured-product",
+      "blocks": {
+        "c6810cf7-9011-4677-82c8-fdb93b6912c7": {
+          "type": "product_list",
+          "settings": {
+            "the_title": "2 Pack",
+            "the_text": "<p>240 Capsules</p><p>4 Months Supply</p><p>120 Servings</p>",
+            "product_image": "shopify://shop_images/Copy-of-Square-Design-2-1024x102-min.png",
+            "product_title": "2 BOTTLES OF ASHWAGANDHA",
+            "regular_price": "<p>$57.94</p>",
+            "compare_price": "<p>$46.35</p>",
+            "save_text": "(Save $11.59)",
+            "button_text": "ADD TO CART",
+            "button_link": "https://tribe-supplements.myshopify.com/cart/43920407068895:1?channel=buy_button",
+            "icon_1": "shopify://shop_images/usda-organic-logo-e1667491573513.png",
+            "icon_2": "shopify://shop_images/non-gmo-black-e1667491566931.png",
+            "icon_3": "shopify://shop_images/gluten-free-dark-green.png"
+          }
+        },
+        "4e4d830a-b9f2-4ae1-a8ee-1e3d67b9a5a9": {
+          "type": "product_list",
+          "settings": {
+            "the_title": "3 Pack",
+            "the_text": "<p>360 Capsules</p><p>6 Months Supply</p><p>180 Servings</p>",
+            "product_image": "shopify://shop_images/16-1-1024x1024-min.png",
+            "product_title": "3 BOTTLES OF ASHWAGANDHA",
+            "regular_price": "<p>$92.91</p>",
+            "compare_price": "<p>$69.69</p>",
+            "save_text": "(Save $23.22)",
+            "button_text": "ADD TO CART",
+            "button_link": "https://tribe-supplements.myshopify.com/cart/43920428859615:1?channel=buy_button",
+            "icon_1": "shopify://shop_images/usda-organic-logo-e1667491573513.png",
+            "icon_2": "shopify://shop_images/non-gmo-black-e1667491566931.png",
+            "icon_3": "shopify://shop_images/gluten-free-dark-green.png"
+          }
+        },
+        "50aa9ebc-9eff-41a3-aa04-74ef5446801f": {
+          "type": "product_list",
+          "settings": {
+            "the_title": "4 Pack",
+            "the_text": "<p>480 Capsules</p><p>8 Months Supply</p><p>240 Servings</p>",
+            "product_image": "shopify://shop_images/Copy-of-Square-Design-3-1024x102-min.png",
+            "product_title": "4 BOTTLES OF ASHWAGANDHA",
+            "regular_price": "<p>$123.88</p>",
+            "compare_price": "<p>$86.72</p>",
+            "save_text": "(Save $37.16)",
+            "button_text": "ADD TO CART",
+            "button_link": "https://tribe-supplements.myshopify.com/cart/43920434299103:1?channel=buy_button",
+            "icon_1": "shopify://shop_images/usda-organic-logo-e1667491573513.png",
+            "icon_2": "shopify://shop_images/non-gmo-black-e1667491566931.png",
+            "icon_3": "shopify://shop_images/gluten-free-dark-green.png"
+          }
+        }
+      },
+      "block_order": [
+        "c6810cf7-9011-4677-82c8-fdb93b6912c7",
+        "4e4d830a-b9f2-4ae1-a8ee-1e3d67b9a5a9",
+        "50aa9ebc-9eff-41a3-aa04-74ef5446801f"
+      ],
+      "settings": {
+        "section_bg_color": "#faede9",
+        "the_title": "SECURE YOUR SUPPLY OF ORGANIC KSM-66® ASHWAGANDHA UP TO 30% OFF TODAY WHILE SUPPLIES LAST",
+        "guarantee_img": "shopify://shop_images/SAFE_CHECKOUT_BADGES_2x_8ecd8b7b-min.png"
+      }
+    },
+    "4b9c4038-c453-43a8-aa79-b8155cb2e65d": {
+      "type": "support-donate-section",
+      "blocks": {
+        "acdd0f99-215f-4517-a5fd-2377dd69a95d": {
+          "type": "image_block",
+          "settings": {
+            "the_image": "shopify://shop_images/img-min_1.png",
+            "the_title": "WE APPRECIATE YOUR SUPPORT!",
+            "the_text": "<p>With every purchase you make, we give back. We donate 1% of our total revenue – not just profit – to 1% for the Planet organization which helps many educational and environmental NGO’s across the world.</p>"
+          }
+        },
+        "06cf968a-8de7-4d3a-b9ab-dbee27d762a7": {
+          "type": "tribe_logos",
+          "settings": {
+            "the_image1": "shopify://shop_images/1ftp_Primary_Vertical_White-1-1-optimized.png",
+            "the_image2": "shopify://shop_images/TO_018_SecondayLogoWhite_Transpa_e7d7d069-18ac-4c15-8949-c7117601dc2a.png"
+          }
+        }
+      },
+      "block_order": [
+        "acdd0f99-215f-4517-a5fd-2377dd69a95d",
+        "06cf968a-8de7-4d3a-b9ab-dbee27d762a7"
+      ],
+      "settings": {
+        "section_bg_color": "#06211e"
+      }
+    },
+    "616b536c-c759-4ace-a5e6-3ffaa812f180": {
+      "type": "tribe-difference-section",
+      "blocks": {
+        "b1a7f671-6e7d-4924-bc3e-4ff1a1c0264a": {
+          "type": "three_blocks",
+          "settings": {
+            "leaf_image": "shopify://shop_images/White_leaft_bullet.png",
+            "list_text_1": "Science-backed",
+            "list_text_2": "Superior potency",
+            "list_text_3": "Standardized extracts",
+            "list_text_4": "100% fruiting bodies",
+            "list_text_5": "Ethically sourced",
+            "list_text_6": "",
+            "list_text_7": ""
+          }
+        },
+        "7b2ef569-2486-4d21-a80d-45380b9762c2": {
+          "type": "three_blocks",
+          "settings": {
+            "leaf_image": "shopify://shop_images/White_leaft_bullet.png",
+            "list_text_1": "Non-GMO verified",
+            "list_text_2": "USDA Organic certified",
+            "list_text_3": "Gluten free",
+            "list_text_4": "Allergen free",
+            "list_text_5": "3rd party tested",
+            "list_text_6": "cGMP",
+            "list_text_7": "Made in the USA"
+          }
+        },
+        "8f02b80d-2f9e-477c-9282-b3ad010be462": {
+          "type": "three_blocks",
+          "settings": {
+            "leaf_image": "shopify://shop_images/White_leaft_bullet.png",
+            "list_text_1": "No synthetic fillers",
+            "list_text_2": "No excipients",
+            "list_text_3": "No harmful additives",
+            "list_text_4": "No mycellium",
+            "list_text_5": "No artificial anything",
+            "list_text_6": "",
+            "list_text_7": ""
+          }
+        }
+      },
+      "block_order": [
+        "b1a7f671-6e7d-4924-bc3e-4ff1a1c0264a",
+        "7b2ef569-2486-4d21-a80d-45380b9762c2",
+        "8f02b80d-2f9e-477c-9282-b3ad010be462"
+      ],
+      "settings": {
+        "section_bg_color": "#06211e",
+        "main_image": "shopify://shop_images/Screenshot-2022-11-03-at-16.25.5.png",
+        "image_1": "shopify://shop_images/Screenshot-2022-11-03-at-16.29.5.png",
+        "image_2": "shopify://shop_images/Screenshot-2022-11-03-at-16.30.0.png",
+        "image_3": "shopify://shop_images/Screenshot-2022-11-03-at-16.30.0_1.png",
+        "image_4": "shopify://shop_images/Screenshot-2022-11-03-at-16.35.5.png",
+        "image_5": "shopify://shop_images/Screenshot-2022-11-03-at-16.36.0.png"
+      }
+    },
+    "8c8f4e77-6150-40af-8383-40e1c534fb1a": {
+      "type": "information-section",
+      "blocks": {
+        "3f8bec95-be91-4166-850e-38e0495ae041": {
+          "type": "two_blocks",
+          "disabled": true,
+          "settings": {
+            "the_image": "shopify://shop_images/Screenshot-2022-11-03-at-16.35.5.png"
+          }
+        },
+        "0b1c2930-dc3e-4813-804f-c16be4c560da": {
+          "type": "two_blocks",
+          "disabled": true,
+          "settings": {
+            "the_image": "shopify://shop_images/Screenshot-2022-11-03-at-16.36.0.png"
+          }
+        }
+      },
+      "block_order": [
+        "3f8bec95-be91-4166-850e-38e0495ae041",
+        "0b1c2930-dc3e-4813-804f-c16be4c560da"
+      ],
+      "settings": {
+        "section_bg_color": "#06211e",
+        "the_text": "<p>*These statements have not been evaluated by the Food and Drug Administration.</p><p>This product is not intended to diagnose, treat, cure or prevent any disease.</p>"
+      }
+    }
+  },
+  "order": [
+    "main",
+    "d5321aea-715e-43cd-b241-3d6ec636cf3c",
+    "b810486b-377d-40a8-b9b0-5d56a5cf9a75",
+    "5d16260a-bea3-4307-b357-c068b0a28d7f",
+    "6ea22e35-5c8c-4e84-8660-84f6f8451b08",
+    "c210cb35-d24c-44aa-8316-77bceef1b079",
+    "77d40903-5368-4470-bc45-e16b1fd8d9a3",
+    "1c2e6b82-5214-4d5c-ae86-5c4f9a4a4d85",
+    "7da30537-76ae-4ace-9ead-012c4592025e",
+    "370a0c7a-660f-41bc-b9bb-bea89c8f3f0f",
+    "4807b24e-dce6-4dd4-85cf-7d249179bc6d",
+    "e2204d97-5b5e-44f4-a1ed-63b6ab56f0bc",
+    "1079ff0c-c7df-483b-8ab5-b02d67fdfe7a",
+    "e84b29df-801d-4421-ae23-9776348408ed",
+    "30984470-6217-470f-aee9-c920a2132b07",
+    "9724973d-2ec9-44ac-9905-87787b2ae39b",
+    "b2c505ad-3c44-429e-9fc8-a4812bb0733d",
+    "f1e88f2c-30d5-4623-b43f-0dfcd18dbfec",
+    "b4092302-0363-482b-bb7d-f3322cf3bb7c",
+    "cd902f50-8545-4389-b6a3-ec2ee458cfab",
+    "4b9c4038-c453-43a8-aa79-b8155cb2e65d",
+    "616b536c-c759-4ace-a5e6-3ffaa812f180",
+    "8c8f4e77-6150-40af-8383-40e1c534fb1a"
+  ]
+}

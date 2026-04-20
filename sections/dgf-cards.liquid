@@ -1,0 +1,781 @@
+{% comment %}
+  [DGF] Cards
+  Author: Rodrigo Gesser
+{% endcomment %}
+
+{% liquid
+  assign bg_color = section.settings.background_color | default: '#F5EDE3'
+
+  assign title_font = section.settings.title_font | default: "'Superior Title Italic'"
+  assign title_font_size = section.settings.title_font_size | default: 36
+  assign title_font_size_mobile = section.settings.title_font_size_mobile | default: 26
+  assign title_font_weight = section.settings.title_font_weight | default: '400'
+  assign title_transform = section.settings.title_transform | default: 'none'
+  assign title_color = section.settings.title_color | default: '#333333'
+  assign title_alignment = section.settings.title_alignment | default: 'center'
+  assign title_margin_bottom = section.settings.title_margin_bottom | default: 40
+
+  assign card_title_font = section.settings.card_title_font | default: "'Superior Title Italic'"
+  assign card_title_font_size = section.settings.card_title_font_size | default: 24
+  assign card_title_font_size_mobile = section.settings.card_title_font_size_mobile | default: 20
+  assign card_title_font_weight = section.settings.card_title_font_weight | default: '400'
+  assign card_title_transform = section.settings.card_title_transform | default: 'none'
+  assign card_title_color = section.settings.card_title_color | default: '#333333'
+
+  assign card_text_font = section.settings.card_text_font | default: 'HypatiaSansPro'
+  assign card_text_font_size = section.settings.card_text_font_size | default: 15
+  assign card_text_font_size_mobile = section.settings.card_text_font_size_mobile | default: 14
+  assign card_text_font_weight = section.settings.card_text_font_weight | default: '400'
+  assign card_text_transform = section.settings.card_text_transform | default: 'none'
+  assign card_text_color = section.settings.card_text_color | default: '#555555'
+
+  assign card_disclaimer_font = section.settings.card_disclaimer_font | default: 'HypatiaSansPro'
+  assign card_disclaimer_font_size = section.settings.card_disclaimer_font_size | default: 11
+  assign card_disclaimer_font_size_mobile = section.settings.card_disclaimer_font_size_mobile | default: 10
+  assign card_disclaimer_font_weight = section.settings.card_disclaimer_font_weight | default: '400'
+  assign card_disclaimer_transform = section.settings.card_disclaimer_transform | default: 'none'
+  assign card_disclaimer_color = section.settings.card_disclaimer_color | default: '#999999'
+  assign card_disclaimer_font_style = section.settings.card_disclaimer_font_style | default: 'italic'
+
+  assign card_bg_color = section.settings.card_bg_color | default: '#ffffff'
+  assign card_gap = section.settings.card_gap | default: 20
+  assign divider_color = section.settings.divider_color | default: '#dddddd'
+
+  assign padding_top = section.settings.padding_top | default: 40
+  assign padding_bottom = section.settings.padding_bottom | default: 40
+  assign padding_left = section.settings.padding_left | default: 0
+  assign padding_right = section.settings.padding_right | default: 0
+
+  assign sid = section.id
+%}
+
+<section id="dgf-cards-{{ sid }}" style="background-color: {{ bg_color }};">
+  <div class="container">
+    {% if section.settings.title != blank %}
+      <div class="dgf-cards-title">{{ section.settings.title }}</div>
+    {% endif %}
+
+    <div class="dgf-cards-grid">
+      {% for block in section.blocks %}
+        <div class="dgf-card" {{ block.shopify_attributes }}>
+          {% if block.settings.image != blank %}
+            <div class="dgf-card-image">
+              <img
+                class="lazyload"
+                data-src="{{ block.settings.image | image_url: width: 600 }}"
+                alt="{{ block.settings.image.alt | default: block.settings.card_title | default: 'Card image' }}"
+                width="600"
+                height="{{ 600 | divided_by: block.settings.image.aspect_ratio | round }}"
+              >
+            </div>
+          {% endif %}
+          <div class="dgf-card-content">
+            {% if block.settings.card_title != blank %}
+              <div class="dgf-card-heading">{{ block.settings.card_title }}</div>
+            {% endif %}
+            <div class="dgf-card-divider"></div>
+            {% if block.settings.card_text != blank %}
+              <div class="dgf-card-text">{{ block.settings.card_text }}</div>
+            {% endif %}
+            {% if block.settings.card_disclaimer != blank %}
+              <div class="dgf-card-disclaimer">{{ block.settings.card_disclaimer }}</div>
+            {% endif %}
+          </div>
+        </div>
+      {% endfor %}
+    </div>
+  </div>
+</section>
+
+<style>
+  #dgf-cards-{{ sid }} {
+    padding-top: {{ padding_top }}px;
+    padding-bottom: {{ padding_bottom }}px;
+    padding-left: {{ padding_left }}px;
+    padding-right: {{ padding_right }}px;
+  }
+
+  /* Section Title */
+  #dgf-cards-{{ sid }} .dgf-cards-title,
+  #dgf-cards-{{ sid }} .dgf-cards-title h1,
+  #dgf-cards-{{ sid }} .dgf-cards-title h2,
+  #dgf-cards-{{ sid }} .dgf-cards-title h3,
+  #dgf-cards-{{ sid }} .dgf-cards-title h4,
+  #dgf-cards-{{ sid }} .dgf-cards-title h5,
+  #dgf-cards-{{ sid }} .dgf-cards-title h6,
+  #dgf-cards-{{ sid }} .dgf-cards-title p,
+  #dgf-cards-{{ sid }} .dgf-cards-title span,
+  #dgf-cards-{{ sid }} .dgf-cards-title strong,
+  #dgf-cards-{{ sid }} .dgf-cards-title em,
+  #dgf-cards-{{ sid }} .dgf-cards-title i,
+  #dgf-cards-{{ sid }} .dgf-cards-title u,
+  #dgf-cards-{{ sid }} .dgf-cards-title a {
+    font-family: {{ title_font }} !important;
+    font-size: {{ title_font_size }}px !important;
+    font-weight: {{ title_font_weight }} !important;
+    text-transform: {{ title_transform }} !important;
+    color: {{ title_color }} !important;
+    line-height: 1.2 !important;
+    margin: 0;
+  }
+
+  #dgf-cards-{{ sid }} .dgf-cards-title {
+    text-align: {{ title_alignment }};
+    margin-bottom: {{ title_margin_bottom }}px !important;
+  }
+
+  /* Cards Grid */
+  #dgf-cards-{{ sid }} .dgf-cards-grid {
+    display: flex;
+    flex-direction: column;
+    gap: {{ card_gap }}px;
+    justify-content: center;
+    align-items: center;
+  }
+
+  /* Card */
+  #dgf-cards-{{ sid }} .dgf-card {
+    display: flex;
+    flex-direction: row;
+    background-color: {{ card_bg_color }};
+    border-radius: 0 25px 0 25px;
+    overflow: hidden;
+    width: 78%;
+  }
+
+  /* Card Image */
+  #dgf-cards-{{ sid }} .dgf-card-image {
+    max-width: 279px;
+    width: 279px;
+    min-width: 279px;
+    min-height: 202px;
+    overflow: hidden;
+  }
+
+  #dgf-cards-{{ sid }} .dgf-card-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+  }
+
+  /* Card Content */
+  #dgf-cards-{{ sid }} .dgf-card-content {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 20px 25px;
+  }
+
+  /* Card Title */
+  #dgf-cards-{{ sid }} .dgf-card-heading,
+  #dgf-cards-{{ sid }} .dgf-card-heading h1,
+  #dgf-cards-{{ sid }} .dgf-card-heading h2,
+  #dgf-cards-{{ sid }} .dgf-card-heading h3,
+  #dgf-cards-{{ sid }} .dgf-card-heading h4,
+  #dgf-cards-{{ sid }} .dgf-card-heading h5,
+  #dgf-cards-{{ sid }} .dgf-card-heading h6,
+  #dgf-cards-{{ sid }} .dgf-card-heading p,
+  #dgf-cards-{{ sid }} .dgf-card-heading span,
+  #dgf-cards-{{ sid }} .dgf-card-heading strong,
+  #dgf-cards-{{ sid }} .dgf-card-heading em,
+  #dgf-cards-{{ sid }} .dgf-card-heading i,
+  #dgf-cards-{{ sid }} .dgf-card-heading u,
+  #dgf-cards-{{ sid }} .dgf-card-heading a {
+    font-family: {{ card_title_font }} !important;
+    font-size: {{ card_title_font_size }}px !important;
+    font-weight: {{ card_title_font_weight }} !important;
+    text-transform: {{ card_title_transform }} !important;
+    color: {{ card_title_color }} !important;
+    line-height: 1.2 !important;
+    margin: 0;
+  }
+
+  #dgf-cards-{{ sid }} .dgf-card-heading {
+    margin-bottom: 12px;
+  }
+
+  /* Divider */
+  #dgf-cards-{{ sid }} .dgf-card-divider {
+    width: 100%;
+    height: 1px;
+    background-color: {{ divider_color }};
+    margin-bottom: 12px;
+  }
+
+  /* Card Text */
+  #dgf-cards-{{ sid }} .dgf-card-text,
+  #dgf-cards-{{ sid }} .dgf-card-text h1,
+  #dgf-cards-{{ sid }} .dgf-card-text h2,
+  #dgf-cards-{{ sid }} .dgf-card-text h3,
+  #dgf-cards-{{ sid }} .dgf-card-text h4,
+  #dgf-cards-{{ sid }} .dgf-card-text h5,
+  #dgf-cards-{{ sid }} .dgf-card-text h6,
+  #dgf-cards-{{ sid }} .dgf-card-text p,
+  #dgf-cards-{{ sid }} .dgf-card-text span,
+  #dgf-cards-{{ sid }} .dgf-card-text strong,
+  #dgf-cards-{{ sid }} .dgf-card-text em,
+  #dgf-cards-{{ sid }} .dgf-card-text i,
+  #dgf-cards-{{ sid }} .dgf-card-text u,
+  #dgf-cards-{{ sid }} .dgf-card-text a {
+    font-family: {{ card_text_font }} !important;
+    font-size: {{ card_text_font_size }}px !important;
+    font-weight: {{ card_text_font_weight }} !important;
+    text-transform: {{ card_text_transform }} !important;
+    color: {{ card_text_color }} !important;
+    line-height: 1.5 !important;
+    margin: 0;
+  }
+
+  /* Card Disclaimer */
+  #dgf-cards-{{ sid }} .dgf-card-disclaimer,
+  #dgf-cards-{{ sid }} .dgf-card-disclaimer h1,
+  #dgf-cards-{{ sid }} .dgf-card-disclaimer h2,
+  #dgf-cards-{{ sid }} .dgf-card-disclaimer h3,
+  #dgf-cards-{{ sid }} .dgf-card-disclaimer h4,
+  #dgf-cards-{{ sid }} .dgf-card-disclaimer h5,
+  #dgf-cards-{{ sid }} .dgf-card-disclaimer h6,
+  #dgf-cards-{{ sid }} .dgf-card-disclaimer p,
+  #dgf-cards-{{ sid }} .dgf-card-disclaimer span,
+  #dgf-cards-{{ sid }} .dgf-card-disclaimer strong,
+  #dgf-cards-{{ sid }} .dgf-card-disclaimer em,
+  #dgf-cards-{{ sid }} .dgf-card-disclaimer i,
+  #dgf-cards-{{ sid }} .dgf-card-disclaimer u,
+  #dgf-cards-{{ sid }} .dgf-card-disclaimer a {
+    font-family: {{ card_disclaimer_font }} !important;
+    font-size: {{ card_disclaimer_font_size }}px !important;
+    font-weight: {{ card_disclaimer_font_weight }} !important;
+    text-transform: {{ card_disclaimer_transform }} !important;
+    color: {{ card_disclaimer_color }} !important;
+    font-style: {{ card_disclaimer_font_style }} !important;
+    line-height: 1.4 !important;
+    margin: 0;
+  }
+
+  #dgf-cards-{{ sid }} .dgf-card-disclaimer {
+    margin-top: 8px;
+  }
+
+  /* Mobile */
+  @media (max-width: 768px) {
+    #dgf-cards-{{ sid }} .dgf-cards-title,
+    #dgf-cards-{{ sid }} .dgf-cards-title h1,
+    #dgf-cards-{{ sid }} .dgf-cards-title h2,
+    #dgf-cards-{{ sid }} .dgf-cards-title h3,
+    #dgf-cards-{{ sid }} .dgf-cards-title h4,
+    #dgf-cards-{{ sid }} .dgf-cards-title h5,
+    #dgf-cards-{{ sid }} .dgf-cards-title h6,
+    #dgf-cards-{{ sid }} .dgf-cards-title p,
+    #dgf-cards-{{ sid }} .dgf-cards-title span,
+    #dgf-cards-{{ sid }} .dgf-cards-title strong,
+    #dgf-cards-{{ sid }} .dgf-cards-title em,
+    #dgf-cards-{{ sid }} .dgf-cards-title i,
+    #dgf-cards-{{ sid }} .dgf-cards-title u,
+    #dgf-cards-{{ sid }} .dgf-cards-title a {
+      font-size: {{ title_font_size_mobile }}px !important;
+    }
+
+    #dgf-cards-{{ sid }} .dgf-cards-grid {
+      flex-direction: column;
+    }
+
+    #dgf-cards-{{ sid }} .dgf-card {
+      width: 100% !important;
+      flex-direction: column;
+    }
+
+    #dgf-cards-{{ sid }} .dgf-card-image {
+      max-width: 100%;
+      width: 100%;
+      min-width: auto;
+      min-height: auto;
+    }
+
+    #dgf-cards-{{ sid }} .dgf-card-heading,
+    #dgf-cards-{{ sid }} .dgf-card-heading h1,
+    #dgf-cards-{{ sid }} .dgf-card-heading h2,
+    #dgf-cards-{{ sid }} .dgf-card-heading h3,
+    #dgf-cards-{{ sid }} .dgf-card-heading h4,
+    #dgf-cards-{{ sid }} .dgf-card-heading h5,
+    #dgf-cards-{{ sid }} .dgf-card-heading h6,
+    #dgf-cards-{{ sid }} .dgf-card-heading p,
+    #dgf-cards-{{ sid }} .dgf-card-heading span,
+    #dgf-cards-{{ sid }} .dgf-card-heading strong,
+    #dgf-cards-{{ sid }} .dgf-card-heading em,
+    #dgf-cards-{{ sid }} .dgf-card-heading i,
+    #dgf-cards-{{ sid }} .dgf-card-heading u,
+    #dgf-cards-{{ sid }} .dgf-card-heading a {
+      font-size: {{ card_title_font_size_mobile }}px !important;
+    }
+
+    #dgf-cards-{{ sid }} .dgf-card-text,
+    #dgf-cards-{{ sid }} .dgf-card-text h1,
+    #dgf-cards-{{ sid }} .dgf-card-text h2,
+    #dgf-cards-{{ sid }} .dgf-card-text h3,
+    #dgf-cards-{{ sid }} .dgf-card-text h4,
+    #dgf-cards-{{ sid }} .dgf-card-text h5,
+    #dgf-cards-{{ sid }} .dgf-card-text h6,
+    #dgf-cards-{{ sid }} .dgf-card-text p,
+    #dgf-cards-{{ sid }} .dgf-card-text span,
+    #dgf-cards-{{ sid }} .dgf-card-text strong,
+    #dgf-cards-{{ sid }} .dgf-card-text em,
+    #dgf-cards-{{ sid }} .dgf-card-text i,
+    #dgf-cards-{{ sid }} .dgf-card-text u,
+    #dgf-cards-{{ sid }} .dgf-card-text a {
+      font-size: {{ card_text_font_size_mobile }}px !important;
+    }
+
+    #dgf-cards-{{ sid }} .dgf-card-disclaimer,
+    #dgf-cards-{{ sid }} .dgf-card-disclaimer h1,
+    #dgf-cards-{{ sid }} .dgf-card-disclaimer h2,
+    #dgf-cards-{{ sid }} .dgf-card-disclaimer h3,
+    #dgf-cards-{{ sid }} .dgf-card-disclaimer h4,
+    #dgf-cards-{{ sid }} .dgf-card-disclaimer h5,
+    #dgf-cards-{{ sid }} .dgf-card-disclaimer h6,
+    #dgf-cards-{{ sid }} .dgf-card-disclaimer p,
+    #dgf-cards-{{ sid }} .dgf-card-disclaimer span,
+    #dgf-cards-{{ sid }} .dgf-card-disclaimer strong,
+    #dgf-cards-{{ sid }} .dgf-card-disclaimer em,
+    #dgf-cards-{{ sid }} .dgf-card-disclaimer i,
+    #dgf-cards-{{ sid }} .dgf-card-disclaimer u,
+    #dgf-cards-{{ sid }} .dgf-card-disclaimer a {
+      font-size: {{ card_disclaimer_font_size_mobile }}px !important;
+    }
+
+    #dgf-cards-{{ sid }} .dgf-card-content {
+      padding: 15px 18px;
+    }
+  }
+</style>
+
+{% schema %}
+  {
+    "name": "[DGF] Cards",
+    "tag": "section",
+    "class": "section",
+    "settings": [
+      {
+        "type": "header",
+        "content": "Content"
+      },
+      {
+        "type": "html",
+        "id": "title",
+        "label": "Section Title (HTML)"
+      },
+      {
+        "type": "select",
+        "id": "title_alignment",
+        "label": "Title Alignment",
+        "options": [
+          { "value": "left", "label": "Left" },
+          { "value": "center", "label": "Center" },
+          { "value": "right", "label": "Right" }
+        ],
+        "default": "center"
+      },
+      {
+        "type": "color",
+        "id": "background_color",
+        "label": "Section Background Color",
+        "default": "#F5EDE3"
+      },
+      {
+        "type": "header",
+        "content": "Section Title Font"
+      },
+      {
+        "type": "select",
+        "id": "title_font",
+        "label": "Title Font Family",
+        "options": [
+          { "value": "HypatiaSansPro", "label": "Hypatia Sans Pro" },
+          { "value": "'Superior Title Italic'", "label": "Superior Title Italic" },
+          { "value": "inherit", "label": "Inherit" }
+        ],
+        "default": "'Superior Title Italic'"
+      },
+      {
+        "type": "range",
+        "id": "title_font_size",
+        "label": "Title Font Size (Desktop)",
+        "min": 12,
+        "max": 80,
+        "step": 1,
+        "default": 36,
+        "unit": "px"
+      },
+      {
+        "type": "range",
+        "id": "title_font_size_mobile",
+        "label": "Title Font Size (Mobile)",
+        "min": 12,
+        "max": 60,
+        "step": 1,
+        "default": 26,
+        "unit": "px"
+      },
+      {
+        "type": "select",
+        "id": "title_font_weight",
+        "label": "Title Font Weight",
+        "options": [
+          { "value": "400", "label": "Normal" },
+          { "value": "600", "label": "Semi Bold" },
+          { "value": "700", "label": "Bold" },
+          { "value": "800", "label": "Extra Bold" }
+        ],
+        "default": "400"
+      },
+      {
+        "type": "select",
+        "id": "title_transform",
+        "label": "Title Text Transform",
+        "options": [
+          { "value": "none", "label": "None" },
+          { "value": "uppercase", "label": "Uppercase" },
+          { "value": "lowercase", "label": "Lowercase" },
+          { "value": "capitalize", "label": "Capitalize" }
+        ],
+        "default": "none"
+      },
+      {
+        "type": "color",
+        "id": "title_color",
+        "label": "Title Color",
+        "default": "#333333"
+      },
+      {
+        "type": "range",
+        "id": "title_margin_bottom",
+        "label": "Title Margin Bottom",
+        "min": 0,
+        "max": 80,
+        "step": 1,
+        "default": 40,
+        "unit": "px"
+      },
+      {
+        "type": "header",
+        "content": "Card Title Font"
+      },
+      {
+        "type": "select",
+        "id": "card_title_font",
+        "label": "Card Title Font Family",
+        "options": [
+          { "value": "HypatiaSansPro", "label": "Hypatia Sans Pro" },
+          { "value": "'Superior Title Italic'", "label": "Superior Title Italic" },
+          { "value": "inherit", "label": "Inherit" }
+        ],
+        "default": "'Superior Title Italic'"
+      },
+      {
+        "type": "range",
+        "id": "card_title_font_size",
+        "label": "Card Title Font Size (Desktop)",
+        "min": 12,
+        "max": 60,
+        "step": 1,
+        "default": 24,
+        "unit": "px"
+      },
+      {
+        "type": "range",
+        "id": "card_title_font_size_mobile",
+        "label": "Card Title Font Size (Mobile)",
+        "min": 12,
+        "max": 40,
+        "step": 1,
+        "default": 20,
+        "unit": "px"
+      },
+      {
+        "type": "select",
+        "id": "card_title_font_weight",
+        "label": "Card Title Font Weight",
+        "options": [
+          { "value": "400", "label": "Normal" },
+          { "value": "600", "label": "Semi Bold" },
+          { "value": "700", "label": "Bold" },
+          { "value": "800", "label": "Extra Bold" }
+        ],
+        "default": "400"
+      },
+      {
+        "type": "select",
+        "id": "card_title_transform",
+        "label": "Card Title Text Transform",
+        "options": [
+          { "value": "none", "label": "None" },
+          { "value": "uppercase", "label": "Uppercase" },
+          { "value": "lowercase", "label": "Lowercase" },
+          { "value": "capitalize", "label": "Capitalize" }
+        ],
+        "default": "none"
+      },
+      {
+        "type": "color",
+        "id": "card_title_color",
+        "label": "Card Title Color",
+        "default": "#333333"
+      },
+      {
+        "type": "header",
+        "content": "Card Text Font"
+      },
+      {
+        "type": "select",
+        "id": "card_text_font",
+        "label": "Card Text Font Family",
+        "options": [
+          { "value": "HypatiaSansPro", "label": "Hypatia Sans Pro" },
+          { "value": "'Superior Title Italic'", "label": "Superior Title Italic" },
+          { "value": "inherit", "label": "Inherit" }
+        ],
+        "default": "HypatiaSansPro"
+      },
+      {
+        "type": "range",
+        "id": "card_text_font_size",
+        "label": "Card Text Font Size (Desktop)",
+        "min": 10,
+        "max": 40,
+        "step": 1,
+        "default": 15,
+        "unit": "px"
+      },
+      {
+        "type": "range",
+        "id": "card_text_font_size_mobile",
+        "label": "Card Text Font Size (Mobile)",
+        "min": 10,
+        "max": 30,
+        "step": 1,
+        "default": 14,
+        "unit": "px"
+      },
+      {
+        "type": "select",
+        "id": "card_text_font_weight",
+        "label": "Card Text Font Weight",
+        "options": [
+          { "value": "400", "label": "Normal" },
+          { "value": "600", "label": "Semi Bold" },
+          { "value": "700", "label": "Bold" },
+          { "value": "800", "label": "Extra Bold" }
+        ],
+        "default": "400"
+      },
+      {
+        "type": "select",
+        "id": "card_text_transform",
+        "label": "Card Text Transform",
+        "options": [
+          { "value": "none", "label": "None" },
+          { "value": "uppercase", "label": "Uppercase" },
+          { "value": "lowercase", "label": "Lowercase" },
+          { "value": "capitalize", "label": "Capitalize" }
+        ],
+        "default": "none"
+      },
+      {
+        "type": "color",
+        "id": "card_text_color",
+        "label": "Card Text Color",
+        "default": "#555555"
+      },
+      {
+        "type": "header",
+        "content": "Card Disclaimer Font"
+      },
+      {
+        "type": "select",
+        "id": "card_disclaimer_font",
+        "label": "Disclaimer Font Family",
+        "options": [
+          { "value": "HypatiaSansPro", "label": "Hypatia Sans Pro" },
+          { "value": "'Superior Title Italic'", "label": "Superior Title Italic" },
+          { "value": "inherit", "label": "Inherit" }
+        ],
+        "default": "HypatiaSansPro"
+      },
+      {
+        "type": "range",
+        "id": "card_disclaimer_font_size",
+        "label": "Disclaimer Font Size (Desktop)",
+        "min": 8,
+        "max": 20,
+        "step": 1,
+        "default": 11,
+        "unit": "px"
+      },
+      {
+        "type": "range",
+        "id": "card_disclaimer_font_size_mobile",
+        "label": "Disclaimer Font Size (Mobile)",
+        "min": 8,
+        "max": 18,
+        "step": 1,
+        "default": 10,
+        "unit": "px"
+      },
+      {
+        "type": "select",
+        "id": "card_disclaimer_font_weight",
+        "label": "Disclaimer Font Weight",
+        "options": [
+          { "value": "400", "label": "Normal" },
+          { "value": "600", "label": "Semi Bold" },
+          { "value": "700", "label": "Bold" },
+          { "value": "800", "label": "Extra Bold" }
+        ],
+        "default": "400"
+      },
+      {
+        "type": "select",
+        "id": "card_disclaimer_transform",
+        "label": "Disclaimer Text Transform",
+        "options": [
+          { "value": "none", "label": "None" },
+          { "value": "uppercase", "label": "Uppercase" },
+          { "value": "lowercase", "label": "Lowercase" },
+          { "value": "capitalize", "label": "Capitalize" }
+        ],
+        "default": "none"
+      },
+      {
+        "type": "color",
+        "id": "card_disclaimer_color",
+        "label": "Disclaimer Color",
+        "default": "#999999"
+      },
+      {
+        "type": "select",
+        "id": "card_disclaimer_font_style",
+        "label": "Disclaimer Font Style",
+        "options": [
+          { "value": "normal", "label": "Normal" },
+          { "value": "italic", "label": "Italic" }
+        ],
+        "default": "italic"
+      },
+      {
+        "type": "header",
+        "content": "Card Styling"
+      },
+      {
+        "type": "color",
+        "id": "card_bg_color",
+        "label": "Card Background Color",
+        "default": "#ffffff"
+      },
+      {
+        "type": "range",
+        "id": "card_gap",
+        "label": "Gap Between Cards",
+        "min": 0,
+        "max": 60,
+        "step": 2,
+        "default": 20,
+        "unit": "px"
+      },
+      {
+        "type": "color",
+        "id": "divider_color",
+        "label": "Divider Color",
+        "default": "#dddddd"
+      },
+      {
+        "type": "header",
+        "content": "Spacing"
+      },
+      {
+        "type": "range",
+        "id": "padding_top",
+        "label": "Padding Top",
+        "min": 0,
+        "max": 150,
+        "step": 5,
+        "default": 40,
+        "unit": "px"
+      },
+      {
+        "type": "range",
+        "id": "padding_bottom",
+        "label": "Padding Bottom",
+        "min": 0,
+        "max": 150,
+        "step": 5,
+        "default": 40,
+        "unit": "px"
+      },
+      {
+        "type": "range",
+        "id": "padding_left",
+        "label": "Padding Left",
+        "min": 0,
+        "max": 150,
+        "step": 5,
+        "default": 0,
+        "unit": "px"
+      },
+      {
+        "type": "range",
+        "id": "padding_right",
+        "label": "Padding Right",
+        "min": 0,
+        "max": 150,
+        "step": 5,
+        "default": 0,
+        "unit": "px"
+      }
+    ],
+    "blocks": [
+      {
+        "type": "card",
+        "name": "Card",
+        "limit": 20,
+        "settings": [
+          {
+            "type": "image_picker",
+            "id": "image",
+            "label": "Card Image"
+          },
+          {
+            "type": "html",
+            "id": "card_title",
+            "label": "Card Title (HTML)"
+          },
+          {
+            "type": "html",
+            "id": "card_text",
+            "label": "Card Text (HTML)"
+          },
+          {
+            "type": "html",
+            "id": "card_disclaimer",
+            "label": "Card Disclaimer (HTML)"
+          }
+        ]
+      }
+    ],
+    "presets": [
+      {
+        "name": "[DGF] Cards",
+        "blocks": [
+          {
+            "type": "card"
+          },
+          {
+            "type": "card"
+          },
+          {
+            "type": "card"
+          }
+        ]
+      }
+    ]
+  }
+{% endschema %}

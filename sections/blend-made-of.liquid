@@ -1,0 +1,146 @@
+{% comment %} RGD: 2026-01-04 {% endcomment %} 
+{% comment %} 
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.0.7/css/swiper.min.css" media="all" />
+{% endcomment %} 
+<link rel="stylesheet" href="{{ 'swiper.min.css' | asset_url }}" type="text/css" media="all"/> 
+<style>
+  #id-{{ section.id }}{
+  	background-color:{{ section.settings.section_bg_color }};
+  }
+</style>
+<section id="id-{{section.id}}" class="gummies-made-of-section blend-made-of">
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-12 col-md-12 col-sm-12">
+        <div class="gummies-head" data-aos="fade-up">
+          <h2>{{ section.settings.the_title }}</h2>
+        </div>
+      </div>
+    </div>
+    </div>
+    <div class="custom-gummies-row blends-row">
+      <div class="swiper-wrapper-box">
+        <div class="swiper custom-blend-slider">
+          <div class="swiper-wrapper">
+          {% for block in section.blocks %}
+            <div class="swiper-slide">
+              <div class="gummies-blocks-wrap" data-aos="fade-up">
+                <div class="gummies-image">
+                  {% if block.settings.icon_img != blank %}<img loading="lazy"  src="{{ block.settings.icon_img | img_url: 'master' }}">{% endif %}
+                </div>
+                <div class="gummies-block-content">
+                  <h3>{{ block.settings.the_title }}</h3>
+                  <p>{{ block.settings.the_text }}</p>
+                </div>
+              </div>
+            </div>
+          {% endfor %}
+          </div>
+          <!-- If we need navigation buttons -->
+            <div class="swiper-button-prev mushroom-blend-prev"></div>
+            <div class="swiper-button-next mushroom-blend-next"></div> 
+        </div>
+      </div>
+    </div>
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-12 col-md-12 col-sm-12">
+          <div class="gummies-under-head" data-aos="fade-up">
+            <h4>{{ section.settings.sub_title }}</h4>
+          </div>
+        </div>
+      </div>
+    </div>
+</section>
+{% comment %} RGD: 2026-01-04 {% endcomment %} 
+{% comment %} 
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script> 
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.5.1/js/swiper.min.js"></script> 
+{% endcomment %}
+{% # theme-check-disable ParserBlockingScript %}
+<script type="text/javascript" src="{{ 'jquery-3.5.1.min.js' | asset_url }}"></script>
+<script type="text/javascript" src="{{ 'swiper.min.js' | asset_url }}"></script>
+{% # theme-check-enable ParserBlockingScript %}
+<script>
+  new Swiper('.custom-blend-slider', {
+        loop: false,
+        slidesPerView: 5,
+        spaceBetween: 60,
+        navigation: {
+          nextEl: '.mushroom-blend-next',
+          prevEl: '.mushroom-blend-prev',
+        },
+        breakpoints: {
+            1920: {
+                slidesPerView: 5,
+                spaceBetween: 60
+            },
+            1028: {
+                slidesPerView: 3,
+                spaceBetween: 30
+            },
+            576: {
+                slidesPerView: 1,
+                spaceBetween: 10
+            }
+        }
+    });
+</script>
+{% schema %}
+  {
+    "name": "Blend Made Of",
+    "settings": [
+         {
+            "type": "header",
+            "content": "Content Style"
+         },
+  	     {
+           "type": "color",
+           "id": "section_bg_color",
+           "label": "Section background color"
+        },
+        {
+          "type": "textarea",
+          "id": "the_title",
+          "label": "Title"
+      	},
+        {
+          "type": "text",
+          "id": "sub_title",
+          "label": "Sub Title"
+      	}
+    ],
+    "blocks": [
+      {
+        "type": "blend_blocks",
+        "name": "Blend Block",
+        "settings": [
+            {
+              "type": "image_picker",
+              "id": "icon_img",
+              "label": "Icon Image"
+           },
+           {
+              "type": "text",
+              "id": "the_title",
+              "label": "Title"
+          },
+          {
+            "type": "text",
+            "id": "the_text",
+            "label": "Text"
+          }
+        ]
+      }
+    ],
+    "presets": [{
+      "name": "Blend Made Of"
+    }]
+  }
+{% endschema %}
+
+{% stylesheet %}
+{% endstylesheet %}
+
+{% javascript %}
+{% endjavascript %}

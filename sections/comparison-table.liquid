@@ -1,0 +1,122 @@
+{% assign text = product.metafields.custom.comparison_text.value %}
+{% if text != blank %}
+<style>
+  #id-{{ section.id }}{
+  	background-color:{{ section.settings.section_bg_color }};
+  }
+</style>
+<section id="id-{{ section.id }}" class="custom-product-comparison-table">
+  <div class="container">
+    <div class="product-comparison-table-wrapper">
+      <div class="table-wrapper">
+        <table>
+          <thead>
+            <tr>
+              <th>
+                {% if section.settings.logo != blank %}
+                  <img src="{{ section.settings.logo | img_url: "master" }}" class="comparison-web-logo">  
+                {% endif %}
+                {% if section.settings.mob_logo != blank %}
+                  <img src="{{ section.settings.mob_logo | img_url: "master" }}" class="comparison-mob-logo">  
+                {% endif %}
+              </th>
+              <th class="highlight">
+                {% if product.metafields.custom.comparison_product != blank %}
+                  <img src="{{ product.metafields.custom.comparison_product | img_url: "master" }}">  
+                {% endif %}
+              </th>
+              <th>
+                {% if section.settings.other_brand != blank %}
+                  <img src="{{ section.settings.other_brand | img_url: "master" }}">  
+                {% endif %}
+              </th>
+            </tr>
+          </thead>
+            <tbody>
+            
+            {% for texts in text %}
+              <tr>
+                {% if texts != blank %}
+                  <td>
+                    <div class="table-data-items">
+                      {{ texts }}
+                    </div>
+                  </td>
+                {% endif %}
+                <td>
+                  <div class="table-data-items">
+                     {% if section.settings.tick_icon != blank %}
+                              <img src="{{ section.settings.tick_icon | img_url: "master" }}">  
+                     {% endif %}
+                  </div>
+                </td>
+                <td>
+                  <div class="table-data-items">
+                  {% if section.settings.cross_icon != blank %}
+                      <img src="{{ section.settings.cross_icon | img_url: "master" }}">  
+                  {% endif %}
+                  </div>
+                </td>
+              </tr>
+            {% endfor %}
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+  {% if section.settings.left_image != blank %}
+    <div class="comparision-left-side-image">
+            <img src="{{ section.settings.left_image | img_url: "master" }}">  
+    </div>
+  {% endif %}
+</section>
+{% endif %}
+{% schema %}
+  {
+    "name": "Comparison-table",
+    "settings": [
+      {
+            "type": "header",
+            "content": "Content Style"
+      },
+  	  {
+           "type": "color",
+           "id": "section_bg_color",
+           "label": "Section background color"
+      },
+      {
+            "type": "image_picker",
+            "id": "logo",
+            "label": "Desktop Logo"
+      },
+      {
+            "type": "image_picker",
+            "id": "mob_logo",
+            "label": "Mobile Logo"
+      },
+      {
+            "type": "image_picker",
+            "id": "other_brand",
+            "label": "Other Brand"
+      },
+      {
+            "type": "image_picker",
+            "id": "tick_icon",
+            "label": "Tick Icon"
+      },
+      {
+            "type": "image_picker",
+            "id": "cross_icon",
+            "label": "Cross Icon"
+      },
+      {
+            "type": "image_picker",
+            "id": "left_image",
+            "label": "Left Image"
+      }
+    ],
+    "presets": [{
+      "name": "Comparison-table"
+    }]
+  }
+{% endschema %}

@@ -1,0 +1,253 @@
+<style>
+  #id-{{ section.id }}{
+  	background-color:{{ section.settings.section_bg_color }};
+  }
+</style>
+<section id="id-{{section.id}}" class="product-details-benefits-section">
+  <div class="product-details-benefits-wrapper">
+    <div class="container">
+      {% for block in section.blocks %}
+        {% case block.type %}
+          {% comment %}
+            Product Detail Blocks
+          {% endcomment %}
+          {% when 'product_detail_blocks' %}
+          <div class="row product-details-row">
+            <div class="col-lg-12 col-md-12 col-sm-12">
+              <div class="product-details-head">
+                <h2 class="custom-heading-h2">{{ block.settings.prod_detail_title }}</h2>
+              </div>
+              <div class="product-details-blocks-wrap">
+                <div class="product-details-blocks">
+                  <h3>{{ block.settings.block_title_1 }}</h3>
+                  <p>{{ block.settings.block_text_1 }}</p>
+                </div>
+                <div class="product-details-blocks">
+                  <h3>{{ block.settings.block_title_2 }}</h3>
+                  <p>{{ block.settings.block_text_2 }}</p>
+                </div>
+                <div class="product-details-blocks">
+                  <h3>{{ block.settings.block_title_3 }}</h3>
+                  <p>{{ block.settings.block_text_3 }}</p>
+                </div>
+              </div>
+            </div>
+          </div>
+          {% comment %}
+            Core Benefits
+          {% endcomment %}
+          {% when 'core_benfits' %}
+          <div class="row core-benefits-row">
+            <div class="col-lg-12 col-md-12 col-sm-12">
+              <div class="core-benefits-head">
+                <h2 class="custom-heading-h2">{{ block.settings.core_beneft_title }}</h2>
+              </div>
+            </div>
+            <div class="core-benefits-icon-wrap">
+              <div class="core-benefits-icon-lists">
+                <h3>{{ block.settings.icon_title_1 }}</h3>
+                {% if block.settings.benefit_icon_1 != blank %}<img loading="lazy"  src="{{ block.settings.benefit_icon_1 | img_url: 'master' }}">{% endif %}
+              </div>
+              <div class="core-benefits-icon-lists">
+                <h3>{{ block.settings.icon_title_2 }}</h3>
+                {% if block.settings.benefit_icon_2 != blank %}<img loading="lazy"  src="{{ block.settings.benefit_icon_2 | img_url: 'master' }}">{% endif %}
+              </div>
+              <div class="core-benefits-icon-lists">
+                <h3>{{ block.settings.icon_title_3 }}</h3>
+                {% if block.settings.benefit_icon_3 != blank %}<img loading="lazy"  src="{{ block.settings.benefit_icon_3 | img_url: 'master' }}">{% endif %}
+              </div>
+              <div class="core-benefits-icon-lists">
+                <h3>{{ block.settings.icon_title_4 }}</h3>
+                {% if block.settings.benefit_icon_4 != blank %}<img loading="lazy"  src="{{ block.settings.benefit_icon_4 | img_url: 'master' }}">{% endif %}
+              </div>
+              <div class="core-benefits-icon-lists">
+                <h3>{{ block.settings.icon_title_5 }}</h3>
+                {% if block.settings.benefit_icon_5 != blank %}<img loading="lazy"  src="{{ block.settings.benefit_icon_5 | img_url: 'master' }}">{% endif %}
+              </div>
+              <div class="core-benefits-icon-lists">
+                <h3>{{ block.settings.icon_title_6 }}</h3>
+                {% if block.settings.benefit_icon_6 != blank %}<img loading="lazy"  src="{{ block.settings.benefit_icon_6 | img_url: 'master' }}">{% endif %}
+              </div>
+            </div>
+          </div>
+        {% endcase %}
+      {% endfor %}
+    </div>
+  </div>
+</section>
+{% schema %}
+  {
+    "name": "Product detail & benefit",
+    "settings": [
+         {
+            "type": "header",
+            "content": "Content Style"
+         },
+  	     {
+           "type": "color",
+           "id": "section_bg_color",
+           "label": "Section background color"
+        }
+    ],
+	"blocks": [
+        {
+          "type": "product_detail_blocks",
+          "name": "Product Detail Blocks",
+          "settings": [
+        		{
+                  "type": "text",
+                  "id": "prod_detail_title",
+                  "label": "Title"
+              	},
+                {
+                    "type": "header",
+                    "content": "Product Detail Block-1 Style"
+                },
+                {
+                  "type": "text",
+                  "id": "block_title_1",
+                  "label": "Block Title-1"
+              	},
+                {
+                  "type": "text",
+                  "id": "block_text_1",
+                  "label": "Block Text-1"
+              	},
+                {
+                    "type": "header",
+                    "content": "Product Detail Block-2 Style"
+                },
+                {
+                  "type": "text",
+                  "id": "block_title_2",
+                  "label": "Block Title-2"
+              	},
+                {
+                  "type": "text",
+                  "id": "block_text_2",
+                  "label": "Block Text-2"
+              	},
+                {
+                    "type": "header",
+                    "content": "Product Detail Block-3 Style"
+                },
+                {
+                  "type": "text",
+                  "id": "block_title_3",
+                  "label": "Block Title-3"
+              	},
+                {
+                  "type": "text",
+                  "id": "block_text_3",
+                  "label": "Block Text-3"
+              	}
+            ]
+      },
+      {
+          "type": "core_benfits",
+          "name": "Core Benefits",
+          "settings": [
+        		{
+                  "type": "text",
+                  "id": "core_beneft_title",
+                  "label": "Title"
+              	},
+                {
+                    "type": "header",
+                    "content": "Benefit Icon-1 Style"
+                },
+                {
+                  "type": "text",
+                  "id": "icon_title_1",
+                  "label": "Icon Title-1"
+              	},
+                {
+                    "type": "image_picker",
+                    "id": "benefit_icon_1",
+                    "label": "Icon Block-1"
+                 },
+                {
+                    "type": "header",
+                    "content": "Benefit Icon-2 Style"
+                },
+                {
+                  "type": "text",
+                  "id": "icon_title_2",
+                  "label": "Icon Title-2"
+              	},
+                {
+                  "type": "image_picker",
+                  "id": "benefit_icon_2",
+                   "label": "Icon Block-2"
+                 },
+                {
+                    "type": "header",
+                    "content": "Benefit Icon-3 Style"
+                },
+                {
+                  "type": "text",
+                  "id": "icon_title_3",
+                  "label": "Icon Title-3"
+              	},
+                {
+                  "type": "image_picker",
+                  "id": "benefit_icon_3",
+                   "label": "Icon Block-3"
+                 },
+                {
+                    "type": "header",
+                    "content": "Benefit Icon-4 Style"
+                },
+                {
+                  "type": "text",
+                  "id": "icon_title_4",
+                  "label": "Icon Title-4"
+              	},
+                {
+                  "type": "image_picker",
+                  "id": "benefit_icon_4",
+                   "label": "Icon Block-4"
+                 },
+                 {
+                    "type": "header",
+                    "content": "Benefit Icon-5 Style"
+                },
+                {
+                  "type": "text",
+                  "id": "icon_title_5",
+                  "label": "Icon Title-5"
+              	},
+                {
+                  "type": "image_picker",
+                  "id": "benefit_icon_5",
+                   "label": "Icon Block-5"
+                 },
+                 {
+                    "type": "header",
+                    "content": "Benefit Icon-6 Style"
+                },
+                {
+                  "type": "text",
+                  "id": "icon_title_6",
+                  "label": "Icon Title-6"
+              	},
+                {
+                  "type": "image_picker",
+                  "id": "benefit_icon_6",
+                   "label": "Icon Block-6"
+                 }
+            ]
+      }
+	
+	],
+    "presets": [{
+      "name": "Product detail & benefit"
+    }]
+  }
+{% endschema %}
+
+{% stylesheet %}
+{% endstylesheet %}
+
+{% javascript %}
+{% endjavascript %}

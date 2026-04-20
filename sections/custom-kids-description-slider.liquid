@@ -1,0 +1,125 @@
+{% comment %} RGD: 2026-01-04 {% endcomment %} 
+{% comment %} 
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.0.7/css/swiper.min.css" media="all" />
+{% endcomment %} 
+<link rel="stylesheet" href="{{ 'swiper.min.css' | asset_url }}" type="text/css" media="all"/>
+
+{% if product.metafields.custom.dosage %}
+<section id="section--01" class="section section-ing color-dark bg-cream-2 kids-product-desc-slider product-desc-slider">
+    <div class="leaf-box left-top d-none d-md-block" style="top: -50px;">
+        <img loading="lazy"  class="leaf" src="{{ 'lion-icn.svg' | asset_url }}">
+    </div>
+   <div class="container">
+        <div class="swiper description-img-slider">
+            <div class="swiper-wrapper">
+                <div class="swiper-slide">
+                  <h2 class="text-center text-uppercase"  data-aos-delay="000">{{ section.settings.title_1 }}</h2>
+                   <div class="swiper-button-prev"></div>
+                    <div class="text-center swiper-pagination-desc"></div>
+                  <div class="swiper-button-next"></div>
+                  <div class="box mt-2" data-aos="fade-in" data-aos-delay="400" data-aos-duration="200">
+                    {% comment %}
+                  <div class="desc mx-auto text-center">
+                  {<img loading="lazy"  src="https://cdn.shopify.com/s/files/1/0662/9497/2640/files/icon-leaf_480x480.png?v=1663251436"> {{ product.metafields.custom.text }}
+                  </div>
+                {% endcomment %}
+                  <div class="row align-items-center mt-4 overview-content-wrapper all-same-desc">
+                  <div class="col-md-3">
+                  <div class="img-box">
+                  <div class="img-content">
+                     {% assign images =  product.metafields.custom.image_overview.value  %}
+                      {% for image in images %}
+                        <img loading="lazy"  src="{{ image | image_url: width: 500 }}"> 
+                      {% endfor %}
+                  </div>
+                  <a href="{% if product.metafields.custom.download %}{{ product.metafields.custom.download | file_url }}{% else %}#{% endif %}" {% if product.metafields.custom.download %}target="_blank"{% endif %} class="btn btn-bg mx-auto mt-3">{{ section.settings.button }}</a>
+                  </div>
+                  </div>
+                  <div class="col-md-9">
+                  <div class="row">
+                    {{ product.description }}
+                  </div>
+                  </div>
+                  </div>
+                  </div>
+                  </div>
+                <div class="swiper-slide">
+                  <h2 class="text-center text-uppercase" data-aos-delay="000">{{ section.settings.title_2 }}</h2>
+                   <div class="swiper-button-prev"></div>
+                    <div class="text-center swiper-pagination-desc"></div>
+                  <div class="swiper-button-next"></div>
+                  <div class="box mt-2" data-aos="fade-in" data-aos-delay="400" data-aos-duration="200">
+                  <div class="row mt-4 all-same-desc">
+                  <div class="col-12">
+                    <div class="ing-item">{{ product.metafields.custom.dosage | newline_to_br }}</div>
+                  </div>
+                 
+                  </div>
+                  </div>
+                  </div>
+            </div>
+        </div>
+    </div>
+</section>
+{% endif %}
+{% comment %} RGD: 2026-01-04 {% endcomment %} 
+{% comment %} 
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script> 
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.5.1/js/swiper.min.js"></script> 
+{% endcomment %}
+{% # theme-check-disable ParserBlockingScript %}
+<script type="text/javascript" src="{{ 'jquery-3.5.1.min.js' | asset_url }}"></script>
+<script type="text/javascript" src="{{ 'swiper.min.js' | asset_url }}"></script>
+{% # theme-check-enable ParserBlockingScript %}
+<script>
+  new Swiper('.description-img-slider', {
+        loop: true,
+        nextButton: '.swiper-button-next',
+        prevButton: '.swiper-button-prev',
+        slidesPerView: 1,
+        spaceBetween: 0,
+        pagination: {
+            el: ".swiper-pagination-desc",
+            clickable: true,
+        },
+        navigation: {
+            nextEl: '.swiper-button-next',
+            prevEl: '.swiper-button-prev',
+        }
+    });
+</script>
+{% schema %}
+  {
+    "name": "Gummies Description",
+    "settings": [
+      {
+          "type": "text",
+          "id": "title_1",
+          "default": "OVERVIEW",
+          "label": "Title"
+      },
+      {
+          "type": "text",
+          "id": "button",
+          "default": "Download COA",
+          "label": "Button"
+      },
+      {
+          "type": "text",
+          "id": "title_2",
+          "default": "Dosage",
+          "label": "Title Dosage"
+      }
+    ],
+	"presets": [{
+      "name": "Gummies Description"
+    }]
+    
+  }
+{% endschema %}
+
+{% stylesheet %}
+{% endstylesheet %}
+
+{% javascript %}
+{% endjavascript %}

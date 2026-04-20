@@ -1,0 +1,79 @@
+<section class="section section-guides">
+    <div class="leaf-box left-top">
+        <img loading="lazy" class="leaf" src="{{ 'leaf-n05.svg' | asset_url }}">
+    </div>
+    <div class="container">
+        <h2 class="text-uppercase text-center" data-aos="fade-up">{{ section.settings.title }}</h2>
+        <div class="row">
+          {% for block in section.blocks %}
+            <div class="col-6 col-md-3 mb-3">
+                <div class="cats-item" data-aos="fade-up" data-aos-delay="100">
+                    <div class="img-wrapper">
+                        <img loading="lazy" src="{{ block.settings.image | image_url: width: 500 }}" alt="{{ block.settings.title }}">
+                    </div>
+                    <h6 class="my-0 mt-2">{{ block.settings.title }}</h6>
+                    <div class="">{{ block.settings.subtitle }}</div>
+                </div>
+            </div>
+          {% endfor %}
+        </div>
+    </div>
+</section>
+{% schema %}
+  {
+    "name": "Section Teams",
+    "settings": [
+       {
+          "type": "text",
+          "id": "title",
+          "label": "Title",
+		  "default" : "The Team"
+      }
+    ],
+    "blocks": [
+     {
+      "type": "content",
+      "name": "content",
+      "settings": [
+    	 {
+          "type": "text",
+          "id": "title",
+          "label": "Title",
+		  "default" : "Name"
+        },
+        {
+          "type": "text",
+          "id": "subtitle",
+          "label": "Subtitle",
+		  "default" : "Job"
+        },
+        {
+          "type": "image_picker",
+          "id": "image",
+          "label": "Image"
+        }
+      ]
+     }
+	],
+    "presets": [
+      {
+        "name": "Teams",
+        "blocks": [
+        {
+          "type": "content"
+        },
+        {
+          "type": "content"
+        },
+        {
+          "type": "content"
+        },
+        {
+          "type": "content"
+        }
+      ]
+      }
+    ]
+  }
+{% endschema %}
+

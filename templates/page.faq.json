@@ -1,0 +1,689 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "88048427-5223-42ab-8edc-cdaebb1f1dd9": {
+      "type": "banner-subpage",
+      "disabled": true,
+      "settings": {
+        "enable_breadcrumb": true,
+        "title": "THE BIG QUESTIONS <br>(THAT WE ARE FREQUENTLY ASKED)",
+        "sub_title": "We value transparency around here, and we know that comes with questions. You’ve come to the right place, so ask away!\n\nWe look forward to helping you!",
+        "image": "shopify://shop_images/Screen_Shot_2022-11-24_at_12.00.56_PM.png"
+      }
+    },
+    "main": {
+      "type": "main-faq",
+      "blocks": {
+        "4a7aea95-890b-4f56-b81e-2fc900e2697a": {
+          "type": "faq",
+          "settings": {
+            "title": "Can I take TRIIBE Organics’ products everyday?",
+            "content": "Yes! In fact, herbs and mushrooms work better when taken consistently over a long period of time."
+          }
+        },
+        "f876558c-29b7-412f-8e83-472331ba981e": {
+          "type": "faq",
+          "settings": {
+            "title": "Can I take TRIIBE Organics’ products together?",
+            "content": "Yes! In fact, many of the herbs and mushrooms are combined to work synergistically with others to give better results."
+          }
+        },
+        "f4a75b7c-9a5f-4345-8138-b6e6b04b09e0": {
+          "type": "faq",
+          "settings": {
+            "title": "How do I store my products?",
+            "content": "We recommend storing them in a cool, dry place that is out of direct sunlight."
+          }
+        },
+        "69376d1f-c32f-4537-872a-55472ec6f62f": {
+          "type": "faq",
+          "settings": {
+            "title": "Can I take these products if I’m pregnant, breastfeeding or under 18?",
+            "content": "Please consult your health professional before using our products if you are pregnant/breastfeeding and before you provide our products to children."
+          }
+        },
+        "be74f6cb-a511-4ed7-bd44-477353f4ed42": {
+          "type": "faq",
+          "settings": {
+            "title": "Are your products third- party tested?",
+            "content": "Yes, they all are. What’s inside your supplement is every bit as important as what’s not. That’s why all our products are third-party tested for heavy metals, pathogens, and contaminants. And then we share those results with you. You can check them out here."
+          }
+        },
+        "8813bc3f-a24d-4c93-8608-ab72561b1202": {
+          "type": "faq",
+          "settings": {
+            "title": "Do I need to cycle the consumption of any product?",
+            "content": "Following traditional Ayurvedic and Chinese Medicine methods, we suggest taking any of our product(s) for 2-3 months and then pausing for a few days to a week max. to give your body a rest.\n <br><br>\nIf we observe nature, we can see that everything is cyclic. Following this cyclic pattern, herbs and mushrooms are best taken in cycles. Tonic herbs, such as Ashwagandha, Shatavari, Amla,  are generally taken in a rotational cycle; these herbs are classified as “superior medicine” because they are safe, gentle and meant to be used over a prolonged period. The cycle often suggested for tonics is five days on and two days off. This cycle can be repeated as long as necessary because there are no side effects or contraindications for long-term use."
+          }
+        },
+        "2d8bd61e-1c59-438e-8714-d191023ec7ff": {
+          "type": "faq",
+          "settings": {
+            "title": "What is the right dosage for supplements?",
+            "content": "The dosage varies by product. Please check the bottle/website for recommended use."
+          }
+        },
+        "2d630847-64ca-4787-9acd-182d58d0e45d": {
+          "type": "faq",
+          "settings": {
+            "title": "Can I exceed your recommended dosage?",
+            "content": "We recommend working with a practitioner before choosing to increase dosages. Recommended dosages are meant to optimally support the average person. TRIIBE Organics recommends working with a health professional or Ayurvedic or TCM practitioner to determine individualized dosages and to create a health plan that is suited to individual needs."
+          }
+        },
+        "69d40b6c-f506-4807-acf4-0e97ac2ee84a": {
+          "type": "faq",
+          "settings": {
+            "title": "Are all your products safe for children?",
+            "content": "Because most of our supplements are made from 100% herbs and mushrooms and are completely natural (no artificial anything) many parents love to share their supplements with their children.\nKeep in mind that, depending on the age of your child, some supplements may be more appropriate than others. Children can also require different doses than you do as an adult. \n<br><br>\nAs with any new supplement, we always recommend consulting with your healthcare professional first before adding any supplement to your children’s wellness regimen."
+          }
+        },
+        "fa3fcc96-862b-4dc9-9fa5-d7f3b6c067ae": {
+          "type": "faq",
+          "settings": {
+            "title": "Do your products have any drug interactions or contra-indications? ",
+            "content": "We do not advise on the safety of taking our supplements with prescription medications. Please consult your health care practitioner if you are currently under other prescription medication protocols."
+          }
+        },
+        "cde968bd-bb82-43b4-8c83-15b5c9f190a9": {
+          "type": "faq",
+          "settings": {
+            "title": "Are your products approved by the FDA?",
+            "content": "The FDA does not approve herbal supplements, but rather regulates them as food products. The responsibility for safety and quality lies with the manufacturer. \n<br><br>\nTRIIBE Organics’ supplements are manufactured in the highest quality manner, tested for potency and purity by independent third-party labs, and structure-function claims are supported by clinical research from our partner suppliers."
+          }
+        },
+        "a84c61ef-90dc-4525-99ec-18bf5be09661": {
+          "type": "faq",
+          "settings": {
+            "title": "​​Where can I find the full list of ingredients?",
+            "content": "All of the ingredients can be found on each tribe-organics.com product page. If you scroll half way down the page you will find the full ingredient list.\n<br><br>\nYou can also find all the ingredients on the bottle in the Supplement Facts panel."
+          }
+        },
+        "84a67e8a-2378-45bf-832a-da010a701e23": {
+          "type": "faq",
+          "settings": {
+            "title": "Do you sell at any retail locations?",
+            "content": "No, currently all of our products are sold through our website, Amazon.com, Walmart.com, and Evitamins.com which has excellent international shipping if you live outside the US. \n<br><br>\nWe also sell through select health practitioners."
+          }
+        },
+        "6b628b38-8ccf-4d61-a20f-b68821802960": {
+          "type": "faq",
+          "settings": {
+            "title": "Are your products gluten-free?",
+            "content": "All of our products are gluten-free."
+          }
+        },
+        "debb326b-7a44-464c-be17-f73a211e303b": {
+          "type": "faq",
+          "settings": {
+            "title": "Are your products certified organic?",
+            "content": "All of our products are Certified Organic with the exception of Turmeric Complex, Alma Complex and Boswellia Complex."
+          }
+        },
+        "4f590cfc-c207-465b-bdad-405c8b1a0c6b": {
+          "type": "faq",
+          "settings": {
+            "title": "Are your products non-GMO verified?",
+            "content": "All of our products are non-GMO verified."
+          }
+        },
+        "f4faeca3-c7bc-4bb8-a421-c2c128141f1b": {
+          "type": "faq",
+          "settings": {
+            "title": "Are your products vegan?",
+            "content": "All of our products are vegan with the exception of our KSM-66 Ashwagandha Full Spectrum. For this product, the Ashwagandha roots are pre-treated with grass-fed cow’s milk before the extraction process and being turned into powder."
+          }
+        }
+      },
+      "block_order": [
+        "4a7aea95-890b-4f56-b81e-2fc900e2697a",
+        "f876558c-29b7-412f-8e83-472331ba981e",
+        "f4a75b7c-9a5f-4345-8138-b6e6b04b09e0",
+        "69376d1f-c32f-4537-872a-55472ec6f62f",
+        "be74f6cb-a511-4ed7-bd44-477353f4ed42",
+        "8813bc3f-a24d-4c93-8608-ab72561b1202",
+        "2d8bd61e-1c59-438e-8714-d191023ec7ff",
+        "2d630847-64ca-4787-9acd-182d58d0e45d",
+        "69d40b6c-f506-4807-acf4-0e97ac2ee84a",
+        "fa3fcc96-862b-4dc9-9fa5-d7f3b6c067ae",
+        "cde968bd-bb82-43b4-8c83-15b5c9f190a9",
+        "a84c61ef-90dc-4525-99ec-18bf5be09661",
+        "84a67e8a-2378-45bf-832a-da010a701e23",
+        "6b628b38-8ccf-4d61-a20f-b68821802960",
+        "debb326b-7a44-464c-be17-f73a211e303b",
+        "4f590cfc-c207-465b-bdad-405c8b1a0c6b",
+        "f4faeca3-c7bc-4bb8-a421-c2c128141f1b"
+      ],
+      "disabled": true,
+      "settings": {}
+    },
+    "ec9ac214-ac75-456a-a641-5d27d0fb3b1f": {
+      "type": "page-breadcrumbs",
+      "settings": {
+        "enable_breadcrumb": false
+      }
+    },
+    "4b8bbd43-3c45-48d2-8b02-25e3c98ce232": {
+      "type": "custom-faq-tabs",
+      "blocks": {
+        "bd0086c7-d844-41d5-8130-458d6ec128b0": {
+          "type": "general_question",
+          "settings": {
+            "faq_qus": "Can I take TRIIBE Organics’ products everyday?",
+            "faq_ans": "<p>Yes! In fact, herbs and mushrooms work better when taken consistently over a long period of time.</p>"
+          }
+        },
+        "0aa8cc96-507c-43bb-acc4-9e460c2ddcd1": {
+          "type": "general_question",
+          "settings": {
+            "faq_qus": "Can I take TRIIBE Organics’ products together?",
+            "faq_ans": "<p>Yes! In fact, many of the herbs and mushrooms are combined to work synergistically with others to give better results.</p>"
+          }
+        },
+        "b2c20d02-2f65-4ce4-b79f-739d6e1e4b4f": {
+          "type": "general_question",
+          "settings": {
+            "faq_qus": "How do I store my products?",
+            "faq_ans": "<p>We recommend storing them in a cool, dry place that is out of direct sunlight.</p>"
+          }
+        },
+        "0efd05cb-ca95-4dd8-b085-7922cbe56318": {
+          "type": "general_question",
+          "settings": {
+            "faq_qus": "Are TRIIBE Organics' products certified organic?",
+            "faq_ans": "<p>The mushrooms we use are all certified organic, Non-GMO verified and ethically sourced. The herbs we use are either Non-GMO verified, certified organic or both.</p><p>Check which products are USDA certified <a href=\"https://drive.google.com/file/d/1HZSiuZQE671VmWAC9vIiZA8Dw4-NhjRF/view\" title=\"https://drive.google.com/file/d/1HZSiuZQE671VmWAC9vIiZA8Dw4-NhjRF/view\"><span style=\"text-decoration:underline\"><strong>here</strong></span></a> and which ones are Non-GMO verified <a href=\"https://drive.google.com/file/d/1W_wZPq1AWicws0E_gerQ9gV8k20M18ok/view\" title=\"https://drive.google.com/file/d/1W_wZPq1AWicws0E_gerQ9gV8k20M18ok/view\"><span style=\"text-decoration:underline\"><strong>here.</strong></span></a></p>"
+          }
+        },
+        "5659b5c0-d02a-48cc-88cf-1efd68dabbf0": {
+          "type": "general_question",
+          "settings": {
+            "faq_qus": "Are your products gluten-free?",
+            "faq_ans": "<p>All of our products are gluten-free. You can check our certification <a href=\"https://drive.google.com/file/d/1rwr713Pmpo2CkMlEaYL4OSjJqbofnukx/view?usp=sharing\" title=\"gluten free certification\"><span style=\"text-decoration:underline\"><strong>here.</strong></span></a></p>"
+          }
+        },
+        "087811dc-f40d-40f5-977a-4397fba3f3f3": {
+          "type": "general_question",
+          "settings": {
+            "faq_qus": "Are your products non-GMO verified?",
+            "faq_ans": "<p>All of our products are non-GMO verified.</p>"
+          }
+        },
+        "8953b31b-849f-402f-9058-9e06cc44826f": {
+          "type": "general_question",
+          "settings": {
+            "faq_qus": "Are your products vegan?",
+            "faq_ans": "<p>All of our products are vegan with the exception of our KSM-66 Ashwagandha Full Spectrum. For this product, the Ashwagandha roots are pre-treated with grass-fed cow’s milk before the extraction process and being turned into powder. </p>"
+          }
+        },
+        "ff24caf2-5395-4bbb-9c82-e6c3c87d2b39": {
+          "type": "general_question",
+          "settings": {
+            "faq_qus": "Can I take these products if I’m pregnant, breastfeeding or under 18?",
+            "faq_ans": "<p>Please consult your health professional before using our products if you are pregnant/breastfeeding and before you provide our products to children.</p>"
+          }
+        },
+        "46c3b72d-80fd-46db-9a95-63a93a603020": {
+          "type": "general_question",
+          "settings": {
+            "faq_qus": "Are your products third- party tested?",
+            "faq_ans": "<p>Yes, they all are. What’s inside your supplement is every bit as important as what’s not. That’s why all our products are third-party tested for heavy metals, pathogens, and contaminants. And then we share those results with you. You can check them out <a href=\"https://www.tribe-organics.com/pages/impact-sustainability\" title=\"https://www.tribe-organics.com/pages/impact-sustainability\"><span style=\"text-decoration:underline\"><strong>here.</strong></span></a></p>"
+          }
+        },
+        "a7b5d3ce-7d5a-4b20-97d2-d87ed8e9a6af": {
+          "type": "general_question",
+          "settings": {
+            "faq_qus": "Do I need to cycle the consumption of any product?",
+            "faq_ans": "<p>Following traditional Ayurvedic and Chinese Medicine methods, we suggest taking any of our product(s) for 2-3 months and then pausing for a few days to a week max. to give your body a rest.</p><p>If we observe nature, we can see that everything is cyclic. Following this cyclic pattern, herbs and mushrooms are best taken in cycles. Tonic herbs, such as Ashwagandha, Shatavari, Amla,  are generally taken in a rotational cycle; these herbs are classified as “superior medicine” because they are safe, gentle and meant to be used over a prolonged period. The cycle often suggested for tonics is five days on and two days off. This cycle can be repeated as long as necessary because there are no side effects or contraindications for long-term use.</p>"
+          }
+        },
+        "efe61a33-267a-4b32-a6ba-67b31cae0277": {
+          "type": "general_question",
+          "settings": {
+            "faq_qus": "What is the right dosage for supplements?",
+            "faq_ans": "<p>The dosage varies by product. Please check the bottle/website for recommended use.</p>"
+          }
+        },
+        "d84af48b-85b5-4fa4-9b69-3aefcb5f57b7": {
+          "type": "general_question",
+          "settings": {
+            "faq_qus": "Can I exceed your recommended dosage?",
+            "faq_ans": "<p>We recommend working with a practitioner before choosing to increase dosages. Recommended dosages are meant to optimally support the average person. TRIIBE Organics recommends working with a health professional or Ayurvedic or TCM practitioner to determine individualized dosages and to create a health plan that is suited to individual needs.</p>"
+          }
+        },
+        "36d9b82a-c3f0-45b3-ac6c-7c1b02debfb1": {
+          "type": "general_question",
+          "settings": {
+            "faq_qus": "Are all your products safe for children?",
+            "faq_ans": "<p>Because most of our supplements are made from 100% herbs and mushrooms and are completely natural (no artificial anything) many parents love to share their supplements with their children.</p><p>Keep in mind that, depending on the age of your child, some supplements may be more appropriate than others. Children can also require different doses than you do as an adult. </p><p>&lt;br&gt;&lt;br&gt;</p><p>As with any new supplement, we always recommend consulting with your healthcare professional first before adding any supplement to your children’s wellness regimen.</p>"
+          }
+        },
+        "55034543-7c49-4b55-b281-5b78d115da32": {
+          "type": "general_question",
+          "settings": {
+            "faq_qus": "Do your products have any drug interactions or contra-indications?",
+            "faq_ans": "<p>We do not advise on the safety of taking our supplements with prescription medications. Please consult your health care practitioner if you are currently under other prescription medication protocols.</p>"
+          }
+        },
+        "9994e105-a869-4a5c-9031-a53d07235d67": {
+          "type": "general_question",
+          "settings": {
+            "faq_qus": "Are your products approved by the FDA?",
+            "faq_ans": "<p>The FDA does not approve herbal supplements, but rather regulates them as food products. The responsibility for safety and quality lies with the manufacturer. </p><p>Tribe Organics’ supplements are manufactured in the highest quality manner, tested for potency and purity by independent third-party labs, and structure-function claims are supported by clinical research from our partner suppliers.</p>"
+          }
+        },
+        "e9f11bcb-dc31-4190-8dd2-4fa979d7dafe": {
+          "type": "general_question",
+          "settings": {
+            "faq_qus": "​​Where can I find the full list of ingredients?",
+            "faq_ans": "<p>All of the ingredients can be found on each tribe-organics.com product page. If you scroll half way down the page you will find the full ingredient list.</p><p>You can also find all the ingredients on the bottle in the Supplement Facts panel.</p>"
+          }
+        },
+        "0a49c767-52ea-43a2-b427-4b6c8b73982d": {
+          "type": "general_question",
+          "settings": {
+            "faq_qus": "Do you sell at any retail locations?",
+            "faq_ans": "<p>No, currently all of our products are sold through our website, <a href=\"https://www.amazon.com/stores/page/F5692F74-2F15-4D12-A333-F696B35CF6C4?ingress=0&visitId=5f21cf55-37e4-4f99-9274-1e06df5a19a7&lp_slot=auto-sparkle-hsa-tetris&store_ref=SB_A0515287883HJ4YBOXY&ref_=sbx_be_s_sparkle_mcd_cta\"><span style=\"text-decoration:underline\">Amazon.com</span></a>, Walmart.com, and <a href=\"https://www.evitamins.com/s/search?keywords=tribe\"><span style=\"text-decoration:underline\">Evitamins.com</span></a> which has excellent international shipping if you live outside the US. </p><p>We also sell through select health practitioners and health/wellness centers.</p>"
+          }
+        },
+        "a84f3b50-9c15-4eba-ad17-5be4ac48ac92": {
+          "type": "manufacture_question",
+          "settings": {
+            "faq_qus": "Where are your products manufactured?",
+            "faq_ans": "<p>All of our products are manufactured in the USA using GMP (Good Manufacturing Practices) certified facilities. You can learn more about our manufacturing partners on the <a href=\"https://www.tribe-organics.com/pages/transparency\" title=\"https://www.tribe-organics.com/pages/transparency\"><span style=\"text-decoration:underline\"><strong>Transparency</strong></span></a> section of our website.</p>"
+          }
+        },
+        "2b17209d-bec1-49c9-80d0-f019013c4c26": {
+          "type": "manufacture_question",
+          "settings": {
+            "faq_qus": "What are the capsules made of?",
+            "faq_ans": "<p>Most of our capsules are made from organic tapioca which is naturally fermented into pullulan, a starch-free, gluten-free, preservative-free, Non-GMO, USDA Organic vegetarian capsule. It is naturally derived and environment friendly with strong oxygen barrier properties that ensures the shelf life of our supplements. Pullulan capsules also protect encapsulated herbs from oxidation. </p><p>Our other capsules are produced from hydroxypropyl methylcellulose (HPMC), hypromellose for short. This is a completely plant-based material, making it ideal for consumption by vegetarians, vegans, or those who for cultural reasons cannot consume animal byproducts.</p>"
+          }
+        },
+        "b5e78f11-9c19-41fc-9eb5-195e2b624228": {
+          "type": "manufacture_question",
+          "settings": {
+            "faq_qus": "Can the capsule products be taken in powder form?",
+            "faq_ans": "<p>Yes; it is not necessary to leave the product in the capsule if you prefer to take the product in powder form. You can easily open the capsules and add the powder to juices, smoothies, water and some can be added to some meals without losing their nutrients.</p>"
+          }
+        },
+        "77d26684-caa0-4cb0-ad01-08ad92fdbc76": {
+          "type": "manufacture_question",
+          "settings": {
+            "faq_qus": "What is the shelf life of your products?",
+            "faq_ans": "<p>The shelf life on most of our products is 2 years. The \"Best Used By\" information, located under each bottle, represents the date by which the product is best used by and the product code. Tribe Organics only guarantees product potency through the “Best Used By” date. </p>"
+          }
+        },
+        "6533e9fa-6d8b-4e08-8060-235823efff3a": {
+          "type": "manufacture_question",
+          "settings": {
+            "faq_qus": "Do products have a longer shelf life if they are unopened?",
+            "faq_ans": "<p>No, the shelf life is the same.</p>"
+          }
+        },
+        "14086855-d2ae-4fad-ab8f-c9c077a6f6c8": {
+          "type": "manufacture_question",
+          "settings": {
+            "faq_qus": "Can I use Tribe Organics products after the expiration date (“Best Used By”)?",
+            "faq_ans": "<p>While it is unlikely that there would be any safety issue, we do not recommend using our products past the expiration date on the packaging, as we can no longer guarantee the efficacy or potency of the herbs and mushrooms.</p>"
+          }
+        },
+        "5f79c0df-bd2d-4c5a-a0ab-8d3ac4fddae5": {
+          "type": "order_inquries",
+          "settings": {
+            "faq_qus": "Where's my order?",
+            "faq_ans": "<p>Once you place an order, you will receive a confirmation email from us. Orders typically ship within 1-2 business days. Once shipped, you can log into your account and track your order or go <a href=\"https://www.tribe-organics.com/apps/tracktor/track\" title=\"https://www.tribe-organics.com/apps/tracktor/track\"><span style=\"text-decoration:underline\"><strong>here</strong></span></a> and add the order number and email address of the order and you can track it.</p><p>If you did not receive an email, please check your junk/promotions folder and ensure you are using the same email address that was associated with your order.</p><p>If you cannot find your confirmation email, please reach out to us at <a href=\"mailto:info@tribe-organics.com\"><span style=\"text-decoration:underline\">info@tribe-organics.com</span></a> or by phone at +1 (917) 934-3078</p>"
+          }
+        },
+        "d9d2772a-48e8-483f-b68d-a5f95a364088": {
+          "type": "order_inquries",
+          "settings": {
+            "faq_qus": "What do I do if my order is incorrect?",
+            "faq_ans": "<p>Send us an email at <a href=\"mailto:info@tribe-organics.com\"><span style=\"text-decoration:underline\">info@tribe-organics.com</span></a> ASAP and we will work it out!</p>"
+          }
+        },
+        "b74dcfbd-5b5a-48a4-80e1-6497a9cadfc2": {
+          "type": "order_inquries",
+          "settings": {
+            "faq_qus": "Can I cancel my order? ",
+            "faq_ans": "<p>All orders can be canceled up to one hour after your order is placed. Once an order is processed, it cannot be canceled. Once an order is received, you can ask for a return with a shipping fee.</p><p>Please review our <a href=\"https://www.tribe-organics.com/policies/refund-policy\" title=\"https://www.tribe-organics.com/policies/refund-policy\"><span style=\"text-decoration:underline\"><strong>Refund policy</strong></span></a> if you fall in this category. </p>"
+          }
+        },
+        "444290ad-675e-4bd3-9240-b750d6f5c003": {
+          "type": "order_inquries",
+          "settings": {
+            "faq_qus": "Can I make changes to an order?",
+            "faq_ans": "<p>Once your order is placed, we can no longer make any changes. If you have any issues with your order, please contact us at <a href=\"mailto:info@tribe-organics.com\"><span style=\"text-decoration:underline\">info@tribe-organics.com</span></a></p><p>If you notice an error with your shipping address please contact us as soon as possible. We cannot guarantee we will be able to successfully update an address error before our fulfillment team pulls the order. The shipping address is the responsibility of the customer.</p><p><strong>NOTE: Updating your shipping address in your account will not update the shipping address on orders that have been processed.</strong></p>"
+          }
+        },
+        "41edcf84-72ec-4788-ab96-2feb0b45646a": {
+          "type": "order_inquries",
+          "settings": {
+            "faq_qus": "Where can I add a discount code to my order?",
+            "faq_ans": "<p>At checkout, you will find a place to add your discount code underneath the product(s) in your order. You can add the code in the input field where it says “Discount Code” and then click Apply.</p>"
+          }
+        },
+        "90644051-fe6c-493f-84e0-55f0e6791ca8": {
+          "type": "shipping_billing",
+          "settings": {
+            "faq_qus": "What forms of payment do you accept?",
+            "faq_ans": "<p>We accept all major credit cards and PayPal. </p>"
+          }
+        },
+        "21a58932-88c7-4a68-a2b0-0f9ed9086671": {
+          "type": "shipping_billing",
+          "settings": {
+            "faq_qus": "Where do you ship from? ",
+            "faq_ans": "<p>All orders are shipped from our warehouse in Phoenix, Arizona</p>"
+          }
+        },
+        "c1524203-20c3-44e2-be60-74c2e7d7f12d": {
+          "type": "shipping_billing",
+          "settings": {
+            "faq_qus": "Where do you ship to? ",
+            "faq_ans": "<p>We currently ship across the US and some countries outside of the US.</p><p>Please check our International section to see if your country is eligible for international shipping <a href=\"/policies/shipping-policy\" title=\"Shipping Policy\"><span style=\"text-decoration:underline\"><strong>here</strong></span></a> and check the international shipping policy. </p>"
+          }
+        },
+        "d6347937-f482-47ba-acb4-99a4e0f52b6b": {
+          "type": "shipping_billing",
+          "settings": {
+            "faq_qus": "How do I get FREE shipping?",
+            "faq_ans": "<p>If your order totals $75 or more, you apply for FREE shipping. Note that this only applies to<em> Standard Shipping </em>inside the US, which usually takes 5-7 business days. </p><p>Please use code <strong>FREESHIP75</strong> at checkout for free shipping to be applied.</p>"
+          }
+        },
+        "ffdb62b4-667d-46b6-aa46-c575c15ccd45": {
+          "type": "shipping_billing",
+          "settings": {
+            "faq_qus": "Do you offer expedited shipping?",
+            "faq_ans": "<p>Depending on your location, we do offer 2-day shipping options. Use our Shipping Calculator on the <a href=\"https://www.tribe-organics.com/checkouts/c/28819970c7e3e4b5ed81c0281b446eee/shipping\"><span style=\"text-decoration:underline\">Shopping Cart page</span></a> to show shipping options. </p><p>Expedited shipping usually starts at $12.99.</p>"
+          }
+        },
+        "9df836cf-5c07-4d1d-a6e1-15f8c8f5bdb9": {
+          "type": "shipping_billing",
+          "settings": {
+            "faq_qus": "How can I check the shipping status of my order?",
+            "faq_ans": "<p>Shipping tracking details will be emailed to you after the order has shipped from our warehouse. </p><p>If you can't find the email, Once the order has shipped, you can log into your account and track your order by clicking on the button \"TRACK YOUR ORDER\". You can also click <a href=\"https://www.tribe-organics.com/apps/tracktor/track\" title=\"https://www.tribe-organics.com/apps/tracktor/track\"><span style=\"text-decoration:underline\"><strong>here,</strong></span></a> add the order number and email address registered with the order and you can check tracking info.</p>"
+          }
+        },
+        "28117162-1b32-40b8-b6bb-609d2736aacb": {
+          "type": "shipping_billing",
+          "settings": {
+            "faq_qus": "How are packages shipped?",
+            "faq_ans": "<p>Orders are shipped via UPS, USPS or FedEx. We are currently unable to ship to PO Boxes.</p>"
+          }
+        },
+        "cb0d8383-864b-4521-b0e7-0910f5570d2c": {
+          "type": "shipping_billing",
+          "settings": {
+            "faq_qus": "What do I do if I receive broken or damaged product(s)?",
+            "faq_ans": "<p>Oh no! So sorry that happened. For broken or damaged products, please reach out to our Customer Service team at <a href=\"mailto:info@tribe-organics.com\"><span style=\"text-decoration:underline\">info@tribe-organics.com</span></a>. </p><p>Please provide photos of the damage and we’ll be happy to make things right!</p>"
+          }
+        },
+        "7015718b-f50b-4752-8c7d-b0a0e785e917": {
+          "type": "shipping_billing",
+          "settings": {
+            "faq_qus": "How long will it take to receive my order?",
+            "faq_ans": "<p>Orders are generally processed within 24-48 hours of receipt, Monday through Friday. If your order is received after our daily shipping cutoff time or after business hours it may be processed the following business day. </p><p>Shipping times will vary based on your location. Orders placed on Friday may not ship until the following Monday. No orders are processed on Saturday, Sunday or any federal holidays.</p><p>We strive to ship all orders out as soon as possible!! We cannot guarantee a delivery date, but the standard transit time provided by our delivery service is 5-7 business days (often sooner!) after the order has been placed and processed. </p><p>If there are any delays, please contact us at <a href=\"mailto:info@tribe-organics.com\"><span style=\"text-decoration:underline\">info@tribe-organics.com</span></a></p>"
+          }
+        },
+        "1f354738-9feb-427f-b522-aceb380bfcaa": {
+          "type": "shipping_billing",
+          "settings": {
+            "faq_qus": "How can I trust that my payment and personal information is secure?",
+            "faq_ans": "<p>We work with a PCI DSS compliant service provider. This means we take your security very seriously and never disclose your personal identity or information with anyone. You can read our full Privacy Policy <a href=\"https://www.tribe-organics.com/policies/privacy-policy\" title=\"https://www.tribe-organics.com/policies/privacy-policy\"><span style=\"text-decoration:underline\"><strong>here</strong></span></a>.</p>"
+          }
+        },
+        "f09ac31b-53b2-4db6-9c90-8480ea87f4b3": {
+          "type": "shipping_billing",
+          "settings": {
+            "faq_qus": "What sales tax am I charged?",
+            "faq_ans": "<p>All items shipped to the state of New York will be charged a sales tax of 8-8.9% depending on your ZIP code.</p>"
+          }
+        },
+        "dc17e288-494a-4c4f-89d8-209d0bcb9a71": {
+          "type": "international",
+          "settings": {
+            "faq_qus": "Do you ship Internationally?",
+            "faq_ans": "<p>Yes we do,  but it depends if your country is eligible or not. Please note prices are listed in USD and Tribe Organics is not responsible for customs, duties, or exchange rates.</p><p>If your country is not mentioned in the list below, please contact us at <a href=\"mailto:info@tribe-organics.com\"><span style=\"text-decoration:underline\">info@tribe-organics.com</span></a> to see if we could ship to your country. We would need you to let us know whether your country allows supplements to be imported.</p>"
+          }
+        },
+        "636c1055-ac83-4170-a097-8a33f3e9585c": {
+          "type": "international",
+          "settings": {
+            "faq_qus": "Which countries are eligible for international shipping?",
+            "faq_ans": "<p>We ship to the countries included in this list: </p><ul><li>Canada</li><li>Australia</li><li>Belgium</li><li>Croatia</li><li>India</li><li>Indonesia</li><li>Ireland</li><li>Israel</li><li>New Zealand</li><li>Oman</li><li>Singapore</li><li>Switzerland</li><li>Thailand</li><li>United Kingdom</li><li>Norway</li></ul>"
+          }
+        },
+        "a4621f60-de19-46b2-9b02-96db921b9ab1": {
+          "type": "international",
+          "settings": {
+            "faq_qus": "How long does international shipping take?",
+            "faq_ans": "<p>International orders generally arrive 15-20 business days after they’ve shipped if everything in customs works out perfectly. But, sometimes it can take longer (21-40 business days) as there may be custom delays beyond our control depending on your country. We do everything we can to avoid that, but it can still happen.</p>"
+          }
+        },
+        "a97d6bd7-58c8-4e25-992b-7a1a30405084": {
+          "type": "international",
+          "settings": {
+            "faq_qus": "How much does international shipping cost? ",
+            "faq_ans": "<p>International shipping is calculated at checkout. It usually starts at $16.99 for one bottle depending on your country location.</p>"
+          }
+        },
+        "7eed65d9-2d64-4c3f-be60-07791c0aa69f": {
+          "type": "international",
+          "settings": {
+            "faq_qus": "What is your international return policy?",
+            "faq_ans": "<p>Unfortunately, we don’t provide international returns at this point in time.</p>"
+          }
+        },
+        "f4513136-2b7e-47d6-9618-1e221fb5e136": {
+          "type": "order_inquries",
+          "settings": {
+            "faq_qus": "Can I change or cancel my corder once it's been placed?",
+            "faq_ans": "<p>Be fast! If you email us and we are able to catch your order before our fulfillment team does, we will try our best to help you out. Reach us at <em>info@tribe-organics.com</em></p><p>*If your order has shipped, we are not able to offer any modifications or cancellations.</p>"
+          }
+        }
+      },
+      "block_order": [
+        "bd0086c7-d844-41d5-8130-458d6ec128b0",
+        "0aa8cc96-507c-43bb-acc4-9e460c2ddcd1",
+        "b2c20d02-2f65-4ce4-b79f-739d6e1e4b4f",
+        "0efd05cb-ca95-4dd8-b085-7922cbe56318",
+        "5659b5c0-d02a-48cc-88cf-1efd68dabbf0",
+        "087811dc-f40d-40f5-977a-4397fba3f3f3",
+        "8953b31b-849f-402f-9058-9e06cc44826f",
+        "ff24caf2-5395-4bbb-9c82-e6c3c87d2b39",
+        "46c3b72d-80fd-46db-9a95-63a93a603020",
+        "a7b5d3ce-7d5a-4b20-97d2-d87ed8e9a6af",
+        "efe61a33-267a-4b32-a6ba-67b31cae0277",
+        "d84af48b-85b5-4fa4-9b69-3aefcb5f57b7",
+        "36d9b82a-c3f0-45b3-ac6c-7c1b02debfb1",
+        "55034543-7c49-4b55-b281-5b78d115da32",
+        "9994e105-a869-4a5c-9031-a53d07235d67",
+        "e9f11bcb-dc31-4190-8dd2-4fa979d7dafe",
+        "0a49c767-52ea-43a2-b427-4b6c8b73982d",
+        "a84f3b50-9c15-4eba-ad17-5be4ac48ac92",
+        "2b17209d-bec1-49c9-80d0-f019013c4c26",
+        "b5e78f11-9c19-41fc-9eb5-195e2b624228",
+        "77d26684-caa0-4cb0-ad01-08ad92fdbc76",
+        "6533e9fa-6d8b-4e08-8060-235823efff3a",
+        "14086855-d2ae-4fad-ab8f-c9c077a6f6c8",
+        "5f79c0df-bd2d-4c5a-a0ab-8d3ac4fddae5",
+        "d9d2772a-48e8-483f-b68d-a5f95a364088",
+        "b74dcfbd-5b5a-48a4-80e1-6497a9cadfc2",
+        "444290ad-675e-4bd3-9240-b750d6f5c003",
+        "41edcf84-72ec-4788-ab96-2feb0b45646a",
+        "90644051-fe6c-493f-84e0-55f0e6791ca8",
+        "21a58932-88c7-4a68-a2b0-0f9ed9086671",
+        "c1524203-20c3-44e2-be60-74c2e7d7f12d",
+        "d6347937-f482-47ba-acb4-99a4e0f52b6b",
+        "ffdb62b4-667d-46b6-aa46-c575c15ccd45",
+        "9df836cf-5c07-4d1d-a6e1-15f8c8f5bdb9",
+        "28117162-1b32-40b8-b6bb-609d2736aacb",
+        "cb0d8383-864b-4521-b0e7-0910f5570d2c",
+        "7015718b-f50b-4752-8c7d-b0a0e785e917",
+        "1f354738-9feb-427f-b522-aceb380bfcaa",
+        "f09ac31b-53b2-4db6-9c90-8480ea87f4b3",
+        "dc17e288-494a-4c4f-89d8-209d0bcb9a71",
+        "636c1055-ac83-4170-a097-8a33f3e9585c",
+        "a4621f60-de19-46b2-9b02-96db921b9ab1",
+        "a97d6bd7-58c8-4e25-992b-7a1a30405084",
+        "7eed65d9-2d64-4c3f-be60-07791c0aa69f",
+        "f4513136-2b7e-47d6-9618-1e221fb5e136"
+      ],
+      "settings": {
+        "title": "The big questions  (that we are frequently asked)",
+        "tab_heading_1": "GENERAL PRODUCT FAQS",
+        "tab_heading_2": "MANUFACTURING",
+        "tab_heading_3": "ORDER INQUIRIES",
+        "tab_heading_4": "SHIPPING + BILLING",
+        "tab_heading_5": "INTERNATIONAL"
+      }
+    },
+    "3ee05d5c-18c9-4c25-bc38-a6b24723ed04": {
+      "type": "custom-faq-tabs-2",
+      "blocks": {
+        "d216f081-48b9-4f86-b631-2733736c7cbc": {
+          "type": "refunds",
+          "settings": {
+            "faq_qus": "Can I return the product I ordered?",
+            "faq_ans": "<p>If for any reason you are not satisfied with your purchase, you may request a refund within 30 days of delivery of your first order. We’ll refund you for the full cost of the product, less shipping. We can do this once we get the product returned to our warehouse. </p>"
+          }
+        },
+        "a0fd8c4a-189a-422a-8414-f9b231514df2": {
+          "type": "refunds",
+          "settings": {
+            "faq_qus": "Can I get a refund?",
+            "faq_ans": "<p>Refunds apply to your first order only. Simply email us at <a href=\"mailto:info@tribe-organics.com\"><span style=\"text-decoration:underline\">info@tribe-organics.com</span></a> to begin the process. In your email, please add your order number, a photo that shows that your product is entirely unopened, with an unbroken safety seal and the reason for your return. If your return is accepted, we will send you a return shipping label, as well as instructions on how and where to send your package. If you would like to make a return, please reach out to us directly for more information.</p>"
+          }
+        },
+        "0be7fc32-d464-44e2-baa2-42911dc024ed": {
+          "type": "refunds",
+          "settings": {
+            "faq_qus": "Is there a shipping fee to return the product?",
+            "faq_ans": "<p>In most cases, a processing fee and a shipping fee depending on your ZIP code will be deducted from your refund unless the product is damaged, or it is our mistake. We may request a photo of the incorrect or damaged product prior to waiving the return shipping fee.</p>"
+          }
+        },
+        "85c1da24-ac17-42b3-850a-2708628a30b2": {
+          "type": "refunds",
+          "settings": {
+            "faq_qus": "When will I receive my refund?",
+            "faq_ans": "<p>Please allow approximately 1-2 weeks for return processing. Once the product is returned to our warehouse, it will take an additional 5-7 business days to credit back to your original form of payment. You will receive a refund notification from us on your email when your return has been processed.</p>"
+          }
+        },
+        "b0adbc66-8701-45b6-8d44-d0dfaad01afb": {
+          "type": "subscriptions",
+          "settings": {
+            "faq_qus": "What is a subscription?",
+            "faq_ans": "<p>A subscription will ensure that you always have your products arriving at your door at a set frequency. </p><p>We know a healthy lifestyle requires some consistency, which is why we created our subscription program. </p><p>Subscriptions are easy to manage, and you are never locked in. You are always notified a few days before your order will go through so you can skip, cancel or swap out products anytime!</p>"
+          }
+        },
+        "329097d9-56fc-4dad-92c3-634b9bf52cf7": {
+          "type": "subscriptions",
+          "settings": {
+            "faq_qus": "How does the subscription option work?",
+            "faq_ans": "<p>For all products available on subscription, simply choose the time period in which you would like your products to be shipped — every 30, 45, or 60 days — and you’ll unlock increasing rewards the longer you stay subscribed:</p><p>1st order: 10% off + extra 5% just for subscribing<br/>2nd order: 15% off<br/>3rd order: 20% off<br/>4th order: 25% off<br/>5th order: 25% off + free gift + free shipping for life</p><p>Depending on your selection, you will be billed accordingly and your products will be shipped to your door.<br/><br/>All subscription orders over $75 ship for free.</p><p>To manage your subscription: Login to your <a href=\"https://www.tribe-organics.com/account/login\" title=\"https://www.tribe-organics.com/account/login\"><strong>account</strong></a> and locate the Subscriptions tab!</p>"
+          }
+        },
+        "6f7a3551-1e4f-4781-b9cc-f5e03b00f422": {
+          "type": "subscriptions",
+          "settings": {
+            "faq_qus": "How do I cancel my subscription?",
+            "faq_ans": "<p>Sorry to see you go—we’ll miss you. </p><p>Your subscription can be canceled at any time! Just go to your <a href=\"https://www.tribe-organics.com/account/login\" title=\"https://www.tribe-organics.com/account/login\"><span style=\"text-decoration:underline\"><strong>account</strong></span><strong> </strong></a>or by contacting info@tribe-organics.com. </p><p>Simply delete any unwanted scheduled orders from your account and you will no longer be billed for future renewals.</p><p>Please note that requests <em><strong>must </strong></em>be sent at least one full business day before your subscription is set to renew. If you are cancelling, please use the word CANCEL in your subject line.</p>"
+          }
+        },
+        "subscriptions_RrknWH": {
+          "type": "subscriptions",
+          "settings": {
+            "faq_qus": "What Happens to My Perks if I Cancel My Subscription?",
+            "faq_ans": "<p>If you cancel your subscription, all perks earned through the program — including free shipping for life and eligibility for the free gift — will end immediately. </p><p>If you re-subscribe in the future, you’ll start again from Tier 1, with the rewards and discounts restarting from your first order.</p>"
+          }
+        },
+        "b74f22ac-626b-4ed4-9659-0c2211d97954": {
+          "type": "subscriptions",
+          "settings": {
+            "faq_qus": "Can I reschedule my next shipment?",
+            "faq_ans": "<p>Absolutely! Simply navigate to your <a href=\"https://www.tribe-organics.com/account/login\" title=\"https://www.tribe-organics.com/account/login\"><span style=\"text-decoration:underline\"><strong>account</strong></span></a> and reschedule your upcoming shipment for any date in the future. Once you do, we’ll automatically update any further monthly shipments. If you need any assistance, kindly email us at <a href=\"mailto:info@tribe-organics.com\"><span style=\"text-decoration:underline\">info@tribe-organics.com</span></a> and we’ll be happy to assist. </p>"
+          }
+        },
+        "8bbe65c6-31e3-4171-9a8d-43c4da722729": {
+          "type": "subscriptions",
+          "settings": {
+            "faq_qus": "How do I change my shipping address on my subscription?",
+            "faq_ans": "<p>You can change your address on your account, go to your profile and edit the default address. We will also ask you to please do a test order just so we can see if the address has been changed successfully. All  you need to do is add any item to your cart and proceed with the order until the payment section during checkout.  Then you can exit the website and it will automatically appear on our abandoned checkouts with the order details. Please send us an email so we can confirm it was changed successfully. Thank you :) </p><p><strong>Note: Updating the shipping address on your account will not update an already processed order. Addresses cannot be modified on orders that have already been processed.</strong></p>"
+          }
+        },
+        "7476b95c-6ca1-4bf0-87b1-3e347458d09a": {
+          "type": "subscriptions",
+          "settings": {
+            "faq_qus": "How do discounts work on subscription orders?",
+            "faq_ans": "<p>Subscription discounts are built right in and increase over your first four orders — no coupon needed. Additional promo codes cannot be combined with subscription purchases at this time.</p>"
+          }
+        },
+        "20ceafaf-511d-4826-9e36-c61be8e74733": {
+          "type": "subscriptions",
+          "settings": {
+            "faq_qus": "Will I get an email before you ship?",
+            "faq_ans": "<p>Yes you will! We want you to have time to make updates to your shipment and/or order. You will receive a three-day reminder email before your subscription ships out, and that’s your time to log in and make any changes you need. </p><p>On the day of, you will receive a processing email followed by a shipping confirmation email.</p>"
+          }
+        },
+        "9fe5ac0b-6c74-4865-94a5-c5a5508914c7": {
+          "type": "account",
+          "settings": {
+            "faq_qus": "How do I create a customer account?",
+            "faq_ans": "<p>You can create a customer account when you checkout. There will be an option to save your information during checkout which creates an account for you. You can also set up an account before you complete any purchases by <a href=\"https://www.tribe-organics.com/account/register\" title=\"https://www.tribe-organics.com/account/register\"><strong>creating an account here.</strong></a> You can setup your billing and shipping information ahead of time, as well as save your carts with a customer account.</p>"
+          }
+        },
+        "07a5e439-dd8c-4f8c-b096-bcfa95c91a60": {
+          "type": "account",
+          "settings": {
+            "faq_qus": "How do I log in to my customer account?",
+            "faq_ans": "<p>There is a link in the top right of our shop that goes to our <a href=\"https://www.tribe-organics.com/account/login\" title=\"https://www.tribe-organics.com/account/login\"><span style=\"text-decoration:underline\"><strong>Login page</strong></span></a>.</p>"
+          }
+        },
+        "aca21c96-2027-4434-92d8-48302a90a02e": {
+          "type": "account",
+          "settings": {
+            "faq_qus": "How do I reset my password?",
+            "faq_ans": "<p>Click on the \"Forgot Password?\" link on the customer login page or go <a href=\"https://www.tribe-organics.com/pages/account-forgot\" title=\"https://www.tribe-organics.com/pages/account-forgot\"><span style=\"text-decoration:underline\"><strong>here</strong></span><strong>.</strong></a></p>"
+          }
+        }
+      },
+      "block_order": [
+        "d216f081-48b9-4f86-b631-2733736c7cbc",
+        "a0fd8c4a-189a-422a-8414-f9b231514df2",
+        "0be7fc32-d464-44e2-baa2-42911dc024ed",
+        "85c1da24-ac17-42b3-850a-2708628a30b2",
+        "b0adbc66-8701-45b6-8d44-d0dfaad01afb",
+        "329097d9-56fc-4dad-92c3-634b9bf52cf7",
+        "6f7a3551-1e4f-4781-b9cc-f5e03b00f422",
+        "subscriptions_RrknWH",
+        "b74f22ac-626b-4ed4-9659-0c2211d97954",
+        "8bbe65c6-31e3-4171-9a8d-43c4da722729",
+        "7476b95c-6ca1-4bf0-87b1-3e347458d09a",
+        "20ceafaf-511d-4826-9e36-c61be8e74733",
+        "9fe5ac0b-6c74-4865-94a5-c5a5508914c7",
+        "07a5e439-dd8c-4f8c-b096-bcfa95c91a60",
+        "aca21c96-2027-4434-92d8-48302a90a02e"
+      ],
+      "settings": {
+        "title": "",
+        "tab_heading_1": "REFUNDS",
+        "tab_heading_2": "SUBSCRIPTIONS",
+        "tab_heading_3": "ACCOUNT"
+      }
+    }
+  },
+  "order": [
+    "88048427-5223-42ab-8edc-cdaebb1f1dd9",
+    "main",
+    "ec9ac214-ac75-456a-a641-5d27d0fb3b1f",
+    "4b8bbd43-3c45-48d2-8b02-25e3c98ce232",
+    "3ee05d5c-18c9-4c25-bc38-a6b24723ed04"
+  ]
+}

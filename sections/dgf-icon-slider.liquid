@@ -1,0 +1,360 @@
+{% comment %}
+  [DGF] Icon Slider
+  Author: Rodrigo Gesser
+  Date: 2025-09-18
+  Auto-scrolling horizontal infinite slider with icons and text
+{% endcomment %}
+
+{% liquid
+  assign bg_color = section.settings.sec_bg_color | default: '#ffffff'
+  assign text_color = section.settings.text_color | default: '#333333'
+  assign icon_bg_color = section.settings.icon_bg_color | default: '#F3D9CF'
+  assign icon_bg_image = section.settings.icon_bg_image
+%}
+
+<section class="dgf-icon-slider-section" style="background-color: {{ bg_color }};" id="dgf-icon-slider-{{ section.id }}">
+  <div class="dgf-slider-wrapper">
+
+    {% if section.settings.title != blank %}
+      <div class="dgf-slider-header">
+        <h2 class="dgf-slider-title">{{ section.settings.title }}</h2>
+      </div>
+    {% endif %}
+
+    <div class="dgf-slider-container">
+      <div class="swiper dgf-icon-swiper">
+        <div class="swiper-wrapper">
+
+          {% for block in section.blocks %}
+            <div class="swiper-slide dgf-slider-item" {{ block.shopify_attributes }}>
+              {% if block.settings.icon != blank %}
+                <div class="dgf-slider-icon">
+                  <img src="{{ block.settings.icon | img_url: '60x60' }}" alt="{{ block.settings.text | default: 'Icon' }}" loading="lazy">
+                </div>
+              {% endif %}
+
+              {% if block.settings.text != blank %}
+                <div class="dgf-slider-text" style="color: {{ block.settings.text_color | default: text_color }};">
+                  {{ block.settings.text }}
+                </div>
+              {% endif %}
+            </div>
+          {% endfor %}
+
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+  .dgf-icon-slider-section {
+    padding: 2rem 0;
+    overflow: hidden;
+  }
+
+  .dgf-slider-wrapper {
+    width: 100%;
+    max-width: 100%;
+  }
+
+  .dgf-slider-header {
+    text-align: center;
+    margin-bottom: 2rem;
+  }
+
+  .dgf-slider-title {
+    font-size: 24px;
+    font-weight: 600;
+    margin: 0;
+    color: #333;
+  }
+
+  .dgf-slider-container {
+    width: 100%;
+    position: relative;
+  }
+
+  .dgf-icon-swiper {
+    overflow: visible;
+    contain: paint;
+  }
+
+  .dgf-slider-item {
+    display: flex!important;
+    align-items: center;
+    gap: 12px;
+    border-radius: 8px;
+    white-space: nowrap;
+    justify-content: flex-start;
+    width: auto !important;
+  }
+
+  .dgf-slider-icon {
+    flex-shrink: 0;
+    width: 39px;
+    height: 39px;
+    display: flex;
+    align-items: center;
+    {% if icon_bg_image != blank %}
+    background-image: url('{{ icon_bg_image | img_url: '80x80' }}');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    {% else %}
+    background-color: {{ icon_bg_color }};
+    {% endif %}
+    border-radius: 50%;
+    justify-content: center;
+  }
+
+  .dgf-slider-icon img {
+    width: 26px;
+    height: 26px;
+    object-fit: contain;
+  }
+
+  .dgf-slider-text {
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 1;
+  }
+
+  /* Swiper customizations for continuous scroll */
+  .dgf-icon-swiper {
+    overflow: hidden;
+  }
+
+  .dgf-icon-swiper .swiper-slide {
+    width: auto !important;
+    flex-shrink: 0;
+  }
+
+  /* Mobile responsive */
+  @media (max-width: 768px) {
+    .dgf-icon-slider-section {
+      padding: 1.5rem 0;
+    }
+
+    .dgf-slider-title {
+      font-size: 20px;
+    }
+
+    .dgf-slider-item {
+      gap: 10px;
+    }
+
+    .dgf-slider-icon {
+      width: 32px;
+      height: 32px;
+    }
+
+    .dgf-slider-text {
+      font-size: 14px;
+    }
+
+  }
+</style>
+
+{% schema %}
+  {
+    "name": "[DGF] Icon Slider",
+    "tag": "section",
+    "class": "section",
+    "settings": [
+      {
+        "type": "header",
+        "content": "Section Settings"
+      },
+      {
+        "type": "text",
+        "id": "title",
+        "label": "Section Title",
+        "info": "Optional title above the slider"
+      },
+      {
+        "type": "color",
+        "id": "sec_bg_color",
+        "label": "Background Color",
+        "default": "#f8f9fa"
+      },
+      {
+        "type": "color",
+        "id": "text_color",
+        "label": "Default Text Color",
+        "default": "#333333"
+      },
+      {
+        "type": "header",
+        "content": "Icon Background Settings"
+      },
+      {
+        "type": "color",
+        "id": "icon_bg_color",
+        "label": "Icon Background Color",
+        "default": "#F3D9CF",
+        "info": "Default background color for icons"
+      },
+      {
+        "type": "image_picker",
+        "id": "icon_bg_image",
+        "label": "Icon Background Image",
+        "info": "Optional background image for icons (overrides background color when set)"
+      },
+      {
+        "type": "header",
+        "content": "Animation Settings"
+      },
+      {
+        "type": "range",
+        "id": "autoplay_speed",
+        "label": "Autoplay Speed (seconds)",
+        "min": 1,
+        "max": 10,
+        "step": 1,
+        "default": 3,
+        "info": "How fast the slider moves (lower = faster)"
+      },
+      {
+        "type": "checkbox",
+        "id": "pause_on_hover",
+        "label": "Pause on Hover",
+        "default": true
+      }
+    ],
+    "blocks": [
+      {
+        "type": "icon_item",
+        "name": "Icon Item",
+        "settings": [
+          {
+            "type": "image_picker",
+            "id": "icon",
+            "label": "Icon",
+            "info": "Choose an icon for this item"
+          },
+          {
+            "type": "text",
+            "id": "text",
+            "label": "Text",
+            "default": "Feature text here"
+          },
+          {
+            "type": "color",
+            "id": "text_color",
+            "label": "Text Color",
+            "info": "Override default text color for this item"
+          }
+        ]
+      }
+    ],
+    "presets": [
+      {
+        "name": "[DGF] Icon Slider",
+        "blocks": [
+          {
+            "type": "icon_item",
+            "settings": {
+              "text": "Made in USA with globally sourced ingredients"
+            }
+          },
+          {
+            "type": "icon_item",
+            "settings": {
+              "text": "Third-party Lab-Tested"
+            }
+          },
+          {
+            "type": "icon_item",
+            "settings": {
+              "text": "Ethically grown and sourced"
+            }
+          },
+          {
+            "type": "icon_item",
+            "settings": {
+              "text": "No harmful additives or fillers"
+            }
+          },
+          {
+            "type": "icon_item",
+            "settings": {
+              "text": "Recyclable packaging"
+            }
+          }
+        ]
+      }
+    ]
+  }
+{% endschema %}
+
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+  const swiperContainer = document.querySelector('#dgf-icon-slider-{{ section.id }} .dgf-icon-swiper');
+
+  if (swiperContainer && typeof Swiper !== 'undefined') {
+    const swiper = new Swiper(swiperContainer, {
+      slidesPerView: 'auto',
+      spaceBetween: 64,
+      centeredSlides: false,
+      loop: true,
+      loopAdditionalSlides: {{ section.blocks.size }},
+      allowTouchMove: false,
+      freeMode: {
+        enabled: true,
+        momentum: false
+      },
+      breakpoints: {
+        320: {
+          spaceBetween: 40
+        },
+        768: {
+          spaceBetween: 48
+        },
+        1024: {
+          spaceBetween: 64
+        }
+      }
+    });
+
+    // Custom continuous movement
+    let animationId;
+    let currentTranslate = 0;
+    const speed = {{ section.settings.autoplay_speed | default: 3 | times: 10 }}; // pixels per second
+    let isPaused = false;
+
+    function animate() {
+      if (!isPaused && swiper && !swiper.destroyed) {
+        currentTranslate -= speed / 60; // 60fps
+
+        // Get total width of all slides
+        const wrapper = swiper.wrapperEl;
+        const totalWidth = wrapper.scrollWidth / 2; // Half because of loop duplication
+
+        // Reset position when we've moved a full cycle
+        if (Math.abs(currentTranslate) >= totalWidth) {
+          currentTranslate = 0;
+        }
+
+        swiper.setTranslate(currentTranslate);
+      }
+      animationId = requestAnimationFrame(animate);
+    }
+
+    // Start animation
+    animate();
+
+    {% if section.settings.pause_on_hover %}
+    // Add hover pause functionality
+    swiperContainer.addEventListener('mouseenter', function() {
+      isPaused = true;
+    });
+
+    swiperContainer.addEventListener('mouseleave', function() {
+      isPaused = false;
+    });
+    {% endif %}
+  }
+});
+</script>

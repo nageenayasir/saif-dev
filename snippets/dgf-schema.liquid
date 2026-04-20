@@ -1,0 +1,352 @@
+{% comment %}
+  DigiFlow NYC Custom SEO structred data
+  Author: Rodrigo Gesser
+  Date: 2025-07-19
+{% endcomment %}
+
+
+{% if template.name == 'index' %}
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "Organization",
+        "@id": "{{ shop.url }}/#organization",
+        "name": "{{ shop.name | escape }}",
+        "url": "{{ shop.url }}",
+        "logo": {
+          "@type": "ImageObject",
+          "url": "https://cdn.shopify.com/s/files/1/0499/0425/5134/files/triibe_logo_white_3a3feda5-f66c-429b-b72b-ecf140083592_11.png",
+          "width": 300,
+          "height": 100
+        },
+        "description": "{{ page_description | escape }}",
+        "foundingDate": "2020",
+        "contactPoint": {
+          "@type": "ContactPoint",
+            "telephone": "{{ shop.phone }}",
+            "contactType": "customer service",
+            "email": "{{ shop.email }}",
+            "availableLanguage": "English"
+        },
+        "address": {
+          "@type": "PostalAddress",
+          "addressCountry": "{{ shop.address.country_code }}",
+          "addressRegion": "{{ shop.address.province_code }}",
+          "addressLocality": "{{ shop.address.city }}"
+        },
+        "sameAs": [
+          "https://www.amazon.com/stores/page/F5692F74-2F15-4D12-A333-F696B35CF6C4",
+          "https://www.facebook.com/tribeorganics",
+          "https://www.instagram.com/tribeorganics"
+        ]
+      },
+      {
+        "@type": "WebSite",
+        "@id": "{{ shop.url }}/#website",
+        "url": "{{ shop.url }}",
+        "name": "{{ shop.name }}",
+        "description": "{{ page_description | escape }}",
+        "publisher": { "@id": "{{ shop.url }}/#organization" },
+        "potentialAction": {
+          "@type": "SearchAction",
+          "target": {
+            "@type": "EntryPoint",
+            "urlTemplate": "{{ shop.url }}/search?q={search_term_string}"
+          },
+          "query-input": "required name=search_term_string"
+        },
+        "about": { "@type": "Thing", "name": "Organic Supplements" },
+        "keywords": "organic supplements, ashwagandha, mushroom supplements, natural wellness, herbal supplements"
+      }
+    ]
+  }
+  </script>
+
+{% elsif template.name == 'page' and template.suffix == 'about' %}
+  
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "AboutPage",
+  "name": "{{ page.title | escape }}",
+  "description": "{{ page_description | escape }}",
+  "url": "https://www.tribe-organics.com/pages/about",
+  "isPartOf": {
+    "@type": "WebSite",
+    "@id": "{{ shop.url }}/#website"
+  },
+  "about": {
+    "@type": "Organization",
+    "@id": "{{ shop.url }}/#organization"
+  },
+  "breadcrumb": {
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {
+        "@type": "ListItem",
+        "position": 1,
+        "name": "Home",
+        "item": "https://www.tribe-organics.com"
+      },
+      {
+        "@type": "ListItem",
+        "position": 2,
+        "name": "About"
+      }
+    ]
+  }
+}
+</script>
+
+{% elsif template.name == 'page' and template.suffix == 'faq' %}
+  
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "name": "Frequently Asked Questions - Tribe Organics",
+  "description": "Get answers to common questions about Tribe Organics supplements, shipping, dosage, and more.",
+  "url": "{{ shop.url }}/pages/faqs",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Can I take herbal supplements long-term?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes! In fact, herbs and mushrooms work better when taken consistently over a long period of time."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Are your products gluten-free?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "All of our products are gluten-free. You can check our certification at our transparency page."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Are your products third-party tested?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes, they all are. What's inside your supplement is every bit as important as what's not. That's why all our products are third-party tested for heavy metals, pathogens, and contaminants."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Do you offer free shipping?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "If your order totals $75 or more, you qualify for FREE shipping. Note that this only applies to Standard Shipping inside the US, which usually takes 5-7 business days."
+      }
+    }
+  ]
+}
+</script>
+
+{% elsif template.name == 'page' and template.suffix == 'contact' %}
+  
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "ContactPage",
+  "name": "{{ page.title | escape }}",
+  "description": "{{ page_description | escape }}",
+  "url": "{{ shop.url }}/pages/contact",
+  "isPartOf": {
+    "@type": "WebSite",
+    "@id": "{{ shop.url }}/#website"
+  },
+  "about": {
+    "@type": "ContactPoint",
+    "telephone": "+1-917-934-3078",
+    "email": "info@tribe-organics.com",
+    "contactType": "customer service"
+  },
+  "breadcrumb": {
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {
+        "@type": "ListItem",
+        "position": 1,
+        "name": "Home",
+        "item": "https://www.tribe-organics.com"
+      },
+      {
+        "@type": "ListItem",
+        "position": 2,
+        "name": "Contact"
+      }
+    ]
+  }
+}
+</script>
+
+{% elsif template.name contains 'page' %}
+  
+
+{% assign seo_type = page.metafields.custom.seo_type.value %}
+{% assign seo_name = page.metafields.custom.seo_name.value %}
+
+
+{% capture about_block -%}
+  {% if seo_type != blank and seo_name != blank %}
+    ,
+    "about": {
+      "@type": "{{ seo_type | escape }}",
+      "name": "{{ seo_name | escape }}"
+    }
+  {% endif %}
+{%- endcapture %}
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebPage",
+  "name": "{{ page.title | escape }}",
+  "description": "{{ page_description | escape }}",
+  "url": "{{ shop.url }}",
+  "isPartOf": {
+    "@type": "WebSite",
+    "@id": "{{ shop.url }}/#website"
+  },
+  "breadcrumb": {
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {
+        "@type": "ListItem",
+        "position": 1,
+        "name": "Home",
+        "item": "{{ shop.url }}"
+      },
+      {
+        "@type": "ListItem",
+        "position": 2,
+        "name": "{{ page.title | escape }}"
+      }
+    ]
+  }{{ about_block | strip }}
+}
+</script>
+
+{% elsif template.name contains 'collection' %}
+
+{% assign seo_name = collection.metafields.custom.seo_name.value %}
+{% assign seo_description = collection.metafields.custom.seo_description.value %}
+
+{% assign seo_about = collection.metafields.custom.seo_about_name.value %}
+
+
+{% capture main_entity -%}
+  {% if seo_name != blank and seo_description != blank %}
+    ,
+    "mainEntity": {
+      "@type": "ItemList",
+      "name": "{{ seo_name | escape }}",
+      "description": "{{ seo_description | escape }}"
+    }
+  {% endif %}
+{%- endcapture %}
+
+{% capture about_name -%}
+  {% if seo_about != blank %}
+    ,
+    "about": {
+      "@type": "Thing",
+      "name": "{{ seo_about | escape }}"
+    }
+  {% endif %}
+{%- endcapture %}
+
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "CollectionPage",
+  "name": "{{ collection.title | escape }}",
+  "description": "{{ page_description | escape }}",
+  "url": "{{ shop.url }}{{ collection.url }}",
+  "isPartOf": {
+    "@type": "WebSite",
+    "@id": "{{ shop.url }}/#website"
+  },
+  "breadcrumb": {
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {
+        "@type": "ListItem",
+        "position": 1,
+        "name": "Home",
+        "item": "{{ shop.url }}"
+      },
+      {
+        "@type": "ListItem",
+        "position": 2,
+        "name": "Collections",
+        "item": "{{ shop.url }}/collections"
+      },
+      {
+        "@type": "ListItem",
+        "position": 3,
+        "name": "{{ collection.title }}"
+      }
+    ]
+  }{{ main_entity | strip }}{{ about_name | strip }}
+}
+</script>
+
+{% elsif template.name contains 'article' %}
+
+  {% render 'dgf-schema-article' %}
+
+{% elsif template.name contains 'blog' %}
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Blog",
+  "name": "{{ blog.title }}",
+  "description": "{{ page_description | escape }}",
+  "url": "{{ shop.url }}{{ blog.url }}",
+  "isPartOf": {
+    "@type": "WebSite",
+    "@id": "{{ shop.url }}/#website"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "@id": "{{ shop.url }}/#organization"
+  },
+  "breadcrumb": {
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {
+        "@type": "ListItem",
+        "position": 1,
+        "name": "Home",
+        "item": "{{ shop.url }}"
+      },
+      {
+        "@type": "ListItem",
+        "position": 2,
+        "name": "Blog",
+        "item": "{{ shop.url }}/blogs"
+      },
+      {
+        "@type": "ListItem",
+        "position": 3,
+        "name": "{{ blog.title }}"
+      }
+    ]
+  },
+  "about": {
+    "@type": "Thing",
+    "name": "{{ blog.title }}"
+  }
+}
+</script>
+
+
+{% endif %}

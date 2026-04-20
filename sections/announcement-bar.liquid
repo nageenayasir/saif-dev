@@ -1,51 +1,60 @@
-<div class="announcement-bar color-{{ section.settings.color_scheme }}" role="region" aria-label="{{ 'sections.header.announcement' | t }}">
-  <div class="announcement-bar__message page-width">
-    {%- if section.settings.text != blank -%}
-      {%- if section.settings.link != blank -%}
-        <a href="{{ section.settings.link }}">{{ section.settings.text }}</a>
-      {%- else -%}
-        <p>{{ section.settings.text }}</p>
-      {%- endif -%}
-    {%- endif -%}
-  </div>
-</div>
-
+<section id="id-{{ section.id }}" class="color-dark bg-cream-2 custom-announcement-bar">
+  <div class="top-header">
+        <div class="d-flex">
+          {% if section.settings.top_header != blank %}<a class="mx-4 text-center first-top-header-wrap" href="{{ section.settings.url_1 }}" aria-label="{{ section.settings.top_header | strip_html | escape }}">{{ section.settings.top_header }}</a>{% endif %}
+          {% if section.settings.top_header_2 != blank %}<a class="mx-4 text-center top-header-wrap" href="{{ section.settings.url_2 }}" aria-label="{{ section.settings.top_header_2 | strip_html | escape }}">{{ section.settings.top_header_2 }}</a>{% endif %}
+          {% if section.settings.top_header_3 != blank %}<a class="mx-4 text-center" href="{{ section.settings.url_3 }}" aria-label="{{ section.settings.top_header_3 | strip_html | escape }}">{{ section.settings.top_header_3 }}</a>{% endif %}
+        </div>
+        <div class="d-flex d-md-none">
+          {% if section.settings.top_header != blank %}<a class="mx-4 text-center first-top-header-wrap" href="{{ section.settings.url_1 }}" aria-label="{{ section.settings.top_header | strip_html | escape }}">{{ section.settings.top_header }}</a>{% endif %}
+          {% if section.settings.top_header_2 != blank %}<a class="mx-4 text-center top-header-wrap" href="{{ section.settings.url_2 }}" aria-label="{{ section.settings.top_header_2 | strip_html | escape }}">{{ section.settings.top_header_2 }}</a>{% endif %}
+          {% if section.settings.top_header_3 != blank %}<a class="mx-4 text-center" href="{{ section.settings.url_3 }}" aria-label="{{ section.settings.top_header_3 | strip_html | escape }}">{{ section.settings.top_header_3 }}</a>{% endif %}
+        </div>
+      </div>
+</section>
 {% schema %}
-{
-  "name": "Announcement bar",
-  "class": "announcement-bar-section",
-  "enabled_on": {
-    "groups": ["header"]
-  },
-  "settings": [
-    {
+  {
+    "name": "Announcement bar",
+    "settings": [
+      {
       "type": "text",
-      "id": "text",
-      "default": "FREE SHIPPING on U.S. orders over $75 📦",
-      "label": "Announcement text"
+      "id": "top_header",
+      "label": "Top header 1",
+      "default" : "Free delivery on all orders on orders over £100"
     },
     {
       "type": "url",
-      "id": "link",
-      "label": "Announcement link"
+      "id": "url_1",
+      "label": "Url 1"
     },
     {
-      "type": "select",
-      "id": "color_scheme",
-      "options": [
-        { "value": "background-1", "label": "Background 1" },
-        { "value": "background-2", "label": "Background 2" },
-        { "value": "accent-1", "label": "Accent 1" },
-        { "value": "accent-2", "label": "Accent 2" }
-      ],
-      "default": "background-2",
-      "label": "Color scheme"
-    }
-  ],
-  "presets": [
+      "type": "text",
+      "id": "top_header_2",
+      "label": "Top header 2",
+      "default" : "We ship globally!"
+    },
+     {
+      "type": "url",
+      "id": "url_2",
+      "label": "Url 2"
+    },
     {
-      "name": "Announcement bar"
+      "type": "text",
+      "id": "top_header_3",
+      "label": "Top header 3",
+      "default" : "We ship globally!"
+    },
+     {
+      "type": "url",
+      "id": "url_3",
+      "label": "Url 3"
     }
-  ]
-}
+    ]
+  }
 {% endschema %}
+
+{% stylesheet %}
+{% endstylesheet %}
+
+{% javascript %}
+{% endjavascript %}

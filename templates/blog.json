@@ -1,0 +1,185 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "16648823506421fafc": {
+      "type": "banner-subpage",
+      "disabled": true,
+      "settings": {
+        "enable_breadcrumb": true,
+        "title": "THE TRIIBE BLOG",
+        "sub_title": "Learn about how Ayurvedic herbs like Ashwagandha and Functional mushrooms like Lion's Mane can support good health and living the TRIIBE lifestyle.",
+        "image": "shopify://shop_images/Screen_Shot_2022-12-08_at_10.37-optimized.png"
+      }
+    },
+    "blog_page_banner_xkA8Jb": {
+      "type": "blog-page-banner",
+      "settings": {
+        "enable_breadcrumb": true,
+        "background_the_image": "shopify://shop_images/Desktop_Banner_18a40e2d-e3ac-491e-bf44-fb8956555bef.jpg",
+        "bg_mob_image": "shopify://shop_images/Mobile_Banner_c12eed04-4ba7-40c3-b333-95554b8d2f01.jpg",
+        "title": "WELLNESS ROOTED IN NATURE",
+        "the_text": "Learn about how Ayurvedic herbs like Ashwagandha and Functional mushrooms like Lion's Mane can support good health and living the TRIIBE lifestyle.",
+        "show_social": false,
+        "text": "Visit",
+        "social_spotify_link": "https://open.spotify.com/user/8yaaywq2a4gtbxl0w7csryv2o?si=28d61f70a2cc496c"
+      }
+    },
+    "main": {
+      "type": "main-blog",
+      "blocks": {
+        "2f17c40b-0c7f-4136-b019-6ff93ad3a1a6": {
+          "type": "content",
+          "settings": {
+            "title": "All",
+            "url": "shopify://blogs/all"
+          }
+        },
+        "content_Nxtm9x": {
+          "type": "content",
+          "settings": {
+            "title": "Recipes",
+            "url": "shopify://blogs/recipes"
+          }
+        },
+        "content_ryGYQx": {
+          "type": "content",
+          "settings": {
+            "title": "Supplements",
+            "url": "shopify://blogs/lifestyle"
+          }
+        },
+        "content_wfFrfN": {
+          "type": "content",
+          "settings": {
+            "title": "Wellness",
+            "url": "shopify://blogs/wellness"
+          }
+        },
+        "content_gW3cPH": {
+          "type": "content",
+          "settings": {
+            "title": "Pet Health",
+            "url": "shopify://blogs/pet-health"
+          }
+        },
+        "content_hgNXED": {
+          "type": "content",
+          "settings": {
+            "title": "News",
+            "url": "shopify://blogs/news"
+          }
+        }
+      },
+      "block_order": [
+        "2f17c40b-0c7f-4136-b019-6ff93ad3a1a6",
+        "content_Nxtm9x",
+        "content_ryGYQx",
+        "content_wfFrfN",
+        "content_gW3cPH",
+        "content_hgNXED"
+      ],
+      "custom_css": [
+        ".blog-page-wrapper {display: none;}"
+      ],
+      "settings": {
+        "the_text": "Your TRIIBE is here for you and your ever-changing self-care journey. Follow our blog to get info on our ingredients and science, tips for being well, recipes, and stories about doing good in the world.",
+        "text": "Our Featured Articles",
+        "sub_title": "NEWS",
+        "title_article": "TRIBE ORGANICS IS OFFICIALLY A B CORP™!",
+        "image_article": "shopify://shop_images/b_corp_featured_blog_2.jpg",
+        "content": "We have officially earned our B Corp™ Certification! We are very proud to join a global community committed to using business as a force of good.  This is a monumental step in Tribe Organics’ journey of making not just a difference in your health, but in the world.",
+        "url": "shopify://blogs/news/tribe-organics-becomes-b-corp-certified",
+        "sub_title_1": "SUPPLEMENTS",
+        "title_article_1": "BENEFITS OF SHATAVARI: POSTPARTUM AND BREASTFEEDING",
+        "image_article_1": "shopify://shop_images/postpartum_mom_featured.jpg",
+        "content_1": "Are you a new mother looking for natural ways to enhance your postpartum experience and breastfeeding journey?\n\nIf so, you've come to the right place. In this comprehensive guide, we'll explore the incredible benefits of Shatavari for postpartum and breastfeeding women.",
+        "url_1": "shopify://blogs/lifestyle/benefits-of-shatavari-postpartum-and-breastfeeding"
+      }
+    },
+    "blog_featured_product_6UtaY3": {
+      "type": "blog-featured-product",
+      "blocks": {
+        "product_7tPjfM": {
+          "type": "product",
+          "settings": {
+            "product": "ashwagandha-ksm-66"
+          }
+        },
+        "product_FANjga": {
+          "type": "product",
+          "settings": {
+            "product": "ashwagandha-gummies-kids"
+          }
+        },
+        "product_eLENy7": {
+          "type": "product",
+          "settings": {
+            "product": "lions-mane-mushroom"
+          }
+        },
+        "product_xjtd4C": {
+          "type": "product",
+          "settings": {
+            "product": "turmeric-complex"
+          }
+        },
+        "product_iJiaDA": {
+          "type": "product",
+          "settings": {
+            "product": "boswellia-complex"
+          }
+        },
+        "product_xMiAgX": {
+          "type": "product",
+          "settings": {
+            "product": "warrior-trio"
+          }
+        },
+        "product_DGcWM9": {
+          "type": "product",
+          "settings": {
+            "product": "nootropic-duo"
+          }
+        },
+        "product_WrEHib": {
+          "type": "product",
+          "settings": {
+            "product": "organic-moringa"
+          }
+        }
+      },
+      "block_order": [
+        "product_7tPjfM",
+        "product_FANjga",
+        "product_eLENy7",
+        "product_xjtd4C",
+        "product_iJiaDA",
+        "product_xMiAgX",
+        "product_DGcWM9",
+        "product_WrEHib"
+      ],
+      "settings": {
+        "title": "Shop best sellers",
+        "sub_title": "Explore our collection of favorite items that have gained popularity for their quality and satisfaction.",
+        "button": "Shop all products",
+        "url": "shopify://collections/best-sellers",
+        "class": "big",
+        "background": "section-sea"
+      }
+    }
+  },
+  "order": [
+    "16648823506421fafc",
+    "blog_page_banner_xkA8Jb",
+    "main",
+    "blog_featured_product_6UtaY3"
+  ]
+}

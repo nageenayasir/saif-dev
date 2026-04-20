@@ -1,0 +1,33 @@
+<section class="section section-insta">
+    <div class="container">
+        <h2 class="text-center text-uppercase" data-aos="fade-up" data-aos-delay="000">{{ section.settings.title }}</h2>
+        <div class="row row-m justify-content-center">
+          {%- for block in section.blocks -%}
+            {%- case block.type -%}
+              {%- when '@app' -%}
+                {% render block %}
+            {% endcase %}
+          {% endfor %}
+        </div>
+    </div>
+</section>
+{% schema %}
+  {
+    "name": "Instagram",
+    "tag": "section",
+    "class": "section",
+    "settings": [
+       {
+        "type": "text",
+        "id": "title",
+        "label": "Title",
+        "default" : "Join the triibe <br>online @triibe"
+      }
+	],
+	"blocks": [
+      {
+        "type": "@app"
+      }
+  ]
+  }
+{% endschema %}

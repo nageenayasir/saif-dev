@@ -1,0 +1,692 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "main": {
+      "type": "main-page",
+      "disabled": true,
+      "settings": {}
+    },
+    "ashwagandha_pack_top_icons_pMnDGa": {
+      "type": "ashwagandha-pack-top-icons",
+      "settings": {
+        "section_bg_color": "#06211e",
+        "site_logo_image": "shopify://shop_images/TO_018_SecondayLogoWhite_TransparentHigh_ef4bdeec-9528-4fe8-872b-fee8fbfaeb24.png",
+        "logo_image_1": "shopify://shop_images/USDA_1_ea5c100a-3162-429c-977a-344b4967c315.svg",
+        "logo_image_2": "shopify://shop_images/gluten_free_1_cd270fff-afcc-4862-b8b5-e3b6765e1761.svg",
+        "logo_image_3": "shopify://shop_images/NON_GMO_02a93949-ac36-47a8-8e5a-442d6f75a219.svg",
+        "logo_image_4": "shopify://shop_images/Icon_white.svg"
+      }
+    },
+    "ashwagandha_pack_offer_section_AgMYet": {
+      "type": "ashwagandha-pack-offer-section",
+      "blocks": {
+        "tex_blocks_pPFh8T": {
+          "type": "tex_blocks",
+          "settings": {
+            "the_text": "Forget matcha. Forget kale. Our Organic Moringa is the true supergreen that reigns supreme as a nutritional powerhouse: a complete plant protein offering all 9 essential amino acids, 46 free-radical-fighting antioxidants, alongside a slew of foundational-health-supporting vitamins and minerals."
+          }
+        },
+        "tex_blocks_wGBhKK": {
+          "type": "tex_blocks",
+          "settings": {
+            "the_text": "Made from 100% unadulterated Organic Moringa leaves (no stems, no stalks) for maximum beneficial bioactive compounds."
+          }
+        },
+        "tex_blocks_MXywRi": {
+          "type": "tex_blocks",
+          "settings": {
+            "the_text": "Carefully processed for one of the purest, cleanest, and most effective Organic Moringa products on the market."
+          }
+        },
+        "tex_blocks_d6GJYT": {
+          "type": "tex_blocks",
+          "settings": {
+            "the_text": "USDA-certified organic, non-GMO verified, gluten-free, vegan, and kosher certified."
+          }
+        },
+        "tex_blocks_pANyW9": {
+          "type": "tex_blocks",
+          "settings": {
+            "the_text": "Every batch of raw ingredients and finished product undergoes multiple stages of rigorous third-party testing to check for purity, safety, and efficacy."
+          }
+        }
+      },
+      "block_order": [
+        "tex_blocks_pPFh8T",
+        "tex_blocks_wGBhKK",
+        "tex_blocks_MXywRi",
+        "tex_blocks_d6GJYT",
+        "tex_blocks_pANyW9"
+      ],
+      "settings": {
+        "section_bg_color": "#faeee9",
+        "the_title": "WANT ELEVATED ENERGY AND BOOSTED HEALTH?",
+        "the_title_2": "GET <span>35% OFF </span>TODAY ON OUR ORGANIC MORINGA",
+        "the_image_1": "shopify://shop_images/1_2ef1f0b9-6cd1-4d64-8437-776573ab39fb.jpg",
+        "the_image_2": "shopify://shop_images/moringa_landing_page.jpg",
+        "right_title": "One herb. Countless wellness benefits. Moringa: the “tree of life” that deserves its name — giving you everything you need to live vibrantly and at your body’s optimal best. Day after day. \n<span>Why choose Organic Moringa? </span>",
+        "btn_text": "GET 35% OFF",
+        "the_url": "#ashwagandha-product-packs",
+        "the_icon": "shopify://shop_images/No_questions_asked_30-day_money-back_guarantee_1.png",
+        "btn_under_text": "No questions asked, 30-day Money-Back Guarantee "
+      }
+    },
+    "ashwagandha_pack_core_benefits_gDHAcP": {
+      "type": "ashwagandha-pack-core-benefits",
+      "blocks": {
+        "content_Mf8HP3": {
+          "type": "content",
+          "settings": {
+            "the_title": "HEALTH & VITALITY*",
+            "the_icon": "shopify://shop_images/Health_vitality.svg"
+          }
+        },
+        "content_4tfUtT": {
+          "type": "content",
+          "settings": {
+            "the_title": "METABOLIC HEALTH*",
+            "the_icon": "shopify://shop_images/Metabolic_Health.svg"
+          }
+        },
+        "content_gkCptw": {
+          "type": "content",
+          "settings": {
+            "the_title": "WEIGHT MANAGEMENT*",
+            "the_icon": "shopify://shop_images/Weight_management.svg"
+          }
+        },
+        "content_7HzwtH": {
+          "type": "content",
+          "settings": {
+            "the_title": "OXIDATIVE STRESS SUPPORT*",
+            "the_icon": "shopify://shop_images/Oxidative_stress_support.svg"
+          }
+        },
+        "content_TfgDqt": {
+          "type": "content",
+          "settings": {
+            "the_title": "PROMOTE GUT HEALTH*",
+            "the_icon": "shopify://shop_images/Promote_gut_health.svg"
+          }
+        },
+        "content_jVxGry": {
+          "type": "content",
+          "settings": {
+            "the_title": "BREAST MILK PRODUCTION*",
+            "the_icon": "shopify://shop_images/breastfeeding_1_traced.svg"
+          }
+        }
+      },
+      "block_order": [
+        "content_Mf8HP3",
+        "content_4tfUtT",
+        "content_gkCptw",
+        "content_7HzwtH",
+        "content_TfgDqt",
+        "content_jVxGry"
+      ],
+      "settings": {
+        "section_bg_color": "#f3d9cf",
+        "the_title": "Core benefits of Organic Moringa",
+        "the_text": "Organic Moringa — the unmatched energy- and health-boosting powerhouse you’ve been looking for."
+      }
+    },
+    "ashwagandha_pack_reviews_mTCEB8": {
+      "type": "ashwagandha-pack-reviews",
+      "blocks": {
+        "content_hhWweC": {
+          "type": "content",
+          "settings": {
+            "the_text": "<p><em>\"Tribe Organics' Moringa has been a game-changer for me. After a month of consistent use, I've noticed </em><em><strong>improved mental clarity, better sleep quality, and a noticeable increase in energy levels.</strong></em><em> The capsules are easy to swallow, and I appreciate that they're vegan and gluten-free. This supplement has </em><em><strong>seamlessly integrated into my daily routine</strong></em><em>, and I plan to continue using it.\"</em></p><p><strong>- Riley Nelson</strong></p>"
+          }
+        },
+        "content_Kpg8TW": {
+          "type": "content",
+          "settings": {
+            "the_text": "<p><em>\"I've been taking Tribe Organics' Moringa for several weeks now, and the benefits are evident. My e</em><em><strong>nergy levels have stabilized</strong></em><em>, and I feel more alert throughout the day. The capsules are convenient, and I love that they're made from sustainably sourced ingredients. It's </em><em><strong>a supplement I can trust </strong></em><em>and will continue to incorporate into my wellness regimen.​\"</em></p><p>- <strong>Corey Worth</strong></p>"
+          }
+        },
+        "content_UerEJb": {
+          "type": "content",
+          "settings": {
+            "the_text": "<p><em>\"As someone who struggles with fatigue, these capsules have been a revelation. Within four weeks of use, I noticed </em><em><strong>a significant boost in my energy and a reduction in brain fog.\"</strong></em></p><p>- <strong>Casey Mills</strong></p>"
+          }
+        },
+        "content_CmXnwU": {
+          "type": "content",
+          "settings": {
+            "the_text": "<p><em>\"I've tried various supplements, but none have delivered results like Tribe Organics' Moringa. After a month of consistent use, my energy levels have improved, and I feel more focused during the day. The capsules are easy to swallow, and I appreciate that they're vegan and non-GMO. </em><em><strong>This product has become a staple in my daily routine.​</strong></em></p><p>- <strong>Kate Crew</strong></p>"
+          }
+        },
+        "content_PmMxxR": {
+          "type": "content",
+          "settings": {
+            "the_text": "<p><em>\"</em><em><strong>This supplement has become a non-negotiable in my routine. </strong></em><em>I’m someone who’s sensitive to supplements, but these are gentle and easy on my system. In return, </em><em><strong>I get better sleep, increased stamina, and a clear mind.</strong></em><em> It’s everything I was looking for — and then some.\"</em></p><p><em>- </em><strong>Rebecca H</strong></p>"
+          }
+        },
+        "content_6kjEM3": {
+          "type": "content",
+          "settings": {
+            "the_text": "<p><em>\"One word: consistency. That’s what I’ve gotten from these capsules. </em><em><strong>Consistent energy, consistent focus, and more consistent digestion.</strong></em><em> It’s such a great feeling knowing I’m fueling my body with something </em><em><strong>truly natural and effective.\"</strong></em></p><p>- <strong>Dave Coen</strong></p>"
+          }
+        },
+        "content_kaXD8X": {
+          "type": "content",
+          "settings": {
+            "the_text": "<p><em>\"</em><em><strong>This Moringa has helped bring balance back to my body.</strong></em><em> I didn’t expect such noticeable results, but I’ve had fewer headaches, less bloating, and even my PMS symptoms have eased. It’s a subtle shift, but a powerful one.\"</em></p><p><strong>- Amy M</strong></p>"
+          }
+        },
+        "content_bH9VFY": {
+          "type": "content",
+          "settings": {
+            "the_text": "<p><em>\"I started taking Tribe Organics’ Moringa mainly for inflammation and energy support. Two weeks in and I’m feeling lighter, with way less joint stiffness and more motivation throughout the day.</em><em><strong> It’s quickly become my go-to morning supplement.\"</strong></em></p><p>- <strong>Crystal C</strong></p>"
+          }
+        },
+        "content_eT8MXC": {
+          "type": "content",
+          "settings": {
+            "the_text": "<p><em>\"I’m all about natural wellness, and Tribe Organics’ Moringa fits right into my lifestyle. </em><em><strong>It’s a gentle yet powerful supplement.</strong></em><em> I’m feeling more energetic, mentally sharp, and less achy after workouts. Super convenient to take and doesn’t upset my stomach like some supplements do.\"</em></p><p>- <strong>Nova G</strong></p>"
+          }
+        },
+        "content_dEaCMm": {
+          "type": "content",
+          "settings": {
+            "the_text": "<p><strong>\"</strong>This product has exceeded my expectations. After incorporating it into my daily regimen, <strong>I've noticed better digestion, improved skin health, and a general sense of well-being.</strong> The capsules are convenient, and I trust the brand's commitment to quality and sustainability.\"</p><p><strong>- Kristin Whitehouse</strong><br/><br/></p>"
+          }
+        },
+        "content_V3FiVp": {
+          "type": "content",
+          "settings": {
+            "the_text": "<p><em>\"I've been using this Moringa for a few months now and the benefits are clear. My energy levels have increased, and </em><em><strong>I feel more balanced throughout the day.</strong></em><em> Very easy to incorporate into my routine, and I appreciate the brand's focus on quality and sustainability.\"</em></p><p><strong>- Terry B</strong></p>"
+          }
+        },
+        "content_EGcPzn": {
+          "type": "content",
+          "settings": {
+            "the_text": "<p><em>\"After reading so many good things about moringa, I decided to try Tribe Organics, and it definitely lived up to the hype. </em><em><strong>My energy has been way more consistent</strong></em><em>, and I even feel like </em><em><strong>my immune system is stronger </strong></em><em>— haven’t caught a cold all winter. Really satisfied with the results.\"</em></p><p>- <strong>Clara Moore </strong></p>"
+          }
+        },
+        "content_gJerF6": {
+          "type": "content",
+          "settings": {
+            "the_text": "<p><em>\"This product is amazing. I’ve noticed less anxiety, better focus, and even my afternoon slumps have disappeared. </em><em><strong>Tribe Organics clearly cares about quality and transparency.</strong></em><em> I love that it’s all organic and made without any additives.\"</em></p><p><strong>- Remy King</strong></p>"
+          }
+        },
+        "content_3r4enj": {
+          "type": "content",
+          "settings": {
+            "the_text": "<p><em>\"I’ve tried a lot of supplements and was skeptical at first, but Tribes Organics’ Moringa blew me away. Within 10 days, I was more productive, less bloated, and even my skin started looking clearer.</em><em><strong> No side effects, just steady, gentle improvements.</strong></em><em> Super grateful I gave this a shot.\"</em></p><p><strong>- Dana Avery</strong></p>"
+          }
+        },
+        "content_eB3xy8": {
+          "type": "content",
+          "settings": {
+            "the_text": "<p><em>\"I started taking this to support hormonal balance and energy levels, and I’m genuinely impressed. </em><em><strong>It feels like my body is running smoother</strong></em><em> — less brain fog, no more sugar cravings, and more endurance during workouts.</em><em><strong> It’s now one of my top three daily supplements.\"</strong></em></p><p><strong>- Jackie C</strong></p>"
+          }
+        },
+        "content_mpKcCe": {
+          "type": "content",
+          "settings": {
+            "the_text": "<p><em>\"Tribe Organics’ Moringa is the real deal. My digestion has improved noticeably, and I feel lighter and more alert. </em><em><strong>It’s such a simple addition to my routine with impressive results.\"</strong></em></p><p><strong>- Lily R</strong></p>"
+          }
+        },
+        "content_dMecTC": {
+          "type": "content",
+          "settings": {
+            "the_text": "<p><em>\"What a fantastic product! </em><em><strong>I feel more motivated and focused</strong></em><em>, even during stressful weeks. </em><em><strong>Tribe Organics has earned a loyal customer here.\"</strong></em></p><p><strong>- Mark Highland</strong></p>"
+          }
+        },
+        "content_yVNJ4g": {
+          "type": "content",
+          "settings": {
+            "the_text": "<p><em>\"I started taking Tribe Organics’ Moringa to help with general energy and immune support. Not only did it help me feel more energetic without the jitteriness of caffeine, but I also noticed fewer seasonal sniffles. </em><em><strong>I love the purity of the ingredients</strong></em><em> — no fillers or fluff.\"</em></p><p><strong>- Daniela J</strong></p>"
+          }
+        },
+        "content_XHqRfP": {
+          "type": "content",
+          "settings": {
+            "the_text": "<p><em>\"This supplement truly surprised me. I’ve tried other Moringa products before, but nothing compares to Tribe Organics' version. After a month of use, I’ve experienced better concentration at work, more stable mood, and no more afternoon energy crashes. </em><em><strong>It feels great to invest in something that’s genuinely helping my body and mind.\"</strong></em></p><p><strong>- Tara Stone</strong></p>"
+          }
+        },
+        "content_V7yp8A": {
+          "type": "content",
+          "settings": {
+            "the_text": "<p><em>\"This product has been incredibly beneficial to my daily wellness. Within just a couple of weeks, </em><em><strong>I noticed reduced inflammation in my joints and an overall feeling of vitality.\"</strong></em></p><p><strong>- Summer W</strong></p>"
+          }
+        },
+        "content_j7NrAC": {
+          "type": "content",
+          "settings": {
+            "the_text": "<p><em>\"I've been using this Moringa for several weeks, and the benefits are evident. My immune system feels stronger, and I haven’t felt run down even during a particularly stressful work season. </em><em><strong>I also feel sharper mentally and more resilient overall.\"</strong></em></p><p><strong>- May Y</strong></p>"
+          }
+        },
+        "content_PQ7gxb": {
+          "type": "content",
+          "settings": {
+            "the_text": "<p><em>\"Tribe Organics' Moringa has been a valuable addition to my wellness routine. After consistent use, I've noticed improved mental clarity, better digestion, and increased energy levels. The capsules are easy to swallow, and</em><em><strong> I trust the brand's commitment to quality and sustainability.\"</strong></em></p><p><strong>- Chance Montgomery</strong></p>"
+          }
+        },
+        "content_iagi7E": {
+          "type": "content",
+          "settings": {
+            "the_text": "<p><em>“This is my third bottle—I take these every day. I’ve had fewer colds, more steady energy, and I just feel good. </em><em><strong>It’s one of those ‘quietly powerful’ supplements that you don’t really notice until you forget to take it.</strong></em><em>”</em></p><p><strong>- Kristy C</strong></p>"
+          }
+        },
+        "content_GCgRa9": {
+          "type": "content",
+          "settings": {
+            "the_text": "<p><em>“</em><em><strong>These capsules are perfect for busy mornings. </strong></em><em>I don’t always have time to prep food or smoothies, so this is a quick win for my health. </em><em><strong>No side effects, just good energy.</strong></em><em>”</em></p><p>- <strong>Marina P</strong></p>"
+          }
+        }
+      },
+      "block_order": [
+        "content_hhWweC",
+        "content_Kpg8TW",
+        "content_UerEJb",
+        "content_CmXnwU",
+        "content_PmMxxR",
+        "content_6kjEM3",
+        "content_kaXD8X",
+        "content_bH9VFY",
+        "content_eT8MXC",
+        "content_dEaCMm",
+        "content_V3FiVp",
+        "content_EGcPzn",
+        "content_gJerF6",
+        "content_3r4enj",
+        "content_eB3xy8",
+        "content_mpKcCe",
+        "content_dMecTC",
+        "content_yVNJ4g",
+        "content_XHqRfP",
+        "content_V7yp8A",
+        "content_j7NrAC",
+        "content_PQ7gxb",
+        "content_iagi7E",
+        "content_GCgRa9"
+      ],
+      "settings": {
+        "section_bg_color": "#f3d9cf",
+        "title": "<span>More than</span> 2,500 verified reviews"
+      }
+    },
+    "ashwagandha_pack_image_gallery_qD9q6M": {
+      "type": "ashwagandha-pack-image-gallery",
+      "blocks": {
+        "image_blocks_Lz9qr9": {
+          "type": "image_blocks",
+          "settings": {
+            "the_image": "shopify://shop_images/1_08af952c-8da2-4c24-bf74-06e861d917dd.jpg"
+          }
+        },
+        "image_blocks_drQAFk": {
+          "type": "image_blocks",
+          "settings": {
+            "the_image": "shopify://shop_images/2_2e83a774-8a53-4a3f-a1e5-405d7595a58e.jpg"
+          }
+        },
+        "image_blocks_AhUhm8": {
+          "type": "image_blocks",
+          "settings": {
+            "the_image": "shopify://shop_images/3_615e2681-3df1-4458-9cbb-6943104d2897.jpg"
+          }
+        },
+        "image_blocks_DT4Gfm": {
+          "type": "image_blocks",
+          "settings": {
+            "the_image": "shopify://shop_images/4_47da92c6-e002-49f6-b1e2-13b7f10c0445.jpg"
+          }
+        },
+        "image_blocks_pULB9q": {
+          "type": "image_blocks",
+          "settings": {
+            "the_image": "shopify://shop_images/5_c3c9512c-195c-41cb-ab4d-642d43992711.jpg"
+          }
+        },
+        "image_blocks_FjfLt7": {
+          "type": "image_blocks",
+          "settings": {
+            "the_image": "shopify://shop_images/6_fa635147-5d4f-443a-a933-5c888fa9f805.jpg"
+          }
+        },
+        "image_blocks_gNwxxz": {
+          "type": "image_blocks",
+          "settings": {
+            "the_image": "shopify://shop_images/7_1660d951-4534-439d-a4f8-4dc5bc9bad16.jpg"
+          }
+        },
+        "image_blocks_RzrtLX": {
+          "type": "image_blocks",
+          "settings": {
+            "the_image": "shopify://shop_images/Gallery_image_1.jpg"
+          }
+        }
+      },
+      "block_order": [
+        "image_blocks_Lz9qr9",
+        "image_blocks_drQAFk",
+        "image_blocks_AhUhm8",
+        "image_blocks_DT4Gfm",
+        "image_blocks_pULB9q",
+        "image_blocks_FjfLt7",
+        "image_blocks_gNwxxz",
+        "image_blocks_RzrtLX"
+      ],
+      "disabled": true,
+      "settings": {
+        "section_bg_color": "#faeee9",
+        "title": "10,000+ people worldwide love OUR Ashwagandha KSM-66!"
+      }
+    },
+    "ashwagandha_pack_video_reviews_fkqbq6": {
+      "type": "ashwagandha-pack-video-reviews",
+      "blocks": {
+        "video_reviews_NUhjY9": {
+          "type": "video_reviews",
+          "settings": {
+            "video_poster": "shopify://shop_images/181415f8-429e-4383-ad7f-e89a68daa530_000.jpg",
+            "bg_video": "https://cdn.shopify.com/videos/c/o/v/37f032854d58401ebedc3feeaa28e0fa.mp4"
+          }
+        },
+        "video_reviews_VmmVcY": {
+          "type": "video_reviews",
+          "settings": {
+            "video_poster": "shopify://shop_images/download_2.png",
+            "bg_video": "https://cdn.shopify.com/videos/c/o/v/9e117391bb21487a944c83661ee13e86.mp4"
+          }
+        },
+        "video_reviews_FLWdxg": {
+          "type": "video_reviews",
+          "settings": {
+            "video_poster": "shopify://shop_images/download_3.png",
+            "bg_video": "https://cdn.shopify.com/videos/c/o/v/d7593aaebb2140c1ad2a12db062c1c28.mp4"
+          }
+        }
+      },
+      "block_order": [
+        "video_reviews_NUhjY9",
+        "video_reviews_VmmVcY",
+        "video_reviews_FLWdxg"
+      ],
+      "disabled": true,
+      "settings": {
+        "section_bg_color": "#f3d9cf"
+      }
+    },
+    "ashwagandha_pack_benefits_QgLdBB": {
+      "type": "ashwagandha-pack-benefits",
+      "blocks": {
+        "tex_blocks_kHkqRi": {
+          "type": "tex_blocks",
+          "settings": {
+            "the_text": "<h3>Stay energized and on-task, always</h3><p>Get the most out of your days. Packed with protein, fiber, vitamins, and minerals, Moringa provides the nutritional backbone for optimal productivity. It also boasts a potent blend of 46 antioxidants, which help shield mitochondria from oxidative stress — enhancing energy production in every cell of your body</p>"
+          }
+        },
+        "tex_blocks_rfTCBn": {
+          "type": "tex_blocks",
+          "settings": {
+            "the_text": "<h3>Support normal blood sugar metabolism</h3><p>Thanks to its high concentration of polyphenol compounds, Moringa has been shown to promote insulin sensitivity and glucose metabolism, encouraging the maintenance of healthy blood glucose levels. Moringa may also support optimal cholesterol levels.</p>"
+          }
+        },
+        "tex_blocks_Lr8WeA": {
+          "type": "tex_blocks",
+          "settings": {
+            "the_text": "<h3>Maintain a happy, healthy weight</h3><p>Weight loss is never easy. But Moringa smooths the process by upregulating metabolism, promoting normal inflammatory responses, and optimizing the body’s natural detoxification system. You’ll be closer to your weight loss goal than ever before.</p>"
+          }
+        },
+        "tex_blocks_RpArnM": {
+          "type": "tex_blocks",
+          "settings": {
+            "the_text": "<h3>Unlock your milk supply’s potential (for new moms, of course!)</h3><p>Make that liquid gold flow. Moringa is scientifically recognized as an herbal galactagogue due to its nutrient density and ability to support healthy prolactin (a hormone responsible for lactation) levels in nursing mothers, including those of preterm infants.</p>"
+          }
+        }
+      },
+      "block_order": [
+        "tex_blocks_kHkqRi",
+        "tex_blocks_rfTCBn",
+        "tex_blocks_Lr8WeA",
+        "tex_blocks_RpArnM"
+      ],
+      "settings": {
+        "section_bg_color": "#faeee9",
+        "title": "Organic Moringa Benefits",
+        "btn_text": "GET 35% OFF now",
+        "the_url": "#ashwagandha-product-packs"
+      }
+    },
+    "ashwagandha_pack_product_info_ii9Gai": {
+      "type": "ashwagandha-pack-product-info",
+      "settings": {
+        "section_bg_color": "#faeee9",
+        "the_image": "shopify://shop_images/moringa_landing_page.png",
+        "the_title": "Organic Moringa",
+        "the_text": "<p>Think of Organic Moringa as nature’s upgraded version of your all-in-one multivitamin. </p><p>A single serving — 3 easy-to-take capsules daily — doesn’t just deliver a whole lot of micro- and macronutrient goodness, but also a powerful blend of antioxidants that promote cellular health and protect against oxidative stress.</p><p>It’s your ultimate ally in maintaining overall well-being and vitality.</p>"
+      }
+    },
+    "ashwagandha_pack_roots_qG4VUQ": {
+      "type": "ashwagandha-pack-roots",
+      "disabled": true,
+      "settings": {
+        "section_bg_color": "#faeee9",
+        "the_title": "ROOT ONLY, NO ADULTERATION",
+        "the_image_1": "shopify://shop_images/Ashwagandha_Listing_Silvana.png",
+        "the_image_2": "shopify://shop_images/NO_LEAVES.png"
+      }
+    },
+    "ashwagandha_pack_custom_text_gPWqhq": {
+      "type": "ashwagandha-pack-custom-text",
+      "blocks": {
+        "content_x4cVzW": {
+          "type": "content",
+          "settings": {
+            "the_title": "Potency, from the very beginning",
+            "the_text": "<p>While we believe nature is the best chemist, not all herbs are created equal. That’s why we take great care to source our Organic Moringa from dedicated organic farmers in Karnataka, Southwest India, who know what it takes to create and sustain an optimal growing environment that yields the purest, most potent (i.e., effective) moringa trees.</p>"
+          }
+        },
+        "content_jx8Upn": {
+          "type": "content",
+          "settings": {
+            "the_title": "Dedicated to bioactive compounds preservation",
+            "the_text": "<p>Unlike many other moringa powder products, our Organic Moringa boasts a bright, vibrant green hue instead of being a swampy green or downright brown. The secret to its lively color? It’s in the painstaking steps we take to maximize the preservation of nutrients and bioactive compounds. After hand-harvesting only the young leaves (leaving out the matured and yellow ones), the moringa is gently shade-dried in canopies, passed through a stem separator, and then undergoes a proprietary, temperature-controlled grinding process — resulting in Moringa powder that captures and concentrates the miracle tree’s incredible nutritional profile. </p>"
+          }
+        },
+        "content_rgR9dX": {
+          "type": "content",
+          "settings": {
+            "the_title": "USDA-certified organic",
+            "the_text": "<p>Organic Moringa is USDA-certified organic. Our moringa plants are clean and responsibly sourced from producers that align with our values of sustainable and organic farming practices. This means they use regenerative practices such as permaculture, crop rotation, composting, and the cessation of pesticide and herbicide use. In other words, you can rest assured that our Organic Moringa is good for your body and the environment. </p>"
+          }
+        },
+        "content_7eCe3f": {
+          "type": "content",
+          "settings": {
+            "the_title": "Third-party tested",
+            "the_text": "<p>Like all our products, Organic Moringa is rigorously lab and third-party-tested. This includes complete microbial testing for any bacteria, yeast, and mold; heavy metals testing; pesticide testing; and testing for purity and active compounds. But you shouldn’t just take our word for it. Because we believe in full transparency, we publish our lab results (i.e., Certificate of Analysis or CoA) on our website. <a href=\"/pages/impact-sustainability\" title=\"Impact & Sustainability\"><strong>Go ahead, check it out for yourself</strong>. </a></p>"
+          }
+        }
+      },
+      "block_order": [
+        "content_x4cVzW",
+        "content_jx8Upn",
+        "content_rgR9dX",
+        "content_7eCe3f"
+      ],
+      "settings": {
+        "section_bg_color": "#faeee9"
+      }
+    },
+    "ashwagandha_product_packs_mcWPwL": {
+      "type": "ashwagandha-product-packs",
+      "blocks": {
+        "product_list_XWTQin": {
+          "type": "product_list",
+          "settings": {
+            "badge_title": "MOST POPULAR | SAVE 25%",
+            "the_title": "1-Pack",
+            "the_text": "120 Capsules | 40 Days Supply | 40 Servings",
+            "product_image": "shopify://shop_images/MORINGACAPSULES.png",
+            "product_title": "1 BOTTLE OF MORINGA",
+            "reviews_count": "200 reviews",
+            "regular_price": "<p>$33.99</p>",
+            "compare_price": "<p><strong>$25.49</strong></p>",
+            "button_text": "BUY NOW - 25% OFF",
+            "button_link": "https://www.tribe-organics.com/cart/46898946474207:1?checkout",
+            "the_icon": "shopify://shop_images/Free_US_shipping_over_75_with_code_FREESHIP75_1.png",
+            "btn_under_text": "FREE SHIPPING on orders over $75, no code needed.",
+            "icon_1": "shopify://shop_images/USDA_1_ea5c100a-3162-429c-977a-344b4967c315.svg",
+            "icon_2": "shopify://shop_images/gluten_free_1_cd270fff-afcc-4862-b8b5-e3b6765e1761.svg",
+            "icon_3": "shopify://shop_images/NON_GMO_02a93949-ac36-47a8-8e5a-442d6f75a219.svg",
+            "icon_4": "shopify://shop_images/Icon_Black.svg"
+          }
+        },
+        "product_list_XYHaPK": {
+          "type": "product_list",
+          "settings": {
+            "badge_title": "BEST VALUE | SAVE 35%",
+            "the_title": "3-Pack",
+            "the_text": "360 Capsules | 4 Months Supply | 120 Servings",
+            "product_image": "shopify://shop_images/3_pack_moringa_landing_page_9cd6f64e-ec1b-4f9a-b659-90eacb1f9e81.png",
+            "product_title": "3 BOTTLES OF MORINGA",
+            "reviews_count": "200 reviews",
+            "regular_price": "<p>$101.97</p>",
+            "compare_price": "<p><strong>$66.28</strong></p>",
+            "button_text": "BUY NOW - 35% OFF",
+            "button_link": "https://www.tribe-organics.com/cart/46898950897887:1?checkout",
+            "the_icon": "shopify://shop_images/Free_US_shipping_over_75_with_code_FREESHIP75_1.png",
+            "btn_under_text": "FREE SHIPPING on orders over $75, no code needed.",
+            "icon_1": "shopify://shop_images/USDA_1_ea5c100a-3162-429c-977a-344b4967c315.svg",
+            "icon_2": "shopify://shop_images/gluten_free_1_cd270fff-afcc-4862-b8b5-e3b6765e1761.svg",
+            "icon_3": "shopify://shop_images/NON_GMO_02a93949-ac36-47a8-8e5a-442d6f75a219.svg",
+            "icon_4": "shopify://shop_images/Icon_Black.svg"
+          }
+        }
+      },
+      "block_order": [
+        "product_list_XWTQin",
+        "product_list_XYHaPK"
+      ],
+      "settings": {
+        "section_bg_color": "#f3d9cf",
+        "the_title": "",
+        "the_text": "",
+        "limited_title": "Today, for a limited time only …",
+        "off_title": "It’s yours at <span>35% OFF</span>",
+        "cstm_text": "Supercharge your energy and daily health with the “miracle tree” for less than 55 cents per day!",
+        "guarantee_img": "shopify://shop_images/SAFE_CHECKOUT_BADGES.png"
+      }
+    },
+    "ashwagandha_pack_certified_aWgzVU": {
+      "type": "ashwagandha-pack-certified",
+      "settings": {
+        "section_bg_color": "#07211f",
+        "the_title": "CONNECTING PEOPLE, PLANTS AND THE PLANET",
+        "the_image": "shopify://shop_images/Image_c477f7ab-c5db-4ef5-85dd-a86d3d96853d.jpg",
+        "the_text": "<p>We're proud to be a Certified B Corp<strong>TM</strong></p><p>This means that our company meets the highest standards of social and environmental impact, transparency, and accountability.</p>",
+        "the_logo": "shopify://shop_images/Certified.svg"
+      }
+    },
+    "tribe_difference_section_C3czqP": {
+      "type": "tribe-difference-section",
+      "blocks": {
+        "three_blocks_tHiV44": {
+          "type": "three_blocks",
+          "settings": {
+            "leaf_image": "shopify://shop_images/White_leaft_bullet.png",
+            "list_text_1": "Science-backed",
+            "list_text_2": "Superior potency",
+            "list_text_3": "Standardized extracts",
+            "list_text_4": "100% fruiting bodies",
+            "list_text_5": "Ethically sourced",
+            "list_text_6": "",
+            "list_text_7": ""
+          }
+        },
+        "three_blocks_fYhNkB": {
+          "type": "three_blocks",
+          "settings": {
+            "leaf_image": "shopify://shop_images/White_leaft_bullet.png",
+            "list_text_1": "Non-GMO verified",
+            "list_text_2": "USDA Organic certified",
+            "list_text_3": "Gluten free",
+            "list_text_4": "Allergen free",
+            "list_text_5": "3rd party tested",
+            "list_text_6": "cGMP",
+            "list_text_7": "Made in the USA"
+          }
+        },
+        "three_blocks_9RjEHk": {
+          "type": "three_blocks",
+          "settings": {
+            "leaf_image": "shopify://shop_images/White_leaft_bullet.png",
+            "list_text_1": "No synthetic fillers",
+            "list_text_2": "No excipients",
+            "list_text_3": "No harmful additives",
+            "list_text_4": "No mycellium",
+            "list_text_5": "No artificial anything",
+            "list_text_6": "",
+            "list_text_7": ""
+          }
+        }
+      },
+      "block_order": [
+        "three_blocks_tHiV44",
+        "three_blocks_fYhNkB",
+        "three_blocks_9RjEHk"
+      ],
+      "settings": {
+        "add_class": "ashwagandha-tribe-difference",
+        "section_bg_color": "#07211f",
+        "main_image": "shopify://shop_images/Logo_951ff78f-0ccc-4ffd-80d8-bbcb4536d558.png",
+        "image_1": "shopify://shop_images/Screenshot-2022-11-03-at-16.29.5.png",
+        "image_2": "shopify://shop_images/Screenshot-2022-11-03-at-16.30.0.png",
+        "image_3": "shopify://shop_images/Screenshot-2022-11-03-at-16.30.0_1.png",
+        "image_4": "shopify://shop_images/Screenshot-2022-11-03-at-16.35.5.png",
+        "image_5": "shopify://shop_images/Screenshot-2022-11-03-at-16.36.0.png"
+      }
+    },
+    "ashwagandha_pack_contact_M768hj": {
+      "type": "ashwagandha-pack-contact",
+      "settings": {
+        "section_bg_color": "#07211f",
+        "the_text": "<p>Questions? Let us help you</p><p>Contact us at <a href=\"mailto:info@tribe-organics.com\" title=\"mailto:info@tribe-organics.com\">info@tribe-organics.com</a></p>"
+      }
+    },
+    "ashwagandha_pack_footer_bYnWER": {
+      "type": "ashwagandha-pack-footer",
+      "settings": {
+        "section_bg_color": "#07211f",
+        "the_logo": "shopify://shop_images/Logo_2_6ecf9d10-f051-4b4d-b753-3ffecf96bb83.png",
+        "the_icon_1": "shopify://shop_images/B_Corp.png",
+        "the_icon_2": "shopify://shop_images/1_for_the_planet.png",
+        "the_text_1": "<p><strong>*FDA Disclaimer: These statements have not been evaluated by the Food and Drug Administration. These products are not intended to diagnose, treat, cure, or prevent any disease.</strong> The information provided by this website or this company is not a substitute for a face-to-face consultation with your health practitioner, and should not be construed as individual medical advice.</p>",
+        "the_text_2": "<ul><li>Copyright 2022 TriIbe, INC. ALL RIGHTS RESERVED.</li><li><a href=\"/policies/terms-of-service\" title=\"Terms of Service\">TERMS & CONDITIONS </a></li><li><a href=\"/policies/privacy-policy\" title=\"Privacy Policy\">PRIVACY POLICY</a></li></ul>"
+      }
+    }
+  },
+  "order": [
+    "main",
+    "ashwagandha_pack_top_icons_pMnDGa",
+    "ashwagandha_pack_offer_section_AgMYet",
+    "ashwagandha_pack_core_benefits_gDHAcP",
+    "ashwagandha_pack_reviews_mTCEB8",
+    "ashwagandha_pack_image_gallery_qD9q6M",
+    "ashwagandha_pack_video_reviews_fkqbq6",
+    "ashwagandha_pack_benefits_QgLdBB",
+    "ashwagandha_pack_product_info_ii9Gai",
+    "ashwagandha_pack_roots_qG4VUQ",
+    "ashwagandha_pack_custom_text_gPWqhq",
+    "ashwagandha_product_packs_mcWPwL",
+    "ashwagandha_pack_certified_aWgzVU",
+    "tribe_difference_section_C3czqP",
+    "ashwagandha_pack_contact_M768hj",
+    "ashwagandha_pack_footer_bYnWER"
+  ]
+}

@@ -1,0 +1,71 @@
+<style>
+  #id-{{ section.id }}{
+  	background-color:{{ section.settings.section_bg_color }};
+  }
+</style>
+<div class="bg-line-01">
+   <section id="id-{{ section.id }}" class="section section-icons">
+      <div class="leaf-box left-top">
+          <img loading="lazy" class="leaf lazyload" data-src="{{ 'new-left-leaf.svg' | asset_url }}" alt="Decorative leaf graphic">
+      </div>
+      <div class="leaf-box right-top">
+          <img loading="lazy" class="leaf lazyload" data-src="{{ 'new-right-leaf.svg' | asset_url }}" alt="Decorative leaf graphic">
+      </div>
+      <div class="container">
+          <div class="row homepage-guaranteeee-icons-wrap">
+             {%- for block in section.blocks -%}
+                {% if block.type == 'icon' %}
+                  <div class="col-6 col-md-4 col-lg">
+                      <div class="icons-item d-flex" data-aos="fade-up">
+                          <div class="icon">
+                              <img loading="lazy" class="lazyload" data-src="{{ block.settings.image | img_url: 'master' }}" alt="{{ block.settings.title }}">
+                          </div>
+                          <div class="text">
+                             {{ block.settings.title }}
+                          </div>
+                      </div>
+                  </div>
+                {% endif %}
+             {% endfor %} 
+          </div>
+      </div>
+  </section>
+</div>
+{% schema %}
+  {
+    "name": "Homepage Guarantee",
+    "settings": [
+         {
+            "type": "header",
+            "content": "Content Style"
+         },
+  	     {
+           "type": "color",
+           "id": "section_bg_color",
+           "label": "Section background color"
+        }
+    ],
+	"blocks": [
+       {
+        "type": "icon",
+        "name": "Icon",
+        "settings": [
+      	{
+            "type": "text",
+            "id": "title",
+            "label": "Title",
+            "default" : "Title"
+          },
+          {
+            "type": "image_picker",
+            "id": "image",
+            "label": "Image"
+          }
+        ]
+       }
+	],
+	"presets": [{
+      "name": "Homepage Guarantee"
+    }]
+  }
+{% endschema %}

@@ -1,0 +1,125 @@
+<style>
+  #id-{{ section.id }}{
+  	background-color:{{ section.settings.section_bg_color }};
+  }
+  .free-allergen-section {
+    position: relative;
+}
+</style>
+<section id="id-{{section.id}}" class="free-allergen-section">
+  <div class="free-allergen-wrapper">
+    <div class="leaf-box kids-hands-gummies-box right-bot">
+        <img loading="lazy"  class="leaf kids-hands-gummies" src="{{ 'hand-gummies.png' | asset_url }}">
+    </div>
+    {% if request.path == '/products/ashwagandha-ksm-66-gummies' %}
+      <div class="leaf-box leaf-gummies-ksm-66-box left-bot">
+        <img loading="lazy"  class="leaf leaf-gummies-ksm-66-" src="{{ 'gummies-left-leaf.svg' | asset_url }}">
+      </div>
+    {% endif %}
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-6 col-md-6 col-sm-12">
+          <div class="left-allergen-content common-allergen-content">
+            <div class="allergen-left-img" data-aos="fade-up">
+              {% if section.settings.left_the_image != blank %}<img loading="lazy"  src="{{ section.settings.left_the_image | img_url: 'master' }}">{% endif %}
+            </div>
+            <ul class="allergen-icon-lists" data-aos="fade-up">
+              {% for block in section.blocks %}
+              <li>
+                {% if block.settings.icon_img != blank %}<img loading="lazy"  src="{{ block.settings.icon_img | img_url: 'master' }}">{% endif %}
+              </li>
+              {% endfor %}
+            </ul>
+            <div class="allergen-text-under-icon" data-aos="fade-up">
+              <p>{{ section.settings.text_under_text }}</p>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-6 col-md-6 col-sm-12">
+          <div class="right-allergen-content common-allergen-content">
+            <div class="alleregn-head" data-aos="fade-up">
+              <h2>{{ section.settings.the_title }}</h2>
+            </div>
+            <div class="allergen-text" data-aos="fade-up">
+              {{ section.settings.the_text }}
+            </div>
+            <div class="allergen-right-img" data-aos="fade-up">
+              {% if section.settings.right_the_image != blank %}<img loading="lazy"  src="{{ section.settings.right_the_image | img_url: 'master' }}">{% endif %}
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+{% schema %}
+  {
+    "name": "Free Allergen Section",
+    "settings": [
+      {
+            "type": "header",
+            "content": "Content Style"
+         },
+  	     {
+           "type": "color",
+           "id": "section_bg_color",
+           "label": "Section background color"
+        },
+        {
+          "type": "header",
+          "content": "Left Content Settings"
+      	},
+        {
+            "type": "image_picker",
+            "id": "left_the_image",
+            "label": "Image"
+         },
+        {
+             "type": "text",
+             "id": "text_under_text",
+            "label": "Text Under Icon"
+        },
+        {
+          "type": "header",
+          "content": "Right Content Settings"
+      	},
+        {
+          "type": "text",
+          "id": "the_title",
+          "label": "Title"
+      	},
+        {
+           "type": "richtext",
+           "id": "the_text",
+           "label": "Text"
+         },
+        {
+            "type": "image_picker",
+            "id": "right_the_image",
+            "label": "Image"
+         }
+    ],
+    "blocks": [
+      {
+        "type": "icon_lists",
+        "name": "Icon Lists",
+        "settings": [
+          {
+            "type": "image_picker",
+            "id": "icon_img",
+            "label": "Icon Image"
+         }
+        ]
+      }
+    ],
+    "presets": [{
+      "name": "Free Allergen Section"
+    }]
+  }
+{% endschema %}
+
+{% stylesheet %}
+{% endstylesheet %}
+
+{% javascript %}
+{% endjavascript %}

@@ -1,0 +1,177 @@
+<style>
+  #id-{{ section.id }}{
+  	background-color:{{ section.settings.section_bg_color }};
+  }
+</style>
+<section id="id-{{section.id}}" class="ashwagandha-steps-section">
+  <div class="ashwagandha-steps-wrappper">
+    <div class="container">
+      <div class="row common-section-head-row">
+        <div class="col-lg-12 col-md-12 col-sm-12">
+          <div class="common-section-head-content">
+            <h2 class="custom-heading-h2">
+              {{ section.settings.the_title }}
+            </h2>
+          </div>
+        </div>
+      </div>
+      {% for block in section.blocks %}
+        {% case block.type %}
+          {% comment %}
+            Routine Two Block Steps
+          {% endcomment %}
+          {% when 'routine_two_block_steps' %}
+         <div class="row ashwagandha-two-blocks-row">
+           <div class="col-lg-6 col-md-6 col-sm-12">
+             <div class="ashwagandha-routine-wrap">
+               <div class="ashwagandha-routine-num">
+                 <h5>{{ block.settings.num_title_1 }}</h5>
+               </div>
+               <div class="ashwagandha-routine-text">
+                 {{ block.settings.the_text_1 }}
+               </div>
+             </div>
+           </div>
+           <div class="col-lg-6 col-md-6 col-sm-12">
+             <div class="ashwagandha-routine-wrap">
+               <div class="ashwagandha-routine-num">
+                 <h5>{{ block.settings.num_title_2 }}</h5>
+               </div>
+               <div class="ashwagandha-routine-text">
+                 {{ block.settings.the_text_2 }}
+               </div>
+             </div>
+           </div>
+         </div>
+         {% comment %}
+            Routine One Block Steps
+          {% endcomment %}
+          {% when 'routine_one_block_steps' %}
+         <div class="row ashwagandha-one-blocks-row">
+           <div class="col-lg-12 col-md-12 col-sm-12">
+             <div class="ashwagandha-routine-wrap">
+               <div class="ashwagandha-routine-num">
+                 <h5>{{ block.settings.num_title }}</h5>
+               </div>
+               <div class="ashwagandha-routine-text">
+                 {{ block.settings.the_text }}
+               </div>
+             </div>
+           </div>
+         </div> 
+         {% comment %}
+            Rich Text
+          {% endcomment %}
+          {% when 'rich_text' %}
+          <div class="row ashwagandha-routine-rich-text-row">
+            <div class="col-lg-12 col-md-12 col-sm-12">
+              <h2 class="custom-heading-h2">{{ block.settings.the_title }}</h2>
+              <h3>{{ block.settings.sub_title }}</h3>
+              {% if block.settings.the_text != blank %}<p>{{ block.settings.the_text }}</p>{% endif %}
+            </div>
+          </div>
+        {% endcase %}
+      {% endfor %}
+    </div>
+  </div>
+</section>
+{% schema %}
+  {
+    "name": "Ashwagandha Routine Steps",
+    "settings": [
+         {
+            "type": "header",
+            "content": "Content Style"
+         },
+  	     {
+           "type": "color",
+           "id": "section_bg_color",
+           "label": "Section background color"
+        },
+        {
+          "type": "header",
+          "content": "Content Settings"
+      	},
+        {
+          "type": "text",
+          "id": "the_title",
+          "label": "Title",
+          "info": "Usin <br> tag to start text on new line"
+      	}
+    ],
+	"blocks": [
+       {
+          "type": "routine_two_block_steps",
+          "name": "Routine Two Block Steps",
+          "settings": [
+        		{
+                  "type": "text",
+                  "id": "num_title_1",
+                  "label": "Number Title-1"
+              	},
+                {
+                  "type": "richtext",
+                  "id": "the_text_1",
+                  "label": "Text-1"
+              	},
+                {
+                  "type": "text",
+                  "id": "num_title_2",
+                  "label": "Number Title"
+              	},
+                {
+                  "type": "richtext",
+                  "id": "the_text_2",
+                  "label": "Text-2"
+              	}
+            ]
+      },
+      {
+          "type": "routine_one_block_steps",
+          "name": "Routine One Block Steps",
+          "settings": [
+        		{
+                  "type": "text",
+                  "id": "num_title",
+                  "label": "Title"
+              	},
+                {
+                  "type": "richtext",
+                  "id": "the_text",
+                  "label": "Text"
+              	}
+            ]
+      },
+      {
+          "type": "rich_text",
+          "name": "Rich Text",
+          "settings": [
+        		{
+                  "type": "text",
+                  "id": "the_title",
+                  "label": "Title"
+              	},
+                {
+                  "type": "text",
+                  "id": "sub_title",
+                  "label": "Sub Title"
+              	},
+                {
+                  "type": "richtext",
+                  "id": "the_text",
+                  "label": "Text"
+              	}
+            ]
+      }
+	],
+    "presets": [{
+      "name": "Ashwagandha Routine Steps"
+    }]
+  }
+{% endschema %}
+
+{% stylesheet %}
+{% endstylesheet %}
+
+{% javascript %}
+{% endjavascript %}

@@ -1,0 +1,126 @@
+<section class="section section-testi">
+    <div class="container">
+        <h2 class="text-center text-uppercase" data-aos="fade-up" data-aos-delay="000">{{ section.settings.title }}</h2>
+        <div class="row justify-content-center">
+            <div class="col-lg-10">
+                <div class="box mt-3" data-aos="fade-in" data-aos-delay="400" data-aos-duration="800">
+                    <div class="swiper testi-slider">
+                        <div class="swiper-wrapper">
+                          {% for block in section.blocks %}
+                               {%- case block.type -%}
+                                {%- when 'content' -%}
+                                  <div class="swiper-slide">
+                                      <div class="testi-item">
+                                          <div class="img-wrapper">
+                                              <img class="lazyload" data-src="{{ block.settings.image | image_url: width: 150 }}" alt="{{ block.settings.title }}">
+                                          </div>
+                                          <div class="stars">
+                                            {{ block.settings.stars }}
+                                          </div>
+                                          <h5>{{ block.settings.title }}</h5>
+                                          <div class="content">
+                                             {{ block.settings.sub_title }}
+                                          </div>
+                                      </div>
+                                  </div>
+                               {%- when 'liquid' -%}
+                                {{ block.settings.liquid }}
+                              {% endcase %}
+                          {% endfor %}
+                        </div>
+                        <div class="swiper-pagination"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+<!--         <div class="mt-5" data-aos="fade-up" data-aos-delay="200">
+            <a class="btn btn-trans m-auto" href=" {{ section.settings.url }}" target="_self">
+                {{ section.settings.button }}
+            </a>
+        </div> -->
+    </div>
+</section>
+
+{% schema %}
+  {
+    "name": "Section Testimonial",
+    "tag": "section",
+    "class": "section",
+    "settings": [
+      {
+        "type": "text",
+        "id": "title",
+        "label": "Title",
+        "default" : "What People Say"
+      },
+      {
+        "type": "text",
+        "id": "button",
+        "label": "Button",
+        "default" : "View All"
+      },
+      {
+        "type": "url",
+        "id": "url",
+        "label": "Url"
+      }
+	],
+	"blocks": [
+     {
+      "type": "content",
+      "name": "Content",
+      "settings": [
+        {
+          "type": "text",
+          "id": "title",
+          "label": "Title",
+          "default" : "Title"
+        },
+        {
+          "type": "html",
+          "id": "stars",
+          "label": "Stars"
+        },
+        {
+          "type": "richtext",
+          "id": "sub_title",
+          "label": "Subtitle" 
+        },
+        {
+          "type": "image_picker",
+          "id": "image",
+          "label": "Image"
+        }
+      ]
+     },
+    {
+      "type": "liquid",
+      "name": "Custom Liquid",
+      "limit" : 1,
+      "settings": [
+        {
+        "type": "liquid",
+        "id": "liquid",
+        "label": "Custom Liquid"
+        }
+      ]
+     }
+	],
+     "presets": [
+    {
+      "name": "Testimonial",
+      "blocks": [
+        {
+          "type": "content"
+        },
+        {
+          "type": "content"
+        },
+        {
+          "type": "content"
+        }
+      ]
+    }
+  ]
+  }
+{% endschema %}

@@ -1,0 +1,197 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "main": {
+      "type": "main-blog",
+      "blocks": {
+        "2f17c40b-0c7f-4136-b019-6ff93ad3a1a6": {
+          "type": "content",
+          "settings": {
+            "title": "Learn",
+            "url": "shopify://blogs/all"
+          }
+        }
+      },
+      "block_order": [
+        "2f17c40b-0c7f-4136-b019-6ff93ad3a1a6"
+      ],
+      "disabled": true,
+      "settings": {
+        "the_text": "",
+        "text": "",
+        "sub_title": "",
+        "title_article": "",
+        "image_article": "shopify://shop_images/b_corp_featured_blog_2.jpg",
+        "content": "",
+        "url": "shopify://blogs/news/tribe-organics-becomes-b-corp-certified",
+        "sub_title_1": "",
+        "title_article_1": "",
+        "image_article_1": "shopify://shop_images/postpartum_mom_featured.jpg",
+        "content_1": "",
+        "url_1": "shopify://blogs/lifestyle/benefits-of-shatavari-postpartum-and-breastfeeding"
+      }
+    },
+    "dgf_lp_header_YKcMaE": {
+      "type": "dgf-lp-header",
+      "blocks": {
+        "nav_item_drEdKf": {
+          "type": "nav_item",
+          "settings": {
+            "nav_text": "Shop",
+            "nav_url": "/collections/all",
+            "nav_text_color": "",
+            "enable_megamenu": true,
+            "megamenu_type": "products",
+            "megamenu_bg_color": "#faeee9",
+            "megamenu_text_color": "#000000",
+            "megamenu_text": "<p><strong>Discover a healthier<br>you with our <br>premium LION'S MANE supplements.</strong></p>",
+            "megamenu_product_1": "lions-mane-mushroom-copy",
+            "megamenu_product_1_url": "shopify://pages/premium-lions-mane-supplement",
+            "megamenu_product_2": "lion-s-mane-extract-powder-tribe-organics-1000mg-100g",
+            "megamenu_product_2_url": "shopify://pages/premium-lions-mane-powder-supplement",
+            "megamenu_product_3": "",
+            "megamenu_product_3_url": "",
+            "megamenu_side_image": "shopify://shop_images/image_19.webp",
+            "mobile_megamenu_title": "Discover a healthier you with our premium LION'S MANE supplements.",
+            "mobile_megamenu_image": "shopify://shop_images/image_21.webp",
+            "mobile_megamenu_link_text": "Contact Us",
+            "mobile_megamenu_link_url": "/pages/contact",
+            "megamenu_text_1": "",
+            "megamenu_link_1": "",
+            "megamenu_text_2": "",
+            "megamenu_link_2": "",
+            "megamenu_text_3": "",
+            "megamenu_link_3": "",
+            "megamenu_text_4": "",
+            "megamenu_link_4": "",
+            "show_megamenu_button": false,
+            "megamenu_button_text": "View All",
+            "megamenu_button_url": ""
+          }
+        }
+      },
+      "block_order": [
+        "nav_item_drEdKf"
+      ],
+      "custom_css": [
+        ".custom-ashwagandha-pack-page .custom-announcement-bar {display: block !important;}",
+        ".dgf-megamenu-button {background-color: #faeee9; border: 2px solid #ac853b; border-radius: 0px; font-family: Work Sans, sans-serif; font-size: 14px !important;}"
+      ],
+      "name": "[DGF] LP Header",
+      "settings": {
+        "section_bg_color": "#06211e",
+        "text_color": "#ffffff",
+        "site_logo_image": "shopify://shop_images/2_Topbar.webp",
+        "site_logo_image_mobile": "shopify://shop_images/SVG.webp",
+        "button_text": "SHOP GOLDEN BLEND",
+        "button_url": "shopify://pages/premium-mushroom-supplement",
+        "button_bg_color": "#ac853b",
+        "button_text_color": "#ffffff",
+        "show_search": true
+      }
+    },
+    "dgf_blog_posts_CYjFFz": {
+      "type": "dgf-blog-posts",
+      "name": "[DGF] Blog Posts",
+      "settings": {
+        "filter_tag": "golden-blend-learn",
+        "max_articles": 0,
+        "show_title": true,
+        "section_title": "Learn"
+      }
+    },
+    "tribe_difference_section_C3czqP": {
+      "type": "tribe-difference-section",
+      "blocks": {
+        "three_blocks_tHiV44": {
+          "type": "three_blocks",
+          "settings": {
+            "leaf_image": "shopify://shop_images/White_leaft_bullet.png",
+            "list_text_1": "Science-backed",
+            "list_text_2": "Superior potency",
+            "list_text_3": "Standardized extracts",
+            "list_text_4": "100% fruiting bodies",
+            "list_text_5": "Ethically sourced",
+            "list_text_6": "",
+            "list_text_7": ""
+          }
+        },
+        "three_blocks_fYhNkB": {
+          "type": "three_blocks",
+          "settings": {
+            "leaf_image": "shopify://shop_images/White_leaft_bullet.png",
+            "list_text_1": "Non-GMO verified",
+            "list_text_2": "USDA Organic certified",
+            "list_text_3": "Gluten free",
+            "list_text_4": "Allergen free",
+            "list_text_5": "3rd party tested",
+            "list_text_6": "cGMP",
+            "list_text_7": "Made in the USA"
+          }
+        },
+        "three_blocks_9RjEHk": {
+          "type": "three_blocks",
+          "settings": {
+            "leaf_image": "shopify://shop_images/White_leaft_bullet.png",
+            "list_text_1": "No synthetic fillers",
+            "list_text_2": "No excipients",
+            "list_text_3": "No harmful additives",
+            "list_text_4": "No mycellium",
+            "list_text_5": "No artificial anything",
+            "list_text_6": "",
+            "list_text_7": ""
+          }
+        }
+      },
+      "block_order": [
+        "three_blocks_tHiV44",
+        "three_blocks_fYhNkB",
+        "three_blocks_9RjEHk"
+      ],
+      "settings": {
+        "add_class": "ashwagandha-tribe-difference",
+        "section_bg_color": "#07211f",
+        "main_image": "shopify://shop_images/the_tribe_difference2.webp",
+        "image_1": "shopify://shop_images/Icon_1.webp",
+        "image_2": "shopify://shop_images/Icon_2.webp",
+        "image_3": "shopify://shop_images/image_16.webp",
+        "image_4": "shopify://shop_images/image_17.webp",
+        "image_5": "shopify://shop_images/image_18.webp"
+      }
+    },
+    "ashwagandha_pack_contact_M768hj": {
+      "type": "ashwagandha-pack-contact",
+      "settings": {
+        "section_bg_color": "#07211f",
+        "the_text": "<p>Questions? Let us help you</p><p>Contact us at <a href=\"mailto:info@tribe-organics.com\" title=\"mailto:info@tribe-organics.com\">info@tribe-organics.com</a></p>"
+      }
+    },
+    "ashwagandha_pack_footer_bYnWER": {
+      "type": "ashwagandha-pack-footer",
+      "settings": {
+        "section_bg_color": "#07211f",
+        "the_logo": "shopify://shop_images/Logo_2_6ecf9d10-f051-4b4d-b753-3ffecf96bb83.png",
+        "the_icon_1": "shopify://shop_images/B_Corp.png",
+        "the_icon_2": "shopify://shop_images/1_for_the_planet.png",
+        "the_text_1": "<p><strong>*FDA Disclaimer: These statements have not been evaluated by the Food and Drug Administration. These products are not intended to diagnose, treat, cure, or prevent any disease.</strong> The information provided by this website or this company is not a substitute for a face-to-face consultation with your health practitioner, and should not be construed as individual medical advice.</p>",
+        "the_text_2": "<ul><li>Copyright 2022 TriIbe, INC. ALL RIGHTS RESERVED.</li><li><a href=\"/policies/terms-of-service\" title=\"Terms of Service\">TERMS & CONDITIONS </a></li><li><a href=\"/policies/privacy-policy\" title=\"Privacy Policy\">PRIVACY POLICY</a></li></ul>"
+      }
+    }
+  },
+  "order": [
+    "main",
+    "dgf_lp_header_YKcMaE",
+    "dgf_blog_posts_CYjFFz",
+    "tribe_difference_section_C3czqP",
+    "ashwagandha_pack_contact_M768hj",
+    "ashwagandha_pack_footer_bYnWER"
+  ]
+}

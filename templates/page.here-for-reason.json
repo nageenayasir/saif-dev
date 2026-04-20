@@ -1,0 +1,191 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+ {
+  "sections": {
+    "main": {
+      "type": "main-page",
+      "disabled": true,
+      "settings": {}
+    },
+    "5e764e8b-c823-471f-88ba-da8524c8e03e": {
+      "type": "reason-footer-banner",
+      "settings": {
+        "background_the_image": "shopify://shop_images/Monstera_1-optimized.jpg",
+        "site_logo_image": "shopify://shop_images/TO_018_SecondayLogoWhite_TransparentHigh_b69aefbc-8d30-4e32-8909-832320f5495d.png",
+        "the_title": "",
+        "logo_image_1": "shopify://shop_images/Icon_white.svg",
+        "logo_image_2": "shopify://shop_images/icon-4.png",
+        "logo_image_3": "shopify://shop_images/NON_GMO_67f675f6-5b39-4af4-8d2c-0ca000ceffdf.svg",
+        "logo_image_4": "shopify://shop_images/USDA_1.svg"
+      }
+    },
+    "7c8f3795-bcd5-431c-9b42-2d3263ffd25d": {
+      "type": "reason-rich-text",
+      "settings": {
+        "section_bg_color": "#faede9",
+        "add_class": "",
+        "the_title": "WANT A FREE SUPPLEMENT FROM US?",
+        "the_text": "<p>Are you located in the USA and purchased one of our products outside of tribe-organics.com? </p><p>Did you purchase one of our products outside of <strong>tribe-organics.com </strong></p><p>Is it your first time visiting us? </p><p>We want to thank <strong>YOU</strong> for your purchase!!!</p><p>Your support means the world to us and it never goes unnoticed. </p><p>Everything we do is with your lifelong health and vitality in mind.</p><p>To show our gratitude for choosing us, we would like to give you the opportunity to receive a <strong>FREE</strong> bottle when you buy 1 bottle of any of our products.</p><p>This means you can <strong>stock up on two</strong> of your favorite supplement – all <strong>for the price of one</strong>! </p><p>Pretty cool, right?</p><p>All you need to do is follow the directions below for your free supplement.</p>"
+      }
+    },
+    "d72c3fbb-e383-40c0-8801-bdd6f70a6a2a": {
+      "type": "reason-rich-text",
+      "settings": {
+        "section_bg_color": "#faede9",
+        "add_class": "reason-rich-text-two",
+        "the_title": "HOW TO CLAIM YOUR FREE BOTTLE",
+        "the_text": "<p>1 - Simply fill out the form below with your name, email address, and phone number.</p><p>2 - After you'll receive an email with your <strong>PROMO CODE</strong>, then all you need to do is add the supplement of your choice* to the cart, enter the <strong>PROMO CODE</strong> that we sent to your email, and we'll do the rest, it's as easy as that.</p><p>You will receive 2 bottles of your supplement for the price of one. Get a head start on your health journey and stock up today to save big.</p><p>Fill out the form below to claim your free bottle. Then, check your email!</p>"
+      }
+    },
+    "213c2881-c3cf-44d5-8e67-05148168d31e": {
+      "type": "reason-how-works-section",
+      "disabled": true,
+      "settings": {
+        "section_bg_color": "#faede9",
+        "the_title": "How It Works:",
+        "the_text": "<p>Simply fill out the form on the right with your name, email address, and phone number. After you'll receive an email with your PROMO CODE, then all you need to do is add the supplement of your choice* to the cart, enter the PROMO CODE that we sent to your email, and we'll do the rest, it's as easy as that.</p><p>You will receive 3 bottles of the supplement that you purchase for the price of 2, giving you a head start on your journey to mastering the art of living or an opportunity to give the gift of good health to a loved one.</p>"
+      }
+    },
+    "16813795427e3dc7eb": {
+      "type": "apps",
+      "blocks": {
+        "0d67e9c6-445c-45dd-8cd2-c938fd36abf8": {
+          "type": "shopify://apps/klaviyo-email-marketing-sms/blocks/form-embed-block/2632fe16-c075-4321-a88b-50b567f42507",
+          "settings": {
+            "formId": "YgnB3f"
+          }
+        }
+      },
+      "block_order": [
+        "0d67e9c6-445c-45dd-8cd2-c938fd36abf8"
+      ],
+      "settings": {
+        "section_bg_color": "",
+        "title": "",
+        "the_text": "",
+        "btn_text": "",
+        "the_url": "",
+        "image": "leaf-n18.svg",
+        "enable_svg": true,
+        "class_text": "custom-form-section",
+        "text": ""
+      }
+    },
+    "4c64adaa-adb3-4ffa-99ea-367cdc89dc46": {
+      "type": "reason-rich-text",
+      "settings": {
+        "section_bg_color": "#faeee9",
+        "add_class": "review-text-main",
+        "the_title": "",
+        "the_text": "<p>If you aren’t sure if you want to stock up, take a look at the testimonials below to see how people are loving TRIIBE Organics products.</p><p>Chances are, you’ll be ordering more again soon. You might as well get a <strong>100%</strong> <strong>FREE</strong> bottle today before it’s too late and you have to pay full price.</p>"
+      }
+    },
+    "c96a5d0a-774f-43e1-8bab-a2ee2a5cdbdc": {
+      "type": "reason-video-reviews",
+      "blocks": {
+        "f23e5991-a2b7-420a-81a3-080e408196d9": {
+          "type": "video_reviews",
+          "settings": {
+            "poster_image": "shopify://shop_images/download_2.png",
+            "video_url_link": "https://cdn.shopify.com/videos/c/o/v/9e117391bb21487a944c83661ee13e86.mp4"
+          }
+        },
+        "0fc70229-fe51-45f4-92a9-2ca0a810e1f4": {
+          "type": "video_reviews",
+          "settings": {
+            "poster_image": "shopify://shop_images/download_3.png",
+            "video_url_link": "https://cdn.shopify.com/videos/c/o/v/d7593aaebb2140c1ad2a12db062c1c28.mp4"
+          }
+        },
+        "6e471b07-ebba-427c-abb3-48e6bd36245d": {
+          "type": "video_reviews",
+          "settings": {
+            "poster_image": "shopify://shop_images/181415f8-429e-4383-ad7f-e89a68daa530_000.jpg",
+            "video_url_link": "https://cdn.shopify.com/videos/c/o/v/37f032854d58401ebedc3feeaa28e0fa.mp4"
+          }
+        }
+      },
+      "block_order": [
+        "f23e5991-a2b7-420a-81a3-080e408196d9",
+        "0fc70229-fe51-45f4-92a9-2ca0a810e1f4",
+        "6e471b07-ebba-427c-abb3-48e6bd36245d"
+      ],
+      "settings": {
+        "section_bg_color": "#faede9"
+      }
+    },
+    "413e165d-d620-410d-8b05-89f52237c1c9": {
+      "type": "reason-guarantee-satisfy",
+      "blocks": {
+        "6acefa4b-d323-420a-b8e8-6552f5f81a24": {
+          "type": "reviews_section",
+          "settings": {
+            "the_image": "shopify://shop_images/2_1.jpg",
+            "rating_text": "\"I have been under a lot of stress lately...In just over a week and I already see a major improvement in my energy level. It is also easier for me to fall asleep now. I have also noticed more focus.\"",
+            "author_name": "CHARLES"
+          }
+        },
+        "41b3981a-716d-4559-a149-3aaa1b2f933f": {
+          "type": "reviews_section",
+          "settings": {
+            "the_image": "shopify://shop_images/1_1.jpg",
+            "rating_text": "“Great company with good, clean ingredients.I have bought their other supplements and really appreciate the great ingredients they use in their products. When I saw they started Turmeric, I knew I had to jump in on it. My family has been using Turmeric Complex for health reasons for decades and the results are worth the price.”",
+            "author_name": "ANA"
+          }
+        },
+        "cdfe0696-943e-4a1c-a8d7-7b6c3c2a3fa6": {
+          "type": "reviews_section",
+          "settings": {
+            "the_image": "shopify://shop_images/3_1.jpg",
+            "rating_text": "“This is my favorite TRIIBE product,  as it gives me mental clarity, long-lasting energy, and so much focus to take action on my dreams every day. Taking the capsules consistently, really changed the way I work. I highly recommend it to entrepreneurs or anyone who needs a mental boost.”",
+            "author_name": "ELENA"
+          }
+        }
+      },
+      "block_order": [
+        "6acefa4b-d323-420a-b8e8-6552f5f81a24",
+        "41b3981a-716d-4559-a149-3aaa1b2f933f",
+        "cdfe0696-943e-4a1c-a8d7-7b6c3c2a3fa6"
+      ],
+      "settings": {
+        "section_bg_color": "#faeee9"
+      }
+    },
+    "a215bd1a-a8fc-4838-bca3-0eadaa194782": {
+      "type": "hall-of-fame-products",
+      "settings": {
+        "section_bg_color": "#faede9",
+        "the_title1": "",
+        "the_title2": "",
+        "the_text": "All our ingrdients are plant-based. All  in their most bioavailable forms for optimum absorption. All in the amounts that your body needs to stay healthy - no more, no less."
+      }
+    },
+    "3b2f76c6-4842-4285-bff5-d85318aa0a26": {
+      "type": "reason-footer-text",
+      "settings": {
+        "section_bg_color": "#faede9",
+        "the_text": "<p><strong>You can qualify for free shipping if your order is over $75.</strong> *Please note this offer applies to our single bottles only and does not include our powders, multipacks, or our curated bundles.</p><p><strong>Important Disclaimer:</strong><br/>This offer can only be used once per email address. If we detect attempts to redeem this offer using a different email address but the same location, we reserve the right to cancel the order and deny the promotion. We appreciate your honesty and understanding!</p>"
+      }
+    }
+  },
+  "order": [
+    "main",
+    "5e764e8b-c823-471f-88ba-da8524c8e03e",
+    "7c8f3795-bcd5-431c-9b42-2d3263ffd25d",
+    "d72c3fbb-e383-40c0-8801-bdd6f70a6a2a",
+    "213c2881-c3cf-44d5-8e67-05148168d31e",
+    "16813795427e3dc7eb",
+    "4c64adaa-adb3-4ffa-99ea-367cdc89dc46",
+    "c96a5d0a-774f-43e1-8bab-a2ee2a5cdbdc",
+    "413e165d-d620-410d-8b05-89f52237c1c9",
+    "a215bd1a-a8fc-4838-bca3-0eadaa194782",
+    "3b2f76c6-4842-4285-bff5-d85318aa0a26"
+  ]
+}

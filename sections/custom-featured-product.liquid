@@ -1,0 +1,182 @@
+<style>
+  #id-{{ section.id }}{
+  	background-color:{{ section.settings.section_bg_color }};
+  }
+</style>
+<section id="id-{{section.id}}" class="custom-featured-product-section">
+  <div id="custom-product-offers" class="custom-featured-product-wrapper">
+    <div class="container">
+      <div class="row featured-product-row">
+        <div class="col-lg-9 col-md-9 col-sm-12">
+          <div class="main-title-head">
+            <h2>{{ section.settings.the_title }}</h2>
+          </div>
+        </div>
+        <div class="col-lg-3 col-md-3 col-sm-12">
+          <div class="countdown-timer">
+            <div id='aph_embed_wrapper_828886'></div>
+          </div>
+        </div>
+      </div>
+      <div class="row featured-products-blocks">
+        {% for block in section.blocks  %}
+          <div class="col-lg-4 col-md-4 col-sm-12">
+            <div class="product-blocks-wrapper">
+              <div class="prdct-specification">
+                <h2>{{ block.settings.the_title }}</h2>
+                {{ block.settings.the_text }}
+              </div>
+              <div class="cstm-product-image">
+                {% if block.settings.product_image != blank %}<img loading="lazy" class="lazyload" data-src="{{ block.settings.product_image | img_url: 'master' }}">{% endif %}
+              </div>
+              <div class="cstm-prdct-title">
+                <h3>{{ block.settings.product_title }}</h3>
+              </div>
+              <div class="cstm-prod-price">
+                <div class="cstm-regular-price">
+                  {{ block.settings.regular_price }}
+                </div>
+                <div class="cstm-compare-price">
+                  {{ block.settings.compare_price }}
+                </div>
+              </div>
+              <div class="save-text">
+                <p>{{ block.settings.save_text }}</p>
+              </div>
+              <div class="cstm-atc">
+                  <a href="{{ block.settings.button_link }}">{{ block.settings.button_text }}</a>
+              </div>
+              <ul class="prod-icon-lists">
+                  <li>
+                    {% if block.settings.icon_1 != blank %}<img loading="lazy" class="lazyload" data-src="{{ block.settings.icon_1 | img_url: 'master' }}">{% endif %}
+                  </li>
+                  <li>
+                    {% if block.settings.icon_2 != blank %}<img loading="lazy" class="lazyload" data-src="{{ block.settings.icon_2 | img_url: 'master' }}">{% endif %}
+                  </li>
+                  <li>
+                    {% if block.settings.icon_3 != blank %}<img loading="lazy" class="lazyload" data-src="{{ block.settings.icon_3 | img_url: 'master' }}">{% endif %}
+                  </li>
+              </ul>
+            </div>
+          </div>
+        {% endfor %} 
+      </div>
+      <div class="row guarantee-section-row">
+        <div class="col-lg-12 col-md-12 col-sm-12">
+          <div class="guarantee-section-img">
+            {% if section.settings.guarantee_img != blank %}<img loading="lazy" class="lazyload" data-src="{{ section.settings.guarantee_img | img_url: 'master' }}">{% endif %}
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+{% schema %}
+  {
+    "name": "Custom Featured Product",
+    "settings": [
+         {
+            "type": "header",
+            "content": "Content Style"
+         },
+  	     {
+           "type": "color",
+           "id": "section_bg_color",
+           "label": "Section background color"
+        },
+        {
+          "type": "header",
+          "content": "Content Settings"
+      	},
+        {
+          "type": "text",
+          "id": "the_title",
+          "label": "Title",
+          "info": "Usin <br> tag to start text on new line"
+      	},
+        {
+           "type": "image_picker",
+           "id": "guarantee_img",
+           "label": "Guarantee Image"
+        }
+    ],
+	"blocks": [
+         {
+          "type": "product_list",
+          "name": "Product List",
+          "settings": [
+          	  {
+                  "type": "text",
+                  "id": "the_title",
+                   "label": "Title"
+              },
+              {
+                  "type": "richtext",
+                  "id": "the_text",
+                   "label": "Text"
+              },
+              {
+                   "type": "image_picker",
+                   "id": "product_image",
+                    "label": "Image"
+               },
+              {
+                  "type": "text",
+                  "id": "product_title",
+                   "label": "Product Title"
+              },
+               {
+                  "type": "richtext",
+                  "id": "regular_price",
+                   "label": "Regular Price"
+              },
+              {
+                  "type": "richtext",
+                  "id": "compare_price",
+                   "label": "Compare Price"
+              },
+              {
+                  "type": "text",
+                  "id": "save_text",
+                   "label": "Save text"
+              },
+                {
+                   "type": "text",
+                   "id": "button_text",
+                   "label": "Text"
+                },
+        	    {
+                   "type": "url",
+                   "id": "button_link",
+                   "label": "Link",
+                   "info": "Specify the URL address if you want to make the Button clickable."
+                },
+                {
+                   "type": "image_picker",
+                   "id": "icon_1",
+                    "label": "Icon-1"
+               },
+               {
+                   "type": "image_picker",
+                   "id": "icon_2",
+                    "label": "Icon-2"
+               },
+               {
+                   "type": "image_picker",
+                   "id": "icon_3",
+                    "label": "Icon-3"
+               }
+          ]
+         }
+	],
+    "presets": [{
+      "name": "Custom Featured Product"
+    }]
+  }
+{% endschema %}
+
+{% stylesheet %}
+{% endstylesheet %}
+
+{% javascript %}
+{% endjavascript %}

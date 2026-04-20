@@ -1,0 +1,83 @@
+<style>
+  #id-{{ section.id }}{
+  	background-color:{{ section.settings.section_bg_color }};
+  }
+</style>
+<section id="id-{{ section.id }}" class="ashwagandha-pack-product-info-section common-ashwagandha-pack-sec">
+  <div class="ashwagandha-pack-product-info-wrapper">
+    <div class="leaf-box ashwagandha-pack-product-info-box-left-top left-top">
+        <img loading="lazy"  class="leaf ashwagandha-pack-product-info-left-top" src="{{ 'pack-leaf-1.svg' | asset_url }}">
+    </div>
+    <div class="container">
+      <div class="row">
+        <div class="ashwagandha-pack-product-left-column common-ashwagandh-pack-product-info-column">
+          <div class="ashwagandha-pack-product-img">
+             {% if section.settings.the_image != blank %}<img loading="lazy"  src="{{ section.settings.the_image | img_url: 'master' }}">{% endif %}
+          </div>
+        </div>
+         <div class="ashwagandha-pack-product-right-column common-ashwagandh-pack-product-info-column">
+           <div class="ashwagandha-pack-product-info">
+             <div class="ashwagandha-pack-product-head-logo">
+               <div class="ashwagandha-pack-product-head common-custom-heading-wrapper">
+                 <h2>{{ section.settings.the_title }}</h2>
+               </div>
+               <div class="ashwagandha-pack-product-logo">
+                   {% if section.settings.the_logo != blank %}<img loading="lazy"  src="{{ section.settings.the_logo | img_url: 'master' }}">{% endif %}
+               </div>
+             </div>
+             <div class="ashwagandha-pack-product-text">
+               {{ section.settings.the_text }}
+             </div>
+           </div>
+         </div>
+      </div>
+    </div>
+  </div>
+</section>
+{% schema %}
+  {
+    "name": "Ashwagandha Product Info",
+    "settings": [
+         {
+            "type": "header",
+            "content": "Content Style"
+         },
+  	     {
+           "type": "color",
+           "id": "section_bg_color",
+           "label": "Section background color"
+        },
+        {
+          "type": "header",
+          "content": "Left Image Settings"
+      	},
+        {
+          "type": "image_picker",
+          "id": "the_image",
+          "label": "Image"
+      	},
+        {
+          "type": "header",
+          "content": "Right Content Settings"
+      	},
+        {
+          "type": "textarea",
+          "id": "the_title",
+          "label": "Title"
+        },
+         {
+          "type": "image_picker",
+          "id": "the_logo",
+          "label": "Logo"
+      	},
+        {
+          "type": "richtext",
+          "id": "the_text",
+          "label": "Text"
+        }
+    ],
+	"presets": [{
+      "name": "Ashwagandha Product Info"
+    }]
+  }
+{% endschema %}

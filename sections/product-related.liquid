@@ -1,0 +1,190 @@
+{% comment %} RGD: 2026-01-04 {% endcomment %} 
+{% comment %} 
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.0.7/css/swiper.min.css" media="all" />
+{% endcomment %} 
+<link rel="stylesheet" href="{{ 'swiper.min.css' | asset_url }}" type="text/css" media="all"/>
+{%- capture relatedProducts -%}
+<section class="section section-sea cstm-related-products">
+    <div class="container">
+        <div class="row">
+           
+            <div class="col-md-4 col-lg-3 z-index-2">
+                <h2 class="text-uppercase" data-aos="fade-up">{{ section.settings.title }}</h2>
+                <p data-aos="fade-up">{{ section.settings.sub_title }}</p>
+                <div class="mt-4" data-aos="fade-up">
+                    {% assign collection_btn_link = product.metafields.custom.collection_button_link.value %}
+                    <a class="btn btn-trans" href="{% if collection_btn_link %}{{ collection_btn_link.url }}{% else %}{{ section.settings.url }}{% endif %}" target="_self">
+                        {{ section.settings.button }}
+                    </a>
+                </div>
+            </div>
+     
+            <div class="col-md-8 col-lg-9 z-index-1 common-swiper-column-wrapper">
+            {% assign same_vendor = false %}
+            {% assign same_type = false %}
+    
+            {% assign exclusions = 'frontpage,all' | split: ',' %}
+    
+            {% if product.metafields.c_f['Related Products'] %}
+            {% assign collection = collections[product.metafields.c_f['Related Products']] %}
+            {% endif %}
+    
+            {% assign found_a_collection = false %}
+            {% if collection and collection.all_products_count > 1 %}
+            {% unless exclusions contains collection.handle %}
+            {% assign found_a_collection = true %}
+            {% endunless %}
+            {% endif %}
+            {% unless found_a_collection %}
+            {% for c in product.collections limit: number_of_rows %}
+            {% unless exclusions contains c.handle or c.all_products_count < 2 %}
+            {% assign found_a_collection = true %}
+            {% assign collection = c %}
+            {% break %}
+            {% endunless %}
+            {% endfor %}
+            {% endunless %}
+           {% if found_a_collection %}
+            {% assign current_product = product %}
+            {%- capture related_items -%}  
+                <div class="swiper-wrapper-box">
+                    <div class="swiper realted-products-slider">
+                        <div class="swiper-wrapper">
+                          {% if product.metafields.custom.related_product %}
+                            {% assign related_productss = product.metafields.custom.related_product.value %}
+                            {% for product in related_productss %}
+                              <div class="swiper-slide">
+                                <a href="{{ product.url }}" class="product-item">
+                                    <div class="img-wrapper">
+                                        <img loading="lazy"  src="{{ product | image_url: width: 800 }}">
+                                    </div>
+                                    <div class="category">{% if product.metafields.custom.custom_category_badge %}{{ product.metafields.custom.custom_category_badge }}{% else %}{{ product.collections[0].title }}{% endif %}</div>
+                                    <h5>{{ product.title }}</h5>
+                                  {% render 'judgeme_widgets', widget_type: 'judgeme_preview_badge', concierge_install: false, product: product %}
+                                    {% if product.title == 'Ashwagandha KSM-66' %}
+                                    {% assign second_variant = product.variants[0] %}
+                                    <div class="price">
+                                      {% if second_variant.compare_at_price and second_variant.compare_at_price > 0 %}
+                                        <del>{{ second_variant.compare_at_price | money }}</del>
+                                      {% endif %}
+                                       {{ second_variant.price | money }}
+                                    </div>
+                                    {% else %}
+                                      <div class="price">{% if product.selected_or_first_available_variant.compare_at_price and product.selected_or_first_available_variant.compare_at_price > 0 %}<del>{{ product.selected_or_first_available_variant.compare_at_price | money }}</del>{% endif %} {{ product.price | money }}</div>
+                                    {% endif %}
+                                </a>
+                            </div>
+                            {% endfor %}
+                          {% else %}
+                            {% for product in collection.products  %}
+                            {% unless product.handle == current_product.handle %}
+                              {% unless product.tags contains 'Hidden' %}
+                            {% unless same_vendor and current_product.vendor != product.vendor %}
+                            {% unless same_type and current_product.type != product.type %}
+                             {% render 'card-product-related', card_product: product %}
+                            {% endunless %}
+                              {% endunless %}
+                            {% endunless %}
+                            {% endunless %}
+                           {% endfor %} 
+                          {% endif %}
+                        </div>
+                    </div>
+                    <!-- If we need navigation buttons -->
+                    <div class="swiper-button-prev related-products-button-prev"></div>
+                    <div class="swiper-button-next related-products-button-next"></div>  
+                </div>
+            </div>
+        </div>
+      {%- endcapture -%}
+ {% assign related_items = related_items | trim %}
+      {% unless related_items == blank %}
+      	<div id="products-{{ section.id }}">{{ related_items }}</div>
+      {% endunless %}  
+      {% endif %} 
+        <!-- <div class="swiper-wrapper-pagination position-relative">
+            <div class="{{ section.settings.class }}-swiper-pagination"></div>
+        </div> -->
+      
+    </div>
+  
+</section>
+{%- endcapture -%}
+{{ relatedProducts | strip_newlines | remove: "  " | remove: "	" }}
+{% comment %} RGD: 2026-01-07 {% endcomment %} 
+{% comment %} 
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.5.1/js/swiper.min.js"></script> 
+{% endcomment %}
+{% # theme-check-disable ParserBlockingScript %}
+<script type="text/javascript" src="{{ 'jquery-3.5.1.min.js' | asset_url }}"></script>
+<script type="text/javascript" src="{{ 'swiper.min.js' | asset_url }}"></script>
+{% # theme-check-enable ParserBlockingScript %}
+<script>
+  new Swiper('.realted-products-slider', {
+        loop: false,
+        slidesPerView: 3,
+        navigation: {
+          nextEl: '.related-products-button-next',
+          prevEl: '.related-products-button-prev',
+        },
+        spaceBetween: 10,
+        breakpoints: {
+            1024: {
+                slidesPerView: 2
+            },
+            768: {
+                slidesPerView: 1,
+                spaceBetween: 10
+            }
+        }
+    });
+</script>
+{% schema %}
+{
+  "name": "Related Products",
+  "tag": "section",
+  "class": "section",
+  "settings": [
+     {
+          "type": "text",
+          "id": "title",
+          "label": "Title",
+		  "default" : "You May <br>Also Like"
+        },
+		{
+          "type": "textarea",
+          "id": "sub_title",
+          "label": "SubTitle",
+		  "default" : "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor"
+        },
+        {
+          "type": "text",
+          "id": "button",
+          "label": "Button",
+          "default" : "SHOP COLLECTION"
+        },
+        {
+          "type": "url",
+          "id": "url",
+          "label": "Url"
+        },
+           {
+        "type": "select",
+        "id": "class",
+        "options": [
+          {
+            "value": "big",
+            "label": "Class big"
+          },
+          {
+            "value": "sea",
+            "label": "Class sea"
+          }
+        ],
+        "default": "big",
+        "label": "Choose Class Slide Product"
+      }
+  ]
+}
+{% endschema %}

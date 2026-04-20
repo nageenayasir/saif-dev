@@ -1,0 +1,263 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+ {
+  "sections": {
+    "main": {
+      "type": "main-product",
+      "blocks": {
+        "title": {
+          "type": "title",
+          "settings": {}
+        },
+        "dd7dc177-421d-4ef9-836f-824c3f8cd416": {
+          "type": "shopify://apps/judge-me-reviews/blocks/preview_badge/61ccd3b1-a9f2-4160-9fe9-4fec8413e5d8",
+          "settings": {}
+        },
+        "448a1729-1ecf-429f-8a46-bf6bf47d225e": {
+          "type": "category",
+          "settings": {}
+        },
+        "17b987e1-d0a0-4f7b-9f5d-54bd8de977a7": {
+          "type": "custom_liquid",
+          "settings": {
+            "custom_liquid": "<div class=\"desc\" >{{product.metafields.custom.description | newline_to_br }}</div>"
+          }
+        },
+        "price": {
+          "type": "price",
+          "settings": {
+            "show_tax": false
+          }
+        },
+        "variant_picker": {
+          "type": "variant_picker",
+          "settings": {
+            "picker_type": "button"
+          }
+        },
+        "a090f462-42e0-4dc4-8658-c1be040d0c37": {
+          "type": "custom_liquid",
+          "settings": {
+            "custom_liquid": "<div class=\"desc\">{{product.metafields.custom.content | newline_to_br }}</div>"
+          }
+        },
+        "quantity_selector": {
+          "type": "quantity_selector",
+          "settings": {
+            "text": "Quantity"
+          }
+        },
+        "buy_buttons": {
+          "type": "buy_buttons",
+          "settings": {
+            "show_dynamic_checkout": false
+          }
+        },
+        "149c08bd-ddf9-455a-8c1a-9cd5f5f18af9": {
+          "type": "custom_icon",
+          "settings": {
+            "face_svg": true,
+            "icon_text_1": "100% money-back guarantee",
+            "delivery_svg": true,
+            "icon_text_2": "Free US shipping over $75"
+          }
+        },
+        "2e446f18-a693-4f69-9de4-aa8ac8de76c9": {
+          "type": "social",
+          "settings": {
+            "title": "Share"
+          }
+        },
+        "d0280b95-4b77-4ed9-9d97-acc8a3538d42": {
+          "type": "icon",
+          "settings": {
+            "title_1": "Organic",
+            "title_2": "Gluten Free",
+            "title_3": "Non GMO",
+            "title_4": "Kosher",
+            "title_5": "GMP",
+            "title_6": "Made In The USA",
+            "title_7": "Made In The USA"
+          }
+        },
+        "c819702b-eb05-4f2c-b9a3-67f09f9da3d3": {
+          "type": "tab",
+          "settings": {
+            "title": "It’s great for you",
+            "liquid": "{{ product.metafields.custom.content_tab_2 | newline_to_br }}"
+          }
+        },
+        "2c8d70fb-c592-4256-a0d9-bc84580c358e": {
+          "type": "tab",
+          "settings": {
+            "title": "INGREDIENTS",
+            "liquid": "{{ product.metafields.custom.content_tab_3 | newline_to_br }}"
+          }
+        },
+        "a2e6274b-16e8-496f-b1ad-342c23abfdf7": {
+          "type": "tab",
+          "settings": {
+            "title": "How to use",
+            "liquid": "{{ product.metafields.custom.content_tab_1 }}"
+          }
+        },
+        "4702019d-f0be-4190-8641-deff47649078": {
+          "type": "products",
+          "settings": {}
+        },
+        "aab7170b-0d15-4338-afc7-f0e8957b533f": {
+          "type": "text",
+          "settings": {
+            "text": "100% NATURAL & DRUG-FREE: NO Magnesium Stearate, NO Stearic Acid, NO Dioxides, NO  Sulfates, NO Artificial Ingredients, No Preservatives, No Fillers or Binders. NO  adulteration with low-quality extracts."
+          }
+        }
+      },
+      "block_order": [
+        "title",
+        "dd7dc177-421d-4ef9-836f-824c3f8cd416",
+        "448a1729-1ecf-429f-8a46-bf6bf47d225e",
+        "17b987e1-d0a0-4f7b-9f5d-54bd8de977a7",
+        "price",
+        "variant_picker",
+        "a090f462-42e0-4dc4-8658-c1be040d0c37",
+        "quantity_selector",
+        "buy_buttons",
+        "149c08bd-ddf9-455a-8c1a-9cd5f5f18af9",
+        "2e446f18-a693-4f69-9de4-aa8ac8de76c9",
+        "d0280b95-4b77-4ed9-9d97-acc8a3538d42",
+        "c819702b-eb05-4f2c-b9a3-67f09f9da3d3",
+        "2c8d70fb-c592-4256-a0d9-bc84580c358e",
+        "a2e6274b-16e8-496f-b1ad-342c23abfdf7",
+        "4702019d-f0be-4190-8641-deff47649078",
+        "aab7170b-0d15-4338-afc7-f0e8957b533f"
+      ],
+      "settings": {
+        "title_1": "OVERVIEW",
+        "button": "Certificate of Analysis",
+        "title_2": "Dosage"
+      }
+    },
+    "16633442945a2bca6e": {
+      "type": "text-image-product",
+      "settings": {
+        "title": "SHARPEN YOUR MIND,LIFT YOUR SPIRIT",
+        "sub_title": "From €20",
+        "content": "Resistance is the gateway to growth. This truth defines, drives, and inspires us. Challenge. Evolution. Achievement. Whether we're hitting the mountain, the desert, the street, the beach, the gym, the office, or the studio, our activities are shaped by determination. Grit is a skill. Talent is something to master. Our bodies and minds are elements to push. Made to perform at the heights of excellence, there's nothing we can't do or become. The warrior is within.",
+        "background": "section-bund",
+        "show_icon": false
+      }
+    },
+    "16633174580171c989": {
+      "type": "apps",
+      "blocks": {
+        "75c28b4b-71b1-422f-b78e-012bfaa19ba7": {
+          "type": "shopify://apps/judge-me-reviews/blocks/review_widget/61ccd3b1-a9f2-4160-9fe9-4fec8413e5d8",
+          "settings": {}
+        }
+      },
+      "block_order": [
+        "75c28b4b-71b1-422f-b78e-012bfaa19ba7"
+      ],
+      "settings": {
+        "title": "Customer Reviews",
+        "image": "leaf-n06.svg"
+      }
+    },
+    "0e389521-6c1c-46db-83f0-6da21b464039": {
+      "type": "custom-featured-blog",
+      "settings": {
+        "show_kids": false,
+        "text_area": "",
+        "heading": "LEARN SOMETHING TODAY",
+        "button": "View All",
+        "url": "shopify://blogs/all",
+        "image_1": "leaf-n06.svg",
+        "image_2": "leaf-n07.svg",
+        "class_1": "right-top",
+        "class_2": "right-top",
+        "top": "top: -30px",
+        "bottom": "bottom: -120px"
+      }
+    },
+    "1663344215f9151aa8": {
+      "type": "featured-blog",
+      "blocks": {
+        "8f578c65-f794-4dfc-b375-8bfc603322d1": {
+          "type": "post",
+          "settings": {
+            "article": "wellness/immune-system-supplements"
+          }
+        },
+        "bfa20b08-0e35-4fc6-9685-2b3ffae7fa2e": {
+          "type": "post",
+          "settings": {
+            "article": "lifestyle/what-are-nootropics"
+          }
+        },
+        "0ac38247-491f-4325-8219-fbc91de79728": {
+          "type": "post",
+          "settings": {
+            "article": "lifestyle/definitive-guide-lions-mane-mushrooms"
+          }
+        },
+        "7b45a0ff-bbc4-47af-882a-5ca2f32f56d1": {
+          "type": "post",
+          "settings": {
+            "article": "lifestyle/moringa-superfood-breastfeeding-moms"
+          }
+        }
+      },
+      "block_order": [
+        "8f578c65-f794-4dfc-b375-8bfc603322d1",
+        "bfa20b08-0e35-4fc6-9685-2b3ffae7fa2e",
+        "0ac38247-491f-4325-8219-fbc91de79728",
+        "7b45a0ff-bbc4-47af-882a-5ca2f32f56d1"
+      ],
+      "disabled": true,
+      "settings": {
+        "show_kids": false,
+        "heading": "LEARN SOMETHING TODAY",
+        "button": "View All",
+        "url": "",
+        "image_1": "leaf-n06.svg",
+        "image_2": "leaf-n07.svg",
+        "class_1": "right-top",
+        "class_2": "right-top",
+        "top": "top: -30px",
+        "bottom": "bottom: -120px"
+      }
+    },
+    "product-related": {
+      "type": "product-related",
+      "settings": {
+        "title": "You May Also Like",
+        "sub_title": "Here are the crowd pleasers.",
+        "button": "SHOP COLLECTION",
+        "url": "shopify://collections/seasonal-picks",
+        "class": "big"
+      }
+    },
+    "faq-product": {
+      "type": "faq-product",
+      "settings": {
+        "title": "Frequently Asked Questions"
+      }
+    }
+  },
+  "order": [
+    "main",
+    "16633442945a2bca6e",
+    "16633174580171c989",
+    "0e389521-6c1c-46db-83f0-6da21b464039",
+    "1663344215f9151aa8",
+    "product-related",
+    "faq-product"
+  ]
+}

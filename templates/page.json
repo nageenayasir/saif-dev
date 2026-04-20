@@ -1,9 +1,30 @@
-{
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+ {
   "sections": {
+    "ab0001af-7c13-4292-8527-b12275ca7d33": {
+      "type": "banner-default",
+      "settings": {
+        "enable_breadcrumb": true,
+        "title": "",
+        "sub_title": "",
+        "image": "shopify://shop_images/Screen_Shot_2022-11-30_at_4.18.2_-optimized.png"
+      }
+    },
     "main": {
       "type": "main-page",
       "settings": {}
     }
   },
-  "order": ["main"]
+  "order": [
+    "ab0001af-7c13-4292-8527-b12275ca7d33",
+    "main"
+  ]
 }

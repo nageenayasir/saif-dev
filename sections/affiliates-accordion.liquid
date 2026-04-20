@@ -1,0 +1,88 @@
+<style>
+  #id-{{ section.id }}{
+  	background-color:{{ section.settings.section_bg_color }};
+  }
+</style>
+<section id="id-{{ section.id }}" class="affiliates-accordion-section">
+  <div class="container">
+    <div class="row">
+      <div class="col-sm-12 col-md-6 col-lg-6 affiliates-accordion-image-column">
+        <div class="affiliates-accordion-image">
+          {% if section.settings.the_image != blank %}<img loading="lazy"  src="{{ section.settings.the_image | img_url: 'master' }}">{% endif %}
+        </div>
+      </div>
+      <div class="col-sm-12 col-md-6 col-lg-6 affiliates-accordion-info-column">
+        <div class="affiliates-accordion-title-wrapper">
+          <div class="affiliates-accordion-title common-heading-wrapper">
+            <h2>{{ section.settings.the_title }}</h2>
+          </div>
+          <div class="affiliates-accordion-wrapper">
+            <div class="menu-footer-group">
+              {% for block in section.blocks  %}
+                <div class="menu-footer menu-page {% if forloop.index == 1 %}active{% endif %}" data-aos="fade-up">
+                    <h2>{{ block.settings.title }}<img loading="lazy"  class="d-none d-md-block float-end mt-1" src="{{ '__down.svg' | asset_url }}"></h2>
+                    <div class="menu-s" {% if forloop.index != 1 %}style="display: none"{% endif %}>
+                        {{ block.settings.content }}
+                    </div>
+                </div>
+              {% endfor %}  
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+{% schema %}
+  {
+    "name": "Affiliates Accordion",
+    "settings": [
+         {
+            "type": "header",
+            "content": "Content Style"
+         },
+  	     {
+             "type": "color",
+             "id": "section_bg_color",
+             "label": "Section background color"
+         },
+         {
+            "type": "header",
+            "content": "Content Settings"
+         },
+         {
+              "type": "image_picker",
+              "id": "the_image",
+              "label": "Image"
+          },
+         {
+            "type": "textarea",
+            "id": "the_title",
+            "label": "Title"
+          }
+    ],
+	"blocks": [
+     {
+      "type": "faq",
+      "name": "Faq",
+      "settings": [
+    	 {
+          "type": "text",
+          "id": "title",
+          "label": "Title",
+		  "default" : "Text"
+        },
+        {
+          "type": "textarea",
+          "id": "content",
+          "label": "Content",
+		  "default" : "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor Lorem ipsum dolor sit amet."
+        }
+      ]
+     }
+	],
+	"presets": [{
+      "name": "Affiliates Accordion"
+    }]
+  }
+{% endschema %}

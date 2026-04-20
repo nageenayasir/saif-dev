@@ -1,0 +1,56 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "5abe57be-f137-418a-abb9-4def2c1cd6f8": {
+      "type": "all-products-collection-banner",
+      "custom_css": [
+        "{background-color: #faeee9;}"
+      ],
+      "settings": {
+        "enable_breadcrumb": true,
+        "content": ""
+      }
+    },
+    "041d8e53-4c5b-46ca-8604-bb9b844ddc1b": {
+      "type": "collection-top-banner",
+      "settings": {
+        "enable_breadcrumb": true,
+        "title": "{{ collection.title }}",
+        "the_desc": "{{ collection.description }}",
+        "default_image": "shopify://shop_images/ASHWAGANDHA_CATEGORY_PHOTO.jpg"
+      }
+    },
+    "product-grid": {
+      "type": "main-collection-product-grid",
+      "custom_css": [],
+      "settings": {
+        "enable_breadcrumb": true,
+        "image": "shopify://shop_images/ALL-PRODUCTS-BANNER-FRIENDS.jpg",
+        "mob_image": "shopify://shop_images/ALL-PRODUCTS-banner.jpg",
+        "content": "",
+        "button": "shop all",
+        "url": "shopify://collections/all-products",
+        "subscribe_image": "shopify://shop_images/Frame_2.png",
+        "subscribe_link": ""
+      }
+    },
+    "collection_certification_icons_VKhUpi": {
+      "type": "collection-certification-icons",
+      "settings": {}
+    }
+  },
+  "order": [
+    "5abe57be-f137-418a-abb9-4def2c1cd6f8",
+    "041d8e53-4c5b-46ca-8604-bb9b844ddc1b",
+    "product-grid",
+    "collection_certification_icons_VKhUpi"
+  ]
+}

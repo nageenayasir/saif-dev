@@ -1,0 +1,364 @@
+<style>
+  #id-{{ section.id }}{
+  	background-color:{{ section.settings.section_bg_color }};
+  }
+</style>
+<section id="id-{{section.id}}" class="stress-relief-section">
+  <div class="stress-relief-wrapper">
+    <div class="container">
+      <div class="row stress-relief-content-row">
+        <div class="col-lg-12 col-md-12 col-sm-12">
+          <div class="stress-content-wrap">
+            {{ section.settings.stress_text }}
+            <h2 class="main-heading-h2">
+              {{ section.settings.stress_title }}
+            </h2>
+            <a class="custom-button-wrap" href="#custom-product-offers">{{ section.settings.button_text }}</a>
+          </div>
+        </div>
+      </div>
+      <div class="row guarantee-logos">
+        <ul class="guarantee-logos-lists">
+        {% for block in section.blocks %}
+          <li>{% if block.settings.the_image != blank %}<img loading="lazy"  src="{{ block.settings.the_image | img_url: 'master' }}">{% endif %}</li>
+        {% endfor %}
+        </ul>
+      </div>
+      <div class="row cstm-image-text-row">
+        {% if section.settings.alignment == 'left' %}
+          <div class="col-lg-6 col-md-6 col-sm-12">
+            <div class="custom-img-wrap">
+              {% if section.settings.the_image != blank %}<img loading="lazy"  src="{{ section.settings.the_image | img_url: 'master' }}">{% endif %}
+            </div>
+          </div>
+        {% endif %}
+        <div class="col-lg-6 col-md-6 col-sm-12">
+          <div class="custom-img--content-wrap">
+            <h3>{{ section.settings.img_txt_title }}</h3>
+            <p>{{ section.settings.img_txt_text }}</p>
+          </div>
+        </div>
+        {% if section.settings.alignment == 'right' %}
+          <div class="col-lg-6 col-md-6 col-sm-12">
+            <div class="custom-img-wrap">
+              {% if section.settings.the_image != blank %}<img loading="lazy"  src="{{ section.settings.the_image | img_url: 'master' }}">{% endif %}
+            </div>
+          </div>
+        {% endif %}
+      </div>
+      <div class="row tribe-icon-row">
+              <div class="tribe-icon-lists">
+                <div class="tribe-orgainics-img">
+                  {% if section.settings.tribe_image != blank %}<img loading="lazy"  src="{{ section.settings.tribe_image | img_url: 'master' }}">{% endif %}
+                </div>
+                <div class="tribe-icons-wrap">
+                  <ul>
+                    <li>
+                      {% if section.settings.tribe_icon_1 != blank %}<img loading="lazy"  src="{{ section.settings.tribe_icon_1 | img_url: 'master' }}">{% endif %}
+                      <p>{{ section.settings.icon_text_1 }}</p>
+                    </li>
+                    <li>
+                      {% if section.settings.tribe_icon_2 != blank %}<img loading="lazy"  src="{{ section.settings.tribe_icon_2 | img_url: 'master' }}">{% endif %}
+                      <p>{{ section.settings.icon_text_2 }}</p>
+                    </li>
+                    <li>
+                      {% if section.settings.tribe_icon_3 != blank %}<img loading="lazy"  src="{{ section.settings.tribe_icon_3 | img_url: 'master' }}">{% endif %}
+                      <p>{{ section.settings.icon_text_3 }}</p>
+                    </li>
+                    <li>
+                      {% if section.settings.tribe_icon_4 != blank %}<img loading="lazy"  src="{{ section.settings.tribe_icon_4 | img_url: 'master' }}">{% endif %}
+                      <p>{{ section.settings.icon_text_4 }}</p>
+                    </li>
+                    <li>
+                      {% if section.settings.tribe_icon_5 != blank %}<img loading="lazy"  src="{{ section.settings.tribe_icon_5 | img_url: 'master' }}">{% endif %}
+                      <p>{{ section.settings.icon_text_5 }}</p>
+                    </li>
+                    <li>
+                      {% if section.settings.tribe_icon_6 != blank %}<img loading="lazy"  src="{{ section.settings.tribe_icon_6 | img_url: 'master' }}">{% endif %}
+                      <p>{{ section.settings.icon_text_6 }}</p>
+                    </li>
+                    <li>
+                      {% if section.settings.tribe_icon_7 != blank %}<img loading="lazy"  src="{{ section.settings.tribe_icon_7 | img_url: 'master' }}">{% endif %}
+                      <p>{{ section.settings.icon_text_7 }}</p>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+      <div class="row defend-content-row">
+        <div class="col-lg-12 col-md-12 col-sm-12">
+          <h2 class="custom-heading-h2">
+            {{ section.settings.defend_title }}
+          </h2>
+          <a class="custom-button-wrap" href="#custom-product-offers">{{ section.settings.defend_button_text }}</a>
+          {{ section.settings.the_text }}
+          <ul class="stress-reasons-lists">
+            <li>{{ section.settings.list_text1 }}</li>
+            <li>{{ section.settings.list_text2 }}</li>
+            <li>{{ section.settings.list_text3 }}</li>
+            <li>{{ section.settings.list_text4 }}</li>
+            <li>{{ section.settings.list_text5 }}</li>
+          </ul>
+        </div>
+      </div>
+      <div class="row testimonial-row-content">
+        <div class="col-lg-12 col-md-12 col-sm-12">
+          <div class="testimonial-content-wrap">
+            <span class="testimonial-rating">
+              <i class="fa fa-star" aria-hidden="true"></i>
+              <i class="fa fa-star" aria-hidden="true"></i>
+              <i class="fa fa-star" aria-hidden="true"></i>
+              <i class="fa fa-star" aria-hidden="true"></i>
+              <i class="fa fa-star" aria-hidden="true"></i>
+            </span>
+            <p>{{ section.settings.rating_text }}</p>
+            <h4>{{ section.settings.author_name }}</h4>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+{% schema %}
+  {
+    "name": "Stress Relief Section",
+    "settings": [
+          {
+            "type": "header",
+            "content": "Content Style"
+          },
+  	     {
+           "type": "color",
+           "id": "section_bg_color",
+           "label": "Section background color"
+        },
+        {
+          "type": "header",
+          "content": "Content-1 Settings"
+      	},
+        {
+          "type": "richtext",
+          "id": "stress_text",
+          "label": "Stress_text"
+      	},
+         {
+          "type": "text",
+          "id": "stress_title",
+          "label": "Title"
+      	},
+        {
+           "type": "text",
+           "id": "button_text",
+           "label": "Text"
+        },
+        {
+        "type": "header",
+        "content": "Image-Text Settings"
+      	},
+        {
+          "type": "image_picker",
+          "id": "the_image",
+          "label": "Image"
+      	},
+        {
+          "type": "select",
+          "id": "alignment",
+          "label": "Image position",
+          "default": "left",
+          "options": [
+            {
+              "value": "left",
+              "label": "Left"
+            },
+            {
+              "value": "right",
+              "label": "Right"
+            }
+          ]
+      	},
+        {
+          "type": "header",
+          "content": "Text Settings"
+        },
+	    {
+          "type": "text",
+          "id": "img_txt_title",
+          "label": "Image Title"
+      	},
+	    {
+           "type": "text",
+           "id": "img_txt_text",
+           "label": "Image Text"
+      	},
+        {
+          "type": "header",
+          "content": "Tribe Icons Settings"
+      	},
+        {
+                  "type": "image_picker",
+                  "id": "tribe_image",
+                  "label": "Tribe Image"
+         },
+         {
+                  "type": "header",
+                  "content": "Tribe Icon Settings"
+          },
+          {
+                  "type": "image_picker",
+                  "id": "tribe_icon_1",
+                  "label": "Tribe Icon-1"
+           },
+           {
+                   "type": "text",
+                   "id": "icon_text_1",
+                   "label": "Icon Text-1"
+           },
+           {
+                  "type": "image_picker",
+                  "id": "tribe_icon_2",
+                  "label": "Tribe Icon-2"
+           },
+           {
+                   "type": "text",
+                   "id": "icon_text_2",
+                   "label": "Icon Text-2"
+           },
+           {
+                  "type": "image_picker",
+                  "id": "tribe_icon_3",
+                  "label": "Tribe Icon-3"
+            },
+            {
+                   "type": "text",
+                   "id": "icon_text_3",
+                   "label": "Icon Text-3"
+            },
+            {
+                  "type": "image_picker",
+                  "id": "tribe_icon_4",
+                  "label": "Tribe Icon-4"
+            },
+            {
+                   "type": "text",
+                   "id": "icon_text_4",
+                   "label": "Icon Text-4"
+            },
+            {
+                  "type": "image_picker",
+                  "id": "tribe_icon_5",
+                  "label": "Tribe Icon-5"
+           },
+           {
+                   "type": "text",
+                   "id": "icon_text_5",
+                   "label": "Icon Text-5"
+           },
+           {
+                  "type": "image_picker",
+                  "id": "tribe_icon_6",
+                  "label": "Tribe Icon-6"
+          },
+          {
+                   "type": "text",
+                   "id": "icon_text_6",
+                   "label": "Icon Text-6"
+          },
+         {
+                  "type": "image_picker",
+                  "id": "tribe_icon_7",
+                  "label": "Tribe Icon-7"
+         },
+        {
+                   "type": "text",
+                   "id": "icon_text_7",
+                   "label": "Icon Text-7"
+        },
+        {
+          "type": "header",
+          "content": "Content-2 Settings"
+      	},
+        {
+          "type": "text",
+          "id": "defend_title",
+          "label": "Defend Title"
+      	},
+        {
+           "type": "text",
+           "id": "defend_button_text",
+           "label": "Text"
+        },
+        {
+          "type": "richtext",
+          "id": "the_text",
+          "label": "The Text"
+      	},
+        {
+          "type": "text",
+          "id": "list_text1",
+          "label": "List Text-1"
+      	},
+        {
+          "type": "text",
+          "id": "list_text2",
+          "label": "List Text-2"
+      	},
+        {
+          "type": "text",
+          "id": "list_text3",
+          "label": "List Text-3"
+      	},
+        {
+          "type": "text",
+          "id": "list_text4",
+          "label": "List Text-4"
+      	},
+        {
+          "type": "text",
+          "id": "list_text5",
+          "label": "List Text-5"
+      	},
+        {
+          "type": "header",
+          "content": "Testimonial Content Settings"
+      	},
+        {
+          "type": "text",
+          "id": "rating_text",
+          "label": "Rating Text"
+      	},
+        {
+          "type": "text",
+          "id": "author_name",
+          "label": "Author Name"
+      	}
+    ],
+	"blocks": [
+        {
+          "type": "guarantee_logos",
+          "name": "Guarantee Logos",
+          "settings": [
+    		{
+              "type": "header",
+              "content": "Guarantee Logo Content Settings"
+            },
+            {
+              "type": "image_picker",
+              "id": "the_image",
+              "label": "Image"
+          	}
+
+        ]
+      }
+	
+	],
+	"presets": [{
+      "name": "Stress Relief Section"
+    }]
+  }
+{% endschema %}
+
+{% stylesheet %}
+{% endstylesheet %}
+
+{% javascript %}
+{% endjavascript %}

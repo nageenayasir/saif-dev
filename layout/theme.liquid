@@ -1,258 +1,896 @@
 <!doctype html>
-<html lang="{{ request.locale.iso_code }}">
-  <head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width,initial-scale=1">
-    <meta name="theme-color" content="">
-    <link rel="canonical" href="{{ canonical_url }}">
+<html class="no-js" lang="{{ request.locale.iso_code }}">
 
-    {%- if settings.favicon != blank -%}
-      <link rel="icon" type="image/png" href="{{ settings.favicon | image_url: width: 32, height: 32 }}">
-    {%- endif -%}
+<head>
 
-    <title>
-      {{ page_title }}
-      {%- if current_tags %} &ndash; tagged &quot;{{ current_tags | join: ', ' }}&quot;{% endif -%}
-      {%- if current_page != 1 %} &ndash; Page {{ current_page }}{% endif -%}
-      {%- unless page_title contains shop.name %} &ndash; {{ shop.name }}{% endunless -%}
-    </title>
+  {% comment %} HEAD: META & SEO {% endcomment %}
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>
+    {{ page_title }}
+    {%- if current_tags %} &ndash; tagged "{{ current_tags | join: ', ' }}"{% endif -%}
+    {%- if current_page != 1 %} &ndash; Page {{ current_page }}{% endif -%}
+    {%- unless page_title contains shop.name %} | {{ shop.name }}{% endunless -%}
+  </title>
+  {% if page_description %}
+    <meta name="description" content="{{ page_description | escape }}">
+  {% endif %}
+  <link rel="canonical" href="{{ canonical_url }}">
 
-    {% if page_description %}
-      <meta name="description" content="{{ page_description | escape }}">
-    {% endif %}
+  {% comment %} HEAD: ICONS {% endcomment %}
+  <meta name="theme-color" content="">
+  {%- if settings.favicon != blank -%}
+    <link rel="icon" type="image/png" href="{{ settings.favicon | image_url: width: 32, height: 32 }}">
+  {%- endif -%}
 
-    {% render 'meta-tags' %}
+  {% comment %} HEAD: Third-party Verifications {% endcomment %}
+  <meta name="google-site-verification" content="3ySwJP_KYxD0Qjd2aZSTyDK3Vt9U83yr97gJ9Gzcd9M" />
 
-    <script src="{{ 'global.js' | asset_url }}" defer="defer"></script>
+  {% comment %} HEAD: Snipped (Schema) {% endcomment %}
+  {% render 'meta-tags' %}
 
-    {{ content_for_header }}
 
-    {% style %}
+  {% comment %} AREA: PRECONNECT ------------------------------------------ {% endcomment %}
+  {% comment %} HEAD: CONNECTIONS {% endcomment %}
+  <link rel="preconnect" href="https://cdn.shopify.com" crossorigin>
+  {% # theme-check-disable RemoteAsset %}
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="anonymous">
+  <link rel="preconnect" href="https://static.personizely.net" crossorigin="anonymous">
+  {% comment %} <link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin="anonymous">  {% endcomment %}
+  {% # theme-check-enable RemoteAsset %}
 
-      :root {
-        --font-body-family: 'HypatiaSansPro', Georgia, serif;
-        --font-body-style: normal;
-        --font-body-weight: 400;
-        --font-body-weight-bold: 700;
 
-        --font-heading-family: 'Brice', Georgia, serif;
-        --font-heading-style: normal;
-        --font-heading-weight: 700;
-        --font-display-family: 'SuperiorTitle', Georgia, serif;
+  {% comment %} AREA: PRELOAD ---------------------------------------------- {% endcomment %}
+  {% comment %} HEAD: Priority assets for LCP and CLS {% endcomment %}  
+  {%- liquid
+    assign body_font_bold = settings.type_body_font | font_modify: 'weight', 'bold'
+    assign body_font_italic = settings.type_body_font | font_modify: 'style', 'italic'
+    assign body_font_bold_italic = body_font_bold | font_modify: 'style', 'italic'
+  %}  
+  {% comment %} Preload: Critical Font {% endcomment %}
+  {{ 'HypatiaSansPro-Bold.woff2' | asset_url | preload_tag: as: 'font', type: 'font/woff2', crossorigin: 'anonymous' }}
+  {%- comment -%} Define the Google Fonts URL as a variable {%- endcomment -%}
+  {% # theme-check-disable AssetPreload, RemoteAsset %}
+  <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,300;0,400;0,700;1,400&family=Montserrat:ital,wght@0,400;0,700;1,400&family=Work+Sans:ital,wght@0,400;0,500;0,700&display=swap" onload="this.onload=null;this.rel='stylesheet'">
+  {% # theme-check-enable AssetPreload, RemoteAsset %}
 
-        --font-body-scale: {{ settings.body_scale | divided_by: 100.0 }};
-        --font-heading-scale: {{ settings.heading_scale | times: 1.0 | divided_by: settings.body_scale }};
+  {% comment %} 
+    HEAD: 
+    Load Performance Scripts v2
+    *** Important this position
+  {% endcomment %}
 
-        --color-base-text: {{ settings.colors_text.red }}, {{ settings.colors_text.green }}, {{ settings.colors_text.blue }};
-        --color-shadow: {{ settings.colors_text.red }}, {{ settings.colors_text.green }}, {{ settings.colors_text.blue }};
-        --color-base-background-1: {{ settings.colors_background_1.red }}, {{ settings.colors_background_1.green }}, {{ settings.colors_background_1.blue }};
-        --color-base-background-2: {{ settings.colors_background_2.red }}, {{ settings.colors_background_2.green }}, {{ settings.colors_background_2.blue }};
-        --color-base-solid-button-labels: {{ settings.colors_solid_button_labels.red }}, {{ settings.colors_solid_button_labels.green }}, {{ settings.colors_solid_button_labels.blue }};
-        --color-base-outline-button-labels: {{ settings.colors_outline_button_labels.red }}, {{ settings.colors_outline_button_labels.green }}, {{ settings.colors_outline_button_labels.blue }};
-        --color-base-accent-1: {{ settings.colors_accent_1.red }}, {{ settings.colors_accent_1.green }}, {{ settings.colors_accent_1.blue }};
-        --color-base-accent-2: {{ settings.colors_accent_2.red }}, {{ settings.colors_accent_2.green }}, {{ settings.colors_accent_2.blue }};
+    {% comment %}headAsyncLoad.js and bootstrap-26.0.88.js removed — malware{% endcomment %}
 
-        --payment-terms-background-color: {{ settings.colors_background_1 }};
 
-        --gradient-base-background-1: {% if settings.gradient_background_1 != blank %}{{ settings.gradient_background_1 }}{% else %}{{ settings.colors_background_1 }}{% endif %};
-        --gradient-base-background-2: {% if settings.gradient_background_2 != blank %}{{ settings.gradient_background_2 }}{% else %}{{ settings.colors_background_2 }}{% endif %};
-        --gradient-base-accent-1: {% if settings.gradient_accent_1 != blank %}{{ settings.gradient_accent_1 }}{% else %}{{ settings.colors_accent_1 }}{% endif %};
-        --gradient-base-accent-2: {% if settings.gradient_accent_2 != blank %}{{ settings.gradient_accent_2 }}{% else %}{{ settings.colors_accent_2 }}{% endif %};
+  
+  <script type="text/javascript">
+    const observer = new MutationObserver(e => { e.forEach(({ addedNodes: e }) => { e.forEach(e => { 1 === e.nodeType && "SCRIPT" === e.tagName && (e.innerHTML.includes("asyncLoad") && (e.innerHTML = e.innerHTML.replace("if(window.attachEvent)", "document.addEventListener('asyncLazyLoad',function(event){asyncLoad();});if(window.attachEvent)").replaceAll(", asyncLoad", ", function(){}")), e.innerHTML.includes("PreviewBarInjector") && (e.innerHTML = e.innerHTML.replace("DOMContentLoaded", "asyncLazyLoad")), (e.className == 'analytics') && (e.type = 'text/lazyload'),(e.src.includes("assets/storefront/features")||e.src.includes("assets/shopify_pay")||e.src.includes("connect.facebook.net"))&&(e.setAttribute("data-src", e.src), e.removeAttribute("src")))})})});observer.observe(document.documentElement,{childList:!0,subtree:!0})
+  </script>
 
-        --media-padding: {{ settings.media_padding }}px;
-        --media-border-opacity: {{ settings.media_border_opacity | divided_by: 100.0 }};
-        --media-border-width: {{ settings.media_border_thickness }}px;
-        --media-radius: {{ settings.media_border_radius }}px;
-        --media-shadow-opacity: {{ settings.media_shadow_opacity | divided_by: 100.0 }};
-        --media-shadow-horizontal-offset: {{ settings.media_shadow_horizontal_offset }}px;
-        --media-shadow-vertical-offset: {{ settings.media_shadow_vertical_offset }}px;
-        --media-shadow-blur-radius: {{ settings.media_shadow_blur }}px;
-        --media-shadow-visible: {% if settings.media_shadow_opacity > 0 %}1{% else %}0{% endif %};
+  {% comment %} Styles Preload {% endcomment %}
+  {% comment %} 
+  {{ 'bootstrap.min.css' | asset_url | stylesheet_tag: preload: true }}
+  {% endcomment %}
 
-        --page-width: {{ settings.page_width | divided_by: 10 }}rem;
-        --page-width-margin: {% if settings.page_width == '1600' %}2{% else %}0{% endif %}rem;
+  {% comment %} 
+  {{ 'fontawesome.css' | asset_url | stylesheet_tag: preload: true }} 
+  {{ 'swiper-bundle.min.css' | asset_url | stylesheet_tag: preload: true }}  
+  {{ 'style.css' | asset_url | stylesheet_tag: preload: true }}
+  {{ 'custom.css' | asset_url | stylesheet_tag: preload: true }}
+  {% endcomment %}
+  {%- comment -%} PRELOAD LOCAL SCRIPTS (FROM ASSETS FOLDER)
+  {{ 'jquery-3.5.1.min.js' | asset_url | preload_tag: as: 'script' }}
+  {{ 'jquery-migrate-3.3.0.min.js' | asset_url | preload_tag: as: 'script' }}
+  {{ 'jquery.matchHeight.js' | asset_url | preload_tag: as: 'script' }}
+  {%- endcomment -%}
 
-        --product-card-image-padding: {{ settings.card_image_padding | divided_by: 10.0 }}rem;
-        --product-card-corner-radius: {{ settings.card_corner_radius | divided_by: 10.0 }}rem;
-        --product-card-text-alignment: {{ settings.card_text_alignment }};
-        --product-card-border-width: {{ settings.card_border_thickness | divided_by: 10.0 }}rem;
-        --product-card-border-opacity: {{ settings.card_border_opacity | divided_by: 100.0 }};
-        --product-card-shadow-opacity: {{ settings.card_shadow_opacity | divided_by: 100.0 }};
-        --product-card-shadow-visible: {% if settings.card_shadow_opacity > 0 %}1{% else %}0{% endif %};
-        --product-card-shadow-horizontal-offset: {{ settings.card_shadow_horizontal_offset | divided_by: 10.0 }}rem;
-        --product-card-shadow-vertical-offset: {{ settings.card_shadow_vertical_offset | divided_by: 10.0 }}rem;
-        --product-card-shadow-blur-radius: {{ settings.card_shadow_blur | divided_by: 10.0 }}rem;
 
-        --collection-card-image-padding: {{ settings.collection_card_image_padding | divided_by: 10.0 }}rem;
-        --collection-card-corner-radius: {{ settings.collection_card_corner_radius | divided_by: 10.0 }}rem;
-        --collection-card-text-alignment: {{ settings.collection_card_text_alignment }};
-        --collection-card-border-width: {{ settings.collection_card_border_thickness | divided_by: 10.0 }}rem;
-        --collection-card-border-opacity: {{ settings.collection_card_border_opacity | divided_by: 100.0 }};
-        --collection-card-shadow-opacity: {{ settings.collection_card_shadow_opacity | divided_by: 100.0 }};
-        --collection-card-shadow-visible: {% if settings.collection_card_shadow_opacity > 0 %}1{% else %}0{% endif %};
-        --collection-card-shadow-horizontal-offset: {{ settings.collection_card_shadow_horizontal_offset | divided_by: 10.0 }}rem;
-        --collection-card-shadow-vertical-offset: {{ settings.collection_card_shadow_vertical_offset | divided_by: 10.0 }}rem;
-        --collection-card-shadow-blur-radius: {{ settings.collection_card_shadow_blur | divided_by: 10.0 }}rem;
+  {% comment %} AREA: LOAD ------------------------------------------------- {% endcomment %}
 
-        --badge-corner-radius: {{ settings.badge_corner_radius | divided_by: 10.0 }}rem;
+  {{ 'dgf-fonts-critical.css' | asset_url | stylesheet_tag }}
 
-        --popup-border-width: {{ settings.popup_border_thickness }}px;
-        --popup-border-opacity: {{ settings.popup_border_opacity | divided_by: 100.0 }};
-        --popup-corner-radius: {{ settings.popup_corner_radius }}px;
-        --popup-shadow-opacity: {{ settings.popup_shadow_opacity | divided_by: 100.0 }};
-        --popup-shadow-horizontal-offset: {{ settings.popup_shadow_horizontal_offset }}px;
-        --popup-shadow-vertical-offset: {{ settings.popup_shadow_vertical_offset }}px;
-        --popup-shadow-blur-radius: {{ settings.popup_shadow_blur }}px;
 
-        --drawer-border-width: {{ settings.drawer_border_thickness }}px;
-        --drawer-border-opacity: {{ settings.drawer_border_opacity | divided_by: 100.0 }};
-        --drawer-shadow-opacity: {{ settings.drawer_shadow_opacity | divided_by: 100.0 }};
-        --drawer-shadow-horizontal-offset: {{ settings.drawer_shadow_horizontal_offset }}px;
-        --drawer-shadow-vertical-offset: {{ settings.drawer_shadow_vertical_offset }}px;
-        --drawer-shadow-blur-radius: {{ settings.drawer_shadow_blur }}px;
+  {% comment %} CSS VARIABLES {% endcomment %}
+  {% style %}
+    {{ settings.type_body_font | font_face: font_display: 'swap' }}
+    {{ body_font_bold | font_face: font_display: 'swap' }}
+    {{ body_font_italic | font_face: font_display: 'swap' }}
+    {{ body_font_bold_italic | font_face: font_display: 'swap' }}
+    {{ settings.type_header_font | font_face: font_display: 'swap' }}
 
-        --spacing-sections-desktop: {{ settings.spacing_sections }}px;
-        --spacing-sections-mobile: {% if settings.spacing_sections < 24 %}{{ settings.spacing_sections }}{% else %}{{ settings.spacing_sections | times: 0.556 | round }}{% endif %}px;
+    :root {
+      --font-body-family: {{ settings.type_body_font.family }}, {{ settings.type_body_font.fallback_families }};
+      --font-body-style: {{ settings.type_body_font.style }};
+      --font-body-weight: {{ settings.type_body_font.weight }};
+      --font-body-weight-bold: {{ settings.type_body_font.weight | plus: 300 | at_most: 1000 }};
 
-        --grid-desktop-vertical-spacing: {{ settings.spacing_grid_vertical }}px;
-        --grid-desktop-horizontal-spacing: {{ settings.spacing_grid_horizontal }}px;
-        --grid-mobile-vertical-spacing: {{ settings.spacing_grid_vertical | divided_by: 2 }}px;
-        --grid-mobile-horizontal-spacing: {{ settings.spacing_grid_horizontal | divided_by: 2 }}px;
+      --font-heading-family: {{ settings.type_header_font.family }}, {{ settings.type_header_font.fallback_families }};
+      --font-heading-style: {{ settings.type_header_font.style }};
+      --font-heading-weight: {{ settings.type_header_font.weight }};
 
-        --text-boxes-border-opacity: {{ settings.text_boxes_border_opacity | divided_by: 100.0 }};
-        --text-boxes-border-width: {{ settings.text_boxes_border_thickness }}px;
-        --text-boxes-radius: {{ settings.text_boxes_radius }}px;
-        --text-boxes-shadow-opacity: {{ settings.text_boxes_shadow_opacity | divided_by: 100.0 }};
-        --text-boxes-shadow-visible: {% if settings.text_boxes_shadow_opacity > 0 %}1{% else %}0{% endif %};
-        --text-boxes-shadow-horizontal-offset: {{ settings.text_boxes_shadow_horizontal_offset }}px;
-        --text-boxes-shadow-vertical-offset: {{ settings.text_boxes_shadow_vertical_offset }}px;
-        --text-boxes-shadow-blur-radius: {{ settings.text_boxes_shadow_blur }}px;
+      --font-body-scale: {{ settings.body_scale | divided_by: 100.0 }};
+      --font-heading-scale: {{ settings.heading_scale | times: 1.0 | divided_by: settings.body_scale }};
 
-        --buttons-radius: {{ settings.buttons_radius }}px;
-        --buttons-radius-outset: {% if settings.buttons_radius > 0 %}{{ settings.buttons_radius | plus: settings.buttons_border_thickness }}{% else %}0{% endif %}px;
-        --buttons-border-width: {{ settings.buttons_border_thickness }}px;
-        --buttons-border-opacity: {{ settings.buttons_border_opacity | divided_by: 100.0 }};
-        --buttons-shadow-opacity: {{ settings.buttons_shadow_opacity | divided_by: 100.0 }};
-        --buttons-shadow-visible: {% if settings.buttons_shadow_opacity > 0 %}1{% else %}0{% endif %};
-        --buttons-shadow-horizontal-offset: {{ settings.buttons_shadow_horizontal_offset }}px;
-        --buttons-shadow-vertical-offset: {{ settings.buttons_shadow_vertical_offset }}px;
-        --buttons-shadow-blur-radius: {{ settings.buttons_shadow_blur }}px;
-        --buttons-border-offset: {% if settings.buttons_radius > 0 or settings.buttons_shadow_opacity > 0 %}0.3{% else %}0{% endif %}rem;
+      --color-base-text: {{ settings.colors_text.red }}, {{ settings.colors_text.green }}, {{ settings.colors_text.blue }};
+      --color-shadow: {{ settings.colors_text.red }}, {{ settings.colors_text.green }}, {{ settings.colors_text.blue }};
+      --color-base-background-1: {{ settings.colors_background_1.red }}, {{ settings.colors_background_1.green }}, {{ settings.colors_background_1.blue }};
+      --color-base-background-2: {{ settings.colors_background_2.red }}, {{ settings.colors_background_2.green }}, {{ settings.colors_background_2.blue }};
+      --color-base-solid-button-labels: {{ settings.colors_solid_button_labels.red }}, {{ settings.colors_solid_button_labels.green }}, {{ settings.colors_solid_button_labels.blue }};
+      --color-base-outline-button-labels: {{ settings.colors_outline_button_labels.red }}, {{ settings.colors_outline_button_labels.green }}, {{ settings.colors_outline_button_labels.blue }};
+      --color-base-accent-1: {{ settings.colors_accent_1.red }}, {{ settings.colors_accent_1.green }}, {{ settings.colors_accent_1.blue }};
+      --color-base-accent-2: {{ settings.colors_accent_2.red }}, {{ settings.colors_accent_2.green }}, {{ settings.colors_accent_2.blue }};
+      --payment-terms-background-color: {{ settings.colors_background_1 }};
 
-        --inputs-radius: {{ settings.inputs_radius }}px;
-        --inputs-border-width: {{ settings.inputs_border_thickness }}px;
-        --inputs-border-opacity: {{ settings.inputs_border_opacity | divided_by: 100.0 }};
-        --inputs-shadow-opacity: {{ settings.inputs_shadow_opacity | divided_by: 100.0 }};
-        --inputs-shadow-horizontal-offset: {{ settings.inputs_shadow_horizontal_offset }}px;
-        --inputs-margin-offset: {% if settings.inputs_shadow_vertical_offset != 0 and settings.inputs_shadow_opacity > 0 %}{{ settings.inputs_shadow_vertical_offset | abs }}{% else %}0{% endif %}px;
-        --inputs-shadow-vertical-offset: {{ settings.inputs_shadow_vertical_offset }}px;
-        --inputs-shadow-blur-radius: {{ settings.inputs_shadow_blur }}px;
-        --inputs-radius-outset: {% if settings.inputs_radius > 0 %}{{ settings.inputs_radius | plus: settings.inputs_border_thickness }}{% else %}0{% endif %}px;
-      }
+      --gradient-base-background-1: {% if settings.gradient_background_1 != blank %}{{ settings.gradient_background_1 }}{% else %}{{ settings.colors_background_1 }}{% endif %};
+      --gradient-base-background-2: {% if settings.gradient_background_2 != blank %}{{ settings.gradient_background_2 }}{% else %}{{ settings.colors_background_2 }}{% endif %};
+      --gradient-base-accent-1: {% if settings.gradient_accent_1 != blank %}{{ settings.gradient_accent_1 }}{% else %}{{ settings.colors_accent_1 }}{% endif %};
+      --gradient-base-accent-2: {% if settings.gradient_accent_2 != blank %}{{ settings.gradient_accent_2 }}{% else %}{{ settings.colors_accent_2 }}{% endif %};
 
-      *,
-      *::before,
-      *::after {
-        box-sizing: inherit;
-      }
+      --media-padding: {{ settings.media_padding }}px;
+      --media-border-opacity: {{ settings.media_border_opacity | divided_by: 100.0 }};
+      --media-border-width: {{ settings.media_border_thickness }}px;
+      --media-radius: {{ settings.media_radius }}px;
+      --media-shadow-opacity: {{ settings.media_shadow_opacity | divided_by: 100.0 }};
+      --media-shadow-horizontal-offset: {{ settings.media_shadow_horizontal_offset }}px;
+      --media-shadow-vertical-offset: {{ settings.media_shadow_vertical_offset }}px;
+      --media-shadow-blur-radius: {{ settings.media_shadow_blur }}px;
+      --media-shadow-visible: {% if settings.media_shadow_opacity > 0 %}1{% else %}0{% endif %};
 
-      html {
-        box-sizing: border-box;
-        font-size: calc(var(--font-body-scale) * 62.5%);
-        height: 100%;
-      }
+      --page-width: {{ settings.page_width | divided_by: 10 }}rem;
+      --page-width-margin: {% if settings.page_width == '1600' %}2{% else %}0{% endif %}rem;
 
+      --card-image-padding: {{ settings.card_image_padding | divided_by: 10.0 }}rem;
+      --card-corner-radius: {{ settings.card_corner_radius | divided_by: 10.0 }}rem;
+      --card-text-alignment: {{ settings.card_text_alignment }};
+      --card-border-width: {{ settings.card_border_thickness | divided_by: 10.0 }}rem;
+      --card-border-opacity: {{ settings.card_border_opacity | divided_by: 100.0 }};
+      --card-shadow-opacity: {{ settings.card_shadow_opacity | divided_by: 100.0 }};
+      --card-shadow-visible: {% if settings.card_shadow_opacity > 0 %}1{% else %}0{% endif %};
+      --card-shadow-horizontal-offset: {{ settings.card_shadow_horizontal_offset | divided_by: 10.0 }}rem;
+      --card-shadow-vertical-offset: {{ settings.card_shadow_vertical_offset | divided_by: 10.0 }}rem;
+      --card-shadow-blur-radius: {{ settings.card_shadow_blur | divided_by: 10.0 }}rem;
+
+      --badge-corner-radius: {{ settings.badge_corner_radius | divided_by: 10.0 }}rem;
+
+      --popup-border-width: {{ settings.popup_border_thickness }}px;
+      --popup-border-opacity: {{ settings.popup_border_opacity | divided_by: 100.0 }};
+      --popup-corner-radius: {{ settings.popup_corner_radius }}px;
+      --popup-shadow-opacity: {{ settings.popup_shadow_opacity | divided_by: 100.0 }};
+      --popup-shadow-horizontal-offset: {{ settings.popup_shadow_horizontal_offset }}px;
+      --popup-shadow-vertical-offset: {{ settings.popup_shadow_vertical_offset }}px;
+      --popup-shadow-blur-radius: {{ settings.popup_shadow_blur }}px;
+
+      --drawer-border-width: {{ settings.drawer_border_thickness }}px;
+      --drawer-border-opacity: {{ settings.drawer_border_opacity | divided_by: 100.0 }};
+      --drawer-shadow-opacity: {{ settings.drawer_shadow_opacity | divided_by: 100.0 }};
+      --drawer-shadow-horizontal-offset: {{ settings.drawer_shadow_horizontal_offset }}px;
+      --drawer-shadow-vertical-offset: {{ settings.drawer_shadow_vertical_offset }}px;
+      --drawer-shadow-blur-radius: {{ settings.drawer_shadow_blur }}px;
+
+      --spacing-sections-desktop: {{ settings.spacing_sections }}px;
+      --spacing-sections-mobile: {% if settings.spacing_sections < 24 %}{{ settings.spacing_sections }}{% else %}{{ settings.spacing_sections | times: 0.7 | round | at_least: 20 }}{% endif %}px;
+
+      --grid-desktop-vertical-spacing: {{ settings.spacing_grid_vertical }}px;
+      --grid-desktop-horizontal-spacing: {{ settings.spacing_grid_horizontal }}px;
+      --grid-mobile-vertical-spacing: {{ settings.spacing_grid_vertical | divided_by: 2 }}px;
+      --grid-mobile-horizontal-spacing: {{ settings.spacing_grid_horizontal | divided_by: 2 }}px;
+
+      --text-boxes-border-opacity: {{ settings.text_boxes_border_opacity | divided_by: 100.0 }};
+      --text-boxes-border-width: {{ settings.text_boxes_border_thickness }}px;
+      --text-boxes-radius: {{ settings.text_boxes_radius }}px;
+      --text-boxes-shadow-opacity: {{ settings.text_boxes_shadow_opacity | divided_by: 100.0 }};
+      --text-boxes-shadow-visible: {% if settings.text_boxes_shadow_opacity > 0 %}1{% else %}0{% endif %};
+      --text-boxes-shadow-horizontal-offset: {{ settings.text_boxes_shadow_horizontal_offset }}px;
+      --text-boxes-shadow-vertical-offset: {{ settings.text_boxes_shadow_vertical_offset }}px;
+      --text-boxes-shadow-blur-radius: {{ settings.text_boxes_shadow_blur }}px;
+
+      --buttons-radius: {{ settings.buttons_radius }}px;
+      --buttons-radius-outset: {% if settings.buttons_radius > 0 %}{{ settings.buttons_radius | plus: settings.buttons_border_thickness }}{% else %}0{% endif %}px;
+      --buttons-border-width: {% if settings.buttons_border_opacity > 0 %}{{ settings.buttons_border_thickness }}{% else %}0{% endif %}px;
+      --buttons-border-opacity: {{ settings.buttons_border_opacity | divided_by: 100.0 }};
+      --buttons-shadow-opacity: {{ settings.buttons_shadow_opacity | divided_by: 100.0 }};
+      --buttons-shadow-visible: {% if settings.buttons_shadow_opacity > 0 %}1{% else %}0{% endif %};
+      --buttons-shadow-horizontal-offset: {{ settings.buttons_shadow_horizontal_offset }}px;
+      --buttons-shadow-vertical-offset: {{ settings.buttons_shadow_vertical_offset }}px;
+      --buttons-shadow-blur-radius: {{ settings.buttons_shadow_blur }}px;
+      --buttons-border-offset: {% if settings.buttons_radius > 0 or settings.buttons_shadow_opacity > 0 %}0.3{% else %}0{% endif %}px;
+
+      --inputs-radius: {{ settings.inputs_radius }}px;
+      --inputs-border-width: {{ settings.inputs_border_thickness }}px;
+      --inputs-border-opacity: {{ settings.inputs_border_opacity | divided_by: 100.0 }};
+      --inputs-shadow-opacity: {{ settings.inputs_shadow_opacity | divided_by: 100.0 }};
+      --inputs-shadow-horizontal-offset: {{ settings.inputs_shadow_horizontal_offset }}px;
+      --inputs-margin-offset: {% if settings.inputs_shadow_vertical_offset != 0 and settings.inputs_shadow_opacity > 0 %}{{ settings.inputs_shadow_vertical_offset | abs }}{% else %}0{% endif %}px;
+      --inputs-shadow-vertical-offset: {{ settings.inputs_shadow_vertical_offset }}px;
+      --inputs-shadow-blur-radius: {{ settings.inputs_shadow_blur }}px;
+      --inputs-radius-outset: {% if settings.inputs_radius > 0 %}{{ settings.inputs_radius | plus: settings.inputs_border_thickness }}{% else %}0{% endif %}px;
+
+      --variant-pills-radius: {{ settings.variant_pills_radius }}px;
+      --variant-pills-border-width: {{ settings.variant_pills_border_thickness }}px;
+      --variant-pills-border-opacity: {{ settings.variant_pills_border_opacity | divided_by: 100.0 }};
+      --variant-pills-shadow-opacity: {{ settings.variant_pills_shadow_opacity | divided_by: 100.0 }};
+      --variant-pills-shadow-horizontal-offset: {{ settings.variant_pills_shadow_horizontal_offset }}px;
+      --variant-pills-shadow-vertical-offset: {{ settings.variant_pills_shadow_vertical_offset }}px;
+      --variant-pills-shadow-blur-radius: {{ settings.variant_pills_shadow_blur }}px;
+    }
+    *,
+    *::before,
+    *::after {
+      box-sizing: inherit;
+    }
+    html {
+      box-sizing: border-box;
+      font-size: calc(var(--font-body-scale) * 62.5%);
+      height: 100%;
+    }
+    body {
+      display: grid;
+      grid-template-rows: auto auto 1fr auto;
+      grid-template-columns: 100%;
+      min-height: 100%;
+      margin: 0;
+      font-size: 1.5rem;
+      letter-spacing: 0.06rem;
+      line-height: calc(1 + 0.8 / var(--font-body-scale));
+      font-family: var(--font-body-family);
+      font-style: var(--font-body-style);
+      font-weight: var(--font-body-weight);
+    }
+    @media screen and (min-width: 750px) {
       body {
-        display: grid;
-        grid-template-rows: auto auto 1fr auto;
-        grid-template-columns: 100%;
-        min-height: 100%;
-        margin: 0;
-        font-size: 1.5rem;
-        letter-spacing: 0.06rem;
-        line-height: calc(1 + 0.8 / var(--font-body-scale));
-        font-family: var(--font-body-family);
-        font-style: var(--font-body-style);
-        font-weight: var(--font-body-weight);
-        color: rgba(var(--color-base-text), 0.75);
-        background-color: rgb(var(--color-base-background-1));
+        font-size: 1.6rem;
       }
-    {% endstyle %}
+    }
+    /*INLINE CSS OVERRIDES*/
+    .globo-hide-product{
+      display:none!important;
+    }
+    .samita_productLabel-content {
+      z-index: 4 !important;
+    }
+    .samita_productLabel-content-text {
+      margin: 0;
+      font-weight: unset !important;
+      color: unset !important;
+    }
+    /* DigiFlow Styles */
+    .dgf-loading { opacity: 0; filter: blur(5px); }
+    .dgf-loaded { opacity: 1; filter: blur(0); transition: opacity 0.5s ease-in, filter 0.3s ease-out; }  
+  {% endstyle %}
 
-    {{ 'base.css' | asset_url | stylesheet_tag }}
-    {{ 'component-button.css' | asset_url | stylesheet_tag }}
-    {{ 'component-card.css' | asset_url | stylesheet_tag }}
-    {{ 'component-price.css' | asset_url | stylesheet_tag }}
-    {{ 'section-header.css' | asset_url | stylesheet_tag }}
-    {{ 'section-footer.css' | asset_url | stylesheet_tag }}
+  {% comment %} HEAD: STYLESHEETS {% endcomment %}
+  {% comment %} <link rel="stylesheet" href="{{ 'bootstrap.min.css' | asset_url }}" type="text/css" media="all"/> {% endcomment %}
+  {% render 'dgf-bootsrap-css' %}
+  {%  comment  %}<link rel="stylesheet" href="{{ 'swiper-bundle.min.css' | asset_url }}" type="text/css" media="all">{% endcomment %}
+  {% render 'dgf-swiper-css' %}
+  {%  comment  %}<link rel="stylesheet" href="{{ 'style.min.css' | asset_url }}" type="text/css" media="all">{% endcomment %}
+  {% render 'dgf-style-min' %}
 
-    {%- unless settings.type_body_font.system? -%}
-      <link rel="preconnect" href="https://fonts.shopifycdn.com" crossorigin>
-    {%- endunless -%}
+  {%  comment  %}<link rel="stylesheet" href="{{ 'custom.min.css' | asset_url }}" type="text/css" media="all"/>{% endcomment %}
+  {% render 'dgf-custom-css-frst' %}
+  {% render 'dgf-custom-css-scd' %}
+  <link rel="stylesheet" href="{{ 'stylesheet.css' | asset_url }}" type="text/css" media="all">
+  <link rel="stylesheet" href="{{ 'aos.min.css' | asset_url }}" type="text/css" media="all"/>
+  {% comment %} HEAD: STYLESHEETS (LAZY / CONDITIONAL) {% endcomment %}
+  {%- unless settings.type_header_font.system? and settings.type_body_font.system? -%}
+    <link rel="stylesheet" href="{{ 'fontawesome.css' | asset_url }}"type="text/css" media="all">
+  {%- endunless -%}
 
-    {%- if settings.predictive_search_enabled -%}
-      <link rel="stylesheet" href="{{ 'component-predictive-search.css' | asset_url }}" media="print" onload="this.media='all'">
-    {%- endif -%}
+  {% comment %} HEAD: SHOPIFY HEADER (content_for_header) - keep required tag + filter Recharge {% endcomment %}
+  {% # theme-check-disable ContentForHeaderModification %}
+  {%- capture cfh_required -%}{{ content_for_header }}{%- endcapture -%}
+  {%- liquid
+    assign cfh_filtered = cfh_required
+    assign recharge_marker = 'widget.min.js?shop=tribe-supplements.myshopify.com'
+    if cfh_filtered contains recharge_marker
+      assign parts = cfh_filtered | split: '<script'
+      capture out
+        echo parts[0]
+        for p in parts offset: 1
+          assign block = '<script' | append: p
+          unless block contains recharge_marker
+            echo block
+          endunless
+        endfor
+      endcapture
+      assign cfh_filtered = out
+    endif
+  -%}
+  {% # theme-check-enable ContentForHeaderModification %}
 
-    {%- if localization.available_countries.size > 1 or localization.available_languages.size > 1 -%}
-      {{ 'component-localization-form.css' | asset_url | stylesheet_tag: preload: true }}
-    {%- endif -%}
-  </head>
+  {% comment %} HEAD: SideCart Control {% endcomment %}
+  {%- assign tinyscript = true -%}
+  {%- if tinyscript -%}
+    {{ cfh_filtered }}
+  {%- else -%}
+    {% render 'tiny-script-control', content_for_header: cfh_filtered %}
+  {%- endif -%}
 
-  <body class="gradient">
-    <a class="skip-to-content-link button animate-arrow" href="#MainContent">
-      {{ 'accessibility.skip_to_text' | t }}
-    </a>
+  {% comment %} HEAD: Defer Performance Scripts {% endcomment %}
+  {% comment %} <script src="{{ 'preconnect-1.0.13.js' | asset_url }}" defer></script> {% endcomment %}
+  <script src="{{ 'lazysizes.min.js' | asset_url }}" defer></script>
 
-    {%- if settings.cart_type == 'drawer' -%}
-      {%- render 'cart-drawer' -%}
-    {%- endif -%}
+  {% comment %} HEAD: Default Scripts {% endcomment %}
+  {% render "scripts" %}
 
-    {% sections 'header-group' %}
+  {% comment %} HEAD: Conditional Scripts {% endcomment %}
+  {% if template contains "collection" %}
+    <script type="text/javascript" src="{{ 'globo-checkout-mobile.js' | asset_url }}" defer="defer"></script>
+  {% endif %}
+  {% if template contains "collection" %}
+    {% render "nonFlickerCode" %}
+  {% endif %}
 
-    <main id="MainContent" class="content-for-layout focus-none" role="main" tabindex="-1">
-      {{ content_for_layout }}
-    </main>
+  {% comment %} HEAD: Lazyload Scripts {% endcomment %}
+  <script type="text/lazyload" src="{{ 'global.js' | asset_url }}" defer="defer"></script>
 
-    {% sections 'footer-group' %}
-
-    <ul hidden>
-      <li id="a11y-refresh-page-message">{{ 'accessibility.refresh_page' | t }}</li>
-      <li id="a11y-new-window-message">{{ 'accessibility.link_messages.new_window' | t }}</li>
-    </ul>
-
-    <script>
-      window.shopUrl = '{{ request.origin }}';
-      window.routes = {
-        cart_add_url: '{{ routes.cart_add_url }}',
-        cart_change_url: '{{ routes.cart_change_url }}',
-        cart_update_url: '{{ routes.cart_update_url }}',
-        cart_url: '{{ routes.cart_url }}',
-        predictive_search_url: '{{ routes.predictive_search_url }}',
+  {% comment %} HEAD: DigiFlow Scripts{% endcomment %} 
+  <script type="text/lazyload">
+    {% comment %}DigiFlow: Google GTAGs{% endcomment %}
+    function Dgf_Goo_Tag() {
+      try {
+        window.dataLayer = window.dataLayer || [];
+        window.gtag = window.gtag || function(){ window.dataLayer.push(arguments); };
+        // ['G-WTKY7KXGHG', 'AW-11104452371', 'G-YF2G2FJEJJ']
+        const glo_tag = ['AW-11104452371', 'G-YF2G2FJEJJ' ].filter(Boolean);
+        if (glo_tag.length === 0) return;
+        // 1. Carrega o motor principal usando o primeiro ID
+        let s = document.createElement('script');
+        s.async = true;
+        s.src = 'https://www.googletagmanager.com/gtag/js?id=' + glo_tag[0];
+        document.head.appendChild(s);
+        // 2. Inicializa e roteia os dados para cada conta de forma independente
+        window.gtag('js', new Date());
+        glo_tag.forEach(function (key) {
+          try { window.gtag('config', key); } catch (e) { null; }
+        });
+      } catch (e) { null; }
+    }
+    {% comment %}DigiFlow: Google Google Manager{% endcomment %}
+    function Dgf_Goo_Tmg() {
+      try {
+        var ids = ['GTM-TZV8Q9R'].filter(Boolean);
+        if (!ids.length) return;
+        var w = window;
+        var d = document;
+        var l = 'dataLayer';
+        w[l] = w[l] || [];
+        ids.forEach(function (i) {
+          try {
+            // Prevent double-inserting the same container
+            w.__dgfGtmLoaded = w.__dgfGtmLoaded || {};
+            if (w.__dgfGtmLoaded[i] === true) return;
+            w.__dgfGtmLoaded[i] = true;
+            w[l].push({ 'gtm.start': new Date().getTime(), event: 'gtm.js' });
+            var f = d.getElementsByTagName('script')[0];
+            var j = d.createElement('script');
+            var dl = (l !== 'dataLayer') ? '&l=' + l : '';
+            j.async = true;
+            j.src = 'https://www.googletagmanager.com/gtm.js?id=' + encodeURIComponent(i) + dl;
+            if (f && f.parentNode) {
+              f.parentNode.insertBefore(j, f);
+            } else if (d.head) {
+              d.head.appendChild(j);
+            }
+          } catch (innerError) { null; }
+        });
+      } catch (e) { null; }
+    }
+    {% comment %}DigiFlow: Microsoft Clarity{% endcomment %}
+    function Dgf_Cla_Tag() {
+      const glo_cla = ['s9c1e1mqcy', 'f87p0a5ykn'];
+      glo_cla.forEach(function(key) {
+        (function(c, l, a, r, i, t, y) {
+          c[a] = c[a] || function() { (c[a].q = c[a].q || []).push(arguments); };
+          t = l.createElement(r);
+          t.async = true;
+          t.src = 'https://www.clarity.ms/tag/' + i;
+          y = l.getElementsByTagName(r)[0];
+          y.parentNode.insertBefore(t, y);
+        })(window, document, 'clarity', 'script', key);
+      });
+    }    
+    try { Dgf_Goo_Tag(); } catch (e) { null; }
+    try { Dgf_Goo_Tmg(); } catch (e) { null; }
+    try { Dgf_Cla_Tag(); } catch (e) { null;}
+  </script>
+  {% comment %} DigiFlow: Images Optimizer {% endcomment %}
+  <script>
+    /**
+     * dgf_image_opmitizer V018 - Synchronized Visual Effects
+     * Purpose: Connects the optimization logic with the CSS blur/fade transitions.
+     */
+    const dgf_image_opmitizer = (function() {
+      const FLAG = 'data-dgf-optimized';
+      const CLASS_LOADING = 'dgf-loading'; // Matches your CSS 
+      const CLASS_LOADED = 'dgf-loaded';   // Matches your CSS 
+      const THEME_LOADED = 'lazyloaded';   // Keeps theme compatibility 
+      const getOptimizedUrl = (src, isMobile, width) => {
+        try {
+          if (!src) return "";
+          let newSrc = src.replace(/&amp;/g, '&');
+          if (newSrc.includes('format=webp') && newSrc.includes('quality=80')) return newSrc;
+          const conn = newSrc.includes('?') ? '&' : '?';
+          if (!newSrc.includes('format=')) newSrc += `${conn}format=webp`;
+          if (!newSrc.includes('quality=')) newSrc += `&quality=80`;
+          if (!newSrc.includes('width=')) {
+            const targetWidth = width > 0 ? Math.ceil(width * 1.5) : (isMobile ? 600 : 1200);
+            newSrc += `&width=${targetWidth}`;
+          }
+          return newSrc;
+        } catch (e) { return src; }
       };
-      window.cartStrings = {
-        error: `{{ 'sections.cart.cart_error' | t }}`,
-        quantityError: `{{ 'sections.cart.cart_quantity_error_html' | t: quantity: '[quantity]' }}`,
+      const processImg = (img) => {
+        try {
+          if (!img || img.hasAttribute(FLAG)) return;
+          const dataSrc = img.getAttribute('data-src');
+          const standardSrc = img.getAttribute('src');
+          const rawSrc = dataSrc || standardSrc || "";
+          if (rawSrc.includes('/cdn/shop/') || rawSrc.includes('cdn.shopify.com')) {
+            const isMobile = window.innerWidth <= 768;
+            const rect = img.getBoundingClientRect();
+            const needsRescue = !standardSrc || standardSrc.length < 10;
+            const isPriorityClass = img.classList.contains('custom-article-banr-image');
+            // if (isPriorityClass || needsRescue || rect.top < (window.innerHeight + 800)) {
+            if (isPriorityClass || needsRescue || rect.top < (window.innerHeight + 800)) {
+              // START: Apply loading state for the blur effect 
+              img.classList.add(CLASS_LOADING);
+              const optimized = getOptimizedUrl(rawSrc, isMobile, rect.width);
+              img.setAttribute('src', optimized);
+              // Theme compatibility 
+              img.classList.remove('lazyload');
+              img.setAttribute(FLAG, 'true');
+              // console.log(rawSrc);
+              // console.dir(rect);
+              if (rect.x === 0 && rect.y === 0) {
+                img.setAttribute('fetchpriority', 'auto');
+                img.setAttribute('loading', 'lazy');
+              }
+              else if (isPriorityClass || rect.top < window.innerHeight) {
+                img.setAttribute('fetchpriority', 'high');
+                img.setAttribute('loading', 'eager');
+              }
+              // FINISH: Transition to loaded state after image is ready
+              img.addEventListener('load', function() {
+                img.classList.remove(CLASS_LOADING);
+                img.classList.add(CLASS_LOADED); // Triggers opacity 1 and blur 0 
+                img.classList.add(THEME_LOADED); // Keeps compatibility 
+                try {
+                  if (!img.getAttribute('width')) img.setAttribute('width', img.naturalWidth);
+                  if (!img.getAttribute('height')) img.setAttribute('height', img.naturalHeight);
+                  if (!img.style.aspectRatio && img.naturalWidth) {
+                    img.style.aspectRatio = `${img.naturalWidth} / ${img.naturalHeight}`;
+                  }
+                } catch (e) {}
+              }, { once: true });
+            }
+          }
+        } catch (err) {}
       };
-      window.variantStrings = {
-        addToCart: `{{ 'products.product.add_to_cart' | t }}`,
-        soldOut: `{{ 'products.product.sold_out' | t }}`,
-        unavailable: `{{ 'products.product.unavailable' | t }}`,
-        unavailable_with_option: `{{ 'products.product.value_unavailable' | t: option_value: '[value]' }}`,
+      const scan = () => {
+        document.querySelectorAll('img:not([' + FLAG + '])').forEach(processImg);
       };
-      window.accessibilityStrings = {
-        imageAvailable: `{{ 'products.product.media.image_available' | t: index: '[index]' }}`,
-        shareSuccess: `{{ 'general.share.success_message' | t }}`,
-        pauseSlideshow: `{{ 'sections.slideshow.pause_slideshow' | t }}`,
-        playSlideshow: `{{ 'sections.slideshow.play_slideshow' | t }}`,
-        recipientFormExpanded: `{{ 'recipient.form.expanded' | t }}`,
-        recipientFormCollapsed: `{{ 'recipient.form.collapsed' | t }}`,
+      const observer = new MutationObserver((mutations) => {
+        mutations.forEach(m => {
+          m.addedNodes.forEach(node => {
+            if (node.nodeType === 1) {
+              if (node.tagName === 'IMG') processImg(node);
+              node.querySelectorAll?.('img').forEach(processImg);
+            }
+          });
+        });
+      });
+      return {
+        init: function() {
+          scan();
+          observer.observe(document.body || document.documentElement, { childList: true, subtree: true });
+          window.addEventListener('scroll', scan, { passive: true });
+        }
       };
-    </script>
+    })();
+    dgf_image_opmitizer.init();
+  </script>
 
-    {%- if settings.predictive_search_enabled -%}
-      <script src="{{ 'predictive-search.js' | asset_url }}" defer="defer"></script>
-    {%- endif -%}
-  </body>
+</head>
+
+<body class="{% if template == 'product.kids' or template == 'product.ksm-66-gummies' or template == "product.mushroom-blend-capsules"  or template == "product.mushroom-blend-powder" %}bg-cream{% endif %} {% if template == 'page.ksm-66' %}custom-{{ page.title }}{% endif %} {% if template == 'page.here-for-reason' %}custom-{{ page.title }}{% endif %} {% if template == 'page.ksm-66-v1-pack-1-3' %}custom-ashwagandha-pack-page{% endif %} {% if template == 'page.ksm-66-v2-pack-3-6' %}custom-ashwagandha-pack-page{% endif %} {% if template == 'page.ksm-66-90-1-3-pack' %}custom-ashwagandha-pack-page{% endif %} {% if template == 'page.ksm-66-90-3-6-pack' %}custom-ashwagandha-pack-page{% endif %} {% if template == 'page.moringa-pack-3-6' or template == 'page.moringa-pack-1-3' or template == 'page.moringa-powder-pack-1-3' or template == 'page.lion-s-mane' or template == 'page.lion-s-mane-lp' or template == 'page.turmeric-s-lp' or template == 'page.moringa-lp' or template == 'page.ashwagandha-landing-page' or template == 'page.lion-s-mane-powder' or template == 'page.moringa-powder-lp' or template == 'page.ashwagandha-powder-lp' or template == 'page.new-lp-2026' %}custom-ashwagandha-pack-page{% endif %} {% if template == 'page.vegan-pack-1-3' or template == 'page.vegan-pack-3-6' %}custom-ashwagandha-vegan-pack-page{% endif %} {% if template == 'page.golden-blend-capsules-1-3' or template == 'page.golden-blend-capsules-3-6' or template == 'page.golden-blend-powder-1-3' %}custom-mushroom-golden-pack-page{% endif %} {% if template == 'blog.lion-s-mane-learn' %}custom-ashwagandha-pack-page{% endif %} {% if template == 'article' %}custom-article-content-wrapper{% endif %} {% if template == 'product.kids' %}custom-ashwagandha-gummies{% endif %} {% if template == 'product.ksm-66-gummies' %}custom-ashwagandha-ksm-66-gummies{% endif %} {% if template == 'index' %}page-index{% endif %} {% if template == 'product' or template == 'product.kids' or template == 'product.ksm-66-gummies' or template == "product.mushroom-blend-capsules" or template == "product.mushroom-blend-powder" %}template-product-wrapper{% endif %} page-{{ page.title }} product-{{ product.handle }} {% if template == "collection"%} site-collection-page {% endif %} {% if template == "page.ashwagandha-kids-teenager"%} site-kids-teen-page{% endif %} {{ collection.handle }} {% if template == 'cart' %}custom-cart-page{% endif %} {% if collection.title == 'Sale' %}sale-collection-page{% endif %} {% if template == 'blog' %}blog-page-wrappper{% endif %} {% if template == 'page.bestashwagandha-suplement' or template == 'page.best-moringa-supplement' or template == 'page.best-ashwagandha-gummies' %}custom-landing-page-wrapper{% endif %} page-{{ page.handle }} {% if page.metafields.custom.add_class != blank %}{{ page.metafields.custom.add_class }}{% endif %}">
+
+  {% comment %} Test Colors: #000000, #00a300, #396fc0, #d60000 {% endcomment %}
+
+  {% comment %}
+    <div style="position:absolute;top:1%;right:1%;background-color:#396fc0;width:15px;height:15px;border-radius:50%;color:white;font-size:14px;font-weight:bold;display:flex;align-items:center;justify-content:center;z-index:1000;"></div>
+
+  {% endcomment %}
+
+
+  {% comment %} BODY: Google Tag Manager (noscript) {% endcomment %}
+  <noscript>
+    <iframe src="https://www.googletagmanager.com/ns.html?id=GTM-TZV8Q9R" height="0" width="0" style="display:none;visibility:hidden"></iframe>
+  </noscript>
+
+  {% comment %} BODY: Sections {% endcomment %}
+  <div id="page" class="site" role="main">
+    {% section 'announcement-bar' %}
+    {% section 'header' %}
+    {% section 'cart-popup' %}
+      <div class="main {% if request.path == '/pages/subscribe' %}bgm{%  endif %}" role="main">
+        {% if request.path == '/policies/privacy-policy' %}
+            {% render 'banner-policy' %}
+            {% section 'main-page' %}
+        {% elsif request.path == '/policies/terms-of-service' %}
+              {% render 'banner-policy' %}
+              {% section 'main-page' %}
+        {% elsif request.path == '/policies/shipping-policy' %}
+                {% render 'banner-policy' %}
+              {% section 'main-page' %}
+        {% elsif request.path == '/policies/refund-policy' %}
+              {% render 'banner-policy' %}
+            {% section 'main-page' %}       
+        {% else %}
+            {{ content_for_layout }}
+        {% endif %}
+      </div>
+    {% section 'footer' %}
+  </div>
+
+  {% comment %} BODY: Dependency & Core Theme Scripts {% endcomment %}
+  {% comment %} Defer Scripts {% endcomment %}
+  <script type="text/javascript" src="{{ 'jquery-3.5.1.min.js' | asset_url }}" defer></script>
+  <script type="text/javascript" src="{{ 'jquery-migrate-3.3.0.min.js' | asset_url }}" defer></script>  
+  <script type="text/javascript" src="{{ 'jquery.matchHeight.js' | asset_url }}" defer></script>
+  {% comment %} DigiFlow Scripts {% endcomment %}
+  <script type="text/javascript" src="{{ "dgf-redirects.js" | asset_url }}" defer></script>
+  <script type="text/lazyload" src="{{ "dgf_rebuy.js" | asset_url }}" defer></script>
+  <script type="text/javascript" src="{{ "dgf_subscription.js" | asset_url }}" defer></script>
+  {% comment %} Local Scripts {% endcomment %}
+  <script type="text/javascript" src="{{ 'bootstrap.min.js' | asset_url }}" defer></script>
+  <script type="text/javascript" src="{{ 'swiper-bundle.min.js' | asset_url }}" defer></script>
+  <script type="text/javascript" src="{{ 'parallax.min.js' | asset_url }}" defer></script>
+  <script type="text/javascript" src="{{ 'gsap.min.js' | asset_url }}" defer></script>
+  <script type="text/javascript" src="{{ 'ScrollTrigger.min.js' | asset_url }}" defer></script>
+  <script type="text/javascript" src="{{ 'aos.min.js' | asset_url }}" defer></script>
+  <script type="text/javascript" src="{{ 'main.js' | asset_url }}" defer></script>
+  {% comment %} LCP, CLS, TBT  Adjust {% endcomment %}
+  <script src="{{ 'tiny-img-link-preloader.js' | asset_url }}" defer></script>
+  {% comment %} BODY: AJAX Cart Logic & Checkout Integration {% endcomment %}
+  <script type="module">
+    import { subscribeToCartAjaxRequests } from '{{ "liquid-ajax-cart-v1.10.3.js" | asset_url }}';
+    subscribeToCartAjaxRequests(( requestState, subscribeToResult ) => {
+      // If the request is 'Add to cart'
+      if ( requestState.requestType === 'add' ) {
+        // Show a pop-up
+        $('.cart-popup').addClass('active');
+        // Define a callback that will be called after the request is finished
+        subscribeToResult( requestState => {
+          // If the request is successful 
+          if ( requestState.responseData?.ok ) {
+            // Find out the name of the product if only one product was added to the cart
+            let productName = requestState.responseData.body.title;
+            if ( requestState.responseData.body.items?.length === 1 ) {
+              productName = requestState.responseData.body.items[0].title;
+            }
+          }
+        });
+      }
+    });
+    import { cartRequestAdd } from '{{ "liquid-ajax-cart-v1.10.3.js" | asset_url }}'
+      try {
+        let subscriptionButton = document.querySelector('.subscription-addtocartMine');     
+        if (subscriptionButton){
+          subscriptionButton.addEventListener('click', function (e) {
+            console.log(e.target.closest('.product-details').querySelector('.selling-plan-id').value);
+            var checkCoupon = $('input[name="coupanMine"]').prop('checked');
+            if(checkCoupon == true){
+              cartRequestAdd({
+                items: [
+                  {
+                    id: e.target.closest('.product-details').querySelector('[name="id"]').value,
+                    selling_plan: e.target.closest('.product-details').querySelector('.selling-plan-id').value,
+                    quantity: e.target.closest('.product-details').querySelector('[name="quantity"]').value,
+                    properties: {
+                      "Coupon": true
+                    }
+                  }
+                ]
+              });
+            }else{
+              cartRequestAdd({
+                items: [
+                  {
+                    id: e.target.closest('.product-details').querySelector('[name="id"]').value,
+                    selling_plan: e.target.closest('.product-details').querySelector('.selling-plan-id').value,
+                    quantity: e.target.closest('.product-details').querySelector('[name="quantity"]').value
+                  }
+                ]
+              });
+            }
+          });          
+        }
+      } catch (error) {
+        null;
+      }
+      $('body').on('click', '.checkoutMine', function(e){
+        e.preventDefault();
+        var couponTrue = false;
+        $.ajax({
+          type: 'GET',
+          url: '/cart.js',
+          dataType: 'json', 
+        success: function (data) {
+          $.each(data.items, function( index, value ) {
+            if(value.properties['Coupon'] == true){
+              couponTrue = true;
+            }
+          });
+        } 
+      });
+        setTimeout(function(){
+          if(couponTrue){
+            window.location.replace('/checkout?discount=FIRSTTIMESUB10');
+          }else{
+            window.location.replace('/checkout');
+          }
+        }, 1000);
+      });
+  </script>
+
+  {% comment %} BODY: Global Localization & Theme Config {% endcomment %}
+  <script>
+    window.shopUrl = '{{ request.origin }}';
+    window.routes = {
+      cart_add_url: '{{ routes.cart_add_url }}',
+      cart_change_url: '{{ routes.cart_change_url }}',
+      cart_update_url: '{{ routes.cart_update_url }}',
+      cart_url: '{{ routes.cart_url }}',
+      predictive_search_url: '{{ routes.predictive_search_url }}'
+    };
+    window.cartStrings = {
+      error: `{{ 'sections.cart.cart_error' | t }}`,
+      quantityError: `{{ 'sections.cart.cart_quantity_error_html' | t: quantity: '[quantity]' }}`
+    }
+    window.variantStrings = {
+      addToCart: `{{ 'products.product.add_to_cart' | t }}`,
+      soldOut: `{{ 'products.product.sold_out' | t }}`,
+      unavailable: `{{ 'products.product.unavailable' | t }}`,
+    }
+    window.accessibilityStrings = {
+      imageAvailable: `{{ 'products.product.media.image_available' | t: index: '[index]' }}`,
+      shareSuccess: `{{ 'general.share.success_message' | t }}`,
+      pauseSlideshow: `{{ 'sections.slideshow.pause_slideshow' | t }}`,
+      playSlideshow: `{{ 'sections.slideshow.play_slideshow' | t }}`,
+    }
+  </script>
+  
+  {% comment %}BODY: App Integrations & SDKs{% endcomment %}
+  <script>
+    const xck=async()=>{let t=sessionStorage.getItem("guardStart");if(null==t)return sessionStorage.setItem("guardStart",Date.now()),!0;if(null!=t){let t=sessionStorage.getItem("guardStart");return t=Number(t),t+=5e3,!(Date.now()<t)&&(sessionStorage.setItem("guardStart",Date.now()),!0)}};
+  </script>
+  {% # theme-check-disable RemoteAsset %}
+  <script 
+    type="text/lazyload" 
+    src="https://zooomyapps.com/wishlist/ZooomyColl.js" 
+    data-shop-id="{{shop.permanent_domain}}" 
+    data-cus-id="{{customer.id}}" 
+    data-cus-email="{{customer.email}}" 
+    data-cus-name="{{customer.first_name}} {{customer.last_name}}" 
+    data-page="{{template}}"
+    defer></script>
+  {% # theme-check-enable RemoteAsset %}
+  {% comment %} Navidium Integration {% endcomment %}
+  {% render 'navidium' %}
+
+  {% comment %}  
+  Shopify: Performance Script {% endcomment %}
+  {% # theme-check-disable RemoteAsset, ParserBlockingScript %}
+  {% # theme-check-enable RemoteAsset, ParserBlockingScript %}
+  <script src="{{ 'custom-1.0.21.js' | asset_url }}" defer></script>
+  {% comment %} BODY: Third-party Scripts {% endcomment %}
+  {% comment %} Klaviyo Scripts {% endcomment %}
+  {% # theme-check-disable RemoteAsset %}
+  <script type="text/lazyload" src="https://a.klaviyo.com/media/js/onsite/onsite.js" defer></script>
+  {% # theme-check-enable RemoteAsset %}
+  <script type="text/lazyload">
+      var klaviyo = klaviyo || [];
+      klaviyo.init({
+        account: "SZdbNB",
+        platform: "shopify"
+      });
+      klaviyo.enable("backinstock",{ 
+      trigger: {
+        product_page_text: "Out of stock | Notify Me When Available",
+        product_page_class: "btn",
+        product_page_text_align: "center",
+        product_page_margin: "0px",
+        replace_anchor: false
+      },
+      modal: {
+      headline: "{product_name}",
+      body_content: "Get notified via email when this product is back in stock.",
+      email_field_label: "Email",
+      button_label: "EMAIL ME WHEN AVAILABLE",
+      subscription_success_label: "You're in! We'll let you know when it's back.",
+      footer_content: '',
+      additional_styles: "@import url('{{ 'klaviyo-bis-modal.css' | asset_url }}');",
+      font_family: 'HypatiaSansPro',
+      drop_background_color: "#000",
+      background_color: "#fff",
+      text_color: "#222",
+      button_text_color: "#fff",
+      button_background_color: "#a7833e",
+      close_button_color: "#ccc",
+      error_background_color: "#fcd6d7",
+      error_text_color: "#C72E2F",
+      success_background_color: "#d3efcd",
+      success_text_color: "#1B9500"
+      }
+    });
+    GloboEmbedFilterConfig.shop.useCustomTemplate = true
+  </script>
+
+  {% comment %} BODY: Third-party Captures {% endcomment %}
+  {%- capture ocu_extend -%}
+    {% render 'oneclickupsellapp-extend' %}
+  {%- endcapture -%}
+  {%- unless ocu_extend contains 'Liquid error' -%}
+    {{ ocu_extend }}
+  {%- endunless -%}
+  {%- capture product_template -%}
+    {% render 'globo.filter.product', themeTranslation: shop.metafields.globoFilter.themeTranslation.value[request.locale.iso_code] %}
+  {%- endcapture -%}
+  {%- unless product_template contains 'Liquid error' -%}
+    <script id="gspfProduct" type="template/html">{{- product_template | replace: "script>", "scripttag>" -}}</script>
+  {%- endunless -%}
+
+  {% comment %} BODY: Render {% endcomment %}
+  {% render 'samita-custom' %}
+
+  {% comment %} BODY: Schema Markup & Footer Performance {% endcomment %}
+  {% render 'dgf-schema' %}
+
+  {% comment %} BODY: DigiFlow Scripts {% endcomment %} 
+  <script src="{{ 'dgf-footer.js' | asset_url }}" defer></script>
+  <script id="dgf-rebuy-fix-image">
+    /* RGD - 2025-12-24 */
+    (function () {
+      // Global variables for timers and observer
+      var obs = null;
+      var idleTimer = null;
+      var hardStopTimer = null;
+      var pollInterval = null;
+      var cartContainer = null;
+      var pollAttempts = 0;
+      var maxPollAttempts = 300; // Max 30 seconds at 100ms intervals to prevent infinite polling
+      // Silent try-catch wrapper function
+      function safe(fn) {
+        try { fn(); } catch (e) {} // Catch errors silently
+      }
+      // Parse dimensions from image src
+      function parseDimsFromSrc(src) {
+        // Improved regex: handles _WIDTHxHEIGHT in filename, various extensions, query params
+        var m = (src || '').match(/_(\d{2,5})x(\d{2,5})(?:\.[a-zA-Z]{2,5})?(?:\?|$|[^0-9])/);
+        if (m && m[1] && m[2]) return { w: m[1], h: m[2] };
+        // Fallback for no extension or mid-string
+        m = (src || '').match(/_(\d{2,5})x(\d{2,5})(?=[^0-9]|$)/);
+        if (m && m[1] && m[2]) return { w: m[1], h: m[2] };
+        return null;
+      }
+      // Set width and height attributes on an image if needed
+      function setDims(img) {
+        safe(function () {
+          if (!img || img.tagName !== 'IMG') return;
+          if (img.hasAttribute('width') && img.hasAttribute('height')) return;
+          // Ensure img is inside #rebuy-cart
+          if (!img.closest('#rebuy-cart')) return;
+          var src = img.getAttribute('src') || '';
+          var dims = parseDimsFromSrc(src);
+          if (!dims) return;
+          img.setAttribute('width', dims.w);
+          img.setAttribute('height', dims.h);
+        });
+      }
+      // Scan for images in the given root and set dimensions
+      function scan(root) {
+        safe(function () {
+          var ctx = root && root.querySelectorAll ? root : cartContainer;
+          if (!ctx) return;
+          var imgs = ctx.querySelectorAll('img:not([width]):not([height])');
+          for (var i = 0; i < imgs.length; i++) setDims(imgs[i]);
+        });
+      }
+      // Disconnect all timers and observer
+      function disconnect() {
+        safe(function () {
+          if (idleTimer) { clearTimeout(idleTimer); idleTimer = null; }
+          if (hardStopTimer) { clearTimeout(hardStopTimer); hardStopTimer = null; }
+          if (pollInterval) { clearInterval(pollInterval); pollInterval = null; }
+          if (obs) { obs.disconnect(); obs = null; }
+        });
+      }
+      // Reset idle timer for disconnection
+      function resetIdleDisconnect() {
+        safe(function () {
+          if (idleTimer) clearTimeout(idleTimer);
+          idleTimer = setTimeout(disconnect, 1000); // Reduced to 1s
+        });
+      }
+      // Initialize MutationObserver on cart container
+      function initObserver() {
+        safe(function () {
+          // Hard stop after 10s max
+          hardStopTimer = setTimeout(disconnect, 10000);
+          obs = new MutationObserver(function (mutations) {
+            safe(function () { // Wrap observer callback in safe
+              for (var i = 0; i < mutations.length; i++) {
+                var m = mutations[i];
+                // Attribute changes (e.g., src updated)
+                if (m.type === 'attributes' && m.target && m.target.tagName === 'IMG') {
+                  setDims(m.target);
+                  continue;
+                }
+                // Added nodes
+                if (m.addedNodes && m.addedNodes.length) {
+                  for (var j = 0; j < m.addedNodes.length; j++) {
+                    var node = m.addedNodes[j];
+                    if (!node || node.nodeType !== 1) continue;
+                    if (node.tagName === 'IMG') setDims(node);
+                    else scan(node);
+                  }
+                }
+              }
+              resetIdleDisconnect();
+            });
+          });
+          // Observe only #rebuy-cart subtree
+          obs.observe(cartContainer, {
+            childList: true,
+            subtree: true,
+            attributes: true,
+            attributeFilter: ['src']
+          });
+          resetIdleDisconnect();
+        });
+      }
+      safe(function () {
+        // Poll for #rebuy-cart every 100ms until it appears or max attempts reached
+        pollInterval = setInterval(function () {
+          safe(function () { // Wrap polling callback in safe
+            pollAttempts++;
+            cartContainer = document.querySelector('#rebuy-cart');
+            if (cartContainer) {
+              clearInterval(pollInterval);
+              pollInterval = null;
+              // Initial scan only inside #rebuy-cart
+              scan(cartContainer);
+              // Start observing changes inside it
+              initObserver();
+            } else if (pollAttempts >= maxPollAttempts) {
+              // Stop polling after max attempts to prevent infinite loop
+              clearInterval(pollInterval);
+              pollInterval = null;
+            }
+          });
+        }, 100);
+      });
+    })();
+  </script>
+  <script>
+    /*
+    function perfObserver(list, observer) {
+      list.getEntries().forEach((entry) => {
+        if (entry.entryType === "mark") {
+          console.log(`${entry.name}'s startTime: ${entry.startTime}`);
+        }
+        if (entry.entryType === "measure") {
+          console.log(`${entry.name}'s duration: ${entry.duration}`);
+        }
+      });
+    }
+    const dgfObserver = new PerformanceObserver(perfObserver);
+    dgfObserver.observe({ entryTypes: ["measure", "mark"] });
+    */
+  </script>
+</body>
 </html>

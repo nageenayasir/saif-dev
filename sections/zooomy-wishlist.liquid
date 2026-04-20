@@ -1,0 +1,22 @@
+<section class="section-banner section-title section-form bg-line-02 wishlist-page-wrapper">
+  <div class="leaf-box right-top">
+      <img loading="lazy" class="leaf" src="{{ 'leaf-n02.svg' | asset_url }}">
+  </div>
+  <div class="content">
+      <div class="container">
+          <h1 class="text-uppercase" data-aos="fade-up">{{ page.title | escape }}</h1>
+          {{page.content}} <div  id='ZoomyWishlistPage'></div><script src='https://zooomyapps.com/wishlist/ListWishlist.js' data-shop-id='{{shop.permanent_domain}}' data-customer-id='{{customer.id}}' data-customer-email='{{customer.email}}' ></script>
+
+      </div>
+  </div>
+</section>
+{% schema %}
+{
+  "name": "t:sections.zooomy-wishlist.name",
+  "tag": "section",
+  "class": "section",
+  "settings": [
+    
+  ]
+}
+{% endschema %}

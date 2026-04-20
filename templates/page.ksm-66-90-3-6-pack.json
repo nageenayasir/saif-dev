@@ -1,0 +1,696 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+ {
+  "sections": {
+    "main": {
+      "type": "main-page",
+      "disabled": true,
+      "settings": {}
+    },
+    "ashwagandha_pack_top_icons_pMnDGa": {
+      "type": "ashwagandha-pack-top-icons",
+      "settings": {
+        "section_bg_color": "#06211e",
+        "site_logo_image": "shopify://shop_images/TO_018_SecondayLogoWhite_TransparentHigh_ef4bdeec-9528-4fe8-872b-fee8fbfaeb24.png",
+        "logo_image_1": "shopify://shop_images/USDA_1_ea5c100a-3162-429c-977a-344b4967c315.svg",
+        "logo_image_2": "shopify://shop_images/gluten_free_1_cd270fff-afcc-4862-b8b5-e3b6765e1761.svg",
+        "logo_image_3": "shopify://shop_images/NON_GMO_02a93949-ac36-47a8-8e5a-442d6f75a219.svg",
+        "logo_image_4": "shopify://shop_images/Icon_white.svg"
+      }
+    },
+    "ashwagandha_pack_offer_section_AgMYet": {
+      "type": "ashwagandha-pack-offer-section",
+      "blocks": {
+        "tex_blocks_pPFh8T": {
+          "type": "tex_blocks",
+          "settings": {
+            "the_text": "Made with KSM-66<em>®</em>, the most extensively researched Ashwagandha root extract, evaluated in 24 published \"Gold Standard\" human clinical trials."
+          }
+        },
+        "tex_blocks_wGBhKK": {
+          "type": "tex_blocks",
+          "settings": {
+            "the_text": "High-potency, full-spectrum extract: verified to be 10X stronger than regular Ashwagandha powder, ensuring maximum efficacy."
+          }
+        },
+        "tex_blocks_MXywRi": {
+          "type": "tex_blocks",
+          "settings": {
+            "the_text": "Certified USDA organic, Non-GMO Verified, Gluten-free and Kosher certified."
+          }
+        },
+        "tex_blocks_d6GJYT": {
+          "type": "tex_blocks",
+          "settings": {
+            "the_text": "Rigorous testing for quality assurance: every ingredient and finished product is meticulously tested to ensure purity, safety, potency, and efficacy."
+          }
+        },
+        "tex_blocks_pANyW9": {
+          "type": "tex_blocks",
+          "settings": {
+            "the_text": "Manufactured in the USA in a pharma-grade facility and adhere to cGMP guidelines regulated by the FDA."
+          }
+        }
+      },
+      "block_order": [
+        "tex_blocks_pPFh8T",
+        "tex_blocks_wGBhKK",
+        "tex_blocks_MXywRi",
+        "tex_blocks_d6GJYT",
+        "tex_blocks_pANyW9"
+      ],
+      "settings": {
+        "section_bg_color": "#faeee9",
+        "the_title": "DO YOU FEEL STRESS AND ANXIETY?",
+        "the_title_2": "GET <span>35% OFF </span>TODAY on OUR gold standard KSM-66® Ashwagandha",
+        "the_image_1": "shopify://shop_images/Image_4.jpg",
+        "the_image_2": "shopify://shop_images/2_23c908aa-8cb7-4497-bf7e-bd0c1ec8da00.jpg",
+        "right_title": "Restore your balance and feel your best with 100% pure and potent Ashwagandha KSM-66® that simply works.  \n<span>Why choose our Ashwagandha KSM-66?</span>",
+        "btn_text": "GET 35% OFF",
+        "the_url": "#ashwagandha-product-packs",
+        "the_icon": "shopify://shop_images/No_questions_asked_30-day_money-back_guarantee_1.png",
+        "btn_under_text": "No questions asked, 30-day Money-Back Guarantee "
+      }
+    },
+    "ashwagandha_pack_core_benefits_gDHAcP": {
+      "type": "ashwagandha-pack-core-benefits",
+      "blocks": {
+        "content_Mf8HP3": {
+          "type": "content",
+          "settings": {
+            "the_title": "FOCUS & CLARITY*",
+            "the_icon": "shopify://shop_images/FOCUS_CLARITY.svg"
+          }
+        },
+        "content_4tfUtT": {
+          "type": "content",
+          "settings": {
+            "the_title": "STAMINA & ENDURANCE*",
+            "the_icon": "shopify://shop_images/STAMINA_ENDURANCE.svg"
+          }
+        },
+        "content_gkCptw": {
+          "type": "content",
+          "settings": {
+            "the_title": "IMPROVED SLEEP QUALITY*",
+            "the_icon": "shopify://shop_images/IMPROVED_SLEEP_QUALITY.svg"
+          }
+        },
+        "content_7HzwtH": {
+          "type": "content",
+          "settings": {
+            "the_title": "BOOST ENERGY*",
+            "the_icon": "shopify://shop_images/BOOST_ENERGY.svg"
+          }
+        },
+        "content_TfgDqt": {
+          "type": "content",
+          "settings": {
+            "the_title": "IMPROVED MOOD*",
+            "the_icon": "shopify://shop_images/IMPROVED_MOOD.svg"
+          }
+        },
+        "content_jVxGry": {
+          "type": "content",
+          "settings": {
+            "the_title": "REDUCE STRESS & ANXIETY*",
+            "the_icon": "shopify://shop_images/REDUCE_STRESS_ANXIETY.svg"
+          }
+        }
+      },
+      "block_order": [
+        "content_Mf8HP3",
+        "content_4tfUtT",
+        "content_gkCptw",
+        "content_7HzwtH",
+        "content_TfgDqt",
+        "content_jVxGry"
+      ],
+      "settings": {
+        "section_bg_color": "#f3d9cf",
+        "the_title": "CORE BENEFITS OF ASHWAGANDHA",
+        "the_text": "Ashwagandha – helps create a state of “balance” or “homeostasis” between the mind and the body."
+      }
+    },
+    "ashwagandha_pack_reviews_mTCEB8": {
+      "type": "ashwagandha-pack-reviews",
+      "blocks": {
+        "content_hhWweC": {
+          "type": "content",
+          "settings": {
+            "the_text": "<p>“I take two capsules daily and <strong>they make me feel GREAT! The product does exactly what it says it does.</strong> I would recommend having it on a subscription just to make sure you don’t miss a dose. <strong>I feel more energetic, less stressed, and less emotional. </strong>Perfect product, I will be buying it again.</p><p><strong>-Brandon Walsh</strong></p>"
+          }
+        },
+        "content_Kpg8TW": {
+          "type": "content",
+          "settings": {
+            "the_text": "<p>Yes! <strong>This truly works!</strong> I have been taking it for a little over a week and I already feel an improvement. I feel my anxiety levels are way down! My insomnia is nearly nonexistent! <strong>I couldn't be happier.</strong> I will definitely keep ordering these! If you have trouble sleeping or with anxiety this is the answer! Thank you Tribe for making it affordable to all.”</p><p>-<strong>Devin </strong></p>"
+          }
+        },
+        "content_UerEJb": {
+          "type": "content",
+          "settings": {
+            "the_text": "<p>“<strong>I feel more energetic, less stressed,</strong> and less emotional, perfect product.” </p><p>-<strong>Patricia </strong></p>"
+          }
+        },
+        "content_CmXnwU": {
+          "type": "content",
+          "settings": {
+            "the_text": "<p>“I’ve only been taking Ashwagandha for about 10 days and <strong>I’m feeling more clarity along with increased energy</strong>. To appreciate the full, positive effects I will continue to use it for the full 90 days.” </p><p>-<strong>Kate </strong></p>"
+          }
+        },
+        "content_6kjEM3": {
+          "type": "content",
+          "settings": {
+            "the_text": "<p>“A few weeks ago, I started taking it for sleep. I take two before bed and most nights, I sleep through the whole night. <strong>This is so good</strong> that I have been gradually decreasing the dosage of the prescription medication that I have been taking to sleep. I also notice that <strong>I am feeling calmer throughout the day</strong> even though I am taking it only at night now.” </p><p>-<strong>Jane </strong></p>"
+          }
+        },
+        "content_kaXD8X": {
+          "type": "content",
+          "settings": {
+            "the_text": "<p>“I've taken ashwagandha on and off for some time and <strong>this KSM-66 version is great.</strong> As of right now, I don't have any complaints and I'm almost done with my first bottle. <strong>What I've noticed the most is my sleep improvement with this supplement along with some other positive benefits.</strong></p><p><strong>-Arthur</strong></p>"
+          }
+        },
+        "content_bH9VFY": {
+          "type": "content",
+          "settings": {
+            "the_text": "<p>“These capsules deliver on the hype. I am almost done with my first batch and <strong>I notice a difference between KSM-66 ashwagandha and others,</strong> less potent mixes. <br/>In terms of actual effects, I feel relief from social anxiety. I speak up more in class and can defend myself when questioned by professors. Only once have I felt that it made me groggy/lazy.” </p><p>-<strong>Henry Graves </strong></p>"
+          }
+        },
+        "content_eT8MXC": {
+          "type": "content",
+          "settings": {
+            "the_text": "<p>“Life changing! Taking these pills has helped my mood tremendously. I do notice a difference if I don't take them. I highly recommend it!”</p><p>-<strong>Jae Solo </strong></p>"
+          }
+        },
+        "content_dEaCMm": {
+          "type": "content",
+          "settings": {
+            "the_text": "<p><strong>This product is amazing. My stress level is practically next to nothing. I sleep better than I ever have in my entire life.</strong> My hair stopped shedding and my TSH (thyroid stimulating hormone) of 5.85 went down to 5.15 in less than 3 months. I am thrilled! <strong>I will take this for the rest of my life. No side effects.</strong></p><p><strong>-Jodi B</strong><br/><br/></p>"
+          }
+        },
+        "content_V3FiVp": {
+          "type": "content",
+          "settings": {
+            "the_text": "<p>“<strong>I took this for 3 weeks and I just felt awesome</strong>. I stopped for a few days and I really noticed the difference. I’m back on it and will buy more !!”</p><p><strong>-Mike</strong></p>"
+          }
+        },
+        "content_EGcPzn": {
+          "type": "content",
+          "settings": {
+            "the_text": "<p>“Amazing quality! I have anxiety about anything you can think of, and I wanted to see if these would help me be more relaxed! They work amazingly and will continue to purchase them! </p><p>-<strong>Christoph Rieck </strong></p>"
+          }
+        },
+        "content_gJerF6": {
+          "type": "content",
+          "settings": {
+            "the_text": "<p>“Better sleep, reduced anxiety, and improved muscle strength. <strong>Happy with the product quality </strong>and the fact it is sustainably sourced.”</p><p><strong>-Baker</strong></p>"
+          }
+        },
+        "content_3r4enj": {
+          "type": "content",
+          "settings": {
+            "the_text": "<p>\"It works pretty well, great natural testosterone booster!\"</p><p><strong>-Michael</strong></p>"
+          }
+        },
+        "content_eB3xy8": {
+          "type": "content",
+          "settings": {
+            "the_text": "<p>“Definitely helps with alleviating symptoms of stress like loss of and inconsistency of sleep. <strong>Before taking this supplement, I was only getting 2 or 3 hours of broken sleep at night.</strong> After using this supplement for two weeks: If I am not stressed I sleep for a good 7-8 hours. When I am very stressed I can fall asleep and stay asleep for 4-5 hours at a time with no break in between. <strong>So definite improvement....Thumbs up for me!</strong>”</p><p><strong>-Gabriel</strong></p>"
+          }
+        },
+        "content_mpKcCe": {
+          "type": "content",
+          "settings": {
+            "the_text": "<p>“<strong>This Ashwagandha formulation had a better effect of deepening my sleep than any other supplement I have tried. </strong>My sleep is less interrupted and more restful. I also noticed feeling significantly less prone to stress and/or anxiety. <strong>If you are a type 1 personality like I am, this brings wonderful help and relief. </strong>I will be happily staying on it for the foreseeable future! Thank you!”</p><p><strong>-Albert</strong></p>"
+          }
+        },
+        "content_dMecTC": {
+          "type": "content",
+          "settings": {
+            "the_text": "<p>\"I’ve bought so many different brands in the past and this is definitely one of the best I’ve used. <strong>I have ADHD and it really helps with my mental clarity and overall anxiousness.</strong> It helps me sleep too!\"</p><p><strong>-Ashley</strong></p>"
+          }
+        },
+        "content_yVNJ4g": {
+          "type": "content",
+          "settings": {
+            "the_text": "<p>“So good and noticeable strength increase after a week”</p><p><strong>-Jackson Green</strong></p>"
+          }
+        },
+        "content_XHqRfP": {
+          "type": "content",
+          "settings": {
+            "the_text": "<p>“Best ashwaganda I’ve found. Really potent. Could actually feel the effects immediately and they were feelings of positive clean energy and a general mood improvement”</p><p><strong>-Justin Garcia</strong></p>"
+          }
+        },
+        "content_V7yp8A": {
+          "type": "content",
+          "settings": {
+            "the_text": "<p>“Bang for your buck! I love this brand and the seller! We have been taking these for about 2 months now and we can all feel the difference. I highly recommend it!”</p><p><strong>-Tricia Chisholm</strong></p>"
+          }
+        },
+        "content_xAJRXj": {
+          "type": "content",
+          "settings": {
+            "the_text": "<p>\"After taking this product for 30 days I noticed an increase in my libido and energy. <strong>My confidence increased and my anxiety decreased. </strong>I started with 2 caps in the AM then 14 days in I was taking 2 caps in the AM and 2 in the PM and that is when I felt the most “alpha” feeling. Overall an awesome product!\"</p><p><strong>-Alan</strong></p>"
+          }
+        },
+        "content_j7NrAC": {
+          "type": "content",
+          "settings": {
+            "the_text": "<p>“This product works wonders. Any time I’m not taking this I sweat in my sleep and wake up overnight. With these, I sleep through the night and don’t sweat at all. I also notice reduced anxiety as a plus!”</p><p><strong>-Conner</strong></p>"
+          }
+        },
+        "content_PQ7gxb": {
+          "type": "content",
+          "settings": {
+            "the_text": "<p>“This has been the best Ashwagandha supplement I have taken so far. I have tried several brands.<strong> I like to dissolve the content of the capsules in my morning Protein Shake and these work beautifully for that.</strong> This works very well to help with my daytime anxiety issues and helps me maintain my energy as well. Sleep is improved also.”</p><p><strong>-Jay M</strong></p>"
+          }
+        },
+        "content_HFkULY": {
+          "type": "content",
+          "settings": {
+            "the_text": "<p>“My PMS is better when I take these and my periods have become more regular. I find I sleep a little better too. It’s not a miracle drug but seems to have positive effects without any stomach problems.”</p><p><strong>-Denisse</strong></p>"
+          }
+        },
+        "content_iagi7E": {
+          "type": "content",
+          "settings": {
+            "the_text": "<p>“Tribe Organics supplements are of the highest quality. I have purchased several different types of supplements from Tribe Organics and am more than happy with their overall quality. You can feel the difference which speaks the greatest volume to me personally. I am a big fan and will be a long-term customer for many years to come. Be happy, healthy, safe and well.”</p><p><strong>-Frane Sosic</strong></p>"
+          }
+        },
+        "content_T7FzHx": {
+          "type": "content",
+          "settings": {
+            "the_text": "<p>\"Great for getting a full night of sleep. I would normally be wide awake just 4 hours after going t osleep. This has extended it to 6-7 hours by making it easier for me to get back to sleep when I wake up too early.\"</p><p><strong>-Nataly</strong></p>"
+          }
+        },
+        "content_GCgRa9": {
+          "type": "content",
+          "settings": {
+            "the_text": "<p>“This product is a game changer. It does not make me sleepy but it does help with mood and focus. Stress eating is down, and positivity is up. If you need a shovel to get out of the funk, pick this up.”</p><p>-<strong>Zainab </strong></p>"
+          }
+        }
+      },
+      "block_order": [
+        "content_hhWweC",
+        "content_Kpg8TW",
+        "content_UerEJb",
+        "content_CmXnwU",
+        "content_6kjEM3",
+        "content_kaXD8X",
+        "content_bH9VFY",
+        "content_eT8MXC",
+        "content_dEaCMm",
+        "content_V3FiVp",
+        "content_EGcPzn",
+        "content_gJerF6",
+        "content_3r4enj",
+        "content_eB3xy8",
+        "content_mpKcCe",
+        "content_dMecTC",
+        "content_yVNJ4g",
+        "content_XHqRfP",
+        "content_V7yp8A",
+        "content_xAJRXj",
+        "content_j7NrAC",
+        "content_PQ7gxb",
+        "content_HFkULY",
+        "content_iagi7E",
+        "content_T7FzHx",
+        "content_GCgRa9"
+      ],
+      "settings": {
+        "section_bg_color": "#f3d9cf",
+        "title": "<span>More than</span> 2,500 verified reviews"
+      }
+    },
+    "ashwagandha_pack_image_gallery_qD9q6M": {
+      "type": "ashwagandha-pack-image-gallery",
+      "blocks": {
+        "image_blocks_Lz9qr9": {
+          "type": "image_blocks",
+          "settings": {
+            "the_image": "shopify://shop_images/1_08af952c-8da2-4c24-bf74-06e861d917dd.jpg"
+          }
+        },
+        "image_blocks_drQAFk": {
+          "type": "image_blocks",
+          "settings": {
+            "the_image": "shopify://shop_images/2_2e83a774-8a53-4a3f-a1e5-405d7595a58e.jpg"
+          }
+        },
+        "image_blocks_AhUhm8": {
+          "type": "image_blocks",
+          "settings": {
+            "the_image": "shopify://shop_images/3_615e2681-3df1-4458-9cbb-6943104d2897.jpg"
+          }
+        },
+        "image_blocks_DT4Gfm": {
+          "type": "image_blocks",
+          "settings": {
+            "the_image": "shopify://shop_images/4_47da92c6-e002-49f6-b1e2-13b7f10c0445.jpg"
+          }
+        },
+        "image_blocks_pULB9q": {
+          "type": "image_blocks",
+          "settings": {
+            "the_image": "shopify://shop_images/5_c3c9512c-195c-41cb-ab4d-642d43992711.jpg"
+          }
+        },
+        "image_blocks_FjfLt7": {
+          "type": "image_blocks",
+          "settings": {
+            "the_image": "shopify://shop_images/6_fa635147-5d4f-443a-a933-5c888fa9f805.jpg"
+          }
+        },
+        "image_blocks_gNwxxz": {
+          "type": "image_blocks",
+          "settings": {
+            "the_image": "shopify://shop_images/7_1660d951-4534-439d-a4f8-4dc5bc9bad16.jpg"
+          }
+        },
+        "image_blocks_RzrtLX": {
+          "type": "image_blocks",
+          "settings": {
+            "the_image": "shopify://shop_images/Gallery_image_1.jpg"
+          }
+        }
+      },
+      "block_order": [
+        "image_blocks_Lz9qr9",
+        "image_blocks_drQAFk",
+        "image_blocks_AhUhm8",
+        "image_blocks_DT4Gfm",
+        "image_blocks_pULB9q",
+        "image_blocks_FjfLt7",
+        "image_blocks_gNwxxz",
+        "image_blocks_RzrtLX"
+      ],
+      "settings": {
+        "section_bg_color": "#faeee9",
+        "title": "10,000+ people worldwide love OUR Ashwagandha KSM-66!"
+      }
+    },
+    "ashwagandha_pack_video_reviews_fkqbq6": {
+      "type": "ashwagandha-pack-video-reviews",
+      "blocks": {
+        "video_reviews_NUhjY9": {
+          "type": "video_reviews",
+          "settings": {
+            "video_poster": "shopify://shop_images/181415f8-429e-4383-ad7f-e89a68daa530_000.jpg",
+            "bg_video": "https://cdn.shopify.com/videos/c/o/v/37f032854d58401ebedc3feeaa28e0fa.mp4"
+          }
+        },
+        "video_reviews_VmmVcY": {
+          "type": "video_reviews",
+          "settings": {
+            "video_poster": "shopify://shop_images/download_2.png",
+            "bg_video": "https://cdn.shopify.com/videos/c/o/v/9e117391bb21487a944c83661ee13e86.mp4"
+          }
+        },
+        "video_reviews_FLWdxg": {
+          "type": "video_reviews",
+          "settings": {
+            "video_poster": "shopify://shop_images/download_3.png",
+            "bg_video": "https://cdn.shopify.com/videos/c/o/v/d7593aaebb2140c1ad2a12db062c1c28.mp4"
+          }
+        }
+      },
+      "block_order": [
+        "video_reviews_NUhjY9",
+        "video_reviews_VmmVcY",
+        "video_reviews_FLWdxg"
+      ],
+      "settings": {
+        "section_bg_color": "#f3d9cf"
+      }
+    },
+    "ashwagandha_pack_benefits_QgLdBB": {
+      "type": "ashwagandha-pack-benefits",
+      "blocks": {
+        "tex_blocks_kHkqRi": {
+          "type": "tex_blocks",
+          "settings": {
+            "the_text": "<h3>Find and maintain your inner calm</h3><p>Ashwagandha improves your body’s resilience to stress by supporting your adrenals and balancing cortisol levels — so you perform at your best even during demanding situations 🧘🏼 </p>"
+          }
+        },
+        "tex_blocks_rfTCBn": {
+          "type": "tex_blocks",
+          "settings": {
+            "the_text": "<h3>Sustained energy and sharp daytime focus</h3><p>Enjoy a smooth, clean flow of energy and mental clarity without jitters or crashes. So you can seize more of the day, every day.</p>"
+          }
+        },
+        "tex_blocks_Lr8WeA": {
+          "type": "tex_blocks",
+          "settings": {
+            "the_text": "<h3>Relax and slide into a deep, restful sleep</h3><p>Feel the day's stresses melt away as Ashwagandha works its soothing magic on your nervous system. The perfect evening routine that’ll summon restorative ZZZs 😴</p>"
+          }
+        },
+        "tex_blocks_RpArnM": {
+          "type": "tex_blocks",
+          "settings": {
+            "the_text": "<h3>Push harder for longer </h3><p>Get the most out of your workout sessions with Ashwagandha’s endurance-enhancing properties. FYI, you may also enjoy a performance boost in the bedroom 😉</p>"
+          }
+        }
+      },
+      "block_order": [
+        "tex_blocks_kHkqRi",
+        "tex_blocks_rfTCBn",
+        "tex_blocks_Lr8WeA",
+        "tex_blocks_RpArnM"
+      ],
+      "settings": {
+        "section_bg_color": "#faeee9",
+        "title": "Ashwagandha Benefits",
+        "btn_text": "GET 35% OFF now",
+        "the_url": "#ashwagandha-product-packs"
+      }
+    },
+    "ashwagandha_pack_product_info_ii9Gai": {
+      "type": "ashwagandha-pack-product-info",
+      "settings": {
+        "section_bg_color": "#faeee9",
+        "the_image": "shopify://shop_images/Product_image_9bc4d12e-370c-4237-863b-18ba7d476ec6.png",
+        "the_title": "KSM-66® Ashwagandha",
+        "the_logo": "shopify://shop_images/KSM_logo.png",
+        "the_text": "<p>It’s believed that the Ashwagandha root is the main medicinal component of the plant.</p><p>That’s why our formulation features KSM-66<em>®</em> Ashwagandha — the highest concentration full-spectrum root-only extract available today. KSM-66<em>®</em> Ashwagandha is also one of the most well-researched forms of Ashwagandha extract. </p><p>Potency, backed by research — so you know you enjoy the full, unadulterated adaptogenic benefits of Ashwagandha. As nature intended.</p>"
+      }
+    },
+    "ashwagandha_pack_roots_qG4VUQ": {
+      "type": "ashwagandha-pack-roots",
+      "settings": {
+        "section_bg_color": "#faeee9",
+        "the_title": "ROOT ONLY, NO ADULTERATION",
+        "the_image_1": "shopify://shop_images/Ashwagandha_Listing_Silvana.png",
+        "the_image_2": "shopify://shop_images/NO_LEAVES.png"
+      }
+    },
+    "ashwagandha_pack_custom_text_gPWqhq": {
+      "type": "ashwagandha-pack-custom-text",
+      "blocks": {
+        "content_x4cVzW": {
+          "type": "content",
+          "settings": {
+            "the_title": "Clinically Effective Dose",
+            "the_text": "<p>Studies show that Ashwagandha is most effective in doses between 300 to 600 mg. </p><p>To deliver maximum results, each serving of Ashwagandha KSM-66 delivers a whooping 600 mg of Ashwagandha extract — right at the top end of the range. </p><p>Potency, backed by research — so you know you enjoy the full, unadulterated adaptogenic benefits of Ashwagandha. As nature intended.</p>"
+          }
+        },
+        "content_jx8Upn": {
+          "type": "content",
+          "settings": {
+            "the_title": "USDA-Certified Organic",
+            "the_text": "<p>Our Ashwagandha KSM-66 is USDA-certified organic and Non-GMO</p><p>In other words, you can be confident that it’s free of toxins, pesticides, herbicides, and chemicals that can harm your body and the environment.</p><p>Speaking of protecting the environment, KSM-66<em>®</em> Ashwagandha is produced based on “Green Chemistry” principles, without alcohol or any other chemical solvents. This process took 14 years of R&D to develop and refine.</p>"
+          }
+        },
+        "content_rgR9dX": {
+          "type": "content",
+          "settings": {
+            "the_title": "Third-Party Tested",
+            "the_text": "<p>Ashwagandha KSM-66 leads the industry for quality, purity, safety, efficacy, and sustainability. </p><p>But you shouldn’t just take our word for it. </p><p>Every batch of Ashwagandha KSM-66 undergoes rigorous third-party lab testing — and because we believe in full transparency, we publish our lab results (i.e., Certificate of Analysis or CoA) on our website. <a href=\"/pages/impact-sustainability\" title=\"Impact & Sustainability\">Go ahead, check it out for yourself.</a></p>"
+          }
+        }
+      },
+      "block_order": [
+        "content_x4cVzW",
+        "content_jx8Upn",
+        "content_rgR9dX"
+      ],
+      "settings": {
+        "section_bg_color": "#faeee9"
+      }
+    },
+    "ashwagandha_product_packs_mcWPwL": {
+      "type": "ashwagandha-product-packs",
+      "blocks": {
+        "product_list_XWTQin": {
+          "type": "product_list",
+          "settings": {
+            "badge_title": "MOST POPULAR | SAVE 25%",
+            "the_title": "3-Pack",
+            "the_text": "270 Capsules | 3 Months Supply | 135 Servings",
+            "product_image": "shopify://shop_images/3-pack_1_dbf045f6-148e-4194-8468-2780fd5e39a4.png",
+            "product_title": "3 BOTTLES OF ASHWAGANDHA",
+            "reviews_count": "200 reviews",
+            "regular_price": "<p>$106.71</p>",
+            "compare_price": "<p><strong>$80.03</strong></p>",
+            "button_text": "BUY NOW - 25% OFF",
+            "button_link": "https://www.tribe-organics.com/cart/46016395247839:1?checkout",
+            "the_icon": "shopify://shop_images/Free_US_shipping_over_75_with_code_FREESHIP75_1.png",
+            "btn_under_text": "FREE SHIPPING on orders over $75, no code needed.",
+            "icon_1": "shopify://shop_images/USDA_1_ea5c100a-3162-429c-977a-344b4967c315.svg",
+            "icon_2": "shopify://shop_images/gluten_free_1_cd270fff-afcc-4862-b8b5-e3b6765e1761.svg",
+            "icon_3": "shopify://shop_images/NON_GMO_02a93949-ac36-47a8-8e5a-442d6f75a219.svg",
+            "icon_4": "shopify://shop_images/Icon_Black.svg"
+          }
+        },
+        "product_list_XYHaPK": {
+          "type": "product_list",
+          "settings": {
+            "badge_title": "BEST VALUE | SAVE 35%",
+            "the_title": "6-Pack",
+            "the_text": "540 Capsules |6 months Supply | 270 Servings",
+            "product_image": "shopify://shop_images/6-pack_1_731169ea-c2a0-4ccc-bd19-a7b337d282ca.png",
+            "product_title": "6 BOTTLES OF ASHWAGANDHA",
+            "reviews_count": "200 reviews",
+            "regular_price": "<p>$209.82</p>",
+            "compare_price": "<p><strong>$136.38</strong></p>",
+            "button_text": "BUY NOW - 35% OFF",
+            "button_link": "https://www.tribe-organics.com/cart/46016420053215:1?checkout",
+            "the_icon": "shopify://shop_images/Free_US_shipping_over_75_with_code_FREESHIP75_1.png",
+            "btn_under_text": "FREE SHIPPING on orders over $75, no code needed.",
+            "icon_1": "shopify://shop_images/USDA_1_ea5c100a-3162-429c-977a-344b4967c315.svg",
+            "icon_2": "shopify://shop_images/gluten_free_1_cd270fff-afcc-4862-b8b5-e3b6765e1761.svg",
+            "icon_3": "shopify://shop_images/NON_GMO_02a93949-ac36-47a8-8e5a-442d6f75a219.svg",
+            "icon_4": "shopify://shop_images/Icon_Black.svg"
+          }
+        }
+      },
+      "block_order": [
+        "product_list_XWTQin",
+        "product_list_XYHaPK"
+      ],
+      "settings": {
+        "section_bg_color": "#f3d9cf",
+        "the_title": "",
+        "the_text": "",
+        "limited_title": "Today, for a limited time only …",
+        "off_title": "It’s yours at <span>35% OFF</span>",
+        "cstm_text": "Restore balance and feel your best for less than 30 cents per day!",
+        "guarantee_img": "shopify://shop_images/SAFE_CHECKOUT_BADGES.png"
+      }
+    },
+    "ashwagandha_pack_certified_aWgzVU": {
+      "type": "ashwagandha-pack-certified",
+      "settings": {
+        "section_bg_color": "#07211f",
+        "the_title": "CONNECTING PEOPLE, PLANTS AND THE PLANET",
+        "the_image": "shopify://shop_images/Image_c477f7ab-c5db-4ef5-85dd-a86d3d96853d.jpg",
+        "the_text": "<p>We're proud to be a Certified B Corp<strong>TM</strong></p><p>This means that our company meets the highest standards of social and environmental impact, transparency, and accountability.</p>",
+        "the_logo": "shopify://shop_images/Certified.svg"
+      }
+    },
+    "tribe_difference_section_C3czqP": {
+      "type": "tribe-difference-section",
+      "blocks": {
+        "three_blocks_tHiV44": {
+          "type": "three_blocks",
+          "settings": {
+            "leaf_image": "shopify://shop_images/White_leaft_bullet.png",
+            "list_text_1": "Science-backed",
+            "list_text_2": "Superior potency",
+            "list_text_3": "Standardized extracts",
+            "list_text_4": "100% fruiting bodies",
+            "list_text_5": "Ethically sourced",
+            "list_text_6": "",
+            "list_text_7": ""
+          }
+        },
+        "three_blocks_fYhNkB": {
+          "type": "three_blocks",
+          "settings": {
+            "leaf_image": "shopify://shop_images/White_leaft_bullet.png",
+            "list_text_1": "Non-GMO verified",
+            "list_text_2": "USDA Organic certified",
+            "list_text_3": "Gluten free",
+            "list_text_4": "Allergen free",
+            "list_text_5": "3rd party tested",
+            "list_text_6": "cGMP",
+            "list_text_7": "Made in the USA"
+          }
+        },
+        "three_blocks_9RjEHk": {
+          "type": "three_blocks",
+          "settings": {
+            "leaf_image": "shopify://shop_images/White_leaft_bullet.png",
+            "list_text_1": "No synthetic fillers",
+            "list_text_2": "No excipients",
+            "list_text_3": "No harmful additives",
+            "list_text_4": "No mycellium",
+            "list_text_5": "No artificial anything",
+            "list_text_6": "",
+            "list_text_7": ""
+          }
+        }
+      },
+      "block_order": [
+        "three_blocks_tHiV44",
+        "three_blocks_fYhNkB",
+        "three_blocks_9RjEHk"
+      ],
+      "settings": {
+        "add_class": "ashwagandha-tribe-difference",
+        "section_bg_color": "#07211f",
+        "main_image": "shopify://shop_images/Logo_951ff78f-0ccc-4ffd-80d8-bbcb4536d558.png",
+        "image_1": "shopify://shop_images/Screenshot-2022-11-03-at-16.29.5.png",
+        "image_2": "shopify://shop_images/Screenshot-2022-11-03-at-16.30.0.png",
+        "image_3": "shopify://shop_images/Screenshot-2022-11-03-at-16.30.0_1.png",
+        "image_4": "shopify://shop_images/Screenshot-2022-11-03-at-16.35.5.png",
+        "image_5": "shopify://shop_images/Screenshot-2022-11-03-at-16.36.0.png"
+      }
+    },
+    "ashwagandha_pack_contact_M768hj": {
+      "type": "ashwagandha-pack-contact",
+      "settings": {
+        "section_bg_color": "#07211f",
+        "the_text": "<p>Questions? Let us help you</p><p>Contact us at <a href=\"mailto:info@tribe-organics.com\" title=\"mailto:info@tribe-organics.com\">info@tribe-organics.com</a></p>"
+      }
+    },
+    "ashwagandha_pack_footer_bYnWER": {
+      "type": "ashwagandha-pack-footer",
+      "settings": {
+        "section_bg_color": "#07211f",
+        "the_logo": "shopify://shop_images/Logo_2_6ecf9d10-f051-4b4d-b753-3ffecf96bb83.png",
+        "the_icon_1": "shopify://shop_images/B_Corp.png",
+        "the_icon_2": "shopify://shop_images/1_for_the_planet.png",
+        "the_text_1": "<p><strong>*FDA Disclaimer: These statements have not been evaluated by the Food and Drug Administration. These products are not intended to diagnose, treat, cure, or prevent any disease.</strong> The information provided by this website or this company is not a substitute for a face-to-face consultation with your health practitioner, and should not be construed as individual medical advice.</p>",
+        "the_text_2": "<ul><li>Copyright 2022 TriIbe, INC. ALL RIGHTS RESERVED.</li><li><a href=\"/policies/terms-of-service\" title=\"Terms of Service\">TERMS & CONDITIONS </a></li><li><a href=\"/policies/privacy-policy\" title=\"Privacy Policy\">PRIVACY POLICY</a></li></ul>"
+      }
+    }
+  },
+  "order": [
+    "main",
+    "ashwagandha_pack_top_icons_pMnDGa",
+    "ashwagandha_pack_offer_section_AgMYet",
+    "ashwagandha_pack_core_benefits_gDHAcP",
+    "ashwagandha_pack_reviews_mTCEB8",
+    "ashwagandha_pack_image_gallery_qD9q6M",
+    "ashwagandha_pack_video_reviews_fkqbq6",
+    "ashwagandha_pack_benefits_QgLdBB",
+    "ashwagandha_pack_product_info_ii9Gai",
+    "ashwagandha_pack_roots_qG4VUQ",
+    "ashwagandha_pack_custom_text_gPWqhq",
+    "ashwagandha_product_packs_mcWPwL",
+    "ashwagandha_pack_certified_aWgzVU",
+    "tribe_difference_section_C3czqP",
+    "ashwagandha_pack_contact_M768hj",
+    "ashwagandha_pack_footer_bYnWER"
+  ]
+}

@@ -1,0 +1,256 @@
+<style>
+  #id-{{ section.id }}{
+  	background-color:{{ section.settings.section_bg_color }};
+  }
+</style>
+<section id="id-{{ section.id }}" class="ashwagandha-product-packs-section">
+  <div id="ashwagandha-product-packs" class="ashwagandha-product-packs-wrapper">
+    <div class="container">
+      <div class="row">
+        <div class="col-sm-12 col-md-12 col-lg-12">
+          <div class="ashwagandha-product-packs-head common-custom-heading-wrapper">
+             <h2>{{ section.settings.the_title }}</h2>
+              {{ section.settings.the_text }}
+          </div>
+          <div class="ashwagandha-products-pack-limited">
+            <h3>{{ section.settings.limited_title }}</h3>
+            <h4>{{ section.settings.off_title }}</h4>
+            <h5>{{ section.settings.cstm_text }}</h5>
+          </div>
+        </div>
+      </div>
+      <div class="row ashwagandha-product-packs-row">
+        {% for block in section.blocks %}
+          <div class="ashwagandha-product-pack-blocks">
+            <div class="ashwagandha-product-pack-specification">
+              <h6>{{ block.settings.badge_title }}</h6>
+              <h2>{{ block.settings.the_title }}</h2>
+              <p>{{ block.settings.the_text }}</p>
+            </div>
+            <div class="ashwagandha-product-pack-image">
+                {% if block.settings.product_image != blank %}<img loading="lazy" class="lazyload" src="{{ block.settings.product_image | img_url: 'master' }}">{% endif %}
+            </div>
+            <div class="ashwagandha-product-pack-title">
+                <h3>{{ block.settings.product_title }}</h3>
+            </div>
+            <div class="ashwagandha-product-pack-rating">
+              <p>
+                <span>
+                  <svg width="130" height="25" viewBox="0 0 130 25" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M11.9392 17.9896L18.0877 21.875L16.456 14.5521L21.8882 9.62504L14.7349 8.98962L11.9392 2.08337L9.14355 8.98962L1.99023 9.62504L7.42238 14.5521L5.79074 21.875L11.9392 17.9896Z" fill="#AC853B"/>
+                    <path d="M65.0007 17.9896L71.1492 21.875L69.5176 14.5521L74.9497 9.62504L67.7964 8.98962L65.0007 2.08337L62.2051 8.98962L55.0518 9.62504L60.4839 14.5521L58.8523 21.875L65.0007 17.9896Z" fill="#AC853B"/>
+                    <path d="M38.4695 17.9896L44.618 21.875L42.9863 14.5521L48.4185 9.62504L41.2651 8.98962L38.4695 2.08337L35.6738 8.98962L28.5205 9.62504L33.9527 14.5521L32.321 21.875L38.4695 17.9896Z" fill="#AC853B"/>
+                    <path d="M91.531 17.9896L97.6795 21.875L96.0478 14.5521L101.48 9.62504L94.3267 8.98962L91.531 2.08337L88.7353 8.98962L81.582 9.62504L87.0142 14.5521L85.3825 21.875L91.531 17.9896Z" fill="#AC853B"/>
+                    <path d="M118.061 17.9896L124.21 21.875L122.578 14.5521L128.01 9.62504L120.857 8.98962L118.061 2.08337L115.266 8.98962L108.112 9.62504L113.544 14.5521L111.913 21.875L118.061 17.9896Z" fill="#AC853B"/>
+                    <path d="M115.266 8.98962L118.061 2.08337V17.9896L111.913 21.875L113.544 14.5521L108.112 9.62504L115.266 8.98962Z" fill="#AC853B"/>
+                    </svg>
+                 </span>
+                {{ block.settings.reviews_count }}
+              </p>
+            </div>
+            <div class="ashwagandha-product-pack-price">
+                <div class="ashwagandha-product-pack-regular-price">
+                  {{ block.settings.regular_price }}
+                </div>
+                <div class="ashwagandha-product-pack-compare-price">
+                  {{ block.settings.compare_price }}
+                </div>
+            </div>
+            <div class="ashwagandha-product-pack-atc">
+                  <a href="{{ block.settings.button_link }}">{{ block.settings.button_text }}</a>
+            </div>
+            <div class="pack-free-shipping">
+              <p>
+                <span>
+                  {% if block.settings.the_icon != blank %}<img loading="lazy"  src="{{ block.settings.the_icon | img_url: 'master' }}">{% endif %}
+                </span>
+                {{ block.settings.btn_under_text }}
+              </p>
+            </div>
+            <ul class="ashwagandha-product-pack--icon-lists">
+                  {% if block.settings.icon_1 != blank %}
+                  <li>
+                    <img loading="lazy" class="lazyload" src="{{ block.settings.icon_1 | img_url: 'master' }}">
+                  </li>
+                  {% endif %}
+                  {% if block.settings.icon_2 != blank %}
+                  <li>
+                    <img loading="lazy" class="lazyload" src="{{ block.settings.icon_2 | img_url: 'master' }}">
+                  </li>
+                  {% endif %}
+                  {% if block.settings.icon_3 != blank %}
+                  <li>
+                    <img loading="lazy" class="lazyload" src="{{ block.settings.icon_3 | img_url: 'master' }}">
+                  </li>
+                  {% endif %}
+                  {% if block.settings.icon_4 != blank %}
+                  <li>
+                    <img loading="lazy" class="lazyload" src="{{ block.settings.icon_4 | img_url: 'master' }}">
+                  </li>
+                  {% endif %}
+                  {% if block.settings.icon_5 != blank %}
+                  <li>
+                    <img loading="lazy" class="lazyload" src="{{ block.settings.icon_5 | img_url: 'master' }}">
+                  </li>
+                  {% endif %}
+           </ul>
+          </div>  
+        {% endfor %}
+      </div>
+      <div class="row ashwagandha-product-pack-guarantee-section-row">
+        <div class="col-lg-12 col-md-12 col-sm-12">
+          <div class="ashwagandha-product-pack-guarantee-section-img">
+            {% if section.settings.guarantee_img != blank %}<img loading="lazy" class="lazyload" src="{{ section.settings.guarantee_img | img_url: 'master' }}">{% endif %}
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+{% schema %}
+  {
+    "name": "Ashwagandha Product Packs",
+    "settings": [
+          {
+            "type": "header",
+            "content": "Content Style"
+         },
+  	     {
+           "type": "color",
+           "id": "section_bg_color",
+           "label": "Section background color"
+        },
+        {
+          "type": "header",
+          "content": "Content Settings"
+      	},
+        {
+          "type": "text",
+          "id": "the_title",
+          "label": "Title"
+      	},
+        {
+          "type": "richtext",
+          "id": "the_text",
+          "label": "Text"
+      	},
+        {
+          "type": "text",
+          "id": "limited_title",
+          "label": "Limited Title"
+      	},
+        {
+          "type": "textarea",
+          "id": "off_title",
+          "label": "Off Title"
+      	},
+        {
+          "type": "text",
+          "id": "cstm_text",
+          "label": "Text"
+      	},
+        {
+           "type": "image_picker",
+           "id": "guarantee_img",
+           "label": "Guarantee Image"
+        }
+    ],
+	"blocks": [
+         {
+          "type": "product_list",
+          "name": "Product List",
+          "settings": [
+              {
+                  "type": "text",
+                  "id": "badge_title",
+                   "label": "Badge Title"
+              },
+          	  {
+                  "type": "text",
+                  "id": "the_title",
+                   "label": "Title"
+              },
+              {
+                  "type": "text",
+                  "id": "the_text",
+                   "label": "Text"
+              },
+              {
+                   "type": "image_picker",
+                   "id": "product_image",
+                    "label": "Image"
+               },
+              {
+                  "type": "text",
+                  "id": "product_title",
+                   "label": "Product Title"
+              },
+              {
+                  "type": "text",
+                  "id": "reviews_count",
+                   "label": "No. of Reviews"
+              },
+               {
+                  "type": "richtext",
+                  "id": "regular_price",
+                   "label": "Regular Price"
+              },
+              {
+                  "type": "richtext",
+                  "id": "compare_price",
+                   "label": "Compare Price"
+              },
+                {
+                   "type": "text",
+                   "id": "button_text",
+                   "label": "Button Text"
+                },
+        	    {
+                   "type": "url",
+                   "id": "button_link",
+                   "label": "Link",
+                   "info": "Specify the URL address if you want to make the Button clickable."
+                },
+                {
+                  "type": "image_picker",
+                  "id": "the_icon",
+                  "label": "Icon"
+              	},
+                {
+                  "type": "text",
+                  "id": "btn_under_text",
+                  "label": "Button Under Text"
+                },
+                {
+                   "type": "image_picker",
+                   "id": "icon_1",
+                    "label": "Icon-1"
+               },
+               {
+                   "type": "image_picker",
+                   "id": "icon_2",
+                    "label": "Icon-2"
+               },
+               {
+                   "type": "image_picker",
+                   "id": "icon_3",
+                    "label": "Icon-3"
+               },
+               {
+                   "type": "image_picker",
+                   "id": "icon_4",
+                    "label": "Icon-4"
+               },
+               {
+                   "type": "image_picker",
+                   "id": "icon_5",
+                    "label": "Icon-5"
+               }
+          ]
+         }
+	],
+    "presets": [{
+      "name": "Ashwagandha Product Packs"
+    }]
+  }
+{% endschema %}

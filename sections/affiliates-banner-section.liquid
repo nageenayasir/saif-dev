@@ -1,0 +1,62 @@
+<style>
+  #id-{{ section.id }}{
+  	background-color:{{ section.settings.section_bg_color }};
+  }
+</style>
+<section id="id-{{ section.id }}" class="affiliates-banner-section">
+  <div class="affiliates-banner-wrapper">
+    <div class="affiliates-banner-row">
+      <div class="affiliates-banner-grid">
+        <div class="affiliates-banner-header-column common-affiliates-column">
+          <div class="affiliates-banner-title-wrapper">
+            <h1>{{ section.settings.the_title }}</h1>
+            <p>{{ section.settings.the_text }}</p>
+          </div>
+        </div>
+        <div class="affiliates-banner-image-column custom-common-affiliates-column">
+          <div class="affiliates-banner-img">
+            {% if section.settings.the_image != blank %}<img loading="lazy"  src="{{ section.settings.the_image | img_url: 'master' }}">{% endif %}
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+{% schema %}
+  {
+    "name": "Affiliates Banner",
+    "settings": [
+         {
+            "type": "header",
+            "content": "Content Style"
+         },
+  	     {
+             "type": "color",
+             "id": "section_bg_color",
+             "label": "Section background color"
+         },
+         {
+            "type": "header",
+            "content": "Content Settings"
+         },
+         {
+            "type": "textarea",
+            "id": "the_title",
+            "label": "Title"
+          },
+         {
+            "type": "textarea",
+            "id": "the_text",
+            "label": "Text"
+          },
+          {
+              "type": "image_picker",
+              "id": "the_image",
+              "label": "Image"
+           }
+    ],
+	"presets": [{
+      "name": "Affiliates Banner"
+    }]
+  }
+{% endschema %}

@@ -1,0 +1,195 @@
+<style>
+  #id-{{ section.id }}{
+  	background-color:{{ section.settings.section_bg_color }};
+  }
+</style>
+<section id="id-{{section.id}}" class="ancient-herb-section">
+  <div class="ancient-herb-wrapper">
+    <div class="container">
+      <div class="row ancient-herb-content-row">
+        <div class="col-lg-12 col-md-12 col-sm-12">
+          <div class="ancient-herb-content">
+            <h2 class="custom-heading-h2">
+              {{ section.settings.the_title1 }}
+            </h2>
+            {{ section.settings.the_text1 }}
+          </div>
+          <div class="ancient-herb-content">
+            <h2 class="custom-heading-h2">
+              {{ section.settings.the_title2 }}
+            </h2>
+            {{ section.settings.the_text2 }}
+          </div>
+          <div class="ancient-herb-content">
+            <h2 class="custom-heading-h2">
+              {{ section.settings.the_title3 }}
+            </h2>
+            {{ section.settings.the_text3 }}
+            <ul class="ancient-herb-lists">
+            <li>{{ section.settings.list_text1 }}</li>
+            <li>{{ section.settings.list_text2 }}</li>
+            <li>{{ section.settings.list_text3 }}</li>
+            <li>{{ section.settings.list_text4 }}</li>
+            <li>{{ section.settings.list_text5 }}</li>
+          </ul>
+          </div>
+        </div>
+      </div>
+      <div class="row ancient-herb-img-text-row">
+        {% if section.settings.alignment == 'left' %}
+          <div class="col-lg-6 col-md-6 col-sm-12">
+            <div class="custom-img-wrap">
+              {% if section.settings.the_image != blank %}<img loading="lazy" g src="{{ section.settings.the_image | img_url: 'master' }}">{% endif %}
+            </div>
+          </div>
+        {% endif %}
+        <div class="col-lg-6 col-md-6 col-sm-12">
+          <div class="custom-img--content-wrap">
+            <h2 class="custom-heading-h2">{{ section.settings.img_title }}</h2>
+            <h3>{{ section.settings.img_sub_title1 }}</h3>
+            <h3>{{ section.settings.img_sub_title2 }}</h3>
+          </div>
+        </div>
+        {% if section.settings.alignment == 'right' %}
+          <div class="col-lg-6 col-md-6 col-sm-12">
+            <div class="custom-img-wrap">
+              {% if section.settings.the_image != blank %}<img loading="lazy" g src="{{ section.settings.the_image | img_url: 'master' }}">{% endif %}
+            </div>
+          </div>
+        {% endif %}
+      </div>
+    </div>
+  </div>
+</section>
+{% schema %}
+  {
+    "name": "Ancient Herb Section",
+    "settings": [
+      {
+            "type": "header",
+            "content": "Content Style"
+        },
+	    {
+           "type": "color",
+           "id": "section_bg_color",
+           "label": "Section background color"
+        },
+        {
+          "type": "header",
+          "content": "Content-1 Settings"
+      	},
+        {
+          "type": "text",
+          "id": "the_title1",
+          "label": "Title-1"
+      	},
+        {
+          "type": "richtext",
+          "id": "the_text1",
+          "label": "Text-1"
+      	},
+        {
+          "type": "header",
+          "content": "Content-2 Settings"
+      	},
+        {
+          "type": "text",
+          "id": "the_title2",
+          "label": "Title-2"
+      	},
+        {
+          "type": "richtext",
+          "id": "the_text2",
+          "label": "Text-2"
+      	},
+        {
+          "type": "header",
+          "content": "Content-3 Settings"
+      	},
+        {
+          "type": "text",
+          "id": "the_title3",
+          "label": "Title-3"
+      	},
+        {
+          "type": "richtext",
+          "id": "the_text3",
+          "label": "Text-3"
+      	},
+        {
+          "type": "text",
+          "id": "list_text1",
+          "label": "List Text-1"
+      	},
+        {
+          "type": "text",
+          "id": "list_text2",
+          "label": "List Text-2"
+      	},
+        {
+          "type": "text",
+          "id": "list_text3",
+          "label": "List Text-3"
+      	},
+        {
+          "type": "text",
+          "id": "list_text4",
+          "label": "List Text-4"
+      	},
+        {
+          "type": "text",
+          "id": "list_text5",
+          "label": "List Text-5"
+      	},
+        {
+        "type": "header",
+        "content": "Image-Text Settings"
+      	},
+        {
+          "type": "image_picker",
+          "id": "the_image",
+          "label": "Image"
+      	},
+        {
+          "type": "select",
+          "id": "alignment",
+          "label": "Image position",
+          "default": "left",
+          "options": [
+            {
+              "value": "left",
+              "label": "Left"
+            },
+            {
+              "value": "right",
+              "label": "Right"
+            }
+          ]
+      	},
+        {
+          "type": "text",
+          "id": "img_title",
+          "label": "Image Title"
+      	},
+        {
+          "type": "text",
+          "id": "img_sub_title1",
+          "label": "Image Sub Title1"
+      	},
+        {
+          "type": "text",
+          "id": "img_sub_title2",
+          "label": "Image Sub Title2"
+      	}
+    ],
+	"presets": [{
+      "name": "Ancient Herb Section"
+    }]
+  }
+{% endschema %}
+
+{% stylesheet %}
+{% endstylesheet %}
+
+{% javascript %}
+{% endjavascript %}

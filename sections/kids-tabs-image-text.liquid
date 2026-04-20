@@ -1,0 +1,115 @@
+
+<section id="id-{{section.id}}" class="product-tabs-image-wrapper section kids-product-tabs-image-wrapper">
+  <div class="product-tabs-image-container">
+    <div class="product-tabs-images-row">
+      <div class="product-tabs-columnss">
+        <div class="prdct-tabs-wrapper cstm-menu-footer-group">
+          {% for block in section.blocks %}
+            <div class="cstm-menu-footer menu-page {% if forloop.index == 1 %}active{% endif %}" data-aos="fade-up">
+                    
+                    <h2>
+                    <span>
+                      {{ block.settings.svg_code }}
+                      {% if product.title == 'TRIIBE Digital Gift Card' %}
+                         {{ block.settings.the_text_1 }}
+                     {% else %}
+                    {{ block.settings.the_text }}
+                    {% endif %}
+                    </span>
+                    
+                    <img loading="lazy"  class="d-md-block float-end mt-1" src="{{ '__down.svg' | asset_url }}">
+                  </h2>
+                  <div class="cstm-menu-s" {% if forloop.index != 1 %}style="display: none"{% endif %}>
+                      {{ block.settings.liquid }}
+                  </div>
+              </div>
+          {% endfor %}
+        </div>
+        {% comment %}
+        <div class="pairs-nicely-product" data-aos="fade-up">
+          {% assign product_block = product.metafields.custom.products.value %}
+              {% if product.metafields.custom.products.value %}    
+                  {%- form 'product', product_block -%}
+                      <input type="hidden" name="id" value="{{ product_block.selected_or_first_available_variant.id  }}">
+                    <div class="d-flex product-item product-item-flex mt-4" {{ block.shopify_attributes }}>
+                       <div class="img-wrapper">
+                            <a href="{{ product_block.url }}"><img loading="lazy"  src="{{ product_block | image_url : width : 500 }}" alt="{{ product_block }}"></a>
+                       </div>
+                        <div class="content">
+                           <h6>{{ product.metafields.custom.title_product }}</h6>
+                            <div class="desc">{{ product.metafields.custom.content_product | newline_to_br }}</div>
+                            <button type="submit" class="btn btn-bg">{%- if product_block.available -%}{{ 'products.product.add_to_cart' | t }}{%- else -%} {{ 'products.product.sold_out' | t }}{%- endif -%}</button>
+                         </div>
+                    </div>
+                  {% endform %}
+            {% endif %}
+        </div>
+        {% endcomment %}
+      </div>
+      <div class="product-tabs-image-columnss">
+        <div class="product-tabs-image">
+          <div data-aos="fade-up" data-aos-delay="000">
+          {% if product.metafields.custom.image != blank %}
+            <img loading="lazy"  src="{{ product.metafields.custom.image | img_url: 'master' }}">
+          {% else %}
+            {% if section.settings.the_image != blank %}<img loading="lazy"  src="{{ section.settings.the_image | img_url: 'master' }}">{% endif %}
+            {% endif %}
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+{% schema %}
+  {
+    "name": "Gummies Tabs With Image",
+    "settings": [
+      {
+          "type": "header",
+          "content": "Pair Nicely,Right image handles from metafields"
+        },
+      {
+          "type": "image_picker",
+          "id": "the_image",
+          "label": "Default Image if not uploaded from the metafield"
+        }
+    ],
+    "blocks": [
+     {
+      "type": "icon_text",
+      "name": "Icon-Text",
+      "settings": [
+        {
+          "type": "html",
+          "id": "svg_code",
+          "label": "Svg Code For Icon"
+        },
+        {
+          "type": "text",
+          "id": "the_text",
+          "label": "Text"
+        },
+        {
+          "type": "text",
+          "id": "the_text_1",
+          "label": "Change tab title for Gift product"
+        },
+        {
+        "type": "liquid",
+        "id": "liquid",
+        "label": "Custom Liquid"
+      }
+      ]
+     }
+	],
+	"presets": [{
+      "name": "Gummies Tabs With Image"
+    }]
+  }
+{% endschema %}
+
+{% stylesheet %}
+{% endstylesheet %}
+
+{% javascript %}
+{% endjavascript %}

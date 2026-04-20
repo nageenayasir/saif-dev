@@ -1,0 +1,271 @@
+<style>
+   </style>
+<section class="section section-bund blog-page-wrapper">
+    <div class="leaf-box left-top">
+        <img loading="lazy" class="leaf" src="{{ 'leaf-n05.svg' | asset_url }}">
+    </div>
+    <div class="leaf-box right-top">
+        <img loading="lazy" class="leaf" src="{{ 'leaf-n02.svg' | asset_url }}">
+    </div>
+
+    <div class="container">
+      <div class="row">
+        <div class="col-md-12 col-lg-12 col-sm-12">
+          <div class="blog-text-wrapper">
+            <p>{{ section.settings.the_text }}</p>
+          </div>
+        </div>
+      </div>
+    </div>
+        
+      <div class="container">
+        <div class="row blog-top-head">
+          <div class="col-sm-12 col-md-12 col-lg-12">
+            <h2 class="text-center text-uppercase mb-5" data-aos="fade-up" data-aos-delay="000">{{ section.settings.text }}</h2>
+          </div>
+         </div>
+          <div class="row featured-blogs-blocks">
+            <div class="col-sm-12 col-md-6 col-lg-6">
+              <div class="blo-section-article-wrapper">
+                <div class="blog-article-img">
+                  <div data-aos="fade-up" data-aos-delay="400">
+                      <img loading="lazy" src="{{ section.settings.image_article | image_url : width: 500 }}" alt="{{ section.settings.title }}">
+                  </div>
+                </div>
+                <div class="blog-article-content">
+                  <h6>{{ section.settings.sub_title }}</h6>
+                      <h3 class="" data-aos="fade-up">
+                         {{ section.settings.title_article }}
+                      </h3>
+                      <p>{{ section.settings.content | newline_to_br }}</p>
+                      <div class="mt-4" data-aos="fade-up">
+                          <a class="btn btn-bg" href="{{ section.settings.url }}" target="_self">
+                              Read More
+                          </a>
+                      </div>
+                </div>
+              </div>
+            </div>
+             <div class="col-sm-12 col-md-6 col-lg-6">
+              <div class="blo-section-article-wrapper">
+                <div class="blog-article-img">
+                  <div data-aos="fade-up" data-aos-delay="400">
+                      <img loading="lazy" src="{{ section.settings.image_article_1 | image_url : width: 500 }}" alt="{{ section.settings.title_1 }}">
+                  </div>
+                </div>
+                <div class="blog-article-content">
+                  <h6>{{ section.settings.sub_title_1 }}</h6>
+                      <h3 class="" data-aos="fade-up">
+                         {{ section.settings.title_article_1 }}
+                      </h3>
+                      <p>{{ section.settings.content_1 | newline_to_br }}</p>
+                      <div class="mt-4" data-aos="fade-up">
+                          <a class="btn btn-bg" href="{{ section.settings.url_1 }}" target="_self">
+                              Read More
+                          </a>
+                      </div>
+                </div>
+              </div>
+            </div>
+          </div>
+    </div>
+</section>
+
+<section id="end-sticky" class="section section-guides blog-posts-grid section">
+  <div class="container">
+    <div class="row">
+      <div class="col-sm-12 col-md-12 col-lg-12">
+        <div class="text-center mb-5 blog-tabs-button">
+            <div class="btn-group">
+              {% assign path = request.path  %}
+              {% for block in section.blocks %}  
+                <div data-aos="fade-up" data-aos-delay="400">
+                    <a class="btn btn-bg-w btn-bg-w-d {% if path == block.settings.url %}active{% endif %}" href="{{ block.settings.url }}" target="_self">
+                        {{ block.settings.title }}
+                    </a>
+                </div>
+              {% endfor %}    
+            </div>
+        </div>
+        <div class="text-center blog-title-wrapper">
+          <h2>{{ blog.title }}</h2>
+        </div>
+      </div>
+    </div>
+  </div>
+    <div class="container">
+      <div class="row mt-5">
+        {% if request.path == '/blogs/all' %}
+       {% assign featuredBlogs = "recipes,lifestyle,wellness,pet-health,news" | split: "," %}
+            {% assign featuredArticles = false %}
+              {% for featuredBlog in featuredBlogs %}
+                {% if blogs[featuredBlog].articles %}
+          {% if featuredArticles %}
+        {% assign featuredArticles = featuredArticles | concat:blogs[featuredBlog].articles %}
+          {% else %}
+        {% assign featuredArticles = blogs[featuredBlog].articles %}
+          {% endif %}
+            {% endif %}
+              {% endfor %}
+              
+        {% if featuredArticles %}
+          {% assign featuredArticles = featuredArticles | sort:'published_at' | reverse %}
+             
+                {% for article in featuredArticles %}
+                    {% assign key = forloop.index | modulo: 2 %}
+                    <div class="load-more-wrapper {% if key == 0 %}col-6 col-md-3{% else %}col-6 col-md-3 mt-5{% endif %}">
+                        <a href="{{ article.url }}" class="cats-item" data-aos="fade-up" data-aos-delay="{% if event == 0 %}300{% else %}100{% endif %}">
+                            <div class="img-wrapper">
+                                <img loading="lazy" src="{{ article.image | image_url : width: 500 }}" alt="{{ article.title }}">
+                            </div>
+                            <h3 class="text-center my-0">{{ article.title }}</h3> 
+                        </a>
+                    </div>
+                {% endfor %}
+            <button class="custom-load-more">Load More</button>
+        {% endif %}
+  {% else %}
+          {%- paginate blog.articles by 200 -%}
+          {% assign totalArticles = blog.articles.size %}
+        {% for article in blog.articles %}
+          {% assign key = forloop.index | modulo: 2 %}
+            <div class="load-more-wrapper {% if key == 0 %}col-6 col-md-3{% else %}col-6 col-md-3 mt-5{% endif %}">
+                <a href="{{ article.url }}" class="cats-item" data-aos="fade-up" data-aos-delay="{% if event == 0 %}300{% else %}100{% endif %}">
+                    <div class="img-wrapper">
+                        <img loading="lazy" src="{{ article.image | image_url : width: 500 }}" alt="{{ article.title }}">
+                    </div>
+                    <h3 class="text-center my-0">{{ article.title }}</h3> 
+                </a>
+            </div>
+        {% endfor %}
+         {% if totalArticles > 12 %}
+                <button class="custom-load-more">Load More</button>
+            {% endif %}
+          {%- endpaginate -%}
+  {% endif %}
+    </div>
+    </div>
+</section>
+{% comment %} RGD: 2026-01-07 {% endcomment %} 
+{% comment %} 
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script> 
+{% endcomment %}
+{% # theme-check-disable ParserBlockingScript %}
+<script type="text/javascript" src="{{ 'jquery-3.5.1.min.js' | asset_url }}"></script>
+{% # theme-check-enable ParserBlockingScript %}
+<script>
+$(function () {
+    $(".load-more-wrapper").slice(0, 12).show();
+    $("body").on('click touchstart', '.custom-load-more', function (e) {
+      e.preventDefault();
+      $(".load-more-wrapper:hidden").slice(0, 12).slideDown();
+      if ($(".load-more-wrapper:hidden").length == 0) {
+        $(".custom-load-more").css('visibility', 'hidden');
+      }
+    });
+  });
+</script>
+{% schema %}
+{
+  "name": "t:sections.main-blog.name",
+  "tag": "section",
+  "class": "section",
+  "settings": [
+       {
+          "type": "text",
+          "id": "the_text",
+          "label": "Text"
+      },
+      {
+          "type": "text",
+          "id": "text",
+          "default": "Checkout The Latest",
+          "label": "Text"
+      },
+     {
+       "type" : "header",
+       "content": "Article-1"
+     },
+      {
+          "type": "text",
+          "id": "sub_title",
+          "default": "Kids",
+          "label": "Subtitle-1"
+      },
+     {
+          "type": "text",
+          "id": "title_article",
+          "default": "Title In Here",
+          "label": "Title-1"
+      },
+      
+      {
+          "type": "image_picker",
+          "id": "image_article",
+          "label": "Image-1"
+      },
+      {
+          "type": "textarea",
+          "id": "content",
+          "default": "Lorem ipsum is placeholder text commonly used in the graphic, print, and publishing industries.",
+          "label": "Content-1"
+      },
+      {
+          "type": "url",
+          "id": "url",
+          "label": "Url-1"
+      },
+      {
+       "type" : "header",
+       "content": "Article-2"
+     },
+      {
+          "type": "text",
+          "id": "sub_title_1",
+          "default": "Kids",
+          "label": "Subtitle-2"
+      },
+     {
+          "type": "text",
+          "id": "title_article_1",
+          "default": "Title In Here",
+          "label": "Title-2"
+      },
+      
+      {
+          "type": "image_picker",
+          "id": "image_article_1",
+          "label": "Image-2"
+      },
+      {
+          "type": "textarea",
+          "id": "content_1",
+          "default": "Lorem ipsum is placeholder text commonly used in the graphic, print, and publishing industries.",
+          "label": "Content-2"
+      },
+      {
+          "type": "url",
+          "id": "url_1",
+          "label": "Url-2"
+      }
+  ],
+  "blocks": [
+     {
+      "type": "content",
+      "name": "content",
+      "settings": [
+        {
+          "type": "text",
+          "id": "title",
+          "label": "Title"
+        },
+        {
+          "type": "url",
+          "id": "url",
+          "label": "Url"
+        }
+      ]
+     }
+	]
+}
+{% endschema %}

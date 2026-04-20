@@ -1,0 +1,207 @@
+<style>
+  {% if section.settings.background_the_image != blank %}
+    #id-{{ section.id }} {
+      background-image: url("{{section.settings.background_the_image | img_url: 'master'}}");
+      background-size: cover;
+    }
+  {% endif %}
+  {% if section.settings.bg_mob_image !=blank %}
+    @media only screen and (max-width: 767px) {
+      #id-{{ section.id }} {
+        background-image: url('{{ section.settings.bg_mob_image | img_url: 'master'}}');
+        !important;
+      }
+    }
+  {% endif %}
+
+  .susbcribe-save-head-wrap {
+    max-width: 889px !important;
+  }
+  .susbcribe-save-head-wrap h1 {
+    font-size: 42px;
+  }
+
+  .susbcribe-save-sub-title h2 {
+    font-family: Superior Title;
+    font-size: 42px !important;
+    font-style: italic;
+    font-weight: 500;
+    line-height: 40px;
+    text-align: center;
+    margin-top: -41px !important;
+    margin-bottom: 4rem !important;
+  }
+
+  .susbcribe-save-sub-title p {
+    font-size: 20px !important;
+  }
+  .subscribe-save-disclaimer p{
+     font-family: Work Sans;
+    font-weight: 400;
+    font-style: Italic;
+    font-size: 14px;
+    line-height: 20.72px;
+    letter-spacing: 1px;
+    text-align: center;
+
+  }
+
+  .mob-subscribe-save-text{
+    display: none;
+  }
+
+  .subscribe-save-banner-section .btn-group a{
+        width: 307px!important;
+  }
+  @media (max-width: 767px){
+    .subscribe-save-banner-section{
+      height: 100%!important;
+    }
+
+    .subscribe-save-text{
+      display: none;
+    }
+
+    .mob-subscribe-save-text{
+      display: block;
+    }
+    .susbcribe-save-head-wrap h1 {
+    font-size: 32px!important;
+    }
+    .susbcribe-save-sub-title h2{
+      font-size: 30px!important;
+      margin-top: -31px !important;
+      margin-bottom: 1rem !important;
+    }
+
+    .mob-subscribe-save-text p{
+      font-family: WorkSans;
+      font-weight: 400;
+      font-size: 17px;
+      text-align: center;
+      color: #fff;
+      letter-spacing: 1px;
+    }
+
+    .subscribe-save-banner-section .btn-group {
+        display: inline-flex;
+    }
+
+    .subscribe-save-banner-section .btn-group a{
+        width: 282px!important;
+    }
+
+}
+</style>
+<section id="id-{{section.id}}" class="subscribe-save-banner-section common-kids-teenager-section">
+  <div class="subscribe-save-banner-wrapper">
+    <div class="leaf-box subscribe-save-banner--box-right-bot right-bot">
+      <img
+        loading="lazy"
+        class="leaf subscribe-save-banner-right-bot"
+        src="{{ 'leaf-n02.svg' | asset_url }}">
+    </div>
+    <div class="container-fluid">
+    <div class="row">
+      <div class="col-sm-12 col-md-12 col-lg-12">
+        <div class="susbcribe-save-head-wrap" data-aos="fade-up">
+          <div class="susbcribe-save-title">
+            <h1>{{ section.settings.the_title }}</h1>
+          </div>
+          <div class="susbcribe-save-sub-title">
+            <h2>{{ section.settings.sub_title }}</h2>
+          </div>
+          <div class="subscribe-save-text">
+            <p>{{ section.settings.the_text }}</p>
+          </div>
+          <div class="mob-subscribe-save-text">
+            <p>{{ section.settings.mob_the_text }}</p>
+          </div>
+          {% if section.settings.btn_txt != blank %}
+            <div class="btn-group justify-content-center" style="width: 100%; margin-top: 2rem;">
+              <div data-aos="fade-up" data-aos-delay="400">
+                <a
+                  class="btn btn-bg"
+                  href="{{ section.settings.btn_url}}"
+                  target="_self" style=" background: linear-gradient(101.4deg, #ac853b 26.01%, #cfa34e 68.58%); background-size: 449px; background-position: -105px;">
+                  {{ section.settings.btn_txt }}
+                </a>
+              </div>
+            </div>
+          {% endif %}
+          <div class="subscribe-save-disclaimer" style="margin-top: 2rem;">
+            <p>{{ section.settings.disclaimer }}</p>
+          </div>
+        </div>
+      </div>
+    </div>
+    </div>
+  </div>
+</section>
+{% schema %}
+  {
+    "name": "Subscribe Save Banner",
+    "settings": [
+      {
+        "type": "header",
+        "content": "Content Settings"
+      },
+      {
+        "type": "image_picker",
+        "id": "background_the_image",
+        "label": "Background-Image"
+      },
+      {
+        "type": "image_picker",
+        "id": "bg_mob_image",
+        "label": "Background Mobile Image"
+      },
+      {
+        "type": "textarea",
+        "id": "the_title",
+        "label": "Title"
+      }, {
+        "type": "textarea",
+        "id": "sub_title",
+        "label": "SubTitle"
+      }, {
+        "type": "textarea",
+        "id": "the_text",
+        "label": "Text"
+      },{
+        "type": "textarea",
+        "id": "mob_the_text",
+        "label": "Text"
+      },
+      {
+        "type": "header",
+        "content": "Button Settings"
+      }, {
+        "type": "textarea",
+        "id": "disclaimer",
+        "label": "Text Below Buttom",
+        "default": "The longer you stay, the more you save. Up to 25% off and free shipping for life."
+      }, 
+       {
+        "type": "text",
+        "id": "btn_txt",
+        "label": "Button Text"
+      }, {
+        "type": "url",
+        "id": "btn_url",
+        "label": "Button Url"
+      }
+    ],
+    "presets": [
+      {
+        "name": "Subscribe Save Banner"
+      }
+    ]
+  }
+{% endschema %}
+
+{% stylesheet %}
+{% endstylesheet %}
+
+{% javascript %}
+{% endjavascript %}

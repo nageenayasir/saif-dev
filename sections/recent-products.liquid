@@ -1,0 +1,151 @@
+<section class="section {{ section.settings.background }}">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-4 col-lg-3 z-index-2">
+                <h2 class="text-uppercase" data-aos="fade-up">{{ section.settings.title }}</h2>
+                <p data-aos="fade-up">{{ section.settings.sub_title }}</p>
+                <div class="mt-4" data-aos="fade-up">
+                    <a class="btn btn-trans" href="{{ section.settings.url }}" target="_self">
+                        {{ section.settings.button }}
+                    </a>
+                </div>
+            </div>
+            <div class="col-md-8 col-lg-9 z-index-1">
+                <div class="swiper-wrapper-box">
+                    <div class="swiper big-slider">
+                       
+                        <div class="recently-viewed-grid swiper-wrapper">
+                          
+                       </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="swiper-wrapper-pagination position-relative">
+            <div class="big-swiper-pagination"></div>
+        </div>
+    </div>
+</section>
+
+<script>
+function setRecentlyViewedProducts() {
+  const productData = {
+    productTitle: "{{ product.title }}",
+    productImg: "{{ product.featured_media | img_url: '300x' }}",
+    productPrice: "{{ product.price | money }}",
+    productCPrice: "{{ product.compare_at_price | money }}",
+    productUrl: "{{ product.url }}",
+    productImageAltText: "{{product.featured_media.alt | escape }}"
+  };
+  const productList = [];
+  let jsonResp, jsonRespArr, jsonRespArrStr;
+  const numberOfProducts = 8;
+  productList.push(productData);
+  const currProductPageTitle = productData.productTitle;
+  const productDataString = JSON.stringify(productList);
+  const localData = localStorage.getItem("recentlyViewedProduct");
+
+  if (localData === null) {
+    localStorage.setItem("recentlyViewedProduct", productDataString);
+  } else if (localData) {
+    const oldProductData = localStorage.getItem("recentlyViewedProduct");
+    const countProductData = (oldProductData.match(/productTitle/g) || []).length;
+    const sameProduct = oldProductData.includes(currProductPageTitle);
+    if (countProductData < numberOfProducts && sameProduct == false) {
+      jsonResp = JSON.parse(oldProductData);
+      jsonRespArr = jsonResp.concat(productList);
+      jsonRespArrStr = JSON.stringify(jsonRespArr);
+      localStorage.setItem("recentlyViewedProduct", jsonRespArrStr);
+    } else if (countProductData >= numberOfProducts && sameProduct == false) {
+      jsonResp = JSON.parse(oldProductData);
+      jsonResp.shift();
+      jsonRespArr = jsonResp.concat(productList);
+      jsonRespArr = JSON.stringify(jsonRespArr);
+      localStorage.setItem("recentlyViewedProduct", jsonRespArr);
+    }
+  }
+}
+
+setRecentlyViewedProducts();
+const localViewed = localStorage.recentlyViewedProduct;
+function getRecentlyViewedProducts() {
+  const productData = JSON.parse(localStorage.getItem("recentlyViewedProduct"));
+  const recentlyViewedHtml = [];
+  productData.map(item => {
+    recentlyViewedHtml.unshift(`
+    
+     <div class="swiper-slide">
+       <a href="${item.productUrl}" class="product-item">
+       <div class="img-wrapper">
+           <img  src='${item.productImg}' alt="${item.productImageAltText}"/>
+       </div>
+       <h5>${item.productTitle}</h5>
+       <div class="price">${item.productPrice}</div>
+      </a>
+    </div>
+   `);
+  });
+  const newProductData = `${recentlyViewedHtml.join("")}`;
+  const fullContent = document.getElementsByClassName("recently-viewed-grid");
+  fullContent[0].innerHTML = newProductData;
+}
+
+document.addEventListener("DOMContentLoaded", function (event) {
+  getRecentlyViewedProducts();
+});
+
+</script>
+
+
+
+{% schema %}
+  {
+    "name": "Recently Viewed",
+    "settings": [
+       {
+            "type": "select",
+            "id": "background",
+            "options": [
+              {
+                "value": "section-sea",
+                "label": "Background Green"
+              },
+              {
+                "value": "section-sea bg-cream color-dark",
+                "label": "Background Cream"
+              }
+            ],
+            "default": "section-sea bg-cream color-dark",
+            "label": "Choose Background"
+      },
+      {
+        "type": "text",
+        "id": "title",
+        "label": "Title",
+        "default" : "Recently <br>viewed"
+      },
+      {
+        "type": "text",
+        "id": "sub_title",
+        "label": "Subtitle",
+        "default" : "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor"
+      },
+      {
+      "type": "text",
+      "id": "button",
+      "label": "Button",
+      "default" : "SHOP The Featured"
+    },
+    {
+      "type": "url",
+      "id": "url",
+      "label": "Url"
+    }
+    ],
+     "presets": [
+    {
+      "name": "Recently Viewed"
+    }
+  ]
+  }
+{% endschema %}

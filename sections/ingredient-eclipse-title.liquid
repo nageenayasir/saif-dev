@@ -1,0 +1,30 @@
+<section id="id-{{ section.id }}" class="custom-ellipse-title">
+  <div class="container">
+    <div class="row">
+      <div class="col-sm-12 col-md-12 col-lg-12">
+        <h2>{{ section.settings.the_title }}</h2>
+      </div>
+    </div>
+  </div>
+</section>
+{% schema %}
+  {
+    "name": "Ellipse Title",
+    "settings": [
+      {
+        "type": "textarea",
+        "id": "the_title",
+        "label": "Text" 
+      }
+    ],
+	"presets": [{
+      "name": "Ellipse Title"
+    }]
+  }
+{% endschema %}
+
+{% stylesheet %}
+{% endstylesheet %}
+
+{% javascript %}
+{% endjavascript %}

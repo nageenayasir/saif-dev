@@ -1,0 +1,61 @@
+<style>
+  #id-{{ section.id }}{
+  	background-color:{{ section.settings.section_bg_color }};
+  }
+</style>
+<section id="id-{{ section.id }}" class="ashwagandha-pack-roots-section common-ashwagandha-pack-sec">
+  <div class="ashwagandha-pack-roots-wrapper">
+    <div class="leaf-box ashwagandha-pack-roots-box-right-top right-top">
+        <img loading="lazy"  class="leaf ashwagandha-pack-roots-right-top" src="{{ 'pack-leaf-2.svg' | asset_url }}">
+    </div>
+    <div class="container">
+      <div class="row">
+        <div class="ashwagandha-pack-roots-head common-custom-heading-wrapper">
+          <h2>{{ section.settings.the_title }}</h2>
+        </div>
+        <div class="ashwagandha-pack-roots-images">
+          <div class="ashwagandha-pack-roots-first common-ashwagandha-roots-img">
+               {% if section.settings.the_image_1 != blank %}<img loading="lazy"  src="{{ section.settings.the_image_1 | img_url: 'master' }}">{% endif %}
+          </div>
+          <div class="ashwagandha-pack-roots-second common-ashwagandha-roots-img">
+               {% if section.settings.the_image_2 != blank %}<img loading="lazy"  src="{{ section.settings.the_image_2 | img_url: 'master' }}">{% endif %}
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+{% schema %}
+  {
+    "name": "Ashwagandha Pack Roots",
+    "settings": [
+         {
+            "type": "header",
+            "content": "Content Style"
+         },
+  	     {
+           "type": "color",
+           "id": "section_bg_color",
+           "label": "Section background color"
+        },
+        {
+          "type": "text",
+          "id": "the_title",
+          "label": "Title"
+        },
+        {
+          "type": "image_picker",
+          "id": "the_image_1",
+          "label": "Image-1"
+      	},
+         {
+          "type": "image_picker",
+          "id": "the_image_2",
+          "label": "Image-2"
+      	}
+    ],
+	"presets": [{
+      "name": "Ashwagandha Pack Roots"
+    }]
+  }
+{% endschema %}

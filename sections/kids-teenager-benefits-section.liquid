@@ -1,0 +1,211 @@
+<style>
+  {% if section.settings.background_the_image != blank %}
+            #id-{{section.id}}{
+                background-image:url("{{section.settings.background_the_image | img_url: 'master'}}");
+            }
+      {% endif %}
+  {% for block in section.blocks %}
+  #id-{{ block.id }}{
+  	background-color:{{ block.settings.section_bg_color }};
+  }
+    {% endfor %}
+</style>
+<section id="id-{{section.id}}" class="custom-kidss-teenager-benefits-section common-kids-teenager-section {{ section.settings.custom_class }}">
+  <div class="custom-kidss-teenager-benefits-wrapper">
+    <div class="leaf-box custom-kidss-teenager-benefits-box-left-top left-top">
+        <img loading="lazy"  class="leaf custom-kidss-teenager-benefits-top" src="{{ 'plant-top.svg' | asset_url }}">
+    </div>
+    <div class="leaf-box custom-kidss-teenager-benefits-box-right-top right-top">
+        <img loading="lazy"  class="leaf custom-kidss-teenager-benefits-right-top" src="{{ 'benefits-right-leaf-top.svg' | asset_url }}">
+    </div>
+      {% for block in section.blocks %}
+        {% case block.type %}
+          {% comment %}
+            Heading Section
+            {% endcomment %}
+          {% when 'heading_text' %}
+          <section class="kids-teenager-benefits-heading-blocks-section" id="id-{{ block.id }}">
+            <div class="container">
+              <div class="row kids-teenager-benefits-heading-row">
+                <div class="col-lg-12 col-md-12 col-sm-12">
+                  <div class="kids-teenager-benefits-heading-text" data-aos="fade-up">
+                    <h2>{{ block.settings.the_title }}</h2>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </section>
+          {% comment %}
+            Rich Text
+          {% endcomment %}
+          {% when 'rich_text' %}
+          <section class="kids-teenager-benefits-rich-text-blocks-section" id="id-{{ block.id }}">
+            <div class="container">
+              <div class="row kids-teenager-benefits-rich-text-row">
+                <div class="col-lg-12 col-md-12 col-sm-12">
+                  <div class="kids-teenager-benefits-rich-text" data-aos="fade-up">
+                    {{ block.settings.the_text }}
+                  </div>
+                </div>
+              </div>
+            </div>
+          </section>
+           {% comment %}
+           Text Image
+          {% endcomment %}
+          {% when 'text_image' %}
+          <section class="kids-teenager-benefits-text-image-blocks-section" id="id-{{ block.id }}">
+            <div class="container">
+              <div class="row kids-teenager-benefits-text-image-row">
+                <div class="col-sm-12 col-md-8 col-lg-8">
+                  <div class="kids-teenager-benefits-text-content" data-aos="fade-up">
+                    {{ block.settings.image_text }}
+                  </div>
+                </div>
+                <div class="col-sm-12 col-md-4 col-lg-4">
+                  <div class="kids-teenager-benefits-image-content" data-aos="fade-up">
+                    {% if block.settings.the_image != blank %}<img loading="lazy"  src="{{ block.settings.the_image | img_url: 'master' }}">{% endif %}
+                  </div>
+                </div>
+              </div>
+            </div>
+          </section>
+          {% comment %}
+            Title
+            {% endcomment %}
+          {% when 'title' %}
+          <section class="kids-teenager-benefits-title-blocks-section">
+            <div  id="id-{{ block.id }}" class="inner-kids-teenager-block">
+            <div class="container">
+              <div class="row kids-teenager-benefits-title-row">
+                <div class="col-lg-12 col-md-12 col-sm-12">
+                  <div class="kids-teenager-benefits-title-text" data-aos="fade-up">
+                    <h2>{{ block.settings.the_title }}</h2>
+                  </div>
+                </div>
+              </div>
+            </div>
+            </div>
+          </section>
+        {% endcase %}
+      {% endfor %}
+  </div>
+</section>
+{% schema %}
+  {
+    "name": "Benefits Section",
+    "settings": [
+         {
+            "type": "header",
+            "content": "Content Settings"
+         },
+         {
+            "type": "text",
+            "id": "custom_class",
+            "label": "Add Class to the main section"
+          },
+		 {
+          "type": "image_picker",
+          "id": "background_the_image",
+          "label": "Background-Image"
+      	}
+    ],
+	"blocks": [
+          {
+            "type": "heading_text",
+            "name": "Heading Text",
+            "settings": [
+                {
+                    "type": "header",
+                    "content": "Content Style"
+                },
+          	    {
+                   "type": "color",
+                   "id": "section_bg_color",
+                   "label": "Section background color"
+                },
+          		{
+                    "type": "text",
+                    "id": "the_title",
+                    "label": "Title"
+                 }
+              ]
+        },
+        {
+          "type": "rich_text",
+          "name": "Rich Text",
+          "settings": [
+                {
+                    "type": "header",
+                    "content": "Content Style"
+                 },
+          	     {
+                   "type": "color",
+                   "id": "section_bg_color",
+                   "label": "Section background color"
+                },
+                {
+                  "type": "richtext",
+                  "id": "the_text",
+                  "label": "Text"
+              	}
+          ]
+      },
+      {
+        "type": "text_image",
+        "name": "Text Image",
+        "settings": [
+                {
+                    "type": "header",
+                    "content": "Content Style"
+                 },
+          	     {
+                   "type": "color",
+                   "id": "section_bg_color",
+                   "label": "Section background color"
+                },
+          		{
+                    "type": "richtext",
+                    "id": "image_text",
+                    "label": "Title"
+                },
+               {
+                  "type": "image_picker",
+                  "id": "the_image",
+                  "label": "Image"
+              	}
+              ]
+        },
+        {
+            "type": "title",
+            "name": "Title",
+            "settings": [
+                {
+                    "type": "header",
+                    "content": "Content Style"
+                },
+          	    {
+                   "type": "color",
+                   "id": "section_bg_color",
+                   "label": "Section background color"
+                },
+          		{
+                    "type": "text",
+                    "id": "the_title",
+                    "label": "Title"
+                 }
+              ]
+        }
+	
+	],
+	"presets": [{
+      "name": "Benefits Section"
+    }]
+  }
+{% endschema %}
+
+{% stylesheet %}
+{% endstylesheet %}
+
+{% javascript %}
+{% endjavascript %}

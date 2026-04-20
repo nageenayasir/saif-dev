@@ -1,0 +1,43 @@
+<style>
+  #id-{{ section.id }}{
+  	background-color:{{ section.settings.section_bg_color }};
+  }
+</style>
+<section id="id-{{ section.id }}" class="about-videos-section">
+  <div class="container">
+    <div class="row">
+      <div class="col-sm-12 col-md-12 col-lg-12">
+        <div class="about-youtube-video">
+          <div class="embed-responsive embed-responsive-16by9">
+             {% assign videoId = section.settings.video_url | split: '?v=' %}
+             <iframe width="560" height="315" src="https://www.youtube.com/embed/{{ videoId[1] }}" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+{% schema %}
+  {
+    "name": "About Video Section",
+    "settings": [
+      {
+            "type": "header",
+            "content": "Content Style"
+      },
+  	  {
+           "type": "color",
+           "id": "section_bg_color",
+           "label": "Section background color"
+      },
+      {
+          "type": "url",
+          "id": "video_url",
+          "label": "YouTube video URL"
+       }
+    ],
+    "presets": [{
+      "name": "About Video Section"
+    }]
+  }
+{% endschema %}

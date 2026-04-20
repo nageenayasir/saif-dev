@@ -1,0 +1,753 @@
+<!-- Quick Add Modal Wrapper -->
+<div id="quickAddModal" class="quick-add-modal" style="display: none;">
+  <div class="quick-add-modal-overlay"></div>
+  <div class="quick-add-modal-content">
+    <button class="quick-add-modal-close">&times;</button>
+    <div id="quickAddModalBody">
+      <!-- Content will be loaded dynamically from section -->
+      <div style="text-align: center; padding: 40px;">Loading...</div>
+    </div>
+  </div>
+</div>
+
+<style>
+  .quick-add-modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 9999;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .quick-add-modal-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.7);
+  }
+
+  .quick-add-modal-content {
+    position: relative;
+    background: #FBEEE8;
+    width: 90%;
+    max-width: 600px;
+    padding: 3rem 0;
+    border-radius: 8px;
+    max-height: 80vh;
+    overflow-y: auto;
+    z-index: 1;
+  }
+
+  @media screen and (min-width: 768px) {
+    .quick-add-modal-content {
+      width: 1200px;
+      height: 952px;
+      max-width: 95vw;
+      max-height: 95vh;
+    }
+  }
+
+  .quick-add-modal-close {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    background: none;
+    border: none;
+    font-size: 30px;
+    cursor: pointer;
+    margin-bottom: 2rem;
+    color: #333;
+    line-height: 1;
+    padding: 0;
+    width: 30px;
+    height: 30px;
+    z-index: 10;
+  }
+
+  .quick-add-modal-close:hover {
+    color: #000;
+  }
+
+  .quick-add-modal-body h2 {
+    margin-top: 0;
+    margin-bottom: 20px;
+  }
+
+  /* Two Column Layout - Critical Styles */
+  .quick-add-modal-columns {
+    display: grid !important;
+    grid-template-columns: 1fr 1fr !important;
+    gap: 2rem !important;
+    width: 100% !important;
+    height: 100%;
+    max-height: 82vh;
+  }
+
+  .quick-add-modal-left {
+    width: 100% !important;
+    overflow-y: auto !important;
+  }
+
+  .quick-add-modal-right {
+    width: 100% !important;
+    overflow-y: auto !important;
+    padding-right: 10px;
+  }
+
+  /* Custom scrollbar for right column */
+  .quick-add-modal-right::-webkit-scrollbar {
+    width: 8px;
+  }
+
+  .quick-add-modal-right::-webkit-scrollbar-track {
+    background: #f1f1f1;
+    border-radius: 10px;
+  }
+
+  .quick-add-modal-right::-webkit-scrollbar-thumb {
+    background: #888;
+    border-radius: 10px;
+  }
+
+  .quick-add-modal-right::-webkit-scrollbar-thumb:hover {
+    background: #555;
+  }
+
+  /* Responsive */
+  @media screen and (max-width: 767px) {
+    .quick-add-modal-content {
+      width: 95%;
+      padding: 10px;
+    }
+
+    .quick-add-modal-close {
+      width: 100%;
+      position: relative!important;
+      display: flex;
+      text-align: left;
+      background: none;
+      border: none;
+      font-size: 30px;
+      cursor: pointer;
+      color: #333;
+      line-height: 1;
+      padding: 0;
+      height: 30px;
+      z-index: 10;
+      justify-content: flex-end;
+
+      }
+
+    .quick-add-modal-columns {
+      grid-template-columns: 1fr !important;
+      max-height: none;
+    }
+
+    .widget-tab-content{
+      padding: 5px!important;
+    }
+
+    .widget-mobile-popular-badge {
+      margin-bottom: 0!important;
+    }
+
+    .widget-mobile-popular-badge .widget-popular-badge {
+        padding: 0px 10px!important;
+    }
+
+    .widget-tab-label {
+        font-size: 10px!important;
+    }
+
+    .widget-benefits-title{
+      margin-bottom: 10px!important;
+    }
+
+    .widget-selection-grid{
+      margin-bottom: 5px!important;
+    }
+
+    .widget-features{
+      margin-top: 12px!important;
+    }
+
+    .widget-benefits-box {
+      margin-bottom: 0!important;
+    }
+
+    .widget-price-section{
+      margin-bottom: 10px!important;
+    }
+
+    .widget-members-badge{
+      font-size: 12px!important
+    }
+
+    .coupanCodeMine label span {
+      font-size: 10px!important;
+    }
+
+    .coupanCodeMine {
+      margin-bottom: 0.5rem!important;
+    }
+
+    .widget-feature{
+      font-size: 10px!important
+    }
+
+
+    .quick-add-modal-right {
+      max-height: none !important;
+    }
+  }
+</style>
+
+<script>
+  window.openQuickAddModal = async function(productUrl) {
+    const modal = document.getElementById('quickAddModal');
+    const modalBody = document.getElementById('quickAddModalBody');
+
+    // Prevent multiple simultaneous openings
+    if (modal.dataset.loading === 'true') {
+      console.log('[MODAL] Already loading, skipping...');
+      return;
+    }
+
+    // Mark as loading
+    modal.dataset.loading = 'true';
+
+    console.log('[MODAL] Starting complete cleanup and reinitialization...');
+
+    // FORCE complete cleanup - destroy everything
+    // 1. Remove all old styles
+    const oldStyles = document.querySelectorAll('style[id^="quick-add-modal-styles-"]');
+    oldStyles.forEach(style => style.remove());
+
+    // 2. Destroy all existing Swiper instances in modal
+    if (window.Swiper) {
+      const existingSwipers = modalBody.querySelectorAll('.swiper');
+      existingSwipers.forEach(swiperEl => {
+        if (swiperEl.swiper) {
+          swiperEl.swiper.destroy(true, true);
+          console.log('[MODAL] Destroyed existing Swiper instance');
+        }
+      });
+    }
+
+    // 3. Clear Judge.me state BEFORE clearing modal content
+    const oldJdgmWidgets = modalBody.querySelectorAll('.jdgm-widget');
+    oldJdgmWidgets.forEach(widget => {
+      Object.keys(widget.dataset).forEach(key => {
+        delete widget.dataset[key];
+      });
+    });
+
+    if (window.jdgm) {
+      if (window.jdgm.widgets) window.jdgm.widgets = [];
+      if (window.jdgm.cache) window.jdgm.cache = {};
+      if (window.jdgm.productCache) window.jdgm.productCache = {};
+      console.log('[MODAL] Cleared Judge.me global state');
+    }
+
+    // 4. Clear subscription widget state
+    const oldSubscriptionWidgets = modalBody.querySelectorAll('.subscription-widget-container, [class*="subscription"]');
+    oldSubscriptionWidgets.forEach(widget => {
+      // Remove all event listeners by cloning and replacing
+      const clone = widget.cloneNode(true);
+      if (widget.parentNode) {
+        widget.parentNode.replaceChild(clone, widget);
+      }
+      // Clear data attributes
+      Object.keys(clone.dataset).forEach(key => {
+        delete clone.dataset[key];
+      });
+    });
+    console.log('[MODAL] Cleared subscription widget state');
+
+    // 5. Clear modal content completely
+    modalBody.innerHTML = '<div style="color:#111; font-size: 35px; text-align: center; padding: 40px;">Loading...</div>';
+
+    // 6. Force a small delay to ensure cleanup is complete
+    await new Promise(resolve => setTimeout(resolve, 150));
+
+    // Show modal with loading state
+    modal.style.display = 'flex';
+    document.body.style.overflow = 'hidden';
+
+    try {
+      // Extract product handle from URL
+      const productHandle = productUrl.replace('/products/', '').split('?')[0];
+
+      // Fetch the section with product context
+      const response = await fetch(`/products/${productHandle}?section_id=quick-add-modal`);
+      const html = await response.text();
+
+      // Parse the HTML response
+      const parser = new DOMParser();
+      const doc = parser.parseFromString(html, 'text/html');
+
+      // Extract and inject ALL styles into document head
+      const styleElements = doc.querySelectorAll('style');
+      console.log('[MODAL] Found', styleElements.length, 'style tags');
+
+      styleElements.forEach((styleElement, index) => {
+        const styleId = `quick-add-modal-styles-${index}`;
+
+        // Remove existing style to avoid conflicts
+        const existingStyle = document.getElementById(styleId);
+        if (existingStyle) {
+          existingStyle.remove();
+        }
+
+        // Create and inject new style
+        const newStyle = document.createElement('style');
+        newStyle.id = styleId;
+        newStyle.textContent = styleElement.textContent;
+        document.head.appendChild(newStyle);
+
+        console.log('[MODAL] Injected style tag', index, '- length:', styleElement.textContent.length);
+      });
+
+      // Extract section content
+      const sectionContent = doc.querySelector('.quick-add-modal-body') || doc.body;
+
+      // Inject the HTML content
+      modalBody.innerHTML = sectionContent.innerHTML;
+
+      console.log('[MODAL] Content injected into modal');
+
+      // Initialize Swiper directly in wrapper (after content is injected)
+      const images = modalBody.querySelectorAll('.main-gallery .swiper-slide');
+      const imageCount = images.length;
+
+      console.log('[MODAL] Found', imageCount, 'images for swiper initialization');
+
+      if (imageCount > 0) {
+        setTimeout(() => {
+          const thumbnailGalleryEl = modalBody.querySelector('.thumbnail-gallery');
+          const mainGalleryEl = modalBody.querySelector('.main-gallery');
+
+          console.log('[MODAL] Thumbnail gallery element:', thumbnailGalleryEl);
+          console.log('[MODAL] Main gallery element:', mainGalleryEl);
+
+          if (!thumbnailGalleryEl || !mainGalleryEl) {
+            console.error('[MODAL] Gallery elements not found');
+            return;
+          }
+
+          const thumbnailGallery = new Swiper(thumbnailGalleryEl, {
+            spaceBetween: 10,
+            slidesPerView: 4,
+            watchSlidesProgress: true,
+            loop: imageCount > 4,
+            navigation: {
+              nextEl: modalBody.querySelector('.product-thumbnail-next'),
+              prevEl: modalBody.querySelector('.product-thumbnail-prev'),
+            },
+            slideToClickedSlide: true,
+          });
+
+          const mainGallery = new Swiper(mainGalleryEl, {
+            spaceBetween: 10,
+            navigation: {
+              nextEl: modalBody.querySelector('.product-gallery-next'),
+              prevEl: modalBody.querySelector('.product-gallery-prev'),
+            },
+            thumbs: {
+              swiper: thumbnailGallery,
+            },
+            loop: true,
+          });
+
+          console.log('[MODAL] Swiper galleries initialized successfully');
+
+          // Setup gallery synchronization
+          thumbnailGallery.on('slideChangeTransitionEnd', function () {
+            const activeIndex = thumbnailGallery.realIndex;
+            mainGallery.slideToLoop(activeIndex, 0);
+          });
+
+          mainGallery.on('slideChangeTransitionEnd', function () {
+            const activeIndex = mainGallery.realIndex;
+            thumbnailGallery.slideToLoop(activeIndex, 0);
+          });
+
+          // Setup thumbnail navigation visibility
+          const prevArrow = modalBody.querySelector('.product-thumbnail-prev');
+          const nextArrow = modalBody.querySelector('.product-thumbnail-next');
+
+          if (prevArrow && nextArrow) {
+            if (imageCount <= 4) {
+              prevArrow.style.display = 'none';
+              nextArrow.style.display = 'none';
+            } else {
+              thumbnailGallery.on('slideChange', function () {
+                prevArrow.style.display = 'block';
+                nextArrow.style.display = 'block';
+
+                if (thumbnailGallery.isBeginning) {
+                  prevArrow.classList.add('swiper-button-disabled');
+                } else {
+                  prevArrow.classList.remove('swiper-button-disabled');
+                }
+
+                if (thumbnailGallery.isEnd) {
+                  nextArrow.classList.add('swiper-button-disabled');
+                } else {
+                  nextArrow.classList.remove('swiper-button-disabled');
+                }
+              });
+            }
+          }
+        }, 150);
+      }
+
+      // Execute other scripts (subscription widget, etc.) but skip Swiper initialization
+      const scripts = modalBody.querySelectorAll('script:not([type="application/json"])');
+      scripts.forEach(oldScript => {
+        // Skip the Swiper initialization script
+        if (oldScript.textContent.includes('Initialize Swiper')) {
+          console.log('[MODAL] Skipping Swiper script (handled by wrapper)');
+          return;
+        }
+
+        const newScript = document.createElement('script');
+
+        // Copy attributes
+        Array.from(oldScript.attributes).forEach(attr => {
+          newScript.setAttribute(attr.name, attr.value);
+        });
+
+        // Copy content
+        if (oldScript.src) {
+          newScript.src = oldScript.src;
+        } else {
+          newScript.textContent = oldScript.textContent;
+        }
+
+        // Replace old script with new one to trigger execution
+        oldScript.parentNode.replaceChild(newScript, oldScript);
+      });
+
+      console.log('[MODAL] Other scripts executed (subscription widget, etc.)');
+
+      // Trigger Judge.me widget initialization
+      setTimeout(() => {
+        console.log('[MODAL] Attempting to initialize Judge.me widgets...');
+
+        // Find all Judge.me widgets in the modal
+        const jdgmWidgets = modalBody.querySelectorAll('.jdgm-widget');
+        console.log('[MODAL] Found', jdgmWidgets.length, 'Judge.me widgets in modal');
+
+        if (jdgmWidgets.length > 0 && window.jdgm) {
+          // Load Judge.me widget script
+          const scriptUrl = 'https://cdn.judge.me/loader.js';
+
+          // Check if script already exists
+          if (!document.querySelector(`script[src="${scriptUrl}"]`)) {
+            const script = document.createElement('script');
+            script.src = scriptUrl;
+            script.async = true;
+            document.body.appendChild(script);
+            console.log('[MODAL] Loaded Judge.me loader script');
+          }
+
+          // Trigger widget processing after a delay
+          setTimeout(() => {
+            jdgmWidgets.forEach(widget => {
+              console.log('[MODAL] Processing widget:', widget);
+
+              // Remove display:none from inner badge
+              const prevBadge = widget.querySelector('.jdgm-prev-badge');
+              if (prevBadge) {
+                prevBadge.style.display = 'flex';
+                console.log('[MODAL] Forced display on .jdgm-prev-badge');
+              }
+            });
+
+            // Try to trigger Judge.me initialization
+            if (window.jdgm && typeof window.jdgm.customDocumentReady === 'function') {
+              console.log('[MODAL] Calling jdgm.customDocumentReady()');
+              window.jdgm.customDocumentReady();
+            }
+
+            // Dispatch custom event
+            const event = new Event('judgeme:load');
+            window.dispatchEvent(event);
+            console.log('[MODAL] Dispatched judgeme:load event');
+          }, 500);
+        }
+      }, 300);
+
+      // Log product data received
+      console.log('[MODAL] Product URL:', productUrl);
+      console.log('[MODAL] Product Handle:', productHandle);
+
+      // Extract and log product data from JSON scripts
+      const variantsScript = modalBody.querySelector('script[type="application/json"]');
+      const sellingPlansScript = modalBody.querySelector('script[type="application/json"]#selling-plans-data');
+
+      if (variantsScript) {
+        try {
+          const variants = JSON.parse(variantsScript.textContent);
+          console.log('[MODAL] Product Variants:', variants);
+          console.log('[MODAL] Total variants:', variants.length);
+          if (variants.length > 0) {
+            console.log('[MODAL] First variant:', variants[0]);
+          }
+        } catch (e) {
+          console.error('[MODAL] Error parsing variants:', e);
+        }
+      }
+
+      if (sellingPlansScript) {
+        try {
+          const sellingPlans = JSON.parse(sellingPlansScript.textContent);
+          console.log('[MODAL] Selling Plans:', sellingPlans);
+        } catch (e) {
+          console.error('[MODAL] Error parsing selling plans:', e);
+        }
+      }
+
+      // Log subscription widget presence
+      const widgetContainer = modalBody.querySelector('.subscription-widget-container');
+      console.log('[MODAL] Subscription widget found:', !!widgetContainer);
+      if (widgetContainer) {
+        console.log('[MODAL] Widget initialized status:', widgetContainer.dataset.initialized);
+      }
+
+      // Initialize subscription widget if it exists
+      if (widgetContainer && typeof window.initializeSubscriptionWidget === 'function') {
+        console.log('[MODAL] Calling initializeSubscriptionWidget...');
+        // Reset initialized flag to allow reinitialization
+        widgetContainer.dataset.initialized = 'false';
+        setTimeout(() => {
+          window.initializeSubscriptionWidget();
+          console.log('[MODAL] Widget initialization complete. Status:', widgetContainer.dataset.initialized);
+        }, 100);
+      } else if (!widgetContainer) {
+        console.log('[MODAL] No subscription widget to initialize');
+      } else {
+        console.log('[MODAL] initializeSubscriptionWidget function not available');
+      }
+
+      // Remove 6-Pack options (function from dgf_subscription_wdg.liquid)
+      if (typeof window.remove6PackOptions === 'function') {
+        window.remove6PackOptions();
+        console.log('[MODAL] 6-Pack options removed');
+      } else {
+        // Fallback: remove 6-Pack options directly
+        const selectors = [
+          '.widget-selection-option[data-variant-value="6-Pack"]',
+          '.widget-selection-option[data-variant-value*="6-Pack"]',
+          '.widget-selection-option[data-variant-value*="6-pack"]',
+          '.widget-selection-option[data-variant-value*="6 Pack"]'
+        ];
+        selectors.forEach(selector => {
+          const elements = modalBody.querySelectorAll(selector);
+          elements.forEach(element => element.remove());
+        });
+        console.log('[MODAL] 6-Pack options removed (fallback)');
+      }
+
+      // Initialize quantity selector
+      const quantityInput = modalBody.querySelector('.input-quantity');
+      const minusBtn = modalBody.querySelector('.qtyminus');
+      const plusBtn = modalBody.querySelector('.qtyplus');
+
+      if (quantityInput && minusBtn && plusBtn) {
+        minusBtn.addEventListener('click', function() {
+          let currentVal = parseInt(quantityInput.value) || 1;
+          if (currentVal > 1) {
+            quantityInput.value = currentVal - 1;
+          }
+        });
+
+        plusBtn.addEventListener('click', function() {
+          let currentVal = parseInt(quantityInput.value) || 1;
+          quantityInput.value = currentVal + 1;
+        });
+
+        quantityInput.addEventListener('keypress', function(e) {
+          if (e.which < 48 || e.which > 57) {
+            e.preventDefault();
+          }
+        });
+
+        quantityInput.addEventListener('blur', function() {
+          let currentVal = parseInt(this.value) || 1;
+          if (currentVal < 1) {
+            this.value = 1;
+          }
+        });
+
+        console.log('[MODAL] Quantity selector initialized');
+      }
+
+      // Initialize tabs accordion functionality
+      const tabHeaders = modalBody.querySelectorAll('.quick-add-tabs-section .cstm-menu-footer h2');
+      const allTabs = modalBody.querySelectorAll('.quick-add-tabs-section .cstm-menu-footer');
+
+      tabHeaders.forEach(header => {
+        header.addEventListener('click', function() {
+          const parent = this.closest('.cstm-menu-footer');
+          const isActive = parent.classList.contains('active');
+          const content = parent.querySelector('.cstm-menu-s');
+
+          // Close all other tabs first
+          allTabs.forEach(tab => {
+            if (tab !== parent) {
+              tab.classList.remove('active');
+              const tabContent = tab.querySelector('.cstm-menu-s');
+              if (tabContent) tabContent.style.display = 'none';
+            }
+          });
+
+          // Toggle current tab
+          if (isActive) {
+            parent.classList.remove('active');
+            if (content) content.style.display = 'none';
+          } else {
+            parent.classList.add('active');
+            if (content) content.style.display = 'block';
+          }
+        });
+      });
+      console.log('[MODAL] Tab accordion initialized');
+
+      // Handle add to cart button click (Rebuy integration)
+      // Using same logic as main-product in theme.liquid
+      const addToCartBtn = modalBody.querySelector('.subscription-addtocartMine');
+      if (addToCartBtn) {
+        // Import cartRequestAdd (same as theme.liquid)
+        import('{{ "liquid-ajax-cart-v1.10.3.js" | asset_url }}').then(module => {
+          const { cartRequestAdd } = module;
+
+          addToCartBtn.addEventListener('click', function(e) {
+            console.log('[MODAL] Add to cart clicked');
+
+            // Use jQuery to check coupon (same as main-product)
+            var checkCoupon = $('input[name="coupanMine"]').prop('checked');
+
+            // Get modal body as container (instead of .product-details)
+            const container = e.target.closest('.quick-add-modal-body') || modalBody;
+
+            // Log selling plan value (same as main-product)
+            console.log(container.querySelector('.selling-plan-id').value);
+
+            if (checkCoupon == true) {
+              cartRequestAdd({
+                items: [
+                  {
+                    id: container.querySelector('[name="id"]').value,
+                    selling_plan: container.querySelector('.selling-plan-id').value,
+                    quantity: container.querySelector('[name="quantity"]').value,
+                    properties: {
+                      "Coupon": true
+                    }
+                  }
+                ]
+              });
+            } else {
+              cartRequestAdd({
+                items: [
+                  {
+                    id: container.querySelector('[name="id"]').value,
+                    selling_plan: container.querySelector('.selling-plan-id').value,
+                    quantity: container.querySelector('[name="quantity"]').value
+                  }
+                ]
+              });
+            }
+
+            // Close modal after adding to cart
+            setTimeout(() => {
+              closeModal();
+            }, 800);
+          });
+        }).catch(error => {
+          console.error('[MODAL] Error importing cartRequestAdd:', error);
+        });
+      }
+
+    } catch (error) {
+      console.error('Error loading product:', error);
+      modalBody.innerHTML = '<div style="text-align: center; padding: 40px; color: red;">Error loading product. Please try again.</div>';
+    } finally {
+      // Remove loading flag
+      modal.dataset.loading = 'false';
+    }
+
+    // Close modal functionality
+    const closeBtn = modal.querySelector('.quick-add-modal-close');
+    const overlay = modal.querySelector('.quick-add-modal-overlay');
+    
+
+    function closeModal() {
+      try{
+        console.log('[MODAL] Closing modal and cleaning up...');
+
+        // 1. Destroy Swiper instances
+        const swipers = modalBody.querySelectorAll('.swiper');
+        swipers.forEach(swiperEl => {
+          if (swiperEl.swiper) {
+            swiperEl.swiper.destroy(true, true);
+            console.log('[MODAL] Destroyed Swiper on close');
+          }
+        });
+
+        // 2. Clear Judge.me state
+        const jdgmWidgets = modalBody.querySelectorAll('.jdgm-widget');
+        jdgmWidgets.forEach(widget => {
+          Object.keys(widget.dataset).forEach(key => {
+            if (key.startsWith('jdgm')) {
+              delete widget.dataset[key];
+            }
+          });
+        });
+
+        if (window.jdgm) {
+          if (window.jdgm.widgets) window.jdgm.widgets = [];
+          if (window.jdgm.cache) window.jdgm.cache = {};
+          if (window.jdgm.productCache) window.jdgm.productCache = {};
+        }
+
+        // 3. Clear subscription widget event listeners
+        const subscriptionElements = modalBody.querySelectorAll('[class*="subscription"], .pdp-widget, input[type="radio"]');
+        subscriptionElements.forEach(el => {
+          const clone = el.cloneNode(true);
+          if (el.parentNode) {
+            el.parentNode.replaceChild(clone, el);
+          }
+        });
+
+        modal.style.display = 'none';
+        document.body.style.overflow = '';
+        modal.dataset.loading = 'false';
+
+        // Remove injected styles from head
+        const injectedStyles = document.querySelectorAll('style[id^="quick-add-modal-styles-"]');
+        injectedStyles.forEach(style => {
+          style.remove();
+        });
+
+        console.log('[MODAL] Modal closed and cleaned up successfully');
+     }catch(e){console.error('[MODAL] Error closing:', e);}
+    }
+
+    // Remove old listeners before adding new ones
+    closeBtn.onclick = null;
+    overlay.onclick = null;
+
+    closeBtn.onclick = closeModal;
+    overlay.onclick = closeModal;
+  };
+</script>
+
+

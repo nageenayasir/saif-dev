@@ -1,0 +1,141 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+ {
+  "sections": {
+    "main": {
+      "type": "main-page",
+      "disabled": true,
+      "settings": {}
+    },
+    "19bd39e7-9344-4e6d-a658-d12fb7083f45": {
+      "type": "gift-card-banner",
+      "settings": {
+        "enable_breadcrumb": true,
+        "background_the_image": "shopify://shop_images/Monstera_1-optimized.jpg",
+        "the_title": "Get a <span>$200 Gift Card</span> by sending us a short video review of <br>TRIBE ORGANICS’ Products!"
+      }
+    },
+    "dc2db5a8-0610-4d3a-9ff3-ab87e5bdd4f8": {
+      "type": "gift-card-image-text",
+      "settings": {
+        "the_title": "$200 TRIBE ORGANICS GIFT CARD",
+        "the_text": "Tribe Organics will send you a $200 Gift Card to our store in return for just a 30 seconds or longer video review of our product(s)!",
+        "sub_title": "GET STARTED NOW!",
+        "sub_text": "Follow these simple steps below:",
+        "the_image": "shopify://shop_images/derek-review-optimized.png"
+      }
+    },
+    "cdf19948-ca4e-47d9-9c9f-e549b9a3504c": {
+      "type": "gift-video-section",
+      "settings": {
+        "poster_image": "shopify://shop_images/bd2988900b564c1ba9019c0547154086_000.jpg",
+        "video_link": "https://cdn.shopify.com/videos/c/o/v/bd2988900b564c1ba9019c0547154086.mp4",
+        "the_image": "shopify://shop_images/video-logo.png"
+      }
+    },
+    "884055db-c7bd-4ef7-b62b-2d032ae445eb": {
+      "type": "video-steps-section",
+      "settings": {
+        "the_title": "Step 1",
+        "the_text": "Grab a Smartphone or a Tablet that can record video. (iPhone, Samsung, Ipad, etc.).",
+        "text_1": "",
+        "text_2": "",
+        "link_text": "",
+        "link": "",
+        "the_image": "shopify://shop_images/step-one-picture.png"
+      }
+    },
+    "07b60ddf-5695-4c8c-86ac-948beb746c7b": {
+      "type": "video-step-second",
+      "settings": {
+        "the_title": "Step 2",
+        "the_text": "Record your video review <span>(must be at least 30 seconds long). </span>We suggest you ask a friend or family member to record you or use a tripod/selfie stick to record with stability.",
+        "the_image": "shopify://shop_images/istockphoto-1219343932-612x612.jpg"
+      }
+    },
+    "389cd00d-cd6d-4b36-bd70-e59e9146383c": {
+      "type": "video-requirements-section",
+      "blocks": {
+        "91ebfd0c-02fd-4e2a-baa5-16c9174f7729": {
+          "type": "order_list",
+          "settings": {
+            "num_text": "1.",
+            "text": "Mention our company name: <span>Tribe Organics</span>"
+          }
+        },
+        "f1b3c13d-432b-4bd6-a7ba-6aaf78cecd65": {
+          "type": "order_list",
+          "settings": {
+            "num_text": "2.",
+            "text": "Clearly show <span>your Face</span> and <span>our product(s)</span>"
+          }
+        },
+        "8bd65874-8181-4847-ac5e-aa4589b06560": {
+          "type": "order_list",
+          "settings": {
+            "num_text": "3.",
+            "text": "Make sure you have <span>enough light</span> in the room!"
+          }
+        },
+        "214f4248-f0fb-4201-a963-4316deb0421d": {
+          "type": "order_list",
+          "settings": {
+            "num_text": "4.",
+            "text": "Answer <span>both</span> of the following questions:"
+          }
+        }
+      },
+      "block_order": [
+        "91ebfd0c-02fd-4e2a-baa5-16c9174f7729",
+        "f1b3c13d-432b-4bd6-a7ba-6aaf78cecd65",
+        "8bd65874-8181-4847-ac5e-aa4589b06560",
+        "214f4248-f0fb-4201-a963-4316deb0421d"
+      ],
+      "settings": {
+        "the_title": "VIDEO REQUIREMENTS",
+        "the_text": "To qualify for the $200 GIFT CARD, you must include the following 4 elements in your video:",
+        "leaf_image": "shopify://shop_images/leave-pic.png",
+        "text_1": "What is the reason you began taking our supplements?",
+        "text_2": "Why is it important to know what you put in your body?",
+        "text_3": "<span>Don't want to take a video? </span>Send us a selfie picture with the product in hand instead following the above requirements and we will send you a <span>$25 Gift Card to our store.</span>"
+      }
+    },
+    "b5fb6081-d852-4317-bff1-45e1738775d8": {
+      "type": "video-steps-section",
+      "settings": {
+        "the_title": "Step 3",
+        "the_text": "<span>Email us your video</span>  (From the device your recorded it on)",
+        "text_1": "Use Subject Line: <span>Tribe Organics Video Review</span>",
+        "text_2": "Send your video to:",
+        "link_text": "info@tribe-organics.com",
+        "link": "mailto:info@tribe-organics.com",
+        "the_image": "shopify://shop_images/step-third-picture.png"
+      }
+    },
+    "4a669f70-a5ed-452d-977f-e8961b05b3ae": {
+      "type": "gift-card-info",
+      "settings": {
+        "section_bg_color": "#a7833e",
+        "the_text": "Get A $200 Gift Card By Sending Us A Short Video Review Of Our Products!"
+      }
+    }
+  },
+  "order": [
+    "main",
+    "19bd39e7-9344-4e6d-a658-d12fb7083f45",
+    "dc2db5a8-0610-4d3a-9ff3-ab87e5bdd4f8",
+    "cdf19948-ca4e-47d9-9c9f-e549b9a3504c",
+    "884055db-c7bd-4ef7-b62b-2d032ae445eb",
+    "07b60ddf-5695-4c8c-86ac-948beb746c7b",
+    "389cd00d-cd6d-4b36-bd70-e59e9146383c",
+    "b5fb6081-d852-4317-bff1-45e1738775d8",
+    "4a669f70-a5ed-452d-977f-e8961b05b3ae"
+  ]
+}

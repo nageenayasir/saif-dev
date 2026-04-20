@@ -1,0 +1,46 @@
+<section class="section section-crys pt-0">
+    <div class="container">
+        <h2 class="text-uppercase text-center d-block d-md-none" data-aos="fade-up" data-aos-delay="000">{{ section.settings.title }}</h2>
+        <div class="row align-items-center mt-5">
+            <div class="col-md-6 mt-4 mt-md-0">
+                <div style="max-width: 420px;">
+                    <h2 class="text-uppercase d-none d-md-block" data-aos="fade-up">
+                        {{ section.settings.title }}
+                    </h2>
+                    <p data-aos="fade-up">
+                        {{ section.settings.content }}
+                    </p>
+                </div>
+            </div>
+            <div class="col-md-6 order-first order-md-last">
+                <div data-aos="fade-up" data-aos-delay="400">
+                    <img loading="lazy"  src="{{ section.settings.image | image_url: width: 800 }}" alt="{{ section.settings.title }}">
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+{% schema %}
+  {
+    "name": "Section Social",
+    "settings": [
+       {
+          "type": "text",
+          "id": "title",
+          "label": "Title",
+          "default" : "Social"
+        },
+       {
+        "type": "textarea",
+        "id": "content",
+        "label": "Content",
+        "default" : "Place holder text here. Individuals from inspiring athletes, adventurers, to wellness advocates and entrepreneurs, who are active in their communities and motivated to help elevate others and make the world a better place."
+      },
+      {
+        "type": "image_picker",
+        "id": "image",
+        "label": "Image"
+      }
+    ]
+  }
+{% endschema %}

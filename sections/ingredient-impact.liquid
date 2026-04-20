@@ -1,0 +1,58 @@
+<section class="section section-reward bg-cream color-dark">
+    <div class="container">
+        <h2 class="text-uppercase d-block d-md-none" data-aos="fade-up">{{ section.settings.title }}</h2>
+        <div class="row align-items-center">
+            <div class="col-md-6 order-md-last">
+                <div data-aos="fade-up" data-aos-delay="000">
+                    <img loading="lazy"  src="{{ section.settings.image | image_url : width: 500 }}" alt="{{ section.settings.title }}">
+                </div>
+            </div>
+            <div class="col-md-6 mt-4 mt-md-0">
+                <div>
+                    <h2 class="text-uppercase d-none d-md-block" data-aos="fade-up">{{ section.settings.title }}</h2>
+                    <p data-aos="fade-up">{{ section.settings.sub_title }}</p>
+                    <div class="mt-4" data-aos="fade-up">
+                        <a class="btn btn-trans color-dark" href="{{ section.settings.url }}" target="_self">
+                            {{ section.settings.button }}
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+{% schema %}
+  {
+    "name": "Section Impact",
+    "settings": [
+      {
+        "type": "text",
+        "id": "title",
+        "label": "Title",
+        "default" : "Impact"
+      },
+      {
+        "type": "textarea",
+        "id": "sub_title",
+        "label": "Subtitle",
+        "default": "As part of a global community, TRIIBE supports individuals from inspiring athletes, adventurers, to wellness advocates and entrepreneurs, who are active in their communities and motivated to help elevate others and make the world a better place."
+      },
+      {
+          "type": "image_picker",
+          "id": "image",
+          "label": "Image"
+      },
+      {
+        "type": "text",
+        "id": "button",
+        "label": "Button",
+        "default" : "Explore"
+      },
+      {
+        "type": "url",
+        "id": "url",
+        "label": "Url"
+      }
+    ]
+  }
+{% endschema %}

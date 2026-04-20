@@ -1,0 +1,25 @@
+/* LCP, CLS Improved */
+@font-face {
+  font-family: 'HypatiaSansPro';
+  src: url('//www.tribe-organics.com/cdn/shop/t/102/assets/HypatiaSansPro-Bold.woff2?v=168525571851761587891767464630') format('woff2');
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Superior Title';
+  src: url('https://cdn.shopify.com/s/files/1/0499/0425/5134/files/SuperiorTitle-Medium.woff2?v=1737451658') format('woff2'),
+      url('SuperiorTitle-Medium.woff') format('woff');
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Superior Title Italic';
+  src: url('https://cdn.shopify.com/s/files/1/0499/0425/5134/files/SuperiorTitle-Medium-Italic.woff2?v=1759322803') format('woff2'),
+      url('SuperiorTitle-Medium-Italic.woff') format('woff');
+  font-weight: 500;
+  font-style: italic;
+  font-display: swap;
+}

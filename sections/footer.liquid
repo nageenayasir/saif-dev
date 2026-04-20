@@ -1,246 +1,339 @@
-<footer class="site-footer" role="contentinfo">
-  <div class="page-width">
-    <div class="footer__main">
-      <!-- Brand Column -->
-      <div class="footer__brand">
-        <a href="{{ routes.root_url }}" class="footer__logo" aria-label="{{ shop.name }}">
-          {%- if section.settings.logo != blank -%}
-            {{
-              section.settings.logo
-              | image_url: width: 200
-              | image_tag:
-                loading: 'lazy',
-                width: 150,
-                height: 50,
-                alt: shop.name,
-                class: 'footer__logo-img'
-            }}
-          {%- else -%}
-            <span class="footer__logo-text">{{ shop.name }}</span>
-          {%- endif -%}
-        </a>
+  <footer class="site-footer">
+<!--   {% if request.page_type == '404' or request.page_type == 'customers/login' or request.page_type == 'customers/register' or request.path == '/pages/account-forgot' or request.page_type == 'page' or request.page_type == 'customers/account' or request.page_type == 'customers/addresses' or request.path == '/policies/privacy-policy' or request.path == '/policies/terms-of-service' or request.path == '/policies/shipping-policy' or request.path == '/policies/refund-policy' %}
+     <div class="leaf-box left-top" >
+        <img loading="lazy"  class="leaf" src="{{ 'leaf-06.png' | asset_url }}" alt="Decorative leaf graphic">
+    </div>
+    <div class="leaf-box right-bot" >
+        <img loading="lazy"  class="leaf" src="{{ 'leaf-10.png' | asset_url }}" alt="Decorative leaf graphic">
+    </div>
+  {% else %}
+    <div class="leaf-box left-top">
+        <img loading="lazy"  class="leaf" src="{{ 'leaf-n08.svg' | asset_url }}" alt="Decorative leaf graphic">
+    </div>
+    <div class="leaf-box left-bot" style="bottom: 0;">
+        <img loading="lazy"  class="leaf__" src="{{ 'leaf-n09.svg' | asset_url }}" alt="Decorative leaf graphic">
+    </div>
+    <div class="leaf-box right-bot" style="bottom: 0;">
+        <img loading="lazy"  class="leaf__" src="{{ 'leaf-n10.svg' | asset_url }}" alt="Decorative leaf graphic">
+    </div>
+  {% endif %} -->
+    {% unless request.path == '/products/ashwagandha-gummies-kids' %}
+    <div class="leaf-box left-top">
+        <img loading="lazy"  class="leaf" src="{{ 'leaf-n08.svg' | asset_url }}" alt="Decorative leaf graphic">
+    </div>
+    {% endunless %}
+    {% if request.page_type == '404' or request.page_type == 'customers/login' or request.page_type == 'customers/register' or request.path == '/pages/account-forgot' or request.path == '/products/ashwagandha-gummies-kids' %}
+      {% else %}
+    <div class="leaf-box right-top" style="top: -60px;">
+        <img loading="lazy"  class="leaf__" src="{{ 'leaf-n06.svg' | asset_url }}" alt="Decorative leaf graphic">
+    </div>
+    {% endif %}
+    <div class="leaf-box left-bot" style="bottom: 0;">
+        <img loading="lazy"  class="leaf__" src="{{ 'leaf-n09.svg' | asset_url }}" alt="Decorative leaf graphic">
+    </div>
 
-        {%- if section.settings.brand_description != blank -%}
-          <p class="footer__brand-desc">{{ section.settings.brand_description }}</p>
-        {%- endif -%}
-
-        <!-- Social Links -->
-        <div class="footer__social">
-          {%- if section.settings.instagram_url != blank -%}
-            <a href="{{ section.settings.instagram_url }}" class="footer__social-link" aria-label="Instagram" target="_blank" rel="noopener noreferrer">
-              <svg aria-hidden="true" focusable="false" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <rect x="2" y="2" width="20" height="20" rx="5" ry="5" stroke="currentColor" stroke-width="1.5" fill="none"/>
-                <circle cx="12" cy="12" r="4" stroke="currentColor" stroke-width="1.5"/>
-                <circle cx="17.5" cy="6.5" r="0.5" fill="currentColor"/>
-              </svg>
+    <div class="leaf-box right-bot" style="bottom: 0;">
+        <img loading="lazy"  class="leaf__" src="{{ 'leaf-n10.svg' | asset_url }}" alt="Decorative leaf graphic">
+    </div>
+    
+    <div class="container">
+        <div class="text-center">
+            <a href="{{ routes.root_url }}" class="logo" data-aos="fade-up" data-aos-delay="000">
+                <img loading="lazy"  src="{{ section.settings.logo | image_url : width: 600 }}" alt="{{ section.settings.logo.alt | default: shop.name }}">
             </a>
-          {%- endif -%}
-          {%- if section.settings.facebook_url != blank -%}
-            <a href="{{ section.settings.facebook_url }}" class="footer__social-link" aria-label="Facebook" target="_blank" rel="noopener noreferrer">
-              <svg aria-hidden="true" focusable="false" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-              </svg>
-            </a>
-          {%- endif -%}
-          {%- if section.settings.youtube_url != blank -%}
-            <a href="{{ section.settings.youtube_url }}" class="footer__social-link" aria-label="YouTube" target="_blank" rel="noopener noreferrer">
-              <svg aria-hidden="true" focusable="false" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <path d="M22.54 6.42a2.78 2.78 0 0 0-1.95-1.96C18.88 4 12 4 12 4s-6.88 0-8.59.46a2.78 2.78 0 0 0-1.95 1.96A29 29 0 0 0 1 12a29 29 0 0 0 .46 5.58A2.78 2.78 0 0 0 3.41 19.6C5.12 20 12 20 12 20s6.88 0 8.59-.46a2.78 2.78 0 0 0 1.95-1.95A29 29 0 0 0 23 12a29 29 0 0 0-.46-5.58z" stroke="currentColor" stroke-width="1.5"/>
-                <polygon points="9.75 15.02 15.5 12 9.75 8.98 9.75 15.02" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-              </svg>
-            </a>
-          {%- endif -%}
-          {%- if section.settings.spotify_url != blank -%}
-            <a href="{{ section.settings.spotify_url }}" class="footer__social-link" aria-label="Spotify" target="_blank" rel="noopener noreferrer">
-              <svg aria-hidden="true" focusable="false" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <circle cx="12" cy="12" r="10" stroke="currentColor" stroke-width="1.5"/>
-                <path d="M8 13.5c2.33-.78 4.67-.78 7 0M7 11c2.67-.89 5.33-.89 8 0M9 16c1.67-.56 3.33-.56 5 0" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
-              </svg>
-            </a>
-          {%- endif -%}
         </div>
+        <div id="here-anchor" class="row">
+              <div class="col-lg-6 left-side-footer">
+              {%- for block in section.blocks -%}
+                {% if block.type == 'subscribe' %}
+                  <h2 class="text-uppercase footer-join-subscribe-text" data-aos="fade-up" data-aos-delay="000">{{ block.settings.title }}</h2>
+                  <p class="footer-lifestyle-text" data-aos="fade-up" data-aos-delay="000">{{ block.settings.the_text }}</p>
+                   {%- form 'customer', id: 'ContactFooter', class: 'newsletter-footer d-flex',data-aos : 'fade-up',data-aos-delay : '000'  -%}
+                    <input id="NewsletterForm--{{ section.id }}" type="email" name="contact[email]" value="{{ form.email }}" placeholder="{{ 'newsletter.label' | t }}" required>
+                    <button type="submit" class="btn btn-bg" name="commit" id="Subscribe">{{ 'newsletter.button_label' | t }}</button>
+                  {% endform %}
+                  <p class="note font-s text-uppercase mt-3" data-aos="fade-up" data-aos-delay="000">{{ block.settings.content }}</p>
+                {% endif %}
+                {% if block.type == 'copyright' %}
+                  <div class="d-none d-lg-block footer-social-right">
+                     <div class="footer-social-media-custom-icons">
+                <div class="footer-custom-new-icons">
+                  <ul class="footer-iconnew-icons-lists">
+                    <li>
+                       {% if block.settings.icon_1 != blank %}<img loading="lazy" src="{{ block.settings.icon_1 | img_url : "master" }}" alt="Certification badge">{% endif %}
+                    </li>
+                    <li>
+                       {% if block.settings.icon_2 != blank %}<img loading="lazy" src="{{ block.settings.icon_2 | img_url : "master" }}" alt="Certification badge">{% endif %}
+                    </li>
+                  </ul>
+                </div>
+                <div class="footer-social-media-icons">
+                <h2 class="text-uppercase mt-4 pt-4 mt-md-5 pt-md-5 mb-2" data-aos="fade-up" data-aos-delay="000"  data-aos-anchor="#here-anchor">{{ block.settings.title }}</h2>
+                <div class="socials mb-5 pb-lg-5" data-aos="fade-up" data-aos-delay="000"
+                     data-aos-anchor="#here-anchor">
 
-        <!-- Certifications -->
-        {%- if section.settings.show_certifications -%}
-          <div class="footer__certifications">
-            {%- if section.settings.cert_1 != blank -%}
-              {{ section.settings.cert_1 | image_url: width: 80 | image_tag: loading: 'lazy', width: 60, height: 60, alt: 'Certification', class: 'footer__cert-badge' }}
-            {%- endif -%}
-            {%- if section.settings.cert_2 != blank -%}
-              {{ section.settings.cert_2 | image_url: width: 80 | image_tag: loading: 'lazy', width: 60, height: 60, alt: 'Certification', class: 'footer__cert-badge' }}
-            {%- endif -%}
-            {%- if section.settings.cert_3 != blank -%}
-              {{ section.settings.cert_3 | image_url: width: 80 | image_tag: loading: 'lazy', width: 60, height: 60, alt: 'Certification', class: 'footer__cert-badge' }}
-            {%- endif -%}
+
+                              <a href="{{ settings.social_instagram_link }}" aria-label="Follow us on Instagram" target="_blank" rel="noopener">{%- render 'icon-instagram' -%}</a>
+
+
+                              <a href="{{ settings.social_facebook_link }}" aria-label="Follow us on Facebook" target="_blank" rel="noopener">{%- render 'icon-facebook' -%}</a>
+
+                              <a href="{{ section.settings.social_spotify_link }}" target="_blank" aria-label="Listen on Spotify" target="_blank" rel="noopener"><i class="fab fa-spotify"></i> </a>
+                              <a href="{{ settings.social_youtube_link }}" aria-label="Subscribe on YouTube" target="_blank" rel="noopener">{%- render 'icon-youtube' -%}</a>
+                              <a href="{{ settings.social_tiktok_link }}" aria-label="Follow us on TikTok" target="_blank" rel="noopener">{%- render 'icon-tiktok' -%}</a>
+
+
+                    </div>
+                  </div>
+                </div>
+                    {% if block.settings.show_icon_payment %}
+                      {%- for type in shop.enabled_payment_types -%}
+                          <li class="list-payment__item">
+                            {{ type | payment_type_svg_tag: class: 'icon icon--full-color' }}
+                          </li>
+                      {%- endfor -%}
+                    {% endif %}
+                    {% if block.settings.image %}
+                      <div class="pay">
+                      <img loading="lazy"  src="{{ block.settings.image | image_url : width: 600 }}" alt="Payment methods accepted" data-aos="fade-up" data-aos-delay="000" width="332" height="25">
+                      </div>
+                    {% endif %}
+                      <p class="font-s text-uppercase" data-aos="fade-up" data-aos-delay="000">{{ block.settings.copyright | newline_to_br }}</p>
+                                          <p class="font-s disclaimer-text" style="text-transform: none !important; max-width: 500px;">{{ block.settings.content }}</p>
+
+                  </div>
+                {% endif %}
+                {% endfor %}
+              </div>
+              <div class="col-lg-6 mt-5 mt-lg-0">
+                  <div class="row menu-footer-group">
+                     {%- for block in section.blocks -%} 
+                      {%- case block.type -%}
+                        {%- when 'link_list' -%}
+                          <div class="col-md-6">
+                            <div class="menu-footer">
+                                <h2 class="text-uppercase" data-aos="fade-up" data-aos-delay="000">{{ block.settings.heading }}</h2>
+                                <div class="menu-s">
+                                    <ul data-aos="fade-up" data-aos-delay="000">
+                                        {%- for link in block.settings.menu.links -%}
+                                          <li><a href="{{ link.url }}" aria-label="Reach out to Tribe Organics for {{ link.title }} and more">{{ link.title }}</a></li>
+                                        {% endfor %}
+                                    </ul>
+                                </div>
+                            </div>
+                          </div>
+                           {%- when 'contact' -%} 
+                             <div class="col-md-6">
+                              <div class="menu-footer">
+                                  <h2 class="text-uppercase" data-aos="fade-up" data-aos-delay="000">{{ block.settings.heading }}</h2>
+                                  <div class="menu-s">
+                                      <ul data-aos="fade-up" data-aos-delay="000">
+                                          {{ block.settings.custom_html }}
+                                      </ul>
+                                  </div>
+                            </div>
+                          </div>
+                        {% endcase %}
+                       {%- endfor -%} 
+                      
+                  </div>
+              </div>
           </div>
-        {%- endif -%}
-      </div>
+          <div class="d-block d-lg-none footer-social-right">
+          {%- for block in section.blocks -%}
+            {% if block.type == 'copyright' %}
+              <div class="footer-social-media-custom-icons">
+                <div class="footer-custom-new-icons">
+                  <ul class="footer-iconnew-icons-lists">
+                    <li>
+                       {% if block.settings.icon_1 != blank %}<img loading="lazy" src="{{ block.settings.icon_1 | img_url : "master" }}" alt="Certification badge">{% endif %}
+                    </li>
+                    <li>
+                       {% if block.settings.icon_2 != blank %}<img loading="lazy" src="{{ block.settings.icon_2 | img_url : "master" }}" alt="Certification badge">{% endif %}
+                    </li>
+                  </ul>
+                </div>
+                <div class="footer-social-media-icons">
+                <h2 class="text-uppercase mt-4 pt-4 mt-md-5 pt-md-5 mb-2" data-aos="fade-up" data-aos-delay="000"  data-aos-anchor="#here-anchor">{{ block.settings.title }}</h2>
+                <div class="socials mb-5 pb-lg-5" data-aos="fade-up" data-aos-delay="000"
+                     data-aos-anchor="#here-anchor">
 
-      <!-- Nav Columns -->
-      {%- for block in section.blocks -%}
-        {%- if block.type == 'link_list' -%}
-          <div class="footer__nav-column" {{ block.shopify_attributes }}>
-            {%- if block.settings.heading != blank -%}
-              <h3 class="footer__nav-heading">{{ block.settings.heading }}</h3>
-            {%- endif -%}
-            {%- if block.settings.menu != blank -%}
-              <ul class="footer__nav-list" role="list">
-                {%- for link in block.settings.menu.links -%}
-                  <li>
-                    <a href="{{ link.url }}" class="footer__nav-link"
-                      {% if link.current %}aria-current="page"{% endif %}>
-                      {{ link.title }}
-                    </a>
-                  </li>
-                {%- endfor -%}
-              </ul>
-            {%- endif -%}
+
+                              <a href="{{ settings.social_instagram_link }}" aria-label="Follow us on Instagram" target="_blank" rel="noopener">{%- render 'icon-instagram' -%}</a>
+
+
+                              <a href="{{ settings.social_facebook_link }}" aria-label="Follow us on Facebook" target="_blank" rel="noopener">{%- render 'icon-facebook' -%}</a>
+
+                              <a href="{{ section.settings.social_spotify_link }}" target="_blank" rel="noopener" aria-label="Listen on Spotify"><i class="fab fa-spotify"></i> </a>
+                              <a href="{{ settings.social_youtube_link }}" aria-label="Subscribe on YouTube" target="_blank" rel="noopener">{%- render 'icon-youtube' -%}</a>
+                              <a href="{{ settings.social_tiktok_link }}" aria-label="Follow us on TikTok" target="_blank" rel="noopener">{%- render 'icon-tiktok' -%}</a>
+
+
+                    </div>
+                  </div>
+                </div>
+                      {% if block.settings.show_icon_payment %}
+                        {%- for type in shop.enabled_payment_types -%}
+                            <li class="list-payment__item">
+                              {{ type | payment_type_svg_tag: class: 'icon icon--full-color' }}
+                            </li>
+                        {%- endfor -%}
+                      {% endif %}
+                      {% if block.settings.image %}
+                        <img loading="lazy"  src="{{ block.settings.image | image_url : width: 600 }}" alt="Payment methods accepted" data-aos="fade-up" data-aos-delay="000" data-aos-anchor="#here-anchor">
+                      {% endif %}
+                      <p class="font-s text-uppercase" data-aos="fade-up" data-aos-delay="000" data-aos-anchor="#here-anchor">{{ block.settings.copyright }}</p>
+                                          <p class="font-s disclaimer-text" style="text-transform: none !important;">{{ block.settings.content }}</p>
+              {% endif %}
+            {% endfor %}
           </div>
-        {%- endif -%}
-      {%- endfor -%}
+          {% if section.settings.the_text != blank %}
+          <div class="col-sm-12 col-md-12 col-lg-12">
+            <div class="footer-bottom-developed">
+              {{ section.settings.the_text }}
+            </div>
+          </div>
+        {% endif %}
     </div>
-
-    <!-- Payment icons -->
-    {%- if section.settings.show_payment_icons -%}
-      <div class="footer__payment-icons" style="padding: 2.4rem 0 0;">
-        {%- for type in shop.enabled_payment_types -%}
-          {{ type | payment_type_svg_tag: class: 'footer__payment-icon' }}
-        {%- endfor -%}
-      </div>
-    {%- endif -%}
-
-    <!-- Bottom bar -->
-    <div class="footer__bottom">
-      <p class="footer__copyright">
-        &copy; {{ 'now' | date: '%Y' }} {{ shop.name | upcase }}, INC. ALL RIGHTS RESERVED.
-      </p>
-    </div>
-
-    {%- if section.settings.fda_disclaimer != blank -%}
-      <p class="footer__disclaimer">{{ section.settings.fda_disclaimer }}</p>
-    {%- endif -%}
-  </div>
 </footer>
-
+ 
 {% schema %}
 {
-  "name": "Footer",
-  "class": "footer-section",
-  "enabled_on": {
-    "groups": ["footer"]
-  },
+  "name": "t:sections.footer.name",
   "blocks": [
     {
       "type": "link_list",
-      "name": "Navigation menu",
+      "name": "t:sections.footer.blocks.link_list.name",
       "settings": [
         {
           "type": "text",
           "id": "heading",
           "default": "Quick links",
-          "label": "Heading"
+          "label": "t:sections.footer.blocks.link_list.settings.heading.label"
         },
         {
           "type": "link_list",
           "id": "menu",
           "default": "footer",
-          "label": "Menu"
+          "label": "t:sections.footer.blocks.link_list.settings.menu.label",
+          "info": "t:sections.footer.blocks.link_list.settings.menu.info"
+        }
+      ]
+    },
+    {
+      "type": "copyright",
+      "name": "Copyright",
+      "limit" : 1,
+      "settings": [
+        {
+          "type": "checkbox",
+          "id": "show_social",
+          "label": "Show Social",
+          "default": true
+        },
+        {
+          "type": "text",
+          "id": "title",
+          "default": "Follow",
+          "label": "Title"
+        },
+        {
+          "type": "text",
+          "id": "social_spotify_link",
+          "label": "Link Social spotify" 
+        },
+        {
+          "type": "checkbox",
+          "id": "show_icon_payment",
+          "label": "Show icon payment auto",
+          "default": true
+        },
+        {
+          "type": "image_picker",
+          "id": "image",
+          "label": "Image"
+        },
+        {
+          "type": "html",
+          "id": "copyright",
+          "label": "Copyright"
+        },
+        {
+          "type": "textarea",
+          "id": "content",
+          "label": "Content"
+        },
+        {
+          "type": "image_picker",
+          "id": "icon_1",
+          "label": "Icon-1"
+        },
+        {
+          "type": "image_picker",
+          "id": "icon_2",
+          "label": "Icon-2"
+        }
+      ]
+    },
+    {
+      "type": "subscribe",
+      "name": "Subscribe",
+      "limit" : 1,
+      "settings": [
+        {
+            "type": "text",
+            "id": "title",
+            "default": "Subscribe",
+            "label": "Title"
+        },
+        {
+            "type": "text",
+            "id": "the_text",
+            "label": "Text"
+        },
+        {
+            "type": "textarea",
+            "id": "content",
+            "default": "You agree with the privacy policy and terms of use by subscibing.",
+            "label": "Content"
         }
       ]
     }
+    
   ],
   "settings": [
-    {
-      "type": "header",
-      "content": "Brand"
-    },
     {
       "type": "image_picker",
       "id": "logo",
       "label": "Logo"
     },
     {
-      "type": "textarea",
-      "id": "brand_description",
-      "label": "Brand description",
-      "default": "Premium organic supplements crafted for your wellness journey."
-    },
-    {
-      "type": "header",
-      "content": "Social Media"
-    },
-    {
-      "type": "url",
-      "id": "instagram_url",
-      "label": "Instagram URL"
-    },
-    {
-      "type": "url",
-      "id": "facebook_url",
-      "label": "Facebook URL"
-    },
-    {
-      "type": "url",
-      "id": "youtube_url",
-      "label": "YouTube URL"
-    },
-    {
-      "type": "url",
-      "id": "spotify_url",
-      "label": "Spotify URL"
-    },
-    {
-      "type": "header",
-      "content": "Certifications"
-    },
-    {
-      "type": "checkbox",
-      "id": "show_certifications",
-      "default": true,
-      "label": "Show certification badges"
-    },
-    {
-      "type": "image_picker",
-      "id": "cert_1",
-      "label": "Certification badge 1"
-    },
-    {
-      "type": "image_picker",
-      "id": "cert_2",
-      "label": "Certification badge 2"
-    },
-    {
-      "type": "image_picker",
-      "id": "cert_3",
-      "label": "Certification badge 3"
-    },
-    {
-      "type": "header",
-      "content": "Bottom bar"
-    },
-    {
-      "type": "checkbox",
-      "id": "show_payment_icons",
-      "default": true,
-      "label": "Show payment icons"
-    },
-    {
-      "type": "textarea",
-      "id": "fda_disclaimer",
-      "label": "FDA disclaimer text",
-      "default": "*These statements have not been evaluated by the Food and Drug Administration. This product is not intended to diagnose, treat, cure, or prevent any disease."
+       "type": "richtext",
+       "id": "the_text",
+        "label": "Text"
     }
   ],
-  "presets": [
-    {
-      "name": "Footer",
-      "blocks": [
-        { "type": "link_list", "settings": { "heading": "Shop", "menu": "footer-shop" } },
-        { "type": "link_list", "settings": { "heading": "Company", "menu": "footer-company" } },
-        { "type": "link_list", "settings": { "heading": "Learn", "menu": "footer-learn" } },
-        { "type": "link_list", "settings": { "heading": "Help", "menu": "footer-help" } }
-      ]
-    }
-  ]
+  "default": {
+    "blocks": [
+      {
+        "type": "subscribe"
+      },
+      {
+        "type": "copyright"
+      }, 
+      {
+        "type": "link_list"
+      },
+      {
+        "type": "link_list"
+      },
+      {
+        "type": "link_list"
+      },
+      {
+        "type": "link_list"
+      }
+    ]
+  }
 }
 {% endschema %}

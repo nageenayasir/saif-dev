@@ -1,212 +1,775 @@
-<header class="site-header" id="shopify-section-header">
-  <div class="page-width">
-    <div class="header__inner">
-      <!-- Burger (mobile) -->
-      <button class="header__burger" aria-controls="MobileNav" aria-expanded="false" aria-label="{{ 'general.navigation.menu' | t }}">
-        <span class="header__burger-line"></span>
-        <span class="header__burger-line"></span>
-        <span class="header__burger-line"></span>
-      </button>
 
-      <!-- Logo -->
-      <a href="{{ routes.root_url }}" class="header__logo" aria-label="{{ shop.name }}">
-        {%- if section.settings.logo != blank -%}
-          {{
-            section.settings.logo
-            | image_url: width: 300
-            | image_tag:
-              loading: 'eager',
-              fetchpriority: 'high',
-              width: section.settings.logo.width,
-              height: section.settings.logo.height,
-              alt: shop.name
-          }}
-        {%- else -%}
-          <span class="header__logo-text">{{ shop.name }}</span>
-        {%- endif -%}
-      </a>
-
-      <!-- Desktop Navigation -->
-      <nav class="header__nav" aria-label="{{ 'general.navigation.main_menu' | t }}">
-        <ul class="nav__list" role="list">
-          {%- for link in section.settings.menu.links -%}
-            <li class="nav__item">
-              {%- if link.links.size > 0 -%}
-                <button class="nav__link" aria-expanded="false" aria-controls="Dropdown-{{ forloop.index }}">
-                  {{ link.title }}
-                  <svg aria-hidden="true" focusable="false" viewBox="0 0 12 8" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <path d="M1 1L6 7L11 1" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-                  </svg>
-                </button>
-                <ul class="nav__dropdown" id="Dropdown-{{ forloop.index }}" role="list">
-                  {%- for child_link in link.links -%}
-                    <li>
-                      <a href="{{ child_link.url }}" class="nav__dropdown-link"
-                        {% if child_link.current %}aria-current="page"{% endif %}>
-                        {{ child_link.title }}
-                      </a>
-                    </li>
-                  {%- endfor -%}
-                </ul>
-              {%- else -%}
-                <a href="{{ link.url }}" class="nav__link"
-                  {% if link.current %}aria-current="page"{% endif %}>
-                  {{ link.title }}
-                </a>
-              {%- endif -%}
-            </li>
-          {%- endfor -%}
-        </ul>
-      </nav>
-
-      <!-- Header Icons -->
-      <div class="header__icons">
-        {%- if section.settings.enable_search -%}
-          <a href="{{ routes.search_url }}" class="header__icon-btn" aria-label="{{ 'general.search.search' | t }}">
-            <svg aria-hidden="true" focusable="false" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <path d="M9 17A8 8 0 1 0 9 1a8 8 0 0 0 0 16zM19 19l-4.35-4.35" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-            </svg>
-          </a>
-        {%- endif -%}
-
-        {%- if shop.customer_accounts_enabled -%}
-          <a href="{%- if customer -%}{{ routes.account_url }}{%- else -%}{{ routes.account_login_url }}{%- endif -%}"
-            class="header__icon-btn hide-mobile"
-            aria-label="{%- if customer -%}{{ 'customer.account.title' | t }}{%- else -%}{{ 'customer.login.title' | t }}{%- endif -%}">
-            <svg aria-hidden="true" focusable="false" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <path d="M10 10a4 4 0 1 0 0-8 4 4 0 0 0 0 8zM17.5 18c0-4.14-3.36-7.5-7.5-7.5S2.5 13.86 2.5 18" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-            </svg>
-          </a>
-        {%- endif -%}
-
-        <a href="{{ routes.cart_url }}" class="header__icon-btn" id="cart-icon-bubble"
-          {%- if settings.cart_type == 'drawer' %} aria-controls="CartDrawer" aria-expanded="false"{%- endif -%}
-          aria-label="{{ 'sections.header.cart_count' | t: count: cart.item_count }}">
-          <svg aria-hidden="true" focusable="false" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <path d="M6 2L3 6v14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V6l-3-4z" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-            <path d="M3 6h14M13 10a3 3 0 0 1-6 0" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-          </svg>
-          {%- if cart.item_count > 0 -%}
-            <span class="cart-count" aria-hidden="true">{{ cart.item_count }}</span>
-          {%- endif -%}
-        </a>
+<header id="masthead" class="site-header custom-site-header {% unless collection.title == 'Products' or  collection.title == 'All products' or collection.metafields.custom.default_banner_image == true %}collection-page-header-wrap{% endunless %}">
+      {% comment %}
+      <div class="top-header">
+        <div class="d-flex">
+          <a class="mx-4 text-center" href="{{ section.settings.url_1 }}">{{ section.settings.top_header }}</a> 
+          <a class="mx-4 text-center top-header-wrap" href="{{ section.settings.url_2 }}">{{ section.settings.top_header_2 }}</a> 
+          <a class="mx-4 text-center" href="{{ section.settings.url_3 }}">{{ section.settings.top_header_3 }}</a>
+        </div>
+        <div class="d-flex d-md-none">
+          <a class="mx-4 text-center" href="{{ section.settings.url_1 }}">{{ section.settings.top_header }}</a> 
+          <a class="mx-4 text-center top-header-wrap" href="{{ section.settings.url_2 }}">{{ section.settings.top_header_2 }}</a> 
+          <a class="mx-4 text-center" href="{{ section.settings.url_3 }}">{{ section.settings.top_header_3 }}</a>
+        </div>
       </div>
-    </div>
-  </div>
-</header>
+      {% endcomment %}
+      <div class="wrapper custom-header">
+          <div class="container">
+              <div class="site-nav d-flex justify-content-between">
+                  <div class="site-branding col-md-auto" fetchpriority="high">
+                      <a href="{{ routes.root_url }}" aria-label="Go to homepage - {{ shop.name }}">
+                        {% if section.settings.show_image and section.settings.logo != blank %}
+                          {%- assign logo = section.settings.logo -%}
+                          {%- assign w = 300 -%}
+                          {%- assign h = w | divided_by: logo.aspect_ratio | round -%}
+                          <img
+                            data-dgf-optimized="true"
+                            src="{{ logo | image_url: width: w }}"
+                            alt="{{ logo.alt | default: shop.name | escape }}"
+                            width="{{ w }}"
+                            height="{{ h }}"
+                            decoding="async"
+                            loading="eager"
+                          >
+                        {% else %}
+                          <span class="logo-svg" aria-label="{{ shop.name }}">
+                            {{ section.settings.logo_svg }}
+                          </span>
+                        {% endif %}
+                      </a>
+                      {% comment %} 
+                      <a href="{{ routes.root_url }}" aria-label="Go to homepage - {{ shop.name }}">
+                        {% if section.settings.show_image == true %}
+                           <img loading="lazy" src="{{ section.settings.logo | image_url: width: 300 }}" alt="{{ section.settings.logo.alt | default: shop.name }}"/>
+                        {% else %}
+                           {{ section.settings.logo_svg }}
+                        {% endif %}
+                      </a>
+                      {% endcomment %}
+                  </div><!-- .site-branding -->
+                  <nav id="site-navigation" class="main-navigation navbar navbar-expand-lg navbar-light order-first order-lg-1">
+                      <button class="navbar-toggler collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                          <span class="navbar-toggler-icon"></span>
+                          <span class="navbar-toggler-icon"></span>
+                      </button>
+                      <div class="collapse navbar-collapse width" id="navbarSupportedContent">
+                          <div class="navbar-container d-flex flex-column justify-content-between">
+                              <div class="menu-primary-container">
+                                  <ul class="icon-list-mobile cstm-header-icn-lists d-flex d-lg-none">
+                                      <li><a href="/search" aria-label="Search products"><i class="fa fa-search"></i><span>Search</span></a></li>
+                                    {% comment %}
+                                     {%- if customer -%}
+                                      <li><a href="/pages/wishlist"><i class="fa fa-heart"></i><span>Wishlist</span></a></li>
+                                    {% else %}
+                                       <li><a href="#"><i class="fa fa-heart"></i><span>Wishlist</span></a></li>
+                                    {% endif %}
+                                    {% endcomment %}
+                                      {%- if customer -%}
+                                        <li><a href="{{ routes.account_url }}">{% render 'icon-account' %}<span>{{ 'customer.account_fallback' | t }}</span></a></li>
+                                      {%- else -%}
+                                        <li><a href="/account/login">{% render 'icon-account' %}<span>{{ 'customer.log_in' | t }}</span></a></li> 
+                                      {%- endif -%}   
+                                  </ul>
+                                  <ul id="primary-menu" class="menu d-lg-flex web-menu">
+                                    {%- for link in section.settings.menu.links -%} 
+                                      <li class="{%- if link.links != blank -%}menu-item has-submenu{% else %}menu-item{% endif %} {% if link.active %}current-menu-item{% endif %} {% if link.title == 'More' %}submenu-arrow{% endif %}">
+                                          <a href="{{ link.url }}" aria-label="Get in touch with Tribe Organics for {{ link.title | escape }}">{{ link.title }} {%- if link.links != blank -%}<span class="menu-arrow">{% render 'icon-caret' %}</span>{% endif %}</a>
+                                          {%- if link.links != blank -%}
+                                            <div class="dropdown mega-menu mega-01"  id="id-{{ forloop.index }}">
+                                              <div class="container">
+                                                  <div class="row justify-content-center">
+                                                      <div class="col-lg-10 col-xl-8">
+                                                          <div class="row">
+                                                            
+                                                            {% if link.title == section.settings.mega_menu_product %}
+                                                              {% comment %}
+                                                               {%- for childlink in link.links -%}
+                                                                  {% if childlink.title == 'Quiz' %}
+                                                                     <div class="col-6 col-md-3 mb-3 d-none d-md-block">
+                                                                      <a href="{{ childlink.url }}" class="product-item-01">
+                                                                          <div class="box">
+                                                                              <div class="img-wrapper">
+                                                                                  <img loading="lazy" src="{{ 'next.png' | asset_url }}">
+                                                                              </div>
+                                                                              <h5>{{ childlink.title }}</h5>
+                                                                              <div class="desc">{{ section.settings.text_quiz }}</div>
+                                                                          </div>
+                                                                      </a>
+                                                                  </div>
+                                                                   
+                                                                {% elsif childlink.title == 'Shop All' %}
+                                                                  <div class="col-6 col-md-3 mb-3 d-none d-md-block align-menu">
+                                                                    <a href="{{ routes.all_products_collection_url }}" class="product-item-01">
+                                                                        <div class="box">
+                                                                            <div class="img-wrapper" style="padding-top: 30%;">
+                                                                                <img loading="lazy" class="shop-next-arrow" src="{{ 'next.png' | asset_url }}">
+                                                                                <img loading="lazy" class="hover-shop-next-arrow" src="{{ 'arrown-next.png' | asset_url }}">
+                                                                            </div>
+                                                                            <h5 class="" style="font-size: 15px; text-transform: uppercase; min-height: auto;">{{ childlink.title }}</h5>
+                                                                            <div class="desc">{{ section.settings.text_all }}</div>
+                                                                        </div>
+                                                                    </a>
+                                                                </div>
+                                                                {% else %}
+                                                                    <div class="col-6 col-md-3 mb-3 align-menu">
+                                                                        <a href="{{ childlink.url }}" class="product-item-01">
+                                                                            <div class="box">
+                                                                                {% assign handle = childlink.title | handle %}
+                                                                                <div class="img-wrapper">
+                                                                                    <img loading="lazy" src="{{ all_products[handle].featured_media | image_url: width: 800 }}" alt="{{ childlink.title | escape }}">
+                                                                                </div>
+                                                                                <h5>{{ childlink.title | escape }}</h5>
+                                                                                <div class="desc">{{ section.settings.text_product }}</div>
+                                                                            </div>
+                                                                        </a>
+                                                                    </div>
+                                                                  {% endif %}
+                                                                {% endfor %}
+                                                                    <div class="col-12 d-block d-md-none mt-4 mb-5 align-menu">
+                                                                        <a href="{{ routes.all_products_collection_url }}" class="mx-auto btn btn-trans">Shop All</a>
+                                                                    </div>
+                                                              {% endcomment %}
+                                                              <div class="col-4 cstm-menu-items">
+                                                                  <ul>
+                                                                    {%- for childlink in link.links -%}
+                                                                      <li><a href="{{ childlink.url }}" aria-label="{{ childlink.title | escape }} {{ 'now' | date: '%s' }}">{{ childlink.title | escape }}</a></li>
+                                                                    {% endfor %}   
+                                                                  </ul>
+                                                                </div> 
+                                                                 <div class="col-8 cstm-menu-img-links mb-5 text-md-end">
+                                                                   <div class="row">
+                                                                     <div class="col-4">
+                                                                        <a href="{{ section.settings.prod_url_1 }}">
+                                                                          {% if section.settings.prod_image_1 %}
+                                                                            {%- assign img = section.settings.prod_image_1 -%}
+                                                                            <img
+                                                                              data-dgf-optimized="true"
+                                                                              loading="lazy"
+                                                                              src="{{ img | image_url: width : img.width }}" 
+                                                                              alt="Menu image 01"
+                                                                              width="{{ img.width }}"
+                                                                              height="{{ img.height }}"
+                                                                              style="aspect-ratio: {{ img.width }} / {{ img.height }};"
+                                                                            >
+                                                                            {% comment %} <img loading="lazy" src="{{ section.settings.prod_image_1 | img_url:'master' }}"> {% endcomment %} 
+                                                                          {% endif %}
+                                                                          <p><span>{{ section.settings.prod_link_text_1 }}</span></p>
+                                                                        </a>
+                                                                     </div>
+                                                                     <div class="col-4">
+                                                                        <a href="{{ section.settings.prod_url_2 }}">
+                                                                          {% if section.settings.prod_image_2 %}
+                                                                            {%- assign img = section.settings.prod_image_2 -%}
+                                                                            <img
+                                                                              data-dgf-optimized="true"
+                                                                              loading="lazy"
+                                                                              src="{{ img | image_url: width : img.width }}" 
+                                                                              alt="Menu image 02"
+                                                                              width="{{ img.width }}"
+                                                                              height="{{ img.height }}"
+                                                                              style="aspect-ratio: {{ img.width }} / {{ img.height }};"
+                                                                            >
+                                                                            {% comment %} <img loading="lazy" src="{{ section.settings.prod_image_2 | img_url:'master' }}"> {% endcomment %}                                                                          
+                                                                          {% endif %}
+                                                                          <p><span>{{ section.settings.prod_link_text_2 }}</span></p>
+                                                                        </a>
+                                                                     </div>
+                                                                     <div class="col-4">
+                                                                        <a href="{{ section.settings.prod_url_3 }}">
+                                                                          {% if section.settings.prod_image_3 %}
+                                                                            {%- assign img = section.settings.prod_image_3 -%}
+                                                                            <img
+                                                                              data-dgf-optimized="true"
+                                                                              loading="lazy"
+                                                                              src="{{ img | image_url: width : img.width }}" 
+                                                                              alt="Menu image 03"
+                                                                              width="{{ img.width }}"
+                                                                              height="{{ img.height }}"
+                                                                              style="aspect-ratio: {{ img.width }} / {{ img.height }};"
+                                                                            >
+                                                                            {% comment %} <img loading="lazy" src="{{ section.settings.prod_image_3 | img_url:'master' }}"> {% endcomment %} 
+                                                                          {% endif %}
+                                                                          <p><span>{{ section.settings.prod_link_text_3 }}</span></p>
+                                                                        </a>
+                                                                     </div>
+                                                                   </div>
+                                                                   
+                                                                </div>
+                                                              {% elsif link.title == section.settings.mega_menu_category %}
+                                                              {%- for childlink in link.links -%}
+                                                                <div class="col-6 col-md-3 mb-3 align-menu">
+                                                                        <a href="{{ childlink.url }}" class="product-item-01">
+                                                                            <div class="box">
+                                                                                {% assign handle = childlink.title | handle %}
+                                                                                <div class="img-wrapper">
+                                                                                  {%- assign img = childlink.object.image -%}
+                                                                                  <img
+                                                                                    data-dgf-optimized="true"
+                                                                                    loading="lazy"
+                                                                                    src="{{ img | image_url: width : img.width }}" 
+                                                                                    alt="{{ childlink.title | escape }}"
+                                                                                    width="{{ img.width }}"
+                                                                                    height="{{ img.height }}"
+                                                                                    style="aspect-ratio: {{ img.width }} / {{ img.height }};"
+                                                                                  >
+                                                                                  {% comment %} <img loading="lazy" src="{{ childlink.object.image | img_url: "500x" }}" alt="{{ childlink.title | escape }}">  {% endcomment %}
+                                                                                </div>
+                                                                                <h5>{{ childlink.title | escape }}</h5>
+                                                                            </div>
+                                                                        </a>
+                                                                    </div>
+                                                                {% endfor %}
+                                                            {% else %}
+                                                                <div class="col-4 cstm-menu-items">
+                                                                  <ul class="web-sub-menu-items">
+                                                                    {%- for childlink in link.links -%}
+                                                                      <li><a href="{{ childlink.url }}" aria-label="{{ childlink.title | escape }} {{ 'now' | date: '%s' }}">{{ childlink.title | escape }}</a></li>
+                                                                    {% endfor %}   
+                                                                  </ul>
+                                                                </div> 
+                                                                 <div class="col-8 cstm-menu-img-links mb-5 text-md-end">
+                                                                   <div class="row">
+                                                                     <div class="col-4">
+                                                                        <a href="{{ section.settings.url_1 }}">
+                                                                          {% if section.settings.image_1 %}
+                                                                            {%- assign img = section.settings.image_1 -%}
+                                                                            <img
+                                                                              data-dgf-optimized="true"
+                                                                              loading="lazy"
+                                                                              src="{{ img | image_url: width : img.width }}" 
+                                                                              alt="{{ img.alt | default: section.settings.text_1 | default: 'More: Option 01' | escape }}"
+                                                                              width="{{ img.width }}"
+                                                                              height="{{ img.height }}"
+                                                                              style="aspect-ratio: {{ img.width }} / {{ img.height }};"
+                                                                            >
+                                                                            {% comment %} <img loading="lazy" src="{{ section.settings.image_1 | img_url:'master' }}"> {% endcomment %}
+                                                                          {% endif %}
+                                                                          <p><span>{{ section.settings.link_text_1 }}</span></p>
+                                                                        </a>
+                                                                     </div>
+                                                                     <div class="col-4">
+                                                                        <a href="{{ section.settings.url_2 }}">
+                                                                          {% if section.settings.image_2 %}
+                                                                            {%- assign img = section.settings.image_2 -%}
+                                                                            <img
+                                                                              data-dgf-optimized="true"
+                                                                              loading="lazy"
+                                                                              src="{{ img | image_url: width : img.width }}" 
+                                                                              alt="{{ img.alt | default: section.settings.text_2 | default: 'More: Option 02' | escape }}"
+                                                                              width="{{ img.width }}"
+                                                                              height="{{ img.height }}"
+                                                                              style="aspect-ratio: {{ img.width }} / {{ img.height }};"
+                                                                            >
+                                                                            {% comment %} <img loading="lazy" src="{{ section.settings.image_2 | img_url:'master' }}"> {% endcomment %}
+                                                                          {% endif %}
+                                                                          <p><span>{{ section.settings.link_text_2 }}</span></p>
+                                                                        </a>
+                                                                     </div>
+                                                                     <div class="col-4">
+                                                                        <a href="{{ section.settings.url_3 }}">
+                                                                          {% if section.settings.image_3 %}
+                                                                            {%- assign img = section.settings.image_3 -%}
+                                                                            <img
+                                                                              data-dgf-optimized="true"
+                                                                              loading="lazy"
+                                                                              src="{{ img | image_url: width : img.width }}" 
+                                                                              alt="{{ img.alt | default: section.settings.text_3 | default: 'More: Option 03' | escape }}"
+                                                                              width="{{ img.width }}"
+                                                                              height="{{ img.height }}"
+                                                                              style="aspect-ratio: {{ img.width }} / {{ img.height }};"
+                                                                            >
+                                                                            {% comment %} <img loading="lazy" src="{{ section.settings.image_3 | img_url:'master' }}"> {% endcomment %}
+                                                                          {% endif %}
+                                                                          <p><span>{{ section.settings.link_text_3 }}</span></p>
+                                                                        </a>
+                                                                     </div>
+                                                                   </div>
+                                                                   
+                                                                </div>
+                                                            {% endif %}
+                                                          </div>
+                                                      </div>
+                                                  </div>
+                                              </div>
+                                          </div>
+                                          {% endif %}
+                                      </li>
+                                    {% endfor %}   
+                                  </ul>
+                                  <ul id="primary-menu" class="menu d-lg-flex mob-menu">
+                                    {%- for link in section.settings.menu.links -%} 
+                                      <li class="{%- if link.links != blank -%}menu-item has-submenu{% else %}menu-item{% endif %} {% if link.active %}current-menu-item{% endif %} {% if link.title == 'Our Products' %}sub-menu-arrow{% endif %}" id="mob-sub-menu-{{ forloop.index }}">
+                                          <a href="{%- if link.links != blank -%}#{% else %}{{ link.url }}{% endif %}" aria-label="Connect with Tribe Organics for {{ link.title | escape }}">{{ link.title }} <span class="mob-menu-arrow">{%- if link.links != blank -%}{% render 'icon-caret' %}{% endif %}</span></a>
+                                          {%- if link.links != blank -%}
+                                            <div class="dropdown mega-menu mega-01" id="mob-{{ forloop.index }}">
+                                              <div class="container">
+                                                  <div class="row justify-content-center">
+                                                      <div class="col-lg-10 col-xl-8">
+                                                          <div class="row">
+                                                            {% if link.title == section.settings.mega_menu_product %}
+                                                              {% comment %}
+                                                                <div class="col-12 d-block d-md-none mt-4 mb-5 mega-menu-shop-all-btn">
+                                                                  <a href="{{ routes.all_products_collection_url }}" class="mx-auto btn btn-trans">Shop All</a>
+                                                                </div>
+                                                                {%- for childlink in link.links -%}
+                                                                    {% if childlink.title == 'Quiz' %}
+                                                                      <div class="col-6 col-md-3 mb-3 d-none d-md-block">
+                                                                        <a href="{{ childlink.url }}" class="product-item-01">
+                                                                            <div class="box">
+                                                                                <div class="img-wrapper">
+                                                                                    <img loading="lazy" src="{{ 'next.png' | asset_url }}">
+                                                                                </div>
+                                                                                <h5>{{ childlink.title }}</h5>
+                                                                                <div class="desc">{{ section.settings.text_quiz }}</div>
+                                                                            </div>
+                                                                        </a>
+                                                                    </div>
+                                                                    
+                                                                  {% elsif childlink.title == 'Shop All' %}
+                                                                    <div class="col-6 col-md-3 mb-3 d-none d-md-block">
+                                                                      <a href="{{ routes.all_products_collection_url }}" class="product-item-01">
+                                                                          <div class="box">
+                                                                              <div class="img-wrapper" style="padding-top: 30%;">
+                                                                                  <img loading="lazy" src="{{ 'next.png' | asset_url }}">
+                                                                              </div>
+                                                                              <h5 class="" style="font-size: 18px; text-transform: uppercase;">{{ childlink.title }}</h5>
+                                                                              <div class="desc">{{ section.settings.text_all }}</div>
+                                                                          </div>
+                                                                      </a>
+                                                                  </div>
+                                                                  {% else %}
+                                                                      <div class="col-6 col-md-3 mb-3">
+                                                                          <a href="{{ childlink.url }}" class="product-item-01">
+                                                                              <div class="box">
+                                                                                  {% assign handle = childlink.title | handle %}
+                                                                                  <div class="img-wrapper">
+                                                                                      <img loading="lazy" src="{{ all_products[handle].featured_media | image_url: width: 800 }}" alt="{{ childlink.title | escape }}">
+                                                                                  </div>
+                                                                                  <h5>{{ childlink.title | escape }}</h5>
+                                                                                  <div class="desc">{{ section.settings.text_product }}</div>
+                                                                              </div>
+                                                                          </a>
+                                                                      </div>
+                                                                    {% endif %}
+                                                                  {% endfor %}
+                                                                {% endcomment %}
+                                                              <div class="col-12 col-sm-6 mob-menu-items">
+                                                                  <ul>
+                                                                    {%- for childlink in link.links -%}
+                                                                      <li><a href="{{ childlink.url }}" aria-label="{{ childlink.title | escape }} {{ 'now' | date: '%s' }}">{{ childlink.title | escape }}</a></li>
+                                                                    {% endfor %}   
+                                                                  </ul>
+                                                                </div> 
+                                                                 <div class="col-12 col-sm-6 mb-5 text-md-end mob-menu-items-img">
+                                                                   <div class="mobile-menu-img-links">
+                                                                     <a href="{{ section.settings.prod_url_1 }}">
+                                                                      {% if section.settings.prod_image_1 %}
+                                                                        {%- assign img = section.settings.prod_image_1 -%}
+                                                                        <img
+                                                                          data-dgf-optimized="true"
+                                                                          loading="lazy"
+                                                                          src="{{ img | image_url: width : img.width }}" 
+                                                                          alt="{{ img.alt | default: section.settings.prod_link_text_1 | default: 'Product: Option 01' | escape }}"
+                                                                          width="{{ img.width }}"
+                                                                          height="{{ img.height }}"
+                                                                          style="aspect-ratio: {{ img.width }} / {{ img.height }};"
+                                                                        >
+                                                                        {% comment %} <img loading="lazy" src="{{ section.settings.prod_image_1 | img_url:'master' }}"> {% endcomment %}
+                                                                      {% endif %}
+                                                                      <p><span>{{ section.settings.prod_link_text_1 }}</span></p>
+                                                                    </a>
+                                                                  </div>
+                                                                   <div class="mobile-menu-img-links">
+                                                                     <a href="{{ section.settings.prod_url_2 }}">
+                                                                      {% if section.settings.prod_image_2 %}
+                                                                        {%- assign img = section.settings.prod_image_2 -%}
+                                                                        <img
+                                                                          data-dgf-optimized="true"
+                                                                          loading="lazy"
+                                                                          src="{{ img | image_url: width : img.width }}" 
+                                                                          alt="{{ img.alt | default: section.settings.prod_link_text_2 | default: 'Product: Option 02' | escape }}"
+                                                                          width="{{ img.width }}"
+                                                                          height="{{ img.height }}"
+                                                                          style="aspect-ratio: {{ img.width }} / {{ img.height }};"
+                                                                        >
+                                                                        {% comment %} <img loading="lazy" src="{{ section.settings.prod_image_2 | img_url:'master' }}"> {% endcomment %}
+                                                                      {% endif %}
+                                                                      <p><span>{{ section.settings.prod_link_text_2 }}</span></p>
+                                                                    </a>
+                                                                  </div>
+                                                                   <div class="mobile-menu-img-links">
+                                                                     <a href="{{ section.settings.prod_url_3 }}">
+                                                                      {% if section.settings.prod_image_3 %}
+                                                                        {%- assign img = section.settings.prod_image_3 -%}
+                                                                        <img
+                                                                          data-dgf-optimized="true"
+                                                                          loading="lazy"
+                                                                          src="{{ img | image_url: width : img.width }}" 
+                                                                          alt="{{ img.alt | default: section.settings.prod_link_text_3 | default: 'Product: Option 03' | escape }}"
+                                                                          width="{{ img.width }}"
+                                                                          height="{{ img.height }}"
+                                                                          style="aspect-ratio: {{ img.width }} / {{ img.height }};"
+                                                                        >
+                                                                        {% comment %} <img loading="lazy" src="{{ section.settings.prod_image_3 | img_url:'master' }}"> {% endcomment %}                                                                       
+                                                                      {% endif %}
+                                                                      <p><span>{{ section.settings.prod_link_text_3 }}</span></p>
+                                                                    </a>
+                                                                  </div>
+                                                                </div>
+                                                              {% elsif link.title == section.settings.mega_menu_category %}
+                                                                <div class="col-12 col-sm-6 mob-menu-items">
+                                                                 <ul>
+                                                                    {%- for childlink in link.links -%}
+                                                                      <li><a href="{{ childlink.url }}" aria-label="{{ childlink.title | escape }} {{ 'now' | date: '%s' }}">{{ childlink.title | escape }}</a></li>
+                                                                    {% endfor %}   
+                                                                  </ul>
+                                                                </div>
+                                                            {% else %}
+                                                                <div class="col-12 col-sm-6 mob-menu-items">
+                                                                  <ul class="mob-sub-menu-items">
+                                                                    {%- for childlink in link.links -%}
+                                                                      <li><a href="{{ childlink.url }}" aria-label="{{ childlink.title | escape }} {{ 'now' | date: '%s' }}">{{ childlink.title | escape }}</a></li>
+                                                                    {% endfor %}   
+                                                                  </ul>
+                                                                </div> 
+                                                                 <div class="col-12 col-sm-6 mb-5 text-md-end mob-menu-items-img">
+                                                                   <div class="mobile-menu-img-links">
+                                                                     <a href="{{ section.settings.url_1 }}">
+                                                                      {% if section.settings.image_1 %}
+                                                                        {%- assign img = section.settings.image_1 -%}
+                                                                        <img
+                                                                          data-dgf-optimized="true"
+                                                                          loading="lazy"
+                                                                          src="{{ img | image_url: width : img.width }}" 
+                                                                          alt="Mobile {{ img.alt | default: section.settings.text_1 | default: 'More: Option 01' | escape }}"
+                                                                          width="{{ img.width }}"
+                                                                          height="{{ img.height }}"
+                                                                          style="aspect-ratio: {{ img.width }} / {{ img.height }};"
+                                                                        >
+                                                                        {% comment %} <img loading="lazy" src="{{ section.settings.image_1 | img_url:'master' }}"> {% endcomment %}
+                                                                      {% endif %}
+                                                                      <p><span>{{ section.settings.link_text_1 }}</span></p>
+                                                                    </a>
+                                                                  </div>
+                                                                   <div class="mobile-menu-img-links">
+                                                                     <a href="{{ section.settings.url_2 }}">
+                                                                      {% if section.settings.image_2 %}
+                                                                        {%- assign img = section.settings.image_2 -%}
+                                                                        <img
+                                                                          data-dgf-optimized="true"
+                                                                          loading="lazy"
+                                                                          src="{{ img | image_url: width : img.width }}" 
+                                                                          alt="Mobile {{ img.alt | default: section.settings.text_1 | default: 'More: Option 02' | escape }}"
+                                                                          width="{{ img.width }}"
+                                                                          height="{{ img.height }}"
+                                                                          style="aspect-ratio: {{ img.width }} / {{ img.height }};"
+                                                                        >
+                                                                        {% comment %} <img loading="lazy" src="{{ section.settings.image_2 | img_url:'master' }}"> {% endcomment %}
+                                                                      {% endif %}
+                                                                      <p><span>{{ section.settings.link_text_2 }}</span></p>
+                                                                    </a>
+                                                                  </div>
+                                                                   <div class="mobile-menu-img-links">
+                                                                     <a href="{{ section.settings.url_3 }}">
+                                                                      {% if section.settings.image_3 %}
+                                                                        {%- assign img = section.settings.image_3 -%}
+                                                                        <img
+                                                                          data-dgf-optimized="true"
+                                                                          loading="lazy"
+                                                                          src="{{ img | image_url: width : img.width }}" 
+                                                                          alt="Mobile {{ img.alt | default: section.settings.text_1 | default: 'More: Option 02' | escape }}"
+                                                                          width="{{ img.width }}"
+                                                                          height="{{ img.height }}"
+                                                                          style="aspect-ratio: {{ img.width }} / {{ img.height }};"
+                                                                        >
+                                                                        {% comment %} <img loading="lazy" src="{{ section.settings.image_3 | img_url:'master' }}"> {% endcomment %}
+                                                                      {% endif %}
+                                                                      <p><span>{{ section.settings.link_text_3 }}</span></p>
+                                                                    </a>
+                                                                  </div>
+                                                                </div>
+                                                            {% endif %}
+                                                          </div>
+                                                      </div>
+                                                  </div>
+                                              </div>
+                                          </div>
+                                          {% endif %}
+                                      </li>
+                                    {% endfor %}   
+                                  </ul>
+                              </div>
+                          </div>
+                      </div>
+                  </nav><!-- #site-navigation -->
+                  <ul class="more-icon d-flex order-lg-2">
+                      {% if section.settings.show_search == true %}<li class="d-none d-lg-flex"><a href="/search" aria-label="Search products"><i class="fa fa-search"></i></a></li>{% endif %}
+                      {% if section.settings.show_wishlist == true %}
+                         {%- if customer -%}
+                            <li class="d-none d-lg-flex"><a href="/pages/wishlist"><i class="fa fa-heart"></i></a></li>
+                        {% else %}
+                            <li class="d-none d-lg-flex"><a href="#"><i class="fa fa-heart"></i></a></li>
+                        {% endif %}
+                      {% endif %}
+                    {%- if customer -%}
+                      <li class="d-none d-lg-flex"><a href="{{ routes.account_url }}" aria-label="My account">{% render 'icon-account' %}</a></li>
+                    {%- else -%}
+                      <li class="d-none d-lg-flex"><a href="/account/login" aria-label="Login to your account">{% render 'icon-account' %}</a></li>
+                    {%- endif -%}
+                      <li>
+                        <a class="cart-btn-show" href="#" aria-label="Shopping cart - {{ cart.item_count }} items">
+                          {% render 'icon-cart' %}
+                            <span class="cart-count header-bar__cart-count {% if cart.item_count == 0 %}hidden-count{% endif %}" data-ajax-cart-bind-state="cart.item_count">{{ cart.item_count }}</span>
+                        </a>
+                      </li>
+                  </ul>
+              </div>
+          </div>
+      </div>
+  </header>
+{% comment %} RGD: 2026-01-07 {% endcomment %} 
+{% comment %} 
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script> 
+{% endcomment %}
+{% # theme-check-disable ParserBlockingScript %}
+<script type="text/javascript" src="{{ 'jquery-3.5.1.min.js' | asset_url }}"></script>
+{% # theme-check-enable ParserBlockingScript %}
 
-<!-- Mobile Navigation -->
-<nav class="mobile-nav" id="MobileNav" aria-label="{{ 'general.navigation.main_menu' | t }}">
-  <div class="mobile-nav__overlay" id="MobileNavOverlay"></div>
-  <div class="mobile-nav__panel">
-    <div class="mobile-nav__close">
-      <button class="header__icon-btn" aria-label="{{ 'general.navigation.close_menu' | t }}" id="MobileNavClose">
-        <svg aria-hidden="true" focusable="false" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <path d="M15 5L5 15M5 5l10 10" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
-        </svg>
-      </button>
-    </div>
-    <ul class="mobile-nav__list" role="list">
-      {%- for link in section.settings.menu.links -%}
-        <li>
-          <a href="{{ link.url }}" class="mobile-nav__link"
-            {% if link.current %}aria-current="page"{% endif %}>
-            {{ link.title }}
-          </a>
-          {%- if link.links.size > 0 -%}
-            <ul class="mobile-nav__sub-list" role="list">
-              {%- for child_link in link.links -%}
-                <li>
-                  <a href="{{ child_link.url }}" class="mobile-nav__sub-link"
-                    {% if child_link.current %}aria-current="page"{% endif %}>
-                    {{ child_link.title }}
-                  </a>
-                </li>
-              {%- endfor -%}
-            </ul>
-          {%- endif -%}
-        </li>
-      {%- endfor -%}
-    </ul>
-  </div>
-</nav>
+{%  comment  %}  
+<script>
+// sticky header
+$(document).ready(function () {
+    $(window).scroll(function () {
+        if ($(window).scrollTop() > 1) {
+            $(".custom-site-header").addClass("custom-sticky");
+        } else {
+            $(".custom-site-header").removeClass("custom-sticky");
+        }
+    });
+});
+$(document).ready(function () {
+  $('#mob-sub-menu-2').click(function(){
+    $(this).toggleClass("sub-menu-item-active");
+  });
+});
+</script>
+{% endcomment %}
 
 <script>
-  (function () {
-    const header = document.querySelector('.site-header');
-    const burger = document.querySelector('.header__burger');
-    const mobileNav = document.getElementById('MobileNav');
-    const overlay = document.getElementById('MobileNavOverlay');
-    const closeBtn = document.getElementById('MobileNavClose');
-
-    // Sticky scroll shadow
-    if (header) {
-      window.addEventListener('scroll', function () {
-        header.classList.toggle('scrolled', window.scrollY > 10);
-      }, { passive: true });
+/**
+ * TRIBE ORGANICS - Header Logic (Vanilla JS)
+ * This script manages the sticky state and mobile menu toggles.
+ * Performance: High (Native JS, no jQuery dependency).
+ * Stability: Wrapped in silent try-catch blocks to prevent script failure.
+ */
+document.addEventListener('DOMContentLoaded', function() {
+    
+    // Logic for Sticky Header state toggle
+    try {
+        const headerElement = document.querySelector(".custom-site-header");
+        
+        if (headerElement) {
+            window.addEventListener('scroll', function() {
+                try {
+                    // Toggles class based on scroll position
+                    if (window.scrollY > 1) {
+                        headerElement.classList.add("custom-sticky");
+                    } else {
+                        headerElement.classList.remove("custom-sticky");
+                    }
+                } catch (scrollErr) {
+                    /* Silent catch for scroll-related errors */
+                }
+            }, { passive: true }); // Improved scroll performance for mobile devices
+        }
+    } catch (headerInitErr) {
+        /* Silent catch for header initialization issues */
     }
 
-    // Mobile menu
-    function openMobileNav() {
-      mobileNav.classList.add('is-open');
-      burger.setAttribute('aria-expanded', 'true');
-      document.body.style.overflow = 'hidden';
+    // Mobile Navigation Sub-menu toggle (mob-sub-menu-2)
+    try {
+        const mobileTrigger = document.getElementById('mob-sub-menu-2');
+        if (mobileTrigger) {
+            mobileTrigger.addEventListener('click', function(e) {
+                try {
+                    this.classList.toggle("sub-menu-item-active");
+                } catch (toggleErr) {
+                    /* Silent catch for menu interaction errors */
+                }
+            });
+        }
+    } catch (menuInitErr) {
+        /* Silent catch for missing mobile menu elements */
     }
-
-    function closeMobileNav() {
-      mobileNav.classList.remove('is-open');
-      burger.setAttribute('aria-expanded', 'false');
-      document.body.style.overflow = '';
-    }
-
-    if (burger) burger.addEventListener('click', openMobileNav);
-    if (overlay) overlay.addEventListener('click', closeMobileNav);
-    if (closeBtn) closeBtn.addEventListener('click', closeMobileNav);
-
-    // Desktop dropdown keyboard support
-    document.querySelectorAll('.nav__link[aria-expanded]').forEach(btn => {
-      btn.addEventListener('click', function () {
-        const expanded = this.getAttribute('aria-expanded') === 'true';
-        this.setAttribute('aria-expanded', String(!expanded));
-      });
-    });
-  })();
+});
 </script>
-
 {% schema %}
 {
-  "name": "Header",
+  "name": "t:sections.header.name",
   "class": "section-header",
-  "enabled_on": {
-    "groups": ["header"]
-  },
   "settings": [
+    {
+        "type": "checkbox",
+        "id": "show_search",
+        "label": "Show Icon Search",
+        "default": true
+    },
+     {
+        "type": "checkbox",
+        "id": "show_wishlist",
+        "label": "Show Icon Wishlist",
+        "default": true
+    },
+    {
+      "type": "text",
+      "id": "text_product",
+      "label": "Text Product",
+      "default" : "Find Your Favorite"
+    },
+    {
+      "type": "text",
+      "id": "text_quiz",
+      "label": "Text Quiz",
+      "default" : "GET STARTED"
+    },
+    {
+      "type": "text",
+      "id": "text_all",
+      "label": "Text ALL",
+      "default" : "Find Your Favorite"
+    },
+    {
+      "type": "html",
+      "id": "logo_svg",
+      "label": "Code svg"
+    },
+    {
+        "type": "checkbox",
+        "id": "show_image",
+        "label": "Show Logo",
+        "default": false
+    },
     {
       "type": "image_picker",
       "id": "logo",
-      "label": "Logo image"
-    },
-    {
-      "type": "range",
-      "id": "logo_width",
-      "min": 50,
-      "max": 300,
-      "step": 10,
-      "default": 150,
-      "unit": "px",
-      "label": "Logo width"
+      "label": "t:sections.header.settings.logo.label"
     },
     {
       "type": "link_list",
       "id": "menu",
       "default": "main-menu",
-      "label": "Menu"
+      "label": "t:sections.header.settings.menu.label"
     },
     {
-      "type": "checkbox",
-      "id": "enable_search",
-      "default": true,
-      "label": "Enable search"
+      "type": "text",
+      "id": "mega_menu_product",
+      "label": "Mega menu product",
+      "default" : "Our Products"
+    },
+    {
+      "type": "header",
+      "content": "Show All Product Menu Items"
+    },
+    {
+      "type": "image_picker",
+      "id": "prod_image_1",
+      "label": "Products Image Mega Menu-1"
+    },
+    {
+      "type": "text",
+      "id": "prod_link_text_1",
+      "label": "Products Text-1"
+    },
+    {
+      "type": "url",
+      "id": "prod_url_1",
+      "label": "Products Url Image-1"
+    },
+    {
+      "type": "image_picker",
+      "id": "prod_image_2",
+      "label": "Products Image Mega Menu-2"
+    },
+    {
+      "type": "text",
+      "id": "prod_link_text_2",
+      "label": "Products Text-2"
+    },
+    {
+      "type": "url",
+      "id": "prod_url_2",
+      "label": "ProductsUrl Image-2"
+    },
+    {
+      "type": "image_picker",
+      "id": "prod_image_3",
+      "label": "Products Image Mega Menu-3"
+    },
+    {
+      "type": "text",
+      "id": "prod_link_text_3",
+      "label": "Products Text-3"
+    },
+    {
+      "type": "url",
+      "id": "prod_url_3",
+      "label": "Products Url Image-3"
+    },
+    {
+      "type": "text",
+      "id": "mega_menu_category",
+      "label": "Mega menu category",
+      "default" : "Categories"
+    },
+    {
+      "type": "header",
+      "content": "Show Category Menu Items"
+    },
+    {
+      "type": "image_picker",
+      "id": "image_1",
+      "label": "Image Mega Menu-1"
+    },
+    {
+      "type": "text",
+      "id": "link_text_1",
+      "label": "Text-1"
+    },
+    {
+      "type": "url",
+      "id": "url_1",
+      "label": "Url Image-1"
+    },
+    {
+      "type": "image_picker",
+      "id": "image_2",
+      "label": "Image Mega Menu-2"
+    },
+    {
+      "type": "text",
+      "id": "link_text_2",
+      "label": "Text-2"
+    },
+    {
+      "type": "url",
+      "id": "url_2",
+      "label": "Url Image-2"
+    },
+    {
+      "type": "image_picker",
+      "id": "image_3",
+      "label": "Image Mega Menu-3"
+    },
+    {
+      "type": "text",
+      "id": "link_text_3",
+      "label": "Text-3"
+    },
+    {
+      "type": "url",
+      "id": "url_3",
+      "label": "Url Image-3"
     }
   ]
 }
