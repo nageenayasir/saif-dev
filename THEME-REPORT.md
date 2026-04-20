@@ -1,7 +1,7 @@
 # Tribe Organics — Shopify Theme Security & Performance Report
 
 **Prepared for:** Tribe Organics  
-**Prepared by:** [Your Agency Name]  
+**Prepared by:** Nageen
 **Date:** April 20, 2026  
 **Project:** Theme Security Audit, Malware Removal & Performance Optimisation  
 
