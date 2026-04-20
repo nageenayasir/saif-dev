@@ -102,8 +102,61 @@
         {%- form 'product', product, id: 'ProductForm', class: 'product-form', novalidate: 'novalidate', data-type: 'add-to-cart-form' -%}
           <input type="hidden" name="id" value="{{ current_variant.id }}" id="ProductVariantId">
 
-          <!-- Subscription toggle (placeholder — integrate your subscription app) -->
-          {%- if section.settings.show_subscription_toggle -%}
+          <!-- Selling plan / subscription -->
+          {%- if product.selling_plan_groups.size > 0 -%}
+            {%- assign sp_group = product.selling_plan_groups.first -%}
+            {%- assign sp_max_discount = 0 -%}
+            {%- for plan in sp_group.selling_plans -%}
+              {%- for adj in plan.price_adjustments -%}
+                {%- if adj.value_type == 'percentage' and adj.value > sp_max_discount -%}
+                  {%- assign sp_max_discount = adj.value -%}
+                {%- endif -%}
+              {%- endfor -%}
+            {%- endfor -%}
+
+            <input type="hidden" name="selling_plan" id="ProductSellingPlan" value="">
+
+            <div class="purchase-options" id="PurchaseOptions">
+              <button type="button" class="purchase-option is-active" id="PurchaseOptionSubscribe"
+                data-group-id="{{ sp_group.id }}">
+                <span class="purchase-option__label">{{ sp_group.name | default: 'Subscribe & Save' }}</span>
+                {%- if sp_max_discount > 0 -%}
+                  <span class="purchase-option__badge">Save {{ sp_max_discount }}%</span>
+                {%- endif -%}
+              </button>
+              <button type="button" class="purchase-option" id="PurchaseOptionOneTime">
+                <span class="purchase-option__label">One-Time Purchase</span>
+              </button>
+            </div>
+
+            <!-- Frequency selector (shown when subscribe is active) -->
+            <div class="selling-plan-selector" id="SellingPlanSelector">
+              <label class="selling-plan-selector__label" for="SellingPlanSelect">Delivery frequency</label>
+              <div class="selling-plan-selector__select-wrap">
+                <select class="selling-plan-selector__select" id="SellingPlanSelect" name="_selling_plan_display">
+                  {%- for plan in sp_group.selling_plans -%}
+                    <option value="{{ plan.id }}"
+                      data-plan-id="{{ plan.id }}"
+                      {%- for adj in plan.price_adjustments -%}
+                        {%- if adj.value_type == 'percentage' %} data-discount="{{ adj.value }}"{%- endif -%}
+                        {%- if adj.value_type == 'fixed_amount' %} data-discount-fixed="{{ adj.value }}"{%- endif -%}
+                      {%- endfor -%}
+                      {% if forloop.first %}selected{% endif %}>
+                      {{ plan.name }}
+                      {%- for adj in plan.price_adjustments -%}
+                        {%- if adj.value_type == 'percentage' %} — Save {{ adj.value }}%{%- endif -%}
+                      {%- endfor -%}
+                    </option>
+                  {%- endfor -%}
+                </select>
+                <svg class="selling-plan-selector__chevron" viewBox="0 0 12 8" fill="none" aria-hidden="true">
+                  <path d="M1 1l5 6 5-6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+                </svg>
+              </div>
+            </div>
+
+          {%- elsif section.settings.show_subscription_toggle -%}
+            <!-- Fallback static toggle when no selling plans exist (for display purposes) -->
             <div class="purchase-options">
               <button type="button" class="purchase-option is-active" id="PurchaseOptionSubscribe">
                 <span class="purchase-option__label">Subscribe & Save</span>
@@ -338,16 +391,72 @@
     });
   });
 
-  // Purchase option toggle
+  // Selling plan / subscription toggle
   const subBtn = document.getElementById('PurchaseOptionSubscribe');
   const oneTimeBtn = document.getElementById('PurchaseOptionOneTime');
+  const sellingPlanInput = document.getElementById('ProductSellingPlan');
+  const sellingPlanSelector = document.getElementById('SellingPlanSelector');
+  const sellingPlanSelect = document.getElementById('SellingPlanSelect');
+
+  function applySellingPlan(planId) {
+    if (sellingPlanInput) sellingPlanInput.value = planId || '';
+  }
+
+  function getSubscribePrice(basePrice, selectedOption) {
+    if (!selectedOption) return basePrice;
+    const discount = parseFloat(selectedOption.dataset.discount || 0);
+    const discountFixed = parseFloat(selectedOption.dataset.discountFixed || 0);
+    if (discount > 0) return Math.round(basePrice * (1 - discount / 100));
+    if (discountFixed > 0) return Math.max(0, basePrice - discountFixed);
+    return basePrice;
+  }
+
+  function updatePriceForPlan(isSubscribe) {
+    if (!btnPrice) return;
+    const variantId = variantIdInput ? parseInt(variantIdInput.value) : null;
+    const variant = variantId && productData.find(function(v) { return v.id === variantId; });
+    const basePrice = variant ? variant.price : 0;
+    if (isSubscribe && sellingPlanSelect) {
+      const selectedOpt = sellingPlanSelect.options[sellingPlanSelect.selectedIndex];
+      const subPrice = getSubscribePrice(basePrice, selectedOpt);
+      btnPrice.textContent = '| ' + formatMoney(subPrice);
+    } else if (variant) {
+      btnPrice.textContent = '| ' + formatMoney(basePrice);
+    }
+  }
+
   if (subBtn && oneTimeBtn) {
-    [subBtn, oneTimeBtn].forEach(function(btn) {
-      btn.addEventListener('click', function() {
-        subBtn.classList.toggle('is-active', btn === subBtn);
-        oneTimeBtn.classList.toggle('is-active', btn === oneTimeBtn);
-      });
+    subBtn.addEventListener('click', function() {
+      subBtn.classList.add('is-active');
+      oneTimeBtn.classList.remove('is-active');
+      if (sellingPlanSelector) sellingPlanSelector.style.display = '';
+      const selectedPlanId = sellingPlanSelect ? sellingPlanSelect.value : '';
+      applySellingPlan(selectedPlanId);
+      updatePriceForPlan(true);
     });
+
+    oneTimeBtn.addEventListener('click', function() {
+      oneTimeBtn.classList.add('is-active');
+      subBtn.classList.remove('is-active');
+      if (sellingPlanSelector) sellingPlanSelector.style.display = 'none';
+      applySellingPlan('');
+      updatePriceForPlan(false);
+    });
+
+    // Frequency select change
+    if (sellingPlanSelect) {
+      sellingPlanSelect.addEventListener('change', function() {
+        if (subBtn.classList.contains('is-active')) {
+          applySellingPlan(sellingPlanSelect.value);
+          updatePriceForPlan(true);
+        }
+      });
+
+      // Init: set first plan as selected on load if subscribe is default
+      if (subBtn.classList.contains('is-active') && sellingPlanSelect.value) {
+        applySellingPlan(sellingPlanSelect.value);
+      }
+    }
   }
 
   // AJAX add-to-cart → open cart drawer

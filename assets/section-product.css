@@ -390,3 +390,53 @@
   color: rgb(var(--color-base-accent-1));
   font-weight: 600;
 }
+
+/* Selling plan frequency selector */
+.selling-plan-selector {
+  margin-top: 1.2rem;
+}
+
+.selling-plan-selector__label {
+  display: block;
+  font-size: 1.3rem;
+  font-weight: 600;
+  color: rgba(var(--color-base-text), 0.7);
+  margin-bottom: 0.6rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.selling-plan-selector__select-wrap {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+}
+
+.selling-plan-selector__select {
+  appearance: none;
+  background: rgb(var(--color-base-background-1));
+  border: 1.5px solid rgba(var(--color-base-text), 0.2);
+  border-radius: 0.6rem;
+  padding: 0.9rem 3.6rem 0.9rem 1.4rem;
+  font-size: 1.4rem;
+  font-family: var(--font-body-family);
+  color: rgb(var(--color-base-text));
+  cursor: pointer;
+  min-width: 22rem;
+  transition: border-color 0.2s;
+}
+
+.selling-plan-selector__select:focus {
+  outline: 2px solid rgb(var(--color-base-accent-1));
+  outline-offset: 2px;
+  border-color: rgb(var(--color-base-accent-1));
+}
+
+.selling-plan-selector__chevron {
+  position: absolute;
+  right: 1.2rem;
+  width: 1.2rem;
+  height: 0.8rem;
+  color: rgba(var(--color-base-text), 0.5);
+  pointer-events: none;
+}
