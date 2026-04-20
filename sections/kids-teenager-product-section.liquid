@@ -20,8 +20,8 @@
           <div class="teenager-product-img-text-wrap">
             <div class="kids-teenager-product-img" data-aos="fade-up">
               <a href="{{ section.settings.button_url }}">
-                {% if section.settings.the_image != blank %}<img loading="lazy"  src="{{ section.settings.the_image | img_url: 'master' }}" class="web-kids-teenager-product-img">{% endif %}
-                {% if section.settings.mob_image != blank %}<img loading="lazy"  src="{{ section.settings.mob_image | img_url: 'master' }}" class="mob-kids-teenager-product-img">{% endif %}
+                {% if section.settings.the_image != blank %}<img loading="lazy"  src="{{ section.settings.the_image | image_url: width: 2000 }}" class="web-kids-teenager-product-img">{% endif %}
+                {% if section.settings.mob_image != blank %}<img loading="lazy"  src="{{ section.settings.mob_image | image_url: width: 2000 }}" class="mob-kids-teenager-product-img">{% endif %}
               </a>
             </div>
             <div class="kids-teenager-product-btn-wrap" data-aos="fade-up">

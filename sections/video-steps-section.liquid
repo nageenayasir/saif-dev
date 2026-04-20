@@ -8,7 +8,7 @@
         {% if section.settings.text_2 != blank %}<b data-aos="fade-up">{{ section.settings.text_2 }}<a href="{{ section.settings.link }}"><span> {{ section.settings.link_text }}</span></a></b>{% endif %}
       </div>
       <div class="col-sm-12 col-md-6 col-lg-4 inner-step-right" data-aos="fade-up">
-        {% if section.settings.the_image !=blank %}<img loading="lazy" src="{{ section.settings.the_image | img_url: 'master' }}">{% endif %}
+        {% if section.settings.the_image !=blank %}<img loading="lazy" src="{{ section.settings.the_image | image_url: width: 2000 }}">{% endif %}
       </div>
     </div>
   </div>

@@ -15,7 +15,7 @@
           <div class="teenager-free-allergen-left-image" data-aos="fade-up">
             <a href="{{ section.settings.button_url }}">
               <div class="kids-teen-image-wrapper">
-                  {% if section.settings.the_image != blank %}<img loading="lazy"  src="{{ section.settings.the_image | img_url: 'master' }}">{% endif %}
+                  {% if section.settings.the_image != blank %}<img loading="lazy"  src="{{ section.settings.the_image | image_url: width: 2000 }}">{% endif %}
               </div>
             </a>
           </div>
@@ -27,12 +27,12 @@
       <div class="col-sm-12 col-md-6 col-lg-6">
         <div class="teenager-free-allergen-content-wrapper">
           <div class="teenager-free-allergen-right-image" data-aos="fade-up">
-            {% if section.settings.allergen_image != blank %}<img loading="lazy"  src="{{ section.settings.allergen_image | img_url: 'master' }}">{% endif %}
+            {% if section.settings.allergen_image != blank %}<img loading="lazy"  src="{{ section.settings.allergen_image | image_url: width: 2000 }}">{% endif %}
           </div>
           <ul class="teenager-free-allergen-icon-lists" data-aos="fade-up">
              {% for block in section.blocks %}
                 <li>
-                  {% if block.settings.icon_img != blank %}<img loading="lazy"  src="{{ block.settings.icon_img | img_url: 'master' }}">{% endif %}
+                  {% if block.settings.icon_img != blank %}<img loading="lazy"  src="{{ block.settings.icon_img | image_url: width: 2000 }}">{% endif %}
                 </li>
             {% endfor %}
           </ul>

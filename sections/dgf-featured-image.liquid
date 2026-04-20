@@ -100,7 +100,7 @@
   <div class="dgf-fi-wrapper">
     {% if section.settings.image_desktop != blank %}
       <img
-        src="{{ section.settings.image_desktop | img_url: 'master' }}"
+        src="{{ section.settings.image_desktop | image_url: width: 2000 }}"
         alt="{{ section.settings.image_alt | default: 'Featured Image' }}"
         class="dgf-fi-image dgf-fi-desktop"
         loading="lazy"
@@ -109,14 +109,14 @@
 
     {% if section.settings.image_mobile != blank %}
       <img
-        src="{{ section.settings.image_mobile | img_url: 'master' }}"
+        src="{{ section.settings.image_mobile | image_url: width: 2000 }}"
         alt="{{ section.settings.image_alt | default: 'Featured Image' }}"
         class="dgf-fi-image dgf-fi-mobile"
         loading="lazy"
       >
     {% elsif section.settings.image_desktop != blank %}
       <img
-        src="{{ section.settings.image_desktop | img_url: 'master' }}"
+        src="{{ section.settings.image_desktop | image_url: width: 2000 }}"
         alt="{{ section.settings.image_alt | default: 'Featured Image' }}"
         class="dgf-fi-image dgf-fi-mobile"
         loading="lazy"

@@ -17,7 +17,7 @@
               <div class="health-icons-blocks">
                 <a href="{{ block.settings.the_url }}">
                   {% if block.settings.the_icon != blank %}
-                    <img src="{{ block.settings.the_icon | img_url: 'master' }}" alt="{{ block.settings.the_text | default: 'Health category icon' }}" width="160" height="160">
+                    <img src="{{ block.settings.the_icon | image_url: width: 2000 }}" alt="{{ block.settings.the_text | default: 'Health category icon' }}" width="160" height="160">
                   {% endif %}
                   <p>{{ block.settings.the_text }}</p>
                 </a>

@@ -11,7 +11,7 @@
        <span class="tribe_scroller_item">
          <span class="marquee__img">
          {% if block.settings.logo_image != blank %}
-              <img src="{{ block.settings.logo_image | img_url: 'master' }}" alt="{{ block.settings.marquee_text | default: 'Feature icon' }}">
+              <img src="{{ block.settings.logo_image | image_url: width: 2000 }}" alt="{{ block.settings.marquee_text | default: 'Feature icon' }}">
           {%- endif -%}
           {% if block.settings.svg_code %}
             {{ block.settings.svg_code }}

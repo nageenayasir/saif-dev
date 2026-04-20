@@ -15,7 +15,7 @@
                     <div class="row COA-cstm-icons">
                     {% for block in section.blocks %}  
                         <div class="col-lg-3 col-md-3 col-sm-12">
-                            {% if block.settings.logo != blank %}<img loading="lazy"  src="{{ block.settings.logo | img_url: 'master' }}">{% endif %}
+                            {% if block.settings.logo != blank %}<img loading="lazy"  src="{{ block.settings.logo | image_url: width: 2000 }}">{% endif %}
                             <div data-aos="fade-up" data-aos-delay="400">
                                 <a class="btn btn-bg" href="{{ block.settings.url }}" target="_self">
                                     {{ block.settings.button }}

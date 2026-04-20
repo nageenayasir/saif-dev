@@ -9,8 +9,8 @@
           {% endfor %}
         </ul>
         <ul class="unorder-list">
-          <li data-aos="fade-up"><span>{% if section.settings.leaf_image !=blank %}<img loading="lazy"  src="{{ section.settings.leaf_image | img_url: 'master' }}">{% endif %}</span> {{ section.settings.text_1 }}</li>
-          <li data-aos="fade-up"><span>{% if section.settings.leaf_image !=blank %}<img loading="lazy"  src="{{ section.settings.leaf_image | img_url: 'master' }}">{% endif %}</span> {{ section.settings.text_2 }}</li>
+          <li data-aos="fade-up"><span>{% if section.settings.leaf_image !=blank %}<img loading="lazy"  src="{{ section.settings.leaf_image | image_url: width: 2000 }}">{% endif %}</span> {{ section.settings.text_1 }}</li>
+          <li data-aos="fade-up"><span>{% if section.settings.leaf_image !=blank %}<img loading="lazy"  src="{{ section.settings.leaf_image | image_url: width: 2000 }}">{% endif %}</span> {{ section.settings.text_2 }}</li>
         </ul>
         <p data-aos="fade-up">{{ section.settings.text_3 }}</p>
       </div>

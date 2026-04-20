@@ -9,7 +9,7 @@
       <div class="homepage-certified-icon-lists">
         {% for block in section.blocks %}
           <div class="homepage-certificed-icon-lists-wrapper">
-            {% if block.settings.icon != blank %}<img loading="lazy"  src="{{ block.settings.icon | img_url: 'master' }}" alt="Certification badge" width="70" height="50">{% endif %}
+            {% if block.settings.icon != blank %}<img loading="lazy"  src="{{ block.settings.icon | image_url: width: 2000 }}" alt="Certification badge" width="70" height="50">{% endif %}
           </div>
         {% endfor %}
       </div>

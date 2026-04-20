@@ -5,7 +5,7 @@
         {% for icons in collection.metafields.custom.certificate_icons.value %}
           <div class="col-3">
              <div class="collection-certification-icons">
-               <img loading="lazy" src="{{ icons | img_url: 'master' }}">
+               <img loading="lazy" src="{{ icons | image_url: width: 2000 }}">
             </div>
           </div>
          {% endfor %}

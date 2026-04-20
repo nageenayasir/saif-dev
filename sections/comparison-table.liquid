@@ -14,20 +14,20 @@
             <tr>
               <th>
                 {% if section.settings.logo != blank %}
-                  <img src="{{ section.settings.logo | img_url: "master" }}" class="comparison-web-logo">  
+                  <img src="{{ section.settings.logo | image_url: width: 2000 }}" class="comparison-web-logo">  
                 {% endif %}
                 {% if section.settings.mob_logo != blank %}
-                  <img src="{{ section.settings.mob_logo | img_url: "master" }}" class="comparison-mob-logo">  
+                  <img src="{{ section.settings.mob_logo | image_url: width: 2000 }}" class="comparison-mob-logo">  
                 {% endif %}
               </th>
               <th class="highlight">
                 {% if product.metafields.custom.comparison_product != blank %}
-                  <img src="{{ product.metafields.custom.comparison_product | img_url: "master" }}">  
+                  <img src="{{ product.metafields.custom.comparison_product | image_url: width: 2000 }}">  
                 {% endif %}
               </th>
               <th>
                 {% if section.settings.other_brand != blank %}
-                  <img src="{{ section.settings.other_brand | img_url: "master" }}">  
+                  <img src="{{ section.settings.other_brand | image_url: width: 2000 }}">  
                 {% endif %}
               </th>
             </tr>
@@ -46,14 +46,14 @@
                 <td>
                   <div class="table-data-items">
                      {% if section.settings.tick_icon != blank %}
-                              <img src="{{ section.settings.tick_icon | img_url: "master" }}">  
+                              <img src="{{ section.settings.tick_icon | image_url: width: 2000 }}">  
                      {% endif %}
                   </div>
                 </td>
                 <td>
                   <div class="table-data-items">
                   {% if section.settings.cross_icon != blank %}
-                      <img src="{{ section.settings.cross_icon | img_url: "master" }}">  
+                      <img src="{{ section.settings.cross_icon | image_url: width: 2000 }}">  
                   {% endif %}
                   </div>
                 </td>
@@ -66,7 +66,7 @@
   </div>
   {% if section.settings.left_image != blank %}
     <div class="comparision-left-side-image">
-            <img src="{{ section.settings.left_image | img_url: "master" }}">  
+            <img src="{{ section.settings.left_image | image_url: width: 2000 }}">  
     </div>
   {% endif %}
 </section>

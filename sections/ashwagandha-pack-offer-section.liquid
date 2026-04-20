@@ -28,14 +28,14 @@
         <div class="col-sm-6 col-md-6 col-lg-6 ashwagandha-pack-image-column">
           <div class="ashwagandha-pack-image">
             <div class="ashwagandha-pack-image-first">
-              {% if section.settings.the_image_1 != blank %}<img loading="lazy"  src="{{ section.settings.the_image_1 | img_url: 'master' }}">{% endif %}
+              {% if section.settings.the_image_1 != blank %}<img loading="lazy"  src="{{ section.settings.the_image_1 | image_url: width: 2000 }}">{% endif %}
             </div>
             <div class="ashwagandha-pack-image-second">
-              {% if section.settings.the_image_2 != blank %}<img loading="lazy"  src="{{ section.settings.the_image_2 | img_url: 'master' }}">{% endif %}
+              {% if section.settings.the_image_2 != blank %}<img loading="lazy"  src="{{ section.settings.the_image_2 | image_url: width: 2000 }}">{% endif %}
             </div>
             {% if section.settings.the_image_3 != blank %}
             <div class="ashwagandha-pack-image-third">
-              <img loading="lazy"  src="{{ section.settings.the_image_3 | img_url: 'master' }}">
+              <img loading="lazy"  src="{{ section.settings.the_image_3 | image_url: width: 2000 }}">
             </div>
             {% endif %}
           </div>
@@ -52,7 +52,7 @@
           <a href="{{ section.settings.the_url }}">{{ section.settings.btn_text }}</a>
           <p>
             <span>
-              {% if section.settings.the_icon != blank %}<img loading="lazy"  src="{{ section.settings.the_icon | img_url: 'master' }}">{% endif %}
+              {% if section.settings.the_icon != blank %}<img loading="lazy"  src="{{ section.settings.the_icon | image_url: width: 2000 }}">{% endif %}
             </span>
             {{ section.settings.btn_under_text }}
           </p>

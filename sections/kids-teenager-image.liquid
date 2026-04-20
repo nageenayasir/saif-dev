@@ -12,7 +12,7 @@
       <div class="row">
         <div class="col-sm-12 col-md-12 col-lg-12">
           <div class="kids-teenager-image-wrap" data-aos="fade-up">
-            {% if section.settings.the_image != blank %}<img loading="lazy"  src="{{ section.settings.the_image | img_url: 'master' }}">{% endif %}
+            {% if section.settings.the_image != blank %}<img loading="lazy"  src="{{ section.settings.the_image | image_url: width: 2000 }}">{% endif %}
           </div>
         </div>
       </div>

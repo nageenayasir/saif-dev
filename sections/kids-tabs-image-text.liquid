@@ -50,9 +50,9 @@
         <div class="product-tabs-image">
           <div data-aos="fade-up" data-aos-delay="000">
           {% if product.metafields.custom.image != blank %}
-            <img loading="lazy"  src="{{ product.metafields.custom.image | img_url: 'master' }}">
+            <img loading="lazy"  src="{{ product.metafields.custom.image | image_url: width: 2000 }}">
           {% else %}
-            {% if section.settings.the_image != blank %}<img loading="lazy"  src="{{ section.settings.the_image | img_url: 'master' }}">{% endif %}
+            {% if section.settings.the_image != blank %}<img loading="lazy"  src="{{ section.settings.the_image | image_url: width: 2000 }}">{% endif %}
             {% endif %}
           </div>
         </div>

@@ -9,13 +9,13 @@
       <div class="col-sm-12 col-md-6 col-lg-6 affiliates-info-column">
         <div class="affiliates-images-wrapper">
           <div class="affiliates-images">
-            {% if section.settings.the_image_1 != blank %}<img loading="lazy"  src="{{ section.settings.the_image_1 | img_url: 'master' }}">{% endif %}
+            {% if section.settings.the_image_1 != blank %}<img loading="lazy"  src="{{ section.settings.the_image_1 | image_url: width: 2000 }}">{% endif %}
           </div>
            <div class="affiliates-images">
-            {% if section.settings.the_image_2 != blank %}<img loading="lazy"  src="{{ section.settings.the_image_2 | img_url: 'master' }}">{% endif %}
+            {% if section.settings.the_image_2 != blank %}<img loading="lazy"  src="{{ section.settings.the_image_2 | image_url: width: 2000 }}">{% endif %}
           </div>
            <div class="affiliates-images">
-            {% if section.settings.the_image_3 != blank %}<img loading="lazy"  src="{{ section.settings.the_image_3 | img_url: 'master' }}">{% endif %}
+            {% if section.settings.the_image_3 != blank %}<img loading="lazy"  src="{{ section.settings.the_image_3 | image_url: width: 2000 }}">{% endif %}
           </div>
         </div>
       </div>
@@ -28,7 +28,7 @@
             {% for block in section.blocks %}
               <div class="affiliates-list-blocks">
                 <div class="affiliates-icons">
-                   {% if block.settings.the_icon != blank %}<img loading="lazy"  src="{{ block.settings.the_icon | img_url: 'master' }}">{% endif %}
+                   {% if block.settings.the_icon != blank %}<img loading="lazy"  src="{{ block.settings.the_icon | image_url: width: 2000 }}">{% endif %}
                 </div>
                 <div class="affiliates-list-text">
                   {{ block.settings.the_text }}

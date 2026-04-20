@@ -10,7 +10,7 @@
         <div class="col-sm-6 col-md-6 col-lg-6">
           <div class=" product-guarantee-icons-wrap">
             <p>
-              <span>{% if block.settings.icon != blank %}<img loading="lazy"  src="{{ block.settings.icon | img_url: 'master' }}">{% endif %}</span>
+              <span>{% if block.settings.icon != blank %}<img loading="lazy"  src="{{ block.settings.icon | image_url: width: 2000 }}">{% endif %}</span>
               {{ block.settings.the_text }}
             </p>
           </div>

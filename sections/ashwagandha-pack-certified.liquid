@@ -10,7 +10,7 @@
         <div class="row ashwagandha-certified-row">
            <div class="col-sm-12 col-md-6 col-lg-6">
             <div class="ashwagandha-certified-img">
-              {% if section.settings.the_image != blank %}<img loading="lazy"  src="{{ section.settings.the_image | img_url: 'master' }}">{% endif %}
+              {% if section.settings.the_image != blank %}<img loading="lazy"  src="{{ section.settings.the_image | image_url: width: 2000 }}">{% endif %}
             </div>
           </div>
           <div class="col-sm-12 col-md-6 col-lg-6">
@@ -19,7 +19,7 @@
                 {{ section.settings.the_text }}
               </div>
               <div class="ashwagandha-certified-logo">
-                {% if section.settings.the_logo != blank %}<img loading="lazy"  src="{{ section.settings.the_logo | img_url: 'master' }}">{% endif %}
+                {% if section.settings.the_logo != blank %}<img loading="lazy"  src="{{ section.settings.the_logo | image_url: width: 2000 }}">{% endif %}
               </div>
             </div>
           </div>

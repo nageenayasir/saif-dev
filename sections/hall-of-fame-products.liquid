@@ -22,7 +22,7 @@
             <div class="col-lg-2 col-md-2 col-sm-6 hall-fame-product-blocks">
               <div class="hall-fame-product-lists">
                 <div class="hall-fame-product-img">
-                  {% if block.settings.product_image != blank %}<img loading="lazy"  src="{{ block.settings.product_image | img_url: 'master' }}">{% endif %}
+                  {% if block.settings.product_image != blank %}<img loading="lazy"  src="{{ block.settings.product_image | image_url: width: 2000 }}">{% endif %}
                 </div>
                 <div class="cstm-atc">
                   <a href="{{ block.settings.button_link }}">{{ block.settings.button_text }}</a>

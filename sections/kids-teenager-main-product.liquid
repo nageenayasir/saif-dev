@@ -10,14 +10,14 @@
         <div class="kids-teenage-main-product-head" data-aos="fade-up">
           <h2>{{ section.settings.the_title }}</h2>
           <div class="kids-teenage-main-product-logo">
-            {% if section.settings.logo_image != blank %}<img loading="lazy"  src="{{ section.settings.logo_image | img_url: 'master' }}">{% endif %}
+            {% if section.settings.logo_image != blank %}<img loading="lazy"  src="{{ section.settings.logo_image | image_url: width: 2000 }}">{% endif %}
           </div>
         </div>
         <div class="kids-teenage-main-product-img-text">
           <div class="kids-teenager-product-img" data-aos="fade-up">
               <a href="{{ section.settings.button_url }}">
                 <div class="kids-teen-image-wrapper">
-                  {% if section.settings.the_image != blank %}<img loading="lazy"  src="{{ section.settings.the_image | img_url: 'master' }}">{% endif %}
+                  {% if section.settings.the_image != blank %}<img loading="lazy"  src="{{ section.settings.the_image | image_url: width: 2000 }}">{% endif %}
                 </div>
               </a>
             </div>

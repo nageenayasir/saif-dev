@@ -78,7 +78,7 @@
       </div>
       <div class="custom-collection-banr-image">
         {% if collection.metafields.custom.collection_banner_image != blank %}
-          <img src="{{ collection.metafields.custom.collection_banner_image| img_url: 'master'}}">
+          <img src="{{ collection.metafields.custom.collection_banner_image| image_url: width: 2000}}">
         {% endif %}
       </div>
     </div>

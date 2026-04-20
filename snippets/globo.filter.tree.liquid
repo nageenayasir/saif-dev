@@ -450,13 +450,13 @@
                         {% capture background_image_css %}
                           {% if images contains value_jpg %}
                             {% assign has_swatch = true %}
-                            background-image: url('{{ value_jpg | asset_img_url: '50x' | prepend: 'https:' }}');
+                            background-image: url('{{ value_jpg | asset_image_url: width: 50 | prepend: 'https:' }}');
                           {% elsif images contains value_png %}
                             {% assign has_swatch = true %}
-                            background-image: url('{{ value_png | asset_img_url: '50x' | prepend: 'https:' }}');
+                            background-image: url('{{ value_png | asset_image_url: width: 50 | prepend: 'https:' }}');
                           {% elsif images contains value_jpeg %}
                             {% assign has_swatch = true %}
-                            background-image: url('{{ value_jpeg | asset_img_url: '50x' | prepend: 'https:' }}');
+                            background-image: url('{{ value_jpeg | asset_image_url: width: 50 | prepend: 'https:' }}');
                           {% elsif value.value contains 'https:' or value.value contains 'http:' %}
                             {% assign has_swatch = true %}
                             background-image: url('{{ value.value }}');  

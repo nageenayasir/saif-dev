@@ -28,7 +28,7 @@
               <p>{{ block.settings.the_text }}</p>
             </div>
             <div class="ashwagandha-product-pack-image">
-                {% if block.settings.product_image != blank %}<img loading="lazy" class="lazyload" src="{{ block.settings.product_image | img_url: 'master' }}">{% endif %}
+                {% if block.settings.product_image != blank %}<img loading="lazy" class="lazyload" src="{{ block.settings.product_image | image_url: width: 2000 }}">{% endif %}
             </div>
             <div class="ashwagandha-product-pack-title">
                 <h3>{{ block.settings.product_title }}</h3>
@@ -62,7 +62,7 @@
             <div class="pack-free-shipping">
               <p>
                 <span>
-                  {% if block.settings.the_icon != blank %}<img loading="lazy"  src="{{ block.settings.the_icon | img_url: 'master' }}">{% endif %}
+                  {% if block.settings.the_icon != blank %}<img loading="lazy"  src="{{ block.settings.the_icon | image_url: width: 2000 }}">{% endif %}
                 </span>
                 {{ block.settings.btn_under_text }}
               </p>
@@ -70,27 +70,27 @@
             <ul class="ashwagandha-product-pack--icon-lists">
                   {% if block.settings.icon_1 != blank %}
                   <li>
-                    <img loading="lazy" class="lazyload" src="{{ block.settings.icon_1 | img_url: 'master' }}">
+                    <img loading="lazy" class="lazyload" src="{{ block.settings.icon_1 | image_url: width: 2000 }}">
                   </li>
                   {% endif %}
                   {% if block.settings.icon_2 != blank %}
                   <li>
-                    <img loading="lazy" class="lazyload" src="{{ block.settings.icon_2 | img_url: 'master' }}">
+                    <img loading="lazy" class="lazyload" src="{{ block.settings.icon_2 | image_url: width: 2000 }}">
                   </li>
                   {% endif %}
                   {% if block.settings.icon_3 != blank %}
                   <li>
-                    <img loading="lazy" class="lazyload" src="{{ block.settings.icon_3 | img_url: 'master' }}">
+                    <img loading="lazy" class="lazyload" src="{{ block.settings.icon_3 | image_url: width: 2000 }}">
                   </li>
                   {% endif %}
                   {% if block.settings.icon_4 != blank %}
                   <li>
-                    <img loading="lazy" class="lazyload" src="{{ block.settings.icon_4 | img_url: 'master' }}">
+                    <img loading="lazy" class="lazyload" src="{{ block.settings.icon_4 | image_url: width: 2000 }}">
                   </li>
                   {% endif %}
                   {% if block.settings.icon_5 != blank %}
                   <li>
-                    <img loading="lazy" class="lazyload" src="{{ block.settings.icon_5 | img_url: 'master' }}">
+                    <img loading="lazy" class="lazyload" src="{{ block.settings.icon_5 | image_url: width: 2000 }}">
                   </li>
                   {% endif %}
            </ul>
@@ -100,7 +100,7 @@
       <div class="row ashwagandha-product-pack-guarantee-section-row">
         <div class="col-lg-12 col-md-12 col-sm-12">
           <div class="ashwagandha-product-pack-guarantee-section-img">
-            {% if section.settings.guarantee_img != blank %}<img loading="lazy" class="lazyload" src="{{ section.settings.guarantee_img | img_url: 'master' }}">{% endif %}
+            {% if section.settings.guarantee_img != blank %}<img loading="lazy" class="lazyload" src="{{ section.settings.guarantee_img | image_url: width: 2000 }}">{% endif %}
           </div>
         </div>
       </div>

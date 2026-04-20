@@ -26,20 +26,20 @@
           <div class="dgf-compare-row dgf-compare-header-row">
             <div class="dgf-compare-cell dgf-compare-feature-header">
               {% if section.settings.header_image != blank %}
-                <img src="{{ section.settings.header_image | img_url: '800x400' }}" alt="{{ section.settings.header_image_alt | default: 'Header Image' }}" class="dgf-compare-header-image d-none d-md-block">
+                <img src="{{ section.settings.header_image | image_url: width: 800 }}" alt="{{ section.settings.header_image_alt | default: 'Header Image' }}" class="dgf-compare-header-image d-none d-md-block">
               {% endif %}
               {% if section.settings.header_image_mobile != blank %}
-                <img src="{{ section.settings.header_image_mobile | img_url: '600x300' }}" alt="{{ section.settings.header_image_alt | default: 'Header Image' }}" class="dgf-compare-header-image d-block d-md-none">
+                <img src="{{ section.settings.header_image_mobile | image_url: width: 600 }}" alt="{{ section.settings.header_image_alt | default: 'Header Image' }}" class="dgf-compare-header-image d-block d-md-none">
               {% endif %}
             </div>
             {% if section.settings.product_1_image != blank %}
               <div class="dgf-compare-cell dgf-compare-product-header">
-                <img src="{{ section.settings.product_1_image | img_url: '200x200' }}" alt="{{ section.settings.product_1_name | default: 'Product 1' }}" class="dgf-compare-product-image">
+                <img src="{{ section.settings.product_1_image | image_url: width: 200 }}" alt="{{ section.settings.product_1_name | default: 'Product 1' }}" class="dgf-compare-product-image">
               </div>
             {% endif %}
             {% if section.settings.product_2_image != blank %}
               <div class="dgf-compare-cell dgf-compare-product-header">
-                <img src="{{ section.settings.product_2_image | img_url: '200x200' }}" alt="{{ section.settings.product_2_name | default: 'Product 2' }}" class="dgf-compare-product-image">
+                <img src="{{ section.settings.product_2_image | image_url: width: 200 }}" alt="{{ section.settings.product_2_name | default: 'Product 2' }}" class="dgf-compare-product-image">
               </div>
             {% endif %}
           </div>
@@ -52,12 +52,12 @@
               </div>
               <div class="dgf-compare-cell dgf-compare-status">
                 {% if block.settings.product_1_image != blank %}
-                  <img src="{{ block.settings.product_1_image | img_url: '100x100' }}" alt="Product 1 Status" class="dgf-compare-status-image">
+                  <img src="{{ block.settings.product_1_image | image_url: width: 100 }}" alt="Product 1 Status" class="dgf-compare-status-image">
                 {% endif %}
               </div>
               <div class="dgf-compare-cell dgf-compare-status">
                 {% if block.settings.product_2_image != blank %}
-                  <img src="{{ block.settings.product_2_image | img_url: '100x100' }}" alt="Product 2 Status" class="dgf-compare-status-image">
+                  <img src="{{ block.settings.product_2_image | image_url: width: 100 }}" alt="Product 2 Status" class="dgf-compare-status-image">
                 {% endif %}
               </div>
             </div>

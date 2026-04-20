@@ -28,7 +28,7 @@
       {% if section.settings.image_position == 'left' %}
       <div class="col-sm-12 col-md-6 col-lg-6">
         <div class="kids-teenager-the-image-wrapper" data-aos="fade-up">
-          {% if section.settings.the_image != blank %}<img loading="lazy"  src="{{ section.settings.the_image | img_url: 'master' }}">{% endif %}
+          {% if section.settings.the_image != blank %}<img loading="lazy"  src="{{ section.settings.the_image | image_url: width: 2000 }}">{% endif %}
         </div>
       </div>
       {% endif %}
@@ -40,7 +40,7 @@
       {% if section.settings.image_position == 'right' %}
         <div class="col-sm-12 col-md-6 col-lg-6">
           <div class="kids-teenager-the-image-wrapper" data-aos="fade-up">
-            {% if section.settings.the_image != blank %}<img loading="lazy"  src="{{ section.settings.the_image | img_url: 'master' }}">{% endif %}
+            {% if section.settings.the_image != blank %}<img loading="lazy"  src="{{ section.settings.the_image | image_url: width: 2000 }}">{% endif %}
           </div>
         </div>
       {% endif %}

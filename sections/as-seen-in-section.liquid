@@ -42,7 +42,7 @@
       <ul class="as-seen-in-blocks">
         {% for block in section.blocks %}
           <li>
-             {% if block.settings.the_icon != blank %}<img loading="lazy"  src="{{ block.settings.the_icon | img_url: 'master' }}" alt="Brand logo" width="160" height="40">{% endif %}
+             {% if block.settings.the_icon != blank %}<img loading="lazy"  src="{{ block.settings.the_icon | image_url: width: 2000 }}" alt="Brand logo" width="160" height="40">{% endif %}
           </li>
         {% endfor %}
       </ul>

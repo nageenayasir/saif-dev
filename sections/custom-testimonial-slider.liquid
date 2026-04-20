@@ -32,7 +32,7 @@
                 <div class="swiper-slide">
                   <div class="testi-item testimonial-item-content">
                     <div class="img-wrapper">
-                        <a href="{{ block.settings.button_link }}">{% if block.settings.image != blank %}<img class="lazyload" data-src="{{ block.settings.image | img_url: 'master' }}" alt="{{ block.settings.title }}">{% endif %}</a>
+                        <a href="{{ block.settings.button_link }}">{% if block.settings.image != blank %}<img class="lazyload" data-src="{{ block.settings.image | image_url: width: 2000 }}" alt="{{ block.settings.title }}">{% endif %}</a>
                     </div>
                     <div class="stars">
                         {{ block.settings.stars }}

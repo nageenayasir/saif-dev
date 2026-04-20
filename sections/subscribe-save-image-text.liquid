@@ -1,14 +1,14 @@
 <style>
   {% if section.settings.background_the_image != blank %}
     #id-{{ section.id }} {
-      background-image: url("{{section.settings.background_the_image | img_url: 'master'}}");
+      background-image: url("{{section.settings.background_the_image | image_url: width: 2000}}");
       background-size: cover;
     }
   {% endif %}
   {% if section.settings.bg_mob_image !=blank %}
     @media only screen and (max-width: 767px) {
       #id-{{ section.id }} {
-        background-image: url('{{ section.settings.bg_mob_image | img_url: 'master'}}') !important;
+        background-image: url('{{ section.settings.bg_mob_image | image_url: width: 2000}}') !important;
       }
     }
   {% endif %}
@@ -150,7 +150,7 @@
       {% if section.settings.image_position == 'left' %}
         <div class="col-sm-12 col-md-6 col-lg-6">
           <div class="susbscibe-save-img-wrapper" data-aos="fade-up">
-            {% if section.settings.the_image != blank %}<img loading="lazy" src="{{ section.settings.the_image | img_url: 'master' }}">{% endif %}
+            {% if section.settings.the_image != blank %}<img loading="lazy" src="{{ section.settings.the_image | image_url: width: 2000 }}">{% endif %}
           </div>
         </div>
       {% endif %}
@@ -181,7 +181,7 @@
                   <img
                     loading="lazy"
                     class="dgf-icons__img"
-                    src="{{ block.settings.icon | img_url: '64x' }}"
+                    src="{{ block.settings.icon | image_url: width: 64 }}"
                     alt="{{ block.settings.text | strip_html | escape }}">
                   </div>
                 {%- endif -%}
@@ -195,7 +195,7 @@
       {% if section.settings.image_position == 'right' %}
         <div class="col-sm-12 col-md-6 col-lg-6">
           <div class="subscribe-save-img-wrapper" data-aos="fade-up">
-            {% if section.settings.the_image != blank %}<img loading="lazy" src="{{ section.settings.the_image | img_url: 'master' }}">{% endif %}
+            {% if section.settings.the_image != blank %}<img loading="lazy" src="{{ section.settings.the_image | image_url: width: 2000 }}">{% endif %}
           </div>
         </div>
       {% endif %}

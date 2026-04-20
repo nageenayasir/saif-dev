@@ -61,7 +61,7 @@
     background-repeat: no-repeat;
     padding: {{ padding_top }}px 0 {{ padding_bottom }}px;
     {% if section.settings.bg_image != blank %}
-      background-image: url('{{ section.settings.bg_image | img_url: 'master' }}');
+      background-image: url('{{ section.settings.bg_image | image_url: width: 2000 }}');
     {% endif %}
     {% case section_height %}
       {% when 'small' %}
@@ -254,7 +254,7 @@
     #dgf-lp-hero-{{ sid }} {
       padding: {{ padding_top | times: 0.6 | round }}px 0 {{ padding_bottom | times: 0.6 | round }}px;
       {% if section.settings.bg_image_mobile != blank %}
-        background-image: url('{{ section.settings.bg_image_mobile | img_url: 'master' }}');
+        background-image: url('{{ section.settings.bg_image_mobile | image_url: width: 2000 }}');
       {% endif %}
       {% case section_height_mobile %}
         {% when 'small' %}
@@ -412,7 +412,7 @@
               <div class="col-md-6">
                 {% if section.settings.bottom_image != blank %}
                   <div class="dgf-lp-hero-bottom-image">
-                    <img loading="lazy" src="{{ section.settings.bottom_image | img_url: 'master' }}" alt="{{ section.settings.bottom_image_alt | default: 'Hero image' }}">
+                    <img loading="lazy" src="{{ section.settings.bottom_image | image_url: width: 2000 }}" alt="{{ section.settings.bottom_image_alt | default: 'Hero image' }}">
                   </div>
                 {% endif %}
               </div>

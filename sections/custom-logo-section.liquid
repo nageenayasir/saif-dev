@@ -10,7 +10,7 @@
         <div class="col-sm-12 col-md-12 col-lg-12">
           <div class="custom-page-logo">
             <a href="/">
-            {% if section.settings.the_image != blank %}<img loading="lazy"  src="{{ section.settings.the_image | img_url: 'master' }}">{% endif %}
+            {% if section.settings.the_image != blank %}<img loading="lazy"  src="{{ section.settings.the_image | image_url: width: 2000 }}">{% endif %}
             </a>
           </div>
         </div>

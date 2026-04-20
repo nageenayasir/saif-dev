@@ -18,10 +18,10 @@
             <h2><span>{{ section.settings.the_title }}</h2></span></h2>
             <ul class="new-kids-teenager-product-gummies">
               <li>
-                {% if section.settings.img_1 != blank %}<img loading="lazy"  src="{{ section.settings.img_1 | img_url: 'master' }}">{% endif %}
+                {% if section.settings.img_1 != blank %}<img loading="lazy"  src="{{ section.settings.img_1 | image_url: width: 2000 }}">{% endif %}
               </li>
               <li>
-                {% if section.settings.img_2 != blank %}<img loading="lazy"  src="{{ section.settings.img_2 | img_url: 'master' }}">{% endif %}
+                {% if section.settings.img_2 != blank %}<img loading="lazy"  src="{{ section.settings.img_2 | image_url: width: 2000 }}">{% endif %}
               </li>
             </ul>
             <h3>{{ section.settings.sub_title }}</h3>
@@ -32,7 +32,7 @@
           <div class="new-kids-teenager-product-img" data-aos="fade-up">
              <a href="{{ section.settings.button_url }}">
                <div class="kids-teen-image-wrapper">
-                {% if section.settings.the_image != blank %}<img loading="lazy"  src="{{ section.settings.the_image | img_url: 'master' }}" class="new-kids-teenager-product-img">{% endif %}
+                {% if section.settings.the_image != blank %}<img loading="lazy"  src="{{ section.settings.the_image | image_url: width: 2000 }}" class="new-kids-teenager-product-img">{% endif %}
                </div>
                </a>
              <div class="new-kids-teenager-product-btn-wrap" data-aos="fade-up">

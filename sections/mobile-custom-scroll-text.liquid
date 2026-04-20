@@ -11,7 +11,7 @@
        <span class="tribe_scroller_item">
          <span class="marquee__img">
          {% if block.settings.the_image != blank %}
-              <img loading="lazy"  src="{{ block.settings.the_image | img_url: 'master' }}">
+              <img loading="lazy"  src="{{ block.settings.the_image | image_url: width: 2000 }}">
           {%- endif -%}
           {% if block.settings.svg_code %}
             {{ block.settings.svg_code }}

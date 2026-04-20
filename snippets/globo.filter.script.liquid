@@ -3,8 +3,8 @@
 {%- assign has_form = false -%}
 {%- if request.page_type != 'index' -%}{%- assign home_filter = false -%}{%- endif -%}
 {%- if globo_search or request.page_type == 'collection' or request.page_type == 'search' or home_filter or has_form -%}
-{%- assign assets_url = 'product-1.png' | asset_img_url: '50x' | split: 'product-1_50x.png' -%}
-{%- assign files_url  = 'product-1.png' | file_img_url: '50x' | split: 'product-1_50x.png' -%}
+{%- assign assets_url = 'product-1.png' | asset_image_url: width: 50 | split: 'product-1_50x.png' -%}
+{%- assign files_url  = 'product-1.png' | file_image_url: width: 50 | split: 'product-1_50x.png' -%}
 {%- assign primary_locale = 'null' -%}
 {%- for locale in shop.published_locales -%}{%- if locale.primary -%}{%- assign primary_locale = locale.iso_code | json -%}{%- endif -%}{%- endfor -%}
 <style>.spf-filter-loading #gf-products > *:not(.spf-product--skeleton), .spf-filter-loading [data-globo-filter-items] > *:not(.spf-product--skeleton){visibility: hidden; opacity: 0}</style>

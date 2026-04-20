@@ -2,13 +2,13 @@
 <style>
   {% if collection.metafields.custom.collection_banner_image != blank and collection.metafields.custom.default_banner_image == true %}
  	#id-{{ section.id }}{
-        background-image:url("{{ collection.metafields.custom.collection_banner_image | img_url: 'master'}}");
+        background-image:url("{{ collection.metafields.custom.collection_banner_image | image_url: width: 2000}}");
         background-repeat: no-repeat;
         background-size: cover;
   	}
     @media only screen and (max-width: 767px){
           #id-{{ section.id }} {
-             background-image: url({{ collection.metafields.custom.mobile_banner_image | img_url: 'master'}}) !important;
+             background-image: url({{ collection.metafields.custom.mobile_banner_image | image_url: width: 2000}}) !important;
           }
   }
   {% endif %}

@@ -10,7 +10,7 @@
             {% for image in product.images %}
               <div class="swiper-slide">
                 <div class="product__photo sami-custom-pdp">
-                  <img src="{{ image | img_url: 'master' }}" alt="{{ image.alt }}">
+                  <img src="{{ image | image_url: width: 2000 }}" alt="{{ image.alt }}">
                 </div>
               </div>
             {% endfor %}
@@ -26,7 +26,7 @@
             {% for image in product.images %}
               <div class="swiper-slide">
                 <div class="product__thumbnail" data-image-index="{{ forloop.index }}">
-                  <img src="{{ image | img_url: 'master' }}" alt="{{ image.alt }}">
+                  <img src="{{ image | image_url: width: 2000 }}" alt="{{ image.alt }}">
                 </div>
               </div>
             {% endfor %}
@@ -134,7 +134,7 @@
         <div class="custom-wrap">
           {% if product.metafields.custom.certified_icon_1 != blank %}
             <div class="product-certified-icon">
-              <img loading="lazy" src="{{ product.metafields.custom.certified_icon_1 | img_url: 'master' }}">
+              <img loading="lazy" src="{{ product.metafields.custom.certified_icon_1 | image_url: width: 2000 }}">
             </div>
           {% endif %}
           {% if product.metafields.custom.certified_hover_text_1 != blank %}
@@ -146,7 +146,7 @@
         <div class="custom-wrap">
           {% if product.metafields.custom.certified_icon_2 != blank %}
             <div class="product-certified-icon">
-              <img loading="lazy" src="{{ product.metafields.custom.certified_icon_2 | img_url: 'master' }}">
+              <img loading="lazy" src="{{ product.metafields.custom.certified_icon_2 | image_url: width: 2000 }}">
             </div>
           {% endif %}
           {% if product.metafields.custom.certiied_hover_text_2 != blank %}
@@ -158,7 +158,7 @@
         <div class="custom-wrap">
           {% if product.metafields.custom.certfied_icon_3 != blank %}
             <div class="product-certified-icon">
-              <img loading="lazy" src="{{ product.metafields.custom.certfied_icon_3 | img_url: 'master' }}">
+              <img loading="lazy" src="{{ product.metafields.custom.certfied_icon_3 | image_url: width: 2000 }}">
             </div>
           {% endif %}
           {% if product.metafields.custom.certified_hover_text_3 != blank %}
@@ -170,7 +170,7 @@
         <div class="custom-wrap">
           {% if product.metafields.custom.certifed_icon_4 != blank %}
             <div class="product-certified-icon">
-              <img loading="lazy" src="{{ product.metafields.custom.certifed_icon_4 | img_url: 'master' }}">
+              <img loading="lazy" src="{{ product.metafields.custom.certifed_icon_4 | image_url: width: 2000 }}">
             </div>
           {% endif %}
           {% if product.metafields.custom.certified_hover_text_4 != blank %}
@@ -182,7 +182,7 @@
         <div class="custom-wrap">
           {% if product.metafields.custom.certified_icon_5 != blank %}
             <div class="product-certified-icon">
-              <img loading="lazy" src="{{ product.metafields.custom.certified_icon_5 | img_url: 'master' }}">
+              <img loading="lazy" src="{{ product.metafields.custom.certified_icon_5 | image_url: width: 2000 }}">
             </div>
           {% endif %}
           {% if product.metafields.custom.certified_hover_text_5 != blank %}

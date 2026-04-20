@@ -1,13 +1,13 @@
 <style>
       {% if section.settings.background_the_image != blank %}
             #id-{{section.id}}{
-                background-image:url("{{section.settings.background_the_image | img_url: 'master'}}");
+                background-image:url("{{section.settings.background_the_image | image_url: width: 2000}}");
             }
       {% endif %}
       {% if section.settings.bg_mob_image !=blank %}
         @media only screen and (max-width: 767px){
           #id-{{section.id}} {
-             background-image: url({{ section.settings.bg_mob_image | img_url: 'master'}}) !important;
+             background-image: url({{ section.settings.bg_mob_image | image_url: width: 2000}}) !important;
           }
         }
       {% endif %}
@@ -20,11 +20,11 @@
           <h1>{{ section.settings.seo_title }}</h1>
         </div>
         <div class="kids-teen-logo-wrap" data-aos="fade-up">
-          {% if section.settings.logo_image != blank %}<img loading="lazy"  src="{{ section.settings.logo_image | img_url: 'master' }}">{% endif %}
+          {% if section.settings.logo_image != blank %}<img loading="lazy"  src="{{ section.settings.logo_image | image_url: width: 2000 }}">{% endif %}
         </div>
         <div class="kids-teens-ashwagandha-wrapper" data-aos="fade-up">
           <div class="kids-teens-ashwagandha-page-content">
-            {% if section.settings.the_image != blank %}<img loading="lazy"  src="{{ section.settings.the_image | img_url: 'master' }}">{% endif %}
+            {% if section.settings.the_image != blank %}<img loading="lazy"  src="{{ section.settings.the_image | image_url: width: 2000 }}">{% endif %}
             <div class="kids-teens-ashwagandha-page-btn web-kids-teen-new-banner-btn">
               <a href="{{ section.settings.btn_url }}">{{ section.settings.btn_text }}</a>
             </div>

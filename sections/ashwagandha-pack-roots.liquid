@@ -15,10 +15,10 @@
         </div>
         <div class="ashwagandha-pack-roots-images">
           <div class="ashwagandha-pack-roots-first common-ashwagandha-roots-img">
-               {% if section.settings.the_image_1 != blank %}<img loading="lazy"  src="{{ section.settings.the_image_1 | img_url: 'master' }}">{% endif %}
+               {% if section.settings.the_image_1 != blank %}<img loading="lazy"  src="{{ section.settings.the_image_1 | image_url: width: 2000 }}">{% endif %}
           </div>
           <div class="ashwagandha-pack-roots-second common-ashwagandha-roots-img">
-               {% if section.settings.the_image_2 != blank %}<img loading="lazy"  src="{{ section.settings.the_image_2 | img_url: 'master' }}">{% endif %}
+               {% if section.settings.the_image_2 != blank %}<img loading="lazy"  src="{{ section.settings.the_image_2 | image_url: width: 2000 }}">{% endif %}
           </div>
         </div>
       </div>

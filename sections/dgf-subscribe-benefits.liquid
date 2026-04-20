@@ -317,7 +317,7 @@
                 {% if block.settings.icon_1_image != blank %}
                   <div class="benefit-icon {% if block.settings.icon_2_image != blank %}first{% else %}single{% endif %}{% unless section.settings.single_icon_bg or section.settings.first_icon_bg %} fallback{% endunless %}">
                     <img
-                      src="{{ block.settings.icon_1_image | img_url: '48x48' }}"
+                      src="{{ block.settings.icon_1_image | image_url: width: 48 }}"
                       alt="{{ block.settings.title }}"
                       loading="lazy">
                   </div>
@@ -326,7 +326,7 @@
                 {% if block.settings.icon_2_image != blank %}
                   <div class="benefit-icon second{% unless section.settings.second_icon_bg %} fallback{% endunless %}">
                     <img
-                      src="{{ block.settings.icon_2_image | img_url: '48x48' }}"
+                      src="{{ block.settings.icon_2_image | image_url: width: 48 }}"
                       alt="{{ block.settings.title }}"
                       loading="lazy">
                   </div>
@@ -356,7 +356,7 @@
                       {% if block.settings.icon_1_image != blank %}
                         <div class="benefit-icon {% if block.settings.icon_2_image != blank %}first{% else %}single{% endif %}{% unless section.settings.single_icon_bg or section.settings.first_icon_bg %} fallback{% endunless %}">
                           <img
-                            src="{{ block.settings.icon_1_image | img_url: '48x48' }}"
+                            src="{{ block.settings.icon_1_image | image_url: width: 48 }}"
                             alt="{{ block.settings.title }}"
                             loading="lazy">
                         </div>
@@ -365,7 +365,7 @@
                       {% if block.settings.icon_2_image != blank %}
                         <div class="benefit-icon second{% unless section.settings.second_icon_bg %} fallback{% endunless %}">
                           <img
-                            src="{{ block.settings.icon_2_image | img_url: '48x48' }}"
+                            src="{{ block.settings.icon_2_image | image_url: width: 48 }}"
                             alt="{{ block.settings.title }}"
                             loading="lazy">
                           </div>

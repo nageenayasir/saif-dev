@@ -15,7 +15,7 @@
         </div>
         <div class="affiliates-banner-image-column custom-common-affiliates-column">
           <div class="affiliates-banner-img">
-            {% if section.settings.the_image != blank %}<img loading="lazy"  src="{{ section.settings.the_image | img_url: 'master' }}">{% endif %}
+            {% if section.settings.the_image != blank %}<img loading="lazy"  src="{{ section.settings.the_image | image_url: width: 2000 }}">{% endif %}
           </div>
         </div>
       </div>

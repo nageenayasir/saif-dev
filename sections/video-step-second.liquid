@@ -6,7 +6,7 @@
         <p data-aos="fade-up">{{ section.settings.the_text }}</p>
       </div>
       <div class="col-sm-12 col-md-6 col-lg-4 inner-step-right step-pic-down" data-aos="fade-up">
-        {% if section.settings.the_image !=blank %}<img loading="lazy" src="{{ section.settings.the_image | img_url: 'master' }}">{% endif %}
+        {% if section.settings.the_image !=blank %}<img loading="lazy" src="{{ section.settings.the_image | image_url: width: 2000 }}">{% endif %}
       </div>
     </div>
   </div>

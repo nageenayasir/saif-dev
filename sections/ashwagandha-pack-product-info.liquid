@@ -12,7 +12,7 @@
       <div class="row">
         <div class="ashwagandha-pack-product-left-column common-ashwagandh-pack-product-info-column">
           <div class="ashwagandha-pack-product-img">
-             {% if section.settings.the_image != blank %}<img loading="lazy"  src="{{ section.settings.the_image | img_url: 'master' }}">{% endif %}
+             {% if section.settings.the_image != blank %}<img loading="lazy"  src="{{ section.settings.the_image | image_url: width: 2000 }}">{% endif %}
           </div>
         </div>
          <div class="ashwagandha-pack-product-right-column common-ashwagandh-pack-product-info-column">
@@ -22,7 +22,7 @@
                  <h2>{{ section.settings.the_title }}</h2>
                </div>
                <div class="ashwagandha-pack-product-logo">
-                   {% if section.settings.the_logo != blank %}<img loading="lazy"  src="{{ section.settings.the_logo | img_url: 'master' }}">{% endif %}
+                   {% if section.settings.the_logo != blank %}<img loading="lazy"  src="{{ section.settings.the_logo | image_url: width: 2000 }}">{% endif %}
                </div>
              </div>
              <div class="ashwagandha-pack-product-text">

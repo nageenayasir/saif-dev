@@ -2,7 +2,7 @@
 <style>
   {% if section.settings.image != blank and collection.metafields.custom.default_banner_image == true %}
  	#id-{{ section.id }}{
-        background-image:url("{{ section.settings.image | img_url: 'master'}}");
+        background-image:url("{{ section.settings.image | image_url: width: 2000}}");
         background-repeat: no-repeat;
         background-size: cover;
   	}

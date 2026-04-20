@@ -1,7 +1,7 @@
 <section id="id-{{section.id}}" class="wholesale-products-bannner-section">
   <div class="wholesale-products-bannner-wrapper">
     <div class="wholesale-products-image">
-      {% if section.settings.the_image != blank %}<img loading="lazy"  src="{{ section.settings.the_image | img_url: 'master' }}">{% endif %}
+      {% if section.settings.the_image != blank %}<img loading="lazy"  src="{{ section.settings.the_image | image_url: width: 2000 }}">{% endif %}
     </div>
   </div>
 </section>

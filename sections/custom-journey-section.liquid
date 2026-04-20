@@ -36,7 +36,7 @@
             {% if block.settings.alignment == 'left' %}
               <div class="col-lg-6 col-md-6 col-sm-12">
                 <div class="custom-img-wrap">
-                  {% if block.settings.the_image != blank %}<img loading="lazy"  src="{{ block.settings.the_image | img_url: 'master' }}">{% endif %}
+                  {% if block.settings.the_image != blank %}<img loading="lazy"  src="{{ block.settings.the_image | image_url: width: 2000 }}">{% endif %}
                 </div>
               </div>
             {% endif %}
@@ -48,7 +48,7 @@
             {% if block.settings.alignment == 'right' %}
               <div class="col-lg-6 col-md-6 col-sm-12">
                 <div class="custom-img-wrap">
-                  {% if block.settings.the_image != blank %}<img loading="lazy"  src="{{ block.settings.the_image | img_url: 'master' }}">{% endif %}
+                  {% if block.settings.the_image != blank %}<img loading="lazy"  src="{{ block.settings.the_image | image_url: width: 2000 }}">{% endif %}
                 </div>
               </div>
             {% endif %}
@@ -60,7 +60,7 @@
             <div class="row journey-testimonial-row">
               <div class="col-lg-6 col-md-6 col-sm-12">
                 <div class="journey-testimonial-img">
-                  {% if block.settings.author_image != blank %}<img loading="lazy"  src="{{ block.settings.author_image | img_url: 'master' }}">{% endif %}
+                  {% if block.settings.author_image != blank %}<img loading="lazy"  src="{{ block.settings.author_image | image_url: width: 2000 }}">{% endif %}
                 </div>
               </div>
               <div class="col-lg-6 col-md-6 col-sm-12">

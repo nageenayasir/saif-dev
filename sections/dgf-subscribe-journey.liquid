@@ -22,7 +22,7 @@
     <!-- Journey Cards -->
     {%- comment -%}
  <div class="dgf-journey-cards{% if section.settings.cards_bg_image_mobile %} mobile-bg{% endif %}" 
-     style="{% if section.settings.cards_bg_image %}background-image: url('{{ section.settings.cards_bg_image | img_url: '1200x400' }}'); background-position: center; background-repeat: no-repeat;{% endif %}">
+     style="{% if section.settings.cards_bg_image %}background-image: url('{{ section.settings.cards_bg_image | image_url: width: 1200 }}'); background-position: center; background-repeat: no-repeat;{% endif %}">
   {% for block in section.blocks %}
     {% if forloop.index <= 5 %}
       <div class="dgf-journey-card{% if forloop.last %} dgf-final-card{% endif %}{% if forloop.first %} dgf-first-card{% endif %}" 
@@ -30,11 +30,11 @@
            {{ block.shopify_attributes }}>
             
           <div class="dgf-card-icon" 
-              style="{% if block.settings.icon_bg_image %}background-image: url('{{ block.settings.icon_bg_image | img_url: '120x120' }}'); background-size: cover; background-position: center;{% else %}background-color: {{ block.settings.icon_bg_color }};{% endif %}">
+              style="{% if block.settings.icon_bg_image %}background-image: url('{{ block.settings.icon_bg_image | image_url: width: 120 }}'); background-size: cover; background-position: center;{% else %}background-color: {{ block.settings.icon_bg_color }};{% endif %}">
             
             {% if block.settings.card_icon != blank %}
               <!-- Se existe ícone personalizado, usar ele -->
-              <img src="{{ block.settings.card_icon | img_url: '56x56' }}" 
+              <img src="{{ block.settings.card_icon | image_url: width: 56 }}" 
                   alt="Card Icon" 
                   class="dgf-icon-image"
                   style="width: 56px; height: 56px; object-fit: contain;">
@@ -66,7 +66,7 @@
           </div>
             
             <div class="dgf-card-content-wrapper"
-                 style="{% if block.settings.content_bg_image %}background-image: url('{{ block.settings.content_bg_image | img_url: '400x400' }}'); background-size: cover; background-position: center;{% else %}background-color: {{ block.settings.content_bg_color }};{% endif %}">
+                 style="{% if block.settings.content_bg_image %}background-image: url('{{ block.settings.content_bg_image | image_url: width: 400 }}'); background-size: cover; background-position: center;{% else %}background-color: {{ block.settings.content_bg_color }};{% endif %}">
               <div class="dgf-card-content" >
                 <h3 class="dgf-card-discount" style="color: {{ block.settings.card_text_color }};">
                   {{ block.settings.card_discount | default: "10% OFF" }}

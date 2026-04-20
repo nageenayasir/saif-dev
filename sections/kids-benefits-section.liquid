@@ -7,7 +7,7 @@
 }
 {% if section.settings.bg_image != blank %}
 #id-{{ section.id }} .kids-benefits-bg-wrapper{
-      background-image: url("{{ section.settings.bg_image | img_url: 'master' }}");
+      background-image: url("{{ section.settings.bg_image | image_url: width: 2000 }}");
 }
 {% endif %}
 </style>
@@ -34,7 +34,7 @@
           <h2>{{ section.settings.the_title }}</h2>
           </div>
         <div class="kids-benefts-image" data-aos="fade-up">
-          {% if section.settings.kids_image != blank %}<img loading="lazy"  src="{{ section.settings.kids_image | img_url: 'master' }}">{% endif %}
+          {% if section.settings.kids_image != blank %}<img loading="lazy"  src="{{ section.settings.kids_image | image_url: width: 2000 }}">{% endif %}
           
         </div>
         <div class="kids-benefits-text-wrap" data-aos="fade-up">
@@ -42,15 +42,15 @@
           <h2>{{ section.settings.the_title }}</h2>
           </div>
           <div class="kids-character-img">
-            {% if section.settings.character_img != blank %}<img loading="lazy"  src="{{ section.settings.character_img | img_url: 'master' }}">{% endif %}
+            {% if section.settings.character_img != blank %}<img loading="lazy"  src="{{ section.settings.character_img | image_url: width: 2000 }}">{% endif %}
           </div>
         </div>
       </div>
     </div>
       <div class="kids-benefits-bg-wrapper">
         <div class="kids-benefits-bottom-image">
-        {% if section.settings.the_image != blank %}<img loading="lazy"  src="{{ section.settings.the_image | img_url: 'master' }}" class="web-benefts-bottom-image">{% endif %}
-        {% if section.settings.mob_image != blank %}<img loading="lazy"  src="{{ section.settings.mob_image | img_url: 'master' }}" class="mob-benefts-bottom-image">{% endif %}
+        {% if section.settings.the_image != blank %}<img loading="lazy"  src="{{ section.settings.the_image | image_url: width: 2000 }}" class="web-benefts-bottom-image">{% endif %}
+        {% if section.settings.mob_image != blank %}<img loading="lazy"  src="{{ section.settings.mob_image | image_url: width: 2000 }}" class="mob-benefts-bottom-image">{% endif %}
         </div>
         <div class="container">
           <div class="kids-benefits-under-text">

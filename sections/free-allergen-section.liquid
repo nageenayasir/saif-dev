@@ -21,12 +21,12 @@
         <div class="col-lg-6 col-md-6 col-sm-12">
           <div class="left-allergen-content common-allergen-content">
             <div class="allergen-left-img" data-aos="fade-up">
-              {% if section.settings.left_the_image != blank %}<img loading="lazy"  src="{{ section.settings.left_the_image | img_url: 'master' }}">{% endif %}
+              {% if section.settings.left_the_image != blank %}<img loading="lazy"  src="{{ section.settings.left_the_image | image_url: width: 2000 }}">{% endif %}
             </div>
             <ul class="allergen-icon-lists" data-aos="fade-up">
               {% for block in section.blocks %}
               <li>
-                {% if block.settings.icon_img != blank %}<img loading="lazy"  src="{{ block.settings.icon_img | img_url: 'master' }}">{% endif %}
+                {% if block.settings.icon_img != blank %}<img loading="lazy"  src="{{ block.settings.icon_img | image_url: width: 2000 }}">{% endif %}
               </li>
               {% endfor %}
             </ul>
@@ -44,7 +44,7 @@
               {{ section.settings.the_text }}
             </div>
             <div class="allergen-right-img" data-aos="fade-up">
-              {% if section.settings.right_the_image != blank %}<img loading="lazy"  src="{{ section.settings.right_the_image | img_url: 'master' }}">{% endif %}
+              {% if section.settings.right_the_image != blank %}<img loading="lazy"  src="{{ section.settings.right_the_image | image_url: width: 2000 }}">{% endif %}
             </div>
           </div>
         </div>

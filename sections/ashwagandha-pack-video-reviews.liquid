@@ -22,7 +22,7 @@
                         style="display:block;"
                         id="myVideo"
                         width="100%"
-                        poster="{% if block.settings.video_poster != blank %} {{ block.settings.video_poster | img_url:'master' }} {% endif %}"
+                        poster="{% if block.settings.video_poster != blank %} {{ block.settings.video_poster | image_url: width: 2000 }} {% endif %}"
                         playsinline
                       >
                         <source src="{{ block.settings.bg_video }}" type="video/mp4">

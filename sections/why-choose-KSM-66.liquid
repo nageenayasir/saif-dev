@@ -19,7 +19,7 @@
         {% if section.settings.alignment == 'left' %}
           <div class="col-lg-6 col-md-6 col-sm-12">
             <div class="custom-img-wrap">
-              {% if section.settings.the_image != blank %}<img loading="lazy" src="{{ section.settings.the_image | img_url: 'master' }}">{% endif %}
+              {% if section.settings.the_image != blank %}<img loading="lazy" src="{{ section.settings.the_image | image_url: width: 2000 }}">{% endif %}
             </div>
           </div>
         {% endif %}
@@ -31,7 +31,7 @@
         {% if section.settings.alignment == 'right' %}
           <div class="col-lg-6 col-md-6 col-sm-12">
             <div class="custom-img-wrap">
-              {% if section.settings.the_image != blank %}<img loading="lazy" src="{{ section.settings.the_image | img_url: 'master' }}">{% endif %}
+              {% if section.settings.the_image != blank %}<img loading="lazy" src="{{ section.settings.the_image | image_url: width: 2000 }}">{% endif %}
             </div>
           </div>
         {% endif %}

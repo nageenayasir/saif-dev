@@ -44,7 +44,7 @@
       <div class="gummies-reduce-stress-row">
         <div class="gummies-reduce-stress-content">
           <div class="gummies-reduce-stress-image">
-            {% if section.settings.the_image != blank %}<img loading="lazy"  src="{{ section.settings.the_image | img_url: 'master' }}">{% endif %}
+            {% if section.settings.the_image != blank %}<img loading="lazy"  src="{{ section.settings.the_image | image_url: width: 2000 }}">{% endif %}
           </div>
           <div class="gummies-reduce-stres-text">
             <h2 class="first-blend-title">{{ section.settings.the_title }}</h2>

@@ -27,7 +27,7 @@
                 {{ block.settings.the_text }}
               </div>
               <div class="cstm-product-image">
-                {% if block.settings.product_image != blank %}<img loading="lazy" class="lazyload" data-src="{{ block.settings.product_image | img_url: 'master' }}">{% endif %}
+                {% if block.settings.product_image != blank %}<img loading="lazy" class="lazyload" data-src="{{ block.settings.product_image | image_url: width: 2000 }}">{% endif %}
               </div>
               <div class="cstm-prdct-title">
                 <h3>{{ block.settings.product_title }}</h3>
@@ -48,13 +48,13 @@
               </div>
               <ul class="prod-icon-lists">
                   <li>
-                    {% if block.settings.icon_1 != blank %}<img loading="lazy" class="lazyload" data-src="{{ block.settings.icon_1 | img_url: 'master' }}">{% endif %}
+                    {% if block.settings.icon_1 != blank %}<img loading="lazy" class="lazyload" data-src="{{ block.settings.icon_1 | image_url: width: 2000 }}">{% endif %}
                   </li>
                   <li>
-                    {% if block.settings.icon_2 != blank %}<img loading="lazy" class="lazyload" data-src="{{ block.settings.icon_2 | img_url: 'master' }}">{% endif %}
+                    {% if block.settings.icon_2 != blank %}<img loading="lazy" class="lazyload" data-src="{{ block.settings.icon_2 | image_url: width: 2000 }}">{% endif %}
                   </li>
                   <li>
-                    {% if block.settings.icon_3 != blank %}<img loading="lazy" class="lazyload" data-src="{{ block.settings.icon_3 | img_url: 'master' }}">{% endif %}
+                    {% if block.settings.icon_3 != blank %}<img loading="lazy" class="lazyload" data-src="{{ block.settings.icon_3 | image_url: width: 2000 }}">{% endif %}
                   </li>
               </ul>
             </div>
@@ -64,7 +64,7 @@
       <div class="row guarantee-section-row">
         <div class="col-lg-12 col-md-12 col-sm-12">
           <div class="guarantee-section-img">
-            {% if section.settings.guarantee_img != blank %}<img loading="lazy" class="lazyload" data-src="{{ section.settings.guarantee_img | img_url: 'master' }}">{% endif %}
+            {% if section.settings.guarantee_img != blank %}<img loading="lazy" class="lazyload" data-src="{{ section.settings.guarantee_img | image_url: width: 2000 }}">{% endif %}
           </div>
         </div>
       </div>

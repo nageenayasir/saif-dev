@@ -25,7 +25,7 @@
       <div class="col-md-6 dgf-left-column">
         <div class="dgf-image-wrapper">
           {% if section.settings.left_image != blank %}
-            <img src="{{ section.settings.left_image | img_url: '800x800' }}" alt="{{ section.settings.left_image_alt | default: 'Left Image' }}" class="dgf-img-logo-left-image">
+            <img src="{{ section.settings.left_image | image_url: width: 800 }}" alt="{{ section.settings.left_image_alt | default: 'Left Image' }}" class="dgf-img-logo-left-image">
           {% else %}
             <div class="dgf-image-placeholder">
               <p>Upload an image</p>
@@ -48,7 +48,7 @@
           <!-- Optional Logo/Image below text -->
           {% if section.settings.bottom_image != blank %}
             <div class="dgf-bottom-image-wrapper">
-              <img src="{{ section.settings.bottom_image | img_url: '400x400' }}" alt="{{ section.settings.bottom_image_alt | default: 'Bottom Image' }}" class="dgf-bottom-image">
+              <img src="{{ section.settings.bottom_image | image_url: width: 400 }}" alt="{{ section.settings.bottom_image_alt | default: 'Bottom Image' }}" class="dgf-bottom-image">
             </div>
           {% endif %}
 

@@ -9,7 +9,7 @@
       {% for block in section.blocks %}
         <div class="col-sm-12 col-md-3 col-lg-3 wholesale-icons-columns">
           <div class="wholesale-icons-wrap" data-aos="fade-up">
-            {% if block.settings.the_logo != blank %}<img loading="lazy"  src="{{ block.settings.the_logo | img_url: 'master' }}">{% endif %}
+            {% if block.settings.the_logo != blank %}<img loading="lazy"  src="{{ block.settings.the_logo | image_url: width: 2000 }}">{% endif %}
           </div>
         </div>
       {% endfor %}

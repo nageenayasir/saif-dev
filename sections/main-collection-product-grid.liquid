@@ -2,13 +2,13 @@
 <style>
   {% if section.settings.image != blank and collection.title == 'Products' %}
  	#id-{{ section.id }}{
-        background-image:url("{{ section.settings.image | img_url: 'master'}}");
+        background-image:url("{{ section.settings.image | image_url: width: 2000}}");
         background-repeat: no-repeat;
         background-size: cover;
   	}
     @media only screen and (max-width: 767px){
           #id-{{ section.id }} {
-             background-image: url({{ section.settings.mob_image | img_url: 'master'}}) !important;
+             background-image: url({{ section.settings.mob_image | image_url: width: 2000}}) !important;
           }
   }
   {% endif %}
@@ -231,7 +231,7 @@
               $(elements[2]).after(
                 '<div class="custom-subscribe-image-div spf-col-xl-4 spf-col-lg-4 spf-col-md-6 spf-col-sm-6 spf-col-6  mb-5">' +
                 '<a>' +
-                '<img loading="lazy" class="leaf" src="{{ section.settings.subscribe_image | img_url: 'master' }}">' +
+                '<img loading="lazy" class="leaf" src="{{ section.settings.subscribe_image | image_url: width: 2000 }}">' +
                 '</a></div>'
               );
             }

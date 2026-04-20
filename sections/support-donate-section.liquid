@@ -20,7 +20,7 @@
           <div class="row support-donate-img-block-row">
             <div class="col-lg-12 col-md-12 col-sm-12">
               <div class="support-donate-img-wrap">
-                {% if block.settings.the_image != blank %}<img loading="lazy"  src="{{ block.settings.the_image | img_url: 'master' }}">{% endif %}
+                {% if block.settings.the_image != blank %}<img loading="lazy"  src="{{ block.settings.the_image | image_url: width: 2000 }}">{% endif %}
                  <h2 class="custom-heading-h2">{{ block.settings.the_title }}</h2>
               </div>
               <div class="support-donate-txt-wrap">
@@ -35,10 +35,10 @@
           <div class="row support-donate-tribe-logos-row">
             <div class="tribe-logos-wrap">
               <div class="tribe-donate-logo">
-                 {% if block.settings.the_image1 != blank %}<img loading="lazy"  src="{{ block.settings.the_image1 | img_url: 'master' }}">{% endif %}
+                 {% if block.settings.the_image1 != blank %}<img loading="lazy"  src="{{ block.settings.the_image1 | image_url: width: 2000 }}">{% endif %}
               </div>
               <div class="tribe-logo-img">
-                 {% if block.settings.the_image2 != blank %}<img loading="lazy"  src="{{ block.settings.the_image2 | img_url: 'master' }}">{% endif %}
+                 {% if block.settings.the_image2 != blank %}<img loading="lazy"  src="{{ block.settings.the_image2 | image_url: width: 2000 }}">{% endif %}
               </div>
             </div>
           </div>

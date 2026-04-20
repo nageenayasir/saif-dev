@@ -31,7 +31,7 @@
 function setRecentlyViewedProducts() {
   const productData = {
     productTitle: "{{ product.title }}",
-    productImg: "{{ product.featured_media | img_url: '300x' }}",
+    productImg: "{{ product.featured_media | image_url: width: 300 }}",
     productPrice: "{{ product.price | money }}",
     productCPrice: "{{ product.compare_at_price | money }}",
     productUrl: "{{ product.url }}",

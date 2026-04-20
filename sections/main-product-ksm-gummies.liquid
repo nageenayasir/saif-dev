@@ -117,13 +117,13 @@
                   <div class="featured-image d-none d-md-block">
                     <div class="product-images">
                     <div class="product__photo" data-aos="fade-up">
-                      <img src="{{ product.images[1] | img_url: 'master' }}" class="main-image" >
+                      <img src="{{ product.images[1] | image_url: width: 2000 }}" class="main-image" >
                     </div>
                       <div class="product__thumbnails thumbnails" data-aos="fade-up">
                         {% for image in product.images %}
                           {% if forloop.index != 1 %}
                           <div class="product__thumbnail" data-image-index="{{ forloop.index }}">
-                            <img src="{{ image | img_url: 'master' }}" alt="{{ image.alt }}">
+                            <img src="{{ image | image_url: width: 2000 }}" alt="{{ image.alt }}">
                           </div>
                           {% endif %}
                         {% endfor %}
@@ -144,7 +144,7 @@
                                 {%- for media in product.media -%} 
                                   {% if forloop.index != 1 %}
                                     <div class="swiper-slide">
-                                        <img src="{{ media | img_url : 'master' }}" alt="{{ product.title }}">
+                                        <img src="{{ media | image_url: width: 2000 }}" alt="{{ product.title }}">
                                     </div>
                                   {% endif %}
                                 {%- endfor -%}   
@@ -357,7 +357,7 @@
                               <div class="d-md-flex justify-content-center mt-4 share-box d-none">
                                   <span>{{ block.settings.title }}</span>
                                   <a href="//www.facebook.com/sharer.php?u={{ shop.url | append: share_permalink }}" target="_blank"><i class="fab fa-facebook-f"></i> </a>
-                                  <a href="//pinterest.com/pin/create/button/?url={{ shop.url | append: share_permalink }}&amp;media={{ share_image | img_url: '1024x1024' }}&amp;description={{ share_title | url_param_escape }}" target="_blank"><i class="fab fa-pinterest-p"></i> </a>
+                                  <a href="//pinterest.com/pin/create/button/?url={{ shop.url | append: share_permalink }}&amp;media={{ share_image | image_url: width: 1024 }}&amp;description={{ share_title | url_param_escape }}" target="_blank"><i class="fab fa-pinterest-p"></i> </a>
                               </div>
                             {%- when 'icon' -%} 
                             <div class="d-flex mt-4" {{ block.shopify_attributes }}>
@@ -376,7 +376,7 @@
                                  <li>
                                    <span>
                                      {% if block.settings.icon_1 != blank %}
-                                       <img src="{{ block.settings.icon_1 | img_url: 'master' }}">
+                                       <img src="{{ block.settings.icon_1 | image_url: width: 2000 }}">
                                      {% elsif  block.settings.face_svg %}
                                        <svg width="29" height="26" viewBox="0 0 29 26" fill="none" xmlns="http://www.w3.org/2000/svg">
                                           <g clip-path="url(#clip0_1720_12599)">
@@ -398,7 +398,7 @@
                                  <li>
                                    <span>
                                      {% if block.settings.icon_2 != blank %}
-                                         <img src="{{ block.settings.icon_2 | img_url: 'master' }}">
+                                         <img src="{{ block.settings.icon_2 | image_url: width: 2000 }}">
                                        {% elsif  block.settings.delivery_svg %}
                                        <svg width="29" height="26" viewBox="0 0 29 26" fill="none" xmlns="http://www.w3.org/2000/svg">
                                         <g clip-path="url(#clip0_1720_12606)">
@@ -424,7 +424,7 @@
                                  <div class="custom-wrap">
                                   {% if product.metafields.custom.certified_icon_1 != blank %}
                                     <div class="product-certified-icon">
-                                      <img src="{{ product.metafields.custom.certified_icon_1 | img_url: 'master' }}">
+                                      <img src="{{ product.metafields.custom.certified_icon_1 | image_url: width: 2000 }}">
                                     </div>
                                   {% endif %}
                                   {% if product.metafields.custom.certified_hover_text_1 != blank %}
@@ -436,7 +436,7 @@
                                  <div class="custom-wrap">
                                   {% if product.metafields.custom.certified_icon_2 != blank %}
                                     <div class="product-certified-icon">
-                                      <img src="{{ product.metafields.custom.certified_icon_2 | img_url: 'master' }}">
+                                      <img src="{{ product.metafields.custom.certified_icon_2 | image_url: width: 2000 }}">
                                     </div>
                                   {% endif %}
                                   {% if product.metafields.custom.certiied_hover_text_2 != blank %}
@@ -448,7 +448,7 @@
                                  <div class="custom-wrap">
                                   {% if product.metafields.custom.certfied_icon_3 != blank %}
                                     <div class="product-certified-icon">
-                                      <img src="{{ product.metafields.custom.certfied_icon_3 | img_url: 'master' }}">
+                                      <img src="{{ product.metafields.custom.certfied_icon_3 | image_url: width: 2000 }}">
                                     </div>
                                   {% endif %}
                                   {% if product.metafields.custom.certified_hover_text_3 != blank %}
@@ -460,7 +460,7 @@
                                  <div class="custom-wrap">
                                   {% if product.metafields.custom.certifed_icon_4 != blank %}
                                     <div class="product-certified-icon">
-                                      <img src="{{ product.metafields.custom.certifed_icon_4 | img_url: 'master' }}">
+                                      <img src="{{ product.metafields.custom.certifed_icon_4 | image_url: width: 2000 }}">
                                     </div>
                                   {% endif %}
                                   {% if product.metafields.custom.certified_hover_text_4 != blank %}
@@ -472,7 +472,7 @@
                                  <div class="custom-wrap">
                                   {% if product.metafields.custom.certified_icon_5 != blank %}
                                     <div class="product-certified-icon">
-                                      <img src="{{ product.metafields.custom.certified_icon_5 | img_url: 'master' }}">
+                                      <img src="{{ product.metafields.custom.certified_icon_5 | image_url: width: 2000 }}">
                                     </div>
                                   {% endif %}
                                   {% if product.metafields.custom.certified_hover_text_5 != blank %}

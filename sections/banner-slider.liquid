@@ -63,7 +63,7 @@
                           height="{{ img.height }}"
                           style="aspect-ratio: {{ img.width }} / {{ img.height }};"
                         >
-                        {% comment %} <img loading="lazy"  src="{{ block.settings.mob_image | img_url: '767x' }}" alt="{{ block.settings.title | default: 'Special offer banner' }}"> {% endcomment %}
+                        {% comment %} <img loading="lazy"  src="{{ block.settings.mob_image | image_url: width: 767 }}" alt="{{ block.settings.title | default: 'Special offer banner' }}"> {% endcomment %}
                       </div>
                     {%- endif -%}
                     {% if block.settings.custom_title != blank %}<h3 class="custom-title" data-aos="fade-up">{{ block.settings.custom_title }}</h3>{% endif %}
@@ -81,7 +81,7 @@
                             height="{{ img.height }}"
                             style="aspect-ratio: {{ img.width }} / {{ img.height }};"
                           >
-                          {% comment %} <img loading="lazy"  src="{{ block.settings.the_icon_1 | img_url: 'master' }}" alt="{{ block.settings.sub_title_1 | default: 'Offer icon' }}"> {% endcomment %}
+                          {% comment %} <img loading="lazy"  src="{{ block.settings.the_icon_1 | image_url: width: 2000 }}" alt="{{ block.settings.sub_title_1 | default: 'Offer icon' }}"> {% endcomment %}
                         {%- endif -%}
                         <h3>{{ block.settings.sub_title_1 }}</h3>
                         {{ block.settings.text_1 }}
@@ -115,7 +115,7 @@
                             height="{{ img.height }}"
                             style="aspect-ratio: {{ img.width }} / {{ img.height }};"
                           >
-                          {% comment %} <img loading="lazy"  src="{{ block.settings.the_icon_2 | img_url: 'master' }}" alt="{{ block.settings.sub_title_2 | default: 'Offer icon' }}"> {% endcomment %}
+                          {% comment %} <img loading="lazy"  src="{{ block.settings.the_icon_2 | image_url: width: 2000 }}" alt="{{ block.settings.sub_title_2 | default: 'Offer icon' }}"> {% endcomment %}
                         {%- endif -%}
                         <h3>{{ block.settings.sub_title_2 }}</h3>
                         {{ block.settings.text_2 }}
@@ -160,7 +160,7 @@
                           height="{{ img.height }}"
                           style="aspect-ratio: {{ img.width }} / {{ img.height }};"
                         >
-                        {% comment %} <img loading="lazy"  src="{{ block.settings.the_image | img_url: 'master' }}" alt="{{ block.settings.title | default: 'Special offer banner' }}"> {% endcomment %}                      
+                        {% comment %} <img loading="lazy"  src="{{ block.settings.the_image | image_url: width: 2000 }}" alt="{{ block.settings.title | default: 'Special offer banner' }}"> {% endcomment %}                      
                     </div>
                   {%- endif -%}
                     {% if block.settings.fade_text_1 != blank or block.settings.fade_text_2 != blank or block.settings.fade_text_3 != blank or block.settings.fade_text_4 != blank or block.settings.fade_text_5 != blank %}
@@ -214,7 +214,7 @@
               height="{{ img.height }}"
               style="aspect-ratio: {{ img.width }} / {{ img.height }};"
             >
-            {% comment %} <img loading="lazy" src="{{ block.settings.lion_img | img_url : "master" }}" alt="Lion graphic decoration"> {% endcomment %}                      
+            {% comment %} <img loading="lazy" src="{{ block.settings.lion_img | image_url: width: 2000 }}" alt="Lion graphic decoration"> {% endcomment %}                      
           </div>
         {% endif %}
         {% if block.settings.elephant_img != blank %}
@@ -228,7 +228,7 @@
               height="{{ img.height }}"
               style="aspect-ratio: {{ img.width }} / {{ img.height }};"
             >
-            {% comment %} <img loading="lazy" src="{{ block.settings.elephant_img | img_url : "master" }}" alt="Elephant graphic decoration"> {% endcomment %}     
+            {% comment %} <img loading="lazy" src="{{ block.settings.elephant_img | image_url: width: 2000 }}" alt="Elephant graphic decoration"> {% endcomment %}     
           </div>
         {% endif %}
       </div>

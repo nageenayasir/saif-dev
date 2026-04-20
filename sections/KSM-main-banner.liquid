@@ -1,7 +1,7 @@
 <style>
   {% if section.settings.background_the_image != blank %}
  	#id-{{ section.id }}{
-        background-image:url("{{section.settings.background_the_image | img_url: 'master'}}");
+        background-image:url("{{section.settings.background_the_image | image_url: width: 2000}}");
         background-repeat: no-repeat;
         background-size: cover;
   	}

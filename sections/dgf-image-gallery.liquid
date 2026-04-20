@@ -78,7 +78,7 @@
                  {{ block.shopify_attributes }}>
               <div class="dgf-gallery-image-wrapper">
                 <img
-                  src="{{ block.settings.image | img_url: '800x800' }}"
+                  src="{{ block.settings.image | image_url: width: 800 }}"
                   alt="{{ block.settings.alt_text | default: section.settings.title }}"
                   class="dgf-gallery-image"
                   loading="lazy"

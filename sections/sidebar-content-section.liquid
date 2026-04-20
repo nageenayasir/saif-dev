@@ -58,7 +58,7 @@
                   <div class="sidebar-product-grid-column-wrapper">
                     {% if block.settings.the_image != blank %}
                       <div class="sidebar-product-grid-image-column common-sidebar-product-grid-column">
-                        <div class="sidebar-product-image"><img loading="lazy"  src="{{ block.settings.the_image | img_url: 'master' }}">
+                        <div class="sidebar-product-image"><img loading="lazy"  src="{{ block.settings.the_image | image_url: width: 2000 }}">
                         </div>
                       </div>
                     {% endif %}
@@ -131,7 +131,7 @@
                     <div class="sidebar-product-full-grid-column-wrapper">
                       <div class="sidebar-product-full-grid-image-column common-sidebar-product-full-grid-column">
                         <div class="sidebar-product-image">
-                           {% if block.settings.the_image != blank %}<img loading="lazy"  src="{{ block.settings.the_image | img_url: 'master' }}">{% endif %}
+                           {% if block.settings.the_image != blank %}<img loading="lazy"  src="{{ block.settings.the_image | image_url: width: 2000 }}">{% endif %}
                         </div>
                         <div class="sidebar-product-cotnent">
                           <div class="sidebar-product-info">
@@ -191,7 +191,7 @@
               <div id="{{ block.settings.add_id }}" class="sidebar-custom-image-section">
                  <div class="sidebar-custom-image-wrapper">
                    <h2>{{ block.settings.the_title }}</h2>
-                   {% if block.settings.the_image != blank %}<img loading="lazy"  src="{{ block.settings.the_image | img_url: 'master' }}">{% endif %}
+                   {% if block.settings.the_image != blank %}<img loading="lazy"  src="{{ block.settings.the_image | image_url: width: 2000 }}">{% endif %}
                    {{ block.settings.the_text }}
                  </div>
                </div>

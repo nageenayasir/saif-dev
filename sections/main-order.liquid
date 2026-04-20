@@ -56,9 +56,9 @@
                               <td>
                               <div class="order-title-wrap">
                                   {%- if line_item.url != blank -%}
-                                  <a href="{{ line_item.url }}" class="prdct-title"><img src="{{ line_item.image | img_url : 'master' }}"><div class="order-title-name">{{ line_item.title | replace: '-', '&nbsp<span>'  }} </div></a>
+                                  <a href="{{ line_item.url }}" class="prdct-title"><img src="{{ line_item.image | image_url: width: 2000 }}"><div class="order-title-name">{{ line_item.title | replace: '-', '&nbsp<span>'  }} </div></a>
                                   {%- else -%}
-                                  <p class="prdct-title"><img src="{{ line_item.image | img_url : 'master' }}"><span class="order-title-name">{{ line_item.title | replace: '-', '&nbsp<span>' }}</span></p>
+                                  <p class="prdct-title"><img src="{{ line_item.image | image_url: width: 2000 }}"><span class="order-title-name">{{ line_item.title | replace: '-', '&nbsp<span>' }}</span></p>
                                   {%- endif -%}
                                   {%- assign property_size = line_item.properties | size -%}
                                   {%- unless line_item.selling_plan_allocation == nil and property_size == 0 -%}

@@ -24,7 +24,7 @@
                            {%- for item in cart.items -%}
                             <tr>
                                 <td class="product-img d-flex align-items-center">
-                                    <a href="{{ item.url }}"><img loading="lazy"  src="{{ item | img_url: 'large' }}" alt="{{ item.product.title }}"></a>
+                                    <a href="{{ item.url }}"><img loading="lazy"  src="{{ item | image_url: width: 800 }}" alt="{{ item.product.title }}"></a>
                          <div class="ps-4">
                                   <a href="{{ item.url }}">{{ item.product.title }}{% if item.selling_plan_allocation %} - Repeat Delivery (20% Off){% endif %}</a>
                            <p>

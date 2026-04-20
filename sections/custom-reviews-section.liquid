@@ -34,7 +34,7 @@
           <div class="row reviews-icon-row">
             <div class="col-lg-12 col-md-12 col-sm-12">
               <div class="reviews-icon-content">
-                {% if block.settings.the_image != blank %}<img loading="lazy"  src="{{ block.settings.the_image | img_url: 'master' }}">{% endif %}
+                {% if block.settings.the_image != blank %}<img loading="lazy"  src="{{ block.settings.the_image | image_url: width: 2000 }}">{% endif %}
               </div>
             </div>
           </div>
@@ -56,13 +56,13 @@
           <div class="row reviews-image-text-row">
             <div class="col-lg-7 col-md-7 col-sm-12">
               <div class="reviews-image-wrap">
-                 {% if block.settings.the_image != blank %}<img loading="lazy"  src="{{ block.settings.the_image | img_url: 'master' }}">{% endif %}
+                 {% if block.settings.the_image != blank %}<img loading="lazy"  src="{{ block.settings.the_image | image_url: width: 2000 }}">{% endif %}
               </div>
             </div>
             <div class="col-lg-5 col-md-5 col-sm-12">
               <div class="reviews-image-text-wrap">
                  <p>{{ block.settings.img_txt_text }}</p>
-                  {% if block.settings.image_under_text != blank %}<img loading="lazy"  src="{{ block.settings.image_under_text | img_url: 'master' }}">{% endif %}
+                  {% if block.settings.image_under_text != blank %}<img loading="lazy"  src="{{ block.settings.image_under_text | image_url: width: 2000 }}">{% endif %}
               </div>
             </div>
           </div>

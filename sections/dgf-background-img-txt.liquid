@@ -99,7 +99,7 @@
       <div class="d-none d-md-block col-md-6 dgf-image-column" style="background-color: {{ right_bg_color }};">
         <div class="dgf-image-wrapper">
           {% if section.settings.main_image != blank %}
-            <img src="{{ section.settings.main_image | img_url: '800x800' }}" alt="{{ section.settings.main_image_alt | default: 'Main Image' }}" class="dgf-main-image">
+            <img src="{{ section.settings.main_image | image_url: width: 800 }}" alt="{{ section.settings.main_image_alt | default: 'Main Image' }}" class="dgf-main-image">
           {% else %}
             <div class="dgf-image-placeholder">
               <p>Upload an image</p>
@@ -121,7 +121,7 @@
         <div class="dgf-mobile-image-section" style="background-color: {{ right_bg_color }};">
           <div class="dgf-image-wrapper">
             {% if section.settings.main_image != blank %}
-              <img src="{{ section.settings.main_image | img_url: '800x800' }}" alt="{{ section.settings.main_image_alt | default: 'Main Image' }}" class="dgf-main-image">
+              <img src="{{ section.settings.main_image | image_url: width: 800 }}" alt="{{ section.settings.main_image_alt | default: 'Main Image' }}" class="dgf-main-image">
             {% else %}
               <div class="dgf-image-placeholder">
                 <p>Upload an image</p>

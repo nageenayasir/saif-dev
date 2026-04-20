@@ -9,34 +9,34 @@
       <div class="row">
         <div class="ashwagandha-pack-icon-left-columns">
           <div class="ashwagandha-pack-icon-logo">
-            {% if section.settings.site_logo_image != blank %}<img loading="lazy"  src="{{ section.settings.site_logo_image | img_url: 'master' }}">{% endif %}
+            {% if section.settings.site_logo_image != blank %}<img loading="lazy"  src="{{ section.settings.site_logo_image | image_url: width: 2000 }}">{% endif %}
           </div>
         </div>
         <div class="ashwagandha-pack-icon-right-column">
             <ul>
               {% if section.settings.logo_image_1 != blank %}
                 <li>
-                  <img loading="lazy"  src="{{ section.settings.logo_image_1 | img_url: 'master' }}">
+                  <img loading="lazy"  src="{{ section.settings.logo_image_1 | image_url: width: 2000 }}">
                 </li>
                 {% endif %}
               {% if section.settings.logo_image_2 != blank %}
                 <li>
-                  <img loading="lazy"  src="{{ section.settings.logo_image_2 | img_url: 'master' }}">
+                  <img loading="lazy"  src="{{ section.settings.logo_image_2 | image_url: width: 2000 }}">
                 </li>
               {% endif %}
               {% if section.settings.logo_image_3 != blank %}
                 <li>
-                  <img loading="lazy"  src="{{ section.settings.logo_image_3 | img_url: 'master' }}">
+                  <img loading="lazy"  src="{{ section.settings.logo_image_3 | image_url: width: 2000 }}">
                 </li>
               {% endif %}
               {% if section.settings.logo_image_4 != blank %}
                 <li>
-                  <img loading="lazy"  src="{{ section.settings.logo_image_4 | img_url: 'master' }}">
+                  <img loading="lazy"  src="{{ section.settings.logo_image_4 | image_url: width: 2000 }}">
                 </li>
               {% endif %}
               {% if section.settings.logo_image_5 != blank %}
                 <li>
-                  <img loading="lazy"  src="{{ section.settings.logo_image_5 | img_url: 'master' }}">
+                  <img loading="lazy"  src="{{ section.settings.logo_image_5 | image_url: width: 2000 }}">
                 </li>
               {% endif %}
             </ul>

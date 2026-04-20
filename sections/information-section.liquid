@@ -11,7 +11,7 @@
         {% for block in section.blocks %}
           <div class="col-lg-6 col-md-6 col-sm-12">
             <div class="information-img-lists">
-              {% if block.settings.the_image != blank %}<img loading="lazy"  src="{{ block.settings.the_image | img_url: 'master' }}">{% endif %}
+              {% if block.settings.the_image != blank %}<img loading="lazy"  src="{{ block.settings.the_image | image_url: width: 2000 }}">{% endif %}
             </div>
           </div>
         {% endfor %}
