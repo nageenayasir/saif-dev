@@ -1,0 +1,974 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "main": {
+      "type": "main-page",
+      "disabled": true,
+      "settings": {}
+    },
+    "dgf_lp_header_YKcMaE": {
+      "type": "dgf-lp-header",
+      "blocks": {
+        "nav_item_drEdKf": {
+          "type": "nav_item",
+          "settings": {
+            "nav_text": "Shop",
+            "nav_url": "",
+            "nav_text_color": "",
+            "enable_megamenu": true,
+            "megamenu_type": "products",
+            "megamenu_bg_color": "#faeee9",
+            "megamenu_text_color": "#000000",
+            "megamenu_text": "<p><strong>Discover a healthier<br>you with our <br>premium Organic Moringa supplements.</strong></p>",
+            "megamenu_product_1": "moringa-capsules-tribe-organics-1800mg-120-capsules",
+            "megamenu_product_1_url": "shopify://pages/premium-moringa-supplement",
+            "megamenu_product_2": "moringa-powder-tribe-organics-3000mg-200g",
+            "megamenu_product_2_url": "shopify://pages/premium-moringa-powder-supplement",
+            "megamenu_product_3": "",
+            "megamenu_product_3_url": "",
+            "megamenu_side_image": "shopify://shop_images/image_19.webp",
+            "mobile_megamenu_title": "Discover a healthier you with our premium Organic Moringa supplements.",
+            "mobile_megamenu_image": "shopify://shop_images/image_21.webp",
+            "mobile_megamenu_link_text": "Contact Us",
+            "mobile_megamenu_link_url": "/pages/contact",
+            "megamenu_text_1": "",
+            "megamenu_link_1": "",
+            "megamenu_text_2": "",
+            "megamenu_link_2": "",
+            "megamenu_text_3": "",
+            "megamenu_link_3": "",
+            "megamenu_text_4": "",
+            "megamenu_link_4": "",
+            "show_megamenu_button": false,
+            "megamenu_button_text": "View All",
+            "megamenu_button_url": ""
+          }
+        },
+        "nav_item_zdiWwH": {
+          "type": "nav_item",
+          "settings": {
+            "nav_text": "Learn",
+            "nav_url": "",
+            "nav_text_color": "",
+            "enable_megamenu": true,
+            "megamenu_type": "images",
+            "megamenu_bg_color": "#faeee9",
+            "megamenu_text_color": "#000000",
+            "megamenu_text": "",
+            "megamenu_product_1": "",
+            "megamenu_product_1_url": "",
+            "megamenu_product_2": "",
+            "megamenu_product_2_url": "",
+            "megamenu_product_3": "",
+            "megamenu_product_3_url": "",
+            "mobile_megamenu_title": "",
+            "mobile_megamenu_link_text": "View All",
+            "mobile_megamenu_link_url": "",
+            "megamenu_image_1": "shopify://shop_images/BLOG_COVER_PICTURE_530_x_741px_13-7046834-7898535_ed50cae3-e42e-47e5-bf89-9c0e6ce640f6.webp",
+            "megamenu_text_1": "Moringa Benefits For Women",
+            "megamenu_link_1": "https://www.tribe-organics.com/blogs/lifestyle/top-moringa-benefits-for-women",
+            "megamenu_image_2": "shopify://shop_images/BLOG_COVER_PICTURE_530_x_741px_37-4460281.webp",
+            "megamenu_text_2": "Moringa Superfood Breastfeeding Moms",
+            "megamenu_link_2": "https://www.tribe-organics.com/blogs/lifestyle/moringa-superfood-breastfeeding-moms",
+            "megamenu_image_3": "shopify://shop_images/the_health_benefits_of_moringa_supplements_cover_78858deb-8bb5-4db7-b869-09518746b52f-3471293.jpg",
+            "megamenu_text_3": "Health Benefits Of Moringa Suplements",
+            "megamenu_link_3": "https://www.tribe-organics.com/blogs/lifestyle/moringa-supplement",
+            "megamenu_image_4": "shopify://shop_images/BLOG_COVER_PICTURE_530_x_741px_51-9844540.webp",
+            "megamenu_text_4": "Immune System Supplements",
+            "megamenu_link_4": "https://www.tribe-organics.com/blogs/wellness/immune-system-supplements",
+            "show_megamenu_button": true,
+            "megamenu_button_text": "READ MORE",
+            "megamenu_button_url": "https://www.tribe-organics.com/blogs/moringa-learn"
+          }
+        },
+        "nav_item_9nEmb9": {
+          "type": "nav_item",
+          "settings": {
+            "nav_text": "Recipes",
+            "nav_url": "",
+            "nav_text_color": "",
+            "enable_megamenu": true,
+            "megamenu_type": "images",
+            "megamenu_bg_color": "#faeee9",
+            "megamenu_text_color": "#000000",
+            "megamenu_text": "",
+            "megamenu_product_1": "",
+            "megamenu_product_1_url": "",
+            "megamenu_product_2": "",
+            "megamenu_product_2_url": "",
+            "megamenu_product_3": "",
+            "megamenu_product_3_url": "",
+            "mobile_megamenu_title": "",
+            "mobile_megamenu_link_text": "View All",
+            "mobile_megamenu_link_url": "",
+            "megamenu_image_1": "shopify://shop_images/Moringa_Pesto_Pizza_1227cc36-48a9-4274-ad84-239cefcf0b90.webp",
+            "megamenu_text_1": "Moringa Pesto Pizza",
+            "megamenu_link_1": "shopify://blogs/recipes/moringa-pesto-pizza",
+            "megamenu_image_2": "shopify://shop_images/Moringa_Herb_Dressing_7a8e8c71-0502-4a98-8815-8afbc9d5037a.webp",
+            "megamenu_text_2": "Moringa Herb Dressing",
+            "megamenu_link_2": "https://www.tribe-organics.com/blogs/recipes/moringa-herb-dressing",
+            "megamenu_image_3": "shopify://shop_images/Moringa_Banana_Muffins_ae602f7f-e908-4bbf-968f-88f04902c239.webp",
+            "megamenu_text_3": "Moringa Banana Muffins",
+            "megamenu_link_3": "https://www.tribe-organics.com/blogs/recipes/moringa-banana-muffins",
+            "megamenu_image_4": "shopify://shop_images/Moringa_Hummus_Dip.webp",
+            "megamenu_text_4": "Moringa Hummus Dip",
+            "megamenu_link_4": "https://www.tribe-organics.com/blogs/recipes/moringa-hummus-dip",
+            "show_megamenu_button": true,
+            "megamenu_button_text": "READ MORE",
+            "megamenu_button_url": "https://www.tribe-organics.com/blogs/moringa-recipes"
+          }
+        },
+        "nav_item_bJY6dx": {
+          "type": "nav_item",
+          "settings": {
+            "nav_text": "Contact Us",
+            "nav_url": "/pages/contact",
+            "nav_text_color": "",
+            "enable_megamenu": false,
+            "megamenu_type": "products",
+            "megamenu_bg_color": "",
+            "megamenu_text_color": "",
+            "megamenu_text": "",
+            "megamenu_product_1": "",
+            "megamenu_product_1_url": "",
+            "megamenu_product_2": "",
+            "megamenu_product_2_url": "",
+            "megamenu_product_3": "",
+            "megamenu_product_3_url": "",
+            "mobile_megamenu_title": "",
+            "mobile_megamenu_link_text": "View All",
+            "mobile_megamenu_link_url": "",
+            "megamenu_text_1": "",
+            "megamenu_link_1": "",
+            "megamenu_text_2": "",
+            "megamenu_link_2": "",
+            "megamenu_text_3": "",
+            "megamenu_link_3": "",
+            "megamenu_text_4": "",
+            "megamenu_link_4": "",
+            "show_megamenu_button": false,
+            "megamenu_button_text": "View All",
+            "megamenu_button_url": ""
+          }
+        }
+      },
+      "block_order": [
+        "nav_item_drEdKf",
+        "nav_item_zdiWwH",
+        "nav_item_9nEmb9",
+        "nav_item_bJY6dx"
+      ],
+      "custom_css": [
+        ".custom-ashwagandha-pack-page .custom-announcement-bar {display: block !important;}",
+        ".dgf-megamenu-button {background-color: #faeee9; border: 2px solid #ac853b; border-radius: 0px; font-family: Work Sans, sans-serif; font-size: 14px !important;}",
+        ".dgf-lp-header-logo {pointer-events: none;}"
+      ],
+      "name": "[DGF] LP Header",
+      "settings": {
+        "section_bg_color": "#06211e",
+        "text_color": "#ffffff",
+        "site_logo_image": "shopify://shop_images/2_Topbar.webp",
+        "site_logo_image_mobile": "shopify://shop_images/SVG.webp",
+        "button_text": "SHOP MORINGA",
+        "button_url": "#dgf-featured-product",
+        "button_bg_color": "#ac853b",
+        "button_text_color": "#ffffff",
+        "show_search": true
+      }
+    },
+    "dgf_icon_slider_nq6TXd": {
+      "type": "dgf-icon-slider",
+      "blocks": {
+        "icon_item_eyNUPN": {
+          "type": "icon_item",
+          "settings": {
+            "icon": "shopify://shop_images/made-in-the-usa_1.webp",
+            "text": "Made in USA with globally sourced ingredients",
+            "text_color": "#ffffff"
+          }
+        },
+        "icon_item_bKtXEU": {
+          "type": "icon_item",
+          "settings": {
+            "icon": "shopify://shop_images/third-party-lab-tested_1.webp",
+            "text": "Third-party Lab Tested",
+            "text_color": "#ffffff"
+          }
+        },
+        "icon_item_jAwLmL": {
+          "type": "icon_item",
+          "settings": {
+            "icon": "shopify://shop_images/ethically-grown-and-sourced_1.webp",
+            "text": "Ethically grown and sourced",
+            "text_color": "#ffffff"
+          }
+        },
+        "icon_item_JU9BgQ": {
+          "type": "icon_item",
+          "settings": {
+            "icon": "shopify://shop_images/no-harmful-additives_1.webp",
+            "text": "No harmful additives or fillers",
+            "text_color": "#ffffff"
+          }
+        },
+        "icon_item_Df7qgW": {
+          "type": "icon_item",
+          "settings": {
+            "icon": "shopify://shop_images/recyclable_1.webp",
+            "text": "Recyclable",
+            "text_color": "#ffffff"
+          }
+        }
+      },
+      "block_order": [
+        "icon_item_eyNUPN",
+        "icon_item_bKtXEU",
+        "icon_item_jAwLmL",
+        "icon_item_JU9BgQ",
+        "icon_item_Df7qgW"
+      ],
+      "name": "[DGF] Icon Slider",
+      "settings": {
+        "title": "",
+        "sec_bg_color": "#586a67",
+        "text_color": "#ffffff",
+        "icon_bg_color": "#f3d9cf",
+        "icon_bg_image": "shopify://shop_images/Ellipse_105.webp",
+        "autoplay_speed": 3,
+        "pause_on_hover": true
+      }
+    },
+    "dgf_img_and_text_tW8t4r": {
+      "type": "dgf-img-and-text",
+      "name": "[DGF] Image and Text",
+      "settings": {
+        "text_1": "<p>OVER 10,000 HAPPY CUSTOMERS</p>",
+        "text_2": "<h1>Struggling to Stay Energized or Feeling Constantly Drained?</h1>",
+        "text_3": "<p>Replenish your body with the nutrient-dense power of organic Moringa — a natural boost for daily vitality, strong immunity and whole-body wellness.</p>",
+        "text_4": "<h2>Tribe Organics 100% Moringa oleifera Capsules</h2>",
+        "text_5": "<p>No additives. No fillers. Just 100% USDA Organic Moringa leaf powder, sustainably sourced and packed with the vitamins, minerals, antioxidants, and amino acids your body actually recognizes and thrives on.</p>",
+        "mobile_text_1": "<p>OVER 10,000 HAPPY CUSTOMERS</p>",
+        "mobile_text_2": "<h1>Struggling to Stay Energized or Feeling Constantly Drained?</h1>",
+        "mobile_text_3": "<p>Replenish your body with the nutrient-dense power of organic Moringa — a natural boost for daily vitality, strong immunity and whole-body wellness.</p>",
+        "mobile_text_4": "<h2>Tribe Organics 100% Moringa oleifera Capsules</h2>",
+        "mobile_text_5": "<p>No additives. No fillers. Just 100% USDA Organic Moringa leaf powder, sustainably sourced and packed with the vitamins, minerals, antioxidants, and amino acids your body actually recognizes and thrives on.</p>",
+        "button_text": "SHOP MORINGA capsules",
+        "button_url": "#dgf-featured-product",
+        "button_text_color": "#ffffff",
+        "first_column_image": "shopify://shop_images/Group_4.webp",
+        "first_column_image_text": "LOVED BY THOUSANDS",
+        "second_column_image_1": "shopify://shop_images/Frame_427321033-2.webp",
+        "second_column_image_1_mobile": "shopify://shop_images/moringa01.png",
+        "second_column_image_2": "shopify://shop_images/Group_1849.webp",
+        "bg_color": "#faeee9",
+        "text_color": "#111111",
+        "padding_top": 60,
+        "padding_bottom": 60,
+        "mobile_padding_top": 40,
+        "mobile_padding_bottom": 40
+      }
+    },
+    "dgf_testimonial_f9eLmm": {
+      "type": "dgf-testimonial",
+      "blocks": {
+        "testimonial_WTCp9p": {
+          "type": "testimonial",
+          "settings": {
+            "stars": "<i class=\"fa fa-star active\"></i>\n                                                <i class=\"fa fa-star active\"></i>\n                                                <i class=\"fa fa-star active\"></i>\n                                                <i class=\"fa fa-star active\"></i>\n                                                <i class=\"fa fa-star active\"></i>",
+            "testimonial_text": "<p>I have to say WOW!<br/>First day taking the moringa, I didn't feel much, but then, I wasn't really paying attention. The second day... I noticed. I felt as if I had slept really well... Alert, easier thought processes, sustained energy, etc.Customer for life... Thank you!</p>",
+            "author_name": "- Vivki"
+          }
+        },
+        "testimonial_MqmQgD": {
+          "type": "testimonial",
+          "settings": {
+            "stars": "<i class=\"fa fa-star active\"></i>\n                                                <i class=\"fa fa-star active\"></i>\n                                                <i class=\"fa fa-star active\"></i>\n                                                <i class=\"fa fa-star active\"></i>\n                                                <i class=\"fa fa-star active\"></i>",
+            "testimonial_text": "<p>Having this in capsule form is great! It is an easy way to get more nutrients with my daily routine and it has helped my overall health. I have noticed a significant difference in my overall health using this product.\t\t</p>",
+            "author_name": "- Rose"
+          }
+        },
+        "testimonial_yaUxk6": {
+          "type": "testimonial",
+          "settings": {
+            "stars": "<i class=\"fa fa-star active\"></i>\n                                                <i class=\"fa fa-star active\"></i>\n                                                <i class=\"fa fa-star active\"></i>\n                                                <i class=\"fa fa-star active\"></i>\n                                                <i class=\"fa fa-star active\"></i>",
+            "testimonial_text": "<p>Great quality and value. Gives me a little morning boost. Responsive CS. Fabulous company!!\t\t\t</p>",
+            "author_name": "- Susan Andrews"
+          }
+        },
+        "testimonial_fnPDAn": {
+          "type": "testimonial",
+          "settings": {
+            "stars": "<i class=\"fa fa-star active\"></i>\n                                                <i class=\"fa fa-star active\"></i>\n                                                <i class=\"fa fa-star active\"></i>\n                                                <i class=\"fa fa-star active\"></i>\n                                                <i class=\"fa fa-star active\"></i>",
+            "testimonial_text": "<p>Tribe Organics don't cut corners on their supplements, and their organic moringa is no exception. I noticed a gradual positive improvement after several weeks of taking this supplement. Sharper thinking, better sleep, more energy, were all detectable, so I am extremely pleased with this addition to my diet, and will definitely continue to take. Top rating for Tribe Organics Moringa, and well deserved.\t\t\t</p>",
+            "author_name": "- Ted"
+          }
+        },
+        "testimonial_BrXRPm": {
+          "type": "testimonial",
+          "settings": {
+            "stars": "<i class=\"fa fa-star active\"></i>\n                                                <i class=\"fa fa-star active\"></i>\n                                                <i class=\"fa fa-star active\"></i>\n                                                <i class=\"fa fa-star active\"></i>\n                                                <i class=\"fa fa-star active\"></i>",
+            "testimonial_text": "<p>I’ve been taking this product for years it’s good for so many different health issues.</p>",
+            "author_name": "-Connie Basore"
+          }
+        },
+        "testimonial_MpVh4z": {
+          "type": "testimonial",
+          "settings": {
+            "stars": "<i class=\"fa fa-star active\"></i>\n                                                <i class=\"fa fa-star active\"></i>\n                                                <i class=\"fa fa-star active\"></i>\n                                                <i class=\"fa fa-star active\"></i>\n                                                <i class=\"fa fa-star active\"></i>",
+            "testimonial_text": "<p>Tribe Organics doesn't cut corners on their supplements, and their organic moringa is no exception. I noticed a gradual positive improvement after several weeks of taking this supplement. Sharper thinking, better sleep, more energy, were all detectable, so I am extremely pleased with this addition to my diet, and will definitely continue to take. Top rating for Tribe Organics Moringa,and well deserved.</p>",
+            "author_name": "-Ted"
+          }
+        },
+        "testimonial_A9AeQw": {
+          "type": "testimonial",
+          "settings": {
+            "stars": "<i class=\"fa fa-star active\"></i>\n                                                <i class=\"fa fa-star active\"></i>\n                                                <i class=\"fa fa-star active\"></i>\n                                                <i class=\"fa fa-star active\"></i>\n                                                <i class=\"fa fa-star active\"></i>",
+            "testimonial_text": "<p>Great quality and value. Gives me a little morning boost. Responsive CS. Fabulous company!!</p>",
+            "author_name": "-Susan Andrews"
+          }
+        },
+        "testimonial_JUk3jw": {
+          "type": "testimonial",
+          "settings": {
+            "stars": "<i class=\"fa fa-star active\"></i>\n                                                <i class=\"fa fa-star active\"></i>\n                                                <i class=\"fa fa-star active\"></i>\n                                                <i class=\"fa fa-star active\"></i>\n                                                <i class=\"fa fa-star active\"></i>",
+            "testimonial_text": "<p>Having researched Moringa, I know that the content of the capsules need to be a bright green to have any potency and these capsules contain the green powder, as they should. I decided to take these capsules because (even before Covid-19!), I wanted to try to improve my immune system. Having taken these capsules now for some time, I feel really well and strong and I have had no illnesses over the winter. So, these capsules are definitely a better way for me to get all the nutrients into me. I intend to keep ordering to make sure I stay as healthy as possible.<br/><br/></p>",
+            "author_name": "-WF"
+          }
+        },
+        "testimonial_88qjkH": {
+          "type": "testimonial",
+          "settings": {
+            "stars": "<i class=\"fa fa-star active\"></i>\n                                                <i class=\"fa fa-star active\"></i>\n                                                <i class=\"fa fa-star active\"></i>\n                                                <i class=\"fa fa-star active\"></i>\n                                                <i class=\"fa fa-star active\"></i>",
+            "testimonial_text": "<p>Having this in pill form is great! It is an easy way to get more nutrients with my daily routine and it has helped my overall health. I have noticed a significant difference in my overall health using this product.</p>",
+            "author_name": "-Rose"
+          }
+        }
+      },
+      "block_order": [
+        "testimonial_WTCp9p",
+        "testimonial_MqmQgD",
+        "testimonial_yaUxk6",
+        "testimonial_fnPDAn",
+        "testimonial_BrXRPm",
+        "testimonial_MpVh4z",
+        "testimonial_A9AeQw",
+        "testimonial_JUk3jw",
+        "testimonial_88qjkH"
+      ],
+      "name": "[DGF] Testimonial",
+      "settings": {
+        "section_bg_color": "#faeee9",
+        "custom_class": "",
+        "title_part1": "More than",
+        "title_part2": "2,500 verified reviews",
+        "title_color": "#000000"
+      }
+    },
+    "dgf_image_gallery_EWpaaR": {
+      "type": "dgf-image-gallery",
+      "blocks": {
+        "image_fFaMfU": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/testi_3_5_52159ce5-2fd9-4087-b7bd-faa3b9244b01.png",
+            "alt_text": "",
+            "show_on_mobile": true
+          }
+        },
+        "image_3eLQN4": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/testi_3_6_288fd7fe-43e5-4816-a5e9-47f893c6da93.png",
+            "alt_text": "",
+            "show_on_mobile": true
+          }
+        },
+        "image_PMWgBF": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/testi_3_10.png",
+            "alt_text": "",
+            "show_on_mobile": true
+          }
+        },
+        "image_ywHfyD": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/lions-testim04.webp",
+            "alt_text": "",
+            "show_on_mobile": true
+          }
+        },
+        "image_tkakee": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/testi_3_9.png",
+            "alt_text": "",
+            "show_on_mobile": true
+          }
+        },
+        "image_KTVNPe": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/testi_3_7_24e8a6ed-0842-4ace-a25e-b951a1c252a4.png",
+            "alt_text": "",
+            "show_on_mobile": true
+          }
+        },
+        "image_FJWRHz": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/testi_3_11.png",
+            "alt_text": "",
+            "show_on_mobile": true
+          }
+        },
+        "image_HJpV6L": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/testi_3_12.png",
+            "alt_text": "",
+            "show_on_mobile": true
+          }
+        }
+      },
+      "block_order": [
+        "image_fFaMfU",
+        "image_3eLQN4",
+        "image_PMWgBF",
+        "image_ywHfyD",
+        "image_tkakee",
+        "image_KTVNPe",
+        "image_FJWRHz",
+        "image_HJpV6L"
+      ],
+      "name": "[DGF] Image Gallery",
+      "settings": {
+        "title": "",
+        "background_color": "#faeee9",
+        "transition_effect": "fade",
+        "rotation_speed": 2,
+        "rotation_mode": "single",
+        "cascade_delay": 150
+      }
+    },
+    "dgf_img_and_icon_nwPw9m": {
+      "type": "dgf-img-and-icon",
+      "blocks": {
+        "icon_item_PDHYVL": {
+          "type": "icon_item",
+          "settings": {
+            "icon": "shopify://shop_images/moringa-icons-01.webp",
+            "icon_title": "Boosts Natural Energy*",
+            "icon_text": "Rich in iron and B vitamins, Moringa fuels your body naturally — without caffeine jitters or crashes.<sup>*</sup>"
+          }
+        },
+        "icon_item_riMxKi": {
+          "type": "icon_item",
+          "settings": {
+            "icon": "shopify://shop_images/moringa-icons-02.webp",
+            "icon_title": "Supports Digestion and Detox*",
+            "icon_text": "Fiber and chlorophyll aid digestion, gut balance and natural detoxification.<sup>*</sup>"
+          }
+        },
+        "icon_item_kaeAcQ": {
+          "type": "icon_item",
+          "settings": {
+            "icon": "shopify://shop_images/moringa-icons-03.webp",
+            "icon_title": "Nature’s Multivitamin*",
+            "icon_text": "A complete plant-based source of protein, minerals, and all nine essential amino acids.<sup>*</sup>"
+          }
+        },
+        "icon_item_QhakMe": {
+          "type": "icon_item",
+          "settings": {
+            "icon": "shopify://shop_images/moringa-icons-04.webp",
+            "icon_title": "Nourishes Skin, Hair and Nails*",
+            "icon_text": "Vitamins A & E plus zinc promote glowing skin, strong hair, and healthy nails.<sup>*</sup>"
+          }
+        },
+        "icon_item_DFEWmi": {
+          "type": "icon_item",
+          "settings": {
+            "icon": "shopify://shop_images/image_5.webp",
+            "icon_title": "Strengthens Immunity *",
+            "icon_text": "Packed with vitamin C, E and antioxidants to help defend against free radicals and support daily wellness.<sup>*</sup>"
+          }
+        }
+      },
+      "block_order": [
+        "icon_item_PDHYVL",
+        "icon_item_riMxKi",
+        "icon_item_kaeAcQ",
+        "icon_item_QhakMe",
+        "icon_item_DFEWmi"
+      ],
+      "custom_css": [
+        "li {font-size: 25px !important; font-weight: 500; line-height: 1.5; margin-bottom: 4rem !important; margin-left: 35px;}",
+        "span {font-family: HypatiaSansPro; text-transform: uppercase; font-style: normal;}",
+        "@media (max-width: 768px) {li {font-size: 18px !important; margin-bottom: 2.5rem !important; }}"
+      ],
+      "name": "[DGF] Image and Icons",
+      "settings": {
+        "section_title": "<h2>Meet Moringa: The Miracle Tree</h2>",
+        "section_subtitle": "<p>Revered for thousands of years in Ayurveda as the “Tree of Life” or “Miracle Tree”, Moringa has been used as a daily tonic to restore energy, vitality and balance.</p>\n<li>In India, Ayurvedic healers prescribed Moringa leaves to boost immunity, improve digestion and nourish the body with essential nutrients.</li>\n<li>In Africa and Asia, it has long been relied on as a vital source of nutrition during times of scarcity, thanks to its rich concentration of vitamins, minerals and amino acids.</li>\n<li>Modern herbalists praise it as one of nature’s most nutrient-dense superfoods, with unparalleled benefits for energy, immunity and overall wellness.</li>\n<p>Across cultures and across time, Moringa has endured as both a powerful superfood and a trusted healing plant. Today, science confirms its ability to deliver sustained energy, immune defense, skin and hair support, and detoxification, making it one of the most complete plant allies for modern life.</p>",
+        "left_image": "shopify://shop_images/moringa02.webp",
+        "column_title": "Powerful Benefits of <span style=\"font-family: 'HypatiaSansPro';\">MORINGA</span>",
+        "mobile_column_title_primary": "Powerful Benefits of <span style=\"font-family: 'HypatiaSansPro';\">MORINGA</span>",
+        "mobile_column_title_secondary": "",
+        "bg_color": "rgba(0,0,0,0)",
+        "text_color": "#ffffff",
+        "padding_top": 20,
+        "padding_bottom": 0
+      }
+    },
+    "dgf_img_and_accordion_PJdWgA": {
+      "type": "dgf-img-and-accordion",
+      "blocks": {
+        "accordion_item_HFUcch": {
+          "type": "accordion_item",
+          "settings": {
+            "icon": "shopify://shop_images/moringa-icons-2-01.webp",
+            "accordion_title": "100% MORINGA OLEIFERA LEAF POWDER",
+            "accordion_content": "Our Moringa capsules deliver the full power of the “Miracle Tree” — just pure, organic leaf powder with no stems, stalks, fillers or additives."
+          }
+        },
+        "accordion_item_6ceNfn": {
+          "type": "accordion_item",
+          "settings": {
+            "icon": "shopify://shop_images/Group_1.webp",
+            "accordion_title": "CERTIFIED USDA ORGANIC & SUSTAINABLY SOURCED",
+            "accordion_content": "Our Moringa is grown on ethical, sustainable farms and carefully harvested to preserve its rich nutrient profile. USDA Organic certified, non-GMO, vegan, and junk-free — so you can trust you’re getting pure, clean and responsibly sourced nutrition in every capsule."
+          }
+        },
+        "accordion_item_yrxeEW": {
+          "type": "accordion_item",
+          "settings": {
+            "icon": "shopify://shop_images/Vector_3.webp",
+            "accordion_title": "RIGOROUSLY TESTED FOR PURITY & POTENCY",
+            "accordion_content": "Every batch of our Moringa capsules undergoes third-party testing to ensure the highest standards of safety, purity, and potency. You get nothing but clean, effective nutrition — exactly as nature intended."
+          }
+        },
+        "accordion_item_QT6UnH": {
+          "type": "accordion_item",
+          "settings": {
+            "icon": "shopify://shop_images/Group_2.webp",
+            "accordion_title": "MADE IN THE USA IN A GMP-CERTIFIED FACILITY",
+            "accordion_content": "Our Moringa capsules are proudly crafted in the USA in a Good Manufacturing Practices (GMP)–certified facility, ensuring the highest levels of quality, safety and consistency in every bottle."
+          }
+        },
+        "accordion_item_rKfTgC": {
+          "type": "accordion_item",
+          "settings": {
+            "icon": "shopify://shop_images/Frame_427321004.webp",
+            "accordion_title": "VEGAN, GLUTEN-FREE & KOSHER CERTIFIED",
+            "accordion_content": "Carefully formulated to meet strict dietary standards — clean, inclusive, and suitable for any lifestyle."
+          }
+        },
+        "accordion_item_dycwUr": {
+          "type": "accordion_item",
+          "settings": {
+            "icon": "shopify://shop_images/moringa-icons-2-02.webp",
+            "accordion_title": "GOOD FOR YOU, GOOD FOR THE PLANET",
+            "accordion_content": "Every bottle contributes to positive change — we donate 1% of all sales to environmental causes and are proudly B Corp Certified for meeting the highest social and sustainability standards."
+          }
+        }
+      },
+      "block_order": [
+        "accordion_item_HFUcch",
+        "accordion_item_6ceNfn",
+        "accordion_item_yrxeEW",
+        "accordion_item_QT6UnH",
+        "accordion_item_rKfTgC",
+        "accordion_item_dycwUr"
+      ],
+      "name": "[DGF] Image and Accordion",
+      "settings": {
+        "left_image": "shopify://shop_images/moringa03.webp",
+        "section_title": "Meet Tribe Organics MORINGA Capsules: The Gold Standard in Daily Vitality",
+        "bg_color": "#faeee9",
+        "text_color": "#06211e",
+        "border_color": "#06211e",
+        "padding_top": 0,
+        "padding_bottom": 0
+      }
+    },
+    "dgf_how_to_CYwQ9c": {
+      "type": "dgf-how-to",
+      "name": "[DGF] How To",
+      "settings": {
+        "background_color": "#f3d9cf",
+        "text_with_background": "<p>The benefits of this nutrient-dense plant build gradually with consistent use. Taking your Moringa capsules every day helps your body absorb its rich vitamins, minerals and antioxidants — unlocking their full potential for lasting vitality and balance.</p>",
+        "first_text": "Consistency is key",
+        "second_text": "FOR REAL RESULTS",
+        "main_title": "HOW TO USE",
+        "dosage_amount": "3 CAPSULES",
+        "dosage_frequency": "daily",
+        "serving_info_first": "1800mg",
+        "serving_info_second": "serving size",
+        "pro_tip": "<p><strong>Pro tip:</strong> Pair your capsules with your morning routine so it becomes an easy, effortless habit.</p>",
+        "left_side_image": "shopify://shop_images/moringa_leaves_3.webp",
+        "right_side_image": "shopify://shop_images/moringa-capsule.webp"
+      }
+    },
+    "dgf_graph_j9XjbP": {
+      "type": "dgf-graph",
+      "blocks": {
+        "week_item_H3bbCi": {
+          "type": "week_item",
+          "settings": {
+            "week_image": "shopify://shop_images/circle-icon01_40d74ddd-d0fe-4b16-bb5f-bbacee20884e.webp",
+            "week_title": "WEEK 2",
+            "benefits_content": "<ul><li>Natural boost in daily energy levels without caffeine or crashes</li><li>Subtle improvement in digestion and regularity</li><li>Early support for skin glow and vitality thanks to antioxidants and vitamins</li></ul>"
+          }
+        },
+        "week_item_tfpCRV": {
+          "type": "week_item",
+          "settings": {
+            "week_image": "shopify://shop_images/circle-icon01_40d74ddd-d0fe-4b16-bb5f-bbacee20884e.webp",
+            "week_title": "WEEK 4",
+            "benefits_content": "<ul><li>Noticeable increase in sustained energy and focus throughout the day</li><li>Support for reduced bloating and digestive comfort</li><li>Beginning of inflammation balance in muscles and joints</li></ul>"
+          }
+        },
+        "week_item_ThHaiF": {
+          "type": "week_item",
+          "settings": {
+            "week_image": "shopify://shop_images/circle-icon01_40d74ddd-d0fe-4b16-bb5f-bbacee20884e.webp",
+            "week_title": "WEEK 6",
+            "benefits_content": "<ul><li>Steadier metabolic support</li><li>Ongoing benefits for healthy weight management when paired with a balanced diet</li><li>Stronger cellular defense and antioxidant protection, helping the body fight oxidative stress</li></ul>"
+          }
+        },
+        "week_item_xbJMax": {
+          "type": "week_item",
+          "settings": {
+            "week_image": "shopify://shop_images/circle-icon01_40d74ddd-d0fe-4b16-bb5f-bbacee20884e.webp",
+            "week_title": "WEEK 8",
+            "benefits_content": "<ul><li>Long-term nutritional support with over 90+ nutrients and antioxidants</li><li>Sustained cardiovascular and liver health support</li><li>Feeling of overall well-being and vitality: more energy, better mood, a nourished body</li></ul>"
+          }
+        }
+      },
+      "block_order": [
+        "week_item_H3bbCi",
+        "week_item_tfpCRV",
+        "week_item_ThHaiF",
+        "week_item_xbJMax"
+      ],
+      "custom_css": [
+        "@media (max-width: 1024px) {.dgf-mobile-bg {bottom: 276px !important; }}"
+      ],
+      "name": "[DGF] Graph Timeline",
+      "settings": {
+        "timeline_bg_image": "shopify://shop_images/Line_2_c970ea18-b84b-4a8a-9b22-0aeff62ee273.webp",
+        "mobile_bg_image": "shopify://shop_images/Line_2_1.webp",
+        "background_color": "#faeee9",
+        "text_color": "#ffffff",
+        "week_color": "rgba(0,0,0,0)",
+        "card_bg_color": "#f3d9cf",
+        "disc_text_color": "#06211e",
+        "card_text_color": "#06211e",
+        "button_text_color": "#ffffff",
+        "section_title": "WHAT TO EXPECT†",
+        "button_text": "SHOP ORGANIC MORINGA",
+        "button_url": "#dgf-featured-product",
+        "hide_button_mobile": true,
+        "disclaimer_text": "†Results may vary. Moringa works gradually and is most effective when paired with consistent use and a healthy lifestyle.",
+        "show_stars": true,
+        "rating_text": "LOVED BY THOUSANDS"
+      }
+    },
+    "dgf_featured_product_3e6RUi": {
+      "type": "dgf-featured-product",
+      "name": "[DGF] Featured Product",
+      "settings": {
+        "featured_product": "moringa-capsules-tribe-organics-1800mg-120-capsules",
+        "image_1": "shopify://shop_images/Group_1849.webp",
+        "image_2": "shopify://shop_images/Group_1096.webp",
+        "background_color": "#faeee9",
+        "text_color": "#111111",
+        "show_rating": true,
+        "rating_text": "",
+        "show_certifications": true,
+        "money_back_guarantee": true,
+        "free_shipping": true,
+        "disclaimer_text": "<p><em>*We recommend 3-6 months of consistent use for best results.</em></p>",
+        "show_payment_icons": true
+      }
+    },
+    "dgf_compare_table_AUeezL": {
+      "type": "dgf-compare-table",
+      "blocks": {
+        "feature_ALkd7M": {
+          "type": "feature",
+          "settings": {
+            "feature_text": "Made with 100% Moringa leaves (no stems, stalks or fillers)",
+            "product_1_image": "shopify://shop_images/Group_1807.webp",
+            "product_2_image": "shopify://shop_images/Group_1808.webp"
+          }
+        },
+        "feature_RnfVgL": {
+          "type": "feature",
+          "settings": {
+            "feature_text": "USDA organic certified & ethically sourced",
+            "product_1_image": "shopify://shop_images/Group_1807.webp",
+            "product_2_image": "shopify://shop_images/Group_1808.webp"
+          }
+        },
+        "feature_9GJfJm": {
+          "type": "feature",
+          "settings": {
+            "feature_text": "Retains its natural green color (freshness guaranteed)",
+            "product_1_image": "shopify://shop_images/Group_1807.webp",
+            "product_2_image": "shopify://shop_images/Group_1808.webp"
+          }
+        },
+        "feature_BnMN73": {
+          "type": "feature",
+          "settings": {
+            "feature_text": "Trusted by +10,000 customers",
+            "product_1_image": "shopify://shop_images/Group_1807.webp",
+            "product_2_image": "shopify://shop_images/Group_1808.webp"
+          }
+        },
+        "feature_YCqA9J": {
+          "type": "feature",
+          "settings": {
+            "feature_text": "Third-party lab tested for purity & safety",
+            "product_1_image": "shopify://shop_images/Group_1807.webp",
+            "product_2_image": "shopify://shop_images/Group_1808.webp"
+          }
+        }
+      },
+      "block_order": [
+        "feature_ALkd7M",
+        "feature_RnfVgL",
+        "feature_9GJfJm",
+        "feature_BnMN73",
+        "feature_YCqA9J"
+      ],
+      "name": "[DGF] Compare Table",
+      "settings": {
+        "title": "",
+        "title_color": "#000000",
+        "background_color": "#faeee9",
+        "header_image": "shopify://shop_images/Group_1825.webp",
+        "header_image_mobile": "shopify://shop_images/image_9.webp",
+        "header_image_alt": "",
+        "product_1_image": "shopify://shop_images/moringa04.webp",
+        "product_1_name": "",
+        "product_2_image": "shopify://shop_images/Artboard_1_3x_1.webp",
+        "product_2_name": ""
+      }
+    },
+    "faq_e8gc3A": {
+      "type": "faq",
+      "blocks": {
+        "faq_Afpyiw": {
+          "type": "faq",
+          "settings": {
+            "title": "What are the health benefits of Moringa capsules?",
+            "content": "Moringa is packed with over 90 vitamins, minerals, and antioxidants, making it one of the most nutrient-rich superfoods on earth."
+          }
+        },
+        "faq_pc3RVk": {
+          "type": "faq",
+          "settings": {
+            "title": "How do I take Moringa capsules for best results?",
+            "content": "The recommended Moringa serving size is minimum 3 capsules per day (1800mg), preferably with food. Consistent daily use is the key to experiencing long-lasting Moringa supplement benefits."
+          }
+        },
+        "faq_wVL3PX": {
+          "type": "faq",
+          "settings": {
+            "title": "How long does it take to feel the benefits of Moringa powder?",
+            "content": "Most people begin to notice the benefits of Moringa powder within 3 to 4 weeks of consistent daily use. Early effects often include increased natural energy and better digestion, while deeper benefits such as metabolic support, inflammation balance and overall vitality usually build after 8 weeks. Results may vary depending on lifestyle, diet and individual health needs."
+          }
+        },
+        "faq_cReHAw": {
+          "type": "faq",
+          "settings": {
+            "title": "Are Moringa capsules safe to take every day?",
+            "content": "Most people begin to notice the benefits of Moringa powder within 3 to 4 weeks of consistent daily use. Early effects often include increased natural energy and better digestion, while deeper benefits such as metabolic support, inflammation balance and overall vitality usually build after 8 weeks. Results may vary depending on lifestyle, diet and individual health needs."
+          }
+        },
+        "faq_JNQih7": {
+          "type": "faq",
+          "settings": {
+            "title": "Does Moringa help with inflammation?",
+            "content": "Yes. Moringa contains powerful antioxidants and phytonutrients that help the body reduce oxidative stress and inflammation naturally."
+          }
+        },
+        "faq_B6Rz9M": {
+          "type": "faq",
+          "settings": {
+            "title": "Can I take Moringa with other supplements?",
+            "content": "Yes, Moringa is safe to combine with most supplements, especially adaptogens and superfoods. Consult your healthcare provider if you’re on prescription medication."
+          }
+        }
+      },
+      "block_order": [
+        "faq_Afpyiw",
+        "faq_pc3RVk",
+        "faq_wVL3PX",
+        "faq_cReHAw",
+        "faq_JNQih7",
+        "faq_B6Rz9M"
+      ],
+      "name": "FAQs",
+      "settings": {
+        "title": "Frequently Asked Questions"
+      }
+    },
+    "dgf_background_img_txt_hG47eF": {
+      "type": "dgf-background-img-txt",
+      "name": "[DGF] Background Image Text",
+      "settings": {
+        "heading": "nature’s daily\nmultivitamin",
+        "rich_text": "<p>Fuel your body with 90+ nutrients, powerful antioxidants and natural energy from Moringa — the Miracle Tree.<br/><br/>Join thousands who trust Moringa supplement to nourish their body, support balance and elevate everyday vitality.</p>",
+        "show_rating": true,
+        "rating_text": "LOVED BY THOUSANDS",
+        "button_text": "SHOP ORGANIC MORINGA",
+        "button_url": "#dgf-featured-product",
+        "button_text_color": "#ffffff",
+        "hide_button_mobile": true,
+        "main_image": "shopify://shop_images/MORINGA05.webp",
+        "main_image_alt": "Lion mane mushroom",
+        "left_bg_color": "#faeee9",
+        "right_bg_color": "#f3d9cf"
+      }
+    },
+    "dgf_img_text_logo_Cfwbn9": {
+      "type": "dgf-img-text-logo",
+      "name": "[DGF] Image Text Logo",
+      "settings": {
+        "title": "CONNECTING PEOPLE, PLANTS AND THE PLANET",
+        "title_color": "#ffffff",
+        "background_color": "rgba(0,0,0,0)",
+        "left_image": "shopify://shop_images/64e1b7d9d2304fc7da17b69c_1_28913ceb-5ba3-43e4-8548-005a061cbf73.webp",
+        "left_image_alt": "connect image",
+        "rich_text": "<p>We're proud to be a Certified B Corp™<br/><br/>This means that our company meets the highest standards of social and environmental impact, transparency, and accountability. </p>",
+        "bottom_image": "shopify://shop_images/image_13.webp",
+        "bottom_image_alt": "certified"
+      }
+    },
+    "dgf_custom_html_Pd9WC8": {
+      "type": "dgf-custom-html",
+      "custom_css": [
+        "{background-color: #f3d9cf; text-align: center; padding: 3rem 2rem;}",
+        "h2,p {color: black;}"
+      ],
+      "name": "[DGF] Custom HTML",
+      "settings": {
+        "custom_html": "<div clas=\"row justify-content-center\">\n<div class=\"subscibe-save-img-text-scnd-wrapper aos-init aos-animate\">\n\n<h2>Ready to Join the Triibe?</h2>\n<br><p>Join our mailing list today and get <b>10% OFF</b> your next order!<br>\nPick your path and join our community.</p>\n</div>\n</div>\n<div class=\"klaviyo-form-TPYh9v\"></div>"
+      }
+    },
+    "tribe_difference_section_C3czqP": {
+      "type": "tribe-difference-section",
+      "blocks": {
+        "three_blocks_tHiV44": {
+          "type": "three_blocks",
+          "settings": {
+            "leaf_image": "shopify://shop_images/White_leaft_bullet.png",
+            "list_text_1": "Science-backed",
+            "list_text_2": "Superior potency",
+            "list_text_3": "Standardized extracts",
+            "list_text_4": "100% fruiting bodies",
+            "list_text_5": "Ethically sourced",
+            "list_text_6": "",
+            "list_text_7": ""
+          }
+        },
+        "three_blocks_fYhNkB": {
+          "type": "three_blocks",
+          "settings": {
+            "leaf_image": "shopify://shop_images/White_leaft_bullet.png",
+            "list_text_1": "Non-GMO verified",
+            "list_text_2": "USDA Organic certified",
+            "list_text_3": "Gluten free",
+            "list_text_4": "Allergen free",
+            "list_text_5": "3rd party tested",
+            "list_text_6": "cGMP",
+            "list_text_7": "Made in the USA"
+          }
+        },
+        "three_blocks_9RjEHk": {
+          "type": "three_blocks",
+          "settings": {
+            "leaf_image": "shopify://shop_images/White_leaft_bullet.png",
+            "list_text_1": "No synthetic fillers",
+            "list_text_2": "No excipients",
+            "list_text_3": "No harmful additives",
+            "list_text_4": "No mycellium",
+            "list_text_5": "No artificial anything",
+            "list_text_6": "",
+            "list_text_7": ""
+          }
+        }
+      },
+      "block_order": [
+        "three_blocks_tHiV44",
+        "three_blocks_fYhNkB",
+        "three_blocks_9RjEHk"
+      ],
+      "settings": {
+        "add_class": "ashwagandha-tribe-difference",
+        "section_bg_color": "#07211f",
+        "main_image": "shopify://shop_images/the_tribe_difference2.webp",
+        "image_1": "shopify://shop_images/Icon_1.webp",
+        "image_2": "shopify://shop_images/Icon_2.webp",
+        "image_3": "shopify://shop_images/image_16.webp",
+        "image_4": "shopify://shop_images/image_17.webp",
+        "image_5": "shopify://shop_images/image_18.webp"
+      }
+    },
+    "ashwagandha_pack_contact_M768hj": {
+      "type": "ashwagandha-pack-contact",
+      "custom_css": [
+        "a {color: #a7833e;}"
+      ],
+      "settings": {
+        "section_bg_color": "#07211f",
+        "the_text": "<p>Questions? Let us help you</p><p>Contact us at <a href=\"mailto:info@tribe-organics.com\" title=\"mailto:info@tribe-organics.com\">info@tribe-organics.com</a></p>"
+      }
+    },
+    "ashwagandha_pack_footer_bYnWER": {
+      "type": "ashwagandha-pack-footer",
+      "settings": {
+        "section_bg_color": "#07211f",
+        "the_logo": "shopify://shop_images/Logo_2_6ecf9d10-f051-4b4d-b753-3ffecf96bb83.png",
+        "the_icon_1": "shopify://shop_images/B_Corp.png",
+        "the_icon_2": "shopify://shop_images/1_for_the_planet.png",
+        "the_text_1": "<p><strong>*FDA Disclaimer: These statements have not been evaluated by the Food and Drug Administration. These products are not intended to diagnose, treat, cure, or prevent any disease.</strong> The information provided by this website or this company is not a substitute for a face-to-face consultation with your health practitioner, and should not be construed as individual medical advice.</p>",
+        "the_text_2": "<ul><li>Copyright 2022 TriIbe, INC. ALL RIGHTS RESERVED.</li><li><a href=\"/policies/terms-of-service\" title=\"Terms of Service\">TERMS & CONDITIONS </a></li><li><a href=\"/policies/privacy-policy\" title=\"Privacy Policy\">PRIVACY POLICY</a></li></ul>"
+      }
+    }
+  },
+  "order": [
+    "main",
+    "dgf_lp_header_YKcMaE",
+    "dgf_icon_slider_nq6TXd",
+    "dgf_img_and_text_tW8t4r",
+    "dgf_testimonial_f9eLmm",
+    "dgf_image_gallery_EWpaaR",
+    "dgf_img_and_icon_nwPw9m",
+    "dgf_img_and_accordion_PJdWgA",
+    "dgf_how_to_CYwQ9c",
+    "dgf_graph_j9XjbP",
+    "dgf_featured_product_3e6RUi",
+    "dgf_compare_table_AUeezL",
+    "faq_e8gc3A",
+    "dgf_background_img_txt_hG47eF",
+    "dgf_img_text_logo_Cfwbn9",
+    "dgf_custom_html_Pd9WC8",
+    "tribe_difference_section_C3czqP",
+    "ashwagandha_pack_contact_M768hj",
+    "ashwagandha_pack_footer_bYnWER"
+  ]
+}

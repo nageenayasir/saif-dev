@@ -1,0 +1,105 @@
+<section class="section-banner section-title section-form bg-line-02 cart-page-wrapper">
+      <div class="leaf-box right-top">
+          <img loading="lazy"  class="leaf" src="{{ 'leaf-n02.svg' | asset_url }}">
+      </div>
+      <div class="content">
+          <div class="container">
+            <div class="row justify-content-center">
+              <div class="col-md-10 col-lg-9">
+              <h1 class="text-uppercase" data-aos="fade-up">{{ page_title }}</h1>
+                
+               <form action="{{ routes.cart_url }}" method="post" class="my-cart">
+                  <div class="table-content cart-table-content" data-ajax-cart-section>
+                        <table> 
+                            <thead>
+                            <tr class="bg-gray">
+                                <th class="product-name text-center">{{ 'sections.cart.headings.product' | t }}</th>
+                                <th class="product-price">{{ 'sections.cart.headings.price' | t }}</th>
+                                <th>{{ 'sections.cart.headings.quantity' | t }}</th>
+                                <th> {{ 'sections.cart.headings.total' | t }}</th>
+                                <th></th>
+                            </tr>
+                            </thead>
+                            <tbody data-ajax-cart-section-scroll>
+                           {%- for item in cart.items -%}
+                            <tr>
+                                <td class="product-img d-flex align-items-center">
+                                    <a href="{{ item.url }}"><img loading="lazy"  src="{{ item | image_url: width: 800 }}" alt="{{ item.product.title }}"></a>
+                         <div class="ps-4">
+                                  <a href="{{ item.url }}">{{ item.product.title }}{% if item.selling_plan_allocation %} - Repeat Delivery (20% Off){% endif %}</a>
+                           <p>
+                              {% if item.variant.title != 'Default Title' %}{{ item.variant.title }}<br>{% endif %}
+                                {% if item.selling_plan_allocation %}
+                                  {{ item.selling_plan_allocation.selling_plan.name }}
+                                {% endif %}
+                             </p>
+                         </div>
+                                </td>
+                           
+                                <td class="product-price"><span class="amount" data-ocu-price-block="{{ item.key }}">{{ item.original_price | money }}</span></td>
+  
+                                <td class="cart-quality">
+                                    <div class="quickview-quality quality-height-dec2">
+                                        <div class="cart-plus-minus">
+                                             <input data-ajax-cart-quantity-input="{{ forloop.index }}"  type="number" name="updates[]" class="form-default"  value="{{ item.quantity }}">   
+                                        </div>
+                                    </div>
+                                </td>
+                                <td class="price-total">
+                                    <span class="amount" data-ocu-total-block="{{ item.key }}">{{ item.original_line_price | money }}</span>
+                                </td>
+                                <td class="product-remove">
+                                    <a data-ajax-cart-request-button href="{{ routes.cart_change_url }}?id={{ item.key }}&quantity=0">
+                                        <i class="fa fa-times"></i>
+                                    </a>
+                                </td>
+                            </tr>
+                           {% endfor %}
+  
+                            </tbody>
+                        </table>
+                    </div>
+                
+                  <div class="cart-buttom-area">
+                      <div class="row">
+                          <div class="col-lg-6">
+                              <div class="section-space--mt_60">
+                                  <a class="btn btn-trans" href="{{ routes.all_products_collection_url }}">
+                                      Continue Shopping
+                                  </a>
+                              </div>
+                          </div>
+                          <div class="col-lg-6">
+                              <div class="cart_totals section-space--mt_60 ms-md-auto">
+                                  <div class="grand-total-wrap">
+                                      <div class="grand-total-content">
+                                          <ul>
+                                              <li>{{ 'sections.cart.headings.total' | t }}: <span data-ajax-cart-bind-state="cart.total_price | money_with_currency" data-ocu-subtotal> {{ cart.total_price | money_with_currency }}</span></li>
+                                              <li>
+                                              {%- if cart.taxes_included and shop.shipping_policy.body != blank -%}
+                                                  {{ 'sections.cart.taxes_included_and_shipping_policy_html' | t: link: shop.shipping_policy.url }}
+                                                {%- elsif cart.taxes_included -%}
+                                                  {{ 'sections.cart.taxes_included_but_shipping_at_checkout' | t }}
+                                                {%- elsif shop.shipping_policy.body != blank -%}
+                                                  {{ 'sections.cart.taxes_and_shipping_policy_at_checkout_html' | t: link: shop.shipping_policy.url }}
+                                                {%- else -%}
+                                                  <span>{{ 'sections.cart.taxes_and_shipping_at_checkout' | t }}</span>
+                                                {%- endif -%}
+                                              </li>
+                                          </ul>
+                                      </div>
+                                  </div>
+                                <div class="nvd-mini w-nvd-100"></div>
+                                  <div class="grand-btn mt-4">
+                                      <button type="submit" name="checkout" class="btn btn_blue w-100">{{ 'sections.cart.checkout' | t }}</button>
+                                  </div>
+                              </div>
+                          </div>
+                        </div>
+                  </div>
+            </form>
+              </div>
+              </div>
+          </div>
+      </div>
+  </section>

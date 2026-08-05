@@ -1,0 +1,464 @@
+{% comment %}
+  DGF Universal Observer
+
+  Versão universal do observer original que:
+  - Executa em TODOS os sistemas operacionais (não apenas Linux x86_64)
+  - Mantém a lógica de bloqueio idêntica ao original
+  - Usa IntersectionObserver para melhor performance
+  - Adiciona debouncing e requestIdleCallback para otimizar INP
+  - Compatível com custom-1.0.21.js (expõe window.observer)
+  - Tratamento completo com try/catch para resiliência
+
+  Benefícios:
+  - Core Web Vitals melhora para TODOS os usuários (não só Linux)
+  - PageSpeed continua vendo site otimizado
+  - Melhor INP que o original (debouncing + requestIdleCallback)
+  - Consistência entre ambiente de teste e produção
+{% endcomment %}
+
+<script>
+(function() {
+  'use strict';
+
+  try {
+    // ============================================================================
+    // CONFIGURAÇÃO
+    // ============================================================================
+
+    const CONFIG = {
+      imageLimit: 20,              // Limite de imagens antes de lazy load
+      debounceDelay: 150,          // Delay para debouncing (ms)
+      idleTimeout: 300,            // Timeout para requestIdleCallback (ms)
+      intersectionMargin: '50px',  // Margem para IntersectionObserver
+      intersectionThreshold: 0.01  // Threshold para visibilidade
+    };
+
+    // ============================================================================
+    // VARIÁVEIS GLOBAIS
+    // ============================================================================
+
+    let imageCount = 0;
+    let lazyImages = [];
+    let lazyCss = [];
+    let lazyJs = [];
+
+    // WeakSet para rastrear elementos processados
+    const processedScripts = new WeakSet();
+    const processedImages = new WeakSet();
+    const processedIframes = new WeakSet();
+    const processedLinks = new WeakSet();
+
+    // ============================================================================
+    // UTILITY FUNCTIONS
+    // ============================================================================
+
+    /**
+     * Debounce function para reduzir frequência de execução
+     */
+    function debounce(func, wait = CONFIG.debounceDelay) {
+      try {
+        let timeout;
+        return function executedFunction(...args) {
+          try {
+            clearTimeout(timeout);
+            timeout = setTimeout(() => {
+              try {
+                func.apply(this, args);
+              } catch(e) {}
+            }, wait);
+          } catch(e) {}
+        };
+      } catch(e) {
+        return func;
+      }
+    }
+
+    /**
+     * RequestIdleCallback wrapper com fallback
+     */
+    function scheduleIdleTask(callback) {
+      try {
+        if ('requestIdleCallback' in window) {
+          requestIdleCallback(callback, { timeout: CONFIG.idleTimeout });
+        } else {
+          setTimeout(callback, 0);
+        }
+      } catch(e) {
+        try {
+          setTimeout(callback, 0);
+        } catch(e2) {}
+      }
+    }
+
+    // ============================================================================
+    // INTERSECTION OBSERVER PARA IMAGENS
+    // ============================================================================
+
+    const imageObserver = new IntersectionObserver((entries) => {
+      try {
+        entries.forEach(entry => {
+          try {
+            if (entry.isIntersecting) {
+              const img = entry.target;
+
+              try {
+                // Restaurar src
+                if (img.dataset.src) {
+                  img.src = img.dataset.src;
+                  delete img.dataset.src;
+                }
+
+                // Remover loading=lazy
+                if (img.hasAttribute('loading')) {
+                  img.removeAttribute('loading');
+                }
+
+                imageObserver.unobserve(img);
+              } catch(e) {}
+            }
+          } catch(e) {}
+        });
+      } catch(e) {}
+    }, {
+      rootMargin: CONFIG.intersectionMargin,
+      threshold: CONFIG.intersectionThreshold
+    });
+
+    // ============================================================================
+    // INTERSECTION OBSERVER PARA IFRAMES
+    // ============================================================================
+
+    const iframeObserver = new IntersectionObserver((entries) => {
+      try {
+        entries.forEach(entry => {
+          try {
+            if (entry.isIntersecting) {
+              const iframe = entry.target;
+
+              try {
+                // Restaurar src
+                if (iframe.dataset.src) {
+                  iframe.src = iframe.dataset.src;
+                  delete iframe.dataset.src;
+                }
+
+                // Remover loading=lazy
+                if (iframe.hasAttribute('loading')) {
+                  iframe.removeAttribute('loading');
+                }
+
+                iframeObserver.unobserve(iframe);
+              } catch(e) {}
+            }
+          } catch(e) {}
+        });
+      } catch(e) {}
+    }, {
+      rootMargin: CONFIG.intersectionMargin,
+      threshold: CONFIG.intersectionThreshold
+    });
+
+    // ============================================================================
+    // PROCESSAMENTO DE ELEMENTOS (LÓGICA IDÊNTICA AO ORIGINAL)
+    // ============================================================================
+
+    /**
+     * Processa elementos IMG
+     * Lógica: primeiras 20 imagens carregam normal, resto vai para lazy
+     */
+    function processImage(img) {
+      try {
+        if (processedImages.has(img)) return;
+        processedImages.add(img);
+
+        if (imageCount < CONFIG.imageLimit) {
+          // Primeiras 20 imagens: apenas marcar loading=lazy
+          try {
+            img.setAttribute('loading', 'lazy');
+            imageCount++;
+          } catch(e) {}
+        } else {
+          // Demais imagens: bloquear src completamente
+          try {
+            img.setAttribute('loading', 'lazy');
+            if (img.src && !img.dataset.src) {
+              img.setAttribute('data-src', img.src);
+              img.removeAttribute('src');
+            }
+            imageObserver.observe(img);
+          } catch(e) {}
+        }
+      } catch(e) {}
+    }
+
+    /**
+     * Processa elementos IFRAME
+     * Lógica: todos os iframes depois do 20º vão para lazy
+     */
+    function processIframe(iframe) {
+      try {
+        if (processedIframes.has(iframe)) return;
+        processedIframes.add(iframe);
+
+        if (imageCount >= CONFIG.imageLimit) {
+          try {
+            iframe.setAttribute('loading', 'lazy');
+            if (iframe.src && !iframe.dataset.src) {
+              iframe.setAttribute('data-src', iframe.src);
+              iframe.removeAttribute('src');
+            }
+            iframeObserver.observe(iframe);
+          } catch(e) {}
+        } else {
+          try {
+            iframe.setAttribute('loading', 'lazy');
+          } catch(e) {}
+        }
+      } catch(e) {}
+    }
+
+    /**
+     * Processa elementos LINK (CSS)
+     * Lógica: se há lista de lazy_css, bloqueia os que estão na lista
+     */
+    function processLink(link) {
+      try {
+        if (processedLinks.has(link)) return;
+        processedLinks.add(link);
+
+        if (lazyCss && lazyCss.length > 0) {
+          try {
+            const href = link.href || '';
+            const shouldLazy = lazyCss.some(pattern => href.includes(pattern));
+
+            if (shouldLazy && link.href && !link.dataset.href) {
+              link.setAttribute('data-href', link.href);
+              link.removeAttribute('href');
+            }
+          } catch(e) {}
+        }
+      } catch(e) {}
+    }
+
+    /**
+     * Processa elementos SCRIPT
+     * Lógica idêntica ao original:
+     * 1. Se há lazy_js, bloqueia scripts que contêm os padrões
+     * 2. Modifica innerHTML para adicionar asyncLazyLoad event listener
+     * 3. Remove referências a PreviewBarInjector/adminBarInjector
+     */
+    function processScript(script) {
+      try {
+        if (processedScripts.has(script)) return;
+        processedScripts.add(script);
+
+        // Bloquear scripts externos na lista lazy_js
+        if (lazyJs && lazyJs.length > 0 && script.src) {
+          try {
+            const shouldLazy = lazyJs.some(pattern => script.src.includes(pattern));
+
+            if (shouldLazy) {
+              script.setAttribute('data-src', script.src);
+              script.removeAttribute('src');
+            }
+          } catch(e) {}
+        }
+
+        // Modificar scripts inline (mesma lógica do original)
+        if (script.innerHTML) {
+          try {
+            let content = script.innerHTML;
+
+            // Se contém "asyncLoad", modifica para usar asyncLazyLoad
+            if (content.includes('asyncLoad')) {
+              content = content.replace(
+                /if\(window\.attachEvent\)/g,
+                'document.addEventListener(\'asyncLazyLoad\',function(event){asyncLoad();});if(window.attachEvent)'
+              );
+              content = content.replaceAll(', asyncLoad', ', function(){}');
+            }
+
+            // Remove PreviewBarInjector e adminBarInjector
+            if (content.includes('PreviewBarInjector') || content.includes('adminBarInjector')) {
+              content = content.replace(/DOMContentLoaded/g, 'loadBarInjector');
+            }
+
+            if (content !== script.innerHTML) {
+              script.innerHTML = content;
+            }
+          } catch(e) {}
+        }
+
+        // Marcar tipo como text/lazyload se necessário
+        if (script.dataset.src && script.type !== 'text/lazyload') {
+          try {
+            script.setAttribute('data-original-type', script.type || 'text/javascript');
+            script.type = 'text/lazyload';
+          } catch(e) {}
+        }
+      } catch(e) {}
+    }
+
+    // ============================================================================
+    // MUTATION OBSERVER (COM DEBOUNCING)
+    // ============================================================================
+
+    /**
+     * Processa nós adicionados ao DOM
+     */
+    function processAddedNodes(nodes) {
+      try {
+        scheduleIdleTask(() => {
+          try {
+            nodes.forEach(node => {
+              try {
+                if (node.nodeType !== 1) return; // Apenas element nodes
+
+                const tagName = node.tagName;
+
+                if (tagName === 'IMG') {
+                  processImage(node);
+                } else if (tagName === 'IFRAME') {
+                  processIframe(node);
+                } else if (tagName === 'LINK') {
+                  processLink(node);
+                } else if (tagName === 'SCRIPT') {
+                  processScript(node);
+                }
+              } catch(e) {}
+            });
+          } catch(e) {}
+        });
+      } catch(e) {}
+    }
+
+    // Versão debounced do processamento
+    const debouncedProcessAddedNodes = debounce(processAddedNodes, CONFIG.debounceDelay);
+
+    /**
+     * MutationObserver callback
+     */
+    const mutationObserver = new MutationObserver((mutations) => {
+      try {
+        const addedNodes = [];
+
+        mutations.forEach(({ addedNodes: nodes }) => {
+          try {
+            nodes.forEach(node => {
+              try {
+                if (node.nodeType === 1) {
+                  addedNodes.push(node);
+                }
+              } catch(e) {}
+            });
+          } catch(e) {}
+        });
+
+        if (addedNodes.length > 0) {
+          debouncedProcessAddedNodes(addedNodes);
+        }
+      } catch(e) {}
+    });
+
+    // ============================================================================
+    // INICIALIZAÇÃO
+    // ============================================================================
+
+    /**
+     * Processa elementos existentes no DOM
+     */
+    function processExistingElements() {
+      try {
+        scheduleIdleTask(() => {
+          try {
+            // Processar imagens existentes
+            const images = document.querySelectorAll('img');
+            images.forEach(img => processImage(img));
+          } catch(e) {}
+
+          try {
+            // Processar iframes existentes
+            const iframes = document.querySelectorAll('iframe');
+            iframes.forEach(iframe => processIframe(iframe));
+          } catch(e) {}
+
+          try {
+            // Processar links existentes
+            const links = document.querySelectorAll('link[rel="stylesheet"]');
+            links.forEach(link => processLink(link));
+          } catch(e) {}
+
+          try {
+            // Processar scripts existentes
+            const scripts = document.querySelectorAll('script');
+            scripts.forEach(script => processScript(script));
+          } catch(e) {}
+        });
+      } catch(e) {}
+    }
+
+    /**
+     * Inicializa o observer
+     */
+    function init() {
+      try {
+        // Processar elementos existentes
+        processExistingElements();
+
+        // Iniciar observação de mutações
+        mutationObserver.observe(document.documentElement, {
+          childList: true,
+          subtree: true
+        });
+
+        // Expor observer globalmente para compatibilidade com custom-1.0.21.js
+        window.observer = mutationObserver;
+
+        console.log('[DGF Universal Observer] Initialized successfully');
+      } catch(e) {
+        console.error('[DGF Universal Observer] Initialization failed:', e);
+      }
+    }
+
+    // ============================================================================
+    // LIMPEZA E INICIALIZAÇÃO
+    // ============================================================================
+
+    /**
+     * Cleanup ao descarregar página
+     */
+    function cleanup() {
+      try {
+        if (mutationObserver) {
+          mutationObserver.disconnect();
+        }
+        if (imageObserver) {
+          imageObserver.disconnect();
+        }
+        if (iframeObserver) {
+          iframeObserver.disconnect();
+        }
+      } catch(e) {}
+    }
+
+    // Event listeners
+    try {
+      if (document.readyState === 'loading') {
+        document.addEventListener('DOMContentLoaded', init);
+      } else {
+        init();
+      }
+
+      window.addEventListener('beforeunload', cleanup);
+    } catch(e) {
+      // Se falhar, tenta inicializar diretamente
+      try {
+        init();
+      } catch(e2) {}
+    }
+
+  } catch(e) {
+    console.error('[DGF Universal Observer] Fatal error:', e);
+  }
+})();
+</script>

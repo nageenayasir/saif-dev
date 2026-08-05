@@ -1,0 +1,64 @@
+<section class="section section-guides">
+    <div class="container">
+        <h2 class="text-uppercase text-center" data-aos="fade-up">{{ section.settings.title }}</h2>
+        <div class="row justify-content-center">
+          {% for block in section.blocks %}
+            <div class="col-6 col-md-3 mb-3">
+              <a href="{{ block.settings.button_link }}">
+                <div class="cats-item" data-aos="fade-up" data-aos-delay="100">
+                    <div class="img-wrapper">
+                        <img loading="lazy"  src="{{ block.settings.image | image_url : width: 800 }}" alt="{{ block.settings.title }}">
+                    </div>
+                    <h6 class="my-0 mt-4 text-center">{{ block.settings.title }}</h6>
+                    <div class=" text-center">{{ block.settings.content }}</div>
+                </div>
+              </a>
+            </div>
+          {% endfor %}
+        </div>
+    </div>
+</section>
+{% schema %}
+  {
+    "name": "Section Social Image",
+    "settings": [
+       {
+          "type": "text",
+          "id": "title",
+          "label": "Title",
+		  "default" : "Social Impacts"
+      }
+    ],
+      "blocks": [
+     {
+      "type": "content",
+      "name": "Content",
+      "settings": [
+    	 {
+          "type": "text",
+          "id": "title",
+          "label": "Title",
+		  "default" : "Text"
+        },
+        {
+          "type": "text",
+          "id": "content",
+          "label": "Content",
+		  "default" : "Lorem ipsum dolor sit amet"
+        },
+        {
+        "type": "image_picker",
+        "id": "image",
+        "label": "Image"
+        },
+        {
+          "type": "url",
+          "id": "button_link",
+          "label": "Link",
+          "info": "Specify the URL address if you want to make the Button clickable."
+         }
+      ]
+     }
+      ]
+  }
+{% endschema %}

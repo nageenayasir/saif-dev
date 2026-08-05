@@ -1,0 +1,22 @@
+<section id="dgf-custom-html-{{ section.id }}" class="dgf-custom-html-section">
+  {{ section.settings.custom_html }}
+</section>
+
+{% schema %}
+{
+  "name": "[DGF] Custom HTML",
+  "settings": [
+    {
+      "type": "html",
+      "id": "custom_html",
+      "label": "Custom HTML",
+      "info": "Insert your custom HTML code here. You can include inline styles and scripts."
+    }
+  ],
+  "presets": [
+    {
+      "name": "[DGF] Custom HTML"
+    }
+  ]
+}
+{% endschema %}

@@ -1,0 +1,371 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "15b76e3e-f4af-4d0c-a845-28a89e25a6e9": {
+      "type": "banner-subpage",
+      "settings": {
+        "enable_breadcrumb": true,
+        "title": "QUALITY AND TESTING",
+        "sub_title": "Built on standards. Proven by testing. True wellness starts with trust. <br>\nHere’s how we honor it — through third-party certifications, independent lab testing, and full transparency from source to end product.",
+        "image": "shopify://shop_images/Screen_Shot_2022-12-08_at_10.37-optimized.png"
+      }
+    },
+    "main": {
+      "type": "impact-reward",
+      "settings": {
+        "text": "WHAT WE DO, WHY WE DO IT,  WHO WE DO IT WITH",
+        "title": "WHAT WE DO, WHY WE DO IT,  WHO WE DO IT WITH",
+        "content": "TRIIBE Organics was created with the purpose of enhancing people’s health and lives, and that of course includes the health and life of our planet. \n\nWhen we started the company in 2018 we were already clear that business needed to operate in a way that helped Mother Earth and society. \n<br>\n<br>\nOur wish is to help educate our values to our planet’s future inhabitants and everyone else in conscious ways by providing organic products that are derived sustainably to enhance our mind, body, and inner energies. To help make all the members of TRIIBE enjoy the greatest adventure of all: LIFE.\n<br>\n<br>\nAll of our products come from this planet, it has everything that we need, right here for the taking. But... for that to be sustainable, for that to be true in our old age and for future generations, we have to take care of the planet that takes such good care of us.\n<br><br>\nHuman beings seem to forget sometimes that we are part of an ecosystem and if we destroy it, we are pretty much doomed.",
+        "image": "shopify://shop_images/IMPACT_SUSTAINABILITY-optimized.png"
+      }
+    },
+    "a86d4da9-a629-4c57-8233-ac91a42226d0": {
+      "type": "ingredient-eclipse-title",
+      "settings": {
+        "the_title": "TRIIBE has sustainability at the very forefront\nof what we stand for and how we operate."
+      }
+    },
+    "ingredient-background-text": {
+      "type": "ingredient-background-text",
+      "settings": {
+        "show_icon": true,
+        "text": "All of our products are derived sustainably and with great respect for the traditional and ancient origins of the practices that inspire us. We are constantly chasing more sustainable methods of manufacturing. \n\nRight now, most of our products are USDA Organic Certified, all are Non-GMO Project Verified and we donate 1% of everything we make (not just profit) to environmental and social causes. \nOh, and we plant trees. \n<br><br>\nWe vote with our wallets. The companies you choose to support should stand for what you believe in and we want to be the very best option, so you can shop for a better life totally guilt free, knowing that good for you is good for the world.",
+        "image": "shopify://shop_images/Ellipse_72.png"
+      }
+    },
+    "impact-certificates": {
+      "type": "impact-certificates",
+      "blocks": {
+        "1a4e0d5a-77e1-42cc-81cb-1e1aa068a48e": {
+          "type": "logo",
+          "settings": {
+            "logo": "shopify://shop_images/1_d7f04068-f8dd-4310-9c96-f19fd6c1c939.png",
+            "button": "USDA CERTIFICATION",
+            "url": "https://drive.google.com/file/d/1HZSiuZQE671VmWAC9vIiZA8Dw4-NhjRF/view?usp=share_link"
+          }
+        },
+        "9631abd5-f1d4-4131-91cb-6aff85ca111e": {
+          "type": "logo",
+          "settings": {
+            "logo": "shopify://shop_images/2_0d2890fd-0760-4382-ba17-16e61d2c98e0.png",
+            "button": "NON-GMO CERTIFICATION",
+            "url": "https://drive.google.com/file/d/1W_wZPq1AWicws0E_gerQ9gV8k20M18ok/view?usp=share_link"
+          }
+        },
+        "5d34e2f2-ae5d-4dd9-90c9-0814f1c07c35": {
+          "type": "logo",
+          "settings": {
+            "logo": "shopify://shop_images/gluten_free_certificate_website.png",
+            "button": "Gluten Free",
+            "url": "https://drive.google.com/file/d/1JCYE6c23yX5EasY7TWccXzxZL0UVm8zg/view?usp=share_link"
+          }
+        },
+        "1046a1a0-0501-46f4-86c0-1ebf2bbd9591": {
+          "type": "logo",
+          "settings": {
+            "logo": "shopify://shop_images/KOSHER_CERTIFICATION.png",
+            "button": "Coming Soon",
+            "url": "/"
+          }
+        }
+      },
+      "block_order": [
+        "1a4e0d5a-77e1-42cc-81cb-1e1aa068a48e",
+        "9631abd5-f1d4-4131-91cb-6aff85ca111e",
+        "5d34e2f2-ae5d-4dd9-90c9-0814f1c07c35",
+        "1046a1a0-0501-46f4-86c0-1ebf2bbd9591"
+      ],
+      "disabled": true,
+      "settings": {
+        "the_title": "OUR CERTIFICATIONS",
+        "content": "<p>TRIIBE Organics manufacturing partners and suppliers are audited by independent, third-party organizations to ensure that all the facilities, and all ingredients sourced and blended in our products, meet the highest quality and enviromental standards.</p><p>Each manufacturer is put through a stringent vetting process to ensure they meet our and your high standards for quality, ethics, and purity. Agreements matter when it comes to manufacturing quality assurance.</p>",
+        "button_1": "NON-GMO CERTIFICATION",
+        "url_1": "https://www.nongmoproject.org/find-non-gmo/verified-products/?brand_id=18001",
+        "button_2": "USDA CERTIFICATION",
+        "url_2": "https://drive.google.com/file/d/1HZSiuZQE671VmWAC9vIiZA8Dw4-NhjRF/view?usp=share_link",
+        "title": "third-party testing",
+        "content_1": "We do exhaustive research of the highest-grade organic, fairly-sourced, herbs and mushrooms. From the field to your doorstep, sustainability goes beyond farming and production. It seeps right into everything that gets it from us to you.  We use what Mother Earth has already gives us, and we make sure that it doesn’t stop there.",
+        "content_2": "What’s inside your supplement is every bit as important as what’s not. That’s why we rigorously test our products for heavy metals, pathogens, and contaminants. And here we share those results with you.",
+        "image": "shopify://shop_images/5b.jpg"
+      }
+    },
+    "d50c3b85-0716-470d-9172-94fd643eb561": {
+      "type": "impact-certificate-analysis",
+      "blocks": {
+        "logo_KXdTMY": {
+          "type": "logo",
+          "settings": {
+            "logo": "shopify://shop_images/bcorp_logo.png",
+            "the_title": "B Corp Certified",
+            "the_text": "As a certified B Corporation, we hold ourselves to the highest measurable standards for social and environmental performance, transparency, and accountability.",
+            "button": "B corp certification",
+            "url": "https://www.bcorporation.net/en-us/find-a-b-corp/company/triibe-inc/"
+          }
+        },
+        "213dc65b-95af-4dd0-af2f-1ee8b4105d85": {
+          "type": "logo",
+          "settings": {
+            "logo": "shopify://shop_images/usda.png",
+            "the_title": "usda organic certified",
+            "the_text": "The USDA’s National Organic Program certifies products as being organic based on farming, handling, processing, distribution, and labeling practices. To receive certification, products must be grown without synthetic pesticides or fertilizers, free of GMOs, antibiotics, and added growth hormones. Only products that contain > 95% organic content may use the USDA organic seal.",
+            "button": "USDA ORGANIC CERTIFICATION",
+            "url": "https://drive.google.com/file/d/1YGKrtxfCuZ6LRQUUUagRsAOaK4DuloSY/view?usp=drive_link"
+          }
+        },
+        "811654a5-8a16-42a5-b08e-ddca93cfbd9e": {
+          "type": "logo",
+          "settings": {
+            "logo": "shopify://shop_images/gmo.png",
+            "the_title": "non-gmo verified",
+            "the_text": "As North America’s premier and most trusted verification and labeling organization for non-GMO food and products, the Non-GMO Project’s goal is to preserve and build sources of non-GMO products, educate consumers, and provide choices that are verified non-GMO. The Non-GMO Project seal provides assurance to customers that a product has been manufactured using best practices for GMO avoidance.",
+            "button": "NON-GMO CERTIFICATION",
+            "url": "https://drive.google.com/file/d/1i02gHRNOYi4GtFh-SIRoFKjUnnmznHTt/view?usp=drive_link"
+          }
+        },
+        "logo_yUQJaM": {
+          "type": "logo",
+          "settings": {
+            "logo": "shopify://shop_images/U-Kosher.png",
+            "the_title": "OU kosher certified",
+            "the_text": "The Orthodox Union Kosher Certification the world’s best-known and most widely accepted kosher trademark, the OU Kosher Symbol. This symbol certifies that the product contains neither dairy nor meat, nor any dairy or meat derivatives. The product was not made on dairy equipment. The product was not made on equipment used for making meat products.",
+            "button": "OU Kosher certification",
+            "url": "https://drive.google.com/file/d/1zqAbCnDuvgorGcaK36kaUJN8lP31rhzV/view?usp=sharing"
+          }
+        },
+        "175ccb2c-8ad8-4e53-bd7f-b10fd4e4a72b": {
+          "type": "logo",
+          "settings": {
+            "logo": "shopify://shop_images/guten.png",
+            "the_title": "GFCO GLUTEN-FREE certified",
+            "the_text": "The Gluten-Free Certification Organization (GFCO) is a program of the Gluten Intolerance Group (GIG), a non-profit empowering the gluten-free community since 1974. Unlike other certifications which only audit record-keeping, GFCO reviews the manufacturer’s products and ingredients, and individually tailors testing requirements based on risk.",
+            "button": "GLUTEN-FREE CERTIFICATION",
+            "url": "https://drive.google.com/file/d/1DamCYcQGCNaenMSxHo1tEABMbdGx2WAU/view?usp=drive_link"
+          }
+        },
+        "b6a6c657-a411-4174-9d50-fab764f06ca0": {
+          "type": "logo",
+          "settings": {
+            "logo": "shopify://shop_images/beveg-04.svg",
+            "the_title": "BeVeg CERTIFIED",
+            "the_text": "The BeVeg logo means your product has been independently reviewed and certified by BeVeg, a globally recognized third-party vegan certifier. BeVeg is the only vegan certification standard accredited to international quality requirements (ISO 17065), which means an impartial authority has verified that every certified product meets strict vegan criteria — from ingredient sourcing and manufacturing processes to no animal testing and controls against cross-contamination. That gives consumers real transparency and confidence when choosing vegan products.",
+            "button": "VEGAN CERTIFICATION",
+            "url": ""
+          }
+        },
+        "62b15d22-2d1f-47e2-92e8-2265bc0aaeab": {
+          "type": "logo",
+          "settings": {
+            "logo": "shopify://shop_images/Vegan_Color_no_background_1.png",
+            "the_title": "VegeCert Certified",
+            "the_text": "VegeCert is a third party certification that assures consumers that what they are purchasing is 100% vegan. Their \"certified vegan\" designation is for products that do not contain any animal or animal by-products including dairy and eggs and no animal testing.",
+            "button": "VegeCert Certification",
+            "url": "https://drive.google.com/file/d/1U0gt8UhQcOdcy0xMOf1kVIhKMIl2XGWM/view?usp=sharing"
+          }
+        }
+      },
+      "block_order": [
+        "logo_KXdTMY",
+        "213dc65b-95af-4dd0-af2f-1ee8b4105d85",
+        "811654a5-8a16-42a5-b08e-ddca93cfbd9e",
+        "logo_yUQJaM",
+        "175ccb2c-8ad8-4e53-bd7f-b10fd4e4a72b",
+        "b6a6c657-a411-4174-9d50-fab764f06ca0",
+        "62b15d22-2d1f-47e2-92e8-2265bc0aaeab"
+      ],
+      "settings": {
+        "the_title": "THIRD-PARTY CERTIFICATIONS",
+        "content": "<p>At Tribe Organics, we wholeheartedly embrace the power of transparency and integrity. That's why we intentionally collaborate with independent labs and certifiers, who serve as the unwavering guardians of our industry. These incredible partners have no ulterior motives, no commercial bias, and act as dedicated advocates for conscious consumers like you.</p><p>By aligning ourselves with independent labs and certifiers, we gain access to objective and verifiable evidence of the sustainability, quality, and authenticity of every ingredient, finished product, and packaging material we use. This meticulous scrutiny ensures that what you see on our label is precisely what you'll find in our product, empowering you to make informed purchasing choices with unwavering confidence.</p>",
+        "title": "third-party testing",
+        "content_1": "Tribe Organics' manufacturing partners and suppliers are audited by independent, third-party organizations to ensure that all the facilities, and all ingredients sourced and blended in our products, meet the highest quality and environmental standards.<br><br>\n<br>\nEach manufacturer is put through a stringent vetting process to ensure they meet our and your high standards for quality, ethics, and purity. Agreements matter when it comes to manufacturing quality assurance.",
+        "content_2": "We do exhaustive research of the highest-grade organic, fairly-sourced, herbs and mushrooms. From the field to your doorstep, sustainability goes beyond farming and production. It seeps right into everything that gets it from us to you.  We use what Mother Earth has already gives us, and we make sure that it doesn’t stop there.\n<br><br>\nWhat’s inside your supplement is every bit as important as what’s not. That’s why we rigorously test our products for heavy metals, pathogens, and contaminants. And here we share those results with you.",
+        "image": "shopify://shop_images/5b-optimized.png"
+      }
+    },
+    "impact-faq": {
+      "type": "impact-faq",
+      "blocks": {
+        "4f7b34b8-23a7-4624-9a9b-95c8846f573d": {
+          "type": "faq_left",
+          "settings": {
+            "title": "ASHWAGANDHA KSM-66",
+            "content": "<p><a href=\"https://cdn.shopify.com/s/files/1/0499/0425/5134/files/Ashwagandha_KSM-66_120_COA_07_26.pdf?v=1738859242\" target=\"_blank\" title=\"https://cdn.shopify.com/s/files/1/0499/0425/5134/files/Ashwagandha_KSM-66_120_COA_07_26.pdf?v=1738859242\">Ashwagandha KSM-66 | 120 Capsules</a></p><p><a href=\"https://cdn.shopify.com/s/files/1/0499/0425/5134/files/Tribe_Organics_Ashwagandha_KSM-66_90_07_26.pdf?v=1738863640\" title=\"https://cdn.shopify.com/s/files/1/0499/0425/5134/files/Tribe_Organics_Ashwagandha_KSM-66_90_07_26.pdf?v=1738863640\">Ashwagandha KSM-66 | 90 Capsules</a></p><p><a href=\"https://cdn.shopify.com/s/files/1/0499/0425/5134/files/Tribe_Organics_Ashwagandha_Vegan_90_7_25.pdf?v=1738617547\" target=\"_blank\" title=\"https://cdn.shopify.com/s/files/1/0499/0425/5134/files/Tribe_Organics_Ashwagandha_Vegan_90_7_25.pdf?v=1738617547\">Ashwagandha KSM-66 Vegan | 90 Capsules</a></p><p><a href=\"https://cdn.shopify.com/s/files/1/0499/0425/5134/files/Tribe_Organics_Ashwagandha_KSM-66_Powder.pdf?v=1738620155\" target=\"_blank\" title=\"https://cdn.shopify.com/s/files/1/0499/0425/5134/files/Tribe_Organics_Ashwagandha_KSM-66_Powder.pdf?v=1738620155\">Ashwagandha KSM-66 Powder | 100 Grams</a></p>"
+          }
+        },
+        "763868af-e295-4ade-a722-d7773a8a3223": {
+          "type": "faq_right",
+          "settings": {
+            "title": "ASHWAGANDHA KSM-66 GUMMIES",
+            "content": "<p><a href=\"https://cdn.shopify.com/s/files/1/0499/0425/5134/files/Tribe_Organics_Ashwagandha_Gummies_05_26.pdf?v=1738854656\" title=\"https://cdn.shopify.com/s/files/1/0499/0425/5134/files/Tribe_Organics_Ashwagandha_Gummies_05_26.pdf?v=1738854656\">Ashwagandha KSM-66 Gummies | 60 Gummies</a></p><p></p>"
+          }
+        },
+        "bebe6bd3-2138-4c11-9507-13fc00360ada": {
+          "type": "faq_left",
+          "settings": {
+            "title": "BOSWELLIA COMPLEX",
+            "content": "<p><a href=\"https://cdn.shopify.com/s/files/1/0499/0425/5134/files/Tribe_Organics_Boswellia_Complex_07_26.pdf?v=1738613955\" title=\"https://cdn.shopify.com/s/files/1/0499/0425/5134/files/Tribe_Organics_Boswellia_Complex_07_26.pdf?v=1738613955\">Boswellia Complex | 120 Capsules</a></p>"
+          }
+        },
+        "683dbc9c-77d0-4d01-b50d-4560327e6b88": {
+          "type": "faq_left",
+          "settings": {
+            "title": "LION'S MANE MUSHROOM",
+            "content": "<p><a href=\"https://cdn.shopify.com/s/files/1/0499/0425/5134/files/Tribe_Organics_Lions_Mane_08_26.pdf?v=1738614131\" target=\"_blank\" title=\"https://cdn.shopify.com/s/files/1/0499/0425/5134/files/Tribe_Organics_Lions_Mane_08_26.pdf?v=1738614131\">Lion's Mane Mushroom | 120 Capsules</a></p><p><a href=\"https://cdn.shopify.com/s/files/1/0499/0425/5134/files/Tribe_Organics_Lion_s_Mane_Powder.pdf?v=1738620736\" target=\"_blank\" title=\"https://cdn.shopify.com/s/files/1/0499/0425/5134/files/Tribe_Organics_Lion_s_Mane_Powder.pdf?v=1738620736\">Lion's Mane Mushroom Extract | 100 grams</a></p>"
+          }
+        },
+        "5a2e7f64-95e1-4804-8e81-33d65e58bb2e": {
+          "type": "faq_right",
+          "settings": {
+            "title": "TURMERIC COMPLEX",
+            "content": "<p><a href=\"https://cdn.shopify.com/s/files/1/0499/0425/5134/files/Tribe_Organics_Turmeric_Complex_07_26.pdf?v=1738613172\" target=\"_blank\" title=\"https://cdn.shopify.com/s/files/1/0499/0425/5134/files/Tribe_Organics_Turmeric_Complex_07_26.pdf?v=1738613172\">Turmeric Complex | 90 Capsules</a></p>"
+          }
+        },
+        "4d648ac3-e821-43f8-8997-f808139f9939": {
+          "type": "faq_right",
+          "settings": {
+            "title": "MORINGA",
+            "content": "<p><a href=\"https://cdn.shopify.com/s/files/1/0499/0425/5134/files/Tribe_Organics_Moringa_07_26.pdf?v=1738614293\" target=\"_blank\" title=\"https://cdn.shopify.com/s/files/1/0499/0425/5134/files/Tribe_Organics_Moringa_07_26.pdf?v=1738614293\">Organic Moringa | 120 Capsules</a></p><p><a href=\"https://cdn.shopify.com/s/files/1/0499/0425/5134/files/Tribe_Organics_Moringa_Powder.pdf?v=1738620493\" target=\"_blank\" title=\"https://cdn.shopify.com/s/files/1/0499/0425/5134/files/Tribe_Organics_Moringa_Powder.pdf?v=1738620493\">Organic Moringa Powder | 200 grams</a></p>"
+          }
+        },
+        "56dc34df-a555-40a6-b979-d4c73ba68af8": {
+          "type": "faq_right",
+          "settings": {
+            "title": "MUSHROOM GOLDEN BLEND",
+            "content": "<p><a href=\"https://cdn.shopify.com/s/files/1/0499/0425/5134/files/Tribe_Organics_Mushroom_Blend_90_12_26.pdf?v=1738618060\" target=\"_blank\" title=\"https://cdn.shopify.com/s/files/1/0499/0425/5134/files/Tribe_Organics_Mushroom_Blend_90_12_26.pdf?v=1738618060\">Mushroom Golden Blend | 90 Capsules</a></p><p><a href=\"https://cdn.shopify.com/s/files/1/0499/0425/5134/files/Tribe_Organics_Mushroom_Golden_Blend_Powder.pdf?v=1738620643\" target=\"_blank\" title=\"https://cdn.shopify.com/s/files/1/0499/0425/5134/files/Tribe_Organics_Mushroom_Golden_Blend_Powder.pdf?v=1738620643\">Mushroom Golden Blend | 200 grams</a></p>"
+          }
+        },
+        "30321a31-e874-446a-9b50-c274f97cfa97": {
+          "type": "faq_left",
+          "settings": {
+            "title": "SHATAVARI",
+            "content": "<p><a href=\"https://cdn.shopify.com/s/files/1/0499/0425/5134/files/Tribe_Organics_Shatavari_COA_07_26.pdf?v=1738612280\" target=\"_blank\" title=\"https://cdn.shopify.com/s/files/1/0499/0425/5134/files/Tribe_Organics_Shatavari_COA_07_26.pdf?v=1738612280\">Shatavari | 120 Capsules</a></p>"
+          }
+        }
+      },
+      "block_order": [
+        "4f7b34b8-23a7-4624-9a9b-95c8846f573d",
+        "763868af-e295-4ade-a722-d7773a8a3223",
+        "bebe6bd3-2138-4c11-9507-13fc00360ada",
+        "683dbc9c-77d0-4d01-b50d-4560327e6b88",
+        "5a2e7f64-95e1-4804-8e81-33d65e58bb2e",
+        "4d648ac3-e821-43f8-8997-f808139f9939",
+        "56dc34df-a555-40a6-b979-d4c73ba68af8",
+        "30321a31-e874-446a-9b50-c274f97cfa97"
+      ],
+      "settings": {
+        "title": "See Our Certificate of analysis Results",
+        "content": "We believe that Nature’s intelligence and resources should be\nshared, and every human being deserves real & clean products to help enhance their life experience.\n<br> That is why we only make 100% natural products  – so that you and your families can trust that you’re getting the highest quality supplements out in the market.\n<br><br> A Certificate of Analysis (a.k.a. a COA) is a document that publishes a product’s test results. These are, essentially, report cards – the culmination of all the hard work that goes into sourcing ingredients from trustworthy farms and ingredient suppliers."
+      }
+    },
+    "impact-image": {
+      "type": "impact-image",
+      "settings": {
+        "title": "FROM THE FARM TO YOUR DOORSTEP",
+        "content": "We only produce products that we would use ourselves and give to our families. No additives, no overly scientific and hard to pronounce extras. Just pure, unadulterated good stuff. This priority, this promise, is shared by all of our partners. We only work with those who can help us facilitate our ethical goals as well as our health ones. \nWe’re not taking any risks with your health or our morals. \nWe work with two primary manufacturers and you can rest well assured that we have done extensive research to ensure their ingredients and practices are as 100% pure and ethical as we are. Our manufacturers were carefully for their holding and maintaining the highest third-party certifications. Only the best for the TRIIBE.",
+        "image_1": "shopify://shop_images/5_6e2213a4-fc78-4e82-90a9-8d205a-optimized.png",
+        "image_2": "shopify://shop_images/Sabinsa_1-optimized.png"
+      }
+    },
+    "impact-logo": {
+      "type": "impact-logo",
+      "blocks": {
+        "67ac89fb-578a-4b31-bb42-b83185761ceb": {
+          "type": "logo",
+          "disabled": true,
+          "settings": {
+            "logo": "shopify://shop_images/no_logo.png"
+          }
+        },
+        "ddce03da-06db-4f79-ad33-d53463ddae36": {
+          "type": "logo",
+          "settings": {
+            "logo": "shopify://shop_images/1ftp_Primary_Horizontal_White_copy.png"
+          }
+        },
+        "9e903a11-8cc4-4dfd-80c2-49489f72300c": {
+          "type": "logo",
+          "settings": {
+            "logo": "shopify://shop_images/lead_up_logo.png"
+          }
+        },
+        "e84bcf72-1db9-4b6e-b2cb-7496496f0ef6": {
+          "type": "logo",
+          "settings": {
+            "logo": "shopify://shop_images/triibe_logo_white_3a3feda5-f66c-429b-b72b-ecf140083592.png"
+          }
+        }
+      },
+      "block_order": [
+        "67ac89fb-578a-4b31-bb42-b83185761ceb",
+        "ddce03da-06db-4f79-ad33-d53463ddae36",
+        "9e903a11-8cc4-4dfd-80c2-49489f72300c",
+        "e84bcf72-1db9-4b6e-b2cb-7496496f0ef6"
+      ],
+      "settings": {
+        "title": "Giving back with 1% for the Planet",
+        "custom_html": "<li>\n    As members of 1% for the Planet, we give 1% of everything we sell (not just profit) to environmental and social initiatives around the globe.\n</li>\n<li>\n    It’s part of our campaign for positive change and giving back. Just by buying our incredible herbal supplements, you are helping to care for Mother Earth.\n</li>\n<li>\n   You buy, we give back. So thank you to every TRIIBE ORGANICS customer – together we are doing something really special.\n</li>",
+        "button": "LEARN MORE",
+        "url": "shopify://pages/social-impact",
+        "image": "shopify://shop_images/webpage_overlap_pictures_9-optimized.png"
+      }
+    },
+    "impact-social-image": {
+      "type": "impact-social-image",
+      "blocks": {
+        "10a1a44d-3d63-4ce3-8283-48d510d4d4f1": {
+          "type": "content",
+          "settings": {
+            "title": "Collaborate with Lead-up International",
+            "content": "Go directly to the source of change.",
+            "image": "shopify://shop_images/1_f427ba72-a1ff-4d5e-832f-093fa0-optimized.png",
+            "button_link": "https://lead-upinternational.org/ways-of-giving"
+          }
+        },
+        "4cba07f3-3119-4175-b9f8-fc067a49d5a2": {
+          "type": "content",
+          "settings": {
+            "title": "Contribute Directly to 1% for the Planet",
+            "content": "Become a member & give a little more.",
+            "image": "shopify://shop_images/2_62c90f27-b40c-4923-854d-71c6b2-optimized.png",
+            "button_link": "https://onepercentfortheplanet.org/"
+          }
+        }
+      },
+      "block_order": [
+        "10a1a44d-3d63-4ce3-8283-48d510d4d4f1",
+        "4cba07f3-3119-4175-b9f8-fc067a49d5a2"
+      ],
+      "settings": {
+        "title": "Social Impact"
+      }
+    },
+    "impact-social": {
+      "type": "impact-social",
+      "disabled": true,
+      "settings": {
+        "title": "Sustainable living means sustainable packaging",
+        "content": "Our PCR rPET (recycled polyethylene terephthalate) bottles are 100% recyclable. Replacing 100% virgin resin with 100% recycled resin. This way, we are giving packaging a second life and we create 60% less carbon emissions. \n<br>\n<br>Our labels are made from the pulp from hemp plants, manufactured with 50% Hemp and 50% post-consumer waste."
+      }
+    }
+  },
+  "order": [
+    "15b76e3e-f4af-4d0c-a845-28a89e25a6e9",
+    "main",
+    "a86d4da9-a629-4c57-8233-ac91a42226d0",
+    "ingredient-background-text",
+    "impact-certificates",
+    "d50c3b85-0716-470d-9172-94fd643eb561",
+    "impact-faq",
+    "impact-image",
+    "impact-logo",
+    "impact-social-image",
+    "impact-social"
+  ]
+}

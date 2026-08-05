@@ -1,0 +1,119 @@
+
+      <section class="section section-bund section-mt-top article-page-wrapper worrior-article-page-wrapper">
+          <div class="leaf-box left-top">
+              <img loading="lazy"  class="leaf" src="{{ 'leaf-n03.svg' | asset_url }}">
+          </div>
+          <div class="leaf-box right-top">
+              <img loading="lazy"  class="leaf" src="{{ 'leaf-n04.svg' | asset_url }}">
+          </div>
+
+          <div class="container mt-top-content">
+              <div class="row align-items-end">
+                  <div class="col-md-5">
+                    <div class="position-relative">
+                      <div data-aos="fade-up" data-aos-delay="400">
+                          <img loading="lazy"  src="{{ article.image | image_url: width: 500 }}">
+                      </div>
+                    <div class="warriors-socials socials">
+                        <span>Share</span>
+                        <a target="_blank" href="https://www.facebook.com/sharer.php?u=https://www.tribe-organics.com{{ article.url }}"><i class="fab fa-facebook"></i> </a>
+                        <a target="_blank" href="https://www.instagram.com/?url=https://www.tribe-organics.com{{ article.url }}"><i class="fab fa-instagram"></i></a>
+                        <a target="_blank" href="http://pinterest.com/pin/create/link/?url=https://www.tribe-organics.com{{ article.url }}"><i class="fab fa-pinterest"></i></a>
+                                          </div>
+  
+                    </div>
+                  </div>
+                  <div class="col-md-7">
+                      <div class="text-center pt-5 pt-md-0 text-md-start ms-md-5">
+                          <h2 class="text-uppercase" data-aos="fade-up">
+                              {{ article.title }}
+                          </h2>
+                           <p>{{ article.metafields.custom.description }}</p>
+                          <div class="desc-box d-inline-block mb-5 px-4 py-3">{{ article.metafields.custom.passion }}</div>
+                        {{ article.excerpt }}
+                      </div>
+                  </div>
+              </div>
+             {{ article.content }}
+          </div>
+      </section>
+      {% assign images =  article.metafields.custom.image.value  %}
+      <section class="section section-sea bg-cream color-dark">
+          <div class="container">
+              <h2 class="text-uppercase text-center" data-aos="fade-up">{{ section.settings.title_1 }}</h2>
+              <div class="z-index-1">
+                  <div class="swiper-wrapper-box">
+                      <div class="swiper big-slider four">
+                          <div class="swiper-wrapper">
+                            {% for image in images %}
+                              <div class="swiper-slide">
+                                  <div class="img-wrapper">
+                                      <img loading="lazy"  src="{{ image | image_url: width: 500 }}">
+                                  </div>
+                              </div>
+                            {% endfor %}
+                          </div>
+                      </div>
+                  </div>
+              </div>
+              <div class="swiper-wrapper-pagination position-relative">
+                  <div class="big-swiper-pagination"></div>
+              </div>
+              <div class="row mt-5 pt-md-4">
+                  <div class="col-md-6">
+                      {{ article.metafields.custom.content_except_1 }}
+                  </div>
+                  <div class="col-md-6">
+                     {{ article.metafields.custom.content_except_2 }}
+                  </div>
+              </div>
+          </div>
+      </section>
+
+      <section class="section section-guides">
+          <div class="container">
+              <h2 class="text-center text-uppercase" data-aos="fade-up" data-aos-delay="000">{{ section.settings.title_2 }}</h2>
+              <div class="row justify-content-center">
+                  <div class="col-md-10">
+                      <div class="row mt-5 justify-content-center">
+                      {%- for recent in blog.articles limit : 6 -%}
+                      {%- unless recent.id == article.id -%}
+                      {% if forloop.index > 1 %}
+                        {% assign key = forloop.index | modulo: 2 %}
+                             <div class="col-6 col-md-3">
+                                    <a href="{{ recent.url }}" class="cats-item" data-aos="fade-up" data-aos-delay="{% if event == 0 %}300{% else %}100{% endif %}">
+                                        <div class="img-wrapper">
+                                            <img loading="lazy"  src="{{ recent.image | image_url : width: 500 }}" alt="{{ recent.title }}">
+                                        </div>
+                                        <h3 class="text-center my-0 mt-4">{{ recent.title }}</h3>
+                                        <div class="text-center ">{{ recent.metafields.custom.description }}</div>
+                                    </a>
+                              </div>
+                        {% endif %}
+                      {% endunless %}
+                    {% endfor %}
+                      </div>
+                  </div>
+              </div>
+          </div>
+      </section>
+{% schema %}
+  {
+    "name": "Section Worrior Page",
+    "settings": [
+      {
+        "type": "text",
+        "id": "title_1",
+        "label": "Title Section 1",
+       "default": "Get to know her"
+      },
+      {
+        "type": "text",
+        "id": "title_2",
+        "label": "Title Section 2",
+       "default": "Explore"
+      }
+    ]
+  }
+{% endschema %}
+

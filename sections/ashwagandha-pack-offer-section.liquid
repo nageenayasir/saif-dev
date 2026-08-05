@@ -1,0 +1,157 @@
+<style>
+  #id-{{ section.id }}{
+  	background-color:{{ section.settings.section_bg_color }};
+  }
+</style>
+<section id="id-{{ section.id }}" class="ashwagandha-pack-offer-section common-ashwagandha-pack-sec">
+  <div class="ashwagandha-pack-offer-wrapper">
+    <div class="leaf-box ashwagandha-pack-offer-box-right-top right-top">
+        <img loading="lazy"  class="leaf ashwagandha-pack-offer-right-top" src="{{ 'Leaf-2.svg' | asset_url }}">
+    </div>
+    <div class="leaf-box ashwagandha-pack-offer-box-left-bot left-bot">
+        <img loading="lazy"  class="leaf ashwagandha-pack-offer-left-bot" src="{{ 'Leaf-1.svg' | asset_url }}">
+    </div>
+    <div class="container">
+      <div class="row">
+        <div class="col-md-12 col-sm-12 col-lg-12 pack-offer-title-column">
+          <div class="ashwagandha-pack-offer-title">
+            <h2>
+              {{ section.settings.the_title }}
+            </h2>
+            <h1>
+              {{ section.settings.the_title_2 }}
+            </h1>
+          </div>
+        </div>
+      </div>
+      <div class="row ashwagandha-pack-image-text-row">
+        <div class="col-sm-6 col-md-6 col-lg-6 ashwagandha-pack-image-column">
+          <div class="ashwagandha-pack-image">
+            <div class="ashwagandha-pack-image-first">
+              {% if section.settings.the_image_1 != blank %}<img loading="lazy"  src="{{ section.settings.the_image_1 | image_url: width: 2000 }}">{% endif %}
+            </div>
+            <div class="ashwagandha-pack-image-second">
+              {% if section.settings.the_image_2 != blank %}<img loading="lazy"  src="{{ section.settings.the_image_2 | image_url: width: 2000 }}">{% endif %}
+            </div>
+            {% if section.settings.the_image_3 != blank %}
+            <div class="ashwagandha-pack-image-third">
+              <img loading="lazy"  src="{{ section.settings.the_image_3 | image_url: width: 2000 }}">
+            </div>
+            {% endif %}
+          </div>
+        </div>
+        <div class="col-sm-6 col-md-6 col-lg-6 ashwagandha-pack-content-column">
+          <h2>{{ section.settings.right_title }}</h2>
+          <ul class="ashwagandha-pack-lists-text">
+            {% for block in section.blocks %}
+              <li>
+                {{ block.settings.the_text }}
+              </li>  
+            {% endfor %}
+          </ul>
+          <a href="{{ section.settings.the_url }}">{{ section.settings.btn_text }}</a>
+          <p>
+            <span>
+              {% if section.settings.the_icon != blank %}<img loading="lazy"  src="{{ section.settings.the_icon | image_url: width: 2000 }}">{% endif %}
+            </span>
+            {{ section.settings.btn_under_text }}
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+{% schema %}
+  {
+    "name": "Ashwagandha Pack Offer",
+    "settings": [
+         {
+            "type": "header",
+            "content": "Content Style"
+         },
+  	     {
+           "type": "color",
+           "id": "section_bg_color",
+           "label": "Section background color"
+        },
+        {
+          "type": "header",
+          "content": "Title Content Settings"
+      	},
+        {
+          "type": "textarea",
+          "id": "the_title",
+          "label": "Title-1"
+        },
+        {
+          "type": "textarea",
+          "id": "the_title_2",
+          "label": "Title-2"
+        },
+        {
+          "type": "header",
+          "content": "Left Image Settings"
+      	},
+         {
+          "type": "image_picker",
+          "id": "the_image_1",
+          "label": "Image-1"
+      	},
+        {
+          "type": "image_picker",
+          "id": "the_image_2",
+          "label": "Image-2"
+      	},
+        {
+          "type": "image_picker",
+          "id": "the_image_3",
+          "label": "Image-3"
+      	},
+        {
+          "type": "header",
+          "content": "Right Content Settings"
+      	},
+        {
+          "type": "textarea",
+          "id": "right_title",
+          "label": "Title-1"
+        },
+        {
+          "type": "text",
+          "id": "btn_text",
+          "label": "Button Text"
+        },
+        {
+          "type": "url",
+          "id": "the_url",
+          "label": "Button Url"
+        },
+        {
+          "type": "image_picker",
+          "id": "the_icon",
+          "label": "Icon"
+      	},
+        {
+          "type": "text",
+          "id": "btn_under_text",
+          "label": "Button Under Text"
+        }
+    ],
+    "blocks": [
+       {
+        "type": "tex_blocks",
+        "name": "Text Blocks",
+        "settings": [
+          {
+            "type": "textarea",
+            "id": "the_text",
+            "label": "Text"
+          }
+        ]
+       }
+	],
+	"presets": [{
+      "name": "Ashwagandha Pack Offer"
+    }]
+  }
+{% endschema %}

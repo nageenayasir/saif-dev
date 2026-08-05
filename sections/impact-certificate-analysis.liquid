@@ -1,0 +1,133 @@
+<section class="section section-bund bg-cream color-dark impact-page-coa-wrapper">
+        <div class="leaf-box right-top">
+            <img loading="lazy"  class="leaf" src="{{ 'impact-leaf.svg' | asset_url }}">
+        </div>
+
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-md-12">
+                  <div class="col-sm-12 col-md-12 col-lg-12">
+                        <h2 class="text-center text-uppercase pt-5">{{ section.settings.the_title }}</h2>
+                   </div>
+                  <div class="col-md-8 coa-paragraph-wrapper">
+                    {{ section.settings.content }}
+                  </div>
+                    <div class="row certificate-cstm-icons">
+                    {% for block in section.blocks %}  
+                        <div class="cstm-impact-certificate-logos-wrapper" data-aos="fade-up" data-aos-delay="400">
+                            <div class="impact-coa-logos">
+                            {% if block.settings.logo != blank %}<img loading="lazy"  src="{{ block.settings.logo | image_url: width: 2000 }}">{% endif %}
+                            </div>
+                            <div class="impact-coa-text-wrapper">
+                                <h3>{{ block.settings.the_title }}</h3>
+                                <p>{{ block.settings.the_text }}</p>
+                                <a class="btn btn-bg" href="{{ block.settings.url }}" target="_self">
+                                    {{ block.settings.button }}
+                                </a>
+                            </div>
+                        </div>
+                    {% endfor %}   
+                    </div>
+                </div>
+                <div class="col-md-12">
+                    <div class="row">
+                      <div class="col-sm-12 col-md-12 col-lg-12">
+                        <h2 class="text-center text-uppercase pt-5">{{ section.settings.title }}</h2>
+                      </div>
+                        <div class="col-md-6">
+                            {{ section.settings.content_1 }}
+                        </div>
+                        <div class="col-md-6">
+                            {{ section.settings.content_2 }}
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="text-center mt-5">
+                        <img loading="lazy"  src="{{ section.settings.image | image_url : width: 800 }}" alt="{{ section.settings.title }}">
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </section>
+{% schema %}
+  {
+    "name": "Impact Certificates",
+    "settings": [ 
+      {
+        "type": "text",
+        "id": "the_title",
+        "label": "Title",
+        "default" : "Title Here"
+      },
+      {
+        "type": "richtext",
+        "id": "content",
+        "label": "Content",
+        "default" : "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor. .</p>"
+      },
+      {
+        "type" : "header",
+        "content": "Certificates of Analysis"
+      },
+      {
+        "type": "text",
+        "id": "title",
+        "label": "Title",
+        "default" : "Certificates of Analysis"
+      },
+      {
+        "type": "textarea",
+        "id": "content_1",
+        "label": "Content 1"
+      },
+      {
+        "type": "textarea",
+        "id": "content_2",
+        "label": "Content 2"
+      },
+       {
+        "type": "image_picker",
+        "id": "image",
+        "label": "Image"
+      }
+	],
+    "blocks": [
+     {
+      "type": "logo",
+      "name": "Logo",
+      "settings": [
+        {
+          "type": "image_picker",
+          "id": "logo",
+          "label": "Logo"
+        },
+        {
+        "type": "text",
+        "id": "the_title",
+        "label": "Title"
+        },
+         {
+        "type": "text",
+        "id": "the_text",
+        "label": "Text"
+        },
+        {
+        "type": "text",
+        "id": "button",
+        "label": "Button Title"
+        },
+        {
+          "type": "url",
+          "id": "url",
+          "label": "Button Url"
+        }
+      ]
+     }
+	],
+	"presets": [{
+      "name": "Impact Certificates"
+    }]
+  }
+{% endschema %}

@@ -1,0 +1,111 @@
+<section id="end-sticky" class="section section-guides bg-cream color-dark related-articles-wrap">
+    <div class="leaf-box right-top" style="top: -30px;">
+        <img class="leaf" src="{{ 'related-articles-leaf.svg' | asset_url }}" alt="Leaf Top" width="120" height="120">
+    </div>
+
+    <div class="container">
+        <h2 class="text-center text-uppercase" data-aos="fade-up" data-aos-delay="000">{{ section.settings.title_2 }}</h2>
+        <div class="row mt-5 web-related-articles">
+          {%- for recent in blog.articles limit: 4 -%}
+            {% assign key = forloop.index | modulo: 2 %}
+            <div class="{% if key == 0 %}col-6 col-md-3{% else %}col-6 col-md-3 mt-5{% endif %}">
+                <a href="{{ recent.url }}" class="cats-item" data-aos="fade-up" data-aos-delay="{% if event == 0 %}300{% else %}100{% endif %}">
+                    <div class="img-wrapper">
+                        <img src="{{ recent.image | image_url : width: 500 }}" alt="Illustrative image for the article: {{ recent.title }}" width="289" height="404" loading="lazy">
+                    </div>
+                    <h3 class="text-center color-dark my-0" style="padding-top:15px">{{ recent.title }}</h3>
+                </a>
+            </div>
+        {% endfor %}
+        </div>
+        <div class="row mt-5 mob-related-articles">
+          <div class="custom-related-articles-slider">
+            <div class="swiper related-articles-slider">
+              <div class="swiper-wrapper">
+                {%- for recent in blog.articles limit: 4 -%}
+                  <div class="swiper-slide">
+                    {% assign key = forloop.index | modulo: 2 %}
+                    <div class="{% if key == 0 %}custom-related-columns{% else %}custom-related-columns mt-5{% endif %}">
+                        <a href="{{ recent.url }}" class="cats-item" data-aos="fade-up" data-aos-delay="{% if event == 0 %}300{% else %}100{% endif %}">
+                            <div class="img-wrapper">
+                                <img src="{{ recent.image | image_url : width: 500 }}" alt="Illustrative image for the article: {{ recent.title }}" width="242" height="338" loading="lazy">
+                            </div>
+                            <h3 class="text-center color-dark my-0" style="padding-top:15px">{{ recent.title }}</h3>
+                        </a>
+                    </div>
+                  </div>
+              {% endfor %}
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="mt-5" data-aos="fade-up" data-aos-delay="200">
+            <a class="btn btn-trans m-auto color-dark" href="{{ section.settings.url }}" target="_self">
+                {{ section.settings.button }}
+            </a>
+        </div>
+    </div>
+</section>
+{% comment %} RGD: 2026-01-04 {% endcomment %} 
+{% comment %} 
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script> 
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.5.1/js/swiper.min.js"></script> 
+{% endcomment %}
+{% # theme-check-disable ParserBlockingScript %}
+<script type="text/javascript" src="{{ 'jquery-3.5.1.min.js' | asset_url }}"></script>
+<script type="text/javascript" src="{{ 'swiper.min.js' | asset_url }}"></script>
+{% # theme-check-enable ParserBlockingScript %}
+<script>
+  new Swiper('.related-articles-slider', {
+        loop: false,
+        slidesPerView: 4,
+        spaceBetween: 20,
+        breakpoints: {
+            1199: {
+                slidesPerView: 4,
+                spaceBetween: 30
+            },
+            1028: {
+                slidesPerView: 3,
+                spaceBetween: 30
+            },
+            576: {
+                slidesPerView: 1,
+                spaceBetween: 10
+            }
+        }
+    });
+</script>
+{% schema %}
+  {
+    "name": "Article Related Slider",
+    "settings": [
+        {
+          "type": "text",
+          "id": "title_2",
+          "label": "Title Section 2",
+         "default": "READ MORE"
+      },
+       {
+          "type": "text",
+          "id": "button",
+          "label": "Button",
+         "default": "View All"
+      },
+      {
+          "type": "url",
+          "id": "url",
+          "label": "Url" 
+      }
+    ],
+	"presets": [{
+      "name": "Article Related Slider"
+    }]
+  }
+{% endschema %}
+
+{% stylesheet %}
+{% endstylesheet %}
+
+{% javascript %}
+{% endjavascript %}

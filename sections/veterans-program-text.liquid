@@ -1,0 +1,53 @@
+<style>
+  #id-{{ section.id }}{
+  	background-color:{{ section.settings.section_bg_color }};
+  }
+</style>
+<section id="id-{{section.id}}" class="veterans-text-section">
+  <div class="container">
+    <div class="row">
+      <div class="col-sm-12 col-md-12 col-lg-12">
+        <div class="veterans-text-wrapper">
+          {{ section.settings.the_text }}
+        </div>
+        <div class="veterans-btn-text">
+          <a href="{{ section.settings.url_1 }}" class="btn btn-bg">{{ section.settings.button_1 }}</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+{% schema %}
+  {
+    "name": "Veterans Program Text",
+    "settings": [
+        {
+                "type": "header",
+                "content": "Content Style"
+        },
+    	{
+             "type": "color",
+             "id": "section_bg_color",
+             "label": "Section background color"
+        },
+        {
+          "type": "richtext",
+          "id": "the_text",
+          "label": "Text"
+        },
+        {
+          "type": "text",
+          "id": "button_1",
+          "label": "Button 1"
+        },
+        {
+          "type": "url",
+          "id": "url_1",
+          "label": "Url 1"
+        }
+    ],
+	"presets": [{
+      "name": "Veterans Program Text"
+    }]
+  }
+{% endschema %}

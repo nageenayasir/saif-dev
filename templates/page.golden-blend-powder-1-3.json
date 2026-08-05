@@ -1,0 +1,800 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+ {
+  "sections": {
+    "main": {
+      "type": "main-page",
+      "disabled": true,
+      "settings": {}
+    },
+    "ashwagandha_pack_top_icons_pMnDGa": {
+      "type": "ashwagandha-pack-top-icons",
+      "settings": {
+        "section_bg_color": "#06211e",
+        "site_logo_image": "shopify://shop_images/TO_018_SecondayLogoWhite_TransparentHigh_ef4bdeec-9528-4fe8-872b-fee8fbfaeb24.png",
+        "logo_image_1": "shopify://shop_images/vegan_white.svg",
+        "logo_image_2": "shopify://shop_images/USDA_1_ea5c100a-3162-429c-977a-344b4967c315.svg",
+        "logo_image_3": "shopify://shop_images/gluten_free_1_cd270fff-afcc-4862-b8b5-e3b6765e1761.svg",
+        "logo_image_4": "shopify://shop_images/NON_GMO_02a93949-ac36-47a8-8e5a-442d6f75a219.svg",
+        "logo_image_5": "shopify://shop_images/Star_white.svg"
+      }
+    },
+    "ashwagandha_pack_offer_section_AgMYet": {
+      "type": "ashwagandha-pack-offer-section",
+      "blocks": {
+        "tex_blocks_pPFh8T": {
+          "type": "tex_blocks",
+          "settings": {
+            "the_text": "A powerful blend of 10 functional mushrooms carefully selected for the vital roles they play in well-being, from mental clarity to energy to immunity — in one convenient serving."
+          }
+        },
+        "tex_blocks_wGBhKK": {
+          "type": "tex_blocks",
+          "settings": {
+            "the_text": "Packs whole mushroom goodness (fruiting body and mycelium!) in an optimal ratio across all mushrooms. For the most potent benefits."
+          }
+        },
+        "tex_blocks_MXywRi": {
+          "type": "tex_blocks",
+          "settings": {
+            "the_text": "USDA-certified organic, non-GMO verified, gluten-free, vegan and kosher certified. Good for you and the Earth."
+          }
+        },
+        "tex_blocks_d6GJYT": {
+          "type": "tex_blocks",
+          "settings": {
+            "the_text": "Made with the highest-quality mushrooms grown, dried, milled, and packaged in a cGMP-certified\nstate-of-the-art indoor farm in the USA."
+          }
+        },
+        "tex_blocks_pANyW9": {
+          "type": "tex_blocks",
+          "settings": {
+            "the_text": "Rigorous, third-party testing of every ingredient and finished product batch to ensure purity, safety, potency, and efficacy. Contains ≥ 20% Beta-Glucans."
+          }
+        }
+      },
+      "block_order": [
+        "tex_blocks_pPFh8T",
+        "tex_blocks_wGBhKK",
+        "tex_blocks_MXywRi",
+        "tex_blocks_d6GJYT",
+        "tex_blocks_pANyW9"
+      ],
+      "settings": {
+        "section_bg_color": "#faeee9",
+        "the_title": "",
+        "the_title_2": "Want a limitless body and mind?<br>\nGet <span>35% off today</span> on our Mushroom <b>Golden Blend </b>POWDER",
+        "the_image_1": "shopify://shop_images/mushroom_gb_powder_landing_page.jpg",
+        "the_image_2": "shopify://shop_images/Mushroom_Golden_Blend_GIF_636_x_396_px.gif",
+        "the_image_3": "shopify://shop_images/Text.svg",
+        "right_title": "Access deep focus, all-day energy, better mood, bolstered immune defenses, and optimal whole-body health. \n<span>Why choose Mushroom Golden Blend?</span>",
+        "btn_text": "GET 35% OFF",
+        "the_url": "#ashwagandha-product-packs",
+        "btn_under_text": ""
+      }
+    },
+    "ashwagandha_pack_core_benefits_gDHAcP": {
+      "type": "ashwagandha-pack-core-benefits",
+      "blocks": {
+        "content_Mf8HP3": {
+          "type": "content",
+          "settings": {
+            "the_title": "FOCUS & CLARITY*",
+            "the_icon": "shopify://shop_images/FOCUS_CLARITY.svg"
+          }
+        },
+        "content_4tfUtT": {
+          "type": "content",
+          "settings": {
+            "the_title": "ENERGY & ENDURANCE*",
+            "the_icon": "shopify://shop_images/STAMINA_ENDURANCE.svg"
+          }
+        },
+        "content_gkCptw": {
+          "type": "content",
+          "settings": {
+            "the_title": "IMMUNITY SUPPORT*",
+            "the_icon": "shopify://shop_images/IMMUNITY_SUPPORT.svg"
+          }
+        },
+        "content_7HzwtH": {
+          "type": "content",
+          "settings": {
+            "the_title": "OVERALL WELL-BEING & VITALITY*",
+            "the_icon": "shopify://shop_images/OVERALL_WELL-BEING_VITALITY.svg"
+          }
+        },
+        "content_TfgDqt": {
+          "type": "content",
+          "settings": {
+            "the_title": "PROMOTE GUT HEALTH*",
+            "the_icon": "shopify://shop_images/PROMOTE_GUT_HEALTH_197da760-68e2-4dc5-b07d-8974fe8e1952.svg"
+          }
+        },
+        "content_jVxGry": {
+          "type": "content",
+          "settings": {
+            "the_title": "STRESS RESILIENCE*",
+            "the_icon": "shopify://shop_images/STRESS_RESILIENCE.svg"
+          }
+        }
+      },
+      "block_order": [
+        "content_Mf8HP3",
+        "content_4tfUtT",
+        "content_gkCptw",
+        "content_7HzwtH",
+        "content_TfgDqt",
+        "content_jVxGry"
+      ],
+      "settings": {
+        "section_bg_color": "#f3d9cf",
+        "the_title": "CORE BENEFITS OF MUSHROOM GOLDEN BLEND",
+        "the_text": "Harness the full-spectrum power of 10 whole-food functional mushrooms for peak body and mind performance."
+      }
+    },
+    "ashwagandha_pack_reviews_mTCEB8": {
+      "type": "ashwagandha-pack-reviews",
+      "blocks": {
+        "content_hhWweC": {
+          "type": "content",
+          "settings": {
+            "the_text": "<p><em>“I’ve been taking this for two months and </em><em><strong>haven’t had a single day of digestive discomfort.”</strong></em></p><p><strong>- Leo Adams</strong></p>"
+          }
+        },
+        "content_rxpaaJ": {
+          "type": "content",
+          "settings": {
+            "the_text": "<p><em>“I add a teaspoon of the powder to my morning coffee and </em><em><strong>it blends in perfectly. I feel focused, calm, and my digestion has improved noticeably.”</strong></em></p><p><strong>- Jessica Lang</strong></p>"
+          }
+        },
+        "content_BJN6cF": {
+          "type": "content",
+          "settings": {
+            "the_text": "<p><em><strong>“Hands down the best mushroom powder I’ve tried. </strong></em><em>I love that it’s a full blend with no junk added. </em><em><strong>Just clean, functional mushrooms—</strong></em><em>and my focus and gut health have definitely improved.</em><em><strong>”</strong></em></p><p>-<strong> Mark Evans</strong></p>"
+          }
+        },
+        "content_Y9Gp8H": {
+          "type": "content",
+          "settings": {
+            "the_text": "<p><em>“This powder has replaced my second coffee. I stir it into warm water with a touch of honey, and it </em><em><strong>keeps me going without the crash. I also haven’t felt as run down since I started taking it.”</strong></em></p><p><em><strong>- </strong></em><strong>James Tapper</strong></p>"
+          }
+        },
+        "content_G6WKjy": {
+          "type": "content",
+          "settings": {
+            "the_text": "<p><em>\"I started using this powder to </em><em><strong>support my immune system and gut health</strong></em><em>, but what surprised me most is how </em><em><strong>calm and collected</strong></em><em> I feel day-to-day. I mix it into my morning smoothie and actually look forward to how it makes me feel.​\"</em></p><p>- <strong>Kate F</strong></p>"
+          }
+        },
+        "content_LMKmYT": {
+          "type": "content",
+          "settings": {
+            "the_text": "<p><em>\"After incorporating the Mushroom Golden Blend Powder into my daily routine, I've noticed a </em><em><strong>significant improvement in my mental clarity and focus</strong></em><em>. It's been a great addition to my morning regimen.​\"</em></p><p>- <strong>Mike Housen</strong></p>"
+          }
+        },
+        "content_N7TTVc": {
+          "type": "content",
+          "settings": {
+            "the_text": "<p><em>\"This powder has helped me maintain a </em><em><strong>balanced mood throughout the day</strong></em><em>. I feel more centered and less reactive to stress.​\"</em></p><p>- <strong>Jane H</strong></p>"
+          }
+        },
+        "content_xdkXAg": {
+          "type": "content",
+          "settings": {
+            "the_text": "<p><em>\"I was looking for a </em><em><strong>natural way to boost my energy levels</strong></em><em> without relying on caffeine, and the Mushroom Golden Blend Powder has delivered. I feel more alert and energized throughout the day.​\"</em></p><p>- <strong>Henry Green</strong></p>"
+          }
+        },
+        "content_dEaCMm": {
+          "type": "content",
+          "settings": {
+            "the_text": "<p><strong>\"</strong>Since starting the Mushroom Golden Blend Powder, I've noticed a reduction in my anxiety levels. <strong>I feel more at ease and less overwhelmed</strong> by daily challenges.​\"</p><p><strong>- Jody V</strong><br/><br/></p>"
+          }
+        },
+        "content_kR6h4K": {
+          "type": "content",
+          "settings": {
+            "the_text": "<p><em>\"This powder has been a game-changer for my gut health. I've </em><em><strong>experienced less bloating and improved digestion</strong></em><em> since incorporating it into my routine.​\"</em></p><p>- <strong>Jason Smith</strong></p>"
+          }
+        },
+        "content_3eNPVq": {
+          "type": "content",
+          "settings": {
+            "the_text": "<p><em>\"The Mushroom Golden Blend Powder has become a staple in my daily wellness routine. I feel </em><em><strong>more balanced and resilient</strong></em><em>, even during stressful times.​\"</em></p><p>- <strong>Christopher Reese</strong></p>"
+          }
+        },
+        "content_kaXD8X": {
+          "type": "content",
+          "settings": {
+            "the_text": "<p><em>\"Since starting the Mushroom Golden Blend Powder, I've noticed </em><em><strong>improved skin clarity.</strong></em><em> It's a nice bonus to the other health benefits I've experienced.​\"</em></p><p><strong>- Ainsley C</strong></p>"
+          }
+        },
+        "content_KL6JgX": {
+          "type": "content",
+          "settings": {
+            "the_text": "<p><em>\"This powder has helped me maintain a </em><em><strong>steady energy level throughout the day</strong></em><em>. I no longer experience the mid-afternoon energy crashes I used to.​\"</em></p><p><strong>- Matt Rhodes</strong></p>"
+          }
+        },
+        "content_3rFAT4": {
+          "type": "content",
+          "settings": {
+            "the_text": "<p><em>\"This powder has helped me maintain a </em><em><strong>steady energy level throughout the day</strong></em><em>. I no longer experience the mid-afternoon energy crashes I used to.​\"</em></p><p>- <strong>Caitlin Cross</strong></p>"
+          }
+        },
+        "content_z7npnT": {
+          "type": "content",
+          "settings": {
+            "the_text": "<p><em>\"This powder has helped me </em><em><strong>feel more grounded and present</strong></em><em>. I approach my day with a greater sense of</em><em><strong> calm and clarity.\"</strong></em>​</p><p><strong>- Sara Baker</strong></p>"
+          }
+        },
+        "content_yC3e6e": {
+          "type": "content",
+          "settings": {
+            "the_text": "<p><em>\"Since starting the Mushroom Golden Blend Powder, I've noticed</em><em><strong> improved cognitive function</strong></em><em>. I feel more sharp and focused throughout the day.​\"</em></p><p><strong>- Carolina Parker</strong></p>"
+          }
+        },
+        "content_d87PXL": {
+          "type": "content",
+          "settings": {
+            "the_text": "<p>\"This powder has helped me <strong>maintain a steady energy level </strong>throughout the day. I no longer experience the mid-afternoon slumps I used to.​\"</p><p><strong>- Gabe T</strong></p>"
+          }
+        },
+        "content_HQMPWY": {
+          "type": "content",
+          "settings": {
+            "the_text": "<p><em>\"This powder has helped me </em><em><strong>feel more energized and motivated.</strong></em><em> I approach my day with a greater sense of purpose and enthusiasm.​\"</em></p><p><strong>- Adam Beaumont</strong></p>"
+          }
+        },
+        "content_KfDn3p": {
+          "type": "content",
+          "settings": {
+            "the_text": "<p><em>\"This powder has helped me </em><em><strong>maintain a balanced mood</strong></em><em>. I feel more emotionally stable and less reactive to stressors.​\"</em></p><p><strong>- Ashley S</strong></p>"
+          }
+        },
+        "content_RUcA7b": {
+          "type": "content",
+          "settings": {
+            "the_text": "<p><em>\"Since incorporating the Mushroom Golden Blend Powder into my routine, I've noticed improved digestion. </em><em><strong>I feel less bloated</strong></em><em> and more comfortable after meals.​\"</em></p><p><strong>- Sam West</strong></p>"
+          }
+        },
+        "content_CGHkmn": {
+          "type": "content",
+          "settings": {
+            "the_text": "<p>\"Since starting the Mushroom Golden Blend Powder, I've noticed<strong> improved immune function</strong>. I feel more resilient and less susceptible to illness.\"</p><p><strong>- Charlie D</strong></p>"
+          }
+        },
+        "content_mjwQb3": {
+          "type": "content",
+          "settings": {
+            "the_text": "<p><em>\"I love that the Mushroom Golden Blend Powder contains a blend of both fruiting bodies and mycelium. It feels good to know I'm getting the </em><em><strong>full spectrum of benefits</strong></em><em> from each mushroom.​\"</em></p><p><strong>- Valerie Brown</strong></p>"
+          }
+        },
+        "content_4tBrEX": {
+          "type": "content",
+          "settings": {
+            "the_text": "<p><em>\"Since incorporating the Mushroom Golden Blend Powder into my routine, I've noticed improved mental clarity. </em><em><strong>I feel more focused and alert </strong></em><em>throughout the day.\"</em></p><p><strong>- George S</strong></p>"
+          }
+        },
+        "content_rjVG4B": {
+          "type": "content",
+          "settings": {
+            "the_text": "<p><em>\"This powder has helped me maintain a balanced mood. I feel more emotionally stable and </em><em><strong>less reactive to stressors.</strong></em><em>​\"</em></p><p><em>- </em><strong>Kerry Thomas</strong></p>"
+          }
+        },
+        "content_HrVCPh": {
+          "type": "content",
+          "settings": {
+            "the_text": "<p><em>\"Since starting the Mushroom Golden Blend Powder, I've noticed improved skin health. </em><em><strong>My complexion looks clearer and more radiant</strong></em><em>.​\"</em></p><p>- <strong>Molly Zamora</strong></p>"
+          }
+        }
+      },
+      "block_order": [
+        "content_hhWweC",
+        "content_rxpaaJ",
+        "content_BJN6cF",
+        "content_Y9Gp8H",
+        "content_G6WKjy",
+        "content_LMKmYT",
+        "content_N7TTVc",
+        "content_xdkXAg",
+        "content_dEaCMm",
+        "content_kR6h4K",
+        "content_3eNPVq",
+        "content_kaXD8X",
+        "content_KL6JgX",
+        "content_3rFAT4",
+        "content_z7npnT",
+        "content_yC3e6e",
+        "content_d87PXL",
+        "content_HQMPWY",
+        "content_KfDn3p",
+        "content_RUcA7b",
+        "content_CGHkmn",
+        "content_mjwQb3",
+        "content_4tBrEX",
+        "content_rjVG4B",
+        "content_HrVCPh"
+      ],
+      "settings": {
+        "section_bg_color": "#f3d9cf",
+        "title": "<span>More than</span> 500 verified reviews"
+      }
+    },
+    "ashwagandha_pack_image_gallery_qD9q6M": {
+      "type": "ashwagandha-pack-image-gallery",
+      "blocks": {
+        "image_blocks_Lz9qr9": {
+          "type": "image_blocks",
+          "settings": {
+            "the_image": "shopify://shop_images/testi_3_5.png"
+          }
+        },
+        "image_blocks_drQAFk": {
+          "type": "image_blocks",
+          "settings": {
+            "the_image": "shopify://shop_images/testi_3_6.png"
+          }
+        },
+        "image_blocks_AhUhm8": {
+          "type": "image_blocks",
+          "settings": {
+            "the_image": "shopify://shop_images/testi_3_7.png"
+          }
+        },
+        "image_blocks_DT4Gfm": {
+          "type": "image_blocks",
+          "settings": {
+            "the_image": "shopify://shop_images/testi_4.jpg"
+          }
+        },
+        "image_blocks_pULB9q": {
+          "type": "image_blocks",
+          "settings": {
+            "the_image": "shopify://shop_images/testi_5.jpg"
+          }
+        },
+        "image_blocks_FjfLt7": {
+          "type": "image_blocks",
+          "settings": {
+            "the_image": "shopify://shop_images/testi_6.jpg"
+          }
+        },
+        "image_blocks_gNwxxz": {
+          "type": "image_blocks",
+          "settings": {
+            "the_image": "shopify://shop_images/7_1660d951-4534-439d-a4f8-4dc5bc9bad16.jpg"
+          }
+        },
+        "image_blocks_RzrtLX": {
+          "type": "image_blocks",
+          "settings": {
+            "the_image": "shopify://shop_images/testi_8.jpg"
+          }
+        }
+      },
+      "block_order": [
+        "image_blocks_Lz9qr9",
+        "image_blocks_drQAFk",
+        "image_blocks_AhUhm8",
+        "image_blocks_DT4Gfm",
+        "image_blocks_pULB9q",
+        "image_blocks_FjfLt7",
+        "image_blocks_gNwxxz",
+        "image_blocks_RzrtLX"
+      ],
+      "disabled": true,
+      "settings": {
+        "section_bg_color": "#faeee9",
+        "title": "10,000+ people worldwide ARE LOVING OUR MUSHROOM GOLDEN BLEND!"
+      }
+    },
+    "ashwagandha_pack_video_reviews_fkqbq6": {
+      "type": "ashwagandha-pack-video-reviews",
+      "blocks": {
+        "video_reviews_NUhjY9": {
+          "type": "video_reviews",
+          "disabled": true,
+          "settings": {
+            "video_poster": "shopify://shop_images/181415f8-429e-4383-ad7f-e89a68daa530_000.jpg",
+            "bg_video": "https://cdn.shopify.com/videos/c/o/v/37f032854d58401ebedc3feeaa28e0fa.mp4"
+          }
+        },
+        "video_reviews_VmmVcY": {
+          "type": "video_reviews",
+          "disabled": true,
+          "settings": {
+            "video_poster": "shopify://shop_images/download_2.png",
+            "bg_video": "https://cdn.shopify.com/videos/c/o/v/9e117391bb21487a944c83661ee13e86.mp4"
+          }
+        },
+        "video_reviews_FLWdxg": {
+          "type": "video_reviews",
+          "settings": {
+            "video_poster": "shopify://shop_images/Mushroom_golden_blend_clara_cover.jpg",
+            "bg_video": "https://cdn.shopify.com/videos/c/o/v/8677406dcb68470d978893051e896f16.mp4"
+          }
+        }
+      },
+      "block_order": [
+        "video_reviews_NUhjY9",
+        "video_reviews_VmmVcY",
+        "video_reviews_FLWdxg"
+      ],
+      "settings": {
+        "section_bg_color": "#f3d9cf"
+      }
+    },
+    "ashwagandha_pack_benefits_QgLdBB": {
+      "type": "ashwagandha-pack-benefits",
+      "blocks": {
+        "tex_blocks_kHkqRi": {
+          "type": "tex_blocks",
+          "settings": {
+            "the_text": "<h3>Cruise into flow state</h3><p>Get in the zone and stay there. Lion’s Mane and Cordyceps pair up as the ultimate treat for your brain — elevating cognitive function, sharpening memory, and supercharging your focus for long-lasting productivity. </p>"
+          }
+        },
+        "tex_blocks_rfTCBn": {
+          "type": "tex_blocks",
+          "settings": {
+            "the_text": "<h3>Feel grounded and centered</h3><p>Reishi and Sun Mushroom’s adaptogenic properties help your body and mind find their way back to balance during times of stress. Look forward to brighter, calmer, and more peaceful days ahead.</p>"
+          }
+        },
+        "tex_blocks_Lr8WeA": {
+          "type": "tex_blocks",
+          "settings": {
+            "the_text": "<h3>Healthy gut, healthy you</h3><p>A balanced gut microbiome is the backbone of good health. That’s why Mushroom Golden Blend calls upon Chaga, Trumpet King, and Maitake to deliver a targeted blend of gut-balancing compounds, including antioxidants, polysaccharides, and prebiotics.</p>"
+          }
+        },
+        "tex_blocks_RpArnM": {
+          "type": "tex_blocks",
+          "settings": {
+            "the_text": "<h3>Optimize your immune health</h3><p>The concentrated shot of beta-glucans from the addition of Antrodia, Shiitake, and Turkey Tail further bolsters your natural immune defenses and enhances all-round well-being. Feel your best every day.</p>"
+          }
+        }
+      },
+      "block_order": [
+        "tex_blocks_kHkqRi",
+        "tex_blocks_rfTCBn",
+        "tex_blocks_Lr8WeA",
+        "tex_blocks_RpArnM"
+      ],
+      "settings": {
+        "section_bg_color": "#faeee9",
+        "title": "MUSHROOM <span>GOLDEN BLEND</span> Benefits",
+        "btn_text": "GET 35% OFF now",
+        "the_url": "#ashwagandha-product-packs"
+      }
+    },
+    "ashwagandha_pack_product_info_ii9Gai": {
+      "type": "ashwagandha-pack-product-info",
+      "settings": {
+        "section_bg_color": "#faeee9",
+        "the_image": "shopify://shop_images/MUSHROOM_GB_CAPSULES.png",
+        "the_title": "MUSHROOM <span>GOLDEN BLEND</span>",
+        "the_text": "<p>Forget endless tubs of supplements and powders. Mushroom Golden Blend condenses the ancient, health-boosting benefits of 10 functional mushrooms into 1 teaspoon. Whether you need energy, sharper concentration, a little more chill, or an immune boost, Mushroom Golden Blend’s got you covered.</p>"
+      }
+    },
+    "ashwagandha_pack_roots_qG4VUQ": {
+      "type": "ashwagandha-pack-roots",
+      "settings": {
+        "section_bg_color": "#faeee9",
+        "the_title": "Whole mushroom goodness  ",
+        "the_image_1": "shopify://shop_images/Whole_mushroom_goodness.png"
+      }
+    },
+    "ashwagandha_pack_custom_text_gPWqhq": {
+      "type": "ashwagandha-pack-custom-text",
+      "blocks": {
+        "content_x4cVzW": {
+          "type": "content",
+          "settings": {
+            "the_title": "",
+            "the_text": "<p>Our blend includes both the fruiting body of the mushroom, which is the part you can see above ground, and the mycelium, which is like the roots of a mushroom. This means you benefit from the full spectrum of bioactive compounds naturally found in all 10 functional mushrooms, from antioxidants to prebiotics and polysaccharides to beta-glucans — as nature intended. </p>"
+          }
+        },
+        "content_ateTmC": {
+          "type": "content",
+          "settings": {
+            "the_title": "Not just a short-term fix",
+            "the_text": "<p>Mushroom Golden Blend is a long-term solution for enhanced cognition, energy, stress management, and well-being. When consistently incorporated into a daily routine, the mushrooms’ nutrients compound in your body and become more effective. You’ll typically feel a boost in focus, energy, and clarity within 30 minutes, but expect the most noticeable impacts after 30 days of consistent supplementation. </p>"
+          }
+        },
+        "content_jx8Upn": {
+          "type": "content",
+          "settings": {
+            "the_title": "USDA-certified organic ",
+            "the_text": "<p>Mushroom Golden Blend is USDA-certified organic and non-GMO. In other words, you can be confident that it’s free of toxins, pesticides, herbicides, and chemicals that can harm your body and the environment. Speaking of protecting the environment, the controlled growing conditions of our organic mushrooms produce very low organic waste, low levels of carbon dioxide gas, plus involve both low water and energy usage. </p>"
+          }
+        },
+        "content_rgR9dX": {
+          "type": "content",
+          "settings": {
+            "the_title": "Third-Party Tested",
+            "the_text": "<p>Like all our products, Mushroom Golden Blend is rigorously lab and third-party-tested. This includes complete microbial testing for any bacteria, yeast, and mold; heavy metals testing; pesticide testing; and testing for purity and active compounds. But you shouldn’t just take our word for it. Because we believe in full transparency, we publish our lab results (i.e., Certificate of Analysis or CoA) on our website. <a href=\"/pages/impact-sustainability\" title=\"Impact & Sustainability\">Go ahead, check it out for yourself.</a></p>"
+          }
+        }
+      },
+      "block_order": [
+        "content_x4cVzW",
+        "content_ateTmC",
+        "content_jx8Upn",
+        "content_rgR9dX"
+      ],
+      "settings": {
+        "section_bg_color": "#faeee9"
+      }
+    },
+    "golden_blend_capsule_made_of_ETWaVg": {
+      "type": "golden-blend-capsule-made-of",
+      "blocks": {
+        "blend_blocks_iyfY9e": {
+          "type": "blend_blocks",
+          "settings": {
+            "icon_img": "shopify://shop_images/lION_S_MANE_b6d3f48a-8fae-43c7-a4df-2c935e0b2eae.png",
+            "the_title": "LiON’S MANE",
+            "the_text": "Known for its brain-boosting power, Lion’s Mane supports memory, focus, and mental clarity. It promotes the production of Nerve Growth Factor (NGF), essential for nerve health and cognitive function. Additionally, it enhances neurite outgrowth, helping to slow or even reverse brain cell degeneration. It also provides antioxidant support, protecting brain cells from daily stress.*"
+          }
+        },
+        "blend_blocks_XbWMUf": {
+          "type": "blend_blocks",
+          "settings": {
+            "icon_img": "shopify://shop_images/REISHI_da355711-3663-4000-bf96-c3caa218eddf.png",
+            "the_title": "REISHI",
+            "the_text": "Known as the “mushroom of immortality”, Reishi is a revered adaptogen that may help reduce occasional stress and balance immune function. Rich in beta-glucans and triterpenoids, it supports immunity, healthy blood sugar, and heart health. Reishi has a long history in traditional medicine for enhancing vitality and longevity.*"
+          }
+        },
+        "blend_blocks_hPxtfq": {
+          "type": "blend_blocks",
+          "settings": {
+            "icon_img": "shopify://shop_images/TURKEY_TAIL_f8f1c0b8-bc25-407a-afa2-06db565cc875.png",
+            "the_title": "TURKEY TAIL",
+            "the_text": "With a rich profile of polysaccharides, Turkey Tail is one of the most researched mushrooms for immune health. It acts as a powerful immune booster and supports a balanced gut microbiome, which further strengthens immunity.*"
+          }
+        },
+        "blend_blocks_yqh677": {
+          "type": "blend_blocks",
+          "settings": {
+            "icon_img": "shopify://shop_images/CHAGA_5f7046c0-a0d9-4918-b9ac-1f6e5ad88d63.png",
+            "the_title": "CHAGA",
+            "the_text": "“King of medicinal mushrooms”, known for its high antioxidant content, Chaga protects cells from oxidative stress and supports immune health. It also promotes skin health and youthful appearance, helping to fight free radicals that contribute to aging.*"
+          }
+        },
+        "blend_blocks_NRUPFM": {
+          "type": "blend_blocks",
+          "settings": {
+            "icon_img": "shopify://shop_images/CORDYCEPS_48dac42f-6df6-4d0e-ba56-a9176ac093dc.png",
+            "the_title": "CORDYCEPS",
+            "the_text": "Cordyceps enhances energy, stamina, and athletic performance by supporting oxygen flow and ATP production. It is also known to promote heart health and respiratory function, making it a favorite among athletes and active individuals.*"
+          }
+        },
+        "blend_blocks_aKpEBJ": {
+          "type": "blend_blocks",
+          "settings": {
+            "icon_img": "shopify://shop_images/SHIITAKE_bbfa5987-2fb1-47b4-9fb7-7aa2f6b1cbe5.png",
+            "the_title": "SHIITAKE",
+            "the_text": "Shiitake is packed with essential nutrients like vitamins B and D, supporting immunity and cardiovascular health. Known for promoting healthy cholesterol levels, Shiitake also provides natural energy support, contributing to overall wellness.*"
+          }
+        },
+        "blend_blocks_mYYEUn": {
+          "type": "blend_blocks",
+          "settings": {
+            "icon_img": "shopify://shop_images/MAITAKE_87a14729-1a4e-46fe-87f1-40d6ba63bc35.png",
+            "the_title": "MAITAKE",
+            "the_text": "Maitake supports cardiovascular health by regulating cholesterol and blood sugar levels. This nutrient-rich mushroom is high in beta-glucans, which enhance immune function and contribute to metabolic health.*"
+          }
+        },
+        "blend_blocks_RkYxKA": {
+          "type": "blend_blocks",
+          "settings": {
+            "icon_img": "shopify://shop_images/ANTRODIA_a32786ee-c027-40fe-ac30-b202cffade43.png",
+            "the_title": "ANTRODIA",
+            "the_text": "Unique to Taiwan, Antrodia Camphorata is highly valued for its immune-enhancing and liver-supporting properties. It provides antioxidant protection, helps fight fatigue, and has been used in traditional medicine to support overall vitality.*"
+          }
+        },
+        "blend_blocks_Dd9tF7": {
+          "type": "blend_blocks",
+          "settings": {
+            "icon_img": "shopify://shop_images/ROYAL_SUN_474b05c5-c600-4d6b-b329-504fdb23701e.png",
+            "the_title": "ROYAL SUN",
+            "the_text": "Royal Sun Mushroom helps balance hormones, supports immune health, and aids liver function. It also assists in managing blood sugar levels, promoting heart health, and maintaining a balanced metabolic profile.*"
+          }
+        },
+        "blend_blocks_PW49th": {
+          "type": "blend_blocks",
+          "settings": {
+            "icon_img": "shopify://shop_images/KING_TRUMPET_ac833ee5-4060-43f2-a231-0be50727bdb7.png",
+            "the_title": "KING TRUMPET",
+            "the_text": "High in the master antioxidant L-Ergothioneine, King Trumpet supports heart and bone health. It is known to help regulate cholesterol levels, boost immunity, and enhance overall vitality.*"
+          }
+        }
+      },
+      "block_order": [
+        "blend_blocks_iyfY9e",
+        "blend_blocks_XbWMUf",
+        "blend_blocks_hPxtfq",
+        "blend_blocks_yqh677",
+        "blend_blocks_NRUPFM",
+        "blend_blocks_aKpEBJ",
+        "blend_blocks_mYYEUn",
+        "blend_blocks_RkYxKA",
+        "blend_blocks_Dd9tF7",
+        "blend_blocks_PW49th"
+      ],
+      "settings": {
+        "section_bg_color": "#06211e",
+        "the_title": "MEET THE MUSHROOMS INSIDE\nOUR <span>GOLDEN BLEND</span>",
+        "sub_title": "SCIENTIFICALLY-STUDIED | EXPERT RECOMMENDED "
+      }
+    },
+    "ashwagandha_product_packs_mcWPwL": {
+      "type": "ashwagandha-product-packs",
+      "blocks": {
+        "product_list_XWTQin": {
+          "type": "product_list",
+          "settings": {
+            "badge_title": "MOST POPULAR | SAVE 25%",
+            "the_title": "1-Pack",
+            "the_text": "100 Servings",
+            "product_image": "shopify://shop_images/Pack-1.png",
+            "product_title": "1 BAG OF MUSHROOM GOLDEN BLEND",
+            "reviews_count": "",
+            "regular_price": "<p>$49.99</p>",
+            "compare_price": "<p>$37.49</p>",
+            "button_text": "BUY NOW - 25% OFF",
+            "button_link": "https://www.tribe-organics.com/cart/46898905448671:1?checkout",
+            "btn_under_text": "",
+            "icon_2": "shopify://shop_images/USDA_1_ea5c100a-3162-429c-977a-344b4967c315.svg",
+            "icon_3": "shopify://shop_images/gluten_free_1_cd270fff-afcc-4862-b8b5-e3b6765e1761.svg",
+            "icon_4": "shopify://shop_images/NON_GMO_02a93949-ac36-47a8-8e5a-442d6f75a219.svg",
+            "icon_5": "shopify://shop_images/star_black.svg"
+          }
+        },
+        "product_list_XYHaPK": {
+          "type": "product_list",
+          "settings": {
+            "badge_title": "BEST VALUE | SAVE 35%",
+            "the_title": "3-Pack",
+            "the_text": "300 Servings",
+            "product_image": "shopify://shop_images/Pack-3.png",
+            "product_title": "3 BAGS OF MUSHROOM GOLDEN BLEND",
+            "reviews_count": "",
+            "regular_price": "<p>$149.97</p>",
+            "compare_price": "<p>$97.48</p>",
+            "button_text": "BUY NOW - 35% OFF",
+            "button_link": "https://www.tribe-organics.com/cart/46898906169567:1?checkout",
+            "btn_under_text": "",
+            "icon_2": "shopify://shop_images/USDA_1_ea5c100a-3162-429c-977a-344b4967c315.svg",
+            "icon_3": "shopify://shop_images/gluten_free_1_cd270fff-afcc-4862-b8b5-e3b6765e1761.svg",
+            "icon_4": "shopify://shop_images/NON_GMO_02a93949-ac36-47a8-8e5a-442d6f75a219.svg",
+            "icon_5": "shopify://shop_images/star_black.svg"
+          }
+        }
+      },
+      "block_order": [
+        "product_list_XWTQin",
+        "product_list_XYHaPK"
+      ],
+      "settings": {
+        "section_bg_color": "#f3d9cf",
+        "the_title": "Grab MUSHROOM GOLDEN BLEND 35% off",
+        "the_text": "<p>Choose a mushroom supplement that’ll allow you to unlock the full potential of these incredible fungi, minus the safety concerns and the harm to the environment.</p><p>Mushroom Golden Blend fits the bill.</p>",
+        "limited_title": "Today, for a limited time only …",
+        "off_title": "It’s yours at <span>35% OFF</span>",
+        "cstm_text": "Unlock peak body and mind performance for less than 35 cents per day!",
+        "guarantee_img": "shopify://shop_images/SAFE_CHECKOUT_BADGES.png"
+      }
+    },
+    "ashwagandha_pack_certified_aWgzVU": {
+      "type": "ashwagandha-pack-certified",
+      "settings": {
+        "section_bg_color": "#07211f",
+        "the_title": "CONNECTING PEOPLE, PLANTS AND THE PLANET",
+        "the_image": "shopify://shop_images/Image_c477f7ab-c5db-4ef5-85dd-a86d3d96853d.jpg",
+        "the_text": "<p>We’re proud to be a Certified B Corp<strong>TM</strong></p><p>This means that our company meets the highest standards of social and environmental impact, transparency, and accountability.</p>",
+        "the_logo": "shopify://shop_images/Certified.svg"
+      }
+    },
+    "tribe_difference_section_C3czqP": {
+      "type": "tribe-difference-section",
+      "blocks": {
+        "three_blocks_tHiV44": {
+          "type": "three_blocks",
+          "settings": {
+            "leaf_image": "shopify://shop_images/White_leaft_bullet.png",
+            "list_text_1": "Science-backed",
+            "list_text_2": "Superior potency",
+            "list_text_3": "Standardized extracts",
+            "list_text_4": "100% fruiting bodies",
+            "list_text_5": "Ethically sourced",
+            "list_text_6": "",
+            "list_text_7": ""
+          }
+        },
+        "three_blocks_fYhNkB": {
+          "type": "three_blocks",
+          "settings": {
+            "leaf_image": "shopify://shop_images/White_leaft_bullet.png",
+            "list_text_1": "Non-GMO verified",
+            "list_text_2": "USDA Organic certified",
+            "list_text_3": "Gluten free",
+            "list_text_4": "Allergen free",
+            "list_text_5": "3rd party tested",
+            "list_text_6": "cGMP",
+            "list_text_7": "Made in the USA"
+          }
+        },
+        "three_blocks_9RjEHk": {
+          "type": "three_blocks",
+          "settings": {
+            "leaf_image": "shopify://shop_images/White_leaft_bullet.png",
+            "list_text_1": "No synthetic fillers",
+            "list_text_2": "No excipients",
+            "list_text_3": "No harmful additives",
+            "list_text_4": "No mycellium",
+            "list_text_5": "No artificial anything",
+            "list_text_6": "",
+            "list_text_7": ""
+          }
+        }
+      },
+      "block_order": [
+        "three_blocks_tHiV44",
+        "three_blocks_fYhNkB",
+        "three_blocks_9RjEHk"
+      ],
+      "settings": {
+        "add_class": "ashwagandha-tribe-difference",
+        "section_bg_color": "#07211f",
+        "main_image": "shopify://shop_images/Logo_951ff78f-0ccc-4ffd-80d8-bbcb4536d558.png",
+        "image_1": "shopify://shop_images/Screenshot-2022-11-03-at-16.29.5.png",
+        "image_2": "shopify://shop_images/Screenshot-2022-11-03-at-16.30.0.png",
+        "image_3": "shopify://shop_images/Screenshot-2022-11-03-at-16.30.0_1.png",
+        "image_4": "shopify://shop_images/Screenshot-2022-11-03-at-16.35.5.png",
+        "image_5": "shopify://shop_images/Screenshot-2022-11-03-at-16.36.0.png"
+      }
+    },
+    "ashwagandha_pack_contact_M768hj": {
+      "type": "ashwagandha-pack-contact",
+      "settings": {
+        "section_bg_color": "#07211f",
+        "the_text": "<p>Questions? Let us help you</p><p>Contact us  at <a href=\"mailto:info@tribe-organics.com\" title=\"mailto:info@tribe-organics.com\">info@tribe-organics.com</a></p>"
+      }
+    },
+    "ashwagandha_pack_footer_bYnWER": {
+      "type": "ashwagandha-pack-footer",
+      "settings": {
+        "section_bg_color": "#07211f",
+        "the_logo": "shopify://shop_images/Logo_2_6ecf9d10-f051-4b4d-b753-3ffecf96bb83.png",
+        "the_icon_1": "shopify://shop_images/B_Corp.png",
+        "the_icon_2": "shopify://shop_images/1_for_the_planet.png",
+        "the_text_1": "<p><strong>*FDA Disclaimer: These statements have not been evaluated by the Food and Drug Administration. These products are not intended to diagnose, treat, cure, or prevent any disease.</strong> The information provided by this website or this company is not a substitute for a face-to-face consultation with your health practitioner, and should not be construed as individual medical advice.</p>",
+        "the_text_2": "<ul><li>Copyright 2022 TriIbe, INC. ALL RIGHTS RESERVED.</li><li><a href=\"/policies/terms-of-service\" title=\"Terms of Service\">TERMS & CONDITIONS </a></li><li><a href=\"/policies/privacy-policy\" title=\"Privacy Policy\">PRIVACY POLICY</a></li></ul>"
+      }
+    }
+  },
+  "order": [
+    "main",
+    "ashwagandha_pack_top_icons_pMnDGa",
+    "ashwagandha_pack_offer_section_AgMYet",
+    "ashwagandha_pack_core_benefits_gDHAcP",
+    "ashwagandha_pack_reviews_mTCEB8",
+    "ashwagandha_pack_image_gallery_qD9q6M",
+    "ashwagandha_pack_video_reviews_fkqbq6",
+    "ashwagandha_pack_benefits_QgLdBB",
+    "ashwagandha_pack_product_info_ii9Gai",
+    "ashwagandha_pack_roots_qG4VUQ",
+    "ashwagandha_pack_custom_text_gPWqhq",
+    "golden_blend_capsule_made_of_ETWaVg",
+    "ashwagandha_product_packs_mcWPwL",
+    "ashwagandha_pack_certified_aWgzVU",
+    "tribe_difference_section_C3czqP",
+    "ashwagandha_pack_contact_M768hj",
+    "ashwagandha_pack_footer_bYnWER"
+  ]
+}

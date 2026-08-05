@@ -1,0 +1,60 @@
+<section id="id-{{ section.id }}" class="color-dark bg-cream-2 custom-announcement-bar">
+  <div class="top-header">
+        <div class="d-flex">
+          {% if section.settings.top_header != blank %}<a class="mx-4 text-center first-top-header-wrap" href="{{ section.settings.url_1 }}" aria-label="{{ section.settings.top_header | strip_html | escape }}">{{ section.settings.top_header }}</a>{% endif %}
+          {% if section.settings.top_header_2 != blank %}<a class="mx-4 text-center top-header-wrap" href="{{ section.settings.url_2 }}" aria-label="{{ section.settings.top_header_2 | strip_html | escape }}">{{ section.settings.top_header_2 }}</a>{% endif %}
+          {% if section.settings.top_header_3 != blank %}<a class="mx-4 text-center" href="{{ section.settings.url_3 }}" aria-label="{{ section.settings.top_header_3 | strip_html | escape }}">{{ section.settings.top_header_3 }}</a>{% endif %}
+        </div>
+        <div class="d-flex d-md-none">
+          {% if section.settings.top_header != blank %}<a class="mx-4 text-center first-top-header-wrap" href="{{ section.settings.url_1 }}" aria-label="{{ section.settings.top_header | strip_html | escape }}">{{ section.settings.top_header }}</a>{% endif %}
+          {% if section.settings.top_header_2 != blank %}<a class="mx-4 text-center top-header-wrap" href="{{ section.settings.url_2 }}" aria-label="{{ section.settings.top_header_2 | strip_html | escape }}">{{ section.settings.top_header_2 }}</a>{% endif %}
+          {% if section.settings.top_header_3 != blank %}<a class="mx-4 text-center" href="{{ section.settings.url_3 }}" aria-label="{{ section.settings.top_header_3 | strip_html | escape }}">{{ section.settings.top_header_3 }}</a>{% endif %}
+        </div>
+      </div>
+</section>
+{% schema %}
+  {
+    "name": "Announcement bar",
+    "settings": [
+      {
+      "type": "text",
+      "id": "top_header",
+      "label": "Top header 1",
+      "default" : "Free delivery on all orders on orders over £100"
+    },
+    {
+      "type": "url",
+      "id": "url_1",
+      "label": "Url 1"
+    },
+    {
+      "type": "text",
+      "id": "top_header_2",
+      "label": "Top header 2",
+      "default" : "We ship globally!"
+    },
+     {
+      "type": "url",
+      "id": "url_2",
+      "label": "Url 2"
+    },
+    {
+      "type": "text",
+      "id": "top_header_3",
+      "label": "Top header 3",
+      "default" : "We ship globally!"
+    },
+     {
+      "type": "url",
+      "id": "url_3",
+      "label": "Url 3"
+    }
+    ]
+  }
+{% endschema %}
+
+{% stylesheet %}
+{% endstylesheet %}
+
+{% javascript %}
+{% endjavascript %}

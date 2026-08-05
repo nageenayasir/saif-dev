@@ -1,0 +1,57 @@
+<section class="section section-crys">
+    <div class="container">
+        <div class="row align-items-center mt-5">
+            <div class="col-md-6 mt-4 mt-md-0">
+                <div style="max-width: 420px;">
+                    <h2 class="text-uppercase" data-aos="fade-up">{{ section.settings.title }}</h2>
+                    <p data-aos="fade-up">{{ section.settings.sub_title }}</p>
+                    <div class="mt-4" data-aos="fade-up">
+                        <a class="btn btn-trans" href="{{ section.settings.url }}" target="_self">
+                            {{ section.settings.button }}
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6 order-first order-md-last">
+                <div data-aos="fade-up" data-aos-delay="400">
+                    <img loading="lazy"  src="{{ section.settings.image | image_url : width: 500 }}" alt="{{ section.settings.title }}">
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+{% schema %}
+  {
+    "name": "Section Impact",
+    "settings": [
+      {
+        "type": "text",
+        "id": "title",
+        "label": "Title",
+        "default" : "Impact & SUSTAINABILITY"
+      },
+      {
+        "type": "textarea",
+        "id": "sub_title",
+        "label": "Subtitle",
+        "default": "As part of a global community, TRIIBE supports individuals from inspiring athletes, adventurers, to wellness advocates and entrepreneurs, who are active in their communities and motivated to help elevate others and make the world a better place."
+      },
+      {
+          "type": "image_picker",
+          "id": "image",
+          "label": "Image"
+      },
+      {
+        "type": "text",
+        "id": "button",
+        "label": "Button",
+        "default" : "Find out more"
+      },
+      {
+        "type": "url",
+        "id": "url",
+        "label": "Url"
+      }
+    ]
+  }
+{% endschema %}

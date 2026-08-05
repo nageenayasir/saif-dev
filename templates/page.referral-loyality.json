@@ -1,0 +1,84 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+ {
+  "sections": {
+    "ab0001af-7c13-4292-8527-b12275ca7d33": {
+      "type": "banner-default",
+      "disabled": true,
+      "settings": {
+        "enable_breadcrumb": true,
+        "title": "",
+        "sub_title": "",
+        "image": "shopify://shop_images/Screen_Shot_2022-11-30_at_4.18.2_-optimized.png"
+      }
+    },
+    "main": {
+      "type": "main-page",
+      "disabled": true,
+      "settings": {}
+    },
+    "banner_slider_mQNXge": {
+      "type": "banner-slider",
+      "blocks": {
+        "banner_slider_GhWVca": {
+          "type": "banner_slider",
+          "settings": {
+            "class_text": "referral-loyality-banner",
+            "background_the_image": "shopify://shop_images/tribe-banner-img-web.jpg",
+            "bg_mob_image": "shopify://shop_images/tribe-banner-img-mobile.jpg",
+            "the_text": "",
+            "title": "REFER A FRIEND <span>& Get Rewarded</span>",
+            "fade_text_1": "",
+            "fade_text_2": "",
+            "fade_text_3": "",
+            "fade_text_4": "",
+            "fade_text_5": "",
+            "mob_the_text": "",
+            "mob_title": "",
+            "sub_title": "You'll earn $10 every time someone orders $50+ using your link or code.",
+            "button_1": "JOIN FOR FREE",
+            "url_1": "https://tribeorganicsreferral.superfiliate.com/portal",
+            "button_2": "",
+            "url_2": "",
+            "text_under_button": "<p>Already have an account? <a href=\"https://tribeorganicsreferral.superfiliate.com/portal\" title=\"https://tribeorganicsreferral.superfiliate.com/portal\">Login</a></p>",
+            "enable_gift_content": false,
+            "sub_title_1": "",
+            "text_1": "",
+            "and_text": "",
+            "sub_title_2": "",
+            "text_2": ""
+          }
+        }
+      },
+      "block_order": [
+        "banner_slider_GhWVca"
+      ],
+      "settings": {
+        "show_social": false,
+        "text": "Visit",
+        "social_spotify_link": "https://open.spotify.com/user/8yaaywq2a4gtbxl0w7csryv2o?si=28d61f70a2cc496c"
+      }
+    },
+    "referral_loyality_info_g4y8zU": {
+      "type": "referral-loyality-info",
+      "settings": {
+        "the_text": "<p>Share the love!</p><p>Give a friend $10 off their first Tribe Organics order of $50 or more, and you’ll also earn $10 off your next purchase.(U.S. customers only)</p>",
+        "button": "START SHARING",
+        "url": "https://tribeorganicsreferral.superfiliate.com/portal"
+      }
+    }
+  },
+  "order": [
+    "ab0001af-7c13-4292-8527-b12275ca7d33",
+    "main",
+    "banner_slider_mQNXge",
+    "referral_loyality_info_g4y8zU"
+  ]
+}

@@ -1,0 +1,104 @@
+<style>
+  #id-{{ section.id }}{
+  	background-color:{{ section.settings.section_bg_color }};
+  }
+</style>
+<section id="id-{{ section.id }}" class="ashwagandha-pack-icon-section">
+  <div class="ashwagandha-pack-icon-wrapper">
+    <div class="container">
+      <div class="row">
+        <div class="ashwagandha-pack-icon-left-columns">
+          <div class="ashwagandha-pack-icon-logo">
+            {% if section.settings.site_logo_image != blank %}<img loading="lazy"  src="{{ section.settings.site_logo_image | image_url: width: 2000 }}">{% endif %}
+          </div>
+        </div>
+        <div class="ashwagandha-pack-icon-right-column">
+            <ul>
+              {% if section.settings.logo_image_1 != blank %}
+                <li>
+                  <img loading="lazy"  src="{{ section.settings.logo_image_1 | image_url: width: 2000 }}">
+                </li>
+                {% endif %}
+              {% if section.settings.logo_image_2 != blank %}
+                <li>
+                  <img loading="lazy"  src="{{ section.settings.logo_image_2 | image_url: width: 2000 }}">
+                </li>
+              {% endif %}
+              {% if section.settings.logo_image_3 != blank %}
+                <li>
+                  <img loading="lazy"  src="{{ section.settings.logo_image_3 | image_url: width: 2000 }}">
+                </li>
+              {% endif %}
+              {% if section.settings.logo_image_4 != blank %}
+                <li>
+                  <img loading="lazy"  src="{{ section.settings.logo_image_4 | image_url: width: 2000 }}">
+                </li>
+              {% endif %}
+              {% if section.settings.logo_image_5 != blank %}
+                <li>
+                  <img loading="lazy"  src="{{ section.settings.logo_image_5 | image_url: width: 2000 }}">
+                </li>
+              {% endif %}
+            </ul>
+          </div>  
+      </div>
+    </div>
+  </div>
+</section>
+{% schema %}
+  {
+    "name": "Aswagangandha Pack Icons",
+    "settings": [
+         {
+            "type": "header",
+            "content": "Content Style"
+         },
+  	     {
+           "type": "color",
+           "id": "section_bg_color",
+           "label": "Section background color"
+        },
+        {
+          "type": "header",
+          "content": "Content Settings"
+      	},
+        {
+          "type": "image_picker",
+          "id": "site_logo_image",
+          "label": "Site Logo Image"
+      	},
+        {
+          "type": "header",
+          "content": "Logo Settings"
+        },
+        {
+          "type": "image_picker",
+          "id": "logo_image_1",
+          "label": "Logo Image-1"
+      	},
+        {
+          "type": "image_picker",
+          "id": "logo_image_2",
+          "label": "Logo Image-2"
+      	},
+        {
+          "type": "image_picker",
+          "id": "logo_image_3",
+          "label": "Logo Image-3"
+      	},
+        {
+          "type": "image_picker",
+          "id": "logo_image_4",
+          "label": "Logo Image-4"
+      	},
+        {
+          "type": "image_picker",
+          "id": "logo_image_5",
+          "label": "Logo Image-5"
+      	}
+    ],
+	"presets": [{
+      "name": "Aswagangandha Pack Icons"
+    }]
+  }
+{% endschema %}

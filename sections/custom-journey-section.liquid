@@ -1,0 +1,225 @@
+<style>
+  #id-{{ section.id }}{
+  	background-color:{{ section.settings.section_bg_color }};
+  }
+</style>
+<section id="id-{{section.id}}" class="custom-journey-section">
+  <div class="custom-journey-wrapper">
+    <div class="container">
+      <div class="row common-section-head-row">
+        <div class="col-lg-12 col-md-12 col-sm-12">
+          <div class="common-section-head-content">
+            <h2 class="custom-heading-h2">
+              {{ section.settings.the_title }}
+            </h2>
+            <a class="custom-button-wrap" href="#custom-product-offers">{{ section.settings.button_text }}</a>
+          </div>
+        </div>
+      </div>
+      {% for block in section.blocks %}
+        {% case block.type %}
+          {% comment %}
+            Rich Text
+          {% endcomment %}
+          {% when 'rich_text' %}
+          <div class="row journey-rich-text-row">
+            <div class="col-lg-12 col-md-12 col-sm-12">
+              <h2 class="custom-heading-h2">{{ block.settings.the_title }}</h2>
+              {% if block.settings.the_text != blank %}<p>{{ block.settings.the_text }}</p>{% endif %}
+            </div>
+          </div>
+          {% comment %}
+            Image With Text
+          {% endcomment %}
+          {% when 'image_with_text' %}
+          <div class="row journey-img-txt-row">
+            {% if block.settings.alignment == 'left' %}
+              <div class="col-lg-6 col-md-6 col-sm-12">
+                <div class="custom-img-wrap">
+                  {% if block.settings.the_image != blank %}<img loading="lazy"  src="{{ block.settings.the_image | image_url: width: 2000 }}">{% endif %}
+                </div>
+              </div>
+            {% endif %}
+            <div class="col-lg-6 col-md-6 col-sm-12">
+              <div class="custom-img--content-wrap">
+                <p>{{ block.settings.img_txt_text }}</p>
+              </div>
+            </div>
+            {% if block.settings.alignment == 'right' %}
+              <div class="col-lg-6 col-md-6 col-sm-12">
+                <div class="custom-img-wrap">
+                  {% if block.settings.the_image != blank %}<img loading="lazy"  src="{{ block.settings.the_image | image_url: width: 2000 }}">{% endif %}
+                </div>
+              </div>
+            {% endif %}
+          </div>
+            {% comment %}
+            Testimonial Section
+            {% endcomment %}
+            {% when 'testimonial_section' %}
+            <div class="row journey-testimonial-row">
+              <div class="col-lg-6 col-md-6 col-sm-12">
+                <div class="journey-testimonial-img">
+                  {% if block.settings.author_image != blank %}<img loading="lazy"  src="{{ block.settings.author_image | image_url: width: 2000 }}">{% endif %}
+                </div>
+              </div>
+              <div class="col-lg-6 col-md-6 col-sm-12">
+                <div class="journey-testimonial-content">
+                  <span class="testimonial-rating">
+                    <i class="fa fa-star" aria-hidden="true"></i>
+                    <i class="fa fa-star" aria-hidden="true"></i>
+                    <i class="fa fa-star" aria-hidden="true"></i>
+                    <i class="fa fa-star" aria-hidden="true"></i>
+                    <i class="fa fa-star" aria-hidden="true"></i>
+                  </span>
+                  <p>{{ block.settings.rating_text }}</p>
+                  <h4>{{ block.settings.author_name }}</h4>
+                  <h6>{{ block.settings.author_position }}</h6>
+                </div>
+              </div>
+            </div>
+            {% comment %}
+            Heading Section
+            {% endcomment %}
+          {% when 'heading_text' %}
+            <div class="row journey-heading-text-row">
+              <div class="col-lg-12 col-md-12 col-sm-12">
+                <div class="journey-heading-text">
+                  <h2 class="custom-heading-h2">{{ block.settings.the_title }}</h2>
+                </div>
+              </div>
+            </div>
+        {% endcase %}
+      {% endfor %}
+    </div>
+  </div>
+</section>
+{% schema %}
+  {
+    "name": "Custom Journey Section",
+    "settings": [
+          {
+            "type": "header",
+            "content": "Content Style"
+         },
+  	     {
+           "type": "color",
+           "id": "section_bg_color",
+           "label": "Section background color"
+        },
+        {
+          "type": "header",
+          "content": "Content Settings"
+      	},
+        {
+          "type": "text",
+          "id": "the_title",
+          "label": "Title",
+          "info": "Usin <br> tag to start text on new line"
+      	},
+        {
+           "type": "text",
+           "id": "button_text",
+           "label": "Text"
+        }
+    ],
+	"blocks": [
+        {
+          "type": "rich_text",
+          "name": "Rich Text",
+          "settings": [
+        		{
+                  "type": "text",
+                  "id": "the_title",
+                  "label": "Title"
+              	},
+                {
+                  "type": "richtext",
+                  "id": "the_text",
+                  "label": "Text"
+              	}
+            ]
+      },
+      {
+          "type": "image_with_text",
+          "name": "Image-with-Text",
+          "settings": [
+        		{
+                  "type": "image_picker",
+                  "id": "the_image",
+                  "label": "Image"
+              	},
+                {
+                    "type": "select",
+                    "id": "alignment",
+                     "label": "Image position",
+                     "default": "left",
+                     "options": [
+                           {
+                                "value": "left",
+                                "label": "Left"
+                            },
+                            {
+                                "value": "right",
+                                "label": "Right"
+                            }
+                        ]
+                     },
+                     {
+                            "type": "richtext",
+                            "id": "img_txt_text",
+                            "label": "Text"
+                     }
+            ]
+          },
+          {
+              "type": "testimonial_section",
+              "name": "Testimonial Section",
+              "settings": [
+            		{
+                      "type": "image_picker",
+                      "id": "author_image",
+                      "label": "Image"
+                  	},
+                    {
+                      "type": "text",
+                      "id": "rating_text",
+                      "label": "Rating Text"
+                  	},
+                    {
+                      "type": "text",
+                      "id": "author_name",
+                      "label": "Author Name"
+                  	},
+                    {
+                      "type": "text",
+                      "id": "author_position",
+                      "label": "Author Position"
+                  	}
+                    
+                ]
+          },
+          {
+            "type": "heading_text",
+            "name": "Heading Text",
+            "settings": [
+          		{
+                    "type": "text",
+                    "id": "the_title",
+                    "label": "Title"
+                 }
+              ]
+        }
+	
+	],
+	"presets": [{
+      "name": "Custom Journey Section"
+    }]
+  }
+{% endschema %}
+
+{% stylesheet %}
+{% endstylesheet %}
+
+{% javascript %}
+{% endjavascript %}

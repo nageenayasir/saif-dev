@@ -1,0 +1,608 @@
+{% comment %}
+  [DGF] Graph Timeline
+  Author: Rodrigo Gesser
+  Date: 2025-09-16
+{% endcomment %}
+
+{% liquid
+  assign bg_color = section.settings.background_color | default: '#000000'
+  assign text_color = section.settings.text_color | default: '#ffffff'
+  assign week_color = section.settings.week_color | default: '#485B58'
+  assign card_bg_color = section.settings.card_bg_color | default: '#F3D9CF'
+  assign card_text_color = section.settings.card_text_color | default: '#06211E'
+  assign disc_text_color = section.settings.disc_text_color | default: '#06211E'
+  assign button_bg_color = section.settings.button_bg_color | default: '#AC853B'
+  assign button_text_color = section.settings.button_text_color | default: '#ffffff'
+  assign mobile_bg_image = section.settings.mobile_bg_image
+%}
+
+<section class="dgf-graph-section" style="background-color: {{ bg_color }}; color: {{ text_color }};">
+  <div class="container">
+
+    <!-- Section Title -->
+    {% if section.settings.section_title != blank %}
+      <div class="dgf-section-title">
+        <h2>{{ section.settings.section_title }}</h2>
+      </div>
+    {% endif %}
+
+    <!-- Timeline -->
+    <div class="dgf-timeline">
+      <div class="dgf-timeline-line"
+           {% if section.settings.timeline_bg_image != blank %}
+             style="background-image: url('{{ section.settings.timeline_bg_image | image_url }}');"
+           {% endif %}></div>
+
+      {% if mobile_bg_image != blank %}
+        <div class="dgf-mobile-bg" style="background-image: url('{{ mobile_bg_image | image_url }}');"></div>
+      {% endif %}
+
+      {% for block in section.blocks %}
+        {% if block.type == 'week_item' %}
+          <div class="dgf-week-item" data-week="{{ forloop.index }}">
+            <div class="dgf-week-circle" style="background-color: {{ week_color }};">
+              {% if block.settings.week_image != blank %}
+                <img src="{{ block.settings.week_image | image_url }}" alt="{{ block.settings.week_title }}" class="dgf-week-image">
+              {% endif %}
+              <span class="dgf-week-text">{{ block.settings.week_title }}</span>
+            </div>
+
+            <div class="dgf-benefits-card" style="background-color: {{ card_bg_color }}; color: {{ card_text_color }};">
+              <div class="dgf-benefits-content">
+                {{ block.settings.benefits_content }}
+              </div>
+            </div>
+          </div>
+        {% endif %}
+      {% endfor %}
+    </div>
+
+    <!-- CTA Section -->
+    <div class="dgf-cta-section">
+      {% if section.settings.button_text != blank %}
+        <a href="{{ section.settings.button_url | default: '#' }}"
+           class="dgf-cta-button {% if section.settings.hide_button_mobile %}dgf-hide-mobile{% endif %}"
+           style="background-color: {{ button_bg_color }}; color: {{ button_text_color }};">
+          {{ section.settings.button_text }}
+        </a>
+      {% endif %}
+
+      {% if section.settings.show_stars %}
+        <div class="dgf-rating">
+          <div class="dgf-stars">
+            {% for i in (1..5) %}
+              <span class="dgf-star">★</span>
+            {% endfor %}
+          </div>
+          {% if section.settings.rating_text != blank %}
+            <span class="dgf-rating-text">{{ section.settings.rating_text }}</span>
+          {% endif %}
+        </div>
+      {% endif %}
+      {% if section.settings.disclaimer_text != blank %}
+        <div class="dgf-disclaimer" style="color: {{ disc_text_color }};">
+          {{ section.settings.disclaimer_text }}
+        </div>
+      {% endif %}
+    </div>
+
+  </div>
+</section>
+
+<style>
+  .dgf-graph-section {
+    padding: 4rem 0;
+    min-height: 80vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .dgf-graph-container {
+    max-width: 1440px;
+    margin: 0 auto;
+    padding: 0 2rem;
+    width: 100%;
+  }
+
+  .dgf-section-title {
+    text-align: left;
+    margin-bottom: 3rem;
+  }
+
+  .dgf-section-title h2 {
+    font-size: 50px;
+    color: #000000;
+    font-weight: 700;
+    text-transform: uppercase;
+    font-family: HypatiaSansPro;
+    margin: 0;
+  }
+
+  .dgf-disclaimer {
+    font-size: 18px;
+    text-align: center;
+    font-style: italic;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 4rem;
+  }
+
+  .dgf-timeline {
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 4rem;
+    padding: 2rem 0;
+    gap: 2rem;
+  }
+
+  .dgf-timeline-line {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-80%);
+    left: 99px;
+    right: 99px;
+    height: 100%;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: contain;
+    z-index: 1;
+  }
+
+  .dgf-week-item {
+    position: relative;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    z-index: 2;
+  }
+
+  .dgf-week-circle {
+    width: 139px;
+    height: 133px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 2rem;
+    position: relative;
+    z-index: 3;
+    overflow: hidden;
+  }
+
+  .dgf-week-image {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: 1;
+  }
+
+  .dgf-week-text {
+    font-size: 30px;
+    font-weight: bold;
+    color: #ffffff;
+    font-family: HypatiaSansPro;
+    text-transform: uppercase;
+    position: relative;
+    z-index: 2;
+    text-align: center;
+  }
+
+  .dgf-benefits-card {
+    width: 100%;
+    min-height: 248px;
+    padding: 3rem;
+    border-radius: 30px 0 30px 0;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  }
+
+  .dgf-benefits-content {
+    font-size: 18px;
+    line-height: 1.2;
+  }
+
+  .dgf-benefits-content ul {
+    margin: 0;
+    padding-left: 1.2rem;
+  }
+
+  .dgf-benefits-content li {
+    margin-bottom: 0.5rem;
+    margin-top: 1rem;
+  }
+
+  .dgf-cta-section {
+    text-align: center;
+    margin-top: 3rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .dgf-cta-button {
+    width: 524.11px;
+    background: linear-gradient(101.4deg, #ac853b 26.01%, #cfa34e 68.58%);
+    border: none;
+    font-size: 25px!important;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    max-width: 100%;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    text-transform: uppercase;
+    font-weight: bold;
+    margin-bottom: 1.5rem;
+    line-height: 85px;
+    padding: 0;
+  }
+
+  .dgf-cta-button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+  }
+
+  .dgf-rating {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 0.5rem;
+  }
+
+  .dgf-stars {
+    display: flex;
+    gap: 5px;
+  }
+
+  .dgf-star {
+    color: #AC853B;
+    font-size: 24px;
+  }
+
+  .dgf-rating-text {
+    font-size: 18px;
+    color: #06211E;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+  }
+
+  /* Progressive scaling for resolutions 1440px down to 1024px */
+  @media (max-width: 1440px) and (min-width: 1025px) {
+    .dgf-timeline-line {
+      background-size: calc(100% * (100vw / 1440));
+      left: calc(99px * (100vw / 1440));
+      right: calc(99px * (100vw / 1440));
+    }
+  }
+
+  .dgf-mobile-bg {
+    display: none;
+  }
+
+  .dgf-hide-mobile {
+    display: block;
+  }
+
+  /* Responsive */
+  @media (max-width: 1023px) {
+    .dgf-timeline {
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 2rem;
+      position: relative;
+      padding-left: 40px;
+    }
+
+    .dgf-timeline-line {
+      display: none;
+    }
+
+    .dgf-mobile-bg {
+      display: block;
+      position: absolute;
+      left: 40px;
+      top: 40px;
+      bottom: 120px;
+      width: 15px;
+      background-position: top center;
+      background-repeat: repeat-y;
+      background-size: 15px auto;
+      z-index: 1;
+    }
+
+    .dgf-week-item {
+      display: flex;
+      flex-direction: row;
+      align-items: flex-start;
+      width: 100%;
+      max-width: 500px;
+      gap: 2rem;
+      position: relative;
+      z-index: 2;
+    }
+
+    .dgf-week-circle {
+      width: 80px;
+      height: 80px;
+      margin-bottom: 0;
+      flex-shrink: 0;
+      margin-left: -40px;
+    }
+
+    .dgf-week-text {
+      font-size: 14px;
+      font-weight: bold;
+    }
+
+    .dgf-benefits-card {
+      flex: 1;
+      max-width: none;
+      min-height: auto;
+      margin-left: -10px;
+      border-radius: 15px;
+    }
+
+    .dgf-benefits-content {
+      font-size: 14px;
+    }
+
+    .dgf-benefits-content ul {
+      list-style: disc;
+      padding-left: 1rem;
+    }
+
+    .dgf-benefits-content li {
+      margin-bottom: 0.3rem;
+      margin-top: 1rem;
+    }
+
+    .dgf-cta-button {
+      width: 420px;
+      height: 65px;
+      font-size: 22px!important;
+    }
+
+    .dgf-hide-mobile {
+      display: none !important;
+    }
+  }
+
+  @media (max-width: 768px) {
+    .dgf-graph-section {
+      padding: 2rem 0;
+    }
+
+    .dgf-graph-container {
+      padding: 0 1rem;
+    }
+
+    .dgf-section-title h2 {
+      font-size: 27px;
+      text-align: center;
+    }
+
+    .dgf-disclaimer {
+      font-size: 16px;
+      margin: 2rem 0;
+    }
+
+    .dgf-week-circle {
+      width: 90px;
+      height: 90px;
+    }
+
+    .dgf-week-text {
+      font-size: 16px;
+    }
+
+    .dgf-benefits-card {
+      max-width: 300px;
+      padding: 1rem 2rem 1rem 2rem;
+    }
+
+    .dgf-benefits-content {
+      font-size: 18px;
+    }
+
+    .dgf-cta-button {
+      font-size: 19px!important;
+      width: 398px;
+      height: 60px;
+    }
+  }
+</style>
+
+{% schema %}
+{
+  "name": "[DGF] Graph Timeline",
+  "tag": "section",
+  "class": "section",
+  "settings": [
+    {
+      "type": "header",
+      "content": "Timeline Background"
+    },
+    {
+      "type": "image_picker",
+      "id": "timeline_bg_image",
+      "label": "Desktop Timeline Background Image"
+    },
+    {
+      "type": "image_picker",
+      "id": "mobile_bg_image",
+      "label": "Mobile Background Image"
+    },
+    {
+      "type": "header",
+      "content": "Colors"
+    },
+    {
+      "type": "color",
+      "id": "background_color",
+      "label": "Background Color",
+      "default": "#000000"
+    },
+    {
+      "type": "color",
+      "id": "text_color",
+      "label": "Text Color",
+      "default": "#ffffff"
+    },
+    {
+      "type": "color",
+      "id": "week_color",
+      "label": "Week Circle Color",
+      "default": "#485B58"
+    },
+    {
+      "type": "color",
+      "id": "card_bg_color",
+      "label": "Benefits Card Background",
+      "default": "#F3D9CF"
+    },
+    {
+      "type": "color",
+      "id": "disc_text_color",
+      "label": "Disclaimer Text Color",
+      "default": "#06211E"
+    },
+    {
+      "type": "color",
+      "id": "card_text_color",
+      "label": "Benefits Card Text Color",
+      "default": "#06211E"
+    },
+    {
+      "type": "color",
+      "id": "button_text_color",
+      "label": "Button Text Color",
+      "default": "#ffffff"
+    },
+    {
+      "type": "header",
+      "content": "Section Title"
+    },
+    {
+      "type": "text",
+      "id": "section_title",
+      "label": "Section Title",
+      "default": "YOUR JOURNEY WITH LION'S MANE"
+    },
+    {
+      "type": "header",
+      "content": "Call to Action"
+    },
+    {
+      "type": "text",
+      "id": "button_text",
+      "label": "Button Text",
+      "default": "SHOP LION'S MANE"
+    },
+    {
+      "type": "url",
+      "id": "button_url",
+      "label": "Button URL"
+    },
+    {
+      "type": "checkbox",
+      "id": "hide_button_mobile",
+      "label": "Hide Button on Mobile",
+      "default": false
+    },
+    {
+      "type": "header",
+      "content": "Disclaimer"
+    },
+    {
+      "type": "textarea",
+      "id": "disclaimer_text",
+      "label": "Disclaimer Text",
+      "default": "Results may vary. Individual results not guaranteed."
+    },
+    {
+      "type": "header",
+      "content": "Rating"
+    },
+    {
+      "type": "checkbox",
+      "id": "show_stars",
+      "label": "Show Star Rating",
+      "default": true
+    },
+    {
+      "type": "text",
+      "id": "rating_text",
+      "label": "Rating Text",
+      "default": "LOVED BY THOUSANDS"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "week_item",
+      "name": "Week Item",
+      "settings": [
+        {
+          "type": "image_picker",
+          "id": "week_image",
+          "label": "Week Images"
+        },
+        {
+          "type": "text",
+          "id": "week_title",
+          "label": "Week Title",
+          "default": "WEEK 2"
+        },
+        {
+          "type": "richtext",
+          "id": "benefits_content",
+          "label": "Benefits Content",
+          "default": "<ul><li>Supports mental clarity & focus</li><li>Promotes mood stability</li><li>May support digestion & gut comfort</li></ul>"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "[DGF] Graph Timeline",
+      "blocks": [
+        {
+          "type": "week_item",
+          "settings": {
+            "week_title": "WEEK 2",
+            "benefits_content": "<ul><li>Supports mental clarity & focus</li><li>Promotes mood stability</li><li>May support digestion & gut comfort</li></ul>"
+          }
+        },
+        {
+          "type": "week_item",
+          "settings": {
+            "week_title": "WEEK 4",
+            "benefits_content": "<ul><li>Boosts memory & concentration</li><li>Promotes calm under stress</li><li>Supports balanced, jitter-free energy</li></ul>"
+          }
+        },
+        {
+          "type": "week_item",
+          "settings": {
+            "week_title": "WEEK 6",
+            "benefits_content": "<ul><li>Enhances focus, learning & recall</li><li>Productivity may improve</li><li>Supports gut health & immune defense</li></ul>"
+          }
+        },
+        {
+          "type": "week_item",
+          "settings": {
+            "week_title": "WEEK 8",
+            "benefits_content": "<ul><li>Fosters emotional balance & well-being</li><li>Supports brain function & healthy aging</li></ul>"
+          }
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}

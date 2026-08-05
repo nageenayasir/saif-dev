@@ -1,0 +1,90 @@
+<section class="section section-crys">
+    <div class="container">
+        <div class="qta pt-0">
+            <div class="row justify-content-center">
+                <div class="col-md-12 col-lg-8">
+                    <div class="row">
+                      {% for block in section.blocks %}
+                            <div class="col-4">
+                                <div class="qta-item text-center" data-aos="fade-up" data-aos-delay="000">
+                                    <img loading="lazy"  src="{{ block.settings.logo | image_url : width: 300 }}">
+                                </div>
+                            </div>
+                        {% endfor %}
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <h2 class="text-uppercase text-center d-block d-md-none" data-aos="fade-up" data-aos-delay="000">{{ section.settings.title }}</h2>
+        <div class="row align-items-center mt-5">
+            <div class="col-md-6 mt-4 mt-md-0">
+                <div style="max-width: 420px;">
+                    <h2 class="text-uppercase d-none d-md-block" data-aos="fade-up">
+                        {{ section.settings.title }}
+                    </h2>
+                    <ul class="big-dot mt-5" data-aos="fade-up">
+                        {{ section.settings.custom_html }}
+                    </ul>
+                  <div class="mt-4" data-aos="fade-up">
+                          <a class="btn btn-bg impact-logo-text-btn" href=" {{ section.settings.url }}" target="_self">
+                            {{ section.settings.button }}
+                          </a>
+                      </div>
+                </div>
+            </div>
+            <div class="col-md-6 order-first order-md-last">
+                <div data-aos="fade-up" data-aos-delay="400">
+                    <img loading="lazy"  src="{{ section.settings.image | image_url: width: 800 }}">
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+{% schema %}
+  {
+    "name": "Logo & Text",
+    "settings": [
+       {
+        "type": "text",
+        "id": "title",
+        "label": "Title",
+        "default" : "Title"
+      },
+      {
+        "type": "html",
+        "id": "custom_html",
+        "label": "Custom Html"
+      },
+      {
+        "type": "text",
+        "id": "button",
+        "label": "Button",
+        "default" : "there’s more..."
+      },
+      {
+        "type": "url",
+        "id": "url",
+        "label": "Url"
+      },
+      {
+        "type": "image_picker",
+        "id": "image",
+        "label": "Image"
+      }
+	],
+    "blocks": [
+     {
+      "type": "logo",
+      "name": "Logo",
+      "settings": [
+        {
+          "type": "image_picker",
+          "id": "logo",
+          "label": "Logo"
+        }
+      ]
+     }
+	]
+  }
+{% endschema %}

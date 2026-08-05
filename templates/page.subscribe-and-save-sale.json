@@ -1,0 +1,780 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "banner_slider_jggMHV": {
+      "type": "banner-slider",
+      "blocks": {
+        "banner_slider_XrJYaF": {
+          "type": "banner_slider",
+          "settings": {
+            "class_text": "",
+            "background_the_image": "shopify://shop_images/400_off_subs_desktop_banner.webp",
+            "bg_mob_image": "shopify://shop_images/SUBSCRIBE_SAVE_v3_-_Mobile-v3.webp",
+            "the_text": "",
+            "title": "",
+            "custom_title": "",
+            "the_image": "shopify://shop_images/400_off_subs_desktop_banner-module.webp",
+            "fade_text_1": "",
+            "fade_text_2": "",
+            "fade_text_3": "",
+            "fade_text_4": "",
+            "fade_text_5": "",
+            "mob_the_text": "",
+            "mob_title": "",
+            "sub_title": "",
+            "button_1": "",
+            "url_1": "",
+            "button_2": "",
+            "url_2": "",
+            "text_under_button": "",
+            "enable_gift_content": false,
+            "sub_title_1": "",
+            "text_1": "",
+            "and_text": "",
+            "sub_title_2": "",
+            "text_2": "",
+            "button_3": "",
+            "url_3": ""
+          }
+        }
+      },
+      "block_order": [
+        "banner_slider_XrJYaF"
+      ],
+      "custom_css": [
+        "@media (min-width: 769px) {.mob-banner-percentage-offer {display: none; } .web-banner-percentage-offer {min-width: 150%; }}",
+        "@media (max-width: 768px) {.web-banner-percentage-offer {display: none; } .cstm-site-banner-section {background-position: center bottom; margin: auto; }}",
+        ".banner-swiper-pagination {display: none;}"
+      ],
+      "name": "Banner Slider",
+      "settings": {
+        "show_social": false,
+        "text": "Visit",
+        "social_spotify_link": "https://open.spotify.com/user/8yaaywq2a4gtbxl0w7csryv2o?si=28d61f70a2cc496c"
+      }
+    },
+    "dgf_icon_slider_HTPfPC": {
+      "type": "dgf-icon-slider",
+      "blocks": {
+        "icon_item_WUL89x": {
+          "type": "icon_item",
+          "settings": {
+            "icon": "shopify://shop_images/tribe-logo-icon.svg",
+            "text": "Limited Time Offer",
+            "text_color": "#ffffff"
+          }
+        },
+        "icon_item_gbPB9W": {
+          "type": "icon_item",
+          "settings": {
+            "icon": "shopify://shop_images/tribe-logo-icon.svg",
+            "text": "Limited Time Offer",
+            "text_color": "#ffffff"
+          }
+        },
+        "icon_item_RVeYPJ": {
+          "type": "icon_item",
+          "settings": {
+            "icon": "shopify://shop_images/tribe-logo-icon.svg",
+            "text": "Limited Time Offer",
+            "text_color": "#ffffff"
+          }
+        },
+        "icon_item_MmdEpM": {
+          "type": "icon_item",
+          "settings": {
+            "icon": "shopify://shop_images/tribe-logo-icon.svg",
+            "text": "Limited Time Offer",
+            "text_color": "#ffffff"
+          }
+        },
+        "icon_item_6mbNfL": {
+          "type": "icon_item",
+          "settings": {
+            "icon": "shopify://shop_images/tribe-logo-icon.svg",
+            "text": "Limited Time Offer",
+            "text_color": "#ffffff"
+          }
+        }
+      },
+      "block_order": [
+        "icon_item_WUL89x",
+        "icon_item_gbPB9W",
+        "icon_item_RVeYPJ",
+        "icon_item_MmdEpM",
+        "icon_item_6mbNfL"
+      ],
+      "name": "[DGF] Icon Slider",
+      "settings": {
+        "title": "",
+        "sec_bg_color": "#61827d",
+        "text_color": "#333333",
+        "icon_bg_color": "#819b97",
+        "icon_bg_image": "shopify://shop_images/background-icon.webp",
+        "autoplay_speed": 5,
+        "pause_on_hover": false
+      }
+    },
+    "homepage_featured_product_first_F4XQmC": {
+      "type": "homepage-featured-product-first",
+      "blocks": {
+        "product_zd8rfJ": {
+          "type": "product",
+          "settings": {
+            "product": "turmeric-complex"
+          }
+        },
+        "product_yxabDQ": {
+          "type": "product",
+          "settings": {
+            "product": "ashwagandha-ksm-66"
+          }
+        },
+        "product_cefmnw": {
+          "type": "product",
+          "settings": {
+            "product": "organic-moringa"
+          }
+        },
+        "product_n3mTb3": {
+          "type": "product",
+          "settings": {
+            "product": "lions-mane-mushroom"
+          }
+        },
+        "product_7LbFjp": {
+          "type": "product",
+          "settings": {
+            "product": "boswellia-complex"
+          }
+        }
+      },
+      "block_order": [
+        "product_zd8rfJ",
+        "product_yxabDQ",
+        "product_cefmnw",
+        "product_n3mTb3",
+        "product_7LbFjp"
+      ],
+      "custom_css": [
+        ".product-item .img-wrapper {background: url(https://cdn.shopify.com/s/files/1/0499/0425/5134/files/Rectangle_31307.png?v=1768859847);}",
+        ".btn-trans,.category,.jdgm-widget {display: none !important;}",
+        ".price {color: black !important;}",
+        "@media (min-width: 769px) {#id-template--20900202184927__homepage_featured_product_first_F4XQmC .row {flex-direction: column; } #id-template--20900202184927__homepage_featured_product_first_F4XQmC .row > [class*=\"col-\"] {width: 100% !important; max-width: 100% !important; }}"
+      ],
+      "name": "Featured Product-1",
+      "settings": {
+        "section_bg_color": "#faeee9",
+        "title": "<h2 style=\"text-align: center; color: black;\">BEST SELLERS | HUGE SAVINGS</h2>",
+        "sub_title": "",
+        "button": "",
+        "url": ""
+      }
+    },
+    "5b054b3b-037f-41eb-95e5-4adc35df2e2f": {
+      "type": "subscribe-save-featured-product",
+      "blocks": {
+        "1ab268a8-5441-4de6-ad25-d80589bffd7c": {
+          "type": "product",
+          "settings": {
+            "product": "ashwagandha-ksm-66",
+            "enable_subscribe": true
+          }
+        },
+        "400b23f2-e4b7-4fc1-ae1f-be0e545e1b64": {
+          "type": "product",
+          "settings": {
+            "product": "organic-moringa",
+            "enable_subscribe": true
+          }
+        },
+        "21057d0c-c6b3-4576-876f-7dc6723a604d": {
+          "type": "product",
+          "settings": {
+            "product": "lions-mane-mushroom",
+            "enable_subscribe": true
+          }
+        },
+        "14648c0c-90e4-4fc8-952c-fee0a76b55a0": {
+          "type": "product",
+          "settings": {
+            "product": "turmeric-complex",
+            "enable_subscribe": true
+          }
+        },
+        "18091dea-0af2-4866-a5bb-0094a5ca3ac3": {
+          "type": "product",
+          "settings": {
+            "product": "ashwagandha-vegan",
+            "enable_subscribe": true
+          }
+        },
+        "fd95a377-8549-4075-a1ed-02c8f050ff82": {
+          "type": "product",
+          "settings": {
+            "product": "organic-shatavari",
+            "enable_subscribe": true
+          }
+        }
+      },
+      "block_order": [
+        "1ab268a8-5441-4de6-ad25-d80589bffd7c",
+        "400b23f2-e4b7-4fc1-ae1f-be0e545e1b64",
+        "21057d0c-c6b3-4576-876f-7dc6723a604d",
+        "14648c0c-90e4-4fc8-952c-fee0a76b55a0",
+        "18091dea-0af2-4866-a5bb-0094a5ca3ac3",
+        "fd95a377-8549-4075-a1ed-02c8f050ff82"
+      ],
+      "disabled": true,
+      "custom_css": [
+        ".btn {display: none;}",
+        "h2 {text-align: center;}",
+        "@media (min-width: 769px) {#id-template--20900202184927__5b054b3b-037f-41eb-95e5-4adc35df2e2f .row {flex-direction: column; } #id-template--20900202184927__5b054b3b-037f-41eb-95e5-4adc35df2e2f .row > [class*=\"col-\"] {width: 100% !important; max-width: 100% !important; } #id-template--20900202184927__5b054b3b-037f-41eb-95e5-4adc35df2e2f .col-md-4 {margin-bottom: 2rem; }}"
+      ],
+      "settings": {
+        "custom_class": "",
+        "section_bg_color": "#faeee9",
+        "title": "BEST SELLERS | HUGE SAVINGS",
+        "ttl_color": "#111111",
+        "sub_ttl_color": "#111111",
+        "btn_ttl_color": "#111111",
+        "pdc_ttl_color": "#111111",
+        "sub_title": "",
+        "button": "",
+        "url": ""
+      }
+    },
+    "dgf_subscribe_journey_XTwQEn": {
+      "type": "dgf-subscribe-journey",
+      "custom_css": [
+        ".dgf-journey-footer {background: linear-gradient(90deg, #586a67, #6c8480); padding: 5px; font-style: normal; font-weight: 400;}",
+        ".container {background-color: #f3d9cf !important; padding: 2rem;}"
+      ],
+      "name": "[DGF] Subscribe Journey",
+      "settings": {
+        "background_color": "#faeee9",
+        "padding_top": 60,
+        "padding_bottom": 60,
+        "title": "YOUR SUBSCRIPTION JOURNEY STARTS HERE",
+        "title_color": "#07211f",
+        "subtitle_line1": "Unlock exclusive rewards with every order.",
+        "subtitle_line2": "The more you shop, the more you save and the better your benefits become.",
+        "subtitle_color": "#07211f",
+        "cards_bg_image": "shopify://shop_images/Vector_67_1.webp",
+        "cards_bg_image_mobile": "shopify://shop_images/Vector_68.webp",
+        "show_cta_button": false,
+        "cta_text": "START YOUR <br>SUBSCRIPTION NOW",
+        "cta_link": "",
+        "cta_text_color": "#ffffff",
+        "footer_text": "You’re always in control — skip or pause deliveries whenever you need.Canceling your subscription will reset your benefits and remove access to exclusive perks.",
+        "footer_text_color": "#ffffff"
+      }
+    },
+    "f3e0638f-637a-40cd-868d-a7c5918c4f57": {
+      "type": "subscribe-save-image-text",
+      "custom_css": [
+        "@media (max-width: 767px) {.subscribe-save-image-text .row {flex-direction: column-reverse !important; }}",
+        ".dgf-icons__title {font-family: \"Work Sans\"; font-style: normal; font-size: 15px;}"
+      ],
+      "settings": {
+        "the_image": "shopify://shop_images/subscribe_and_save_program_1_1.webp",
+        "image_position": "right",
+        "the_text": "<h2>MORE REASONS TO SUBSCRIBE</h2><ol><li><strong>Save BIG </strong>40% off now, then locked-in savings every month.</li><li><strong>Free Gift After Your 5th Order </strong>Our surprise thank-you!</li><li><strong>Stay on track </strong>Never run out of your wellness essentials</li><li><strong>Pause, Skip or Cancel </strong>Full flexibility, no stress</li><li><strong>Early Access to New Launches</strong> Be the first to try what’s next</li></ol>",
+        "mob_text": "",
+        "btn_txt": "Choose Your PRODUCTs",
+        "btn_url": "shopify://collections/all-products",
+        "icons_title": "Pay less when you make a commitment to yourself."
+      }
+    },
+    "67ff0b0d-1c38-47ee-8f3f-08345da3a38d": {
+      "type": "subscribe-save-image-text-second",
+      "disabled": true,
+      "settings": {
+        "the_image": "shopify://shop_images/nootropic_duo_homepage.png",
+        "image_position": "right",
+        "the_text": "<h2>UNLOCK SAVINGS WITH OUR CURATED BUNDLES</h2><p>From $64.54</p><p>Level up your wellness routine with these mindfully paired products, chosen for their power to work synergistically and give you the most potent benefits. Explore our existing bundles or shop our best sellers!</p>",
+        "mob_text": "<h2>UNLOCK SAVINGS WITH OUR CURATED BUNDLES</h2>",
+        "button_1": "EXPLORE BUNDLES",
+        "url_1": "shopify://collections/bundles-1",
+        "button_2": "SHOP BEST-SELLERS",
+        "url_2": "shopify://collections/best-sellers"
+      }
+    },
+    "358f92ec-e991-4543-acb6-3996b346bdfd": {
+      "type": "custom-testimonial-slider",
+      "blocks": {
+        "content_Vfwg6j": {
+          "type": "content",
+          "settings": {
+            "image": "shopify://shop_images/lion_s_mane.webp",
+            "button_link": "shopify://products/lions-mane-mushroom",
+            "stars": "<i class=\"fa fa-star active\"></i>\n                                                <i class=\"fa fa-star active\"></i>\n                                                <i class=\"fa fa-star active\"></i>\n                                                <i class=\"fa fa-star active\"></i>\n                                                <i class=\"fa fa-star active\"></i>",
+            "date_text": "",
+            "title": "Must have!",
+            "sub_title": "<p>I absolutely have had an awesome experience taking these. So has my partner. We both feel so clear minded, natural energy, and have had a TON of anxiety released. I subscribed because of the impact it’s had on my life! I’m able to take a step back & think from a higher awareness now!! Love their product & how pure of mushroom it is.<br/></p><p><strong>- Carly C.</strong></p>",
+            "bottom_text": "Results may vary by individual."
+          }
+        },
+        "content_ycEhB8": {
+          "type": "content",
+          "settings": {
+            "image": "shopify://shop_images/MORINGA_e3d79cd3-d066-4e47-b962-2565c94b3f57.png",
+            "button_link": "shopify://products/organic-moringa",
+            "stars": "<i class=\"fa fa-star active\"></i>\n                                                <i class=\"fa fa-star active\"></i>\n                                                <i class=\"fa fa-star active\"></i>\n                                                <i class=\"fa fa-star active\"></i>\n                                                <i class=\"fa fa-star active\"></i>",
+            "date_text": "",
+            "title": "Great quality!",
+            "sub_title": "<p>Fantastic/awesome product. When's my next subscription due?<br/></p><p><strong>- Leland M.</strong></p>",
+            "bottom_text": "Results may vary by individual."
+          }
+        },
+        "content_rknbx6": {
+          "type": "content",
+          "settings": {
+            "image": "shopify://shop_images/ashwagandha.webp",
+            "button_link": "shopify://products/ashwagandha-ksm-66",
+            "stars": "<i class=\"fa fa-star active\"></i>\n                                                <i class=\"fa fa-star active\"></i>\n                                                <i class=\"fa fa-star active\"></i>\n                                                <i class=\"fa fa-star active\"></i>\n                                                <i class=\"fa fa-star active\"></i>",
+            "date_text": "",
+            "title": "My Review of the Product After ~20 Days",
+            "sub_title": "<p>Very good product. Does what is advertised and is highly recommended. I purchased the 120 capsule form over the 90 capsule form due to getting 30 more capsules for just a few dollars more. I also got the subscription service, because I want to get more once I run out of the current one. Plus, the subscription service is slightly cheaper than selecting the one-time purchase.</p><p><strong>- Jack H.</strong></p>",
+            "bottom_text": "Results may vary by individual."
+          }
+        },
+        "a59df195-17d3-4b24-be56-e0a1e0e24b9e": {
+          "type": "content",
+          "settings": {
+            "image": "shopify://shop_images/lion_s_mane.webp",
+            "button_link": "shopify://products/lions-mane-mushroom",
+            "stars": "<i class=\"fa fa-star active\"></i>\n                                                <i class=\"fa fa-star active\"></i>\n                                                <i class=\"fa fa-star active\"></i>\n                                                <i class=\"fa fa-star active\"></i>\n                                                <i class=\"fa fa-star active\"></i>",
+            "date_text": "",
+            "title": "Amazing Lion's Mane",
+            "sub_title": "<p>The product arrived on time and the package was very well protected. I bought the product for my wife whose having some episodes of forgetting things. She started to use the product a week and a half ago and I think that it is to early to see results.</p><p><strong>- Victor Arroyo</strong></p>",
+            "bottom_text": "Results may vary by individual."
+          }
+        },
+        "f0c2824a-a1e4-46f9-b403-ec5799a8afc6": {
+          "type": "content",
+          "settings": {
+            "image": "shopify://shop_images/ashwagandha.webp",
+            "button_link": "shopify://products/ashwagandha-ksm-66",
+            "stars": "<i class=\"fa fa-star active\"></i>\n                                                <i class=\"fa fa-star active\"></i>\n                                                <i class=\"fa fa-star active\"></i>\n                                                <i class=\"fa fa-star active\"></i>\n                                                <i class=\"fa fa-star active\"></i>",
+            "date_text": "",
+            "title": "Awesome Ashwagandha!",
+            "sub_title": "<p>I love this stuff. I take it every day and notice a big difference in energy and mood.</p><p><strong>- Sage</strong></p>",
+            "bottom_text": "Results may vary by individual."
+          }
+        },
+        "97c395c5-d330-4635-9f7e-06718cfe4535": {
+          "type": "content",
+          "settings": {
+            "image": "shopify://shop_images/lion_s_mane.webp",
+            "button_link": "shopify://products/lions-mane-mushroom",
+            "stars": "<i class=\"fa fa-star active\"></i>\n                                                <i class=\"fa fa-star active\"></i>\n                                                <i class=\"fa fa-star active\"></i>\n                                                <i class=\"fa fa-star active\"></i>\n                                                <i class=\"fa fa-star active\"></i>",
+            "date_text": "",
+            "title": "Love it",
+            "sub_title": "<p>Took about 3 weeks to feel more focused and improvement with my memory. I will definitely continue using your products. I also use Turmeric Complex.</p><p><strong>- Todd Bajar</strong></p>",
+            "bottom_text": "Results may vary by individual."
+          }
+        },
+        "51c805e7-c17f-476e-9f0d-7d548256506b": {
+          "type": "content",
+          "settings": {
+            "image": "shopify://shop_images/tumeric.webp",
+            "button_link": "shopify://products/turmeric-complex",
+            "stars": "<i class=\"fa fa-star active\"></i>\n                                                <i class=\"fa fa-star active\"></i>\n                                                <i class=\"fa fa-star active\"></i>\n                                                <i class=\"fa fa-star active\"></i>\n                                                <i class=\"fa fa-star active\"></i>",
+            "date_text": "",
+            "title": "Pain Relief",
+            "sub_title": "<p>Finally. Searching for something that might take pain away from arthritis and joint/skeletal muscle issues. Found it!!!</p><p><strong>- Robin Mccroskey</strong></p>",
+            "bottom_text": "Results may vary by individual."
+          }
+        },
+        "57eb8110-6bd3-48dc-8e5c-ae1096a0cc75": {
+          "type": "content",
+          "settings": {
+            "image": "shopify://shop_images/boswellia.webp",
+            "button_link": "shopify://products/boswellia-complex",
+            "stars": "<i class=\"fa fa-star active\"></i>\n                                                <i class=\"fa fa-star active\"></i>\n                                                <i class=\"fa fa-star active\"></i>\n                                                <i class=\"fa fa-star active\"></i>\n                                                <i class=\"fa fa-star active\"></i>",
+            "date_text": "",
+            "title": "Great Customer Service",
+            "sub_title": "<p>Even though the shipping company messed up, Tribe Organics came through and delivered a new shipment. Product was for a friend but I would certainly buy from them again.</p><p></p><p><strong>- Geraldine Houck</strong></p>",
+            "bottom_text": "Results may vary by individual."
+          }
+        },
+        "ebe446f0-bc74-4962-9308-01837d02f16b": {
+          "type": "content",
+          "settings": {
+            "image": "shopify://shop_images/boswellia.webp",
+            "button_link": "shopify://products/boswellia-complex",
+            "stars": "<i class=\"fa fa-star active\"></i>\n                                                <i class=\"fa fa-star active\"></i>\n                                                <i class=\"fa fa-star active\"></i>\n                                                <i class=\"fa fa-star active\"></i>\n                                                <i class=\"fa fa-star active\"></i>",
+            "date_text": "",
+            "title": "Excellent product and company",
+            "sub_title": "<p>I have never encountered a company with a higher quality product that's more beautifully packaged, or with better delivery & customer service. After considerable research on Boswellia (for arthritis & inflammation), I chose Tribe and have never been disappointed.</p><p><strong>- Kathleen Stachowski</strong></p>",
+            "bottom_text": "Results may vary by individual."
+          }
+        },
+        "6e534580-77c5-4a1e-8c9e-c5583ff1cd59": {
+          "type": "content",
+          "settings": {
+            "image": "shopify://shop_images/resilience.webp",
+            "button_link": "shopify://products/resilience-duo",
+            "stars": "<i class=\"fa fa-star active\"></i>\n                                                <i class=\"fa fa-star active\"></i>\n                                                <i class=\"fa fa-star active\"></i>\n                                                <i class=\"fa fa-star active\"></i>\n                                                <i class=\"fa fa-star active\"></i>",
+            "date_text": "",
+            "title": "It works!",
+            "sub_title": "<p>Been using Tribe for several months now. . All pure , no fillers like other products... Boswellia &<br/>Turmeric together have given me A better functional body . Feel better, more energy and more life..</p><p><strong>- Peggy MINER</strong></p>",
+            "bottom_text": "Results may vary by individual."
+          }
+        },
+        "93506731-dbd6-45d8-b13a-39a81a1ea31f": {
+          "type": "content",
+          "settings": {
+            "image": "shopify://shop_images/nootropic.webp",
+            "button_link": "shopify://products/nootropic-duo",
+            "stars": "<i class=\"fa fa-star active\"></i>\n                                                <i class=\"fa fa-star active\"></i>\n                                                <i class=\"fa fa-star active\"></i>\n                                                <i class=\"fa fa-star active\"></i>",
+            "date_text": "",
+            "title": "So helpful",
+            "sub_title": "<p>This combo is very helpful for boosting brain function during the day as feeling more wakeful. Also helpful at night for restful sleep. Win-Win!!</p><p><strong>- Susan Andrews</strong></p>",
+            "bottom_text": "Results may vary by individual."
+          }
+        }
+      },
+      "block_order": [
+        "content_Vfwg6j",
+        "content_ycEhB8",
+        "content_rknbx6",
+        "a59df195-17d3-4b24-be56-e0a1e0e24b9e",
+        "f0c2824a-a1e4-46f9-b403-ec5799a8afc6",
+        "97c395c5-d330-4635-9f7e-06718cfe4535",
+        "51c805e7-c17f-476e-9f0d-7d548256506b",
+        "57eb8110-6bd3-48dc-8e5c-ae1096a0cc75",
+        "ebe446f0-bc74-4962-9308-01837d02f16b",
+        "6e534580-77c5-4a1e-8c9e-c5583ff1cd59",
+        "93506731-dbd6-45d8-b13a-39a81a1ea31f"
+      ],
+      "custom_css": [
+        ".subscribe-save-testimonial h2,.testimonial-box h5,.testimonial-box p {color: #111 !important;}"
+      ],
+      "settings": {
+        "section_bg_color": "#faeee9",
+        "custom_class": "subscribe-save-testimonial",
+        "title": "FROM OUR CURRENT SUBSCRIBERS"
+      }
+    },
+    "743f1162-6257-44d7-b0ba-ff4e1388e677": {
+      "type": "susbribe-featured-product-second",
+      "blocks": {
+        "98c99f27-33c9-4ba5-adcb-4f715e9350ea": {
+          "type": "product",
+          "settings": {
+            "product": "ashwagandha-ksm-66",
+            "enable_subscribe": false
+          }
+        },
+        "8e31c10f-be9c-4525-a86d-8cfe0125cb95": {
+          "type": "product",
+          "settings": {
+            "product": "ashwagandha-vegan",
+            "enable_subscribe": false
+          }
+        },
+        "96c50ba6-16a9-4482-8848-cbb40bbdd60a": {
+          "type": "product",
+          "settings": {
+            "product": "endurance-duo",
+            "enable_subscribe": false
+          }
+        },
+        "d3daf833-248e-4bdb-9e99-c2b7ed260ee9": {
+          "type": "product",
+          "settings": {
+            "product": "recovery-trio",
+            "enable_subscribe": false
+          }
+        },
+        "31761b43-848e-4911-b7f2-003b9f6ba26e": {
+          "type": "product",
+          "settings": {
+            "product": "revitalize-trio",
+            "enable_subscribe": false
+          }
+        }
+      },
+      "block_order": [
+        "98c99f27-33c9-4ba5-adcb-4f715e9350ea",
+        "8e31c10f-be9c-4525-a86d-8cfe0125cb95",
+        "96c50ba6-16a9-4482-8848-cbb40bbdd60a",
+        "d3daf833-248e-4bdb-9e99-c2b7ed260ee9",
+        "31761b43-848e-4911-b7f2-003b9f6ba26e"
+      ],
+      "disabled": true,
+      "settings": {
+        "custom_class": "featured-products-second-section",
+        "section_bg_color": "#faeee9",
+        "title": "Your ritual, your rules.",
+        "sub_title": "If you’ve got a specific health goal in mind then you probably know what you’re looking for, so we can just show you the way...",
+        "button": "SHOP COLLECTION",
+        "url": "shopify://collections/athletic-performance"
+      }
+    },
+    "17689328567cdc53ed": {
+      "type": "_blocks",
+      "blocks": {
+        "ai_gen_block_cab0de4_Uc48zm": {
+          "type": "ai_gen_block_cab0de4",
+          "settings": {
+            "title": "START YOUR SUBSCRIPTION",
+            "title_size": 32,
+            "title_color": "#121212",
+            "title_alignment": "center",
+            "title_spacing": 30,
+            "product_1": "boswellia-complex",
+            "image_1": "shopify://shop_images/phase1-silo_12.webp",
+            "product_2": "ashwagandha-ksm-66-powder-version",
+            "image_2": "shopify://shop_images/phase1-silo_20.webp",
+            "product_3": "ashwagandha-ksm-66-gummies",
+            "image_3": "shopify://shop_images/phase1-silo_1.webp",
+            "product_4": "ashwagandha-ksm-66",
+            "image_4": "shopify://shop_images/Frame_427321113.webp",
+            "product_5": "organic-shatavari",
+            "image_5": "shopify://shop_images/phase1-silo_26.webp",
+            "product_6": "mushroom-golden-blend",
+            "image_6": "shopify://shop_images/phase1-silo_24.webp",
+            "product_7": "mushroom-golden-blend-powder",
+            "image_7": "shopify://shop_images/phase1-silo_23.webp",
+            "product_8": "lions-mane-mushroom-extract-powder",
+            "image_8": "shopify://shop_images/phase1-silo_25.webp",
+            "grid_gap": 20,
+            "image_border_radius": 0,
+            "product_title_color": "#121212",
+            "product_price_color": "#121212",
+            "cta_text": "SHOP ALL",
+            "cta_link": "shopify://collections/all-products",
+            "cta_alignment": "center",
+            "cta_spacing": 40,
+            "cta_font_size": 13,
+            "cta_padding_vertical": 12,
+            "cta_padding_horizontal": 32,
+            "cta_border_radius": 4,
+            "cta_background_color": "#ac853b",
+            "cta_text_color": "#ffffff",
+            "cta_hover_color": "#000000",
+            "background_color": "#faeee9",
+            "section_padding": 50
+          },
+          "blocks": {}
+        }
+      },
+      "block_order": [
+        "ai_gen_block_cab0de4_Uc48zm"
+      ],
+      "custom_css": [
+        ".btn {margin: auto !important;}",
+        ".ai-featured-products__compare-at-azhrymmlwu0rtahawnaigenblockcab0de4uc48zm {text-decoration: line-through;}",
+        "img {background-color: #f6e3dc;}",
+        ".ai-featured-products__product-title-azhrymmlwu0rtahawnaigenblockcab0de4uc48zm {text-transform: uppercase;}"
+      ],
+      "name": "Custom Featured Product (AI)",
+      "settings": {}
+    },
+    "373865f1-6234-4c58-a7af-54a7fbab0241": {
+      "type": "subscribe-save-faqs",
+      "blocks": {
+        "template--16783372976351__373865f1-6234-4c58-a7af-54a7fbab0241-faq-1": {
+          "type": "faq",
+          "settings": {
+            "title": "What is a subscription? ",
+            "content": "A subscription will ensure that you always have your products arriving at your door at a set frequency.  We know a healthy lifestyle requires some consistency, which is why we created our subscription program. \n \nSubscriptions are easy to manage, and you are never locked in. You are always notified a few days before your order will go through so you can skip, cancel or swap out products anytime!"
+          }
+        },
+        "template--16783372976351__373865f1-6234-4c58-a7af-54a7fbab0241-faq-2": {
+          "type": "faq",
+          "settings": {
+            "title": "How does the subscription option work?",
+            "content": "When you subscribe, you choose how often you’d like your products delivered every 30, 45, or 60 days, and enjoy automatic savings that increase with each successful delivery.\n\nHere’s how it works:\n\n1st order: Get 10% off (apply your welcome coupon for an extra 5% off).\n\n2nd order: Enjoy 15% off automatically — no coupon needed.\n\n3rd order: Your discount increases to 20% off.\n\n4th order: Unlock our maximum discount of 25% off.\n\n5th order: Receive a surprise gift and free shipping for life as a thank-you for staying subscribed.\n\nYou’re always in control; you can skip, pause, or manage your deliveries anytime from your account.\n\nPlease note that canceling your subscription resets your discount progress and removes access to exclusive perks."
+          }
+        },
+        "template--16783372976351__373865f1-6234-4c58-a7af-54a7fbab0241-faq-3": {
+          "type": "faq",
+          "settings": {
+            "title": "How do I cancel my subscription?",
+            "content": "Sorry to see you go. We’ll miss you. \n \nYou can cancel your subscription at any time by logging in to your account and managing it. Simply scroll down to the bottom of your subscription page, where you’ll see the options to “Pause Subscription” or “Cancel Subscription.”\n\nIf you need help, you can also contact us at info@tribe-organics.com, and our team will be happy to assist."
+          }
+        },
+        "0c97a6a0-98e7-4119-97e9-3a5562138f9b": {
+          "type": "faq",
+          "settings": {
+            "title": "How do discounts work on subscription orders?",
+            "content": "Sorry, coupons cannot be combined with subscription purchases at this time."
+          }
+        },
+        "23a3c54d-2bb9-40a7-be0a-57c69ea0dafe": {
+          "type": "faq",
+          "settings": {
+            "title": "Can I reschedule my next shipment?",
+            "content": "Yes! You can reschedule your next shipment at any time by logging into your account and selecting the “Re-Schedule” option to choose a new processing date. Any future shipments will automatically adjust based on your updated schedule.\n\nIf you need help, feel free to email us at info@tribe-organics.com, and we’ll be happy to assist."
+          }
+        },
+        "e07dd1b5-07e2-4828-9e6f-ea15d864c8da": {
+          "type": "faq",
+          "settings": {
+            "title": "How do I change my shipping address on my subscription?",
+            "content": "You can update your shipping address by logging into your account, going to your profile, and editing your default address.\n\nPlease note that changing your address will not update an order that has already been processed. Once an order is in processing, the shipping address cannot be modified.\n\nIf you need help or want us to confirm the update, feel free to email us at info@tribe-organics.com, and our team will be happy to assist."
+          }
+        },
+        "a807c57f-9c51-405a-9df6-2dcc3328a222": {
+          "type": "faq",
+          "settings": {
+            "title": "Can I have multiple subscriptions?",
+            "content": "Yes! When subscribed to multiple items each will show up as a uniquely manageable item within your subscription dashboard."
+          }
+        }
+      },
+      "block_order": [
+        "template--16783372976351__373865f1-6234-4c58-a7af-54a7fbab0241-faq-1",
+        "template--16783372976351__373865f1-6234-4c58-a7af-54a7fbab0241-faq-2",
+        "template--16783372976351__373865f1-6234-4c58-a7af-54a7fbab0241-faq-3",
+        "0c97a6a0-98e7-4119-97e9-3a5562138f9b",
+        "23a3c54d-2bb9-40a7-be0a-57c69ea0dafe",
+        "e07dd1b5-07e2-4828-9e6f-ea15d864c8da",
+        "a807c57f-9c51-405a-9df6-2dcc3328a222"
+      ],
+      "settings": {
+        "title": "Frequently Asked Questions"
+      }
+    },
+    "dgf_text_with_button_8frB6Q": {
+      "type": "dgf-text-with-button",
+      "name": "[DGF] Text With Button",
+      "settings": {
+        "the_text": "<h2>Ready to Join the Triibe?</h2><p>Wellness made easy, rewards made forever.<br/>Pick your path and join our community.<br/><br/></p>",
+        "button_1": "Choose Your PRODUCT",
+        "url_1": "shopify://collections/all-products",
+        "button_2": "Explore Our Values",
+        "url_2": "",
+        "btn1_txt_color": "#ffffff",
+        "btn2_txt_color": "#111111"
+      }
+    },
+    "1664882687ca47c28b": {
+      "type": "banner-subpage",
+      "disabled": true,
+      "settings": {
+        "enable_breadcrumb": true,
+        "title": "Set yourself up for success, we’ll help",
+        "sub_title": "Build a routine, make a long lasting change, do yourself a favor and then let us congratulate you.\n<br>\n<br>\n<br>",
+        "image": "shopify://shop_images/Screen_Shot_2022-12-08_at_10.37-optimized.png"
+      }
+    },
+    "sub-reward": {
+      "type": "sub-reward",
+      "disabled": true,
+      "settings": {
+        "text": "The reward",
+        "title": "The reward",
+        "content": "<li>\n                                    <strong>Pay less when you make a commitment to yourself.</strong><br>\n                                    Up to 15% off subscriptions and free shipping on orders over $75.\n                                </li>\n                                <li>\n                                    <strong>Your life, your rules, no hassle.</strong><br>\n                                    Total freedom to pause, skip, modify or cancel your subscription at any time.\n                                </li>\n                                <li>\n                                    <strong>Exclusive first look at the really good stuff.</strong><br>\n                                    20% pre-release discounts, front row tickets to new launches and first dibs on new products. \n                                </li>\n                                <li>\n                                    <strong>Extra special help.</strong><br>\n                                    Obviously we take customer service very seriously, but when you subscribe you get priority.\n                                </li>",
+        "image": "shopify://shop_images/subscribe.png"
+      }
+    },
+    "16648059351b8eb4d1": {
+      "type": "featured-product",
+      "blocks": {
+        "1664805935c75fd71d-0": {
+          "type": "product",
+          "settings": {
+            "product": "ashwagandha-ksm-66"
+          }
+        },
+        "1664805935c75fd71d-2": {
+          "type": "product",
+          "settings": {
+            "product": "organic-moringa"
+          }
+        },
+        "1664805935c75fd71d-4": {
+          "type": "product",
+          "settings": {
+            "product": "turmeric-complex"
+          }
+        },
+        "3b912adc-b2cc-4a23-b010-c32804c8035b": {
+          "type": "product",
+          "settings": {
+            "product": "ashwagandha-vegan"
+          }
+        },
+        "1664805935c75fd71d-1": {
+          "type": "product",
+          "settings": {
+            "product": "lions-mane-mushroom"
+          }
+        }
+      },
+      "block_order": [
+        "1664805935c75fd71d-0",
+        "1664805935c75fd71d-2",
+        "1664805935c75fd71d-4",
+        "3b912adc-b2cc-4a23-b010-c32804c8035b",
+        "1664805935c75fd71d-1"
+      ],
+      "disabled": true,
+      "settings": {
+        "title": "We’ve got you",
+        "sub_title": "Nature’s got a lot to give. Sometimes it might seem like a little too much to pick from. That’s what we’re here for.",
+        "button": "SHOP ALL PRODUCTS",
+        "url": "shopify://collections/all",
+        "class": "big",
+        "background": "section-sea"
+      }
+    },
+    "22a18794-5766-487a-a3af-be24a0299e44": {
+      "type": "image-with-text-2",
+      "disabled": true,
+      "settings": {
+        "title": "HOW IT WORKS",
+        "custom_html": "<strong>1. PICK YOUR FAVORITE TRIIBE ORGANICS PRODUCT</strong>\n<br>Go to a product or bundle page and select Subscribe &amp; Save button.\n<br>\n<br>\n<strong>2. SELECT YOUR DELIVERY FREQUENCY</strong><br>Anywhere from 1 month, 45 days to 2 months. You’re in control.\n<br>\n<br>\n<strong>3. WE'LL EMAIL YOU BEFORE EACH SHIPMENT</strong><br>\nReview, revise, and skip orders with ease.\n<br>\n<br>\n<strong>4. RELAX OR ADJUST AS NEEDED</strong>\n<br>\nChange your quantities. Change your items. Cancel anytime.",
+        "button": "SHOP products",
+        "url": "shopify://collections/all",
+        "image": "shopify://shop_images/how_it_works.png"
+      }
+    },
+    "166480598226ae16ce": {
+      "type": "image-with-text-1",
+      "disabled": true,
+      "settings": {
+        "title": "Unlock Savings with Our CURATED BundleS",
+        "sub_title": "From $54.94",
+        "content": "Level up your wellness routine with these mindfully paired products, chosen for their power to work synergistically and give you the most potent benefits. Explore our existing bundles or shop our best sellers!",
+        "button_1": "explore bundles",
+        "url_1": "shopify://collections/bundles-1",
+        "button_2": "shop best sellers",
+        "url_2": "shopify://collections/best-sellers",
+        "image": "shopify://shop_images/ashwagandha.png"
+      }
+    }
+  },
+  "order": [
+    "banner_slider_jggMHV",
+    "dgf_icon_slider_HTPfPC",
+    "homepage_featured_product_first_F4XQmC",
+    "5b054b3b-037f-41eb-95e5-4adc35df2e2f",
+    "dgf_subscribe_journey_XTwQEn",
+    "f3e0638f-637a-40cd-868d-a7c5918c4f57",
+    "67ff0b0d-1c38-47ee-8f3f-08345da3a38d",
+    "358f92ec-e991-4543-acb6-3996b346bdfd",
+    "743f1162-6257-44d7-b0ba-ff4e1388e677",
+    "17689328567cdc53ed",
+    "373865f1-6234-4c58-a7af-54a7fbab0241",
+    "dgf_text_with_button_8frB6Q",
+    "1664882687ca47c28b",
+    "sub-reward",
+    "16648059351b8eb4d1",
+    "22a18794-5766-487a-a3af-be24a0299e44",
+    "166480598226ae16ce"
+  ]
+}

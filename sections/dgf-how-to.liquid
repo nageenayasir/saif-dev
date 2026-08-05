@@ -1,0 +1,672 @@
+{% liquid
+  assign text_with_bg = section.settings.text_with_background
+  assign multiline_text = section.settings.multiline_text
+  assign highlighted_words = section.settings.highlighted_words
+  assign bg_color = section.settings.background_color | default: '#F3D9CF'
+%}
+
+<section class="dgf-how-to-section" style="background-color: {{ bg_color }}">
+
+  <!-- Imagens laterais -->
+  {% if section.settings.left_side_image %}
+    <div class="dgf-side-image dgf-left-image">
+      <img src="{{ section.settings.left_side_image | image_url }}" alt="Left decoration">
+    </div>
+  {% endif %}
+
+  {% if section.settings.right_side_image %}
+    <div class="dgf-side-image dgf-right-image">
+      <img src="{{ section.settings.right_side_image | image_url }}" alt="Right decoration">
+    </div>
+  {% endif %}
+
+  <!-- Desktop Layout -->
+  <div class="dgf-how-to-container d-none d-md-block">
+    <div class="dgf-how-to-content">
+
+      <!-- Primeira Coluna -->
+      <div class="dgf-how-to-column-left">
+        <!-- Desktop: Texto com background primeiro -->
+        {% if text_with_bg != blank %}
+          <div class="dgf-text-with-background">
+              {{ text_with_bg }}
+          </div>
+        {% endif %}
+
+        <!-- Desktop: First e Second text depois -->
+        {% if section.settings.first_text != blank %}
+          <div class="dgf-first-text">
+            {{ section.settings.first_text }}
+          </div>
+        {% endif %}
+
+        {% if section.settings.second_text != blank %}
+          <div class="dgf-second-text">
+            {% assign words = section.settings.second_text | split: ' ' %}
+            {% assign word_count = words.size %}
+            {% assign last_two_start = word_count | minus: 2 %}
+            {% assign before_words = '' %}
+            {% assign last_words = '' %}
+
+            {% for word in words %}
+              {% if forloop.index0 < last_two_start %}
+                {% assign before_words = before_words | append: word | append: ' ' %}
+              {% else %}
+                {% assign last_words = last_words | append: word %}
+                {% unless forloop.last %}
+                  {% assign last_words = last_words | append: ' ' %}
+                {% endunless %}
+              {% endif %}
+            {% endfor %}
+
+            {{ before_words }} <div class="highlight">
+             {{ last_words }}
+            </div>
+
+          </div>
+        {% endif %}
+      </div>
+
+      <!-- Segunda Coluna -->
+      <div class="dgf-how-to-column-right">
+        {% if section.settings.main_title != blank %}
+          <h2 class="dgf-main-title">{{ section.settings.main_title }}</h2>
+          <div class="dgf-title-divider"></div>
+        {% endif %}
+
+        {% if section.settings.dosage_amount != blank or section.settings.dosage_frequency != blank %}
+          <div class="dgf-dosage-section">
+            {% if section.settings.dosage_amount != blank %}
+              <div class="dgf-dosage-amount">{{ section.settings.dosage_amount }}</div>
+            {% endif %}
+            {% if section.settings.dosage_frequency != blank %}
+              <div class="dgf-dosage-frequency">{{ section.settings.dosage_frequency }}</div>
+            {% endif %}
+          </div>
+          <div class="dgf-section-divider"></div>
+        {% endif %}
+
+        {% if section.settings.serving_info_first != blank or section.settings.serving_info_second != blank %}
+          <div class="dgf-serving-section">
+            {% if section.settings.serving_info_first != blank %}
+              <div class="dgf-serving-info-first">{{ section.settings.serving_info_first }}</div>
+            {% endif %}
+            {% if section.settings.serving_info_second != blank %}
+              <div class="dgf-serving-info-second">{{ section.settings.serving_info_second }}</div>
+            {% endif %}
+          </div>
+        {% endif %}
+
+        {% if section.settings.pro_tip != blank %}
+          <div class="dgf-pro-tip-section">
+            <div class="dgf-pro-tip">{{ section.settings.pro_tip }}</div>
+          </div>
+        {% endif %}
+      </div>
+
+    </div>
+  </div>
+
+  <!-- Mobile Layout -->
+  <div class="dgf-how-to-container d-block d-md-none">
+    <div class="dgf-how-to-content">
+
+      <!-- Primeira Coluna -->
+      <div class="dgf-how-to-column-left">
+        <!-- Mobile: Ordem original - First e Second text primeiro -->
+        {% if section.settings.first_text != blank %}
+          <div class="dgf-first-text">
+            {{ section.settings.first_text }}
+          </div>
+        {% endif %}
+
+        {% if section.settings.second_text != blank %}
+          <div class="dgf-second-text">
+            {% assign words = section.settings.second_text | split: ' ' %}
+            {% assign word_count = words.size %}
+            {% assign last_two_start = word_count | minus: 2 %}
+            {% assign before_words = '' %}
+            {% assign last_words = '' %}
+
+            {% for word in words %}
+              {% if forloop.index0 < last_two_start %}
+                {% assign before_words = before_words | append: word | append: ' ' %}
+              {% else %}
+                {% assign last_words = last_words | append: word %}
+                {% unless forloop.last %}
+                  {% assign last_words = last_words | append: ' ' %}
+                {% endunless %}
+              {% endif %}
+            {% endfor %}
+
+            {{ before_words }} <div class="highlight">
+             {{ last_words }}
+            </div>
+
+          </div>
+        {% endif %}
+
+        <!-- Mobile: Texto com background depois -->
+        {% if text_with_bg != blank %}
+          <div class="dgf-text-with-background">
+              {{ text_with_bg }}
+          </div>
+        {% endif %}
+      </div>
+
+      <!-- Segunda Coluna -->
+      <div class="dgf-how-to-column-right">
+        {% if section.settings.main_title != blank %}
+          <h2 class="dgf-main-title">{{ section.settings.main_title }}</h2>
+          <div class="dgf-title-divider"></div>
+        {% endif %}
+
+        {% if section.settings.dosage_amount != blank or section.settings.dosage_frequency != blank %}
+          <div class="dgf-dosage-section">
+            {% if section.settings.dosage_amount != blank %}
+              <div class="dgf-dosage-amount">{{ section.settings.dosage_amount }}</div>
+            {% endif %}
+            {% if section.settings.dosage_frequency != blank %}
+              <div class="dgf-dosage-frequency">{{ section.settings.dosage_frequency }}</div>
+            {% endif %}
+          </div>
+          <div class="dgf-section-divider"></div>
+        {% endif %}
+
+        {% if section.settings.serving_info_first != blank or section.settings.serving_info_second != blank %}
+          <div class="dgf-serving-section">
+            {% if section.settings.serving_info_first != blank %}
+              <div class="dgf-serving-info-first">{{ section.settings.serving_info_first }}</div>
+            {% endif %}
+            {% if section.settings.serving_info_second != blank %}
+              <div class="dgf-serving-info-second">{{ section.settings.serving_info_second }}</div>
+            {% endif %}
+          </div>
+        {% endif %}
+
+        {% if section.settings.pro_tip != blank %}
+          <div class="dgf-pro-tip-section">
+            <div class="dgf-pro-tip">{{ section.settings.pro_tip }}</div>
+          </div>
+        {% endif %}
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<style>
+  .dgf-how-to-section {
+    position: relative;
+  }
+
+  .dgf-how-to-container {
+    max-width: 1440px;
+    margin: 0 auto;
+    padding: 0 20px;
+  }
+
+  .dgf-how-to-content {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 40px;
+    padding: 0 17rem;
+    align-items: start;
+    justify-items: center;
+    align-items: center;
+  }
+
+  .dgf-how-to-column-left {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+  }
+
+  .dgf-text-with-background {
+    max-width: 430px;
+    min-height: 200px;
+    padding: 20px;
+    background-color: #485B58;
+    border-radius: 15px 0 15px 0;
+    font-size: 18px;
+    font-weight: 500;
+    line-height: 1.5;
+    display: flex;
+    align-items: center;
+  }
+
+  .dgf-text-with-background p {
+    margin: 0!important;
+  }
+
+  .dgf-first-text {
+    font-size: 42px;
+    color: #06211E;
+    line-height: 1.4;
+    margin-top: 2rem;
+    max-width: 450px;
+    font-weight: bold;
+    font-family: 'Superior Title Italic';
+    font-style: italic;
+  }
+
+  .dgf-second-text {
+    font-size: 42px;
+    color: #06211E;
+    line-height: 1.4;
+    max-width: 450px;
+    font-weight: bold;
+    font-family: HypatiaSansPro;
+  }
+
+  .highlight {
+    background-color: #485B58;
+    border-radius: 15px 0 15px 0!important;
+    color: #ffffff;
+    padding: 1rem;
+    display: inline;
+    vertical-align: baseline;
+  }
+
+  .dgf-how-to-column-right {
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+    text-align: center;
+  }
+
+  .dgf-main-title {
+    font-size: 50px;
+    font-weight: bold;
+    color: #AC853B;
+    margin: 0!important;
+    padding-top: 3rem;
+    text-transform: uppercase;
+  }
+
+  .dgf-title-divider {
+    height: 2px;
+    background-color: #06211E;
+    width: 100%;
+    margin: 0 0 40px 0;
+  }
+
+  .dgf-dosage-section {
+    margin-bottom: 1.5rem;
+  }
+
+  .dgf-dosage-amount {
+    font-size: 45px;
+    font-weight: bold;
+    font-family: HypatiaSansPro;
+    color: #06211E;
+    line-height: 1;
+    margin-bottom: 10px;
+  }
+
+  .dgf-dosage-frequency {
+    font-size: 50px;
+    font-family: 'Superior Title Italic';
+    font-style: italic;
+    color: #06211E;
+    font-weight: bold;
+  }
+
+  .dgf-section-divider {
+    height: 2px;
+    background-color: #06211E;
+    width: 100%;
+    margin: 30px 0;
+  }
+
+  .dgf-serving-section {
+    margin-bottom: 30px;
+    display: flex;
+    gap: 10px;
+    align-items: baseline;
+    justify-content: center;
+  }
+
+  .dgf-serving-info-first {
+    font-size: 42px;
+    color: #06211E;
+    line-height: 1.2;
+    font-weight: bold;
+    font-family: HypatiaSansPro;
+  }
+
+  .dgf-serving-info-second {
+    font-size: 42px;
+    color: #06211E;
+    line-height: 1.2;
+    font-weight: 600;
+    font-family: 'Superior Title Italic';
+    font-style: italic;
+  }
+
+  .dgf-pro-tip-section {
+    text-align: left;
+    margin-bottom: 3rem;
+  }
+
+  .dgf-pro-tip {
+    font-size: 20px;
+    color: #06211E;
+    line-height: 1.5;
+  }
+
+  /* Imagens laterais */
+  .dgf-side-image {
+    position: absolute;
+    z-index: 900;
+    pointer-events: none;
+  }
+
+  .dgf-left-image {
+    left: -46px;
+    top: 100px;
+  }
+
+  .dgf-right-image {
+    right: -3px;
+    top: 30px;
+  }
+
+  .dgf-side-image img {
+    width: auto;
+    object-fit: cover;
+  }
+
+  /* Garantir que o conteúdo fique sobre as imagens */
+  .dgf-how-to-container {
+    position: relative;
+    z-index: 2;
+  }
+
+  /* Escalamento proporcional de 1440px para 1024px */
+  @media (max-width: 1439px) and (min-width: 1025px) {
+
+    .dgf-how-to-content {
+      padding: 0 calc(17rem * (0.4 + 0.6 * (100vw - 1024px) / 416px));
+    }
+
+    .dgf-text-with-background {
+      max-width: calc(430px * (0.5 + 0.5 * (100vw - 1024px) / 416px));
+      min-height: calc(200px * (0.6 + 0.4 * (100vw - 1024px) / 416px));
+      padding: calc(20px * (0.6 + 0.4 * (100vw - 1024px) / 416px));
+      font-size: calc(18px * (0.7 + 0.3 * (100vw - 1024px) / 416px));
+    }
+
+    .dgf-first-text {
+      font-size: calc(42px * (0.6 + 0.4 * (100vw - 1024px) / 416px));
+      margin-top: calc(2rem * (0.5 + 0.5 * (100vw - 1024px) / 416px));
+      max-width: calc(450px * (0.6 + 0.4 * (100vw - 1024px) / 416px));
+    }
+
+    .dgf-second-text {
+      font-size: calc(42px * (0.6 + 0.4 * (100vw - 1024px) / 416px));
+      max-width: calc(450px * (0.6 + 0.4 * (100vw - 1024px) / 416px));
+    }
+
+    .highlight {
+      padding: calc(1rem * (0.6 + 0.4 * (100vw - 1024px) / 416px));
+    }
+
+    .dgf-main-title {
+      font-size: calc(50px * (0.6 + 0.4 * (100vw - 1024px) / 416px));
+      padding-top: calc(3rem * (0.5 + 0.5 * (100vw - 1024px) / 416px));
+    }
+
+    .dgf-title-divider {
+      height: calc(3px * (0.7 + 0.3 * (100vw - 1024px) / 416px));
+      margin: 0 0 calc(40px * (0.6 + 0.4 * (100vw - 1024px) / 416px)) 0;
+    }
+
+    .dgf-dosage-section {
+      margin-bottom: calc(30px * (0.6 + 0.4 * (100vw - 1024px) / 416px));
+    }
+
+    .dgf-dosage-amount {
+      font-size: calc(45px * (0.6 + 0.4 * (100vw - 1024px) / 416px));
+      margin-bottom: calc(10px * (0.6 + 0.4 * (100vw - 1024px) / 416px));
+    }
+
+    .dgf-dosage-frequency {
+      font-size: calc(50px * (0.6 + 0.4 * (100vw - 1024px) / 416px));
+    }
+
+    .dgf-section-divider {
+      height: calc(2px * (0.7 + 0.3 * (100vw - 1024px) / 416px));
+      margin: calc(30px * (0.6 + 0.4 * (100vw - 1024px) / 416px)) 0;
+    }
+
+    .dgf-serving-section {
+      margin-bottom: calc(30px * (0.6 + 0.4 * (100vw - 1024px) / 416px));
+      gap: calc(10px * (0.6 + 0.4 * (100vw - 1024px) / 416px));
+    }
+
+    .dgf-serving-info-first {
+      font-size: calc(42px * (0.6 + 0.4 * (100vw - 1024px) / 416px));
+    }
+
+    .dgf-serving-info-second {
+      font-size: calc(42px * (0.6 + 0.4 * (100vw - 1024px) / 416px));
+    }
+
+    .dgf-pro-tip {
+      font-size: calc(20px * (0.7 + 0.3 * (100vw - 1024px) / 416px));
+    }
+
+    .dgf-how-to-column-left {
+      gap: calc(8px * (0.6 + 0.4 * (100vw - 1024px) / 416px));
+    }
+
+    .dgf-how-to-content {
+      gap: calc(40px * (0.6 + 0.4 * (100vw - 1024px) / 416px));
+    }
+
+    .dgf-left-image {
+      left: -82px;
+      top: 32px;
+    }
+
+    .dgf-right-image {
+      right: -62px;
+      top: -3px;
+    }
+
+  }
+
+  @media (min-width: 1025px) and (max-width: 1140px){
+    .dgf-left-image {
+      left: -33px;
+      top: 88px;
+    }
+
+    .dgf-left-image img{
+      height: 345px;
+    }
+
+    .dgf-right-image {
+      right: -69px;
+      top: -22px;
+    }
+
+    .dgf-right-image {
+      height: 314px;
+    }
+  }
+
+  @media (max-width: 767px) {
+
+    .dgf-how-to-content {
+      grid-template-columns: 1fr;
+      gap: 0;
+      text-align: center;
+      padding: 0 20px;
+    }
+
+    /* Ordem em mobile: coluna direita primeiro, esquerda depois */
+    .dgf-how-to-column-right {
+      order: 1;
+    }
+
+    .dgf-how-to-column-left {
+      order: 2;
+      align-items: center;
+    }
+
+    .dgf-text-with-background {
+      max-width: 100%;
+      margin: 0 auto;
+      padding: 10px;
+      font-size: 16px;
+      margin: 2rem 0;
+    }
+
+    .dgf-first-text,
+    .dgf-second-text {
+      max-width: 100%;
+      font-size: 32px;
+      text-align: center;
+    }
+
+    .dgf-first-text{
+      margin-top: -3rem;
+    }
+
+    /* Ocultar apenas left image em mobile */
+    .dgf-left-image {
+      display: none;
+    }
+
+    /* Manter right image em mobile */
+    .dgf-right-image {
+      display: block;
+      right: -2px;
+      top: 50px;
+    }
+
+    .dgf-right-image img {
+      height: 280px;
+      width: auto;
+    }
+
+    .dgf-main-title{
+      font-size: 32px;
+    }
+
+    .dgf-dosage-amount{
+      font-size: 32px;
+      text-align: left;
+    }
+
+    .dgf-dosage-frequency{
+      font-size: 32px;
+      text-align: left;
+    }
+
+    .dgf-serving-info-first{
+      font-size: 32px;
+    }
+    .dgf-serving-info-second{
+      font-size: 32px;
+    }
+
+    .dgf-pro-tip{
+      font-size: 16px;
+    }
+
+    .dgf-how-to-container{
+      padding: 0;
+    }
+  }
+
+
+</style>
+
+
+{% schema %}
+{
+  "name": "DigiFlow How To",
+  "tag": "section",
+  "class": "section",
+  "settings": [
+    {
+      "type": "color",
+      "id": "background_color",
+      "label": "Background Color",
+      "default": "#F3D9CF"
+    },
+    {
+      "type": "richtext",
+      "id": "text_with_background",
+      "label": "Main Text with Background",
+      "default": "<p>Lion's Mane works best as part of your daily ritual. Just like nourishing your body with whole foods, the benefits of functional mushrooms build gradually with consistent use. Taking your capsules every day helps unlock their full potential for lasting results.</p>"
+    },
+    {
+      "type": "text",
+      "id": "first_text",
+      "label": "First Text (Italic Style)",
+      "default": "Consistency is key"
+    },
+    {
+      "type": "text",
+      "id": "second_text",
+      "label": "Second Text (Bold Style)",
+      "default": "FOR REAL RESULTS"
+    },
+    {
+      "type": "text",
+      "id": "main_title",
+      "label": "Main Title (Right Side)",
+      "default": "HOW TO USE"
+    },
+    {
+      "type": "text",
+      "id": "dosage_amount",
+      "label": "Dosage Amount",
+      "default": "2 CAPSULES"
+    },
+    {
+      "type": "text",
+      "id": "dosage_frequency",
+      "label": "Dosage Frequency",
+      "default": "daily"
+    },
+    {
+      "type": "text",
+      "id": "serving_info_first",
+      "label": "Serving Information (First Text - Bold HypatiaSansPro)",
+      "default": "1000mg"
+    },
+    {
+      "type": "text",
+      "id": "serving_info_second",
+      "label": "Serving Information (Second Text - Italic Superior)",
+      "default": "serving size"
+    },
+    {
+      "type": "richtext",
+      "id": "pro_tip",
+      "label": "Pro Tip",
+      "default": "<p><strong>Pro tip:</strong> Pair your capsules with your morning routine or evening wind-down so it becomes an easy, effortless habit.</p>"
+    },
+    {
+      "type": "image_picker",
+      "id": "left_side_image",
+      "label": "Left Side Image"
+    },
+    {
+      "type": "image_picker",
+      "id": "right_side_image",
+      "label": "Right Side Image"
+    }
+  ],
+  "presets": [
+    {
+      "name": "DigiFlow How To"
+    }
+  ]
+}
+{% endschema %}

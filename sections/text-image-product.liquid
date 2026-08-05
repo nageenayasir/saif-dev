@@ -1,0 +1,84 @@
+<section class="section {{ section.settings.background }} text-image-product">
+  {% unless request.path == '/products/ashwagandha-ksm-66' or request.path == '/products/ashwagandha-gummies-kids' or request.path == '/products/ashwagandha-ksm-66-gummies' %}
+    <div class="leaf-box left-top d-none d-md-block">
+        <img loading="lazy" class="leaf" src="{{ 'leaf-n01.svg' | asset_url }}">
+    </div> 
+  {% endunless %}
+    <div class="container">
+        <h2 class="text-uppercase text-center d-block d-md-none" data-aos="fade-up">{{ product.metafields.custom.title_section_2 }}</h2>
+        <div class="row align-items-center">
+            <div class="col-md-6 mt-4 mt-md-0">
+                <div style="max-width: 550px;">
+                    <h2 class="text-uppercase d-none d-md-block" data-aos="fade-up">{{ product.metafields.custom.title_section_2 }}</h2>
+                    <p data-aos="fade-up"><strong>{{ product.metafields.custom.subtitle_section_2 }}</strong></p>
+                    <p data-aos="fade-up">{{ product.metafields.custom.content_section_2 | newline_to_br }}</p>
+                </div>
+            </div>
+            <div class="col-md-6 order-first order-md-last">
+                <div data-aos="fade-up" data-aos-delay="400">
+                    <img loading="lazy" src="{{ product.metafields.custom.image_section_2 | image_url: width: 800 }}" alt="{{ product.metafields.custom.title_section_2 }}">
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+{% schema %}
+  {
+    "name": "Image with text product",
+    "tag": "section",
+    "class": "section",
+    "settings": [
+      {
+        "type": "text",
+        "id": "title",
+        "label": "Title",
+        "default" : "Title in Here"
+      },
+      {
+        "type": "text",
+        "id": "sub_title",
+        "label": "Subtitle",
+        "default" : "From €20"
+      },
+      {
+        "type": "textarea",
+        "id": "content",
+        "label": "Content",
+        "default" : "Resistance is the gateway to growth. This truth defines, drives, and inspires us. Challenge. Evolution. Achievement. Whether we're hitting the mountain, the desert, the street, the beach, the gym, the office, or the studio, our activities are shaped by determination. Grit is a skill. Talent is something to master. Our bodies and minds are elements to push. Made to perform at the heights of excellence, there's nothing we can't do or become. The warrior is within."
+      },
+      {
+        "type": "image_picker",
+        "id": "image",
+        "label": "Image"
+      },
+       {
+        "type": "select",
+        "id": "background",
+        "options": [
+          {
+            "value": "section-bund",
+            "label": "Background Green"
+          },
+          {
+            "value": "section-bund bg-cream color-dark",
+            "label": "Background Cream"
+          }
+        ],
+        "default": "section-bund",
+        "label": "Choose Background"
+      },
+      {
+          "type": "checkbox",
+          "id": "show_icon",
+          "label": "Show Icon",
+          "default": true
+      }
+	],
+     "presets": [
+    {
+      "name": "Image with text product"
+    }
+  ]
+  }
+{% endschema %}

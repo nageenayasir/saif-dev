@@ -1,0 +1,84 @@
+<section id="id-{{section.id}}" class="col-rvw-requirements">
+  <div class="container">
+      <div class="inn-rvw-require">
+        <h2 data-aos="fade-up">{{ section.settings.the_title }}</h2>
+        <p data-aos="fade-up">{{ section.settings.the_text }}</p>
+        <ul class="order-list">
+          {% for block in section.blocks %}
+          <li data-aos="fade-up"><span>{{ block.settings.num_text }}</span> {{ block.settings.text }}</span></li>
+          {% endfor %}
+        </ul>
+        <ul class="unorder-list">
+          <li data-aos="fade-up"><span>{% if section.settings.leaf_image !=blank %}<img loading="lazy"  src="{{ section.settings.leaf_image | image_url: width: 2000 }}">{% endif %}</span> {{ section.settings.text_1 }}</li>
+          <li data-aos="fade-up"><span>{% if section.settings.leaf_image !=blank %}<img loading="lazy"  src="{{ section.settings.leaf_image | image_url: width: 2000 }}">{% endif %}</span> {{ section.settings.text_2 }}</li>
+        </ul>
+        <p data-aos="fade-up">{{ section.settings.text_3 }}</p>
+      </div>
+  </div>
+</section>   
+{% schema %}
+  {
+    "name": "Video Requirements",
+    "settings": [
+      {
+          "type": "text",
+          "id": "the_title",
+          "label": "Title"
+      },
+      {
+          "type": "textarea",
+          "id": "the_text",
+          "label": "Text"
+      },
+      {
+          "type": "image_picker",
+          "id": "leaf_image",
+          "label": "Leaf Image"
+      },
+      {
+          "type": "textarea",
+          "id": "text_1",
+          "label": "Text-1"
+      },
+      {
+          "type": "textarea",
+          "id": "text_2",
+          "label": "Text-2"
+      },
+      {
+          "type": "textarea",
+          "id": "text_3",
+          "label": "Text-3",
+          "info": "Using <span> for change the text color"
+      }
+    ],
+    "blocks": [
+     {
+      "type": "order_list",
+      "name": "Order List",
+      "settings": [
+        {
+            "type": "text",
+            "id": "num_text",
+            "label": "Number Text"
+        },
+        {
+            "type": "textarea",
+            "id": "text",
+            "label": "Text",
+            "info": "Using <span> for change the text color"
+        }
+      ]
+     }
+	],
+	"presets": [{
+      "name": "Video Requirements"
+    }]
+  }
+{% endschema %}
+
+{% stylesheet %}
+{% endstylesheet %}
+
+{% javascript %}
+{% endjavascript %}

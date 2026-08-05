@@ -1,0 +1,719 @@
+{% comment %}
+  [DGF] Subscribe Benefits Section
+  Author: Rodrigo Gesser
+  Date: 2025-07-15
+{% endcomment %}
+
+
+<style>
+  #id-{{ section.id }} {
+    background: {% if section.settings.sec_bg_color != blank %}{{ section.settings.sec_bg_color }}
+  {% else %}linear-gradient(88.45deg, #F3D9CF 1.32%, #FFC7B2 101.32%){% endif %};
+  padding: 40px 0;
+}
+
+.benefits-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 18px;
+  margin: 0 auto;
+}
+
+.benefit-item {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  position: relative;
+}
+
+.benefit-icons {
+  display: flex;
+  align-items: center;
+  flex-shrink: 0;
+  position: relative;
+  height: 50px;
+}
+
+.benefit-icons.single-icon {
+  width: 50px;
+}
+
+.benefit-icons.double-icon {
+  width: 70px;
+}
+
+.benefit-icon {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  position: absolute;
+  overflow: hidden;
+}
+
+.benefit-icon img {
+  width: 28px;
+  height: 28px;
+  object-fit: contain;
+  z-index: 2;
+  position: relative;
+}
+
+.benefit-icon.single {
+  background-image: url('{{ section.settings.single_icon_bg | img_url }}');
+  position: static;
+}
+
+.benefit-icon.first {
+  background-image: url('{{ section.settings.first_icon_bg | img_url }}');
+  top: 0;
+  left: -23px;
+  z-index: 2;
+}
+
+.benefit-icon.second {
+  background-image: url('{{ section.settings.second_icon_bg | img_url }}');
+  top: 0;
+  right: 0;
+  z-index: 1;
+}
+
+.benefit-icon.fallback {
+  background-color: rgba(255, 255, 255, 0.2);
+}
+
+.benefit-text {
+  display: flex;
+  flex-direction: column;
+}
+
+.benefit-title {
+  font-family: Work Sans;
+  font-weight: 700;
+  font-size: 20px;
+  margin: 0 !Important;
+}
+
+.benefit-subtitle {
+  font-family: Work Sans;
+  font-weight: 400;
+  font-size: 15px;
+  margin: -10px 0 0 !important;
+}
+
+.benefit-arrow {
+  margin: 0 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 24px;
+  height: 24px;
+}
+
+.benefit-arrow svg {
+  width: 24px;
+  height: 24px;
+  fill: #586A67;
+}
+
+.benefits-footer {
+  text-align: center;
+  margin-top: 30px;
+}
+
+.benefits-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  transition: color 0.3s ease;
+  font-family: Work Sans;
+  font-weight: 500;
+  font-size: 16.57px;
+  text-align: center;
+  text-transform: uppercase;
+}
+
+.benefits-link:hover {
+  color: #666;
+}
+
+.benefits-link::after {
+  content: '↓';
+  font-size: 16px;
+}
+
+.dgf-benefits-box-right-bot {
+  bottom: -140px;
+}
+
+/* Mobile Carousel Styles */
+.benefits-mobile-carousel {
+  display: none;
+}
+
+.benefits-mobile-carousel .swiper {
+  overflow: hidden;
+  width: 100%;
+}
+
+.benefits-mobile-carousel .swiper-wrapper {
+  display: flex;
+  align-items: flex-start;
+}
+
+.benefits-mobile-carousel .swiper-slide {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  padding: 0 5px;
+  flex-shrink: 0;
+}
+
+.benefits-mobile-carousel .benefit-item {
+  flex-direction: column;
+  text-align: center;
+  gap: 15px;
+  width: 100%;
+}
+
+.benefits-mobile-carousel .benefit-text {
+  align-items: center;
+}
+
+.benefits-mobile-carousel .benefit-title {
+  font-size: 16px;
+}
+
+.benefits-mobile-carousel .benefit-subtitle {
+  font-size: 12px;
+  margin-top: 5px !important;
+}
+
+/* Media queries para controle de escala responsiva */
+@media (min-width: 1024px) and (max-width: 1280px) {
+  .benefits-container {
+    gap: 5px;
+    transform-origin: center;
+    transition: transform 0.3s ease;
+  }
+  
+  .benefit-item {
+    transform-origin: center;
+    transition: transform 0.3s ease;
+  }
+  
+  .benefit-icons {
+    height: 42px;
+  }
+  
+  .benefit-icons.single-icon {
+    width: 42px;
+  }
+  
+  .benefit-icons.double-icon {
+    width: 58px;
+  }
+  
+  .benefit-icon {
+    width: 42px;
+    height: 42px;
+  }
+  
+  .benefit-icon img {
+    width: 24px;
+    height: 24px;
+  }
+  
+  .benefit-title {
+    font-size: 16px;
+  }
+  
+  .benefit-subtitle {
+    font-size: 13px;
+  }
+  
+  .benefit-arrow {
+    width: 20px;
+    height: 20px;
+    flex-shrink: 0;
+    margin-left: 2px;
+    margin-right: 19px;
+  }
+  
+  .benefit-arrow svg {
+    width: 20px;
+    height: 20px;
+  }
+}
+
+@media (max-width: 767px) {
+  .benefits-container {
+    display: none;
+  }
+
+  .benefits-mobile-carousel {
+    display: block;
+  }
+
+  .benefit-arrow {
+    display: none;
+  }
+
+  #id-{{ section.id }} {
+    padding: 30px 0;
+  }
+
+  .benefits-footer {
+    margin-top: 20px;
+  }
+}
+</style>
+
+<section id="id-{{section.id}}" class="dgf-img-with-text common-kids-teenager-section">
+
+  <div class="leaf-box dgf-benefits-box-right-bot right-bot">
+    <img
+      loading="lazy"
+      class="leaf subscribe-save-banner-right-bot"
+      src="{{ 'leaf-n02.svg' | asset_url }}">
+  </div>
+  <div class="container justify-content-center">
+    <div class="row justify-content-center">
+      <div class="col-12">
+        
+        <!-- Desktop Layout -->
+        <div class="benefits-container">
+          {% assign base_delay = 0 %}
+          {% for block in section.blocks %}
+            {% assign delay = base_delay | plus: forloop.index0 | times: 100 %}
+            {% if forloop.index > 1 %}
+              <div
+                class="benefit-arrow"
+                data-aos="fade-up"
+                data-aos-delay="{{ delay }}">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="24"
+                  height="24">
+                  <path d="M7.293 4.707 14.586 12l-7.293 7.293 1.414 1.414L17.414 12 8.707 3.293 7.293 4.707z" />
+                </svg>
+              </div>
+            {% endif %}
+
+            <div
+              class="benefit-item"
+              data-aos="fade-up"
+              data-aos-delay="{{ delay }}">
+              <div class="benefit-icons {% if block.settings.icon_2_image != blank %}double-icon{% else %}single-icon{% endif %}">
+                {% if block.settings.icon_1_image != blank %}
+                  <div class="benefit-icon {% if block.settings.icon_2_image != blank %}first{% else %}single{% endif %}{% unless section.settings.single_icon_bg or section.settings.first_icon_bg %} fallback{% endunless %}">
+                    <img
+                      src="{{ block.settings.icon_1_image | image_url: width: 48 }}"
+                      alt="{{ block.settings.title }}"
+                      loading="lazy">
+                  </div>
+                {% endif %}
+
+                {% if block.settings.icon_2_image != blank %}
+                  <div class="benefit-icon second{% unless section.settings.second_icon_bg %} fallback{% endunless %}">
+                    <img
+                      src="{{ block.settings.icon_2_image | image_url: width: 48 }}"
+                      alt="{{ block.settings.title }}"
+                      loading="lazy">
+                  </div>
+                {% endif %}
+              </div>
+
+              <div class="benefit-text">
+                {% if block.settings.title != blank %}
+                  <h3 class="benefit-title" style="color: {{ block.settings.bnf_ttl }};">{{ block.settings.title }}</h3>
+                {% endif %}
+                {% if block.settings.subtitle != blank %}
+                  <p class="benefit-subtitle" style="color: {{ block.settings.bnf_sub_ttl }};">{{ block.settings.subtitle }}</p>
+                {% endif %}
+              </div>
+            </div>
+          {% endfor %}
+        </div>
+
+        <!-- Mobile Carousel -->
+        <div class="benefits-mobile-carousel">
+          <div class="swiper" id="benefits-carousel">
+            <div class="swiper-wrapper">
+              {% for block in section.blocks %}
+                <div class="swiper-slide">
+                  <div class="benefit-item">
+                    <div class="benefit-icons {% if block.settings.icon_2_image != blank %}double-icon{% else %}single-icon{% endif %}">
+                      {% if block.settings.icon_1_image != blank %}
+                        <div class="benefit-icon {% if block.settings.icon_2_image != blank %}first{% else %}single{% endif %}{% unless section.settings.single_icon_bg or section.settings.first_icon_bg %} fallback{% endunless %}">
+                          <img
+                            src="{{ block.settings.icon_1_image | image_url: width: 48 }}"
+                            alt="{{ block.settings.title }}"
+                            loading="lazy">
+                        </div>
+                      {% endif %}
+
+                      {% if block.settings.icon_2_image != blank %}
+                        <div class="benefit-icon second{% unless section.settings.second_icon_bg %} fallback{% endunless %}">
+                          <img
+                            src="{{ block.settings.icon_2_image | image_url: width: 48 }}"
+                            alt="{{ block.settings.title }}"
+                            loading="lazy">
+                          </div>
+                        {% endif %}
+                      </div>
+
+                      <div class="benefit-text">
+                        {% if block.settings.title != blank %}
+                          <h3 class="benefit-title" style="color: {{ block.settings.bnf_ttl }};">{{ block.settings.title }}</h3>
+                        {% endif %}
+                        {% if block.settings.subtitle != blank %}
+                          <p class="benefit-subtitle" style="color: {{ block.settings.bnf_sub_ttl }};">{{ block.settings.subtitle }}</p>
+                        {% endif %}
+                      </div>
+                    </div>
+                  </div>
+                {% endfor %}
+              </div>
+            </div>
+          </div>
+
+        {% if section.settings.show_link and section.settings.link_text != blank %}
+          <div class="benefits-footer">
+            <a
+              href="{{ section.settings.link_url | default: '#' }}"
+              class="benefits-link"
+              style="color: {{ section.settings.bnf_fot_clr }}">
+              {{ section.settings.link_text }}
+            </a>
+          </div>
+        {% endif %}
+      </div>
+    </div>
+  </div>
+</section>
+
+{% schema %}
+  {
+    "name": "[DGF] Subscribe Benefits",
+    "settings": [
+      {
+        "type": "header",
+        "content": "Content Settings"
+      },
+      {
+        "type": "color",
+        "id": "sec_bg_color",
+        "label": "Section Background Color"
+      },
+      {
+        "type": "image_picker",
+        "id": "single_icon_bg",
+        "label": "Background for Single Icon",
+        "info": "Image used when item has only one icon"
+      },
+      {
+        "type": "image_picker",
+        "id": "first_icon_bg",
+        "label": "Background for First Icon",
+        "info": "Image used for first icon when item has two icons"
+      }, {
+        "type": "image_picker",
+        "id": "second_icon_bg",
+        "label": "Background for Second Icon",
+        "info": "Image used for second icon when item has two icons"
+      }, {
+        "type": "checkbox",
+        "id": "show_link",
+        "label": "Show bottom link",
+        "default": true
+      }, {
+        "type": "text",
+        "id": "link_text",
+        "label": "Link Text",
+        "default": "SEE FULL BENEFITS BREAKDOWN"
+      }, {
+        "type": "color",
+        "id": "bnf_fot_clr",
+        "label": "Benefit Link Color",
+        "default": "#06211E"
+      }, {
+        "type": "url",
+        "id": "link_url",
+        "label": "Link URL"
+      }
+    ],
+    "blocks": [
+      {
+        "type": "benefit",
+        "name": "Benefit Item",
+        "settings": [
+          {
+            "type": "text",
+            "id": "title",
+            "label": "Title",
+            "default": "10% OFF"
+          },
+          {
+            "type": "text",
+            "id": "subtitle",
+            "label": "Subtitle",
+            "default": "#1 Order"
+          },
+          {
+            "type": "color",
+            "id": "bnf_ttl",
+            "label": "Benefit Title Color",
+            "default": "#06211E"
+          },
+          {
+            "type": "color",
+            "id": "bnf_sub_ttl",
+            "label": "Benefit Subitle Color",
+            "default": "#06211E"
+          }, {
+            "type": "header",
+            "content": "First Icon"
+          }, {
+            "type": "image_picker",
+            "id": "icon_1_image",
+            "label": "First Icon Image"
+          }, {
+            "type": "header",
+            "content": "Second Icon (Optional)"
+          }, {
+            "type": "image_picker",
+            "id": "icon_2_image",
+            "label": "Second Icon Image"
+          }
+        ]
+      }
+    ],
+    "presets": [
+      {
+        "name": "[DGF] Subscribe Benefits",
+        "blocks": [
+          {
+            "type": "benefit",
+            "settings": {
+              "title": "10% OFF",
+              "subtitle": "#1 Order"
+            }
+          },
+          {
+            "type": "benefit",
+            "settings": {
+              "title": "15% OFF",
+              "subtitle": "#2 Order"
+            }
+          },
+          {
+            "type": "benefit",
+            "settings": {
+              "title": "20% OFF",
+              "subtitle": "#3 Order"
+            }
+          },
+          {
+            "type": "benefit",
+            "settings": {
+              "title": "25% OFF",
+              "subtitle": "#4 Order"
+            }
+          }, {
+            "type": "benefit",
+            "settings": {
+              "title": "25% OFF +",
+              "subtitle": "FREE SHIPPING FOREVER"
+            }
+          }
+        ]
+      }
+    ]
+  }
+{% endschema %}
+
+{% stylesheet %}
+{% endstylesheet %}
+
+{% javascript %}
+const carouselConfig = {
+  slidesPerView: 3,
+  spaceBetween: 10,
+  loop: true,
+  centeredSlides: false,
+  autoplay: {
+    delay: 3000,
+    disableOnInteraction: false,
+  },
+  freeMode: false,
+  watchSlidesProgress: true,
+  breakpoints: {
+    0: {
+      slidesPerView: 3,
+      spaceBetween: 8,
+    },
+    480: {
+      slidesPerView: 3,
+      spaceBetween: 10,
+    },
+    640: {
+      slidesPerView: 3,
+      spaceBetween: 10,
+    }
+  }
+};
+
+
+function isMobile() {
+  try {
+    return window.innerWidth <= 767;
+  } catch (e) { null; }
+}
+
+
+function carouselExists() {
+  try {
+    const carouselElement = document.querySelector('#benefits-carousel');
+    return carouselElement && carouselElement.swiper;
+  } catch (e) { null; }
+}
+
+
+function initializeCarousel() {
+  try {
+    const carouselElement = document.querySelector('#benefits-carousel');
+    
+    if (!carouselElement) {
+      return null;
+    }
+
+    if (typeof Swiper === 'undefined') {
+      return null;
+    }
+
+    const carousel = new Swiper('#benefits-carousel', carouselConfig);
+    return carousel;
+    
+  } catch (e) { null; }
+}
+
+function destroyCarousel() {
+  try {
+    const carouselElement = document.querySelector('#benefits-carousel');
+    
+    if (carouselElement && carouselElement.swiper) {
+      carouselElement.swiper.destroy(true, true);
+    }
+  } catch (e) { null; }
+}
+
+function handleCarouselResize() {
+  try {
+    if (isMobile()) {
+      if (!carouselExists()) {
+        initializeCarousel();
+      }
+    } else {
+      if (carouselExists()) {
+        destroyCarousel();
+      }
+    }
+  } catch (e) { null; }
+}
+
+
+function initializeMobileCarousel() {
+  try {
+    if (isMobile()) {
+      initializeCarousel();
+    }
+    } catch (e) { null; }
+}
+
+
+function setupEventListeners() {
+  try {
+    window.addEventListener('resize', handleCarouselResize);
+    window.addEventListener('resize', handleResponsiveScale);
+  } catch (error) {null; }
+}
+
+// Função para controle dinâmico de escala
+function handleResponsiveScale() {
+  try {
+    const windowWidth = window.innerWidth;
+    const benefitsContainer = document.querySelector('#id-{{ section.id }} .benefits-container');
+    
+    if (!benefitsContainer) return;
+    
+    // Aplica escala dinâmica apenas entre 1024px e 1280px
+    if (windowWidth >= 1024 && windowWidth <= 1280) {
+      const benefitItems = benefitsContainer.querySelectorAll('.benefit-item');
+      const benefitArrows = benefitsContainer.querySelectorAll('.benefit-arrow');
+      const totalItems = benefitItems.length;
+      
+      if (totalItems === 0) return;
+      
+      // Calcula a escala baseada na largura disponível
+      const containerPadding = 60; // padding das laterais + margem extra
+      const availableWidth = windowWidth - containerPadding;
+      const minItemWidth = 185; // largura mínima por item (aumentada para considerar setas)
+      const arrowWidth = 41; // largura da seta + margens (20px + 2px + 19px margin)
+      const totalArrowWidth = benefitArrows.length * arrowWidth;
+      const idealTotalWidth = (totalItems * minItemWidth) + totalArrowWidth;
+      
+      let scale = 1;
+      if (idealTotalWidth > availableWidth) {
+        scale = Math.max(0.70, availableWidth / idealTotalWidth);
+      }
+      
+      // Aplica a escala calculada
+      benefitsContainer.style.transform = `scale(${scale})`;
+      
+      // Ajusta o container para evitar overflow
+      if (scale < 1) {
+        benefitsContainer.style.marginTop = `${(1 - scale) * -25}px`;
+        benefitsContainer.style.marginBottom = `${(1 - scale) * -25}px`;
+      }
+      
+    } else {
+      // Remove transformações para outras resoluções
+      benefitsContainer.style.transform = '';
+      benefitsContainer.style.marginTop = '';
+      benefitsContainer.style.marginBottom = '';
+    }
+  } catch (error) {
+    console.warn('Erro no controle de escala responsiva:', error);
+  }
+}
+
+// Função para inicializar o controle de escala
+function initResponsiveScale() {
+  try {
+    handleResponsiveScale();
+  } catch (error) {
+    console.warn('Erro ao inicializar controle de escala:', error);
+  }
+}
+
+
+function init() {
+  try {
+    initializeMobileCarousel();
+    initResponsiveScale();
+    setupEventListeners();
+  } catch (e) { null; }
+}
+
+document.addEventListener('DOMContentLoaded', init);
+{% endjavascript %}

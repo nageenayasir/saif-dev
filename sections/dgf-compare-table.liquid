@@ -1,0 +1,372 @@
+{% comment %}
+  [DGF] Compare Table
+  Author: Rodrigo Gesser
+  Date: 2025-09-18
+{% endcomment %}
+
+{% liquid
+  assign bg_color = section.settings.background_color | default: '#f5f5f5'
+  assign title_color = section.settings.title_color | default: '#000000'
+%}
+
+<section class="dgf-compare-table-section" style="background-color: {{ bg_color }};" id="dgf-compare-{{ section.id }}">
+  <div class="container">
+
+    {% if section.settings.title != blank %}
+      <div class="dgf-compare-header">
+        <h2 class="dgf-compare-title" style="color: {{ title_color }};">{{ section.settings.title }}</h2>
+      </div>
+    {% endif %}
+
+    {% if section.blocks.size > 0 %}
+      <div class="dgf-compare-table-wrapper">
+        <div class="dgf-compare-table">
+
+          <!-- Table Header with Product Images -->
+          <div class="dgf-compare-row dgf-compare-header-row">
+            <div class="dgf-compare-cell dgf-compare-feature-header">
+              {% if section.settings.header_image != blank %}
+                <img src="{{ section.settings.header_image | image_url: width: 800 }}" alt="{{ section.settings.header_image_alt | default: 'Header Image' }}" class="dgf-compare-header-image d-none d-md-block">
+              {% endif %}
+              {% if section.settings.header_image_mobile != blank %}
+                <img src="{{ section.settings.header_image_mobile | image_url: width: 600 }}" alt="{{ section.settings.header_image_alt | default: 'Header Image' }}" class="dgf-compare-header-image d-block d-md-none">
+              {% endif %}
+            </div>
+            {% if section.settings.product_1_image != blank %}
+              <div class="dgf-compare-cell dgf-compare-product-header">
+                <img src="{{ section.settings.product_1_image | image_url: width: 200 }}" alt="{{ section.settings.product_1_name | default: 'Product 1' }}" class="dgf-compare-product-image">
+              </div>
+            {% endif %}
+            {% if section.settings.product_2_image != blank %}
+              <div class="dgf-compare-cell dgf-compare-product-header">
+                <img src="{{ section.settings.product_2_image | image_url: width: 200 }}" alt="{{ section.settings.product_2_name | default: 'Product 2' }}" class="dgf-compare-product-image">
+              </div>
+            {% endif %}
+          </div>
+
+          <!-- Table Body with Features -->
+          {% for block in section.blocks %}
+            <div class="dgf-compare-row" {{ block.shopify_attributes }}>
+              <div class="dgf-compare-cell dgf-compare-feature">
+                {{ block.settings.feature_text }}
+              </div>
+              <div class="dgf-compare-cell dgf-compare-status">
+                {% if block.settings.product_1_image != blank %}
+                  <img src="{{ block.settings.product_1_image | image_url: width: 100 }}" alt="Product 1 Status" class="dgf-compare-status-image">
+                {% endif %}
+              </div>
+              <div class="dgf-compare-cell dgf-compare-status">
+                {% if block.settings.product_2_image != blank %}
+                  <img src="{{ block.settings.product_2_image | image_url: width: 100 }}" alt="Product 2 Status" class="dgf-compare-status-image">
+                {% endif %}
+              </div>
+            </div>
+          {% endfor %}
+
+        </div>
+      </div>
+    {% else %}
+      <div class="dgf-compare-placeholder">
+        <p>Add comparison features to display the table.</p>
+      </div>
+    {% endif %}
+
+  </div>
+</section>
+
+<style>
+  .dgf-compare-table-section {
+    padding: 4rem 0;
+  }
+
+  .dgf-compare-header {
+    text-align: center;
+    margin-bottom: 3rem;
+  }
+
+  .dgf-compare-title {
+    font-size: 36px;
+    font-weight: 700;
+    margin: 0;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+  }
+
+  .dgf-compare-table-wrapper {
+    max-width: 800px;
+    margin: 0 auto;
+  }
+
+  .dgf-compare-table {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+  }
+
+  .dgf-compare-row {
+    display: grid;
+    grid-template-columns: 3fr 0.75fr 0.75fr;
+    border-bottom: 2px solid #AC853B;
+  }
+
+  .dgf-compare-row:last-child {
+    border-bottom: none;
+  }
+
+  .dgf-compare-header-row {
+    min-height: 120px;
+  }
+
+  .dgf-compare-header-row .dgf-compare-feature-header {
+    padding: 0;
+    justify-content: flex-start;
+  }
+
+  .dgf-compare-header-row .dgf-compare-product-header {
+    padding: 1.5rem 1rem;
+  }
+
+  .dgf-compare-cell {
+    padding: 2rem 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    font-size: 20px;
+  }
+
+  .dgf-compare-feature-header {
+    background-color: transparent;
+    justify-content: flex-start;
+  }
+
+  .dgf-compare-header-image {
+    width: 85%;
+    height: 100%;
+    min-height: 120px;
+    object-fit: contain;
+    object-position: left;
+  }
+
+  .dgf-compare-product-header {
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+
+  .dgf-compare-product-image {
+    width: 100px;
+    height: 100px;
+    object-fit: cover;
+    border-radius: 4px;
+  }
+
+  .dgf-compare-feature {
+    text-align: left;
+    justify-content: flex-start;
+    font-size: 16px;
+    font-weight: 500;
+    color: #333;
+  }
+
+  .dgf-compare-status {
+  }
+
+  .dgf-compare-row .dgf-compare-cell:nth-child(2) {
+    background-color: #F3D9CF;
+  }
+
+  .dgf-compare-header-row .dgf-compare-cell:nth-child(2) {
+    border-radius: 0 15px 0 0;
+  }
+
+  .dgf-compare-row:last-child .dgf-compare-cell:nth-child(2) {
+    border-radius: 0 0 0 15px;
+  }
+
+  .dgf-compare-status-image {
+    width: 40px;
+    height: 40px;
+    object-fit: contain;
+    object-position: center;
+  }
+
+  .dgf-compare-placeholder {
+    text-align: center;
+    padding: 4rem 2rem;
+    color: #666;
+    font-size: 18px;
+  }
+
+  /* Mobile Responsive */
+  @media (max-width: 768px) {
+    .dgf-compare-table-section {
+      padding: 2rem 0;
+    }
+
+    .dgf-compare-title {
+      font-size: 28px;
+    }
+
+    .dgf-compare-table-wrapper {
+      margin: 0 1rem;
+    }
+
+    .dgf-compare-cell {
+      padding: 1rem 0rem;
+      font-size: 18px;
+    }
+
+    .dgf-compare-product-image {
+      width: 100%;
+      height: auto;
+    }
+
+    .dgf-compare-header-row .dgf-compare-product-header{
+      padding: 0;
+    }
+
+    .dgf-compare-header-image {
+      min-height: 100px;
+    }
+
+    .dgf-compare-header-row {
+      min-height: 100px;
+    }
+
+    .dgf-compare-status-image {
+      width: 32px;
+      height: 32px;
+    }
+  }
+
+</style>
+
+{% schema %}
+  {
+    "name": "[DGF] Compare Table",
+    "tag": "section",
+    "class": "section",
+    "settings": [
+      {
+        "type": "header",
+        "content": "Table Settings"
+      },
+      {
+        "type": "text",
+        "id": "title",
+        "label": "Table Title",
+        "default": "THE TRIBE DIFFERENCE"
+      },
+      {
+        "type": "color",
+        "id": "title_color",
+        "label": "Title Color",
+        "default": "#000000"
+      },
+      {
+        "type": "color",
+        "id": "background_color",
+        "label": "Background Color",
+        "default": "#f5f5f5"
+      },
+      {
+        "type": "header",
+        "content": "Header Image"
+      },
+      {
+        "type": "image_picker",
+        "id": "header_image",
+        "label": "Header Image (Desktop)",
+        "info": "Image displayed in the left header area on desktop"
+      },
+      {
+        "type": "image_picker",
+        "id": "header_image_mobile",
+        "label": "Header Image (Mobile)",
+        "info": "Image displayed in the left header area on mobile devices"
+      },
+      {
+        "type": "text",
+        "id": "header_image_alt",
+        "label": "Header Image Alt Text"
+      },
+      {
+        "type": "header",
+        "content": "Product Headers"
+      },
+      {
+        "type": "image_picker",
+        "id": "product_1_image",
+        "label": "Product 1 Image"
+      },
+      {
+        "type": "text",
+        "id": "product_1_name",
+        "label": "Product 1 Name",
+        "info": "Used for alt text"
+      },
+      {
+        "type": "image_picker",
+        "id": "product_2_image",
+        "label": "Product 2 Image"
+      },
+      {
+        "type": "text",
+        "id": "product_2_name",
+        "label": "Product 2 Name",
+        "info": "Used for alt text"
+      }
+    ],
+    "blocks": [
+      {
+        "type": "feature",
+        "name": "Comparison Feature",
+        "settings": [
+          {
+            "type": "text",
+            "id": "feature_text",
+            "label": "Feature Description",
+            "info": "The feature or benefit being compared"
+          },
+          {
+            "type": "image_picker",
+            "id": "product_1_image",
+            "label": "Product 1 Status Image",
+            "info": "Choose an image to represent this feature for Product 1"
+          },
+          {
+            "type": "image_picker",
+            "id": "product_2_image",
+            "label": "Product 2 Status Image",
+            "info": "Choose an image to represent this feature for Product 2"
+          }
+        ]
+      }
+    ],
+    "presets": [
+      {
+        "name": "[DGF] Compare Table",
+        "blocks": [
+          {
+            "type": "feature",
+            "settings": {
+              "feature_text": "Made with 100% Lion's Mane fruiting bodies"
+            }
+          },
+          {
+            "type": "feature",
+            "settings": {
+              "feature_text": "USDA organic certified & ethically sourced"
+            }
+          },
+          {
+            "type": "feature",
+            "settings": {
+              "feature_text": "30% beta-glucans guaranteed"
+            }
+          }
+        ]
+      }
+    ]
+  }
+{% endschema %}

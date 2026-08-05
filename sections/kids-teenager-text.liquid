@@ -1,0 +1,97 @@
+<style>
+  #id-{{ section.id }}{
+  	background-color:{{ section.settings.section_bg_color }};
+  }
+</style>
+<section id="id-{{section.id}}" class="kids-teenager-text-section common-kids-teenager-section">
+  <div class="kids-teenager-text-wrapper">
+    <div class="leaf-box kids-teenager-text-box-left-top left-top">
+        <img loading="lazy"  class="leaf custom-kidss-teenager-benefits-top" src="{{ 'kids-teenager-left-top.svg' | asset_url }}">
+    </div>
+    <div class="leaf-box kids-teenager-text-box right-top">
+        <img loading="lazy"  class="leaf kids-teenager-text-right-top" src="{{ 'kids-side-leaf.svg' | asset_url }}">
+    </div>
+    <div class="container">
+      <div class="row top-kids-teenager-info">
+        <div class="col-sm-12 col-md-8 col-lg-8 kids-teenager-top-left-text">
+          <div class="kids-teens-ashwagandha-page-btn mob-kids-teen-new-banner-btn">
+            <a href="{{ section.settings.btn_url }}">{{ section.settings.btn_text }}</a>
+          </div>
+          <div class="kids-teenager-text-info" data-aos="fade-up">
+            {{ section.settings.the_text }}
+          </div>
+        </div>
+        <div class="col-sm-12 col-md-4 col-lg-4 kids-teenager-right-text">
+          <div class="kids-teenager-image-info" data-aos="fade-up">
+            {% if section.settings.the_image != blank %}<img loading="lazy"  src="{{ section.settings.the_image | image_url: width: 2000 }}">{% endif %}
+          </div>
+        </div>
+      </div>
+      <div class="row bottom-kids-teenager-info">
+        <div class="col-sm-12 col-md-12 col-lg-12 kids-teenager-bottom-left-text">
+          <div class="kids-teenager-text-info" data-aos="fade-up">
+            {{ section.settings.second_text }}
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+{% schema %}
+  {
+    "name": "Kids-Teenager Info",
+    "settings": [
+        {
+            "type": "header",
+            "content": "Content Style"
+        },
+  	     {
+           "type": "color",
+           "id": "section_bg_color",
+           "label": "Section background color"
+      },
+      {
+            "type": "header",
+            "content": "Image Text Content Settings"
+      },
+      {
+          "type": "richtext",
+          "id": "the_text",
+          "label": "Txt"
+      },
+      {
+            "type": "image_picker",
+            "id": "the_image",
+            "label": "Image"
+      },
+      {
+            "type": "header",
+            "content": "Text Content Settings"
+      },
+      {
+          "type": "richtext",
+          "id": "second_text",
+          "label": "Txt"
+      },
+      {
+          "type": "text",
+          "id": "btn_text",
+          "label": "Button Text"
+      },
+      {
+          "type": "url",
+          "id": "btn_url",
+          "label": "Button Url"
+      }
+    ],
+	"presets": [{
+      "name": "Kids-Teenager Info"
+    }]
+  }
+{% endschema %}
+
+{% stylesheet %}
+{% endstylesheet %}
+
+{% javascript %}
+{% endjavascript %}

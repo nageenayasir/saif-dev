@@ -1,0 +1,211 @@
+<div class="cart-popup">
+    <div class="cart-popup-overlay"></div>
+    <div class="cart-popup-box" >
+        <div class="cart-popup-body">
+            <h4 class="text-uppercase cart-popup-title">{{ 'sections.cart.title' | t }}<a class="cart-popup-close" href="#"><img loading="lazy"   src="{{ 'close.svg' | asset_url }}"></a></h4>    
+            
+            
+            <div class="cart-popup-scroll-box active">
+            <p class="empty-cart-text">You have no items in your cart.</p>
+                <div class="cart-table" data-ajax-cart-section>
+                  {% for item in cart.items %}
+                      <div class="cart-item" data-ajax-cart-section-scroll>
+                        <div class="d-flex align-items-center">
+                            <img loading="lazy"  src="{{ item.image | image_url: width: 300 }}" alt="{{ item.image.alt | escape }}">
+                            <div class="box-content">
+                                <h6>{{ item.product.title | escape }}{% if item.selling_plan_allocation %} - Repeat Delivery (20% Off){% endif %}</h6>
+                                <div class="desc">
+                                {% if item.variant.title != 'Default Title' %}{{ item.variant.title }}<br>{% endif %}
+                                {% if item.selling_plan_allocation %}
+                                  {{ item.selling_plan_allocation.selling_plan.name }}
+                                {% endif %}
+                                </div>
+                                <div class="d-flex align-items-center">
+                                    <div class="p-quantity">
+                                        <a data-ajax-cart-request-button href="{{ routes.cart_change_url }}?line={{ forloop.index }}&quantity={{ item.quantity | minus: 1 }}" class="qtyminus minus" field='quantity'/>-</a>
+                                        <input type='text' data-ajax-cart-quantity-input="{{ forloop.index }}" name="updates[]" value="{{ item.quantity }}" class='qty'/>
+                                        <a data-ajax-cart-request-button href="{{ routes.cart_change_url }}?line={{ forloop.index }}&quantity={{ item.quantity | plus: 1 }}" class='qtyplus plus' field='quantity'/>+</a>
+                                    </div>
+<!--                                     <span>{{ section.settings.text_quantity }}</span> -->
+                                </div>
+                            </div>
+                            <div class="price" data-ocu-total-block="{{ item.key }}">
+                                {{ item.final_line_price | money }}
+                            </div>
+                        </div>
+                        <a data-ajax-cart-request-button href="{{ routes.cart_change_url }}?id={{ item.key }}&quantity=0" class="remove">{{ 'sections.cart.remove_title' | t }}</a>
+                    </div>
+                  {% endfor %}
+                </div>
+              <product-recommendations class="product-recommendations page-width section-{{ section.id }}-padding isolate" data-url="{{ routes.product_recommendations_url }}?section_id={{ section.id }}&product_id={{ product.id }}&limit={{ section.settings.products_to_show }}">
+                     {% if recommendations.performed and recommendations.products_count > 0 %}
+                        <div class="menu-footer">
+                            <h2 class="recommendation-heading">{{ section.settings.title }} <img loading="lazy"  class="float-end" src="{{ 'up-b.svg' | asset_url }}"></h2>
+                            <div class="menu-s product-recommendations product-recommend-wrap">
+                                  <h2 class="product-recommendations__heading {{ section.settings.heading_size }}">{{ section.settings.heading | escape }}</h2>
+                                  <ul class="grid product-grid grid--{{ section.settings.columns_desktop }}-col-desktop grid--{{ section.settings.columns_mobile }}-col-tablet-down" role="list">
+                                    {% for recommendation in recommendations.products %}
+                                      <div class="grid__item">
+                                        {% render 'card-product',
+                                          card_product: recommendation,
+                                          button: section.settings.button
+                                        %}
+                                      </div>
+                                    {% endfor %}
+                                  </ul>
+                            </div>
+                         </div>
+                    {% endif %}
+                  </product-recommendations>
+            </div>
+        </div>
+       <form action="{{ routes.cart_url }}" method="post" class="cart-popup--">
+        <div class="cart-popup-footer">
+            <div class="cart-popup-sub">
+                <div class="row">
+                    <div class="col-6">{{ 'sections.cart.subtotal' | t }}</div>
+                    <div class="col-6 text-end" data-ajax-cart-bind-state="cart.total_price | money_with_currency" data-ocu-subtotal>{{ cart.total_price | money }}</div>
+                </div>
+            </div>
+          <div class="nvd-mini"></div>
+            {% if template == 'product' or template == 'product.kids' or template == 'product.ksm-66-gummies' %}
+            <a href="javascript:void(0)" class="checkoutMine btn btn-bg btn-bg-full"><span>Checkout</span></a>
+            <button type="submit" name="checkout" class="hide btn btn-bg btn-bg-full">{{ 'sections.cart.checkout' | t }}</button>
+          {% else %}
+             <button type="submit" name="checkout" class="btn btn-bg btn-bg-full">{{ 'sections.cart.checkout' | t }}</button>
+          {% endif %}
+            <div class="cart-popup-link d-flex">
+                <a href="{{ routes.all_products_collection_url }}">{{ 'general.continue_shopping' | t }}</a>. <a href="{{ routes.cart_url }}">{{ 'general.cart.view' | t }}</a>
+            </div>
+           {% if section.settings.show_icon_payment %}
+            <p class="cart-popup-p">{{ section.settings.title_2 }} </p>
+            <div class="text-center">
+                <img loading="lazy"  src="{{ section.settings.logo | image_url : width : 600 }}" class="cart-popup-pay">
+            </div>
+          {% endif %}
+        </div>
+      </form>
+    </div>
+  
+</div>
+<style>
+  /* a.checkoutMine {
+    background-color: #af883d;
+    display: block;
+    margin: 0px 291px 20px 40px;
+    padding: 24px;
+    width: 86%;
+    text-align: center;
+}
+  a.checkoutMine:hover {
+    color: white;
+} */
+</style>
+{% javascript %}
+  class ProductRecommendations extends HTMLElement {
+    constructor() {
+      super();
+
+      const handleIntersection = (entries, observer) => {
+        if (!entries[0].isIntersecting) return;
+        observer.unobserve(this);
+
+        fetch(this.dataset.url)
+          .then(response => response.text())
+          .then(text => {
+            const html = document.createElement('div');
+            html.innerHTML = text;
+            const recommendations = html.querySelector('product-recommendations');
+
+            if (recommendations && recommendations.innerHTML.trim().length) {
+              this.innerHTML = recommendations.innerHTML;
+            }
+
+            if (html.querySelector('.grid__item')) {
+              this.classList.add('product-recommendations--loaded');
+            }
+          })
+          .catch(e => {
+            console.error(e);
+          });
+      }
+
+      new IntersectionObserver(handleIntersection.bind(this), {rootMargin: '0px 0px 200px 0px'}).observe(this);
+    }
+  }
+
+  customElements.define('product-recommendations', ProductRecommendations);
+{% endjavascript %}
+{% comment %} RGD: 2026-01-07 {% endcomment %} 
+{% comment %} 
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script> 
+{% endcomment %}
+{% # theme-check-disable ParserBlockingScript %}
+<script type="text/javascript" src="{{ 'jquery-3.5.1.min.js' | asset_url }}"></script>
+{% # theme-check-enable ParserBlockingScript %}
+<script>
+$(document).ready(function(){
+  setTimeout(function(){
+  $('.product-recommendations').click(function(){
+		$('.product-recommend-wrap').toggle();
+	});
+    }, 2500);
+  $('.product-recommendations').click(function(){
+		$('.product-recommendations--loaded').toggleClass('transition-recommend');
+	});
+
+})
+</script>
+{% schema %}
+  {
+    "name": "Section Cart Popup",
+    "settings": [
+        {
+          "type" : "header",
+          "content" : "Show Product Recommendations"
+        },
+        {
+          "type": "range",
+          "id": "products_to_show",
+          "min": 1,
+          "max": 5,
+          "step": 1,
+          "default": 1,
+          "label": "Products to show"
+       },
+       {
+          "type" : "header",
+          "content" : "Edit Content"
+      },
+       {
+          "type": "text",
+          "id": "title",
+          "default": "We’ve got a feeling you’ll vibe with",
+          "label": "Title"
+      },
+      {
+          "type": "text",
+          "id": "button",
+          "default": "Select",
+          "label": "Title Button"
+      }, 
+      {
+          "type": "text",
+          "id": "title_2",
+          "default": "Pay safely & securely with:",
+          "label": "Title"
+      },
+      {
+          "type": "checkbox",
+          "id": "show_icon_payment",
+          "label": "Show icon payment ",
+          "default": true
+      },
+      {
+          "type": "image_picker",
+          "id": "logo",
+          "label": "Logo Payment"
+      }
+    ]  
+  }
+{% endschema %}

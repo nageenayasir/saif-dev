@@ -1,0 +1,44 @@
+<style>
+  #id-{{ section.id }}{
+  	background-color:{{ section.settings.section_bg_color }};
+  }
+</style>
+<section id="id-{{ section.id }}" class="custom-logo-section">
+  <div class="custom-logo-wrapper">
+    <div class="container">
+      <div class="row">
+        <div class="col-sm-12 col-md-12 col-lg-12">
+          <div class="custom-page-logo">
+            <a href="/">
+            {% if section.settings.the_image != blank %}<img loading="lazy"  src="{{ section.settings.the_image | image_url: width: 2000 }}">{% endif %}
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+{% schema %}
+  {
+    "name": "Custom Logo Section",
+    "settings": [
+      {
+            "type": "header",
+            "content": "Content Style"
+      },
+  	  {
+           "type": "color",
+           "id": "section_bg_color",
+           "label": "Section background color"
+      },
+      {
+           "type": "image_picker",
+           "id": "the_image",
+           "label": "Image"
+     }
+    ],
+	"presets": [{
+      "name": "Custom Logo Section"
+    }]
+  }
+{% endschema %}

@@ -1,0 +1,63 @@
+<style>
+  #id-{{ section.id }}{
+  	background-color:{{ section.settings.section_bg_color }};
+  }
+</style>
+<section id="id-{{section.id}}" class="kids-teenager-clinical-approval">
+  <div class="container">
+    <div class="row">
+      <div class="col-sm-12 col-md-12 col-lg-12">
+        <div class="kids-teenager-clinical-approval-head" data-aos="fade-up">
+          <a href="{{ section.settings.button_url }}">{{ section.settings.button_text }}</a>
+        </div>
+        <div class="kids-teenager-clinical-approval-text" data-aos="fade-up">
+          <p>{{ section.settings.the_text }}</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+{% schema %}
+  {
+    "name": "Clinical Approval",
+    "settings": [
+      {
+            "type": "header",
+            "content": "Content Style"
+        },
+  	     {
+           "type": "color",
+           "id": "section_bg_color",
+           "label": "Section background color"
+      },
+      {
+            "type": "header",
+            "content": "Content Settings"
+      },
+      {
+          "type": "text",
+          "id": "button_text",
+          "label": "Text"
+      },
+      {
+          "type": "url",
+          "id": "button_url",
+          "label": "Url"
+      },
+      {
+          "type": "text",
+          "id": "the_text",
+          "label": "Text"
+      }
+    ],
+	"presets": [{
+      "name": "Clinical Approval"
+    }]
+  }
+{% endschema %}
+
+{% stylesheet %}
+{% endstylesheet %}
+
+{% javascript %}
+{% endjavascript %}

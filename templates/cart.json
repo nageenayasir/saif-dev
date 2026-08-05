@@ -1,0 +1,104 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+ {
+  "sections": {
+    "main": {
+      "type": "my-cart",
+      "settings": {}
+    },
+    "170477371325814b92": {
+      "type": "apps",
+      "blocks": {
+        "0aed7658-7625-46fb-aa53-ffc15489f3d6": {
+          "type": "shopify://apps/sezzle-widget/blocks/checkout-block/f3a53793-e118-4764-a86b-a79bfedb0d5f",
+          "settings": {
+            "heading": "Sezzle Checkout Button",
+            "template": "Checkout with %%logo%%",
+            "mode": "light",
+            "default_placement": true,
+            "padding": 9,
+            "marginTop": 0,
+            "marginRight": 0,
+            "marginBottom": 0,
+            "marginLeft": 0,
+            "width": "auto"
+          }
+        }
+      },
+      "block_order": [
+        "0aed7658-7625-46fb-aa53-ffc15489f3d6"
+      ],
+      "settings": {
+        "section_bg_color": "",
+        "title": "",
+        "image": "leaf-n18.svg",
+        "enable_svg": false,
+        "class_text": "cart-sezzle-btn",
+        "text": ""
+      }
+    },
+    "1723796900dcb7301b": {
+      "type": "apps",
+      "blocks": {
+        "rebuy_personalization_engine_rebuy_widget_G6xNiQ": {
+          "type": "shopify://apps/rebuy-personalization-engine/blocks/rebuy-widget/a26ae9b9-933b-40bf-bbc6-bf1220bbc4dc",
+          "settings": {
+            "enabled": true,
+            "id": "161474",
+            "product_id_enabled": true,
+            "collection_id_enabled": false
+          }
+        }
+      },
+      "block_order": [
+        "rebuy_personalization_engine_rebuy_widget_G6xNiQ"
+      ],
+      "settings": {
+        "section_bg_color": "",
+        "title": "Tilte",
+        "image": "leaf-n18.svg",
+        "enable_svg": true,
+        "class_text": "",
+        "text": ""
+      }
+    },
+    "17249282422b8801ea": {
+      "type": "apps",
+      "blocks": {
+        "rebuy_personalization_engine_rebuy_widget_geLhNK": {
+          "type": "shopify://apps/rebuy-personalization-engine/blocks/rebuy-widget/a26ae9b9-933b-40bf-bbc6-bf1220bbc4dc",
+          "settings": {
+            "enabled": true,
+            "id": "163334",
+            "product_id_enabled": true,
+            "collection_id_enabled": false
+          }
+        }
+      },
+      "block_order": [
+        "rebuy_personalization_engine_rebuy_widget_geLhNK"
+      ],
+      "settings": {
+        "section_bg_color": "",
+        "title": "Tilte",
+        "image": "leaf-n18.svg",
+        "enable_svg": true,
+        "class_text": "",
+        "text": ""
+      }
+    }
+  },
+  "order": [
+    "main",
+    "170477371325814b92",
+    "1723796900dcb7301b",
+    "17249282422b8801ea"
+  ]
+}

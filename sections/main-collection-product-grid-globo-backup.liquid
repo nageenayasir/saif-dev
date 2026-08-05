@@ -1,0 +1,156 @@
+<section class="section-banner section-title">
+    <div class="content">
+        <div class="container">
+            <h2 class="text-uppercase" data-aos="fade-up">{{ collection.title }}</h2>
+            <div class="subtitle" data-aos="fade-up" data-aos-delay="200">
+                {{ section.settings.content }}
+            </div>
+            <div class="btn-group">
+                <div data-aos="fade-up" data-aos-delay="400">
+                    <a class="btn btn-bg" href="{{ section.settings.url }}" target="_self">
+                       {{ section.settings.button  }}
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<div class="main-content">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-3 position-relative">
+                <div id="sidebar">
+                    <div class="sidebar menu-footer-group mobile-dropdown">
+                        <h5 class="mobile-dropdown-click text-uppercase">Filter</h5>
+                        <div class="mobile-dropdown-menu">
+                            <div class="mobile-button d-block d-md-none">
+                                <div class="row">
+                                    <div class="col-6">
+                                        <a href="#" class="mobile-clear">Clear</a>
+                                    </div>
+                                    <div class="col-6 text-end">
+                                        <a href="#" class="mobile-close">Close</a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="menu-footer">
+                                <h2 class="text-uppercase" data-aos="fade-up" data-aos-delay="000">Sort<img loading="lazy" 
+                                        class="d-none d-md-block float-end mt-1" src="assets/down.svg"></h2>
+                                <div class="menu-s" style="display: none">
+                                    <ul data-aos="fade-up" data-aos-delay="000">
+                                        <li><a href="#">Bundle</a></li>
+                                        <li class="choose"><a href="#">Most Popular</a></li>
+                                        <li><a href="#">Price Low-High</a></li>
+                                        <li><a href="#">Price High-Low</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="menu-footer">
+                                <h2 class="text-uppercase" data-aos="fade-up" data-aos-delay="000">Benefits<img loading="lazy" 
+                                        class="d-none d-md-block float-end mt-1" src="assets/down.svg"></h2>
+                                <div class="menu-s" style="display: none">
+                                    <ul data-aos="fade-up" data-aos-delay="000">
+                                        <li><a href="#">Bundle</a></li>
+                                        <li><a href="#">Most Popular</a></li>
+                                        <li><a href="#">Price Low-High</a></li>
+                                        <li><a href="#">Price High-Low</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="menu-footer">
+                                <h2 class="text-uppercase" data-aos="fade-up" data-aos-delay="000">
+                                    Ingredient<img loading="lazy" 
+                                        class="d-none d-md-block float-end mt-1" src="assets/down.svg"></h2>
+                                <div class="menu-s" style="display: none">
+                                    <ul data-aos="fade-up" data-aos-delay="000">
+                                        <li><a href="#">Bundle</a></li>
+                                        <li><a href="#">Most Popular</a></li>
+                                        <li><a href="#">Price Low-High</a></li>
+                                        <li><a href="#">Price High-Low</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="menu-footer">
+                                <h2 class="text-uppercase" data-aos="fade-up" data-aos-delay="000">Now
+                                    Trending<img loading="lazy" 
+                                            class="d-none d-md-block float-end mt-1" src="assets/down.svg"></h2>
+                                <div class="menu-s" style="display: none">
+                                    <ul data-aos="fade-up" data-aos-delay="000">
+                                        <li><a href="#">Bundle</a></li>
+                                        <li><a href="#">Most Popular</a></li>
+                                        <li><a href="#">Price Low-High</a></li>
+                                        <li><a href="#">Price High-Low</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-9">
+                <div class="row">
+                  {%- for product in collection.products -%}
+                    <div class="col-6 col-md-4 mb-5">
+                        <a href="#" class="product-item">
+                            <div class="img-wrapper">
+                                <img loading="lazy"  src="assets/pro-01.png">
+                            </div>
+                            <div class="category">Men</div>
+                            <h5>Boswellia Complex</h5>
+                            <div class="price">€20</div>
+                        </a>
+                    </div>
+                  {% endfor %}
+                </div>
+                <div class="mt-5 mb-5">
+                    <a class="btn btn-trans mx-auto" href="#">
+                        Load More
+                    </a>
+                </div>
+                <div class="page-desc mx-auto text-center mt-2">
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor Lorem ipsum
+                    dolor sit
+                    amet, consectetur adipiscing elit, sed do eiusmod tempor .
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>
+
+
+{% schema %}
+{
+  "name": "t:sections.main-collection-product-grid.name",
+  "class": "section",
+  "settings": [
+      {
+        "type": "textarea",
+        "id": "content",
+        "label": "Content",
+        "default" : "Not sure which one is best for you? Placeholder text, Consectetur adipiscing elit, sed do consectetur."
+      },
+     {
+      "type": "text",
+      "id": "button",
+      "label": "Button",
+      "default" : "Take the Quiz"
+    },
+    {
+      "type": "url",
+      "id": "url",
+      "label": "Url"
+    },
+    {
+      "type": "range",
+      "id": "products_per_page",
+      "min": 8,
+      "max": 24,
+      "step": 4,
+      "default": 16,
+      "label": "t:sections.main-collection-product-grid.settings.products_per_page.label"
+    }
+  ]
+}
+{% endschema %}

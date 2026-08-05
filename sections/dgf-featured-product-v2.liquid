@@ -1,0 +1,2958 @@
+{% comment %}
+  [DGF] Featured Product v2
+  Author: Rodrigo Gesser
+  Date: 2025-09-16
+{% endcomment %}
+
+<!-- Swiper CSS -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css">
+
+<!-- Swiper JS -->
+<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+
+{% liquid
+  assign selected_product = all_products[section.settings.featured_product]
+  assign bg_color = section.settings.background_color | default: '#000000'
+  assign text_color = section.settings.text_color | default: '#ffffff'
+
+  assign custom_title = section.settings.custom_title
+  assign ct_font = section.settings.ct_font | default: 'HypatiaSansPro'
+  assign ct_font_size = section.settings.ct_font_size | default: 48
+  assign ct_font_size_mobile = section.settings.ct_font_size_mobile | default: 27
+  assign ct_font_weight = section.settings.ct_font_weight | default: '700'
+  assign ct_transform = section.settings.ct_transform | default: 'uppercase'
+  assign ct_color = section.settings.ct_color | default: '#ffffff'
+
+  assign custom_description = section.settings.custom_description
+  assign cd_font = section.settings.cd_font | default: 'HypatiaSansPro'
+  assign cd_font_size = section.settings.cd_font_size | default: 16
+  assign cd_font_size_mobile = section.settings.cd_font_size_mobile | default: 14
+  assign cd_font_weight = section.settings.cd_font_weight | default: '400'
+  assign cd_transform = section.settings.cd_transform | default: 'none'
+  assign cd_color = section.settings.cd_color | default: '#ffffff'
+
+  assign button_disclaimer_font = section.settings.button_disclaimer_font | default: 'HypatiaSansPro'
+  assign button_disclaimer_font_size = section.settings.button_disclaimer_font_size | default: 11
+  assign button_disclaimer_font_size_mobile = section.settings.button_disclaimer_font_size_mobile | default: 10
+  assign button_disclaimer_font_weight = section.settings.button_disclaimer_font_weight | default: '400'
+  assign button_disclaimer_transform = section.settings.button_disclaimer_transform | default: 'none'
+  assign button_disclaimer_color = section.settings.button_disclaimer_color | default: '#999999'
+%}
+
+<section id="dgf-featured-product-v2" class="dgf-featured-product-section" style="background-color: {{ bg_color }}; color: {{ text_color }};">
+  <div class="container">
+
+    {% if selected_product %}
+      <!-- Mobile Title - Only visible on mobile, positioned above everything -->
+      {% if custom_title != blank %}
+        <div class="dgf-custom-title mobile-title d-block d-md-none">{{ custom_title }}</div>
+      {% elsif selected_product.title %}
+        <h2 class="dgf-product-title mobile-title d-block d-md-none">{{ selected_product.title }}</h2>
+      {% endif %}
+      {% if custom_description != blank %}
+        <div class="dgf-custom-description mobile-description d-block d-md-none">{{ custom_description }}</div>
+      {% endif %}
+
+      <!-- Mobile Star Rating - Only visible on mobile, positioned below title -->
+      {% if section.settings.show_rating %}
+        <div class="dgf-product-rating mobile-rating d-flex d-md-none">
+          {% if section.settings.rating_source == 'judgeme' %}
+            {% render 'judgeme_widgets', widget_type: 'judgeme_preview_badge', concierge_install: true, product: selected_product %}
+          {% else %}
+            <div class="dgf-custom-stars">
+              {% for i in (1..5) %}
+                {% if i <= section.settings.custom_star_count %}
+                  <span class="dgf-custom-star dgf-custom-star--filled">★</span>
+                {% else %}
+                  <span class="dgf-custom-star dgf-custom-star--empty">★</span>
+                {% endif %}
+              {% endfor %}
+            </div>
+          {% endif %}
+          {% if section.settings.rating_source == 'custom' and section.settings.rating_text %}
+            <span class="dgf-rating-text">{{ section.settings.rating_text }}</span>
+          {% endif %}
+        </div>
+      {% endif %}
+
+      <!-- Mobile Image 1 - Only visible on mobile, positioned below rating -->
+      {% if section.settings.image_1 != blank %}
+        <div class="dgf-separator-image-1 mobile-separator-1 d-block d-md-none">
+          <img src="{{ section.settings.image_1 | image_url }}" alt="Separator Image">
+        </div>
+      {% endif %}
+
+      <div class="dgf-product-wrapper">
+
+        <!-- Left Column: Product Images -->
+        <div class="dgf-product-images-column">
+          <div class="dgf-product-images">
+
+            <!-- Desktop Gallery -->
+            <div class="featured-image d-none d-md-block">
+              <!-- Main Swiper Gallery -->
+              <div class="swiper main-gallery product__photo">
+                <div class="swiper-wrapper">
+                  {% for image in selected_product.images %}
+                  <div class="swiper-slide">
+                    <div class="product__photo sami-custom-pdp" data-aos="fade-up">
+                      <img src="{{ image | image_url: width: 2000 }}" alt="{{ image.alt }}">
+                    </div>
+                  </div>
+                  {% endfor %}
+                </div>
+                <div class="swiper-button-prev product-gallery-prev"></div>
+                <div class="swiper-button-next product-gallery-next"></div>
+              </div>
+            </div>
+
+            <!-- Mobile Gallery -->
+            <div class="featured-image mobile-product-slider">
+              <div class="swiper-wrapper-box">
+                <div class="swiper product-slider d-block d-md-none">
+                  <div class="swiper-wrapper">
+                    {% for image in selected_product.images %}
+                    <div class="swiper-slide">
+                      <img src="{{ image | image_url: width: 2000 }}" alt="{{ selected_product.title }}">
+                    </div>
+                    {% endfor %}
+                  </div>
+                  <div class="swiper-pagination"></div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Thumbnail Swiper -->
+            <div class="swiper thumbnail-gallery product__thumbnails thumbnails" data-aos="fade-up">
+              <div class="swiper-wrapper">
+                {% for image in selected_product.images %}
+                <div class="swiper-slide">
+                  <div class="product__thumbnail" data-image-index="{{ forloop.index }}">
+                    <img src="{{ image | image_url: width: 2000 }}" alt="{{ image.alt }}">
+                  </div>
+                </div>
+                {% endfor %}
+              </div>
+              <div class="swiper-button-prev product-thumbnail-prev"></div>
+              <div class="swiper-button-next product-thumbnail-next"></div>
+            </div>
+
+          </div>
+        </div>
+
+        <!-- Right Column: Product Details -->
+        <div class="dgf-product-details-column">
+          <div class="dgf-product-details">
+
+            <!-- Desktop Star Rating - Only visible on desktop -->
+            {% if section.settings.show_rating %}
+              <div class="dgf-product-rating desktop-rating d-none d-md-flex">
+                {% if section.settings.rating_source == 'judgeme' %}
+                  {% render 'judgeme_widgets', widget_type: 'judgeme_preview_badge', concierge_install: true, product: selected_product %}
+                {% else %}
+                  <div class="dgf-custom-stars">
+                    {% for i in (1..5) %}
+                      {% if i <= section.settings.custom_star_count %}
+                        <span class="dgf-custom-star dgf-custom-star--filled">★</span>
+                      {% else %}
+                        <span class="dgf-custom-star dgf-custom-star--empty">★</span>
+                      {% endif %}
+                    {% endfor %}
+                  </div>
+                {% endif %}
+                {% if section.settings.rating_source == 'custom' and section.settings.rating_text %}
+                  <span class="dgf-rating-text">{{ section.settings.rating_text }}</span>
+                {% endif %}
+              </div>
+            {% endif %}
+
+            <!-- Desktop Product Title - Only visible on desktop -->
+            {% if custom_title != blank %}
+              <div class="dgf-custom-title desktop-title d-none d-md-block">{{ custom_title }}</div>
+            {% elsif selected_product.title %}
+              <h2 class="dgf-product-title desktop-title d-none d-md-block">{{ selected_product.title }}</h2>
+            {% endif %}
+            {% if custom_description != blank %}
+              <div class="dgf-custom-description desktop-description d-none d-md-block">{{ custom_description }}</div>
+            {% endif %}
+
+            <!-- Certification Icons -->
+            {% if section.settings.show_certifications %}
+              <div class="dgf-certifications">
+                {% for block in section.blocks %}
+                  {% if block.type == 'certification' and block.settings.cert_image %}
+                    <div class="dgf-cert-icon">
+                      <img src="{{ block.settings.cert_image | image_url: width: 80 }}" alt="{{ block.settings.cert_alt | default: 'Certification' }}">
+                    </div>
+                  {% endif %}
+                {% endfor %}
+              </div>
+            {% endif %}
+
+            <!-- Desktop Image 1 - Only visible on desktop -->
+            {% if section.settings.image_1 != blank %}
+              <div class="dgf-separator-image-1 desktop-separator-1 d-none d-md-block">
+                <img src="{{ section.settings.image_1 | image_url }}" alt="Separator Image">
+              </div>
+            {% endif %}
+
+            <!-- Variant Selector (Radio Buttons) -->
+            {% comment %}
+              Show variant selector only if:
+              1. Product has variants (not default)
+              2. First option has multiple values AND total variants > first option values
+              Example: Ashwagandha has Size (120/90) AND Pack (1/2/3) = 6 total variants
+              Counter: Lion's Mane has only Pack (1/2/3) = 3 total variants
+            {% endcomment %}
+            {% unless selected_product.has_only_default_variant %}
+              {% if selected_product.options_with_values.size > 0 %}
+                {% assign first_option = selected_product.options_with_values[0] %}
+                {% assign total_available_variants = 0 %}
+                {% for variant in selected_product.variants %}
+                  {% if variant.available %}
+                    {% assign total_available_variants = total_available_variants | plus: 1 %}
+                  {% endif %}
+                {% endfor %}
+
+                {% comment %} If total variants > first option values, it means there are sub-options {% endcomment %}
+                {% if first_option.values.size > 1 and total_available_variants > first_option.values.size %}
+                  <div class="dgf-choose-size">
+                    <p>Choose Your Size</p>
+                  </div>
+                  <div class="dgf-widget-variant-selection">
+                    <div class="dgf-variant-options-grid">
+                      {%- for value in first_option.values -%}
+                        {% if value != 'Default Title' %}
+                          <div class="dgf-variant-option-item col-6 col-lg-4 col-sm-4">
+                            <input type="radio"
+                                   id="dgf-widget-variant-{{ forloop.index0 }}"
+                                   name="dgf-widget-variant-{{ first_option.name }}"
+                                   value="{{ value | escape }}"
+                                   data-variant-value="{{ value | escape }}"
+                                   {% if forloop.first %}checked{% endif %}
+                                   class="dgf-variant-option-input dgf-variant-radio">
+                            <label for="dgf-widget-variant-{{ forloop.index0 }}" class="dgf-variant-option-label">
+                              <span class="dgf-variant-option-text">{{ value }}</span>
+                            </label>
+                          </div>
+                        {% endif %}
+                      {%- endfor -%}
+                    </div>
+                  </div>
+
+                  <!-- Choose Your Size text (only shown when variant selector is visible) -->
+                {% endif %}
+              {% endif %}
+            {% endunless %}
+
+            <!-- Product Options -->
+            <div class="dgf-product-options">
+
+              <!-- Variant Options -->
+              <div class="dgf-variant-options">
+                {% if selected_product.variants.size > 1 %}
+                  {% comment %} Calculate total available variants {% endcomment %}
+                  {% assign first_option = selected_product.options_with_values[0] %}
+                  {% assign total_available_variants = 0 %}
+                  {% for v in selected_product.variants %}
+                    {% if v.available %}
+                      {% assign total_available_variants = total_available_variants | plus: 1 %}
+                    {% endif %}
+                  {% endfor %}
+
+                  {% comment %} Filter only if product has sub-options (total variants > first option values) {% endcomment %}
+                  {% assign should_filter_by_option = false %}
+                  {% if first_option.values.size > 1 and total_available_variants > first_option.values.size %}
+                    {% assign should_filter_by_option = true %}
+                    {% assign default_option_value = first_option.values[0] %}
+                  {% endif %}
+
+                  {% assign first_available_variant = null %}
+                  {% assign variant_index = 0 %}
+                  {% for variant in selected_product.variants %}
+                      {% comment %} Render based on whether we need to filter or show all {% endcomment %}
+                      {% if variant.available %}
+                        {% if should_filter_by_option %}
+                          {% assign should_render = false %}
+                          {% if variant.title contains default_option_value %}
+                            {% assign should_render = true %}
+                          {% endif %}
+                        {% else %}
+                          {% assign should_render = true %}
+                        {% endif %}
+
+                        {% if should_render %}
+                        {% if first_available_variant == null %}
+                          {% assign first_available_variant = variant %}
+                        {% endif %}
+
+                        {% assign header_text = '' %}
+                        {% assign header_bg = '' %}
+                        {% if variant_index == 0 %}
+                          {% assign header_text = 'DAILY SAVINGS<br>15% OFF' %}
+                          {% assign header_bg = '#06211E' %}
+                        {% elsif variant_index == 1 %}
+                          {% assign header_text = 'MOST POPULAR<br>35% OFF' %}
+                          {% assign header_bg = '#AC853B' %}
+                        {% elsif variant_index == 2 %}
+                          {% assign header_text = 'BEST VALUE<br>40% OFF' %}
+                          {% assign header_bg = '#06211E' %}
+                        {% endif %}
+
+                        <div
+                          class="dgf-option-card dgf-variant-card {% if variant_index == 1 %}selected dgf-most-popular{% endif %}"
+                          data-variant-id="{{ variant.id }}"
+                          data-variant-price="{{ variant.price }}"
+                          data-variant-compare-price="{{ variant.compare_at_price }}">
+                          <div class="dgf-option-header" style="background-color: {{ header_bg }};">
+                            {{ header_text }}
+                          </div>
+                          <div class="dgf-option-content">
+                            <div class="dgf-option-top">
+                              <div class="dgf-option-title">{{ variant.title }}</div>
+                              <div class="dgf-option-price-wrapper">
+                                {% assign pack_size = 1 %}
+                                {% if variant.title contains '2-Pack' %}
+                                  {% assign pack_size = 2 %}
+                                {% elsif variant.title contains '3-Pack' %}
+                                  {% assign pack_size = 3 %}
+                                {% elsif variant.title contains '4-Pack' %}
+                                  {% assign pack_size = 4 %}
+                                {% elsif variant.title contains '5-Pack' %}
+                                  {% assign pack_size = 5 %}
+                                {% elsif variant.title contains '6-Pack' %}
+                                  {% assign pack_size = 6 %}
+                                {% endif %}
+                                {% assign price_per_pack = variant.price | divided_by: pack_size %}
+                                {% if variant.metafields.custom.lp_custom_prc != blank %}
+                                  <div class="dgf-option-price">${{ variant.metafields.custom.lp_custom_prc }}{% if pack_size > 1 %}<span class="dgf-option-ea">/ea</span>{% endif %}</div>
+                                {% else %}
+                                  <div class="dgf-option-price">${{ price_per_pack | money_without_currency }}{% if pack_size > 1 %}<span class="dgf-option-ea">/ea</span>{% endif %}</div>
+                                {% endif %}
+                                {% if variant.metafields.custom.lp_red_prc != blank %}
+                                  <div class="dgf-option-red-price">${{ variant.metafields.custom.lp_red_prc }}/ea</div>
+                                {% endif %}
+                              </div>
+                            </div>
+                            <div class="dgf-option-bottom">
+                              <div class="dgf-option-servings">{{ variant.metafields.custom.lp_qty_servings }} servings</div>
+                              <div class="dgf-option-per-serving">(<strong>${{ variant.metafields.custom.lp_prc_servings }}</strong>/serving)</div>
+                              {% if variant.metafields.custom.lp_custom_txt != blank %}
+                                <div class="dgf-option-custom-text">{{ variant.metafields.custom.lp_custom_txt }}</div>
+                              {% endif %}
+                            </div>
+                          </div>
+                        </div>
+                        {% assign variant_index = variant_index | plus: 1 %}
+                        {% endif %}
+                      {% endif %}
+                  {% endfor %}
+                {% comment %} End of multi-variant rendering {% endcomment %}
+                {% else %}
+                    <div
+                      class="dgf-option-card dgf-variant-card selected"
+                      data-variant-id="{{ selected_product.selected_or_first_available_variant.id }}"
+                      data-variant-price="{{ selected_product.selected_or_first_available_variant.price }}"
+                      data-variant-compare-price="{{ selected_product.selected_or_first_available_variant.compare_at_price }}">
+                      <div class="dgf-option-header" style="background-color: #2E5951;">
+                        DAILY SAVINGS<br>25% OFF
+                      </div>
+                      <div class="dgf-option-content">
+                        <div class="dgf-option-top">
+                          <div class="dgf-option-title">{{ selected_product.title }}</div>
+                          <div class="dgf-option-price-wrapper">
+                            {% assign pack_size = 1 %}
+                            {% if selected_product.selected_or_first_available_variant.title contains '2-Pack' %}
+                              {% assign pack_size = 2 %}
+                            {% elsif selected_product.selected_or_first_available_variant.title contains '3-Pack' %}
+                              {% assign pack_size = 3 %}
+                            {% elsif selected_product.selected_or_first_available_variant.title contains '4-Pack' %}
+                              {% assign pack_size = 4 %}
+                            {% elsif selected_product.selected_or_first_available_variant.title contains '5-Pack' %}
+                              {% assign pack_size = 5 %}
+                            {% elsif selected_product.selected_or_first_available_variant.title contains '6-Pack' %}
+                              {% assign pack_size = 6 %}
+                            {% endif %}
+                            {% assign price_per_pack = selected_product.selected_or_first_available_variant.price | divided_by: pack_size %}
+                            {% if selected_product.selected_or_first_available_variant.metafields.custom.lp_custom_prc != blank %}
+                              <div class="dgf-option-price">${{ selected_product.selected_or_first_available_variant.metafields.custom.lp_custom_prc }}{% if pack_size > 1 %}<span class="dgf-option-ea">/ea</span>{% endif %}</div>
+                            {% else %}
+                              <div class="dgf-option-price">${{ price_per_pack | money_without_currency }}{% if pack_size > 1 %}<span class="dgf-option-ea">/ea</span>{% endif %}</div>
+                            {% endif %}
+                            {% if selected_product.selected_or_first_available_variant.metafields.custom.lp_red_prc != blank %}
+                              <div class="dgf-option-red-price">${{ selected_product.selected_or_first_available_variant.metafields.custom.lp_red_prc }}/ea</div>
+                            {% endif %}
+                          </div>
+                        </div>
+                        <div class="dgf-option-bottom">
+                          <div class="dgf-option-servings">{{ selected_product.selected_or_first_available_variant.metafields.custom.lp_qty_servings }} servings</div>
+                          <div class="dgf-option-per-serving">(<strong>${{ selected_product.selected_or_first_available_variant.metafields.custom.lp_prc_servings }}</strong>/serving)</div>
+                          {% if selected_product.selected_or_first_available_variant.metafields.custom.lp_custom_txt != blank %}
+                            <div class="dgf-option-custom-text">{{ selected_product.selected_or_first_available_variant.metafields.custom.lp_custom_txt }}</div>
+                          {% endif %}
+                        </div>
+                      </div>
+                    </div>
+                {% endif %}
+              </div>
+
+                          {% comment %} Assign display_variant early so button price renders correctly {% endcomment %}
+              {% assign display_variant = selected_product.selected_or_first_available_variant %}
+              {% assign variant_counter = 0 %}
+              {% for variant in selected_product.variants %}
+                  {% if variant.available %}
+                    {% if variant_counter == 1 %}
+                      {% assign display_variant = variant %}
+                      {% break %}
+                    {% endif %}
+                    {% assign variant_counter = variant_counter | plus: 1 %}
+                  {% endif %}
+              {% endfor %}
+
+            <!-- Add to Cart Button -->
+            <div class="dgf-add-to-cart btn btn-bg">
+              <a
+                class="dgf-cart-button"
+                id="add-to-cart-btn">
+                ADD TO CART{% if section.settings.show_button_price %} |&nbsp;<span id="button-price">${{ display_variant.price | money_without_currency }}</span>{% endif %}
+              </a>
+            </div>
+
+            <!-- Button Disclaimer -->
+            {% if section.settings.button_disclaimer_text != blank %}
+              <div class="dgf-button-disclaimer">
+                {{ section.settings.button_disclaimer_text }}
+              </div>
+            {% endif %}
+
+              <!-- Purchase Type -->
+              <div class="dgf-purchase-type">
+                <div class="dgf-purchase-option selected">
+                  <span class="dgf-purchase-dot"></span>
+                  ONE-TIME PURCHASE
+                </div>
+              </div>
+
+            </div>
+
+
+            <!-- Pricing Display -->
+            <div class="dgf-pricing-display">
+              <span
+                class="dgf-original-price"
+                id="compare-price"
+                {% unless display_variant.compare_at_price and display_variant.compare_at_price > display_variant.price %}
+                style="display: none;"
+                {% endunless %}>
+                {% if display_variant.compare_at_price and display_variant.compare_at_price > display_variant.price %}
+                  ${{ display_variant.compare_at_price | money_without_currency }}
+                {% endif %}
+              </span>
+              <span class="dgf-sale-price" id="selected-price">${{ display_variant.price | money_without_currency }}</span>
+            </div>
+
+                  <!-- Mobile Guarantees - Only visible on mobile, positioned after image-2 -->
+                  <div class="dgf-guarantees mobile-guarantees d-flex d-md-none">
+                    <div class="dgf-guarantee">
+                      <span class="dgf-guarantee-icon">
+                        <svg width="25" height="25" viewBox="0 0 21 21" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <g clip-path="url(#clip0_1720_12599)">
+                            <path d="M10.5003 17.2661C7.43232 17.2661 4.7425 15.1973 3.95929 12.2343C3.90032 12.0119 4.03337 11.7835 4.25562 11.7248C4.47835 11.6661 4.70644 11.799 4.76541 12.0214C5.45212 14.6186 7.81053 16.4322 10.5003 16.4322C13.1063 16.4322 15.4448 14.6893 16.187 12.194C16.2528 11.9731 16.4848 11.8477 16.7056 11.9134C16.9264 11.9791 17.0521 12.2109 16.9863 12.4319C16.5794 13.8001 15.7255 15.0311 14.5816 15.8974C13.3988 16.793 11.9878 17.2661 10.5003 17.2661Z" fill="#06211E"/>
+                            <path d="M10.5 21C4.71048 21 0 16.2896 0 10.5C0 4.7104 4.71048 0 10.5 0C16.2895 0 21 4.7104 21 10.5C21 16.2896 16.29 21 10.5 21ZM10.5 0.83391C5.17007 0.83391 0.833898 5.17014 0.833898 10.5C0.833898 15.8299 5.17007 20.1661 10.5 20.1661C15.8299 20.1661 20.1661 15.8299 20.1661 10.5C20.1661 5.17014 15.8299 0.83391 10.5 0.83391Z" fill="#06211E"/>
+                            <path d="M7.13788 9.22954C7.66276 9.22954 8.08826 8.79515 8.08826 8.2593C8.08826 7.72345 7.66276 7.28906 7.13788 7.28906C6.613 7.28906 6.1875 7.72345 6.1875 8.2593C6.1875 8.79515 6.613 9.22954 7.13788 9.22954Z" fill="#06211E"/>
+                            <path d="M13.8644 9.22954C14.3893 9.22954 14.8148 8.79515 14.8148 8.2593C14.8148 7.72345 14.3893 7.28906 13.8644 7.28906C13.3396 7.28906 12.9141 7.72345 12.9141 8.2593C12.9141 8.79515 13.3396 9.22954 13.8644 9.22954Z" fill="#06211E"/>
+                            </g>
+                            <defs>
+                            <clipPath id="clip0_1720_12599">
+                            <rect width="21" height="21" fill="white"/>
+                            </clipPath>
+                            </defs>
+                        </svg>
+                      </span>
+                      <span class="dgf-guarantee-text">60 Day Money-back<br>guarantee</span>
+                    </div>
+                    <div class="dgf-guarantee">
+                      <span class="dgf-guarantee-icon">
+                        <svg width="25" height="25" viewBox="0 -1.5 29 29" fill="none" xmlns="http://www.w3.org/2000/svg">
+                          <g clip-path="url(#clip0_1720_12606)">
+                          <path d="M28.481 12.1072L26.1277 9.46511C25.7874 9.08309 25.1296 8.79451 24.5979 8.79451H21.6478L21.8114 7.23113C21.8448 6.91112 21.7448 6.59463 21.5368 6.36297C21.3302 6.13215 21.0295 6 20.712 6H6.68147C6.04543 6 5.49478 6.49961 5.42787 7.1378L5.3595 7.79044H3.39968C3.15364 7.79044 2.95423 7.99104 2.95423 8.23799C2.95423 8.48494 3.15364 8.68554 3.39968 8.68554H10.4164C10.6622 8.68554 10.8619 8.48494 10.8619 8.23799C10.8619 7.99104 10.6622 7.79044 10.4164 7.79044H6.25571L6.31429 7.23137C6.33277 7.05541 6.50791 6.89522 6.68147 6.89522H20.712C20.7973 6.89522 20.8475 6.93175 20.8744 6.96209C20.9027 6.99352 20.9347 7.04946 20.9252 7.1378L19.8736 17.1903H11.75C11.7019 16.7401 11.522 16.3248 11.2216 15.9895C10.8161 15.5374 10.2448 15.288 9.61312 15.288C8.48452 15.288 7.45956 16.1111 7.15676 17.1903H5.51085C5.42606 17.1903 5.37557 17.1538 5.34815 17.1235C5.32013 17.092 5.28836 17.0361 5.29742 16.9477L5.59986 14.0572H7.71477C7.96057 14.0572 8.16022 13.8568 8.16022 13.6096C8.16022 13.3624 7.96057 13.162 7.71477 13.162H0.445448C0.199413 13.162 0 13.3624 0 13.6096C0 13.8568 0.199413 14.0572 0.445448 14.0572H4.70402L4.4116 16.8542C4.37814 17.1742 4.47815 17.4904 4.6859 17.7226C4.89304 17.9531 5.19343 18.0855 5.51097 18.0855H7.07825C7.12608 18.5358 7.30616 18.951 7.60679 19.2863C8.01226 19.7385 8.58332 19.9879 9.21502 19.9879C10.344 19.9879 11.3688 19.1647 11.6714 18.0855H21.8089C21.8575 18.5358 22.0373 18.9513 22.3376 19.2866C22.7431 19.7387 23.3145 19.9879 23.9463 19.9879C25.0752 19.9879 26.1004 19.1645 26.4024 18.0855H27.3866C28.0231 18.0855 28.5734 17.5859 28.6399 16.9477L28.9789 13.7104C29.0348 13.1779 28.8208 12.4889 28.481 12.1072ZM10.8644 17.5911C10.8464 17.7642 10.7981 17.9303 10.7278 18.0855C10.4631 18.6708 9.86568 19.0926 9.21502 19.0926C8.83914 19.0926 8.50324 18.9484 8.2688 18.687C8.11758 18.5183 8.01951 18.3119 7.9782 18.0854C7.95489 17.9571 7.94921 17.8227 7.96383 17.6846C7.98207 17.5115 8.03014 17.3454 8.10019 17.1902C8.36543 16.6049 8.96246 16.1831 9.61312 16.1831C9.989 16.1831 10.3251 16.3274 10.5593 16.5888C10.7108 16.7576 10.8089 16.9639 10.8502 17.1903C10.8734 17.3186 10.879 17.453 10.8644 17.5911ZM25.5951 17.5911C25.5773 17.7642 25.5289 17.9303 25.4591 18.0855C25.1941 18.6708 24.5969 19.0926 23.9464 19.0926C23.5703 19.0926 23.2347 18.9484 23.0002 18.6874C22.849 18.5186 22.7509 18.312 22.7094 18.0855C22.6861 17.9573 22.6803 17.8228 22.6948 17.6847C22.713 17.5117 22.7613 17.3455 22.8311 17.1903C23.0965 16.605 23.6934 16.1832 24.3443 16.1832C24.7204 16.1832 25.0561 16.3275 25.2902 16.5889C25.4417 16.7577 25.5394 16.964 25.581 17.1904C25.6043 17.3186 25.61 17.453 25.5951 17.5911ZM28.0929 13.6168L27.754 16.8544C27.7358 17.0301 27.5609 17.1903 27.3868 17.1903H26.4812C26.4326 16.7401 26.2534 16.3251 25.9525 15.9895C25.5473 15.5374 24.9762 15.288 24.3443 15.288C23.2155 15.288 22.1903 16.1111 21.8877 17.1903H20.7694L21.5542 9.68973H24.5979C24.8725 9.68973 25.2932 9.87055 25.4637 10.0622L27.8166 12.7041C27.9876 12.896 28.122 13.3397 28.0929 13.6168Z" fill="#06211E" stroke="#06211E" stroke-width="0.1" stroke-miterlimit="10"/>
+                          <path d="M1.61744 10.4733H5.97445H9.07978C9.32557 10.4733 9.52523 10.2726 9.52523 10.0257C9.52523 9.77872 9.32557 9.57812 9.07978 9.57812H1.61744C1.37141 9.57812 1.17188 9.77872 1.17188 10.0257C1.172 10.2727 1.37141 10.4733 1.61744 10.4733Z" fill="#06211E" stroke="#06211E" stroke-width="0.1" stroke-miterlimit="10"/>
+                          <path d="M2.50795 11.375C2.26191 11.375 2.0625 11.5756 2.0625 11.8227C2.0625 12.0696 2.26191 12.2702 2.50795 12.2702H4.89063H11.084C11.3298 12.2702 11.5296 12.0696 11.5296 11.8227C11.5296 11.5757 11.3299 11.375 11.084 11.375H2.50795Z" fill="#06211E" stroke="#06211E" stroke-width="0.1" stroke-miterlimit="10"/>
+                          </g>
+                          <defs>
+                          <clipPath id="clip0_1720_12606">
+                          <rect width="29" height="26" fill="white"/>
+                          </clipPath>
+                          </defs>
+                        </svg>
+                      </span>
+                      <span class="dgf-guarantee-text">Free U.S. shipping<br>over $75</span>
+                    </div>
+                    <div class="dgf-guarantee">
+                      <span class="dgf-guarantee-icon">
+                        <svg width="28" height="28" viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg">
+                          <path d="M25.4094 9.33145H22.2983V6.73886C22.2983 3.59382 19.7397 1.03516 16.5946 1.03516H11.4094C8.2644 1.03516 5.70573 3.59382 5.70573 6.73886V9.33145H2.59462C1.73683 9.33145 1.03906 10.0292 1.03906 10.887V25.4055C1.03906 26.2633 1.73683 26.9611 2.59462 26.9611H25.4094C26.2672 26.9611 26.965 26.2633 26.965 25.4055V10.887C26.965 10.0292 26.2672 9.33145 25.4094 9.33145ZM6.74277 6.73886C6.74277 4.16551 8.83634 2.07219 11.4094 2.07219H16.5946C19.168 2.07219 21.2613 4.16551 21.2613 6.73886V9.33145H20.2242V6.73886C20.2242 4.7377 18.5958 3.10923 16.5946 3.10923H11.4094C9.40802 3.10923 7.7798 4.7377 7.7798 6.73886V9.33145H6.74277V6.73886ZM8.81684 9.33145V6.73886C8.81684 5.30939 9.97996 4.14627 11.4094 4.14627H16.5946C18.0241 4.14627 19.1872 5.30939 19.1872 6.73886V9.33145H8.81684ZM25.928 25.4055C25.928 25.6916 25.6955 25.924 25.4094 25.924H2.59462C2.30877 25.924 2.0761 25.6916 2.0761 25.4055V10.887C2.0761 10.6009 2.30877 10.3685 2.59462 10.3685H25.4094C25.6955 10.3685 25.928 10.6009 25.928 10.887V25.4055ZM10.3724 24.3685C10.3724 24.6551 10.1402 24.887 9.85388 24.887H4.66869C3.81091 24.887 3.11314 24.1892 3.11314 23.3315V12.9611C3.11314 12.1033 3.81091 11.4055 4.66869 11.4055H9.33536C9.62171 11.4055 9.85388 11.6374 9.85388 11.924C9.85388 12.2106 9.62171 12.4426 9.33536 12.4426H4.66869C4.38285 12.4426 4.15017 12.675 4.15017 12.9611V23.3315C4.15017 23.6175 4.38285 23.85 4.66869 23.85H9.85388C10.1402 23.85 10.3724 24.0819 10.3724 24.3685ZM24.8909 12.9611V23.3315C24.8909 24.1892 24.1931 24.887 23.3354 24.887H18.6687C18.3821 24.887 18.1502 24.6551 18.1502 24.3685C18.1502 24.0819 18.3821 23.85 18.6687 23.85H23.3354C23.6215 23.85 23.8539 23.6175 23.8539 23.3315V12.9611C23.8539 12.675 23.6215 12.4426 23.3354 12.4426H18.6687C18.3821 12.4426 18.1502 12.2106 18.1502 11.924C18.1502 11.6374 18.3821 11.4055 18.6687 11.4055H23.3354C24.1931 11.4055 24.8909 12.1033 24.8909 12.9611ZM14.002 12.4426C10.857 12.4426 8.29832 15.0012 8.29832 18.1463C8.29832 21.2913 10.857 23.85 14.002 23.85C17.1471 23.85 19.7057 21.2913 19.7057 18.1463C19.7057 15.0012 17.1471 12.4426 14.002 12.4426ZM14.002 22.8129C11.4289 22.8129 9.33536 20.7196 9.33536 18.1463C9.33536 15.5729 11.4289 13.4796 14.002 13.4796C16.5754 13.4796 18.6687 15.5729 18.6687 18.1463C18.6687 20.7196 16.5754 22.8129 14.002 22.8129ZM16.9612 16.2241C17.1638 16.4266 17.1638 16.7548 16.9612 16.9573L13.8501 20.0684C13.7488 20.1697 13.6162 20.2203 13.4835 20.2203C13.3508 20.2203 13.2182 20.1697 13.1169 20.0684L11.5613 18.5129C11.3588 18.3103 11.3588 17.9822 11.5613 17.7797C11.7639 17.5771 12.092 17.5771 12.2946 17.7797L13.4835 18.9686L16.228 16.2241C16.4306 16.0216 16.7587 16.0216 16.9612 16.2241Z" fill="#343840"/>
+                        </svg>
+                      </span>
+                      <span class="dgf-guarantee-text">Secure<br>Checkout</span>
+                    </div>
+                  </div>
+                  
+            <!-- Mobile Image 2 - Only visible on mobile, positioned after price -->
+            {% if section.settings.image_2 != blank %}
+              <div class="dgf-separator-image-2 mobile-separator-2 d-block d-md-none">
+                <img src="{{ section.settings.image_2 | image_url }}" alt="Separator Image">
+              </div>
+            {% endif %}
+
+
+            <!-- Desktop Guarantees - Only visible on desktop -->
+            <div class="dgf-guarantees desktop-guarantees d-none d-md-flex">
+              <div class="dgf-guarantee">
+                <span class="dgf-guarantee-icon">
+                  <svg width="25" height="25" viewBox="0 0 21 21" fill="none" xmlns="http://www.w3.org/2000/svg">
+                     <g clip-path="url(#clip0_1720_12599)">
+                     <path d="M10.5003 17.2661C7.43232 17.2661 4.7425 15.1973 3.95929 12.2343C3.90032 12.0119 4.03337 11.7835 4.25562 11.7248C4.47835 11.6661 4.70644 11.799 4.76541 12.0214C5.45212 14.6186 7.81053 16.4322 10.5003 16.4322C13.1063 16.4322 15.4448 14.6893 16.187 12.194C16.2528 11.9731 16.4848 11.8477 16.7056 11.9134C16.9264 11.9791 17.0521 12.2109 16.9863 12.4319C16.5794 13.8001 15.7255 15.0311 14.5816 15.8974C13.3988 16.793 11.9878 17.2661 10.5003 17.2661Z" fill="#06211E"/>
+                     <path d="M10.5 21C4.71048 21 0 16.2896 0 10.5C0 4.7104 4.71048 0 10.5 0C16.2895 0 21 4.7104 21 10.5C21 16.2896 16.29 21 10.5 21ZM10.5 0.83391C5.17007 0.83391 0.833898 5.17014 0.833898 10.5C0.833898 15.8299 5.17007 20.1661 10.5 20.1661C15.8299 20.1661 20.1661 15.8299 20.1661 10.5C20.1661 5.17014 15.8299 0.83391 10.5 0.83391Z" fill="#06211E"/>
+                     <path d="M7.13788 9.22954C7.66276 9.22954 8.08826 8.79515 8.08826 8.2593C8.08826 7.72345 7.66276 7.28906 7.13788 7.28906C6.613 7.28906 6.1875 7.72345 6.1875 8.2593C6.1875 8.79515 6.613 9.22954 7.13788 9.22954Z" fill="#06211E"/>
+                     <path d="M13.8644 9.22954C14.3893 9.22954 14.8148 8.79515 14.8148 8.2593C14.8148 7.72345 14.3893 7.28906 13.8644 7.28906C13.3396 7.28906 12.9141 7.72345 12.9141 8.2593C12.9141 8.79515 13.3396 9.22954 13.8644 9.22954Z" fill="#06211E"/>
+                     </g>
+                     <defs>
+                     <clipPath id="clip0_1720_12599">
+                     <rect width="21" height="21" fill="white"/>
+                     </clipPath>
+                     </defs>
+                 </svg>
+                </span>
+                <span class="dgf-guarantee-text">60 Day Money-back<br>guarantee</span>
+              </div>
+              <div class="dgf-guarantee">
+                <span class="dgf-guarantee-icon">
+                  <svg width="25" height="25" viewBox="0 -1.5 29 29" fill="none" xmlns="http://www.w3.org/2000/svg">
+                   <g clip-path="url(#clip0_1720_12606)">
+                   <path d="M28.481 12.1072L26.1277 9.46511C25.7874 9.08309 25.1296 8.79451 24.5979 8.79451H21.6478L21.8114 7.23113C21.8448 6.91112 21.7448 6.59463 21.5368 6.36297C21.3302 6.13215 21.0295 6 20.712 6H6.68147C6.04543 6 5.49478 6.49961 5.42787 7.1378L5.3595 7.79044H3.39968C3.15364 7.79044 2.95423 7.99104 2.95423 8.23799C2.95423 8.48494 3.15364 8.68554 3.39968 8.68554H10.4164C10.6622 8.68554 10.8619 8.48494 10.8619 8.23799C10.8619 7.99104 10.6622 7.79044 10.4164 7.79044H6.25571L6.31429 7.23137C6.33277 7.05541 6.50791 6.89522 6.68147 6.89522H20.712C20.7973 6.89522 20.8475 6.93175 20.8744 6.96209C20.9027 6.99352 20.9347 7.04946 20.9252 7.1378L19.8736 17.1903H11.75C11.7019 16.7401 11.522 16.3248 11.2216 15.9895C10.8161 15.5374 10.2448 15.288 9.61312 15.288C8.48452 15.288 7.45956 16.1111 7.15676 17.1903H5.51085C5.42606 17.1903 5.37557 17.1538 5.34815 17.1235C5.32013 17.092 5.28836 17.0361 5.29742 16.9477L5.59986 14.0572H7.71477C7.96057 14.0572 8.16022 13.8568 8.16022 13.6096C8.16022 13.3624 7.96057 13.162 7.71477 13.162H0.445448C0.199413 13.162 0 13.3624 0 13.6096C0 13.8568 0.199413 14.0572 0.445448 14.0572H4.70402L4.4116 16.8542C4.37814 17.1742 4.47815 17.4904 4.6859 17.7226C4.89304 17.9531 5.19343 18.0855 5.51097 18.0855H7.07825C7.12608 18.5358 7.30616 18.951 7.60679 19.2863C8.01226 19.7385 8.58332 19.9879 9.21502 19.9879C10.344 19.9879 11.3688 19.1647 11.6714 18.0855H21.8089C21.8575 18.5358 22.0373 18.9513 22.3376 19.2866C22.7431 19.7387 23.3145 19.9879 23.9463 19.9879C25.0752 19.9879 26.1004 19.1645 26.4024 18.0855H27.3866C28.0231 18.0855 28.5734 17.5859 28.6399 16.9477L28.9789 13.7104C29.0348 13.1779 28.8208 12.4889 28.481 12.1072ZM10.8644 17.5911C10.8464 17.7642 10.7981 17.9303 10.7278 18.0855C10.4631 18.6708 9.86568 19.0926 9.21502 19.0926C8.83914 19.0926 8.50324 18.9484 8.2688 18.687C8.11758 18.5183 8.01951 18.3119 7.9782 18.0854C7.95489 17.9571 7.94921 17.8227 7.96383 17.6846C7.98207 17.5115 8.03014 17.3454 8.10019 17.1902C8.36543 16.6049 8.96246 16.1831 9.61312 16.1831C9.989 16.1831 10.3251 16.3274 10.5593 16.5888C10.7108 16.7576 10.8089 16.9639 10.8502 17.1903C10.8734 17.3186 10.879 17.453 10.8644 17.5911ZM25.5951 17.5911C25.5773 17.7642 25.5289 17.9303 25.4591 18.0855C25.1941 18.6708 24.5969 19.0926 23.9464 19.0926C23.5703 19.0926 23.2347 18.9484 23.0002 18.6874C22.849 18.5186 22.7509 18.312 22.7094 18.0855C22.6861 17.9573 22.6803 17.8228 22.6948 17.6847C22.713 17.5117 22.7613 17.3455 22.8311 17.1903C23.0965 16.605 23.6934 16.1832 24.3443 16.1832C24.7204 16.1832 25.0561 16.3275 25.2902 16.5889C25.4417 16.7577 25.5394 16.964 25.581 17.1904C25.6043 17.3186 25.61 17.453 25.5951 17.5911ZM28.0929 13.6168L27.754 16.8544C27.7358 17.0301 27.5609 17.1903 27.3868 17.1903H26.4812C26.4326 16.7401 26.2534 16.3251 25.9525 15.9895C25.5473 15.5374 24.9762 15.288 24.3443 15.288C23.2155 15.288 22.1903 16.1111 21.8877 17.1903H20.7694L21.5542 9.68973H24.5979C24.8725 9.68973 25.2932 9.87055 25.4637 10.0622L27.8166 12.7041C27.9876 12.896 28.122 13.3397 28.0929 13.6168Z" fill="#06211E" stroke="#06211E" stroke-width="0.1" stroke-miterlimit="10"/>
+                   <path d="M1.61744 10.4733H5.97445H9.07978C9.32557 10.4733 9.52523 10.2726 9.52523 10.0257C9.52523 9.77872 9.32557 9.57812 9.07978 9.57812H1.61744C1.37141 9.57812 1.17188 9.77872 1.17188 10.0257C1.172 10.2727 1.37141 10.4733 1.61744 10.4733Z" fill="#06211E" stroke="#06211E" stroke-width="0.1" stroke-miterlimit="10"/>
+                   <path d="M2.50795 11.375C2.26191 11.375 2.0625 11.5756 2.0625 11.8227C2.0625 12.0696 2.26191 12.2702 2.50795 12.2702H4.89063H11.084C11.3298 12.2702 11.5296 12.0696 11.5296 11.8227C11.5296 11.5757 11.3299 11.375 11.084 11.375H2.50795Z" fill="#06211E" stroke="#06211E" stroke-width="0.1" stroke-miterlimit="10"/>
+                   </g>
+                   <defs>
+                   <clipPath id="clip0_1720_12606">
+                   <rect width="29" height="26" fill="white"/>
+                   </clipPath>
+                   </defs>
+                 </svg>
+                </span>
+                <span class="dgf-guarantee-text">Free U.S. shipping<br>over $75</span>
+              </div>
+              <div class="dgf-guarantee">
+                <span class="dgf-guarantee-icon">
+                  <svg width="28" height="28" viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M25.4094 9.33145H22.2983V6.73886C22.2983 3.59382 19.7397 1.03516 16.5946 1.03516H11.4094C8.2644 1.03516 5.70573 3.59382 5.70573 6.73886V9.33145H2.59462C1.73683 9.33145 1.03906 10.0292 1.03906 10.887V25.4055C1.03906 26.2633 1.73683 26.9611 2.59462 26.9611H25.4094C26.2672 26.9611 26.965 26.2633 26.965 25.4055V10.887C26.965 10.0292 26.2672 9.33145 25.4094 9.33145ZM6.74277 6.73886C6.74277 4.16551 8.83634 2.07219 11.4094 2.07219H16.5946C19.168 2.07219 21.2613 4.16551 21.2613 6.73886V9.33145H20.2242V6.73886C20.2242 4.7377 18.5958 3.10923 16.5946 3.10923H11.4094C9.40802 3.10923 7.7798 4.7377 7.7798 6.73886V9.33145H6.74277V6.73886ZM8.81684 9.33145V6.73886C8.81684 5.30939 9.97996 4.14627 11.4094 4.14627H16.5946C18.0241 4.14627 19.1872 5.30939 19.1872 6.73886V9.33145H8.81684ZM25.928 25.4055C25.928 25.6916 25.6955 25.924 25.4094 25.924H2.59462C2.30877 25.924 2.0761 25.6916 2.0761 25.4055V10.887C2.0761 10.6009 2.30877 10.3685 2.59462 10.3685H25.4094C25.6955 10.3685 25.928 10.6009 25.928 10.887V25.4055ZM10.3724 24.3685C10.3724 24.6551 10.1402 24.887 9.85388 24.887H4.66869C3.81091 24.887 3.11314 24.1892 3.11314 23.3315V12.9611C3.11314 12.1033 3.81091 11.4055 4.66869 11.4055H9.33536C9.62171 11.4055 9.85388 11.6374 9.85388 11.924C9.85388 12.2106 9.62171 12.4426 9.33536 12.4426H4.66869C4.38285 12.4426 4.15017 12.675 4.15017 12.9611V23.3315C4.15017 23.6175 4.38285 23.85 4.66869 23.85H9.85388C10.1402 23.85 10.3724 24.0819 10.3724 24.3685ZM24.8909 12.9611V23.3315C24.8909 24.1892 24.1931 24.887 23.3354 24.887H18.6687C18.3821 24.887 18.1502 24.6551 18.1502 24.3685C18.1502 24.0819 18.3821 23.85 18.6687 23.85H23.3354C23.6215 23.85 23.8539 23.6175 23.8539 23.3315V12.9611C23.8539 12.675 23.6215 12.4426 23.3354 12.4426H18.6687C18.3821 12.4426 18.1502 12.2106 18.1502 11.924C18.1502 11.6374 18.3821 11.4055 18.6687 11.4055H23.3354C24.1931 11.4055 24.8909 12.1033 24.8909 12.9611ZM14.002 12.4426C10.857 12.4426 8.29832 15.0012 8.29832 18.1463C8.29832 21.2913 10.857 23.85 14.002 23.85C17.1471 23.85 19.7057 21.2913 19.7057 18.1463C19.7057 15.0012 17.1471 12.4426 14.002 12.4426ZM14.002 22.8129C11.4289 22.8129 9.33536 20.7196 9.33536 18.1463C9.33536 15.5729 11.4289 13.4796 14.002 13.4796C16.5754 13.4796 18.6687 15.5729 18.6687 18.1463C18.6687 20.7196 16.5754 22.8129 14.002 22.8129ZM16.9612 16.2241C17.1638 16.4266 17.1638 16.7548 16.9612 16.9573L13.8501 20.0684C13.7488 20.1697 13.6162 20.2203 13.4835 20.2203C13.3508 20.2203 13.2182 20.1697 13.1169 20.0684L11.5613 18.5129C11.3588 18.3103 11.3588 17.9822 11.5613 17.7797C11.7639 17.5771 12.092 17.5771 12.2946 17.7797L13.4835 18.9686L16.228 16.2241C16.4306 16.0216 16.7587 16.0216 16.9612 16.2241Z" fill="#343840"/>
+                  </svg>
+                </span>
+                <span class="dgf-guarantee-text">Secure<br>Checkout</span>
+              </div>
+            </div>
+
+            <!-- Payment Icons -->
+            {% if section.settings.show_payment_icons %}
+              <div class="dgf-payment-icons">
+                {% for block in section.blocks %}
+                  {% if block.type == 'payment_icon' and block.settings.payment_image %}
+                    <img src="{{ block.settings.payment_image | image_url: width: 60 }}" alt="{{ block.settings.payment_alt | default: 'Payment method' }}">
+                  {% endif %}
+                {% endfor %}
+              </div>
+            {% endif %}
+
+
+            <!-- Desktop Image 2 - Only visible on desktop -->
+            {% if section.settings.image_2 != blank %}
+              <div class="dgf-separator-image-2 desktop-separator-2 d-none d-md-block">
+                <img src="{{ section.settings.image_2 | image_url }}" alt="Separator Image">
+              </div>
+            {% endif %}
+
+            <!-- Desktop Disclaimer - Only visible on desktop, positioned below button -->
+            {% if section.settings.disclaimer_text != blank %}
+              <div class="dgf-disclaimer-prod desktop-disclaimer d-none d-md-block">
+                {{ section.settings.disclaimer_text }}
+              </div>
+            {% endif %}
+
+              <!-- Mobile Disclaimer - Only visible on mobile, positioned between options and purchase type -->
+              {% if section.settings.disclaimer_text != blank %}
+                <div class="dgf-disclaimer-prod mobile-disclaimer d-block d-md-none">
+                  {{ section.settings.disclaimer_text }}
+                </div>
+              {% endif %}
+
+
+
+          </div>
+        </div>
+
+      </div>
+    {% else %}
+      <div class="dgf-no-product">
+        <p>Please select a product in the theme editor.</p>
+      </div>
+    {% endif %}
+
+  </div>
+
+  {% if section.settings.enable_upsell_popup %}
+    {% render 'dgf-upsell-popup', settings: section.settings %}
+  {% endif %}
+
+</section>
+
+<style>
+  .dgf-featured-product-section {
+    padding: 4rem 0;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+  }
+
+  .dgf-featured-product-container {
+    max-width: 1440px;
+    margin: 0 auto;
+    padding: 0 2rem;
+    width: 100%;
+  }
+
+  .dgf-product-wrapper {
+    display: grid;
+    padding: 0 4rem;
+    grid-template-columns: 1fr 1fr;
+    gap: 4rem;
+    align-items: center;
+  }
+
+  /* Product Images */
+  .dgf-product-images-column {
+    position: relative;
+    overflow: hidden;
+    min-height: 400px;
+  }
+
+  .dgf-product-images {
+    width: 100%;
+    overflow: hidden;
+  }
+
+  .main-gallery {
+    margin-bottom: 1rem;
+    position: relative;
+    width: 100%;
+    max-width: 600px;
+  }
+
+  .main-gallery .swiper {
+    width: 100%;
+    height: auto;
+  }
+
+  .main-gallery .swiper-wrapper {
+    align-items: stretch;
+  }
+
+  .product__photo {
+    aspect-ratio: 1;
+    overflow: hidden;
+    border-radius: 15px;
+    width: 100% !important;
+    height: auto !important;
+    display: flex !important;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .product__photo img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+  }
+
+  /* Main Gallery Navigation Buttons - Estilos exatos do main-product */
+  .dgf-featured-product-section .product-gallery-prev:after,
+  .dgf-featured-product-section .product-gallery-next:after {
+    display: none !important;
+  }
+
+  .dgf-featured-product-section .product-gallery-prev {
+    background: url(https://cdn.shopify.com/s/files/1/0499/0425/5134/files/left-arrow-new.svg) !important;
+    transition: .3s ease !important;
+    height: 34px !important;
+    width: 35px !important;
+    background-repeat: no-repeat !important;
+    background-size: 100% !important;
+    background-position: center !important;
+    border-radius: 24px !important;
+    outline: none !important;
+    box-shadow: none !important;
+    left: 0px !important;
+    margin: 0 !important;
+    transform: translate(0px, -50%) !important;
+  }
+
+  .dgf-featured-product-section .product-gallery-next {
+    background: url(https://cdn.shopify.com/s/files/1/0499/0425/5134/files/right-arrowe-new.svg) !important;
+    transition: .3s ease !important;
+    height: 34px !important;
+    width: 35px !important;
+    background-repeat: no-repeat !important;
+    background-size: 100% !important;
+    background-position: center !important;
+    border-radius: 30px !important;
+    outline: none !important;
+    box-shadow: none !important;
+    right: 0px !important;
+    margin: 0 !important;
+    transform: translate(0px, -50%) !important;
+  }
+
+  .dgf-featured-product-section .product-gallery-next,
+  .dgf-featured-product-section .product-gallery-prev {
+    visibility: hidden !important;
+    transition: 0.3s ease !important;
+  }
+
+  .dgf-featured-product-section .main-gallery.product__photo:hover .product-gallery-next,
+  .dgf-featured-product-section .main-gallery.product__photo:hover .product-gallery-prev {
+    visibility: visible !important;
+    transition: 0.3s ease !important;
+  }
+
+  /* Esconder pagination em desktop */
+  .main-gallery .swiper-pagination {
+    display: none;
+  }
+
+  /* Mobile Product Slider - Estilos exatos do main-product */
+  .mobile-product-slider .swiper-wrapper-box {
+    margin-top: 0px;
+  }
+
+  .product-slider {
+    width: 100%;
+    overflow: hidden;
+  }
+
+  .product-slider .swiper-wrapper {
+    width: 100%;
+  }
+
+  .product-slider .swiper-slide {
+    flex-shrink: 0;
+  }
+
+  .product-slider .swiper-slide img {
+    width: 100%;
+    height: auto;
+    display: block;
+  }
+
+  .mobile-product-slider .swiper-pagination-bullet {
+    width: 10px;
+    height: 10px;
+    background: #000;
+    opacity: 1;
+    background: linear-gradient(180deg, #F3D9CF 0%, #F3D9CF 100%);
+  }
+
+  .mobile-product-slider .swiper-pagination-bullet-active {
+    background: #A7833E;
+  }
+
+  .mobile-product-slider .swiper-pagination {
+    bottom: -3px;
+    position: absolute;
+    width: 100%;
+    text-align: center;
+    z-index: 10;
+  }
+
+  .mobile-product-slider .swiper-pagination {
+    bottom: -3px !important;
+    position: absolute !important;
+    width: 100% !important;
+    text-align: center !important;
+    z-index: 10 !important;
+  }
+
+  .mobile-product-slider .swiper-pagination-bullet {
+    width: 10px !important;
+    height: 10px !important;
+    background: linear-gradient(180deg, #F3D9CF 0%, #F3D9CF 100%) !important;
+    opacity: 1 !important;
+    margin: 0 4px !important;
+    border-radius: 50% !important;
+    display: inline-block !important;
+  }
+
+  .mobile-product-slider .swiper-pagination-bullet-active {
+    background: #A7833E !important;
+  }
+
+  /* Media Queries para resoluções 1025px - 1440px */
+  @media screen and (max-width: 1440px) and (min-width: 1200px) {
+    .dgf-featured-product-container {
+      max-width: 1200px;
+      padding: 0 1.5rem;
+    }
+
+    .dgf-product-wrapper {
+      padding: 0 3rem;
+      gap: 3rem;
+    }
+
+    .dgf-product-title {
+      font-size: 42px;
+    }
+
+    .dgf-product-description {
+      font-size: 16px;
+    }
+
+    .main-gallery {
+      max-width: 550px;
+    }
+  }
+
+  @media screen and (max-width: 1199px) and (min-width: 1025px) {
+    .dgf-featured-product-container {
+      max-width: 1024px;
+      padding: 0 1rem;
+    }
+
+    .dgf-product-wrapper {
+      padding: 0 2rem;
+      gap: 2.5rem;
+    }
+
+    .dgf-product-title {
+      font-size: 36px;
+      line-height: 1.1;
+    }
+
+    .dgf-product-description {
+      font-size: 15px;
+      line-height: 1.4;
+    }
+
+    .dgf-product-price {
+      font-size: 28px;
+    }
+
+    .dgf-add-to-cart-btn {
+      padding: 0.8rem 2rem;
+      font-size: 16px;
+    }
+
+    .main-gallery {
+      max-width: 480px;
+    }
+
+    .product__thumbnails.thumbnails {
+      max-width: 400px;
+      margin: 15px auto !important;
+    }
+
+    .dgf-variant-option {
+      padding: 0.7rem 1.2rem;
+      font-size: 14px;
+    }
+
+    /* Ajustar botões de navegação para telas menores */
+    .product-gallery-prev, .product-gallery-next {
+      height: 30px !important;
+      width: 31px !important;
+    }
+
+    .product-thumbnail-prev, .product-thumbnail-next {
+      height: 20px !important;
+      width: 8px !important;
+    }
+  }
+
+  /* Media Queries para Mobile */
+  @media screen and (max-width: 1024px) and (min-width: 769px) {
+    .dgf-featured-product-container {
+      max-width: 768px;
+      padding: 0 1rem;
+    }
+
+    .dgf-product-wrapper {
+      padding: 0 1.5rem;
+      gap: 2rem;
+    }
+
+    .dgf-product-title {
+      font-size: 32px;
+      line-height: 1.1;
+    }
+
+    .dgf-product-description {
+      font-size: 14px;
+    }
+
+    .main-gallery {
+      max-width: 400px;
+    }
+
+    .product__thumbnails.thumbnails {
+      max-width: 350px;
+    }
+  }
+
+  @media screen and (max-width: 768px) {
+    .dgf-featured-product-section {
+      padding: 2rem 0;
+      min-height: auto;
+    }
+
+    .dgf-featured-product-container {
+      max-width: 100%;
+      padding: 0 1rem;
+    }
+
+    .dgf-product-wrapper {
+      display: block;
+      padding: 0;
+      gap: 0;
+    }
+
+    .dgf-product-images-column {
+      margin-bottom: 2rem;
+      min-height: auto;
+    }
+
+    .main-gallery {
+      max-width: 100%;
+      margin-bottom: 1rem;
+    }
+
+    .product__photo {
+      border-radius: 12px;
+    }
+
+    .product__thumbnails.thumbnails {
+      display: none;
+    }
+
+    /* Mobile slider usa os estilos da classe .mobile-product-slider */
+
+    .dgf-product-details-column {
+      text-align: center;
+    }
+
+    .dgf-product-title {
+      font-size: 27px;
+      line-height: 1.2;
+      margin-bottom: 1rem;
+    }
+
+    .dgf-custom-title,
+    .dgf-custom-title h1,
+    .dgf-custom-title h2,
+    .dgf-custom-title h3,
+    .dgf-custom-title h4,
+    .dgf-custom-title h5,
+    .dgf-custom-title h6,
+    .dgf-custom-title p,
+    .dgf-custom-title span,
+    .dgf-custom-title strong,
+    .dgf-custom-title em,
+    .dgf-custom-title i,
+    .dgf-custom-title u,
+    .dgf-custom-title a {
+      font-size: {{ ct_font_size_mobile }}px !important;
+    }
+
+    .dgf-custom-description,
+    .dgf-custom-description h1,
+    .dgf-custom-description h2,
+    .dgf-custom-description h3,
+    .dgf-custom-description h4,
+    .dgf-custom-description h5,
+    .dgf-custom-description h6,
+    .dgf-custom-description p,
+    .dgf-custom-description span,
+    .dgf-custom-description strong,
+    .dgf-custom-description em,
+    .dgf-custom-description i,
+    .dgf-custom-description u,
+    .dgf-custom-description a {
+      font-size: {{ cd_font_size_mobile }}px !important;
+    }
+
+    .dgf-product-description {
+      font-size: 14px;
+      line-height: 1.4;
+      margin-bottom: 1.5rem;
+    }
+
+    .dgf-product-price {
+      font-size: 24px;
+      margin-bottom: 1.5rem;
+    }
+
+    .dgf-variant-options {
+      margin-bottom: 1.5rem;
+    }
+
+    .dgf-variant-option {
+      padding: 0.6rem 1rem;
+      font-size: 13px;
+      margin: 0.3rem;
+    }
+
+    .dgf-add-to-cart-btn {
+      width: 100%;
+      padding: 1rem;
+      font-size: 16px;
+      margin-top: 1rem;
+    }
+
+    /* Botões de navegação mobile */
+    .product-gallery-prev, .product-gallery-next {
+      height: 28px !important;
+      width: 29px !important;
+    }
+
+    .product-thumbnail-prev, .product-thumbnail-next {
+      height: 18px !important;
+      width: 7px !important;
+    }
+
+    /* Melhorar touch targets */
+    .product__thumbnail {
+      padding: 0 5px !important;
+    }
+
+    .product__thumbnail img {
+      border-radius: 0 8px;
+    }
+  }
+
+  @media screen and (max-width: 480px) {
+    .dgf-featured-product-section {
+      padding: 1.5rem 0;
+    }
+
+    .dgf-featured-product-container {
+      padding: 0 0.5rem;
+    }
+
+    .dgf-product-images-column {
+      margin-bottom: 1.5rem;
+    }
+
+    .dgf-product-title {
+      font-size: 24px;
+      line-height: 1.1;
+    }
+
+    .dgf-product-description {
+      font-size: 13px;
+      margin-bottom: 1rem;
+    }
+
+    .dgf-product-price {
+      font-size: 22px;
+      margin-bottom: 1rem;
+    }
+
+    .dgf-variant-option {
+      padding: 0.5rem 0.8rem;
+      font-size: 12px;
+      margin: 0.2rem;
+    }
+
+    .dgf-add-to-cart-btn {
+      padding: 0.9rem;
+      font-size: 15px;
+    }
+
+    /* Esconder thumbnails em mobile pequeno também */
+    .product__thumbnails.thumbnails {
+      display: none;
+    }
+
+    /* Botões ainda menores */
+    .product-gallery-prev, .product-gallery-next {
+      height: 24px !important;
+      width: 25px !important;
+    }
+
+    .product-thumbnail-prev, .product-thumbnail-next {
+      height: 16px !important;
+      width: 6px !important;
+    }
+  }
+
+  /* Thumbnails - Estilos exatos do main-product */
+  .product__thumbnails.thumbnails {
+    max-width: 490px;
+    margin: 18px auto !important;
+    padding: 0;
+    width: 100%;
+    position: initial;
+    transform: translateY(0) !important;
+    text-align: center;
+  }
+
+  .product__thumbnails.thumbnails .product__thumbnail {
+    padding: 0 10px;
+    display: inline-block;
+  }
+
+  .product__thumbnail img {
+    border-radius: 0 12px;
+    border: 2px solid #cdcdcd;
+    cursor: pointer;
+  }
+
+  .swiper-slide-thumb-active .product__thumbnail img {
+    border: 1px solid #000000;
+  }
+
+  /* Thumbnail Navigation Buttons - Estilos exatos do main-product */
+  .dgf-featured-product-section .product-thumbnail-prev:after,
+  .dgf-featured-product-section .product-thumbnail-next:after {
+    display: none !important;
+  }
+
+  .dgf-featured-product-section .product-thumbnail-prev {
+    background: url(https://cdn.shopify.com/s/files/1/0499/0425/5134/files/single-arrow-left.svg) !important;
+    transition: .3s ease !important;
+    height: 22px !important;
+    width: 9px !important;
+    background-repeat: no-repeat !important;
+    background-size: 100% !important;
+    background-position: center !important;
+    outline: none !important;
+    box-shadow: none !important;
+    left: 0px !important;
+    margin: 0 !important;
+    transform: translate(0px, -50%) !important;
+  }
+
+  .dgf-featured-product-section .product-thumbnail-next {
+    background: url(https://cdn.shopify.com/s/files/1/0499/0425/5134/files/single-arrow-rgt.svg) !important;
+    transition: .3s ease !important;
+    height: 22px !important;
+    width: 9px !important;
+    background-repeat: no-repeat !important;
+    background-size: 100% !important;
+    background-position: center !important;
+    outline: none !important;
+    box-shadow: none !important;
+    right: 0px !important;
+    margin: 0 !important;
+    transform: translate(0px, -50%) !important;
+  }
+
+  /* Product Details */
+  .dgf-product-title {
+    font-size: 48px;
+    font-weight: 700;
+    text-transform: uppercase;
+    font-family: HypatiaSansPro;
+    margin: 0!important;
+  }
+
+  /* Custom Title */
+  .dgf-custom-title,
+  .dgf-custom-title h1,
+  .dgf-custom-title h2,
+  .dgf-custom-title h3,
+  .dgf-custom-title h4,
+  .dgf-custom-title h5,
+  .dgf-custom-title h6,
+  .dgf-custom-title p,
+  .dgf-custom-title span,
+  .dgf-custom-title strong,
+  .dgf-custom-title em,
+  .dgf-custom-title i,
+  .dgf-custom-title u,
+  .dgf-custom-title a {
+    font-family: {{ ct_font }} !important;
+    font-size: {{ ct_font_size }}px;
+    font-weight: {{ ct_font_weight }} !important;
+    text-transform: {{ ct_transform }} !important;
+    color: {{ ct_color }} !important;
+    line-height: 1.2 !important;
+    margin: 0 !important;
+  }
+
+  /* Custom Description */
+  .dgf-custom-description,
+  .dgf-custom-description h1,
+  .dgf-custom-description h2,
+  .dgf-custom-description h3,
+  .dgf-custom-description h4,
+  .dgf-custom-description h5,
+  .dgf-custom-description h6,
+  .dgf-custom-description p,
+  .dgf-custom-description span,
+  .dgf-custom-description strong,
+  .dgf-custom-description em,
+  .dgf-custom-description i,
+  .dgf-custom-description u,
+  .dgf-custom-description a {
+    font-family: {{ cd_font }} !important;
+    font-size: {{ cd_font_size }}px;
+    font-weight: {{ cd_font_weight }} !important;
+    text-transform: {{ cd_transform }} !important;
+    color: {{ cd_color }} !important;
+    line-height: 1.5 !important;
+    margin: 0 !important;
+  }
+
+  .dgf-custom-description {
+    margin-top: 0.5rem !important;
+  }
+
+  .dgf-product-rating {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+  }
+
+  .dgf-stars {
+    display: flex;
+    gap: 2px;
+  }
+
+  .dgf-star {
+    color: #AC853B;
+    font-size: 20px;
+  }
+
+  .dgf-rating-text {
+    font-size: 14px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+  }
+
+  /* Custom Stars */
+  .dgf-custom-stars {
+    display: flex;
+    gap: 2px;
+  }
+
+  .dgf-custom-star {
+    font-size: 22px;
+    -webkit-text-fill-color: transparent;
+  }
+
+  .dgf-custom-star--filled {
+    background: linear-gradient(180deg, #AC853B 0%, #CFA34E 100%);
+    -webkit-background-clip: text;
+    background-clip: text;
+  }
+
+  .dgf-custom-star--empty {
+    background: #ccc;
+    -webkit-background-clip: text;
+    background-clip: text;
+  }
+
+  /* Judge.me Integration Styles */
+  .dgf-product-rating .jdgm-widget {
+    margin: 0;
+    padding: 0;
+    display: flex !important;
+    align-items: center !important;
+    gap: 1rem !important;
+  }
+
+  .dgf-product-rating .jdgm-preview-badge {
+    display: flex !important;
+    align-items: center !important;
+    gap: 0.5rem !important;
+  }
+
+  .dgf-product-rating .jdgm-star {
+    color: #AC853B !important;
+    font-size: 15px !important;
+  }
+
+  .dgf-product-rating .jdgm-star--full,
+  .dgf-product-rating .jdgm-star--half,
+  .dgf-product-rating .jdgm-star--empty {
+    color: #AC853B !important;
+    font-size: 20px !important;
+    display: inline-block !important;
+  }
+
+  .dgf-product-rating .jdgm-rev-widg__stars {
+    display: flex !important;
+    align-items: center !important;
+    gap: 2px !important;
+  }
+
+  .dgf-product-rating .jdgm-rev-widg__summary-text {
+    font-size: 14px !important;
+    text-transform: uppercase !important;
+    letter-spacing: 1px !important;
+    color: inherit !important;
+    margin-left: 0.5rem !important;
+    display: inline !important;
+    visibility: visible !important;
+  }
+
+  .dgf-product-rating .jdgm-rev-widg__summary-num {
+    font-size: 14px !important;
+    color: inherit !important;
+    display: inline !important;
+    visibility: visible !important;
+  }
+
+  .dgf-product-rating .jdgm-rev-widg__summary-avg {
+    font-size: 14px !important;
+    color: inherit !important;
+    display: inline !important;
+    visibility: visible !important;
+    font-weight: bold !important;
+  }
+
+  /* Ensure stars are visible and properly styled */
+  .dgf-product-rating .jdgm-star--full:before,
+  .dgf-product-rating .jdgm-star--half:before,
+  .dgf-product-rating .jdgm-star--empty:before {
+    color: #AC853B !important;
+    font-size: 20px !important;
+  }
+
+  /* Hide any default star background */
+  .dgf-product-rating .jdgm-star--empty:before {
+    color: #ddd !important;
+  }
+
+  /* Override any default Judge.me styling */
+  .dgf-product-rating .jdgm-preview-badge * {
+    color: inherit !important;
+    display: inline !important;
+    visibility: visible !important;
+  }
+
+  .dgf-product-rating .jdgm-preview-badge .jdgm-star--full,
+  .dgf-product-rating .jdgm-preview-badge .jdgm-star--half {
+    color: #AC853B !important;
+  }
+
+  /* Ensure all summary elements are visible */
+  .dgf-product-rating .jdgm-rev-widg__summary {
+    display: flex !important;
+    align-items: center !important;
+    gap: 0.5rem !important;
+    visibility: visible !important;
+  }
+
+  .dgf-product-rating .jdgm-rev-widg__summary > * {
+    display: inline !important;
+    visibility: visible !important;
+    opacity: 1 !important;
+  }
+
+  .dgf-certifications {
+    display: flex;
+    gap: 1rem;
+    margin-bottom: 2rem;
+  }
+
+  .dgf-cert-icon img {
+    width: 60px;
+    height: auto;
+  }
+
+  /* Variant Selector Styles */
+  .dgf-widget-variant-selection {
+    margin-bottom: 2rem;
+  }
+
+  .dgf-variant-options-grid {
+    display: flex;
+    gap: 1rem;
+  }
+
+  .dgf-variant-option-item {
+    position: relative;
+  }
+
+  .dgf-variant-option-input {
+    position: absolute;
+    opacity: 0;
+    width: 0;
+    height: 0;
+  }
+
+  .dgf-variant-option-label {
+    display: block;
+    padding: 1rem;
+    background: rgba(255, 255, 255, 0.95);
+    border: 2px solid #586A67;
+    border-radius: 0 10px 0 10px;
+    text-align: center;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-size: 16px;
+    font-weight: 600;
+    text-transform: uppercase;
+    color: #06211E;
+  }
+
+  .dgf-variant-option-label:hover {
+    background: #f0f0f0;
+    transform: translateY(-2px);
+  }
+
+  .dgf-variant-option-input:checked + .dgf-variant-option-label {
+    background: #AAB3B1;
+    border-color: #06211E;
+    border-width: 2px;
+  }
+
+  .dgf-variant-option-text {
+    display: block;
+  }
+
+  /* Choose Your Size Section */
+  .dgf-choose-size {
+    margin-bottom: 16px;
+  }
+
+  .dgf-choose-size p {
+    font-family: 'Work Sans', sans-serif;
+    font-size: 17px;
+    text-transform: uppercase;
+    font-weight: 700;
+    color: #06211E;
+    margin: 0;
+    letter-spacing: 0.5px;
+  }
+
+  .dgf-variant-options {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 3rem;
+    margin-bottom: 2rem;
+    align-items: flex-start;
+  }
+
+  .dgf-option-card {
+    background: rgba(255, 255, 255, 0.95);
+    border: 1px solid #111111;
+    border-radius: 0 10px 0 10px;
+    text-align: center;
+    position: relative;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    flex: 1;
+    min-width: 150px;
+    overflow: hidden;
+  }
+
+  .dgf-most-popular {
+    min-height: 192px;
+  }
+
+  .dgf-most-popular .dgf-option-title {
+    font-size: 28px;
+  }
+
+  .dgf-most-popular .dgf-option-price,
+  .dgf-most-popular .dgf-option-red-price {
+    font-size: 28px;
+  }
+
+  .dgf-most-popular .dgf-option-servings {
+    font-size: 22px;
+  }
+
+  .dgf-most-popular .dgf-option-per-serving {
+    font-size: 18px;
+  }
+
+  .dgf-option-card:hover {
+    transform: translateY(-2px);
+  }
+
+  .dgf-option-card.selected {
+    background: #AAB3B1;
+    border-color: #111111;
+    transform: translateY(-2px);
+  }
+
+  .dgf-option-header {
+    color: white;
+    font-size: 13px;
+    font-weight: bold;
+    text-transform: uppercase;
+    padding: 8px 4px;
+    text-align: center;
+    line-height: 1.2;
+  }
+
+  .dgf-option-content {
+    padding: 1rem;
+    color: #333;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+
+  .dgf-most-popular .dgf-option-content {
+    gap: 0.5rem;
+  }
+
+  .dgf-option-top {
+    display: flex;
+    flex-direction: column;
+    gap: 0.25rem;
+  }
+
+  .dgf-option-bottom {
+    display: flex;
+    flex-direction: column;
+    gap: 0.25rem;
+  }
+
+  .dgf-option-badge {
+    position: absolute;
+    top: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+    padding: 0.5rem 1rem;
+    border-radius: 20px;
+    font-size: 10px;
+    font-weight: bold;
+    text-transform: uppercase;
+    line-height: 1.2;
+  }
+
+  .dgf-daily-savings .dgf-option-badge {
+    background: #2E5951;
+  }
+
+  .dgf-most-popular .dgf-option-badge {
+    background: #AC853B;
+  }
+
+  .dgf-best-value .dgf-option-badge {
+    background: #2E5951;
+  }
+
+  .dgf-option-title {
+    font-size: 22px;
+    font-weight: bold;
+    margin-bottom: 0.5rem;
+    color: #333;
+  }
+
+  .dgf-option-price-wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0;
+  }
+
+  .dgf-option-price {
+    font-size: 22px;
+    font-weight: bold;
+    margin-bottom: 0;
+    margin-top: -0.5rem;
+    color: #07211F;
+  }
+
+  .dgf-option-ea {
+    font-weight: 400;
+  }
+
+  .dgf-option-red-price {
+    font-size: 22px;
+    color: #F21515;
+    text-decoration: line-through;
+    margin-top: -0.3rem;
+  }
+
+  .dgf-option-servings {
+    font-size: 19px;
+    margin-bottom: 0.25rem;
+    color: #07211F;
+    font-weight: 500;
+  }
+
+  .dgf-option-per-serving {
+    font-size: 14px;
+    color: #07211F;
+    font-weight: 500;
+    margin-top: -1rem;
+  }
+
+  .dgf-option-custom-text {
+    font-size: 18px;
+    color: #07211F;
+    font-weight: 400;
+    margin-top: -6px;
+  }
+
+  .dgf-purchase-type {
+    background: #ffff;
+    padding: 0.5rem;
+    border: 1px solid #111;
+    border-radius: 0 15px 0 15px;
+  }
+
+  .dgf-purchase-option {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    padding: 1rem;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 25px;
+    font-size: 20px;
+    font-weight: bold;
+    text-transform: uppercase;
+  }
+
+  .dgf-purchase-dot {
+    width: 30px;
+    height: 30px;
+    background: #AC853B;
+    border-radius: 50%;
+  }
+
+  .dgf-pricing-display {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    padding: 0 1.3rem;
+    margin: 2rem 0;
+  }
+
+  .dgf-original-price {
+    font-size: 35px;
+    font-weight: bold;
+    text-decoration: line-through;
+    color: #586A67;
+  }
+
+  .dgf-sale-price {
+    font-size: 35px;
+    font-weight: bold;
+    color: #AC853B;
+  }
+
+  .dgf-guarantees {
+    display: flex;
+    padding: 0 1.6rem;
+    justify-content: space-between;
+    gap: 1rem;
+    margin-top: 3rem;
+  }
+
+  .dgf-guarantee {
+    font-size: 14px;
+    font-weight: 500;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 0.5rem;
+    flex: 1;
+    line-height: 1.3;
+  }
+
+  .dgf-guarantee-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .dgf-guarantee svg {
+    width: 28px;
+    height: 28px;
+    flex-shrink: 0;
+  }
+
+  .dgf-guarantee-text {
+    font-size: 14px;
+  }
+
+  .dgf-separator-image-1 {
+    margin: 2rem 0;
+  }
+
+  .dgf-separator-image-1 img {
+    max-width: 100%;
+    object-fit: cover;
+  }
+
+  .dgf-separator-image-2 {
+    margin: 2rem 0;
+  }
+
+  .dgf-separator-image-2 img {
+    max-width: 100%;
+    height: auto;
+  }
+
+  .dgf-disclaimer-prod-prod {
+    font-size: 20px;
+    line-height: 1.4;
+    color: #000000;
+    margin: 1.5rem 0;
+    padding: 1rem;
+  }
+
+  .dgf-disclaimer-prod.mobile-disclaimer {
+    margin: 1rem 0;
+    font-size: 16px;
+  }
+
+  .dgf-disclaimer-prod.desktop-disclaimer {
+    margin: 2rem 0 0 0;
+    text-align: center;
+    width: 578px;
+  }
+
+  .dgf-payment-icons {
+    display: flex;
+    gap: 0.5rem;
+    margin-bottom: 2rem;
+  }
+
+  .dgf-payment-icons img {
+    height: 30px;
+    width: auto;
+  }
+
+  .dgf-add-to-cart.btn-bg {
+    width: 100%;
+    height: 75px;
+    background-size: 700px;
+    background-position: -61px;
+  }
+
+  .dgf-add-to-cart .dgf-cart-button {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    color: #ffffff;
+    font-size: 25px;
+    font-weight: bold;
+    text-transform: uppercase;
+    cursor: pointer;
+    transition: all 0.4s ease;
+  }
+
+  .dgf-add-to-cart .dgf-cart-button:hover {
+    opacity: 0.8;
+    transform: translateY(-2px);
+  }
+
+  /* Button Disclaimer */
+  .dgf-button-disclaimer,
+  .dgf-button-disclaimer h1,
+  .dgf-button-disclaimer h2,
+  .dgf-button-disclaimer h3,
+  .dgf-button-disclaimer h4,
+  .dgf-button-disclaimer h5,
+  .dgf-button-disclaimer h6,
+  .dgf-button-disclaimer p,
+  .dgf-button-disclaimer span,
+  .dgf-button-disclaimer strong,
+  .dgf-button-disclaimer em,
+  .dgf-button-disclaimer i,
+  .dgf-button-disclaimer u,
+  .dgf-button-disclaimer a {
+    font-family: {{ button_disclaimer_font }} !important;
+    font-size: {{ button_disclaimer_font_size }}px;
+    font-weight: {{ button_disclaimer_font_weight }};
+    text-transform: {{ button_disclaimer_transform }} !important;
+    color: {{ button_disclaimer_color }} !important;
+    line-height: 1.4 !important;
+    margin: 0;
+  }
+
+  .dgf-button-disclaimer {
+    margin-top: 0.75rem;
+    text-align: center;
+  }
+
+  .dgf-no-product {
+    text-align: center;
+    padding: 4rem;
+    font-size: 18px;
+  }
+
+  /* Responsive */
+  @media (max-width: 768px) {
+
+    .dgf-product-options{
+      padding: 0 1rem;
+    }
+
+    .mobile-separator-2 {
+      padding: 0 1rem;
+    }
+    
+    .mobile-description{
+      padding: 0 1rem;
+    }
+    
+    .mobile-title {
+      padding: 0 1rem;
+    }
+
+    .mobile-rating {
+      padding: 0 1rem;
+    }
+
+    .mobile-separator-1{
+      padding: 0 1rem;
+    }
+
+    .dgf-product-wrapper {
+      grid-template-columns: 1fr;
+      gap: 2rem;
+    }
+
+    .dgf-product-title {
+      font-size: 27px;
+    }
+
+    .dgf-variant-options {
+      gap: 1rem;
+    }
+
+    .dgf-option-card {
+      min-width: auto;
+      min-height: 168px;
+    }
+
+    .dgf-option-header{
+      font-size: 11px;
+    }
+
+    .dgf-option-title{
+      font-size: 18px;
+    }
+
+    .dgf-option-price{
+      font-size: 16px;
+    }
+    .dgf-most-popular .dgf-option-title{
+      font-size: 19px;
+    }
+
+    .dgf-most-popular .dgf-option-price{
+      font-size: 19px;
+    }
+
+    .dgf-option-content{
+      padding: 0;
+    }
+
+    .dgf-most-popular .dgf-option-red-price{
+      font-size: 17px;
+    }
+
+    .dgf-option-custom-text {
+      font-size: 11px;
+      line-height: 1;
+      margin-bottom: 1rem;
+    }
+
+    .dgf-option-red-price{
+      font-size: 15px;
+    }
+
+    .dgf-option-servings{
+      font-size: 13px;
+    }
+    .dgf-option-per-serving{
+      font-size: 12px;
+    }
+
+    .dgf-most-popular .dgf-option-servings{
+      font-size: 14px;
+    }
+
+    .dgf-most-popular .dgf-option-per-serving{
+      font-size: 12px;
+    }
+
+    .dgf-add-to-cart.btn-bg{
+      width: 100%;
+      height: 60px;
+    }
+
+    .dgf-add-to-cart .dgf-cart-button {
+      font-size: 19px;
+    }
+
+    .dgf-button-disclaimer,
+    .dgf-button-disclaimer h1,
+    .dgf-button-disclaimer h2,
+    .dgf-button-disclaimer h3,
+    .dgf-button-disclaimer h4,
+    .dgf-button-disclaimer h5,
+    .dgf-button-disclaimer h6,
+    .dgf-button-disclaimer p,
+    .dgf-button-disclaimer span,
+    .dgf-button-disclaimer strong,
+    .dgf-button-disclaimer em,
+    .dgf-button-disclaimer i,
+    .dgf-button-disclaimer u,
+    .dgf-button-disclaimer a {
+      font-size: {{ button_disclaimer_font_size_mobile }}px !important;
+    }
+
+    .dgf-separator-image-1 img {
+        width: 100%;
+        height: auto;
+        max-width: 100%;
+    }
+
+    .dgf-purchase-option{
+      font-size: 18px;
+    }
+
+    .dgf-purchase-dot {
+      width: 23px;
+      height: 23px;
+    }
+
+    .dgf-purchase-type{
+      margin: 0;
+      margin-bottom: 2rem;
+    }
+
+    .dgf-pricing-display{
+      margin-bottom: 3rem
+    }
+
+    .dgf-disclaimer-prod{
+      text-align: center;
+    }
+
+    .dgf-guarantee{
+      font-size: 12px;
+    }
+
+    .dgf-guarantee-text {
+      font-size: 12px;
+    }
+
+    /* Variant Selector Mobile Styles */
+    .dgf-variant-options-grid {
+      grid-template-columns: 1fr 1fr;
+      gap: 0.75rem;
+    }
+
+    .dgf-variant-option-label {
+      padding: 0.75rem 0.5rem;
+      font-size: 14px;
+    }
+
+    /* Choose Your Size Mobile */
+    .dgf-choose-size p {
+      font-size: 15px;
+    }
+  }
+</style>
+
+{% schema %}
+  {
+    "name": "[DGF] Featured Product v2",
+    "tag": "section",
+    "class": "section",
+    "settings": [
+      {
+        "type": "header",
+        "content": "Product Selection"
+      },
+      {
+        "type": "product",
+        "id": "featured_product",
+        "label": "Featured Product"
+      },
+      {
+        "type": "header",
+        "content": "Custom Title"
+      },
+      {
+        "type": "html",
+        "id": "custom_title",
+        "label": "Custom Title",
+        "info": "If filled, replaces the product title"
+      },
+      {
+        "type": "select",
+        "id": "ct_font",
+        "label": "Title Font Family",
+        "options": [
+          { "value": "HypatiaSansPro", "label": "Hypatia Sans Pro" },
+          { "value": "'Superior Title Italic'", "label": "Superior Title Italic" },
+          { "value": "inherit", "label": "Inherit" }
+        ],
+        "default": "HypatiaSansPro"
+      },
+      {
+        "type": "range",
+        "id": "ct_font_size",
+        "label": "Title Font Size (Desktop)",
+        "min": 12,
+        "max": 72,
+        "step": 1,
+        "default": 48,
+        "unit": "px"
+      },
+      {
+        "type": "range",
+        "id": "ct_font_size_mobile",
+        "label": "Title Font Size (Mobile)",
+        "min": 12,
+        "max": 48,
+        "step": 1,
+        "default": 27,
+        "unit": "px"
+      },
+      {
+        "type": "select",
+        "id": "ct_font_weight",
+        "label": "Title Font Weight",
+        "options": [
+          { "value": "400", "label": "Normal" },
+          { "value": "600", "label": "Semi Bold" },
+          { "value": "700", "label": "Bold" },
+          { "value": "800", "label": "Extra Bold" }
+        ],
+        "default": "700"
+      },
+      {
+        "type": "select",
+        "id": "ct_transform",
+        "label": "Title Text Transform",
+        "options": [
+          { "value": "none", "label": "None" },
+          { "value": "uppercase", "label": "Uppercase" },
+          { "value": "lowercase", "label": "Lowercase" },
+          { "value": "capitalize", "label": "Capitalize" }
+        ],
+        "default": "uppercase"
+      },
+      {
+        "type": "color",
+        "id": "ct_color",
+        "label": "Title Color",
+        "default": "#ffffff"
+      },
+      {
+        "type": "header",
+        "content": "Custom Description"
+      },
+      {
+        "type": "html",
+        "id": "custom_description",
+        "label": "Custom Description",
+        "info": "Appears below the title"
+      },
+      {
+        "type": "select",
+        "id": "cd_font",
+        "label": "Description Font Family",
+        "options": [
+          { "value": "HypatiaSansPro", "label": "Hypatia Sans Pro" },
+          { "value": "'Superior Title Italic'", "label": "Superior Title Italic" },
+          { "value": "inherit", "label": "Inherit" }
+        ],
+        "default": "HypatiaSansPro"
+      },
+      {
+        "type": "range",
+        "id": "cd_font_size",
+        "label": "Description Font Size (Desktop)",
+        "min": 10,
+        "max": 36,
+        "step": 1,
+        "default": 16,
+        "unit": "px"
+      },
+      {
+        "type": "range",
+        "id": "cd_font_size_mobile",
+        "label": "Description Font Size (Mobile)",
+        "min": 10,
+        "max": 28,
+        "step": 1,
+        "default": 14,
+        "unit": "px"
+      },
+      {
+        "type": "select",
+        "id": "cd_font_weight",
+        "label": "Description Font Weight",
+        "options": [
+          { "value": "400", "label": "Normal" },
+          { "value": "600", "label": "Semi Bold" },
+          { "value": "700", "label": "Bold" },
+          { "value": "800", "label": "Extra Bold" }
+        ],
+        "default": "400"
+      },
+      {
+        "type": "select",
+        "id": "cd_transform",
+        "label": "Description Text Transform",
+        "options": [
+          { "value": "none", "label": "None" },
+          { "value": "uppercase", "label": "Uppercase" },
+          { "value": "lowercase", "label": "Lowercase" },
+          { "value": "capitalize", "label": "Capitalize" }
+        ],
+        "default": "none"
+      },
+      {
+        "type": "color",
+        "id": "cd_color",
+        "label": "Description Color",
+        "default": "#ffffff"
+      },
+      {
+        "type": "header",
+        "content": "Separator Images"
+      },
+      {
+        "type": "image_picker",
+        "id": "image_1",
+        "label": "Image 1 (Between options and title)"
+      },
+      {
+        "type": "image_picker",
+        "id": "image_2",
+        "label": "Image 2 (Between button and guarantee)"
+      },
+      {
+        "type": "header",
+        "content": "Colors"
+      },
+      {
+        "type": "color",
+        "id": "background_color",
+        "label": "Background Color",
+        "default": "#000000"
+      }, {
+        "type": "color",
+        "id": "text_color",
+        "label": "Text Color",
+        "default": "#ffffff"
+      }, {
+        "type": "header",
+        "content": "Rating"
+      }, {
+        "type": "checkbox",
+        "id": "show_rating",
+        "label": "Show Star Rating",
+        "default": true
+      }, {
+        "type": "select",
+        "id": "rating_source",
+        "label": "Rating Source",
+        "options": [
+          { "value": "judgeme", "label": "Judge.me" },
+          { "value": "custom", "label": "Custom Stars" }
+        ],
+        "default": "judgeme"
+      }, {
+        "type": "range",
+        "id": "custom_star_count",
+        "label": "Number of Stars (Custom)",
+        "min": 1,
+        "max": 5,
+        "step": 1,
+        "default": 5,
+        "info": "Only applies when Rating Source is Custom Stars"
+      }, {
+        "type": "text",
+        "id": "rating_text",
+        "label": "Rating Text",
+        "default": "LOVED BY THOUSANDS"
+      }, {
+        "type": "header",
+        "content": "Certifications"
+      }, {
+        "type": "checkbox",
+        "id": "show_certifications",
+        "label": "Show Certification Icons",
+        "default": true
+      }, {
+        "type": "header",
+        "content": "Guarantees"
+      }, {
+        "type": "checkbox",
+        "id": "money_back_guarantee",
+        "label": "Show Money Back Guarantee",
+        "default": true
+      }, {
+        "type": "checkbox",
+        "id": "free_shipping",
+        "label": "Show Free Shipping",
+        "default": true
+      }, {
+        "type": "header",
+        "content": "Disclaimer"
+      }, {
+        "type": "richtext",
+        "id": "disclaimer_text",
+        "label": "Disclaimer Text",
+        "info": "This text will appear between options and purchase type on mobile, and below the add to cart button on desktop."
+      }, {
+        "type": "checkbox",
+        "id": "show_button_price",
+        "label": "Show Price in Add to Cart Button",
+        "default": true
+      }, {
+        "type": "header",
+        "content": "Button Disclaimer"
+      }, {
+        "type": "richtext",
+        "id": "button_disclaimer_text",
+        "label": "Button Disclaimer Text",
+        "info": "Appears below the Add to Cart button"
+      }, {
+        "type": "select",
+        "id": "button_disclaimer_font",
+        "label": "Button Disclaimer Font Family",
+        "options": [
+          { "value": "HypatiaSansPro", "label": "Hypatia Sans Pro" },
+          { "value": "'Superior Title Italic'", "label": "Superior Title Italic" },
+          { "value": "inherit", "label": "Inherit" }
+        ],
+        "default": "HypatiaSansPro"
+      }, {
+        "type": "range",
+        "id": "button_disclaimer_font_size",
+        "label": "Button Disclaimer Font Size (Desktop)",
+        "min": 8,
+        "max": 24,
+        "step": 1,
+        "default": 11,
+        "unit": "px"
+      }, {
+        "type": "range",
+        "id": "button_disclaimer_font_size_mobile",
+        "label": "Button Disclaimer Font Size (Mobile)",
+        "min": 8,
+        "max": 20,
+        "step": 1,
+        "default": 10,
+        "unit": "px"
+      }, {
+        "type": "select",
+        "id": "button_disclaimer_font_weight",
+        "label": "Button Disclaimer Font Weight",
+        "options": [
+          { "value": "400", "label": "Normal" },
+          { "value": "600", "label": "Semi Bold" },
+          { "value": "700", "label": "Bold" },
+          { "value": "800", "label": "Extra Bold" }
+        ],
+        "default": "400"
+      }, {
+        "type": "select",
+        "id": "button_disclaimer_transform",
+        "label": "Button Disclaimer Text Transform",
+        "options": [
+          { "value": "none", "label": "None" },
+          { "value": "uppercase", "label": "Uppercase" },
+          { "value": "lowercase", "label": "Lowercase" },
+          { "value": "capitalize", "label": "Capitalize" }
+        ],
+        "default": "none"
+      }, {
+        "type": "color",
+        "id": "button_disclaimer_color",
+        "label": "Button Disclaimer Color",
+        "default": "#999999"
+      }, {
+        "type": "header",
+        "content": "Payment Icons"
+      }, {
+        "type": "checkbox",
+        "id": "show_payment_icons",
+        "label": "Show Payment Icons",
+        "default": true
+      }, {
+        "type": "header",
+        "content": "Upsell Popup"
+      }, {
+        "type": "checkbox",
+        "id": "enable_upsell_popup",
+        "label": "Enable Upsell Popup on Add to Cart",
+        "default": false,
+        "info": "When enabled, shows upsell popup instead of opening cart drawer."
+      }, {
+        "type": "checkbox",
+        "id": "upsell_clear_cart",
+        "label": "Clear Cart When Upsell Opens",
+        "default": true,
+        "info": "When enabled, clears the cart and starts fresh with only the selected product. This removes any existing discount codes and products."
+      }, {
+        "type": "header",
+        "content": "Upsell — Content"
+      }, {
+        "type": "html",
+        "id": "upsell_step1_title",
+        "label": "Title",
+        "default": "New Customer One-Time Special Offer"
+      }, {
+        "type": "html",
+        "id": "upsell_step1_description",
+        "label": "Description",
+        "default": "You've found our new customer special - our biggest savings anywhere in our store. You only get this deal one-time."
+      }, {
+        "type": "html",
+        "id": "upsell_product_name",
+        "label": "Custom Product Name",
+        "info": "Custom name displayed in the upsell popup. Leave blank to use the real product title."
+      }, {
+        "type": "checkbox",
+        "id": "upsell_show_breakdown",
+        "label": "Show Price Breakdown",
+        "default": true,
+        "info": "When unchecked, hides the price breakdown box from the upsell popup."
+      }, {
+        "type": "header",
+        "content": "Upsell — Images per Variant"
+      }, {
+        "type": "image_picker",
+        "id": "upsell_image_1pack",
+        "label": "Image — 1-Pack Upsell"
+      }, {
+        "type": "image_picker",
+        "id": "upsell_image_3pack",
+        "label": "Image — 3-Pack Upsell"
+      }, {
+        "type": "image_picker",
+        "id": "upsell_image_6pack",
+        "label": "Image — 6-Pack Upsell"
+      }, {
+        "type": "image_picker",
+        "id": "upsell_step1_image",
+        "label": "Fallback Image",
+        "info": "Used when no variant-specific image is set."
+      }, {
+        "type": "text",
+        "id": "upsell_step1_cta_text",
+        "label": "CTA Button Text",
+        "default": "YES! UPGRADE MY SAVINGS"
+      }, {
+        "type": "text",
+        "id": "upsell_step1_decline_text",
+        "label": "Decline Link Text",
+        "default": "No thanks, I'll pass on this one-time offer."
+      }, {
+        "type": "header",
+        "content": "Third-Party Widgets"
+      }, {
+        "type": "checkbox",
+        "id": "hide_claim_reward",
+        "label": "Hide Claim Reward (Alia widget)",
+        "default": false
+      }, {
+        "type": "header",
+        "content": "Upsell — Colors"
+      }, {
+        "type": "color",
+        "id": "upsell_popup_bg_color",
+        "label": "Popup Background Color",
+        "default": "#FBEEE8"
+      }, {
+        "type": "color",
+        "id": "upsell_cta_bg_color",
+        "label": "CTA Button Color",
+        "default": "#AC853B"
+      }, {
+        "type": "color",
+        "id": "upsell_cta_text_color",
+        "label": "CTA Text Color",
+        "default": "#ffffff"
+      }
+    ]
+  }
+{% endschema %}
+
+<script type="application/json" id="dgf-product-data">
+  {
+    "id": {{ selected_product.id | json }},
+    "title": {{ selected_product.title | json }},
+    "handle": {{ selected_product.handle | json }},
+    "variants": [
+      {% for variant in selected_product.variants %}
+        {
+          "id": {{ variant.id | json }},
+          "title": {{ variant.title | json }},
+          "price": {{ variant.price | json }},
+          "compare_at_price": {{ variant.compare_at_price | json }},
+          "available": {{ variant.available | json }},
+          "metafields": {
+            "custom": {
+              "lp_qty_servings": {{ variant.metafields.custom.lp_qty_servings | json }},
+              "lp_prc_servings": {{ variant.metafields.custom.lp_prc_servings | json }},
+              "lp_custom_txt": {{ variant.metafields.custom.lp_custom_txt | json }},
+              "lp_red_prc": {{ variant.metafields.custom.lp_red_prc | json }}
+            }
+          },
+          "featured_image_position": {{ variant.featured_image.position | default: 1 | json }}
+        }{% unless forloop.last %},{% endunless %}
+      {% endfor %}
+    ]
+  }
+</script>
+
+{% javascript %}
+  (function() {
+    'use strict';
+
+    let selectedVariantId = null;
+    let productData = null;
+    let mainGallerySwiper = null;
+    let mobileSliderSwiper = null;
+    let isUpdating = false;
+
+    try {
+      const productDataElement = document.getElementById('dgf-product-data');
+      if (productDataElement) {
+        productData = JSON.parse(productDataElement.textContent);
+      }
+    } catch(e) {
+      console.error('❌ Error parsing product data:', e);
+    }
+
+function initMobileSlider(initialSlide, caller) {
+  try {
+    if (mobileSliderSwiper) {
+      mobileSliderSwiper.destroy(true, true);
+      mobileSliderSwiper = null;
+    }
+
+    const sliderWrapper = document.querySelector('.product-slider .swiper-wrapper');
+    if (sliderWrapper) {
+      sliderWrapper.style.transform = 'translate3d(0px, 0px, 0px)';
+      sliderWrapper.style.transitionDuration = '0ms';
+    }
+
+    setTimeout(function() {
+      try {
+
+        mobileSliderSwiper = new Swiper('.product-slider', {
+          slidesPerView: 1,
+          spaceBetween: 0,
+          initialSlide: 0,
+          observer: false,
+          observeParents: false,
+          pagination: {
+            el: '.product-slider .swiper-pagination',
+            clickable: true,
+          },
+        });
+
+        // Primeira tentativa
+        setTimeout(function() {
+          if (mobileSliderSwiper && initialSlide > 0) {
+            mobileSliderSwiper.slideTo(initialSlide, 0, false);
+
+            // Segunda tentativa caso scripts de terceiros resetem
+            setTimeout(function() {
+              if (mobileSliderSwiper && mobileSliderSwiper.activeIndex !== initialSlide) {
+                mobileSliderSwiper.slideTo(initialSlide, 0, false);
+              }
+            }, 500);
+          }
+        }, 200);
+
+      } catch(e) { null; }
+    }, 350);
+  } catch(e) { null; }
+}
+
+function initializeGallerySwipers() {
+  try {
+    var initialSlide = 0;
+    var preSelectedCard = document.querySelector('.dgf-variant-card.selected');
+    if (preSelectedCard && productData) {
+      var preSelectedId = preSelectedCard.dataset.variantId;
+      var preVariant = productData.variants.find(function(v) { return String(v.id) === String(preSelectedId); });
+      if (preVariant && preVariant.featured_image_position) {
+        initialSlide = preVariant.featured_image_position - 1;
+      }
+    }
+
+
+    const thumbnailWrapper = document.querySelector('.thumbnail-gallery .swiper-wrapper');
+    const thumbnailSlides = thumbnailWrapper ? thumbnailWrapper.children.length : 0;
+
+    // SEM eventos no construtor
+    const thumbnailGallery = new Swiper('.thumbnail-gallery', {
+      spaceBetween: 10,
+      slidesPerView: 4,
+      watchSlidesProgress: true,
+      loop: thumbnailSlides > 4,
+      initialSlide: initialSlide,
+      navigation: {
+        nextEl: '.product-thumbnail-next',
+        prevEl: '.product-thumbnail-prev',
+      },
+      slideToClickedSlide: true,
+    });
+
+    // SEM eventos no construtor
+    const mainGallery = new Swiper('.main-gallery', {
+      spaceBetween: 10,
+      initialSlide: initialSlide,
+      navigation: {
+        nextEl: '.product-gallery-next',
+        prevEl: '.product-gallery-prev',
+      },
+      thumbs: {
+        swiper: thumbnailGallery,
+      },
+      loop: true,
+    });
+
+
+    mainGallerySwiper = mainGallery;
+
+    initMobileSlider(initialSlide, 'initializeGallerySwipers');
+
+    setupGallerySynchronization(thumbnailGallery, mainGallery);
+    setupThumbnailNavigation(thumbnailGallery, thumbnailSlides);
+
+    return { thumbnailGallery, mainGallery };
+  } catch(e) { console.error('❌ Erro no initializeGallerySwipers:', e); }
+}
+
+    function setupGallerySynchronization(thumbnailGallery, mainGallery) {
+      try {
+        thumbnailGallery.on('slideChangeTransitionEnd', function () {
+          if (isUpdating) {
+            return;
+          }
+          try {
+            isUpdating = true;
+            const activeIndex = thumbnailGallery.realIndex;
+            mainGallery.slideToLoop(activeIndex, 0);
+            isUpdating = false;
+          } catch(e) { isUpdating = false; }
+        });
+
+        mainGallery.on('slideChangeTransitionEnd', function () {
+          if (isUpdating) {
+            return;
+          }
+          try {
+            isUpdating = true;
+            const activeIndex = mainGallery.realIndex;
+            thumbnailGallery.slideToLoop(activeIndex, 0);
+            isUpdating = false;
+          } catch(e) { isUpdating = false; }
+        });
+      } catch(e) { null; }
+    }
+
+    function setupThumbnailNavigation(thumbnailGallery, thumbnailSlides) {
+      try {
+        const prevArrow = document.querySelector('.product-thumbnail-prev');
+        const nextArrow = document.querySelector('.product-thumbnail-next');
+
+        if (!prevArrow || !nextArrow) return;
+
+        if (thumbnailSlides <= 4) {
+          prevArrow.style.display = 'none';
+          nextArrow.style.display = 'none';
+        } else {
+          thumbnailGallery.on('slideChange', function () {
+            try {
+              prevArrow.style.display = 'block';
+              nextArrow.style.display = 'block';
+              if (thumbnailGallery.isBeginning) {
+                prevArrow.classList.add('swiper-button-disabled');
+              } else {
+                prevArrow.classList.remove('swiper-button-disabled');
+              }
+              if (thumbnailGallery.isEnd) {
+                nextArrow.classList.add('swiper-button-disabled');
+              } else {
+                nextArrow.classList.remove('swiper-button-disabled');
+              }
+            } catch(e) { null; }
+          });
+        }
+      } catch(e) { null; }
+    }
+
+    function updatePriceDisplay(price, comparePrice) {
+      try {
+        const priceNum = parseInt(price) || 0;
+        const comparePriceNum = comparePrice && comparePrice !== '' ? parseInt(comparePrice) : 0;
+
+        const priceDisplay = document.getElementById('selected-price');
+        const buttonPrice = document.getElementById('button-price');
+        const comparePriceDisplay = document.getElementById('compare-price');
+
+        if (priceDisplay && priceNum) {
+          priceDisplay.textContent = '$' + (priceNum / 100).toFixed(2);
+        }
+        if (buttonPrice && priceNum) {
+          buttonPrice.textContent = '$' + (priceNum / 100).toFixed(2);
+        }
+        if (comparePriceDisplay) {
+          if (comparePriceNum > 0 && comparePriceNum > priceNum) {
+            comparePriceDisplay.textContent = '$' + (comparePriceNum / 100).toFixed(2);
+            comparePriceDisplay.style.display = 'inline';
+          } else {
+            comparePriceDisplay.style.display = 'none';
+          }
+        }
+      } catch(e) {
+        console.error('❌ Error updating price display:', e);
+      }
+    }
+
+    function selectVariantById(variantId, price, comparePrice) {
+      try {
+        selectedVariantId = variantId;
+        updatePriceDisplay(price, comparePrice);
+        slideToVariantImage(variantId);
+      } catch(e) { null; }
+    }
+
+    function slideToVariantImage(variantId) {
+      try {
+        if (!productData) return;
+        const variant = productData.variants.find(v => String(v.id) === String(variantId));
+        if (!variant || !variant.featured_image_position) {
+          console.warn('⚠️ Variant não encontrada ou sem featured_image_position');
+          return;
+        }
+
+        const slideIndex = variant.featured_image_position - 1;
+
+        if (mainGallerySwiper) {
+          mainGallerySwiper.slideToLoop(slideIndex, 300);
+        }
+
+        if (window.innerWidth < 768) {
+          initMobileSlider(slideIndex, 'slideToVariantImage');
+        }
+
+      } catch(e) { console.error('❌ Erro no slideToVariantImage:', e); }
+    }
+
+    function setupVariantSelection() {
+      try {
+        const variantCards = document.querySelectorAll('.dgf-variant-card');
+        if (variantCards.length === 0) return;
+
+        const firstSelected = document.querySelector('.dgf-variant-card.selected');
+        if (firstSelected) {
+          selectedVariantId = firstSelected.dataset.variantId;
+        } else {
+          const firstAvailable = variantCards[0];
+          if (firstAvailable) {
+            firstAvailable.classList.add('selected');
+            selectedVariantId = firstAvailable.dataset.variantId;
+          }
+        }
+
+        variantCards.forEach(card => {
+          try {
+            card.addEventListener('click', function() {
+              try {
+                variantCards.forEach(c => c.classList.remove('selected'));
+                this.classList.add('selected');
+
+                const variantId = this.dataset.variantId;
+                const price = this.dataset.variantPrice;
+                const comparePrice = this.dataset.variantComparePrice;
+            
+                selectVariantById(variantId, price, comparePrice);
+              } catch(e) { null; }
+            });
+          } catch(e) { null; }
+        });
+      } catch(e) { null; }
+    }
+
+    function setupVariantRadioListeners() {
+      try {
+        const variantRadios = document.querySelectorAll('.dgf-variant-radio');
+        variantRadios.forEach(radio => {
+          radio.addEventListener('change', function() {
+            if (this.checked) {
+              updatePackOptions(this.value);
+            }
+          });
+        });
+      } catch(e) {
+        console.error('❌ Error setting up variant radio listeners:', e);
+      }
+    }
+
+    function setupAddToCartButton() {
+      try {
+        const addToCartBtn = document.getElementById('add-to-cart-btn');
+        if (addToCartBtn) {
+          addToCartBtn.addEventListener('click', function(e) {
+            e.preventDefault();
+            addToCart();
+          });
+        }
+      } catch(e) {
+        console.error('❌ Error setting up add to cart button:', e);
+      }
+    }
+
+    function addToCart() {
+      try {
+        if (!selectedVariantId) {
+          console.error('No variant selected');
+          return;
+        }
+
+        const button = document.getElementById('add-to-cart-btn');
+
+        if (button) {
+          button.disabled = true;
+          button.textContent = 'ADDING...';
+        }
+
+        const payload = JSON.stringify({
+          items: [{ id: parseInt(selectedVariantId), quantity: 1 }]
+        });
+
+        const upsellEnabled = document.getElementById('dgf-upsell-popup') && typeof window.openUpsellPopup === 'function';
+
+        function restoreButton() {
+          try {
+            if (button) {
+              button.disabled = false;
+              const buttonPriceEl = document.getElementById('button-price');
+              if (buttonPriceEl) {
+                button.innerHTML = 'ADD TO CART |&nbsp;<span id="button-price">' + buttonPriceEl.textContent + '</span>';
+              } else {
+                button.textContent = 'ADD TO CART';
+              }
+            }
+          } catch(e) { null; }
+        }
+
+        if (upsellEnabled) {
+          var xhr = new XMLHttpRequest();
+          xhr.open('POST', '/cart/add.js', true);
+          xhr.setRequestHeader('Content-Type', 'application/json');
+          xhr.onload = function() {
+            try {
+              var data = JSON.parse(xhr.responseText);
+              if (xhr.status === 200 && data.items && data.items.length > 0) {
+                handleCartSuccess(data);
+              } else {
+                console.error('Error adding product to cart:', data.message || data.description || '');
+              }
+            } catch(e) { null; }
+            restoreButton();
+          };
+          xhr.onerror = function() {
+            console.error('Error adding product to cart');
+            restoreButton();
+          };
+          xhr.send(payload);
+        } else {
+          fetch('/cart/add.js', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: payload
+          })
+          .then(response => response.json())
+          .then(data => {
+            try {
+              if (data.items && data.items.length > 0) {
+                handleCartSuccess(data);
+              } else {
+                console.error('Error adding product to cart');
+              }
+            } catch(e) { null; }
+          })
+          .catch(error => {
+            console.error('Error adding product to cart:', error);
+          })
+          .finally(restoreButton);
+        }
+      } catch(e) { null; }
+    }
+
+    function handleCartSuccess(data) {
+      try {
+        if (typeof updateCartCount === 'function') {
+          updateCartCount();
+        }
+
+        document.dispatchEvent(new CustomEvent('cart:updated', {
+          detail: { items: data.items }
+        }));
+
+        const upsellPopup = document.getElementById('dgf-upsell-popup');
+        if (upsellPopup && typeof window.openUpsellPopup === 'function') {
+          window.openUpsellPopup(selectedVariantId);
+          return;
+        }
+
+        const cartDrawer = document.querySelector('[data-cart-drawer]') ||
+                          document.querySelector('.cart-drawer') ||
+                          document.querySelector('#cart-drawer');
+
+        if (cartDrawer) {
+          if (typeof openCartDrawer === 'function') {
+            openCartDrawer();
+          } else if (cartDrawer.classList) {
+            cartDrawer.classList.add('active', 'open');
+          }
+        }
+      } catch(e) { null; }
+    }
+
+    function updatePackOptions(selectedValue) {
+      try {
+        if (!productData) return;
+
+        const allVariants = productData.variants || [];
+
+        const matchingVariants = allVariants.filter(variant => {
+          const title = variant.title || '';
+          return title.includes(selectedValue) && variant.available;
+        });
+
+        const variantOptionsContainer = document.querySelector('.dgf-variant-options');
+        if (!variantOptionsContainer) return;
+
+        variantOptionsContainer.innerHTML = '';
+
+        matchingVariants.forEach((variant, index) => {
+          const card = createVariantCard(variant, index, matchingVariants.length);
+          variantOptionsContainer.appendChild(card);
+        });
+
+        setupVariantSelection();
+
+        const newCards = variantOptionsContainer.querySelectorAll('.dgf-variant-card');
+        if (newCards.length > 0) {
+          const cardToSelect = newCards.length > 1 ? newCards[1] : newCards[0];
+          if (cardToSelect) {
+            cardToSelect.click();
+            const variantId = cardToSelect.dataset.variantId;
+            const price = cardToSelect.dataset.variantPrice;
+            const comparePrice = cardToSelect.dataset.variantComparePrice;
+            updatePriceDisplay(price, comparePrice);
+          }
+        }
+
+      } catch(e) {
+        console.error('❌ Error updating pack options:', e);
+      }
+    }
+
+    function createVariantCard(variant, index, totalVariants) {
+      try {
+        const card = document.createElement('div');
+        card.className = 'dgf-option-card dgf-variant-card';
+
+        if (index === 1) {
+          card.classList.add('selected', 'dgf-most-popular');
+        }
+
+        card.setAttribute('data-variant-id', variant.id);
+        card.setAttribute('data-variant-price', variant.price);
+        card.setAttribute('data-variant-compare-price', variant.compare_at_price || '');
+
+        let headerText = '';
+        let headerBg = '';
+        if (index === 0) {
+          headerText = 'DAILY SAVINGS<br>25% OFF';
+          headerBg = '#06211E';
+        } else if (index === 1) {
+          headerText = 'MOST POPULAR<br>30% OFF';
+          headerBg = '#AC853B';
+        } else if (index === 2) {
+          headerText = 'BEST VALUE<br>35% OFF';
+          headerBg = '#06211E';
+        }
+
+        let packSize = 1;
+        const title = variant.title;
+        if (title.includes('2-Pack')) packSize = 2;
+        else if (title.includes('3-Pack')) packSize = 3;
+        else if (title.includes('4-Pack')) packSize = 4;
+        else if (title.includes('5-Pack')) packSize = 5;
+
+        const pricePerPack = variant.price / packSize / 100;
+
+        const servings = variant.metafields?.custom?.lp_qty_servings;
+        const pricePerServing = variant.metafields?.custom?.lp_prc_servings;
+        const customText = variant.metafields?.custom?.lp_custom_txt;
+        const redPrc = variant.metafields?.custom?.lp_red_prc;
+
+        card.innerHTML = `
+          <div class="dgf-option-header" style="background-color: ${headerBg};">
+            ${headerText}
+          </div>
+          <div class="dgf-option-content">
+            <div class="dgf-option-top">
+              <div class="dgf-option-title">${title}</div>
+              <div class="dgf-option-price-wrapper">
+                <div class="dgf-option-price">$${pricePerPack.toFixed(2)}${packSize > 1 ? '<span class="dgf-option-ea">/ea</span>' : ''}</div>
+                ${redPrc ? `<div class="dgf-option-red-price">$${redPrc}</div>` : ''}
+              </div>
+            </div>
+            <div class="dgf-option-bottom">
+              <div class="dgf-option-servings">${servings} servings</div>
+              <div class="dgf-option-per-serving">(<strong>$${pricePerServing}</strong>/serving)</div>
+              ${customText ? `<div class="dgf-option-custom-text">${customText}</div>` : ''}
+            </div>
+          </div>
+        `;
+
+        return card;
+      } catch(e) {
+        console.error('❌ Error creating variant card:', e);
+        return document.createElement('div');
+      }
+    }
+
+    if (document.readyState === 'loading') {
+      document.addEventListener('DOMContentLoaded', init);
+    } else {
+      init();
+    }
+
+    function init() {
+      try {
+        initializeGallerySwipers();
+        setupVariantSelection();
+        setupVariantRadioListeners();
+        setupAddToCartButton();
+      } catch(e) {
+        null;
+      }
+    }
+  })();
+{% endjavascript %}

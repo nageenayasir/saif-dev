@@ -1,0 +1,64 @@
+<style>
+  #id-{{ section.id }}{
+  	background-color:{{ section.settings.section_bg_color }};
+  }
+</style>
+<section id="id-{{section.id}}" class="product-cstm-guarantee-icons section">
+  <div class="container">
+    <div class="row product-cstm-guarantee-icons-row" data-aos="fade-up">
+      {% for block in section.blocks %}
+        <div class="col-sm-6 col-md-6 col-lg-6">
+          <div class=" product-guarantee-icons-wrap">
+            <p>
+              <span>{% if block.settings.icon != blank %}<img loading="lazy"  src="{{ block.settings.icon | image_url: width: 2000 }}">{% endif %}</span>
+              {{ block.settings.the_text }}
+            </p>
+          </div>
+        </div>
+      {% endfor %}
+    </div>
+  </div>
+</section>
+{% schema %}
+  {
+    "name": "Icons With Text",
+    "settings": [
+      {
+            "type": "header",
+            "content": "Content Style"
+         },
+  	     {
+           "type": "color",
+           "id": "section_bg_color",
+           "label": "Section background color"
+        }
+    ],
+    "blocks": [
+     {
+      "type": "icon_text",
+      "name": "Icon-Text",
+      "settings": [
+        {
+          "type": "image_picker",
+          "id": "icon",
+          "label": "Icon"
+        },
+        {
+        "type": "text",
+        "id": "the_text",
+        "label": "Text"
+      }
+      ]
+     }
+	],
+	"presets": [{
+      "name": "Icons With Text"
+    }]
+  }
+{% endschema %}
+
+{% stylesheet %}
+{% endstylesheet %}
+
+{% javascript %}
+{% endjavascript %}

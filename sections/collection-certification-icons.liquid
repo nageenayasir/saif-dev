@@ -1,0 +1,29 @@
+{% if collection.metafields.custom.certificate_icons != blank %}
+<section id="{{ section.id }}" class="collection-certification-icons-section">
+  <div class="container">
+    <div class="row collection-certification-icons-wrapper">
+        {% for icons in collection.metafields.custom.certificate_icons.value %}
+          <div class="col-3">
+             <div class="collection-certification-icons">
+               <img loading="lazy" src="{{ icons | image_url: width: 2000 }}">
+            </div>
+          </div>
+         {% endfor %}
+    </div>
+  </div>
+</section>
+{% endif %}
+{% schema %}
+  {
+    "name": "Certificate Icons",
+    "settings": [
+      {
+            "type": "header",
+            "content": "Icon will handles by collection metafields"
+      }
+    ],
+	"presets": [{
+      "name": "Certificate Icons"
+    }]
+  }
+{% endschema %}

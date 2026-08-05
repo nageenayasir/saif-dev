@@ -1,0 +1,29 @@
+<section class="section-banner section-title section-form bg-line-02 quiz-page-wrapper">
+            <div class="leaf-box right-top">
+                <img loading="lazy"  class="leaf" src="{{ 'leaf-n07.svg' | asset_url }}">
+            </div>
+            <div class="content">
+                <div class="container">
+                    {% if section.settings.title != blank %}<h1 class="text-uppercase" data-aos="fade-up">{{ section.settings.title }}</h1>{% endif %}
+                    {{ section.settings.custom_liquid }}
+                </div>
+            </div>
+</section>
+{% schema %}
+  {
+    "name": "Section Quiz",
+    "settings": [
+      {
+        "type": "text",
+        "id": "title",
+        "label": "Title",
+        "default" : "Set yourself up for success,<br> we’ll help"
+      },
+      {
+          "type": "liquid",
+          "id": "custom_liquid",
+          "label": "Custom Liquid"
+      }
+    ]
+  }
+{% endschema %}

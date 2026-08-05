@@ -1,0 +1,86 @@
+<style>
+  #id-{{ section.id }}{
+  	background-color:{{ section.settings.section_bg_color }};
+  }
+</style>
+<section id="id-{{section.id}}" class="wholesale-rich-text-section {{ section.settings.add_class }}">
+  <div class="container">
+    <div class="row">
+      <div class="col-sm-12 col-md-12 col-lg-12">
+        <div class="wholesale-rich-text-wrapper">
+          <div class="wholesale-rich-text-head" data-aos="fade-up">
+            <h2 class="custom-main-heading">
+              {{ section.settings.the_title }}
+            </h2>
+          </div>
+          {% if section.settings.button_1 != blank %}
+          <div class="wholesale-rich-text-button">
+               <div class="btn-group">
+                <div data-aos="fade-up" data-aos-delay="400">
+                    <a class="btn btn-bg" href="{{ section.settings.url_1 }}" target="_self">
+                        {{ section.settings.button_1 }}
+                    </a>
+                </div>
+              </div>
+          </div>
+          {% endif %}
+          {% if section.settings.the_text != blank %}
+          <div class="wholesale-rich-text-content" data-aos="fade-up">
+            {{ section.settings.the_text }}
+          </div>
+          {% endif %}
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+{% schema %}
+  {
+    "name": "Wholesale Rich Text",
+    "settings": [
+        {
+            "type": "header",
+            "content": "Content Style"
+         },
+  	     {
+           "type": "color",
+           "id": "section_bg_color",
+           "label": "Section background color"
+        },
+        {
+           "type": "text",
+           "id": "add_class",
+           "label": "Add Class"
+        },
+        {
+           "type": "text",
+           "id": "the_title",
+           "label": "Title"
+        },
+        {
+          "type": "text",
+          "id": "button_1",
+          "label": "Button"
+        },
+        {
+          "type": "url",
+          "id": "url_1",
+          "label": "Url"
+        },
+        {
+           "type": "richtext",
+           "id": "the_text",
+           "label": "Text"
+        }
+    ],
+	"presets": [{
+      "name": "Wholesale Rich Text"
+    }]
+  }
+{% endschema %}
+
+{% stylesheet %}
+{% endstylesheet %}
+
+{% javascript %}
+{% endjavascript %}

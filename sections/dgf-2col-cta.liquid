@@ -1,0 +1,926 @@
+{% comment %}
+  [DGF] 2 Col + CTA
+  Author: Rodrigo Gesser
+  Structure: Title > 2 Columns (Text + Image) > Title 2 > CTA > Stars Rating
+{% endcomment %}
+
+{% liquid
+  assign bg_color = section.settings.background_color | default: '#ffffff'
+
+  assign title_font = section.settings.title_font | default: 'HypatiaSansPro'
+  assign title_font_size = section.settings.title_font_size | default: 28
+  assign title_font_size_mobile = section.settings.title_font_size_mobile | default: 22
+  assign title_font_weight = section.settings.title_font_weight | default: '700'
+  assign title_transform = section.settings.title_transform | default: 'uppercase'
+  assign title_color = section.settings.title_color | default: '#333333'
+  assign title_alignment = section.settings.title_alignment | default: 'center'
+  assign title_margin_bottom = section.settings.title_margin_bottom | default: 30
+
+  assign text_font = section.settings.text_font | default: 'HypatiaSansPro'
+  assign text_font_size = section.settings.text_font_size | default: 16
+  assign text_font_size_mobile = section.settings.text_font_size_mobile | default: 14
+  assign text_font_weight = section.settings.text_font_weight | default: '400'
+  assign text_transform = section.settings.text_transform | default: 'none'
+  assign text_color = section.settings.text_color | default: '#555555'
+
+  assign title2_font = section.settings.title2_font | default: 'HypatiaSansPro'
+  assign title2_font_size = section.settings.title2_font_size | default: 24
+  assign title2_font_size_mobile = section.settings.title2_font_size_mobile | default: 20
+  assign title2_font_weight = section.settings.title2_font_weight | default: '700'
+  assign title2_transform = section.settings.title2_transform | default: 'uppercase'
+  assign title2_color = section.settings.title2_color | default: '#333333'
+  assign title2_alignment = section.settings.title2_alignment | default: 'center'
+  assign title2_margin_top = section.settings.title2_margin_top | default: 30
+
+  assign image_position = section.settings.image_position | default: 'right'
+  assign columns_gap = section.settings.columns_gap | default: 30
+  assign columns_vertical_align = section.settings.columns_vertical_align | default: 'center'
+  assign image_border_radius = section.settings.image_border_radius | default: 0
+  assign text_col_padding = section.settings.text_col_padding | default: 0
+
+  assign button_bg_color = section.settings.button_bg_color | default: '#AC853B'
+  assign button_text_color = section.settings.button_text_color | default: '#ffffff'
+  assign star_color = section.settings.star_color | default: '#AC853B'
+  assign rating_text_color = section.settings.rating_text_color | default: '#06211E'
+
+  assign mobile_disclaimer_font = section.settings.mobile_disclaimer_font | default: 'HypatiaSansPro'
+  assign mobile_disclaimer_font_size = section.settings.mobile_disclaimer_font_size | default: 11
+  assign mobile_disclaimer_font_weight = section.settings.mobile_disclaimer_font_weight | default: '400'
+  assign mobile_disclaimer_transform = section.settings.mobile_disclaimer_transform | default: 'none'
+  assign mobile_disclaimer_color = section.settings.mobile_disclaimer_color | default: '#999999'
+
+  assign padding_top = section.settings.padding_top | default: 40
+  assign padding_bottom = section.settings.padding_bottom | default: 40
+  assign padding_left = section.settings.padding_left | default: 0
+  assign padding_right = section.settings.padding_right | default: 0
+
+  assign sid = section.id
+%}
+
+<section id="dgf-2cc-{{ sid }}" style="background-color: {{ bg_color }};">
+  <div class="container">
+
+    <!-- Title -->
+    {% if section.settings.title != blank %}
+      <div class="dgf-2cc-title">{{ section.settings.title }}</div>
+    {% endif %}
+
+    <!-- 2 Columns: Text + Image -->
+    <div class="dgf-2cc-columns" style="flex-direction: {% if image_position == 'left' %}row-reverse{% else %}row{% endif %};">
+
+      <!-- Text Column -->
+      <div class="dgf-2cc-col-text">
+        {% if section.settings.col_text != blank %}
+          <div class="dgf-2cc-text">{{ section.settings.col_text }}</div>
+        {% endif %}
+      </div>
+
+      <!-- Image Column -->
+      {% if section.settings.col_image != blank %}
+        <div class="dgf-2cc-col-image">
+          <img src="{{ section.settings.col_image | image_url }}" alt="{{ section.settings.col_image.alt | default: '' }}">
+        </div>
+      {% endif %}
+
+    </div>
+
+    <!-- Title 2 -->
+    {% if section.settings.title_2 != blank %}
+      <div class="dgf-2cc-title2">{{ section.settings.title_2 }}</div>
+    {% endif %}
+
+    <!-- CTA Section (same as dgf-graph) -->
+    <div class="dgf-2cc-cta-section">
+      {% if section.settings.button_text != blank %}
+        <!-- Desktop Button -->
+        <a href="{{ section.settings.button_url | default: '#' }}"
+           class="dgf-2cc-cta-button dgf-2cc-cta-button-desktop"
+           style="background: linear-gradient(101.4deg, {{ button_bg_color }} 26.01%, {{ button_bg_color | color_lighten: 10 }} 68.58%); color: {{ button_text_color }};">
+          {{ section.settings.button_text }}
+        </a>
+        <!-- Mobile Button -->
+        <a href="{{ section.settings.button_url | default: '#' }}"
+           class="dgf-2cc-cta-button dgf-2cc-cta-button-mobile"
+           style="background: linear-gradient(101.4deg, {{ button_bg_color }} 26.01%, {{ button_bg_color | color_lighten: 10 }} 68.58%); color: {{ button_text_color }};">
+          {% if section.settings.button_text_mobile != blank %}
+            {{ section.settings.button_text_mobile }}
+          {% else %}
+            {{ section.settings.button_text }}
+          {% endif %}
+        </a>
+      {% endif %}
+
+      <!-- Desktop: Rating -->
+      {% if section.settings.show_stars %}
+        <div class="dgf-2cc-rating dgf-2cc-rating-desktop">
+          <div class="dgf-2cc-stars">
+            {% for i in (1..5) %}
+              <span class="dgf-2cc-star">★</span>
+            {% endfor %}
+          </div>
+          {% if section.settings.rating_text != blank %}
+            <span class="dgf-2cc-rating-text">{{ section.settings.rating_text }}</span>
+          {% endif %}
+        </div>
+      {% endif %}
+
+      <!-- Mobile: Disclaimer -->
+      {% if section.settings.mobile_disclaimer_text != blank %}
+        <div class="dgf-2cc-mobile-disclaimer">
+          {{ section.settings.mobile_disclaimer_text }}
+        </div>
+      {% endif %}
+    </div>
+
+  </div>
+</section>
+
+<style>
+  #dgf-2cc-{{ sid }} {
+    padding: {{ padding_top }}px {{ padding_right }}px {{ padding_bottom }}px {{ padding_left }}px;
+  }
+
+  /* Title */
+  #dgf-2cc-{{ sid }} .dgf-2cc-title,
+  #dgf-2cc-{{ sid }} .dgf-2cc-title h1,
+  #dgf-2cc-{{ sid }} .dgf-2cc-title h2,
+  #dgf-2cc-{{ sid }} .dgf-2cc-title h3,
+  #dgf-2cc-{{ sid }} .dgf-2cc-title h4,
+  #dgf-2cc-{{ sid }} .dgf-2cc-title h5,
+  #dgf-2cc-{{ sid }} .dgf-2cc-title h6,
+  #dgf-2cc-{{ sid }} .dgf-2cc-title p,
+  #dgf-2cc-{{ sid }} .dgf-2cc-title span,
+  #dgf-2cc-{{ sid }} .dgf-2cc-title strong,
+  #dgf-2cc-{{ sid }} .dgf-2cc-title em,
+  #dgf-2cc-{{ sid }} .dgf-2cc-title i,
+  #dgf-2cc-{{ sid }} .dgf-2cc-title u,
+  #dgf-2cc-{{ sid }} .dgf-2cc-title a {
+    font-family: {{ title_font }} !important;
+    font-size: {{ title_font_size }}px !important;
+    font-weight: {{ title_font_weight }} !important;
+    text-transform: {{ title_transform }} !important;
+    color: {{ title_color }} !important;
+    line-height: 1.3 !important;
+    margin: 0;
+  }
+
+  #dgf-2cc-{{ sid }} .dgf-2cc-title {
+    text-align: {{ title_alignment }};
+    margin-bottom: {{ title_margin_bottom }}px;
+  }
+
+  /* Columns */
+  #dgf-2cc-{{ sid }} .dgf-2cc-columns {
+    display: flex;
+    width: 100%;
+    gap: {{ columns_gap }}px;
+    align-items: {{ columns_vertical_align }};
+  }
+
+  #dgf-2cc-{{ sid }} .dgf-2cc-col-text {
+    flex: 1;
+    padding: {{ text_col_padding }}px;
+  }
+
+  #dgf-2cc-{{ sid }} .dgf-2cc-col-image {
+    flex: 1;
+  }
+
+  #dgf-2cc-{{ sid }} .dgf-2cc-col-image img {
+    width: 100%;
+    height: auto;
+    display: block;
+    object-fit: cover;
+    border-radius: {{ image_border_radius }}px;
+  }
+
+  /* Column Text */
+  #dgf-2cc-{{ sid }} .dgf-2cc-text,
+  #dgf-2cc-{{ sid }} .dgf-2cc-text h1,
+  #dgf-2cc-{{ sid }} .dgf-2cc-text h2,
+  #dgf-2cc-{{ sid }} .dgf-2cc-text h3,
+  #dgf-2cc-{{ sid }} .dgf-2cc-text h4,
+  #dgf-2cc-{{ sid }} .dgf-2cc-text h5,
+  #dgf-2cc-{{ sid }} .dgf-2cc-text h6,
+  #dgf-2cc-{{ sid }} .dgf-2cc-text p,
+  #dgf-2cc-{{ sid }} .dgf-2cc-text span,
+  #dgf-2cc-{{ sid }} .dgf-2cc-text strong,
+  #dgf-2cc-{{ sid }} .dgf-2cc-text em,
+  #dgf-2cc-{{ sid }} .dgf-2cc-text i,
+  #dgf-2cc-{{ sid }} .dgf-2cc-text u,
+  #dgf-2cc-{{ sid }} .dgf-2cc-text a {
+    font-family: {{ text_font }} !important;
+    font-size: {{ text_font_size }}px !important;
+    font-weight: {{ text_font_weight }} !important;
+    text-transform: {{ text_transform }} !important;
+    color: {{ text_color }} !important;
+    line-height: 1.5 !important;
+    margin: 0;
+  }
+
+  /* Title 2 */
+  #dgf-2cc-{{ sid }} .dgf-2cc-title2,
+  #dgf-2cc-{{ sid }} .dgf-2cc-title2 h1,
+  #dgf-2cc-{{ sid }} .dgf-2cc-title2 h2,
+  #dgf-2cc-{{ sid }} .dgf-2cc-title2 h3,
+  #dgf-2cc-{{ sid }} .dgf-2cc-title2 h4,
+  #dgf-2cc-{{ sid }} .dgf-2cc-title2 h5,
+  #dgf-2cc-{{ sid }} .dgf-2cc-title2 h6,
+  #dgf-2cc-{{ sid }} .dgf-2cc-title2 p,
+  #dgf-2cc-{{ sid }} .dgf-2cc-title2 span,
+  #dgf-2cc-{{ sid }} .dgf-2cc-title2 strong,
+  #dgf-2cc-{{ sid }} .dgf-2cc-title2 em,
+  #dgf-2cc-{{ sid }} .dgf-2cc-title2 i,
+  #dgf-2cc-{{ sid }} .dgf-2cc-title2 u,
+  #dgf-2cc-{{ sid }} .dgf-2cc-title2 a {
+    font-family: {{ title2_font }} !important;
+    font-size: {{ title2_font_size }}px !important;
+    font-weight: {{ title2_font_weight }} !important;
+    text-transform: {{ title2_transform }} !important;
+    color: {{ title2_color }} !important;
+    line-height: 1.3 !important;
+    margin: 0;
+  }
+
+  #dgf-2cc-{{ sid }} .dgf-2cc-title2 {
+    text-align: {{ title2_alignment }};
+    margin-top: {{ title2_margin_top }}px;
+    margin-bottom: 20px;
+  }
+
+  /* CTA Section */
+  #dgf-2cc-{{ sid }} .dgf-2cc-cta-section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+  }
+
+  #dgf-2cc-{{ sid }} .dgf-2cc-cta-button {
+    width: 524px;
+    max-width: 100%;
+    border: none;
+    font-size: 25px !important;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    text-transform: uppercase;
+    font-weight: bold;
+    margin-bottom: 1.5rem;
+    line-height: 85px;
+    padding: 0;
+  }
+
+  #dgf-2cc-{{ sid }} .dgf-2cc-cta-button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+  }
+
+  #dgf-2cc-{{ sid }} .dgf-2cc-cta-button-mobile {
+    display: none;
+  }
+
+  #dgf-2cc-{{ sid }} .dgf-2cc-rating {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 0.5rem;
+  }
+
+  #dgf-2cc-{{ sid }} .dgf-2cc-stars {
+    display: flex;
+    gap: 5px;
+  }
+
+  #dgf-2cc-{{ sid }} .dgf-2cc-star {
+    color: {{ star_color }};
+    font-size: 24px;
+  }
+
+  #dgf-2cc-{{ sid }} .dgf-2cc-rating-text {
+    font-size: 18px;
+    color: {{ rating_text_color }};
+    text-transform: uppercase;
+    letter-spacing: 1px;
+  }
+
+  /* Mobile Disclaimer */
+  #dgf-2cc-{{ sid }} .dgf-2cc-mobile-disclaimer,
+  #dgf-2cc-{{ sid }} .dgf-2cc-mobile-disclaimer h1,
+  #dgf-2cc-{{ sid }} .dgf-2cc-mobile-disclaimer h2,
+  #dgf-2cc-{{ sid }} .dgf-2cc-mobile-disclaimer h3,
+  #dgf-2cc-{{ sid }} .dgf-2cc-mobile-disclaimer h4,
+  #dgf-2cc-{{ sid }} .dgf-2cc-mobile-disclaimer h5,
+  #dgf-2cc-{{ sid }} .dgf-2cc-mobile-disclaimer h6,
+  #dgf-2cc-{{ sid }} .dgf-2cc-mobile-disclaimer p,
+  #dgf-2cc-{{ sid }} .dgf-2cc-mobile-disclaimer span,
+  #dgf-2cc-{{ sid }} .dgf-2cc-mobile-disclaimer strong,
+  #dgf-2cc-{{ sid }} .dgf-2cc-mobile-disclaimer em,
+  #dgf-2cc-{{ sid }} .dgf-2cc-mobile-disclaimer i,
+  #dgf-2cc-{{ sid }} .dgf-2cc-mobile-disclaimer u,
+  #dgf-2cc-{{ sid }} .dgf-2cc-mobile-disclaimer a {
+    font-family: {{ mobile_disclaimer_font }} !important;
+    font-size: {{ mobile_disclaimer_font_size }}px !important;
+    font-weight: {{ mobile_disclaimer_font_weight }} !important;
+    text-transform: {{ mobile_disclaimer_transform }} !important;
+    color: {{ mobile_disclaimer_color }} !important;
+    line-height: 1.4 !important;
+    margin: 0;
+  }
+
+  #dgf-2cc-{{ sid }} .dgf-2cc-mobile-disclaimer {
+    display: none;
+    text-align: center;
+  }
+
+  /* Mobile */
+  @media (max-width: 768px) {
+    #dgf-2cc-{{ sid }} .dgf-2cc-columns {
+      flex-direction: column !important;
+    }
+
+    #dgf-2cc-{{ sid }} .dgf-2cc-title,
+    #dgf-2cc-{{ sid }} .dgf-2cc-title h1,
+    #dgf-2cc-{{ sid }} .dgf-2cc-title h2,
+    #dgf-2cc-{{ sid }} .dgf-2cc-title h3,
+    #dgf-2cc-{{ sid }} .dgf-2cc-title h4,
+    #dgf-2cc-{{ sid }} .dgf-2cc-title h5,
+    #dgf-2cc-{{ sid }} .dgf-2cc-title h6,
+    #dgf-2cc-{{ sid }} .dgf-2cc-title p,
+    #dgf-2cc-{{ sid }} .dgf-2cc-title span,
+    #dgf-2cc-{{ sid }} .dgf-2cc-title strong,
+    #dgf-2cc-{{ sid }} .dgf-2cc-title em,
+    #dgf-2cc-{{ sid }} .dgf-2cc-title i,
+    #dgf-2cc-{{ sid }} .dgf-2cc-title u,
+    #dgf-2cc-{{ sid }} .dgf-2cc-title a {
+      font-size: {{ title_font_size_mobile }}px !important;
+    }
+
+    #dgf-2cc-{{ sid }} .dgf-2cc-text,
+    #dgf-2cc-{{ sid }} .dgf-2cc-text h1,
+    #dgf-2cc-{{ sid }} .dgf-2cc-text h2,
+    #dgf-2cc-{{ sid }} .dgf-2cc-text h3,
+    #dgf-2cc-{{ sid }} .dgf-2cc-text h4,
+    #dgf-2cc-{{ sid }} .dgf-2cc-text h5,
+    #dgf-2cc-{{ sid }} .dgf-2cc-text h6,
+    #dgf-2cc-{{ sid }} .dgf-2cc-text p,
+    #dgf-2cc-{{ sid }} .dgf-2cc-text span,
+    #dgf-2cc-{{ sid }} .dgf-2cc-text strong,
+    #dgf-2cc-{{ sid }} .dgf-2cc-text em,
+    #dgf-2cc-{{ sid }} .dgf-2cc-text i,
+    #dgf-2cc-{{ sid }} .dgf-2cc-text u,
+    #dgf-2cc-{{ sid }} .dgf-2cc-text a {
+      font-size: {{ text_font_size_mobile }}px !important;
+    }
+
+    #dgf-2cc-{{ sid }} .dgf-2cc-title2,
+    #dgf-2cc-{{ sid }} .dgf-2cc-title2 h1,
+    #dgf-2cc-{{ sid }} .dgf-2cc-title2 h2,
+    #dgf-2cc-{{ sid }} .dgf-2cc-title2 h3,
+    #dgf-2cc-{{ sid }} .dgf-2cc-title2 h4,
+    #dgf-2cc-{{ sid }} .dgf-2cc-title2 h5,
+    #dgf-2cc-{{ sid }} .dgf-2cc-title2 h6,
+    #dgf-2cc-{{ sid }} .dgf-2cc-title2 p,
+    #dgf-2cc-{{ sid }} .dgf-2cc-title2 span,
+    #dgf-2cc-{{ sid }} .dgf-2cc-title2 strong,
+    #dgf-2cc-{{ sid }} .dgf-2cc-title2 em,
+    #dgf-2cc-{{ sid }} .dgf-2cc-title2 i,
+    #dgf-2cc-{{ sid }} .dgf-2cc-title2 u,
+    #dgf-2cc-{{ sid }} .dgf-2cc-title2 a {
+      font-size: {{ title2_font_size_mobile }}px !important;
+    }
+
+    #dgf-2cc-{{ sid }} .dgf-2cc-col-text {
+      padding: 0;
+    }
+
+    #dgf-2cc-{{ sid }} .dgf-2cc-cta-button-desktop {
+      display: none;
+    }
+
+    #dgf-2cc-{{ sid }} .dgf-2cc-cta-button-mobile {
+      display: flex;
+      width: 398px;
+      font-size: 14px !important;
+      line-height: 60px;
+    }
+
+    #dgf-2cc-{{ sid }} .dgf-2cc-rating-desktop {
+      display: none;
+    }
+
+    #dgf-2cc-{{ sid }} .dgf-2cc-mobile-disclaimer {
+      display: block;
+    }
+  }
+</style>
+
+{% schema %}
+  {
+    "name": "[DGF] 2 Col + CTA",
+    "settings": [
+      {
+        "type": "header",
+        "content": "Content"
+      },
+      {
+        "type": "html",
+        "id": "title",
+        "label": "Title (HTML)"
+      },
+      {
+        "type": "html",
+        "id": "col_text",
+        "label": "Column Text (HTML)"
+      },
+      {
+        "type": "image_picker",
+        "id": "col_image",
+        "label": "Column Image"
+      },
+      {
+        "type": "html",
+        "id": "title_2",
+        "label": "Title 2 (HTML)"
+      },
+      {
+        "type": "header",
+        "content": "Layout"
+      },
+      {
+        "type": "select",
+        "id": "image_position",
+        "label": "Image Position",
+        "options": [
+          { "value": "right", "label": "Right" },
+          { "value": "left", "label": "Left" }
+        ],
+        "default": "right"
+      },
+      {
+        "type": "select",
+        "id": "columns_vertical_align",
+        "label": "Columns Vertical Alignment",
+        "options": [
+          { "value": "flex-start", "label": "Top" },
+          { "value": "center", "label": "Center" },
+          { "value": "flex-end", "label": "Bottom" },
+          { "value": "stretch", "label": "Stretch" }
+        ],
+        "default": "center"
+      },
+      {
+        "type": "range",
+        "id": "columns_gap",
+        "label": "Gap Between Columns",
+        "min": 0,
+        "max": 80,
+        "step": 1,
+        "default": 30,
+        "unit": "px"
+      },
+      {
+        "type": "range",
+        "id": "image_border_radius",
+        "label": "Image Border Radius",
+        "min": 0,
+        "max": 30,
+        "step": 1,
+        "default": 0,
+        "unit": "px"
+      },
+      {
+        "type": "range",
+        "id": "text_col_padding",
+        "label": "Text Column Padding",
+        "min": 0,
+        "max": 80,
+        "step": 5,
+        "default": 0,
+        "unit": "px"
+      },
+      {
+        "type": "header",
+        "content": "Title Font"
+      },
+      {
+        "type": "select",
+        "id": "title_font",
+        "label": "Title Font Family",
+        "options": [
+          { "value": "HypatiaSansPro", "label": "Hypatia Sans Pro" },
+          { "value": "'Superior Title Italic'", "label": "Superior Title Italic" },
+          { "value": "inherit", "label": "Inherit" }
+        ],
+        "default": "HypatiaSansPro"
+      },
+      {
+        "type": "range",
+        "id": "title_font_size",
+        "label": "Title Font Size (Desktop)",
+        "min": 12,
+        "max": 60,
+        "step": 1,
+        "default": 28,
+        "unit": "px"
+      },
+      {
+        "type": "range",
+        "id": "title_font_size_mobile",
+        "label": "Title Font Size (Mobile)",
+        "min": 12,
+        "max": 40,
+        "step": 1,
+        "default": 22,
+        "unit": "px"
+      },
+      {
+        "type": "select",
+        "id": "title_font_weight",
+        "label": "Title Font Weight",
+        "options": [
+          { "value": "400", "label": "Normal" },
+          { "value": "600", "label": "Semi Bold" },
+          { "value": "700", "label": "Bold" },
+          { "value": "800", "label": "Extra Bold" }
+        ],
+        "default": "700"
+      },
+      {
+        "type": "select",
+        "id": "title_transform",
+        "label": "Title Text Transform",
+        "options": [
+          { "value": "none", "label": "None" },
+          { "value": "uppercase", "label": "Uppercase" },
+          { "value": "lowercase", "label": "Lowercase" },
+          { "value": "capitalize", "label": "Capitalize" }
+        ],
+        "default": "uppercase"
+      },
+      {
+        "type": "color",
+        "id": "title_color",
+        "label": "Title Color",
+        "default": "#333333"
+      },
+      {
+        "type": "select",
+        "id": "title_alignment",
+        "label": "Title Alignment",
+        "options": [
+          { "value": "left", "label": "Left" },
+          { "value": "center", "label": "Center" },
+          { "value": "right", "label": "Right" }
+        ],
+        "default": "center"
+      },
+      {
+        "type": "range",
+        "id": "title_margin_bottom",
+        "label": "Title Margin Bottom",
+        "min": 0,
+        "max": 80,
+        "step": 1,
+        "default": 30,
+        "unit": "px"
+      },
+      {
+        "type": "header",
+        "content": "Column Text Font"
+      },
+      {
+        "type": "select",
+        "id": "text_font",
+        "label": "Text Font Family",
+        "options": [
+          { "value": "HypatiaSansPro", "label": "Hypatia Sans Pro" },
+          { "value": "'Superior Title Italic'", "label": "Superior Title Italic" },
+          { "value": "inherit", "label": "Inherit" }
+        ],
+        "default": "HypatiaSansPro"
+      },
+      {
+        "type": "range",
+        "id": "text_font_size",
+        "label": "Text Font Size (Desktop)",
+        "min": 10,
+        "max": 40,
+        "step": 1,
+        "default": 16,
+        "unit": "px"
+      },
+      {
+        "type": "range",
+        "id": "text_font_size_mobile",
+        "label": "Text Font Size (Mobile)",
+        "min": 10,
+        "max": 30,
+        "step": 1,
+        "default": 14,
+        "unit": "px"
+      },
+      {
+        "type": "select",
+        "id": "text_font_weight",
+        "label": "Text Font Weight",
+        "options": [
+          { "value": "400", "label": "Normal" },
+          { "value": "600", "label": "Semi Bold" },
+          { "value": "700", "label": "Bold" },
+          { "value": "800", "label": "Extra Bold" }
+        ],
+        "default": "400"
+      },
+      {
+        "type": "select",
+        "id": "text_transform",
+        "label": "Text Transform",
+        "options": [
+          { "value": "none", "label": "None" },
+          { "value": "uppercase", "label": "Uppercase" },
+          { "value": "lowercase", "label": "Lowercase" },
+          { "value": "capitalize", "label": "Capitalize" }
+        ],
+        "default": "none"
+      },
+      {
+        "type": "color",
+        "id": "text_color",
+        "label": "Text Color",
+        "default": "#555555"
+      },
+      {
+        "type": "header",
+        "content": "Title 2 Font"
+      },
+      {
+        "type": "select",
+        "id": "title2_font",
+        "label": "Title 2 Font Family",
+        "options": [
+          { "value": "HypatiaSansPro", "label": "Hypatia Sans Pro" },
+          { "value": "'Superior Title Italic'", "label": "Superior Title Italic" },
+          { "value": "inherit", "label": "Inherit" }
+        ],
+        "default": "HypatiaSansPro"
+      },
+      {
+        "type": "range",
+        "id": "title2_font_size",
+        "label": "Title 2 Font Size (Desktop)",
+        "min": 12,
+        "max": 60,
+        "step": 1,
+        "default": 24,
+        "unit": "px"
+      },
+      {
+        "type": "range",
+        "id": "title2_font_size_mobile",
+        "label": "Title 2 Font Size (Mobile)",
+        "min": 12,
+        "max": 40,
+        "step": 1,
+        "default": 20,
+        "unit": "px"
+      },
+      {
+        "type": "select",
+        "id": "title2_font_weight",
+        "label": "Title 2 Font Weight",
+        "options": [
+          { "value": "400", "label": "Normal" },
+          { "value": "600", "label": "Semi Bold" },
+          { "value": "700", "label": "Bold" },
+          { "value": "800", "label": "Extra Bold" }
+        ],
+        "default": "700"
+      },
+      {
+        "type": "select",
+        "id": "title2_transform",
+        "label": "Title 2 Text Transform",
+        "options": [
+          { "value": "none", "label": "None" },
+          { "value": "uppercase", "label": "Uppercase" },
+          { "value": "lowercase", "label": "Lowercase" },
+          { "value": "capitalize", "label": "Capitalize" }
+        ],
+        "default": "uppercase"
+      },
+      {
+        "type": "color",
+        "id": "title2_color",
+        "label": "Title 2 Color",
+        "default": "#333333"
+      },
+      {
+        "type": "select",
+        "id": "title2_alignment",
+        "label": "Title 2 Alignment",
+        "options": [
+          { "value": "left", "label": "Left" },
+          { "value": "center", "label": "Center" },
+          { "value": "right", "label": "Right" }
+        ],
+        "default": "center"
+      },
+      {
+        "type": "range",
+        "id": "title2_margin_top",
+        "label": "Title 2 Margin Top",
+        "min": 0,
+        "max": 80,
+        "step": 1,
+        "default": 30,
+        "unit": "px"
+      },
+      {
+        "type": "header",
+        "content": "CTA Button"
+      },
+      {
+        "type": "text",
+        "id": "button_text",
+        "label": "Button Text (Desktop)",
+        "default": "ORDER NOW"
+      },
+      {
+        "type": "text",
+        "id": "button_text_mobile",
+        "label": "Button Text (Mobile)",
+        "info": "If empty, will use Desktop text"
+      },
+      {
+        "type": "url",
+        "id": "button_url",
+        "label": "Button URL"
+      },
+      {
+        "type": "color",
+        "id": "button_bg_color",
+        "label": "Button Background Color",
+        "default": "#AC853B"
+      },
+      {
+        "type": "color",
+        "id": "button_text_color",
+        "label": "Button Text Color",
+        "default": "#ffffff"
+      },
+      {
+        "type": "header",
+        "content": "Rating"
+      },
+      {
+        "type": "checkbox",
+        "id": "show_stars",
+        "label": "Show Star Rating",
+        "default": true
+      },
+      {
+        "type": "text",
+        "id": "rating_text",
+        "label": "Rating Text",
+        "default": "LOVED BY THOUSANDS"
+      },
+      {
+        "type": "color",
+        "id": "star_color",
+        "label": "Star Color",
+        "default": "#AC853B"
+      },
+      {
+        "type": "color",
+        "id": "rating_text_color",
+        "label": "Rating Text Color",
+        "default": "#06211E"
+      },
+      {
+        "type": "header",
+        "content": "Mobile Disclaimer"
+      },
+      {
+        "type": "richtext",
+        "id": "mobile_disclaimer_text",
+        "label": "Mobile Disclaimer Text",
+        "info": "Replaces rating section on mobile"
+      },
+      {
+        "type": "select",
+        "id": "mobile_disclaimer_font",
+        "label": "Mobile Disclaimer Font Family",
+        "options": [
+          { "value": "HypatiaSansPro", "label": "Hypatia Sans Pro" },
+          { "value": "'Superior Title Italic'", "label": "Superior Title Italic" },
+          { "value": "inherit", "label": "Inherit" }
+        ],
+        "default": "HypatiaSansPro"
+      },
+      {
+        "type": "range",
+        "id": "mobile_disclaimer_font_size",
+        "label": "Mobile Disclaimer Font Size",
+        "min": 8,
+        "max": 24,
+        "step": 1,
+        "default": 11,
+        "unit": "px"
+      },
+      {
+        "type": "select",
+        "id": "mobile_disclaimer_font_weight",
+        "label": "Mobile Disclaimer Font Weight",
+        "options": [
+          { "value": "400", "label": "Normal" },
+          { "value": "500", "label": "Medium" },
+          { "value": "600", "label": "Semi Bold" },
+          { "value": "700", "label": "Bold" },
+          { "value": "800", "label": "Extra Bold" }
+        ],
+        "default": "400"
+      },
+      {
+        "type": "select",
+        "id": "mobile_disclaimer_transform",
+        "label": "Mobile Disclaimer Text Transform",
+        "options": [
+          { "value": "none", "label": "None" },
+          { "value": "uppercase", "label": "Uppercase" },
+          { "value": "lowercase", "label": "Lowercase" },
+          { "value": "capitalize", "label": "Capitalize" }
+        ],
+        "default": "none"
+      },
+      {
+        "type": "color",
+        "id": "mobile_disclaimer_color",
+        "label": "Mobile Disclaimer Color",
+        "default": "#999999"
+      },
+      {
+        "type": "header",
+        "content": "Styling"
+      },
+      {
+        "type": "color",
+        "id": "background_color",
+        "label": "Background Color",
+        "default": "#ffffff"
+      },
+      {
+        "type": "header",
+        "content": "Spacing"
+      },
+      {
+        "type": "range",
+        "id": "padding_top",
+        "label": "Padding Top",
+        "min": 0,
+        "max": 150,
+        "step": 5,
+        "default": 40,
+        "unit": "px"
+      },
+      {
+        "type": "range",
+        "id": "padding_bottom",
+        "label": "Padding Bottom",
+        "min": 0,
+        "max": 150,
+        "step": 5,
+        "default": 40,
+        "unit": "px"
+      },
+      {
+        "type": "range",
+        "id": "padding_left",
+        "label": "Padding Left",
+        "min": 0,
+        "max": 150,
+        "step": 5,
+        "default": 0,
+        "unit": "px"
+      },
+      {
+        "type": "range",
+        "id": "padding_right",
+        "label": "Padding Right",
+        "min": 0,
+        "max": 150,
+        "step": 5,
+        "default": 0,
+        "unit": "px"
+      }
+    ],
+    "presets": [
+      {
+        "name": "[DGF] 2 Col + CTA"
+      }
+    ]
+  }
+{% endschema %}

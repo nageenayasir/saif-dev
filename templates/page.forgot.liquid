@@ -1,0 +1,24 @@
+<section class="section-banner section-title section-form bg-line-02 customer-account-details">
+    <div class="leaf-box right-top">
+        <img class="leaf" src="{{ 'leaf-n02.svg' | asset_url }}">
+    </div>
+    <div class="content">
+        <div class="container">
+            <h1 class="text-uppercase" data-aos="fade-up">{{ 'customer.recover_password.title' | t }}</h1>
+            <div class="subtitle" data-aos="fade-up" data-aos-delay="200">
+                {{ 'customer.recover_password.subtext' | t }}
+            </div>
+             {%- form 'recover_customer_password', class : 'form' -%}
+                <div class="form-group" data-aos="fade-up">
+                    <input class="form-default" type="email"  value=""  name="email" id="RecoverEmail" placeholder="{{ 'customer.login_page.email' | t }}">
+                </div>
+                <div class="form-group last" data-aos="fade-up">
+                    <button type="submit" class="btn btn-bg-full">Send Reset Code</button>
+                </div>
+                <div class="" data-aos="fade-up">
+                    I remember my password. <a class="text-decoration-underline" href="/account/login">Login</a>
+                </div>
+            {% endform %}
+        </div>
+    </div>
+</section>

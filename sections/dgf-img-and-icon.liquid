@@ -1,0 +1,459 @@
+{% comment %}
+  [DGF] Image and Icons
+  Author: Rodrigo Gesser
+  Date: 2025-09-15
+{% endcomment %}
+
+<style>
+#id-{{ section.id }}{
+  background: {{ section.settings.bg_color | default: '#ffffff' }};
+  padding: {{ section.settings.padding_top | default: 60 }}px 0 {{ section.settings.padding_bottom | default: 60 }}px 0;
+}
+
+.dgf-img-and-icon-section h1,
+.dgf-img-and-icon-section h2,
+.dgf-img-and-icon-section h3,
+.dgf-img-and-icon-section h4,
+.dgf-img-and-icon-section h5,
+.dgf-img-and-icon-section p {
+  color: {{ section.settings.text_color | default: '#111' }};
+  margin: 0!important;
+}
+
+
+.dgf-title-subtitle-container h2 {
+  font-size: 52px!important;
+  font-weight: 700;
+  text-transform: uppercase;
+  margin-bottom: 2rem!important;
+}
+
+
+.dgf-title-subtitle-container p {
+  font-size: 25px!important;
+  font-weight: 500;
+  line-height: 1.5;
+  margin-bottom: 4rem!important;
+}
+
+.dgf-full-width-columns {
+  display: flex;
+  width: 100%;
+  max-width: 1440px;
+  margin: 0 auto;
+}
+
+.dgf-left-image-column {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.dgf-left-image-column img {
+  width: 690px;
+  height: 1047px;
+  object-fit: cover;
+}
+
+.dgf-right-content-column {
+  padding: 0 3rem!important;
+  display: flex;
+  flex-direction: column;
+  flex: 0 0 52%;
+  max-width: 729px;
+}
+
+.dgf-column-title {
+  font-size: 32px;
+  font-weight: 500;
+  text-transform: capitalize;
+  font-style: italic;
+  font-family: 'Superior Title Italic';
+  padding-bottom: 6rem;
+  color: {{ section.settings.text_color | default: '#111' }};
+}
+
+
+.dgf-icon-item {
+  display: flex;
+  align-items: flex-start;
+  margin-bottom: 4rem;
+}
+
+.dgf-icon-item:last-child {
+  margin-bottom: 0;
+}
+
+.dgf-icon-wrapper {
+  width: 70px;
+  height: 70px;
+  margin-right: 1.5rem;
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.dgf-icon-wrapper img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+.dgf-icon-content h3 {
+  font-size: 30px;
+  font-weight: 500;
+  margin-bottom: 0.5rem;
+  font-style: italic;
+  font-family: 'Superior Title Italic';
+  color: {{ section.settings.text_color | default: '#111' }};
+}
+
+.dgf-icon-content p {
+  font-size: 25px;
+  font-weight: 400;
+  line-height: 1.5;
+  color: {{ section.settings.text_color | default: '#111' }};
+}
+
+.dgf-icon-item:first-child{
+  margin-top: 4rem!important;
+}
+
+@media (max-width: 1440px) and (min-width: 769px) {
+  .dgf-full-width-columns {
+    max-width: 100%;
+  }
+
+  .dgf-left-image-column {
+    flex: 0 0 50%;
+  }
+
+  .dgf-left-image-column img {
+    width: 100%;
+    height: 100%;
+  }
+
+  .dgf-right-content-column {
+    max-width: none;
+    padding: 0 3rem!important;
+  }
+
+  .dgf-title-subtitle-container h1 {
+    font-size: 44px;
+  }
+
+  .dgf-title-subtitle-container h2 {
+    font-size: 38px;
+  }
+
+  .dgf-title-subtitle-container p {
+    font-size: 22px;
+  }
+
+  .dgf-column-title {
+    font-size: 33px;
+  }
+}
+
+@media (max-width: 768px) {
+  .dgf-full-width-columns {
+    flex-direction: column;
+  }
+
+  .dgf-right-content-column {
+    padding: 2rem;
+    margin-bottom: 3rem;
+  }
+
+  .dgf-title-subtitle-container {
+    margin-bottom: 2rem;
+  }
+
+  .dgf-title-subtitle-container h1 {
+    font-size: 32px;
+  }
+
+  .dgf-title-subtitle-container h2 {
+    font-size: 30px!important;
+    text-align: center;
+  }
+
+  .dgf-title-subtitle-container p {
+    font-size: 18px!important;
+  }
+
+  .dgf-column-title {
+    text-align: center;
+    padding-bottom: 3rem;
+  }
+
+  .dgf-column-title .title-primary {
+    font-size: 24px;
+    font-weight: 500;
+    text-transform: none;
+    line-height: 1.2;
+    font-family: superior-title;
+    margin-bottom: 0.5rem;
+    color: {{ section.settings.text_color | default: '#111' }};
+    font-family: inherit;
+    font-style: italic;
+  }
+
+  .dgf-column-title .title-secondary {
+    font-size: 24px;
+    font-weight: 500;
+    text-transform: uppercase;
+    font-family: HypatiaSansPro;
+    line-height: 1.4;
+    color: {{ section.settings.text_color | default: '#111' }};
+    font-family: inherit;
+    font-style: normal;
+  }
+
+  .dgf-icon-item {
+    margin-bottom: 1.5rem;
+  }
+
+  .dgf-icon-wrapper {
+    width: 50px;
+    height: 50px;
+    margin-right: 1rem;
+  }
+
+  .dgf-icon-content h3 {
+    font-size: 20px;
+  }
+
+  .dgf-icon-content p {
+    font-size: 14px;
+  }
+
+  .dgf-left-image-column img {
+    width: 431px;
+    height: 357px;
+    object-fit: cover;
+    margin-bottom: 2rem;
+  }
+}
+</style>
+
+<section id="id-{{section.id}}" class="dgf-img-and-icon-section">
+  <!-- Title and Subtitle Container (1440px max) -->
+  <div class="container dgf-title-subtitle-container">
+    {% if section.settings.section_title != blank %}
+      <div data-aos="fade-up">
+        {{ section.settings.section_title }}
+      </div>
+    {% endif %}
+
+    {% if section.settings.section_subtitle != blank %}
+      <div data-aos="fade-up" data-aos-delay="200">
+        {{ section.settings.section_subtitle }}
+      </div>
+    {% endif %}
+  </div>
+
+  <!-- Full Width Columns -->
+  <div class="dgf-full-width-columns">
+    <!-- Left Column: Image -->
+    <div class="dgf-left-image-column" data-aos="fade-right">
+      {% if section.settings.left_image != blank %}
+        <img class="lazyload" data-src="{{ section.settings.left_image | image_url: width: 800 }}" alt="{{ section.settings.left_image.alt | default: 'Image' }}">
+      {% endif %}
+    </div>
+
+    <!-- Right Column: Title + Icon List -->
+    <div class="dgf-right-content-column" data-aos="fade-left">
+      <!-- Desktop Column Title -->
+      <div class="d-none d-md-block">
+        {% if section.settings.column_title != blank %}
+          <h2 class="dgf-column-title">{{ section.settings.column_title }}</h2>
+        {% endif %}
+      </div>
+
+      <!-- Mobile Column Title with Two Font Types -->
+      <div class="d-block d-md-none">
+        {% if section.settings.mobile_column_title_primary != blank or section.settings.mobile_column_title_secondary != blank %}
+          <div class="dgf-column-title">
+            {% if section.settings.mobile_column_title_primary != blank %}
+              <div class="title-primary">{{ section.settings.mobile_column_title_primary }}</div>
+            {% endif %}
+            {% if section.settings.mobile_column_title_secondary != blank %}
+              <div class="title-secondary">{{ section.settings.mobile_column_title_secondary }}</div>
+            {% endif %}
+          </div>
+        {% endif %}
+      </div>
+
+      <!-- Icon Blocks -->
+      {% for block in section.blocks %}
+        {% if block.type == 'icon_item' %}
+          <div class="dgf-icon-item" data-aos="fade-up" data-aos-delay="{{ forloop.index | times: 100 }}">
+            {% if block.settings.icon != blank %}
+              <div class="dgf-icon-wrapper">
+                <img src="{{ block.settings.icon | image_url: width: 60 }}" alt="{{ block.settings.icon_title | default: 'Icon' }}">
+              </div>
+            {% endif %}
+
+            <div class="dgf-icon-content">
+              {% if block.settings.icon_title != blank %}
+                <h3>{{ block.settings.icon_title | replace: '*', '<sup>*</sup>' }}</h3>
+              {% endif %}
+
+              {% if block.settings.icon_text != blank %}
+                <p>{{ block.settings.icon_text }}</p>
+              {% endif %}
+            </div>
+          </div>
+        {% endif %}
+      {% endfor %}
+    </div>
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "[DGF] Image and Icons",
+  "tag": "section",
+  "class": "section",
+  "settings": [
+    {
+      "type": "header",
+      "content": "Section Title and Subtitle"
+    },
+    {
+      "type": "html",
+      "id": "section_title",
+      "label": "Section Title"
+    },
+    {
+      "type": "html",
+      "id": "section_subtitle",
+      "label": "Section Subtitle"
+    },
+    {
+      "type": "header",
+      "content": "Left Column Image"
+    },
+    {
+      "type": "image_picker",
+      "id": "left_image",
+      "label": "Left Column Image"
+    },
+    {
+      "type": "header",
+      "content": "Right Column Content"
+    },
+    {
+      "type": "text",
+      "id": "column_title",
+      "label": "Column Title"
+    },
+    {
+      "type": "header",
+      "content": "Mobile Column Title"
+    },
+    {
+      "type": "text",
+      "id": "mobile_column_title_primary",
+      "label": "Mobile Primary Title Text"
+    },
+    {
+      "type": "text",
+      "id": "mobile_column_title_secondary",
+      "label": "Mobile Secondary Title Text"
+    },
+    {
+      "type": "header",
+      "content": "Layout Settings"
+    },
+    {
+      "type": "color",
+      "id": "bg_color",
+      "label": "Background Color",
+      "default": "#ffffff"
+    },
+    {
+      "type": "color",
+      "id": "text_color",
+      "label": "Text Color",
+      "default": "#111111"
+    },
+    {
+      "type": "range",
+      "id": "padding_top",
+      "min": 0,
+      "max": 120,
+      "step": 10,
+      "unit": "px",
+      "label": "Top Padding",
+      "default": 60
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom",
+      "min": 0,
+      "max": 120,
+      "step": 10,
+      "unit": "px",
+      "label": "Bottom Padding",
+      "default": 60
+    }
+  ],
+  "blocks": [
+    {
+      "type": "icon_item",
+      "name": "Icon Item",
+      "settings": [
+        {
+          "type": "image_picker",
+          "id": "icon",
+          "label": "Icon"
+        },
+        {
+          "type": "text",
+          "id": "icon_title",
+          "label": "Icon Title"
+        },
+        {
+          "type": "textarea",
+          "id": "icon_text",
+          "label": "Icon Text"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "[DGF] Image and Icons",
+      "blocks": [
+        {
+          "type": "icon_item",
+          "settings": {
+            "icon_title": "Feature 1",
+            "icon_text": "Description of the first feature goes here."
+          }
+        },
+        {
+          "type": "icon_item",
+          "settings": {
+            "icon_title": "Feature 2",
+            "icon_text": "Description of the second feature goes here."
+          }
+        },
+        {
+          "type": "icon_item",
+          "settings": {
+            "icon_title": "Feature 3",
+            "icon_text": "Description of the third feature goes here."
+          }
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}
+
+{% stylesheet %}
+{% endstylesheet %}

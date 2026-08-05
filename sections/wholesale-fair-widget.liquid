@@ -1,0 +1,51 @@
+<style>
+  #id-{{ section.id }}{
+  	background-color:{{ section.settings.section_bg_color }};
+  }
+</style>
+<section id="id-{{section.id}}" class="wholesale-fair-widget-section common-kids-teenager-section">
+  <div class="wholesale-fair-widget-wrapper">
+    <div class="leaf-box wholesale-fair-widget--box-right-bot right-bot">
+        <img loading="lazy"  class="leaf wholesale-fair-widget-right-bot" src="{{ 'fair-widget-leaf.svg' | asset_url }}">
+    </div>
+    <div class="container">
+      <div class="row">
+        <div class="col-sm-12 col-md-12 col-lg-12">
+          <div class="wholesale-fair-widget">
+            {{ section.settings.html_code }}
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+{% schema %}
+  {
+    "name": "Wholesale Fair Widget",
+    "settings": [
+       {
+            "type": "header",
+            "content": "Content Style"
+         },
+  	     {
+           "type": "color",
+           "id": "section_bg_color",
+           "label": "Section background color"
+        },
+       {
+           "type": "html",
+           "id": "html_code",
+           "label": "Html Code"
+        }
+    ],
+	"presets": [{
+      "name": "Wholesale Fair Widget"
+    }]
+  }
+{% endschema %}
+
+{% stylesheet %}
+{% endstylesheet %}
+
+{% javascript %}
+{% endjavascript %}

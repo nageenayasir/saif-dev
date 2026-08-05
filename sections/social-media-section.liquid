@@ -1,0 +1,73 @@
+<section id="id-{{ section.id }}" class="mob-social-media-section">
+  <div class="container">
+    <div class="row">
+      {%- if section.settings.show_social -%}
+        <div class="social-banner">
+            <span>{{ section.settings.text }}</span>
+            {%- if settings.social_instagram_link != blank -%}
+                <a href="{{ settings.social_instagram_link }}" aria-label="Follow us on Instagram" target="_blank" rel="noopener">{%- render 'icon-instagram' -%}</a>
+            {%- endif -%}
+             {%- if settings.social_facebook_link != blank -%}
+                <a href="{{ settings.social_facebook_link }}" aria-label="Follow us on Facebook" target="_blank" rel="noopener">{%- render 'icon-facebook' -%}</a>
+            {%- endif -%}
+            <a href="{{ section.settings.social_spotify_link }}" aria-label="Listen on Spotify" target="_blank" rel="noopener"><i class="fab fa-spotify"></i> </a>
+            {%- if settings.social_youtube_link != blank -%}
+                <a href="{{ settings.social_youtube_link }}" aria-label="Subscribe on YouTube" target="_blank" rel="noopener">{%- render 'icon-youtube' -%}</a>
+            {%- endif -%}
+            {%- if settings.social_twitter_link != blank -%}
+              <a href="{{ settings.social_twitter_link }}" aria-label="Follow us on Twitter" target="_blank" rel="noopener">{%- render 'icon-twitter' -%}</a>
+            {%- endif -%}
+
+            {%- if settings.social_pinterest_link != blank -%}
+                <a href="{{ settings.social_pinterest_link }}" aria-label="Follow us on Pinterest" target="_blank" rel="noopener">{%- render 'icon-pinterest' -%}</a>
+            {%- endif -%}
+
+
+            {%- if settings.social_tumblr_link != blank -%}
+                <a href="{{ settings.social_tumblr_link }}" aria-label="Follow us on Tumblr" target="_blank" rel="noopener">{%- render 'icon-tumblr' -%}</a>
+            {%- endif -%}
+            {%- if settings.social_snapchat_link != blank -%}
+                <a href="{{ settings.social_snapchat_link }}" aria-label="Follow us on Snapchat" target="_blank" rel="noopener">{%- render 'icon-snapchat' -%}</a>
+            {%- endif -%}
+
+            {%- if settings.social_vimeo_link != blank -%}
+                <a href="{{ settings.social_vimeo_link }}" aria-label="Watch us on Vimeo" target="_blank" rel="noopener">{%- render 'icon-vimeo' -%} </a>
+            {%- endif -%}
+        </div>
+      {% endif %}
+    </div>
+  </div>
+</section>
+{% schema %}
+  {
+    "name": "Mobile Social Media",
+    "settings": [
+      
+      {
+          "type": "header",
+          "content": "Social"
+        },
+         {
+          "type": "checkbox",
+          "id": "show_social",
+          "default": true,
+          "label": "Show social"
+        },
+        {
+          "type": "text",
+          "id": "text",
+          "label": "Text",
+          "default" : "Visit"
+        },
+        {
+          "type": "text",
+          "id": "social_spotify_link",
+          "label": "Link Social spotify",
+          "default": "https://open.spotify.com/user/8yaaywq2a4gtbxl0w7csryv2o?si=28d61f70a2cc496c"
+        }
+    ],
+	"presets": [{
+      "name": "Mobile Social Media"
+    }]
+  }
+{% endschema %}

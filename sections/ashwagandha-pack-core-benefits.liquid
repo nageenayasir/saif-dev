@@ -1,0 +1,74 @@
+<style>
+  #id-{{ section.id }}{
+  	background-color:{{ section.settings.section_bg_color }};
+  }
+</style>
+<section id="id-{{ section.id }}" class="ashwagandha-core-benefits-section">
+  <div class="ashwagandha-core-benefits-wrapper">
+    <div class="container">
+      <div class="row">
+         <div class="col-sm-12 col-md-12 col-lg-12">
+          <div class="ashwagandha-core-benefits-head common-custom-heading-wrapper">
+            <h2>{{ section.settings.the_title }}</h2>
+            <p>{{ section.settings.the_text }}</p>
+          </div>
+         </div>
+        <ul class="ashwagandha-core-benefits-lists">
+          {% for block in section.blocks %}
+            <li>
+              <h3>{{ block.settings.the_title }}</h3>
+              {% if block.settings.the_icon != blank %}<img loading="lazy"  src="{{ block.settings.the_icon | image_url: width: 2000 }}">{% endif %}
+            </li>  
+          {% endfor %}
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+{% schema %}
+  {
+    "name": "Ashwagandha Core Benefits",
+    "settings": [
+      {
+            "type": "header",
+            "content": "Content Style"
+      },
+  	  {
+           "type": "color",
+           "id": "section_bg_color",
+           "label": "Section background color"
+      },
+      {
+          "type": "text",
+          "id": "the_title",
+          "label": "Title" 
+      },
+      {
+          "type": "text",
+          "id": "the_text",
+          "label": "Text" 
+      }
+    ],
+	"blocks": [
+     {
+      "type": "content",
+      "name": "Content",
+      "settings": [
+        {
+          "type": "text",
+          "id": "the_title",
+          "label": "Title" 
+        },
+        {
+          "type": "image_picker",
+          "id": "the_icon",
+          "label": "Icon"
+      	}
+      ]
+     }
+	],
+    "presets": [{
+      "name": "Ashwagandha Core Benefits"
+    }]
+  }
+{% endschema %}

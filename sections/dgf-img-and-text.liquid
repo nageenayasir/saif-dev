@@ -1,0 +1,634 @@
+{% comment %}
+  [DGF] Image and Text
+  Author: Rodrigo Gesser
+  Date: 2025-09-15
+{% endcomment %}
+
+<style>
+#id-{{ section.id }}{
+  background: {{ section.settings.bg_color | default: '#ffffff' }};
+  padding: {{ section.settings.padding_top | default: 60 }}px 0 {{ section.settings.padding_bottom | default: 60 }}px 0;
+}
+
+
+.dgf-text-block h1,
+.dgf-mobile-text-block h1,
+.dgf-img-and-text-section h2,
+.dgf-img-and-text-section h3,
+.dgf-img-and-text-section h4,
+.dgf-img-and-text-section h5,
+.dgf-img-and-text-section p {
+  color: {{ section.settings.text_color | default: '#111' }};
+  margin: 0!important;
+}
+
+.dgf-text-block h1{
+  font-size: 52px;
+  font-weight: 700;
+  text-transform: uppercase;
+}
+
+.dgf-img-and-text-section h2{
+  font-size: 45px;
+  font-weight: 700;
+  text-transform: uppercase;
+}
+
+.dgf-img-and-text-section p {
+  font-size: 25px;
+  font-weight: 500;
+}
+
+.dgf-text-block {
+  margin-bottom: 1.5rem;
+}
+
+.dgf-text-block:last-of-type {
+  margin-bottom: 2rem;
+}
+
+.dgf-button-wrapper {
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+}
+
+.dgf-button-wrapper .btn {
+  width: 524.11px;
+  height: 76px;
+  background: linear-gradient(101.4deg, #ac853b 26.01%, #cfa34e 68.58%);
+  border: none;
+  font-size: 25px!important;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  max-width: 100%;
+}
+
+.dgf-first-column-image {
+  margin-top: 1rem;
+}
+
+.dgf-image-text {
+  margin-left: 1rem;
+  font-weight: 500;
+  font-size: 18px;
+  color: {{ section.settings.text_color | default: '#111' }};
+}
+
+.dgf-second-column-images img {
+  margin-bottom: 1rem;
+  border-radius: 8px;
+}
+
+.dgf-second-column-images {
+  overflow: visible;
+  contain: paint;
+}
+
+.first-image {
+  width: 768px;
+  height: 768px;
+  object-fit: cover;
+  object-position: center center;
+  overflow: visible;
+  contain: paint;
+}
+
+.second-image {
+  width: 671px;
+  height: 94px;
+  margin-bottom: 0;
+  object-fit: contain;
+  object-position: center center;
+}
+
+@media (max-width: 1440px) and (min-width: 1024px) {
+  .dgf-button-wrapper .btn {
+    width: 420px;
+    height: 65px;
+    font-size: 22px!important;
+  }
+
+  .dgf-text-block h1 {
+    font-size: 44px;
+  }
+
+  .dgf-img-and-text-section h2 {
+    font-size: 38px;
+  }
+
+  .dgf-img-and-text-section p {
+    font-size: 22px;
+  }
+
+  .first-image {
+    width: 600px;
+    height: 600px;
+  }
+
+  .second-image {
+    width: 520px;
+    height: 73px;
+  }
+}
+
+@media (max-width: 767px) {
+  #id-{{ section.id }} {
+    padding: {{ section.settings.mobile_padding_top | default: 40 }}px 0 {{ section.settings.mobile_padding_bottom | default: 40 }}px 0;
+  }
+
+  .dgf-first-column-image {
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+  }
+
+  .dgf-mobile-text-block h1{
+    font-size: 27px;
+    text-align: center;
+    text-transform: uppercase;
+  }
+
+  .dgf-mobile-text-block h2{
+    font-size: 25px;
+    text-align: center;
+  }
+
+  .dgf-mobile-text-block p {
+    font-size: 18px;
+    text-align: center;
+  }
+
+  .dgf-first-column-image img {
+    width: 148px;
+    object-fit: cover;
+  }
+
+  .first-image {
+    width: 307px;
+    height: 307px;
+  }
+
+  .second-image {
+    width: 384px;
+    height: 55px;
+    margin-top: 1rem;
+    margin-bottom: 2rem;
+    }
+
+  .dgf-mobile-text-block {
+    margin-bottom: 1.5rem;
+    text-align: center;
+  }
+
+  .dgf-mobile-text-block:last-of-type {
+    margin-bottom: 2rem;
+  }
+
+  .dgf-button-wrapper .btn{
+    font-size: 19px!important;
+    width: 100%;
+    height: 60px;
+  }
+
+  .dgf-mobile-sticky-button {
+    position: fixed;
+    bottom: -24px;
+    left: 0;
+    right: 0;
+    z-index: 999;
+    transition: all 0.3s ease;
+    display: flex;
+    justify-content: center;
+    will-change: opacity;
+  }
+}
+</style>
+
+<section id="id-{{section.id}}" class="dgf-img-and-text-section">
+  <!-- Desktop Layout -->
+  <div class="container d-none d-md-block">
+    <div class="row">
+      <!-- First column: 5 texts + button + image -->
+      <div class="col-md-6 d-flex flex-column justify-content-center">
+        <!-- 5 configurable texts -->
+        {% if section.settings.text_1 != blank %}
+          <div class="dgf-text-block" data-aos="fade-up" data-aos-delay="100">
+            {{ section.settings.text_1 }}
+          </div>
+        {% endif %}
+
+        {% if section.settings.text_2 != blank %}
+          <div class="dgf-text-block" data-aos="fade-up" data-aos-delay="200">
+            {{ section.settings.text_2 }}
+          </div>
+        {% endif %}
+
+        {% if section.settings.text_3 != blank %}
+          <div class="dgf-text-block" data-aos="fade-up" data-aos-delay="300">
+            {{ section.settings.text_3 }}
+          </div>
+        {% endif %}
+
+        {% if section.settings.text_4 != blank %}
+          <div class="dgf-text-block" data-aos="fade-up" data-aos-delay="400">
+            {{ section.settings.text_4 }}
+          </div>
+        {% endif %}
+
+        {% if section.settings.text_5 != blank %}
+          <div class="dgf-text-block" data-aos="fade-up" data-aos-delay="500">
+            {{ section.settings.text_5 }}
+          </div>
+        {% endif %}
+
+        <!-- Button -->
+        {% if section.settings.button_text != blank %}
+          <div class="dgf-button-wrapper" data-aos="fade-up" data-aos-delay="600">
+            <a class="btn btn-bg" href="{{ section.settings.button_url }}" target="_self" style="color: {{ section.settings.button_text_color | default: '#fff' }};">
+              {{ section.settings.button_text }}
+            </a>
+          </div>
+        {% endif %}
+
+        <!-- First column image with text -->
+        {% if section.settings.first_column_image != blank %}
+          <div class="dgf-first-column-image d-flex align-items-center" data-aos="fade-up" data-aos-delay="700">
+            <img class="lazyload" data-src="{{ section.settings.first_column_image | image_url: width: 600 }}" alt="{{ section.settings.first_column_image.alt | default: 'Image' }}">
+            {% if section.settings.first_column_image_text != blank %}
+              <div class="dgf-image-text">
+                {{ section.settings.first_column_image_text }}
+              </div>
+            {% endif %}
+          </div>
+        {% endif %}
+      </div>
+
+      <!-- Second column: images stacked -->
+      <div class="col-md-6 d-flex flex-column justify-content-center">
+        <div class="container">
+        <div class="dgf-second-column-images d-flex flex-column justify-content-center align-items-center">
+          {% if section.settings.second_column_image_1 != blank %}
+            <div data-aos="fade-up" data-aos-delay="300">
+              <img class="lazyload first-image" data-src="{{ section.settings.second_column_image_1 | image_url: width: 768, height: 768 }}" alt="{{ section.settings.second_column_image_1.alt | default: 'Image 1' }}">
+            </div>
+          {% endif %}
+
+          {% if section.settings.second_column_image_2 != blank %}
+            <div data-aos="fade-up" data-aos-delay="400">
+              <img class="lazyload second-image" data-src="{{ section.settings.second_column_image_2 | image_url: width: 671, height: 94 }}" alt="{{ section.settings.second_column_image_2.alt | default: 'Image 2' }}">
+            </div>
+          {% endif %}
+        </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Mobile Layout -->
+  <div class="container d-block d-md-none">
+    <!-- text2 -->
+    {% if section.settings.mobile_text_2 != blank %}
+      <div class="dgf-mobile-text-block" data-aos="fade-up" data-aos-delay="100">
+        {{ section.settings.mobile_text_2 }}
+      </div>
+    {% endif %}
+
+    <!-- first second column image -->
+    {% if section.settings.second_column_image_1_mobile != blank %}
+      <div class="d-flex justify-content-center" data-aos="fade-up" data-aos-delay="200">
+        <img class="lazyload first-image" data-src="{{ section.settings.second_column_image_1_mobile | image_url: width: 768, height: 768 }}" alt="{{ section.settings.second_column_image_1_mobile.alt | default: 'Image 1' }}">
+      </div>
+    {% elsif section.settings.second_column_image_1 != blank %}
+      <div class="d-flex justify-content-center" data-aos="fade-up" data-aos-delay="200">
+        <img class="lazyload first-image" data-src="{{ section.settings.second_column_image_1 | image_url: width: 768, height: 768 }}" alt="{{ section.settings.second_column_image_1.alt | default: 'Image 1' }}">
+      </div>
+    {% endif %}
+
+    <!-- text1 -->
+    {% if section.settings.mobile_text_1 != blank %}
+      <div class="dgf-mobile-text-block" data-aos="fade-up" data-aos-delay="300">
+        {{ section.settings.mobile_text_1 }}
+      </div>
+    {% endif %}
+
+    <!-- button -->
+    {% if section.settings.button_text != blank %}
+      <div class="dgf-button-wrapper dgf-mobile-button-wrapper" data-aos="fade-up" data-aos-delay="400">
+        <a class="btn btn-bg" href="{{ section.settings.button_url }}" target="_self" style="color: {{ section.settings.button_text_color | default: '#fff' }};">
+          {{ section.settings.button_text }}
+        </a>
+      </div>
+    {% endif %}
+
+    <!-- text3 -->
+    {% if section.settings.mobile_text_3 != blank %}
+      <div class="dgf-mobile-text-block" data-aos="fade-up" data-aos-delay="500">
+        {{ section.settings.mobile_text_3 }}
+      </div>
+    {% endif %}
+
+    <!-- second second column image -->
+    {% if section.settings.second_column_image_2 != blank %}
+      <div class="d-flex justify-content-center" data-aos="fade-up" data-aos-delay="600">
+        <img class="lazyload second-image" data-src="{{ section.settings.second_column_image_2 | image_url: width: 671, height: 94 }}" alt="{{ section.settings.second_column_image_2.alt | default: 'Image 2' }}">
+      </div>
+    {% endif %}
+
+    <!-- text4 -->
+    {% if section.settings.mobile_text_4 != blank %}
+      <div class="dgf-mobile-text-block" data-aos="fade-up" data-aos-delay="700">
+        {{ section.settings.mobile_text_4 }}
+      </div>
+    {% endif %}
+
+    <!-- text5 -->
+    {% if section.settings.mobile_text_5 != blank %}
+      <div class="dgf-mobile-text-block" data-aos="fade-up" data-aos-delay="800">
+        {{ section.settings.mobile_text_5 }}
+      </div>
+    {% endif %}
+
+    <!-- first column image -->
+    {% if section.settings.first_column_image != blank %}
+      <div class="dgf-first-column-image d-flex align-items-center" data-aos="fade-up" data-aos-delay="900">
+        <img class="lazyload" data-src="{{ section.settings.first_column_image | image_url: width: 600 }}" alt="{{ section.settings.first_column_image.alt | default: 'Image' }}">
+        {% if section.settings.first_column_image_text != blank %}
+          <div class="dgf-image-text">
+            {{ section.settings.first_column_image_text }}
+          </div>
+        {% endif %}
+      </div>
+    {% endif %}
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "[DGF] Image and Text",
+  "tag": "section",
+  "class": "section",
+  "settings": [
+    {
+      "type": "header",
+      "content": "Text Content"
+    },
+    {
+      "type": "html",
+      "id": "text_1",
+      "label": "Text 1"
+    },
+    {
+      "type": "html",
+      "id": "text_2",
+      "label": "Text 2"
+    },
+    {
+      "type": "html",
+      "id": "text_3",
+      "label": "Text 3"
+    },
+    {
+      "type": "html",
+      "id": "text_4",
+      "label": "Text 4"
+    },
+    {
+      "type": "html",
+      "id": "text_5",
+      "label": "Text 5"
+    },
+    {
+      "type": "header",
+      "content": "Mobile Text Content"
+    },
+    {
+      "type": "html",
+      "id": "mobile_text_1",
+      "label": "Mobile Text 1"
+    },
+    {
+      "type": "html",
+      "id": "mobile_text_2",
+      "label": "Mobile Text 2"
+    },
+    {
+      "type": "html",
+      "id": "mobile_text_3",
+      "label": "Mobile Text 3"
+    },
+    {
+      "type": "html",
+      "id": "mobile_text_4",
+      "label": "Mobile Text 4"
+    },
+    {
+      "type": "html",
+      "id": "mobile_text_5",
+      "label": "Mobile Text 5"
+    },
+    {
+      "type": "header",
+      "content": "Button Settings"
+    },
+    {
+      "type": "text",
+      "id": "button_text",
+      "label": "Button Text"
+    },
+    {
+      "type": "url",
+      "id": "button_url",
+      "label": "Button URL"
+    },
+    {
+      "type": "color",
+      "id": "button_text_color",
+      "label": "Button Text Color",
+      "default": "#ffffff"
+    },
+    {
+      "type": "header",
+      "content": "First Column Image"
+    },
+    {
+      "type": "image_picker",
+      "id": "first_column_image",
+      "label": "First Column Image"
+    },
+    {
+      "type": "html",
+      "id": "first_column_image_text",
+      "label": "Text beside Image"
+    },
+    {
+      "type": "header",
+      "content": "Second Column Images"
+    },
+    {
+      "type": "image_picker",
+      "id": "second_column_image_1",
+      "label": "Second Column Image 1"
+    },
+    {
+      "type": "image_picker",
+      "id": "second_column_image_1_mobile",
+      "label": "Second Column Image 1 (Mobile)"
+    },
+    {
+      "type": "image_picker",
+      "id": "second_column_image_2",
+      "label": "Second Column Image 2"
+    },
+    {
+      "type": "header",
+      "content": "Layout Settings"
+    },
+    {
+      "type": "color",
+      "id": "bg_color",
+      "label": "Background Color",
+      "default": "#ffffff"
+    },
+    {
+      "type": "color",
+      "id": "text_color",
+      "label": "Text Color",
+      "default": "#111111"
+    },
+    {
+      "type": "range",
+      "id": "padding_top",
+      "min": 0,
+      "max": 120,
+      "step": 10,
+      "unit": "px",
+      "label": "Top Padding",
+      "default": 60
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom",
+      "min": 0,
+      "max": 120,
+      "step": 10,
+      "unit": "px",
+      "label": "Bottom Padding",
+      "default": 60
+    },
+    {
+      "type": "range",
+      "id": "mobile_padding_top",
+      "min": 0,
+      "max": 80,
+      "step": 10,
+      "unit": "px",
+      "label": "Mobile Top Padding",
+      "default": 40
+    },
+    {
+      "type": "range",
+      "id": "mobile_padding_bottom",
+      "min": 0,
+      "max": 80,
+      "step": 10,
+      "unit": "px",
+      "label": "Mobile Bottom Padding",
+      "default": 40
+    }
+  ],
+  "presets": [
+    {
+      "name": "[DGF] Image and Text"
+    }
+  ]
+}
+{% endschema %}
+
+{% stylesheet %}
+{% endstylesheet %}
+
+{% javascript %}
+document.addEventListener('DOMContentLoaded', function() {
+  try {
+    if (window.innerWidth <= 767) {
+      const mobileButton = document.querySelector('.dgf-mobile-button-wrapper');
+      if (mobileButton) {
+        let buttonOriginalPosition = mobileButton.offsetTop;
+        let isSticky = false;
+
+        // Get button URL and check if it's an internal section link
+        const buttonLink = mobileButton.querySelector('a');
+        let targetSectionId = null;
+
+        if (buttonLink && buttonLink.href) {
+          const href = buttonLink.getAttribute('href');
+          // Check if href contains shopify-section pattern
+          if (href.includes('#dgf-featured-product')) {
+            targetSectionId = 'dgf-featured-product';
+          }
+        }
+
+        function isInTargetSection() {
+          try {
+            if (!targetSectionId) return false;
+
+            // Find the target section element
+            const targetSection = document.getElementById(targetSectionId);
+            if (!targetSection) return false;
+
+            // Get exact section boundaries - no buffer
+            const sectionTop = targetSection.offsetTop;
+            const sectionBottom = targetSection.offsetTop + targetSection.offsetHeight;
+            const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+            const windowHeight = window.innerHeight;
+            const viewportTop = scrollTop;
+            const viewportBottom = scrollTop + windowHeight;
+
+            // Check if viewport overlaps with the exact section boundaries
+            return viewportBottom >= sectionTop && viewportTop <= sectionBottom;
+          } catch(e) {
+            return false;
+          }
+        }
+
+        let scrollTimeout;
+        function handleScroll() {
+          try {
+            // Clear previous timeout to prevent rapid fire
+            clearTimeout(scrollTimeout);
+
+            scrollTimeout = setTimeout(() => {
+              const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+              const shouldBeSticky = scrollTop > buttonOriginalPosition + 100;
+              const inTargetSection = isInTargetSection();
+
+              // Show sticky button only if should be sticky AND not in target section
+              if (shouldBeSticky && !inTargetSection && !isSticky) {
+                mobileButton.classList.add('dgf-mobile-sticky-button');
+                isSticky = true;
+              } else if ((!shouldBeSticky || inTargetSection) && isSticky) {
+                mobileButton.classList.remove('dgf-mobile-sticky-button');
+                isSticky = false;
+              }
+            }, 10); // Small delay to prevent rapid changes
+          } catch(e) { null; }
+        }
+
+        window.addEventListener('scroll', handleScroll);
+
+        // Recalculate position if window is resized
+        window.addEventListener('resize', function() {
+          try {
+            if (window.innerWidth <= 767) {
+              buttonOriginalPosition = mobileButton.offsetTop;
+            } else {
+              mobileButton.classList.remove('dgf-mobile-sticky-button');
+              isSticky = false;
+            }
+          } catch(e) { null; }
+        });
+      }
+    }
+  } catch(e) { null; }
+});
+{% endjavascript %}

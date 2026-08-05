@@ -1,0 +1,88 @@
+<style>
+  #id-{{ section.id }}{
+  	background-color:{{ section.settings.section_bg_color }};
+  }
+</style>
+<section id="id-{{section.id}}" class="reason-how-works-section">
+  <div class="reason-how-works-wrapper">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-12 col-md-12 col-sm-12">
+          <div class="how-it-works-head">
+            <h2>{{ section.settings.the_title}}</h2>
+          </div>
+        </div>
+      </div>
+      <div class="row reason-how-works-row">
+        <div class="col-lg-8 col-md-8 col-sm-12">
+          <div class="hoq-it-works-content">
+            {{ section.settings.the_text }}
+          </div>
+        </div>
+        <div class="col-lg-4 col-md-4 col-sm-12">
+          <div class="reason-contact-form-wrapper">
+            {% form 'contact' %}
+              {%- if form.posted_successfully? -%}
+                    <h2>{{ 'templates.contact.form.post_success' | t }}</h2>
+                  {%- elsif form.errors -%}
+                    <h2>{{ 'templates.contact.form.error_heading' | t }}</h2>
+                {%- endif -%}
+              <div class="name">
+                <label for="name">Name</label>
+                <input type="text" name="contact[name]" id="name" placeholder="Enter your name"/>
+              </div>
+            
+              <div class="email">
+                <label for="email">Email</label>
+                <input type="email" name="contact[email]" id="email" required placeholder="Enter your email"/>
+              </div>
+            
+              <div class="phone">
+                <label for="phone">Phone</label>
+                <input type="tel" name="contact[phone]" id="phone" placeholder="Enter your phone number"/>
+              </div>
+             <div class="submit">
+                <input type="submit" value="SUBMIT" />
+              </div>
+            {% endform %}
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+{% schema %}
+  {
+    "name": "How it Works!",
+    "settings": [
+      {
+            "type": "header",
+            "content": "Content Style"
+        },
+	    {
+           "type": "color",
+           "id": "section_bg_color",
+           "label": "Section background color"
+        },
+        {
+          "type": "text",
+          "id": "the_title",
+          "label": "Title"
+      	},
+        {
+          "type": "richtext",
+          "id": "the_text",
+          "label": "Text"
+      	}
+    ],
+	"presets": [{
+      "name": "How it Works!"
+    }]
+  }
+{% endschema %}
+
+{% stylesheet %}
+{% endstylesheet %}
+
+{% javascript %}
+{% endjavascript %}

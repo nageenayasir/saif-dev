@@ -1,0 +1,261 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+ {
+  "sections": {
+    "main": {
+      "type": "main-page",
+      "disabled": true,
+      "settings": {}
+    },
+    "4c6680f6-e2e2-4dc2-af94-158bdf581e5d": {
+      "type": "wholesale-banner",
+      "settings": {
+        "background_the_image": "shopify://shop_images/wholesale-banner.jpg",
+        "bg_mob_image": "shopify://shop_images/wholesale-banner-mobile.jpg",
+        "the_title": "BECOME A TRIIBE WHOLESALE PARTNER",
+        "the_text": "At Tribe Organics we create herbal and mushroom supplements that help unlock the highest potential in people. Our products are third-party tested, cGMP, gluten-free, organic and/or non-GMO, kosher, vegan and junk-free (no harmful additives).",
+        "button_1": "WHOLESALE APPLICATION",
+        "url_1": "https://forms.gle/8MySqj5oee9XpDZ37"
+      }
+    },
+    "b9e5067e-b7c4-44c7-89af-95327d07e807": {
+      "type": "wholesale-image-text",
+      "settings": {
+        "section_bg_color": "#faeee9",
+        "enable_left_top_leaf": false,
+        "enable_right_bottom_leaf": false,
+        "add_class": "wholesale-image-text-first",
+        "the_image": "shopify://shop_images/On_a_Health_Revolution.png",
+        "image_position": "left",
+        "the_text": "<h2>On a Health Revolution</h2><p>Since 2019, Tribe Organics has been on a genuine mission to help people master the art of living. We are purveyors of a healthy lifestyle using Nature’s intelligence and resources on a daily basis to enhance and craft our own health, on our own terms.</p><h3>Why Choose Tribe Organics?</h3><p>Tribe Organics isn't just a brand; it's a lifestyle. We've emerged as a trusted name in herbal and mushroom supplements, resonating with conscious consumers keen on reclaiming back their health. Our commitment extends beyond providing exceptional products; we believe in doing better. That's why we take the time to educate each of our partners on the transformative benefits of our products and their potential to make a profound impact on lives.</p><h3>Who We Partner With</h3><p>If you would like to buy Tribe Organics in wholesale quantities or are interested in becoming a partner, you have come to the right place. Our current partners include: practitioners, pharmacies, health markets, wellness studios, and more!</p>",
+        "mob_text": "<h2>On a Health Revolution</h2><p>Since 2019, Tribe Organics has been on a genuine mission to help people master the art of living. We are purveyors of a healthy lifestyle using Nature’s intelligence and resources on a daily basis to enhance and craft our own health, on our own terms.</p>",
+        "mob_text_2": "<h3>Why Choose Tribe Organics?</h3><p>Tribe Organics isn't just a brand; it's a lifestyle. We've emerged as a trusted name in herbal and mushroom supplements, resonating with conscious consumers keen on reclaiming back their health. Our commitment extends beyond providing exceptional products; we believe in doing better. That's why we take the time to educate each of our partners on the transformative benefits of our products and their potential to make a profound impact on lives.</p><h3>Who We Partner With</h3><p>If you would like to buy Tribe Organics in wholesale quantities or are interested in becoming a partner, you have come to the right place. Our current partners include: practitioners, pharmacies, health markets, wellness studios, and more!</p>"
+      }
+    },
+    "6ebdde15-c99b-4878-bd33-581fe2e6723b": {
+      "type": "wholesale-banner-text",
+      "settings": {
+        "section_bg_color": "#f3d9cf",
+        "add_class": "wholesale-rich-text-first",
+        "the_title": "BECOME OUR PARTNER",
+        "button_1": "WHOLESALE APPLICATION",
+        "url_1": "https://forms.gle/8MySqj5oee9XpDZ37",
+        "the_text": ""
+      }
+    },
+    "a14948b2-f159-4d66-b00b-f737544f98ea": {
+      "type": "wholesale-banner-text",
+      "settings": {
+        "section_bg_color": "#faeee9",
+        "add_class": "wholesale-rich-text-second",
+        "the_title": "Premium Herbal Supplements for the Pace of Modern Living",
+        "button_1": "",
+        "url_1": "",
+        "the_text": "<p>If you're ready to join the Tribe Organics movement and bring the benefits of a healthy lifestyle to your community, we're here to assist. Whether you're interested in wholesale quantities or becoming a valued partner, we're excited to welcome you into our TRIIBE.</p><p>Join us in the journey to elevate health and well-being.</p>"
+      }
+    },
+    "c12d4de4-f077-4a90-ba74-22850f4825eb": {
+      "type": "wholesale-products-banner",
+      "settings": {
+        "the_image": "shopify://shop_images/Premium_herbal_supplements.jpg"
+      }
+    },
+    "c9af89c8-fdeb-4f13-b05d-601565380244": {
+      "type": "wholesale-image-text",
+      "settings": {
+        "section_bg_color": "#faeee9",
+        "enable_left_top_leaf": false,
+        "enable_right_bottom_leaf": false,
+        "add_class": "wholesale-image-text-second",
+        "the_image": "shopify://shop_images/The_BEST_ASHWAGANDHA_supplements_on_the_market.png",
+        "image_position": "right",
+        "the_text": "<h2>The BEST ASHWAGANDHA supplements on the market!</h2><p>With an incredible concentration exceeding 5% of withanolides, as measured by HPLC, KSM-66 sets the gold standard among branded root-only extracts. Backed by the remarkable synergy of Nature and science, it stands out with its exceptional concentration and maximum bioavailability.</p><p>KSM-66 distinguishes itself by containing negligible levels of Withaferin A, a well-recognized cyto-toxic withanolide. Prioritize safety without compromising on efficacy.</p><ul><li><strong>Ashwagandha KSM-66 </strong></li><li><strong>Ashwagandha KSM-66 Vegan</strong></li><li><strong>Ashwagandha Powder</strong></li><li><strong>Ashwagandha KSM-66 Gummies</strong></li></ul>",
+        "mob_text": "<h2>The BEST ASHWAGANDHA supplements on the market!</h2>",
+        "mob_text_2": ""
+      }
+    },
+    "5bd01edf-e18e-4987-a8cb-3eaa088e3a45": {
+      "type": "wholesale-image-text",
+      "settings": {
+        "section_bg_color": "#faeee9",
+        "enable_left_top_leaf": false,
+        "enable_right_bottom_leaf": false,
+        "add_class": "wholesale-image-text-third",
+        "the_image": "shopify://shop_images/Image_6f2af097-540c-4901-9637-39b452af90b8.png",
+        "image_position": "left",
+        "the_text": "<h2>A Product Developed with kids and teens in mind</h2><p>With the right dosage of Ashwagandha KSM-66 for children over 4 years old to 14 years old.</p><ul><li><strong>Ashwagandha KSM-66 Gummies for Kids and Teenagers</strong></li></ul>",
+        "mob_text": "<h2>A Product Developed with kids and teens in mind</h2>",
+        "mob_text_2": ""
+      }
+    },
+    "77dc2f3c-ae1e-421e-b133-5110c0b228b2": {
+      "type": "wholesale-image-text",
+      "settings": {
+        "section_bg_color": "#f3d9cf",
+        "enable_left_top_leaf": true,
+        "enable_right_bottom_leaf": true,
+        "add_class": "wholesale-image-text-fourth",
+        "the_image": "shopify://shop_images/OUR_HERBAL_FORMULAS.jpg",
+        "image_position": "right",
+        "the_text": "<h2>OUR HERBAL FORMULAS</h2><p>We have created a few herbal products that are great addition to any regimen. Made with patented ingredients</p><ul><li><strong>Turmeric Complex:</strong> Curcumin C3 Complex, Boswellin, Ginger root and black pepper extracts. </li><li><strong>Boswellia Complex: </strong>Boswellin Super, Ginger root and black pepper extracts. </li><li><strong>Amla Complex:</strong> Amla fruit and Moringa leaf extracts.</li></ul>",
+        "mob_text": "<h2>OUR HERBAL FORMULAS</h2>",
+        "mob_text_2": ""
+      }
+    },
+    "034875b9-c482-444b-b9d6-6075e95531bd": {
+      "type": "wholesale-image-text",
+      "settings": {
+        "section_bg_color": "#faeee9",
+        "enable_left_top_leaf": false,
+        "enable_right_bottom_leaf": false,
+        "add_class": "wholesale-image-text-sixth",
+        "the_image": "shopify://shop_images/OUR_MUSHROOM_SUPPLEMENTS.jpg",
+        "image_position": "left",
+        "the_text": "<h2>OUR MUSHROOM SUPPLEMENTS</h2><p>Not all mushroom products are created equal. We use only the whole fruiting body of the mushroom, properly extracted to ensure the beneficial compounds are contained in the final product. No added starch, or grain of any kind.</p><ul><li><strong>Lion’s Mane Mushroom </strong></li><li><strong>Mushroom Complex:</strong> Reishi, Chaga, Turkey Tail, Maitake and Shiitake fruiting bodies.</li></ul>",
+        "mob_text": "<h2>OUR MUSHROOM SUPPLEMENTS</h2>",
+        "mob_text_2": ""
+      }
+    },
+    "1cc02c3e-9e68-4ace-937c-192621e8fc35": {
+      "type": "wholesale-image-text",
+      "settings": {
+        "section_bg_color": "#f3d9cf",
+        "enable_left_top_leaf": false,
+        "enable_right_bottom_leaf": false,
+        "add_class": "wholesale-image-text-fifth",
+        "the_image": "shopify://shop_images/Our_herbal_supplements.jpg",
+        "image_position": "right",
+        "the_text": "<h2>Our Herbal Supplements</h2><p>Pure plant and root powders, free from any chemical or preservatives</p><ul><li><strong>Moringa </strong></li><li><strong>Shatavari</strong></li></ul>",
+        "mob_text": "<h2>Our Herbal Supplements</h2>",
+        "mob_text_2": ""
+      }
+    },
+    "bac1a6bd-d462-4998-a6d4-15a9dfc30804": {
+      "type": "wholesale-icons-text",
+      "blocks": {
+        "99b736d3-35f9-4948-bbda-d556acbf5ae9": {
+          "type": "logo",
+          "settings": {
+            "the_logo": "shopify://shop_images/USDA_ORGANIC.svg"
+          }
+        },
+        "c4d34ec8-6205-45e3-a01f-5c923bc3ebb9": {
+          "type": "logo",
+          "settings": {
+            "the_logo": "shopify://shop_images/NONGMO_Projects_Verfied.svg"
+          }
+        },
+        "170e112b-e148-430d-af21-964580adb3ba": {
+          "type": "logo",
+          "settings": {
+            "the_logo": "shopify://shop_images/Ko_2.svg"
+          }
+        },
+        "4f9e63df-35ba-41c4-ab87-721318d36cab": {
+          "type": "logo",
+          "settings": {
+            "the_logo": "shopify://shop_images/GLUTEN_FREE_1_e8b1a493-4dc0-49f4-842c-26f2dacb03a6.svg"
+          }
+        }
+      },
+      "block_order": [
+        "99b736d3-35f9-4948-bbda-d556acbf5ae9",
+        "c4d34ec8-6205-45e3-a01f-5c923bc3ebb9",
+        "170e112b-e148-430d-af21-964580adb3ba",
+        "4f9e63df-35ba-41c4-ab87-721318d36cab"
+      ],
+      "settings": {
+        "section_bg_color": "#06211f"
+      }
+    },
+    "1c61dc7e-bb62-4ee6-bc7a-e6414ff1dde5": {
+      "type": "wholesale-banner-text",
+      "settings": {
+        "section_bg_color": "#faeee9",
+        "add_class": "wholesale-rich-text-third",
+        "the_title": "BECOME OUR PARTNER",
+        "button_1": "APPLY TODAY",
+        "url_1": "https://forms.gle/8MySqj5oee9XpDZ37",
+        "the_text": "<p>Please note that we’re not looking for businesses who sell on Amazon, Walmart or Ebay marketplaces as we’re looking to partner with other online stores in the health and wellness space as well as expand our physical presence through brick-and-mortar stores that align with our mission.</p>"
+      }
+    },
+    "b204d46b-3744-4c70-88af-80d7cafa74ef": {
+      "type": "wholesale-banner-text",
+      "settings": {
+        "section_bg_color": "#f3d9cf",
+        "add_class": "wholesale-rich-text-fourth",
+        "the_title": "MORE WAYS TO WORK WITH US",
+        "button_1": "",
+        "url_1": "",
+        "the_text": "<p>We joined FAIRE to offer an easy way to retailers to shop and order our products, which you can access below. </p><p>For RangeMe vendors: Take a look at our profile by <a href=\"https://app.rangeme.com/suppliers/tribe-organics-inc-16aca0/brands/326716\" title=\"https://app.rangeme.com/suppliers/tribe-organics-inc-16aca0/brands/326716\">clicking here</a>. Otherwise, contact us at info@tribe-organics.com and we'll get back to you.</p>"
+      }
+    },
+    "1e266055-4d0d-40d9-950d-b4f0299b494c": {
+      "type": "wholesale-fair-widget",
+      "settings": {
+        "section_bg_color": "#f3d9cf",
+        "html_code": "<iframe src=\"https://www.faire.com/embed/bw_xyxb6ch8rq\" width=\"900\" height=\"600\" scrolling=\"no\" style=\"margin:0 auto;border:none;display:block;max-width:100%;width:900px;height:600px;\"></iframe>"
+      }
+    },
+    "304956ba-7592-45e8-835a-b73e5f9a0a3c": {
+      "type": "wholesale-faqs",
+      "blocks": {
+        "template--17122140422367__304956ba-7592-45e8-835a-b73e5f9a0a3c-faq-1": {
+          "type": "faq",
+          "settings": {
+            "title": "How do I pause or cancel my subscription?",
+            "content": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor Lorem ipsum dolor sit amet."
+          }
+        },
+        "template--17122140422367__304956ba-7592-45e8-835a-b73e5f9a0a3c-faq-2": {
+          "type": "faq",
+          "settings": {
+            "title": "Can I have multiple subscriptions?",
+            "content": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor Lorem ipsum dolor sit amet."
+          }
+        },
+        "template--17122140422367__304956ba-7592-45e8-835a-b73e5f9a0a3c-faq-3": {
+          "type": "faq",
+          "settings": {
+            "title": "How long does it take to deliver my subscription?",
+            "content": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor Lorem ipsum dolor sit amet."
+          }
+        }
+      },
+      "block_order": [
+        "template--17122140422367__304956ba-7592-45e8-835a-b73e5f9a0a3c-faq-1",
+        "template--17122140422367__304956ba-7592-45e8-835a-b73e5f9a0a3c-faq-2",
+        "template--17122140422367__304956ba-7592-45e8-835a-b73e5f9a0a3c-faq-3"
+      ],
+      "disabled": true,
+      "settings": {
+        "title": "Frequently Asked Questions"
+      }
+    }
+  },
+  "order": [
+    "main",
+    "4c6680f6-e2e2-4dc2-af94-158bdf581e5d",
+    "b9e5067e-b7c4-44c7-89af-95327d07e807",
+    "6ebdde15-c99b-4878-bd33-581fe2e6723b",
+    "a14948b2-f159-4d66-b00b-f737544f98ea",
+    "c12d4de4-f077-4a90-ba74-22850f4825eb",
+    "c9af89c8-fdeb-4f13-b05d-601565380244",
+    "5bd01edf-e18e-4987-a8cb-3eaa088e3a45",
+    "77dc2f3c-ae1e-421e-b133-5110c0b228b2",
+    "034875b9-c482-444b-b9d6-6075e95531bd",
+    "1cc02c3e-9e68-4ace-937c-192621e8fc35",
+    "bac1a6bd-d462-4998-a6d4-15a9dfc30804",
+    "1c61dc7e-bb62-4ee6-bc7a-e6414ff1dde5",
+    "b204d46b-3744-4c70-88af-80d7cafa74ef",
+    "1e266055-4d0d-40d9-950d-b4f0299b494c",
+    "304956ba-7592-45e8-835a-b73e5f9a0a3c"
+  ]
+}

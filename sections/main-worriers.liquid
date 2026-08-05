@@ -1,0 +1,50 @@
+<section class="section-banner section-title section-form bg-line-02 worrier-page-wrapper">
+    <div class="leaf-box right-top">
+        <img loading="lazy"  class="leaf" src="{{ 'leaf-n02.svg' | asset_url }}">
+    </div>
+    <div class="content">
+        <div class="container">
+            <h1 class="text-uppercase" data-aos="fade-up">{{ section.settings.title }}</h1>
+            <ul class="big-dot text-start mx-auto" style="max-width: 880px;">
+               {{ section.settings.content }}
+            </ul>
+        </div>
+    </div>
+</section>
+<section class="section section-guides pt-0">
+    <div class="container">
+        <div class="row">
+          {% for article in blog.articles %}
+          {% assign key = forloop.index | modulo: 2 %}
+            <div class="{% if key == 0 %}col-6 col-md-3{% else %}col-6 col-md-3 mt-5{% endif %}">
+                <a href="{{ article.url }}" class="cats-item" data-aos="fade-up" data-aos-delay="{% if event == 0 %}300{% else %}100{% endif %}">
+                    <div class="img-wrapper">
+                        <img loading="lazy"  src="{{ article.image | image_url : width: 500 }}" alt="{{ article.title }}">
+                    </div>
+                    <h3 class="text-center my-0 mt-4">{{ article.title }}</h3>
+                    <div class="text-center ">{{ article.metafields.custom.description }}</div>
+                </a>
+            </div>
+          {% endfor %}
+        </div>
+    </div>
+</section>
+{% schema %}
+  {
+    "name": "Section Worriors",
+    "settings": [
+      {
+          "type": "text",
+          "id": "title",
+          "default": " Tribe Worriors",
+          "label": "Title"
+      },
+      {
+          "type": "html",
+          "id": "content",
+          "label": "Content"
+      }
+    ]
+  }
+{% endschema %}
+

@@ -1,0 +1,260 @@
+{% comment %}
+  [DGF] Featured Image
+  Author: Rodrigo Gesser
+  Date: 2026-03-03
+  Full-width image section with visibility controls
+{% endcomment %}
+
+{% liquid
+  assign visibility = section.settings.visibility | default: 'both'
+  assign bg_color = section.settings.bg_color | default: '#ffffff'
+  assign image_fit = section.settings.image_fit | default: 'cover'
+  assign image_position = section.settings.image_position | default: 'center'
+  assign min_height_desktop = section.settings.min_height_desktop | default: 400
+  assign min_height_mobile = section.settings.min_height_mobile | default: 300
+  assign padding_top = section.settings.padding_top | default: 0
+  assign padding_bottom = section.settings.padding_bottom | default: 0
+
+  assign sid = section.id
+%}
+
+<style>
+  #dgf-featured-img-{{ sid }} {
+    width: 100%;
+    background-color: {{ bg_color }};
+    padding: {{ padding_top }}px 0 {{ padding_bottom }}px;
+    overflow: hidden;
+  }
+
+  #dgf-featured-img-{{ sid }} .dgf-fi-wrapper {
+    width: 100%;
+    min-height: {{ min_height_desktop }}px;
+    position: relative;
+  }
+
+  #dgf-featured-img-{{ sid }} .dgf-fi-image {
+    width: 100%;
+    height: 100%;
+    object-fit: {{ image_fit }};
+    object-position: {{ image_position }};
+    display: block;
+  }
+
+  /* Visibility Controls */
+  {% if visibility == 'desktop_only' %}
+    #dgf-featured-img-{{ sid }} .dgf-fi-desktop {
+      display: block;
+    }
+    #dgf-featured-img-{{ sid }} .dgf-fi-mobile {
+      display: none;
+    }
+  {% elsif visibility == 'mobile_only' %}
+    #dgf-featured-img-{{ sid }} .dgf-fi-desktop {
+      display: none;
+    }
+    #dgf-featured-img-{{ sid }} .dgf-fi-mobile {
+      display: block;
+    }
+  {% else %}
+    #dgf-featured-img-{{ sid }} .dgf-fi-desktop {
+      display: block;
+    }
+    #dgf-featured-img-{{ sid }} .dgf-fi-mobile {
+      display: none;
+    }
+  {% endif %}
+
+  /* Mobile Styles */
+  @media (max-width: 767px) {
+    #dgf-featured-img-{{ sid }} {
+      padding: {{ padding_top | times: 0.6 | round }}px 0 {{ padding_bottom | times: 0.6 | round }}px;
+    }
+
+    #dgf-featured-img-{{ sid }} .dgf-fi-wrapper {
+      min-height: {{ min_height_mobile }}px;
+    }
+
+    {% if visibility == 'desktop_only' %}
+      #dgf-featured-img-{{ sid }} {
+        display: none;
+      }
+    {% elsif visibility == 'mobile_only' %}
+      #dgf-featured-img-{{ sid }} .dgf-fi-desktop {
+        display: none;
+      }
+      #dgf-featured-img-{{ sid }} .dgf-fi-mobile {
+        display: block;
+      }
+    {% else %}
+      #dgf-featured-img-{{ sid }} .dgf-fi-desktop {
+        display: none;
+      }
+      #dgf-featured-img-{{ sid }} .dgf-fi-mobile {
+        display: block;
+      }
+    {% endif %}
+  }
+</style>
+
+<section id="dgf-featured-img-{{ sid }}" class="dgf-featured-image-section">
+  <div class="dgf-fi-wrapper">
+    {% if section.settings.image_desktop != blank %}
+      <img
+        src="{{ section.settings.image_desktop | image_url: width: 2000 }}"
+        alt="{{ section.settings.image_alt | default: 'Featured Image' }}"
+        class="dgf-fi-image dgf-fi-desktop"
+        loading="lazy"
+      >
+    {% endif %}
+
+    {% if section.settings.image_mobile != blank %}
+      <img
+        src="{{ section.settings.image_mobile | image_url: width: 2000 }}"
+        alt="{{ section.settings.image_alt | default: 'Featured Image' }}"
+        class="dgf-fi-image dgf-fi-mobile"
+        loading="lazy"
+      >
+    {% elsif section.settings.image_desktop != blank %}
+      <img
+        src="{{ section.settings.image_desktop | image_url: width: 2000 }}"
+        alt="{{ section.settings.image_alt | default: 'Featured Image' }}"
+        class="dgf-fi-image dgf-fi-mobile"
+        loading="lazy"
+      >
+    {% endif %}
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "[DGF] Featured Image",
+  "tag": "section",
+  "class": "section",
+  "settings": [
+    {
+      "type": "header",
+      "content": "Images"
+    },
+    {
+      "type": "image_picker",
+      "id": "image_desktop",
+      "label": "Image (Desktop)"
+    },
+    {
+      "type": "image_picker",
+      "id": "image_mobile",
+      "label": "Image (Mobile)",
+      "info": "If empty, will use Desktop image"
+    },
+    {
+      "type": "text",
+      "id": "image_alt",
+      "label": "Image Alt Text",
+      "default": "Featured Image"
+    },
+    {
+      "type": "header",
+      "content": "Visibility"
+    },
+    {
+      "type": "select",
+      "id": "visibility",
+      "label": "Show On",
+      "options": [
+        { "value": "both", "label": "Desktop & Mobile" },
+        { "value": "desktop_only", "label": "Desktop Only" },
+        { "value": "mobile_only", "label": "Mobile Only" }
+      ],
+      "default": "both"
+    },
+    {
+      "type": "header",
+      "content": "Image Settings"
+    },
+    {
+      "type": "select",
+      "id": "image_fit",
+      "label": "Image Fit",
+      "options": [
+        { "value": "cover", "label": "Cover (fill space)" },
+        { "value": "contain", "label": "Contain (fit inside)" },
+        { "value": "fill", "label": "Fill (stretch)" },
+        { "value": "none", "label": "Original Size" }
+      ],
+      "default": "cover"
+    },
+    {
+      "type": "select",
+      "id": "image_position",
+      "label": "Image Position",
+      "options": [
+        { "value": "center", "label": "Center" },
+        { "value": "top", "label": "Top" },
+        { "value": "bottom", "label": "Bottom" },
+        { "value": "left", "label": "Left" },
+        { "value": "right", "label": "Right" },
+        { "value": "top left", "label": "Top Left" },
+        { "value": "top right", "label": "Top Right" },
+        { "value": "bottom left", "label": "Bottom Left" },
+        { "value": "bottom right", "label": "Bottom Right" }
+      ],
+      "default": "center"
+    },
+    {
+      "type": "range",
+      "id": "min_height_desktop",
+      "label": "Min Height (Desktop)",
+      "min": 100,
+      "max": 1000,
+      "step": 50,
+      "default": 400,
+      "unit": "px"
+    },
+    {
+      "type": "range",
+      "id": "min_height_mobile",
+      "label": "Min Height (Mobile)",
+      "min": 100,
+      "max": 800,
+      "step": 50,
+      "default": 300,
+      "unit": "px"
+    },
+    {
+      "type": "header",
+      "content": "Background & Spacing"
+    },
+    {
+      "type": "color",
+      "id": "bg_color",
+      "label": "Background Color",
+      "default": "#ffffff"
+    },
+    {
+      "type": "range",
+      "id": "padding_top",
+      "label": "Padding Top",
+      "min": 0,
+      "max": 200,
+      "step": 5,
+      "default": 0,
+      "unit": "px"
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom",
+      "label": "Padding Bottom",
+      "min": 0,
+      "max": 200,
+      "step": 5,
+      "default": 0,
+      "unit": "px"
+    }
+  ],
+  "presets": [
+    {
+      "name": "[DGF] Featured Image"
+    }
+  ]
+}
+{% endschema %}

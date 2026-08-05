@@ -1,0 +1,53 @@
+<style>
+  {% if section.settings.background_the_image != blank %}
+ 	#id-{{ section.id }}{
+        background-image:url("{{section.settings.background_the_image | image_url: width: 2000}}");
+        background-repeat: no-repeat;
+        background-size: cover;
+  	}
+  {% endif %}
+  
+</style>
+<section id="id-{{section.id}}" class="ksm-banner-section">
+  <div class="ksm-banner-wrapper">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-12 col-md-12 col-sm-12">
+          <div class="ksm-banner-heading">
+            <h1>{{ section.settings.the_title }}</h1>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+{% schema %}
+  {
+    "name": "KSM Main Banner",
+    "settings": [
+      {
+          "type": "image_picker",
+          "id": "background_the_image",
+          "label": "Background-Image"
+      	},
+	     {
+          "type": "header",
+          "content": "Text Settings"
+        },
+	    {
+          "type": "text",
+          "id": "the_title",
+          "label": "Title"
+      	}
+    ],
+	"presets": [{
+      "name": "KSM Main Banner"
+    }]
+  }
+{% endschema %}
+
+{% stylesheet %}
+{% endstylesheet %}
+
+{% javascript %}
+{% endjavascript %}

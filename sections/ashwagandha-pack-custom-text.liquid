@@ -1,0 +1,70 @@
+<style>
+  #id-{{ section.id }}{
+  	background-color:{{ section.settings.section_bg_color }};
+  }
+</style>
+<section id="id-{{ section.id }}" class="ashwagandha-pack-custom-text-section common-ashwagandha-pack-sec">
+  <div class="ashwagandha-pack-custom-text-wrapper">
+    <div class="leaf-box ashwagandha-pack-text-box-left-top left-top">
+        <img loading="lazy"  class="leaf ashwagandha-pack-text-left-top" src="{{ 'pack-leaf-3.svg' | asset_url }}">
+    </div>
+    <div class="leaf-box ashwagandha-pack-textbox-right-bot right-bot">
+        <img loading="lazy"  class="leaf ashwagandha-pack-text-right-bot" src="{{ 'pack-leaf-4.svg' | asset_url }}">
+    </div>
+    <div class="container">
+      <div class="row">
+        <div class="col-sm-12 col-md-12 col-lg-12">
+          <div class="ashwagandha-pack-text-info">
+            {% for block in section.blocks %}
+              <div class="ashwagandha-pack-text-info-blocks">
+                <div class="ashwagandha-pack-info-head common-custom-heading-wrapper">
+                  <h2>{{ block.settings.the_title }}</h2>
+                </div>
+                <div class="ashwagandha-pack-text-wrap">
+                  {{ block.settings.the_text }}
+                </div>
+              </div>  
+            {% endfor %}
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+{% schema %}
+  {
+    "name": "Ashwagandha Pack Text",
+    "settings": [
+       {
+            "type": "header",
+            "content": "Content Style"
+      },
+  	  {
+           "type": "color",
+           "id": "section_bg_color",
+           "label": "Section background color"
+      }
+    ],
+	"blocks": [
+     {
+      "type": "content",
+      "name": "Content",
+      "settings": [
+        {
+          "type": "text",
+          "id": "the_title",
+          "label": "Title" 
+        },
+        {
+          "type": "richtext",
+          "id": "the_text",
+          "label": "Text" 
+        }
+      ]
+     }
+	],
+    "presets": [{
+      "name": "Ashwagandha Pack Text"
+    }]
+  }
+{% endschema %}

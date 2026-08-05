@@ -1,0 +1,697 @@
+{% comment %}
+  [DGF] Hero Banner
+  Author: Rodrigo Gesser
+  Date: 2026-01-20
+  Description: Simplified hero banner with background, image, and button
+{% endcomment %}
+{% for block in section.blocks %}
+  {% if forloop.first %}
+    {% comment %} Background images (LCP - highest priority) {% endcomment %}
+    {% if block.settings.bg_mobile != blank %}
+      {% capture mobile_bg %}{{ block.settings.bg_mobile | image_url: width : 767 }}{% endcapture %}
+      <link rel="preload" as="image" href="{{ mobile_bg }}" media="(max-width: 767px)" fetchpriority="high">
+    {% endif %}
+    {% if block.settings.bg_desktop != blank %}
+      {% capture desktop_bg %}{{ block.settings.bg_desktop | image_url: width : block.settings.bg_desktop.width }}{% endcapture %}
+      <link rel="preload" as="image" href="{{ desktop_bg }}" media="(min-width: 768px)" fetchpriority="high">
+    {% endif %}
+  {% endif %}
+{% endfor %}
+
+<style>
+  {%- for block in section.blocks -%}
+    {%- if block.settings.bg_desktop != blank -%}
+      @media (min-width: 768px){
+        #cst-{{ block.id }}{
+          background-image: url("{{ block.settings.bg_desktop | image_url: width: block.settings.bg_desktop.width }}");
+          background-size: cover;
+          background-position: center;
+        }
+      }
+    {%- endif -%}
+    {%- if block.settings.bg_mobile != blank -%}
+      @media (max-width: 767px){
+        #cst-{{ block.id }}{
+          background-image: url("{{ block.settings.bg_mobile | image_url: width: 767 }}") !important;
+          background-size: cover;
+          background-position: center;
+        }
+      }
+    {%- endif -%}
+
+    /* Desktop Padding */
+    @media (min-width: 768px){
+      #cst-{{ block.id }}.cstm-site-banner-section {
+        padding-top: {{ block.settings.padding_top_desktop }}px !important;
+        padding-bottom: {{ block.settings.padding_bottom_desktop }}px !important;
+        padding-left: {{ block.settings.padding_left_desktop }}px !important;
+        padding-right: {{ block.settings.padding_right_desktop }}px !important;
+        position: relative;
+      }
+
+      #cst-{{ block.id }} .dgf-hero-content {
+        display: flex;
+        justify-content: {{ block.settings.align_horizontal_desktop }};
+        min-height: 500px;
+      }
+
+      #cst-{{ block.id }} .dgf-hero-button {
+        position: absolute;
+        {%- if block.settings.button_top_desktop != blank -%}
+        top: {{ block.settings.button_top_desktop }}%;
+        {%- endif -%}
+        {%- if block.settings.button_bottom_desktop != blank -%}
+        bottom: {{ block.settings.button_bottom_desktop }}%;
+        {%- endif -%}
+        {%- if block.settings.button_left_desktop != blank -%}
+        left: {{ block.settings.button_left_desktop }}%;
+        {%- endif -%}
+        {%- if block.settings.button_right_desktop != blank -%}
+        right: {{ block.settings.button_right_desktop }}%;
+        {%- endif -%}
+      }
+
+      #cst-{{ block.id }} .dgf-hero-disclaimer {
+        position: absolute;
+        {%- if block.settings.disclaimer_top_desktop != blank -%}
+        top: {{ block.settings.disclaimer_top_desktop }}%;
+        {%- endif -%}
+        {%- if block.settings.disclaimer_bottom_desktop != blank -%}
+        bottom: {{ block.settings.disclaimer_bottom_desktop }}%;
+        {%- endif -%}
+        {%- if block.settings.disclaimer_left_desktop != blank -%}
+        left: {{ block.settings.disclaimer_left_desktop }}%;
+        {%- endif -%}
+        {%- if block.settings.disclaimer_right_desktop != blank -%}
+        right: {{ block.settings.disclaimer_right_desktop }}%;
+        {%- endif -%}
+        font-family: {{ block.settings.disclaimer_font_family }};
+        font-size: {{ block.settings.disclaimer_font_size_desktop }}px;
+        color: {{ block.settings.disclaimer_color }};
+        font-weight: {{ block.settings.disclaimer_font_weight }};
+        {%- if block.settings.hide_disclaimer_desktop -%}
+        display: none;
+        {%- endif -%}
+      }
+    }
+
+    /* Mobile Padding */
+    @media (max-width: 767px){
+      #cst-{{ block.id }}.cstm-site-banner-section {
+        padding-top: {{ block.settings.padding_top_mobile }}px !important;
+        padding-bottom: {{ block.settings.padding_bottom_mobile }}px !important;
+        padding-left: {{ block.settings.padding_left_mobile }}px !important;
+        padding-right: {{ block.settings.padding_right_mobile }}px !important;
+        position: relative;
+      }
+
+      #cst-{{ block.id }} .dgf-hero-content {
+        display: flex;
+        justify-content: {{ block.settings.align_horizontal_mobile }};
+        min-height: 300px;
+      }
+
+      #cst-{{ block.id }} .dgf-hero-button {
+        position: absolute;
+        {%- if block.settings.button_top_mobile != blank -%}
+        top: {{ block.settings.button_top_mobile }}%;
+        {%- endif -%}
+        {%- if block.settings.button_bottom_mobile != blank -%}
+        bottom: {{ block.settings.button_bottom_mobile }}%;
+        {%- endif -%}
+        {%- if block.settings.button_left_mobile != blank -%}
+        left: {{ block.settings.button_left_mobile }}%;
+        {%- endif -%}
+        {%- if block.settings.button_right_mobile != blank -%}
+        right: {{ block.settings.button_right_mobile }}%;
+        {%- endif -%}
+      }
+
+      #cst-{{ block.id }} .dgf-hero-disclaimer {
+        position: absolute;
+        {%- if block.settings.disclaimer_top_mobile != blank -%}
+        top: {{ block.settings.disclaimer_top_mobile }}%;
+        {%- endif -%}
+        {%- if block.settings.disclaimer_bottom_mobile != blank -%}
+        bottom: {{ block.settings.disclaimer_bottom_mobile }}%;
+        {%- endif -%}
+        {%- if block.settings.disclaimer_left_mobile != blank -%}
+        left: {{ block.settings.disclaimer_left_mobile }}%;
+        {%- endif -%}
+        {%- if block.settings.disclaimer_right_mobile != blank -%}
+        right: {{ block.settings.disclaimer_right_mobile }}%;
+        {%- endif -%}
+        font-family: {{ block.settings.disclaimer_font_family }};
+        font-size: {{ block.settings.disclaimer_font_size_mobile }}px;
+        color: {{ block.settings.disclaimer_color }};
+        font-weight: {{ block.settings.disclaimer_font_weight }};
+        {%- if block.settings.hide_disclaimer_mobile -%}
+        display: none;
+        {%- endif -%}
+      }
+    }
+  {%- endfor -%}
+</style>
+
+<section id="id-{{section.id}}" class="cstm-site-slider-banner-section">
+  <div class="swiper custom-slider-banner-wrap">
+    <div class="swiper-wrapper">
+    {% for block in section.blocks %}
+      <div class="swiper-slide cstm-site-banner-section single-banner-wrap-mn" id="cst-{{block.id}}">
+        <div class="container">
+          <div class="row">
+            <div class="col-12">
+              <div class="dgf-hero-content">
+                <div class="dgf-hero-inner">
+                  {% comment %} Image Desktop {% endcomment %}
+                  {% if block.settings.image_desktop != blank %}
+                    <div class="dgf-hero-image d-none d-md-block" data-aos="fade-up">
+                      {%- assign img = block.settings.image_desktop -%}
+                      <img
+                        loading="lazy"
+                        src="{{ img | image_url: width : img.width }}"
+                        alt="{{ block.settings.image_alt | default: 'Hero banner image' }}"
+                        width="{{ img.width }}"
+                        height="{{ img.height }}"
+                        style="aspect-ratio: {{ img.width }} / {{ img.height }};"
+                      >
+                    </div>
+                  {% endif %}
+
+                  {% comment %} Image Mobile {% endcomment %}
+                  {% if block.settings.image_mobile != blank %}
+                    <div class="dgf-hero-image d-md-none" data-aos="fade-up">
+                      {%- assign img = block.settings.image_mobile -%}
+                      <img
+                        loading="lazy"
+                        src="{{ img | image_url: width : 767 }}"
+                        alt="{{ block.settings.image_alt | default: 'Hero banner image' }}"
+                        width="{{ img.width }}"
+                        height="{{ img.height }}"
+                        style="aspect-ratio: {{ img.width }} / {{ img.height }};"
+                      >
+                    </div>
+                  {% endif %}
+
+                  {% comment %} Button {% endcomment %}
+                  {% if block.settings.button_text != blank %}
+                    <div class="dgf-hero-button" data-aos="fade-up" data-aos-delay="200">
+                      <a class="btn btn-bg" href="{{ block.settings.button_url }}">
+                        {{ block.settings.button_text }}
+                      </a>
+                    </div>
+                  {% endif %}
+
+                  {% comment %} Disclaimer {% endcomment %}
+                  {% if block.settings.disclaimer_text_desktop != blank or block.settings.disclaimer_text_mobile != blank %}
+                    <div class="dgf-hero-disclaimer">
+                      <span class="d-none d-md-block">{{ block.settings.disclaimer_text_desktop }}</span>
+                      <span class="d-md-none">{{ block.settings.disclaimer_text_mobile }}</span>
+                    </div>
+                  {% endif %}
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    {% endfor %}
+    </div>
+    <div class="banner-swiper-pagination"></div>
+  </div>
+  {%- if section.settings.show_social -%}
+    <div class="social-banner">
+        <span>{{ section.settings.text }}</span>
+        {%- if settings.social_instagram_link != blank -%}
+            <a href="{{ settings.social_instagram_link }}" aria-label="Follow us on Instagram" target="_blank" rel="noopener">{%- render 'icon-instagram' -%}</a>
+        {%- endif -%}
+         {%- if settings.social_facebook_link != blank -%}
+            <a href="{{ settings.social_facebook_link }}" aria-label="Follow us on Facebook" target="_blank" rel="noopener">{%- render 'icon-facebook' -%}</a>
+        {%- endif -%}
+        <a href="{{ section.settings.social_spotify_link }}" target="_blank" rel="noopener" aria-label="Listen on Spotify"><i class="fab fa-spotify"></i> </a>
+        {%- if settings.social_youtube_link != blank -%}
+            <a href="{{ settings.social_youtube_link }}" aria-label="Subscribe on YouTube" target="_blank" rel="noopener">{%- render 'icon-youtube' -%}</a>
+        {%- endif -%}
+        {%- if settings.social_twitter_link != blank -%}
+          <a href="{{ settings.social_twitter_link }}" aria-label="Follow us on Twitter" target="_blank" rel="noopener">{%- render 'icon-twitter' -%}</a>
+        {%- endif -%}
+
+        {%- if settings.social_pinterest_link != blank -%}
+            <a href="{{ settings.social_pinterest_link }}" aria-label="Follow us on Pinterest" target="_blank" rel="noopener">{%- render 'icon-pinterest' -%}</a>
+        {%- endif -%}
+
+
+        {%- if settings.social_tumblr_link != blank -%}
+            <a href="{{ settings.social_tumblr_link }}" aria-label="Follow us on Tumblr" target="_blank" rel="noopener">{%- render 'icon-tumblr' -%}</a>
+        {%- endif -%}
+        {%- if settings.social_snapchat_link != blank -%}
+            <a href="{{ settings.social_snapchat_link }}" aria-label="Follow us on Snapchat" target="_blank" rel="noopener">{%- render 'icon-snapchat' -%}</a>
+        {%- endif -%}
+
+        {%- if settings.social_vimeo_link != blank -%}
+            <a href="{{ settings.social_vimeo_link }}" aria-label="Watch us on Vimeo" target="_blank" rel="noopener">{%- render 'icon-vimeo' -%} </a>
+        {%- endif -%}
+    </div>
+  {% endif %}
+</section>
+{% comment %} RGD: 2026-01-20 {% endcomment %}
+{% # theme-check-disable ParserBlockingScript %}
+<script type="text/javascript" src="{{ 'jquery-3.5.1.min.js' | asset_url }}"></script>
+<script type="text/javascript" src="{{ 'swiper.min.js' | asset_url }}"></script>
+{% # theme-check-enable ParserBlockingScript %}
+<script>
+  try {
+    var $jq = jQuery.noConflict();
+    var mySwiper = new Swiper(".custom-slider-banner-wrap", {
+      spaceBetween: 1,
+      slidesPerView: 1,
+      loop: false,
+      loopAdditionalSlides: 30,
+      autoplay:
+      {
+        delay: 10000,
+      },
+      pagination: {
+        el: '.banner-swiper-pagination',
+        clickable: true,
+      }
+    });
+    $(document).ready(function() {
+         (function() {
+          var quotes = $(".custom-quotes");
+          var quoteIndex = -1;
+          function showNextQuote() {
+            ++quoteIndex;
+            quotes.eq(quoteIndex % quotes.length)
+              .fadeIn(1000)
+              .delay(2000)
+              .fadeOut(1000, showNextQuote);
+          }
+          showNextQuote();
+        })();
+    });
+  } catch (error) {
+    console.error('Error initializing dgf-hero-banner:', error);
+  }
+</script>
+
+{% schema %}
+  {
+    "name": "[DGF] Hero Banner",
+    "settings": [
+      {
+        "type": "header",
+        "content": "Content Settings"
+      },
+      {
+        "type": "header",
+        "content": "Social"
+      },
+      {
+        "type": "checkbox",
+        "id": "show_social",
+        "default": true,
+        "label": "Show social"
+      },
+      {
+        "type": "text",
+        "id": "text",
+        "label": "Text",
+        "default": "Visit"
+      },
+      {
+        "type": "text",
+        "id": "social_spotify_link",
+        "label": "Link Social spotify",
+        "default": "https://open.spotify.com/user/8yaaywq2a4gtbxl0w7csryv2o?si=28d61f70a2cc496c"
+      }
+    ],
+    "blocks": [
+      {
+        "type": "hero_slide",
+        "name": "Hero Slide",
+        "settings": [
+          {
+            "type": "header",
+            "content": "Background Images"
+          },
+          {
+            "type": "image_picker",
+            "id": "bg_desktop",
+            "label": "Background Desktop"
+          },
+          {
+            "type": "image_picker",
+            "id": "bg_mobile",
+            "label": "Background Mobile"
+          },
+          {
+            "type": "header",
+            "content": "Content Images"
+          },
+          {
+            "type": "image_picker",
+            "id": "image_desktop",
+            "label": "Image Desktop"
+          },
+          {
+            "type": "image_picker",
+            "id": "image_mobile",
+            "label": "Image Mobile"
+          },
+          {
+            "type": "text",
+            "id": "image_alt",
+            "label": "Image Alt Text",
+            "default": "Hero banner image"
+          },
+          {
+            "type": "header",
+            "content": "Button"
+          },
+          {
+            "type": "text",
+            "id": "button_text",
+            "label": "Button Text"
+          },
+          {
+            "type": "url",
+            "id": "button_url",
+            "label": "Button URL"
+          },
+          {
+            "type": "header",
+            "content": "Desktop Layout"
+          },
+          {
+            "type": "select",
+            "id": "align_horizontal_desktop",
+            "label": "Horizontal Alignment",
+            "options": [
+              {"value": "flex-start", "label": "Left"},
+              {"value": "center", "label": "Center"},
+              {"value": "flex-end", "label": "Right"}
+            ],
+            "default": "center"
+          },
+          {
+            "type": "header",
+            "content": "Desktop Padding"
+          },
+          {
+            "type": "range",
+            "id": "padding_top_desktop",
+            "min": 0,
+            "max": 200,
+            "step": 5,
+            "default": 0,
+            "label": "Padding Top (px)"
+          },
+          {
+            "type": "range",
+            "id": "padding_bottom_desktop",
+            "min": 0,
+            "max": 200,
+            "step": 5,
+            "default": 0,
+            "label": "Padding Bottom (px)"
+          },
+          {
+            "type": "range",
+            "id": "padding_left_desktop",
+            "min": 0,
+            "max": 200,
+            "step": 5,
+            "default": 0,
+            "label": "Padding Left (px)"
+          },
+          {
+            "type": "range",
+            "id": "padding_right_desktop",
+            "min": 0,
+            "max": 200,
+            "step": 5,
+            "default": 0,
+            "label": "Padding Right (px)"
+          },
+          {
+            "type": "header",
+            "content": "Desktop Button Position"
+          },
+          {
+            "type": "text",
+            "id": "button_top_desktop",
+            "label": "Top (%)",
+            "info": "Leave blank to not use. Example: 10 (for 10%)"
+          },
+          {
+            "type": "text",
+            "id": "button_bottom_desktop",
+            "label": "Bottom (%)",
+            "info": "Leave blank to not use. Example: 10 (for 10%)"
+          },
+          {
+            "type": "text",
+            "id": "button_left_desktop",
+            "label": "Left (%)",
+            "info": "Leave blank to not use. Example: 10 (for 10%)"
+          },
+          {
+            "type": "text",
+            "id": "button_right_desktop",
+            "label": "Right (%)",
+            "info": "Leave blank to not use. Example: 10 (for 10%)"
+          },
+          {
+            "type": "header",
+            "content": "Disclaimer Text"
+          },
+          {
+            "type": "richtext",
+            "id": "disclaimer_text_desktop",
+            "label": "Disclaimer Text (Desktop)"
+          },
+          {
+            "type": "richtext",
+            "id": "disclaimer_text_mobile",
+            "label": "Disclaimer Text (Mobile)"
+          },
+          {
+            "type": "header",
+            "content": "Desktop Disclaimer Position"
+          },
+          {
+            "type": "checkbox",
+            "id": "hide_disclaimer_desktop",
+            "label": "Hide Disclaimer on Desktop",
+            "default": false
+          },
+          {
+            "type": "text",
+            "id": "disclaimer_top_desktop",
+            "label": "Top (%)",
+            "info": "Leave blank to not use. Example: 10 (for 10%)"
+          },
+          {
+            "type": "text",
+            "id": "disclaimer_bottom_desktop",
+            "label": "Bottom (%)",
+            "info": "Leave blank to not use. Example: 10 (for 10%)"
+          },
+          {
+            "type": "text",
+            "id": "disclaimer_left_desktop",
+            "label": "Left (%)",
+            "info": "Leave blank to not use. Example: 10 (for 10%)"
+          },
+          {
+            "type": "text",
+            "id": "disclaimer_right_desktop",
+            "label": "Right (%)",
+            "info": "Leave blank to not use. Example: 10 (for 10%)"
+          },
+          {
+            "type": "header",
+            "content": "Disclaimer Typography"
+          },
+          {
+            "type": "select",
+            "id": "disclaimer_font_family",
+            "label": "Disclaimer font family",
+            "options": [
+              {"value": "HypatiaSansPro", "label": "Hypatia Sans Pro"},
+              {"value": "'Superior Title Italic'", "label": "Superior Title Italic"},
+              {"value": "inherit", "label": "Work Sans"}
+            ],
+            "default": "inherit"
+          },
+          {
+            "type": "range",
+            "id": "disclaimer_font_size_desktop",
+            "min": 8,
+            "max": 48,
+            "step": 1,
+            "default": 14,
+            "label": "Disclaimer font size (Desktop)",
+            "unit": "px"
+          },
+          {
+            "type": "range",
+            "id": "disclaimer_font_size_mobile",
+            "min": 8,
+            "max": 48,
+            "step": 1,
+            "default": 12,
+            "label": "Disclaimer font size (Mobile)",
+            "unit": "px"
+          },
+          {
+            "type": "color",
+            "id": "disclaimer_color",
+            "label": "Disclaimer color",
+            "default": "#000000"
+          },
+          {
+            "type": "select",
+            "id": "disclaimer_font_weight",
+            "label": "Disclaimer font weight",
+            "options": [
+              {"value": "300", "label": "Light"},
+              {"value": "400", "label": "Normal"},
+              {"value": "500", "label": "Medium"},
+              {"value": "600", "label": "Semi Bold"},
+              {"value": "700", "label": "Bold"}
+            ],
+            "default": "400"
+          },
+          {
+            "type": "header",
+            "content": "Mobile Layout"
+          },
+          {
+            "type": "select",
+            "id": "align_horizontal_mobile",
+            "label": "Horizontal Alignment",
+            "options": [
+              {"value": "flex-start", "label": "Left"},
+              {"value": "center", "label": "Center"},
+              {"value": "flex-end", "label": "Right"}
+            ],
+            "default": "center"
+          },
+          {
+            "type": "header",
+            "content": "Mobile Padding"
+          },
+          {
+            "type": "range",
+            "id": "padding_top_mobile",
+            "min": 0,
+            "max": 200,
+            "step": 5,
+            "default": 0,
+            "label": "Padding Top (px)"
+          },
+          {
+            "type": "range",
+            "id": "padding_bottom_mobile",
+            "min": 0,
+            "max": 200,
+            "step": 5,
+            "default": 0,
+            "label": "Padding Bottom (px)"
+          },
+          {
+            "type": "range",
+            "id": "padding_left_mobile",
+            "min": 0,
+            "max": 200,
+            "step": 5,
+            "default": 0,
+            "label": "Padding Left (px)"
+          },
+          {
+            "type": "range",
+            "id": "padding_right_mobile",
+            "min": 0,
+            "max": 200,
+            "step": 5,
+            "default": 0,
+            "label": "Padding Right (px)"
+          },
+          {
+            "type": "header",
+            "content": "Mobile Button Position"
+          },
+          {
+            "type": "text",
+            "id": "button_top_mobile",
+            "label": "Top (%)",
+            "info": "Leave blank to not use. Example: 10 (for 10%)"
+          },
+          {
+            "type": "text",
+            "id": "button_bottom_mobile",
+            "label": "Bottom (%)",
+            "info": "Leave blank to not use. Example: 10 (for 10%)"
+          },
+          {
+            "type": "text",
+            "id": "button_left_mobile",
+            "label": "Left (%)",
+            "info": "Leave blank to not use. Example: 10 (for 10%)"
+          },
+          {
+            "type": "text",
+            "id": "button_right_mobile",
+            "label": "Right (%)",
+            "info": "Leave blank to not use. Example: 10 (for 10%)"
+          },
+          {
+            "type": "header",
+            "content": "Mobile Disclaimer Position"
+          },
+          {
+            "type": "checkbox",
+            "id": "hide_disclaimer_mobile",
+            "label": "Hide Disclaimer on Mobile",
+            "default": false
+          },
+          {
+            "type": "text",
+            "id": "disclaimer_top_mobile",
+            "label": "Top (%)",
+            "info": "Leave blank to not use. Example: 10 (for 10%)"
+          },
+          {
+            "type": "text",
+            "id": "disclaimer_bottom_mobile",
+            "label": "Bottom (%)",
+            "info": "Leave blank to not use. Example: 10 (for 10%)"
+          },
+          {
+            "type": "text",
+            "id": "disclaimer_left_mobile",
+            "label": "Left (%)",
+            "info": "Leave blank to not use. Example: 10 (for 10%)"
+          },
+          {
+            "type": "text",
+            "id": "disclaimer_right_mobile",
+            "label": "Right (%)",
+            "info": "Leave blank to not use. Example: 10 (for 10%)"
+          }
+        ]
+      }
+    ],
+    "presets": [{
+      "name": "[DGF] Promo Hero Banner"
+    }]
+  }
+{% endschema %}
+
+{% stylesheet %}
+{% endstylesheet %}
+
+{% javascript %}
+{% endjavascript %}

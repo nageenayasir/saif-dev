@@ -1,0 +1,884 @@
+{% comment %}
+  [DGF] Text-CTA-Image
+  Author: Rodrigo Gesser
+{% endcomment %}
+
+{% liquid
+  assign bg_color = section.settings.background_color | default: '#ffffff'
+
+  assign left_bg_color = section.settings.left_bg_color | default: '#4A6B5D'
+  assign right_bg_color = section.settings.right_bg_color | default: '#F5EDE3'
+
+  assign col_title_font = section.settings.col_title_font | default: 'HypatiaSansPro'
+  assign col_title_font_size = section.settings.col_title_font_size | default: 22
+  assign col_title_font_size_mobile = section.settings.col_title_font_size_mobile | default: 18
+  assign col_title_font_weight = section.settings.col_title_font_weight | default: '700'
+  assign col_title_transform = section.settings.col_title_transform | default: 'uppercase'
+  assign left_title_color = section.settings.left_title_color | default: '#ffffff'
+  assign right_title_color = section.settings.right_title_color | default: '#333333'
+  assign col_title_margin_bottom = section.settings.col_title_margin_bottom | default: 20
+
+  assign item_text_font = section.settings.item_text_font | default: 'HypatiaSansPro'
+  assign item_text_font_size = section.settings.item_text_font_size | default: 15
+  assign item_text_font_size_mobile = section.settings.item_text_font_size_mobile | default: 14
+  assign item_text_font_weight = section.settings.item_text_font_weight | default: '400'
+  assign item_text_transform = section.settings.item_text_transform | default: 'none'
+  assign left_item_color = section.settings.left_item_color | default: '#ffffff'
+  assign right_item_color = section.settings.right_item_color | default: '#333333'
+
+  assign button_font = section.settings.button_font | default: 'HypatiaSansPro'
+  assign button_font_size = section.settings.button_font_size | default: 18
+  assign button_font_size_mobile = section.settings.button_font_size_mobile | default: 15
+  assign button_bg_color = section.settings.button_bg_color | default: '#AC853B'
+  assign button_text_color = section.settings.button_text_color | default: '#ffffff'
+
+  assign icon_size = section.settings.icon_size | default: 16
+  assign item_gap = section.settings.item_gap | default: 12
+  assign columns_border_radius = section.settings.columns_border_radius | default: 12
+  assign columns_padding = section.settings.columns_padding | default: 30
+  assign columns_gap = section.settings.columns_gap | default: 0
+
+  assign padding_top = section.settings.padding_top | default: 0
+  assign padding_bottom = section.settings.padding_bottom | default: 0
+  assign padding_left = section.settings.padding_left | default: 0
+  assign padding_right = section.settings.padding_right | default: 0
+
+  assign sid = section.id
+%}
+
+<section id="dgf-tci-{{ sid }}" style="background-color: {{ bg_color }};">
+  <div class="dgf-tci-wrapper">
+    <!-- Columns -->
+    <div class="dgf-tci-columns">
+      <div class="dgf-tci-col dgf-tci-col-left" style="background-color: {{ left_bg_color }};">
+        {% if section.settings.left_title != blank %}
+          <div class="dgf-tci-col-title dgf-tci-col-title-left">{{ section.settings.left_title }}</div>
+        {% endif %}
+        <ul class="dgf-tci-list">
+          {% for block in section.blocks %}
+            {% if block.settings.column == 'left' %}
+              <li class="dgf-tci-item" {{ block.shopify_attributes }}>
+                {% if block.settings.icon != blank %}
+                  <span class="dgf-tci-icon">
+                    <img
+                      class="lazyload"
+                      data-src="{{ block.settings.icon | image_url: width: 64 }}"
+                      alt=""
+                      width="{{ icon_size }}"
+                      height="{{ icon_size }}"
+                    >
+                  </span>
+                {% endif %}
+                {% if block.settings.text != blank %}
+                  <span class="dgf-tci-item-text">{{ block.settings.text }}</span>
+                {% endif %}
+              </li>
+            {% endif %}
+          {% endfor %}
+        </ul>
+
+      </div>
+
+      <div class="dgf-tci-col dgf-tci-col-right" style="background-color: {{ right_bg_color }};">
+        {% if section.settings.right_title != blank %}
+          <div class="dgf-tci-col-title dgf-tci-col-title-right">{{ section.settings.right_title }}</div>
+        {% endif %}
+        <ul class="dgf-tci-list">
+          {% for block in section.blocks %}
+            {% if block.settings.column == 'right' %}
+              <li class="dgf-tci-item" {{ block.shopify_attributes }}>
+                {% if block.settings.icon != blank %}
+                  <span class="dgf-tci-icon">
+                    <img
+                      class="lazyload"
+                      data-src="{{ block.settings.icon | image_url: width: 64 }}"
+                      alt=""
+                      width="{{ icon_size }}"
+                      height="{{ icon_size }}"
+                    >
+                  </span>
+                {% endif %}
+                {% if block.settings.text != blank %}
+                  <span class="dgf-tci-item-text">{{ block.settings.text }}</span>
+                {% endif %}
+              </li>
+            {% endif %}
+          {% endfor %}
+        </ul>
+        <!-- Mobile CTA Button (inside left column) -->
+          {% if section.settings.button_text_mobile != blank %}
+          <div class="dgf-tci-cta-mobile d-block d-md-none">
+            <a href="{{ section.settings.button_url }}" class="btn btn-bg">{{ section.settings.button_text_mobile }}</a>
+          </div>
+        {% endif %}
+      </div>
+    </div>
+
+    <!-- Desktop CTA -->
+    {% if section.settings.button_text != blank %}
+      <div class="dgf-tci-cta d-none d-md-block">
+        <a href="{{ section.settings.button_url }}" class="btn btn-bg">{{ section.settings.button_text }}</a>
+      </div>
+    {% endif %}
+
+    <!-- Bottom Image -->
+    {% if section.settings.bottom_image != blank %}
+      <div class="dgf-tci-bottom-image">
+        <img
+          class="lazyload"
+          data-src="{{ section.settings.bottom_image | image_url: width: 1600 }}"
+          alt="{{ section.settings.bottom_image.alt | default: '' }}"
+          width="1600"
+          height="{{ 1600 | divided_by: section.settings.bottom_image.aspect_ratio | round }}"
+        >
+      </div>
+    {% endif %}
+  </div>
+</section>
+
+<style>
+  #dgf-tci-{{ sid }} {
+    padding-top: {{ padding_top }}px;
+    padding-bottom: {{ padding_bottom }}px;
+    padding-left: {{ padding_left }}px;
+    padding-right: {{ padding_right }}px;
+  }
+
+  #dgf-tci-{{ sid }} .dgf-tci-wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  /* Columns */
+  #dgf-tci-{{ sid }} .dgf-tci-columns {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    gap: {{ columns_gap }}px;
+  }
+
+  #dgf-tci-{{ sid }} .dgf-tci-col {
+    flex: 1;
+    padding: 3rem 3rem 4rem 3rem;
+  }
+
+  #dgf-tci-{{ sid }} .dgf-tci-col-left {
+    border-radius: {{ columns_border_radius }}px 0 0 0;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+  }
+
+  #dgf-tci-{{ sid }} .dgf-tci-col-right {
+    border-radius: 0 {{ columns_border_radius }}px 0 0;
+  }
+
+  /* Column Titles */
+  #dgf-tci-{{ sid }} .dgf-tci-col-title,
+  #dgf-tci-{{ sid }} .dgf-tci-col-title h1,
+  #dgf-tci-{{ sid }} .dgf-tci-col-title h2,
+  #dgf-tci-{{ sid }} .dgf-tci-col-title h3,
+  #dgf-tci-{{ sid }} .dgf-tci-col-title h4,
+  #dgf-tci-{{ sid }} .dgf-tci-col-title h5,
+  #dgf-tci-{{ sid }} .dgf-tci-col-title h6,
+  #dgf-tci-{{ sid }} .dgf-tci-col-title p,
+  #dgf-tci-{{ sid }} .dgf-tci-col-title span,
+  #dgf-tci-{{ sid }} .dgf-tci-col-title strong,
+  #dgf-tci-{{ sid }} .dgf-tci-col-title em,
+  #dgf-tci-{{ sid }} .dgf-tci-col-title i,
+  #dgf-tci-{{ sid }} .dgf-tci-col-title u,
+  #dgf-tci-{{ sid }} .dgf-tci-col-title a {
+    font-family: {{ col_title_font }} !important;
+    font-size: {{ col_title_font_size }}px !important;
+    font-weight: {{ col_title_font_weight }} !important;
+    text-transform: {{ col_title_transform }} !important;
+    line-height: 1.2 !important;
+    margin: 0;
+  }
+
+  #dgf-tci-{{ sid }} .dgf-tci-col-title {
+    margin-bottom: {{ col_title_margin_bottom }}px !important;
+  }
+
+  #dgf-tci-{{ sid }} .dgf-tci-col-title-left,
+  #dgf-tci-{{ sid }} .dgf-tci-col-title-left h1,
+  #dgf-tci-{{ sid }} .dgf-tci-col-title-left h2,
+  #dgf-tci-{{ sid }} .dgf-tci-col-title-left h3,
+  #dgf-tci-{{ sid }} .dgf-tci-col-title-left h4,
+  #dgf-tci-{{ sid }} .dgf-tci-col-title-left h5,
+  #dgf-tci-{{ sid }} .dgf-tci-col-title-left h6,
+  #dgf-tci-{{ sid }} .dgf-tci-col-title-left p,
+  #dgf-tci-{{ sid }} .dgf-tci-col-title-left span,
+  #dgf-tci-{{ sid }} .dgf-tci-col-title-left strong,
+  #dgf-tci-{{ sid }} .dgf-tci-col-title-left em,
+  #dgf-tci-{{ sid }} .dgf-tci-col-title-left i,
+  #dgf-tci-{{ sid }} .dgf-tci-col-title-left u,
+  #dgf-tci-{{ sid }} .dgf-tci-col-title-left a {
+    color: {{ left_title_color }} !important;
+  }
+
+  #dgf-tci-{{ sid }} .dgf-tci-col-title-right,
+  #dgf-tci-{{ sid }} .dgf-tci-col-title-right h1,
+  #dgf-tci-{{ sid }} .dgf-tci-col-title-right h2,
+  #dgf-tci-{{ sid }} .dgf-tci-col-title-right h3,
+  #dgf-tci-{{ sid }} .dgf-tci-col-title-right h4,
+  #dgf-tci-{{ sid }} .dgf-tci-col-title-right h5,
+  #dgf-tci-{{ sid }} .dgf-tci-col-title-right h6,
+  #dgf-tci-{{ sid }} .dgf-tci-col-title-right p,
+  #dgf-tci-{{ sid }} .dgf-tci-col-title-right span,
+  #dgf-tci-{{ sid }} .dgf-tci-col-title-right strong,
+  #dgf-tci-{{ sid }} .dgf-tci-col-title-right em,
+  #dgf-tci-{{ sid }} .dgf-tci-col-title-right i,
+  #dgf-tci-{{ sid }} .dgf-tci-col-title-right u,
+  #dgf-tci-{{ sid }} .dgf-tci-col-title-right a {
+    color: {{ right_title_color }} !important;
+  }
+
+  /* List */
+  #dgf-tci-{{ sid }} .dgf-tci-list {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    gap: {{ item_gap }}px;
+    width: 100%;
+  }
+
+  #dgf-tci-{{ sid }} .dgf-tci-col-left .dgf-tci-col-title,
+  #dgf-tci-{{ sid }} .dgf-tci-col-left .dgf-tci-list {
+    max-width: 600px;
+    width: 100%;
+  }
+
+  #dgf-tci-{{ sid }} .dgf-tci-item {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    gap: 10px;
+  }
+
+  #dgf-tci-{{ sid }} .dgf-tci-icon {
+    flex-shrink: 0;
+    width: {{ icon_size }}px;
+    height: {{ icon_size }}px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 3px;
+  }
+
+  #dgf-tci-{{ sid }} .dgf-tci-icon img {
+    width: {{ icon_size }}px;
+    height: {{ icon_size }}px;
+    object-fit: contain;
+    display: block;
+  }
+
+  /* Item Text */
+  #dgf-tci-{{ sid }} .dgf-tci-item-text,
+  #dgf-tci-{{ sid }} .dgf-tci-item-text h1,
+  #dgf-tci-{{ sid }} .dgf-tci-item-text h2,
+  #dgf-tci-{{ sid }} .dgf-tci-item-text h3,
+  #dgf-tci-{{ sid }} .dgf-tci-item-text h4,
+  #dgf-tci-{{ sid }} .dgf-tci-item-text h5,
+  #dgf-tci-{{ sid }} .dgf-tci-item-text h6,
+  #dgf-tci-{{ sid }} .dgf-tci-item-text p,
+  #dgf-tci-{{ sid }} .dgf-tci-item-text span,
+  #dgf-tci-{{ sid }} .dgf-tci-item-text strong,
+  #dgf-tci-{{ sid }} .dgf-tci-item-text em,
+  #dgf-tci-{{ sid }} .dgf-tci-item-text i,
+  #dgf-tci-{{ sid }} .dgf-tci-item-text u,
+  #dgf-tci-{{ sid }} .dgf-tci-item-text a {
+    font-family: {{ item_text_font }} !important;
+    font-size: {{ item_text_font_size }}px !important;
+    font-weight: {{ item_text_font_weight }} !important;
+    text-transform: {{ item_text_transform }} !important;
+    line-height: 1.4 !important;
+    margin: 0;
+  }
+
+  #dgf-tci-{{ sid }} .dgf-tci-col-left .dgf-tci-item-text,
+  #dgf-tci-{{ sid }} .dgf-tci-col-left .dgf-tci-item-text h1,
+  #dgf-tci-{{ sid }} .dgf-tci-col-left .dgf-tci-item-text h2,
+  #dgf-tci-{{ sid }} .dgf-tci-col-left .dgf-tci-item-text h3,
+  #dgf-tci-{{ sid }} .dgf-tci-col-left .dgf-tci-item-text h4,
+  #dgf-tci-{{ sid }} .dgf-tci-col-left .dgf-tci-item-text h5,
+  #dgf-tci-{{ sid }} .dgf-tci-col-left .dgf-tci-item-text h6,
+  #dgf-tci-{{ sid }} .dgf-tci-col-left .dgf-tci-item-text p,
+  #dgf-tci-{{ sid }} .dgf-tci-col-left .dgf-tci-item-text span,
+  #dgf-tci-{{ sid }} .dgf-tci-col-left .dgf-tci-item-text strong,
+  #dgf-tci-{{ sid }} .dgf-tci-col-left .dgf-tci-item-text em,
+  #dgf-tci-{{ sid }} .dgf-tci-col-left .dgf-tci-item-text i,
+  #dgf-tci-{{ sid }} .dgf-tci-col-left .dgf-tci-item-text u,
+  #dgf-tci-{{ sid }} .dgf-tci-col-left .dgf-tci-item-text a {
+    color: {{ left_item_color }} !important;
+  }
+
+  #dgf-tci-{{ sid }} .dgf-tci-col-right .dgf-tci-item-text,
+  #dgf-tci-{{ sid }} .dgf-tci-col-right .dgf-tci-item-text h1,
+  #dgf-tci-{{ sid }} .dgf-tci-col-right .dgf-tci-item-text h2,
+  #dgf-tci-{{ sid }} .dgf-tci-col-right .dgf-tci-item-text h3,
+  #dgf-tci-{{ sid }} .dgf-tci-col-right .dgf-tci-item-text h4,
+  #dgf-tci-{{ sid }} .dgf-tci-col-right .dgf-tci-item-text h5,
+  #dgf-tci-{{ sid }} .dgf-tci-col-right .dgf-tci-item-text h6,
+  #dgf-tci-{{ sid }} .dgf-tci-col-right .dgf-tci-item-text p,
+  #dgf-tci-{{ sid }} .dgf-tci-col-right .dgf-tci-item-text span,
+  #dgf-tci-{{ sid }} .dgf-tci-col-right .dgf-tci-item-text strong,
+  #dgf-tci-{{ sid }} .dgf-tci-col-right .dgf-tci-item-text em,
+  #dgf-tci-{{ sid }} .dgf-tci-col-right .dgf-tci-item-text i,
+  #dgf-tci-{{ sid }} .dgf-tci-col-right .dgf-tci-item-text u,
+  #dgf-tci-{{ sid }} .dgf-tci-col-right .dgf-tci-item-text a {
+    color: {{ right_item_color }} !important;
+  }
+
+  /* CTA Button */
+  #dgf-tci-{{ sid }} .dgf-tci-cta {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    position: relative;
+    z-index: 2;
+    margin-top: -31px;
+    margin-bottom: -24px;
+    text-align: center;
+  }
+
+  #dgf-tci-{{ sid }} .dgf-tci-cta .btn {
+    background: linear-gradient(101.4deg, {{ button_bg_color }} 26.01%, {{ button_bg_color | color_lighten: 10 }} 68.58%);
+    color: {{ button_text_color }} !important;
+    font-family: {{ button_font }} !important;
+    font-size: {{ button_font_size }}px !important;
+    font-weight: 700 !important;
+    text-transform: uppercase;
+    width: 426px !important;
+    line-height: 1!important;
+    border: none;
+    letter-spacing: 1px;
+    text-decoration: none;
+    display: inline-block;
+    text-align: center;
+  }
+
+  /* Mobile CTA */
+  #dgf-tci-{{ sid }} .dgf-tci-cta-mobile {
+    margin-top: 20px;
+    display: flex;
+    justify-content: center;
+  }
+
+  #dgf-tci-{{ sid }} .dgf-tci-cta-mobile .btn {
+    background: linear-gradient(101.4deg, {{ button_bg_color }} 26.01%, {{ button_bg_color | color_lighten: 10 }} 68.58%);
+    color: {{ button_text_color }} !important;
+    font-family: {{ button_font }} !important;
+    font-size: {{ button_font_size }}px !important;
+    font-weight: 700 !important;
+    text-transform: uppercase;
+    width: 100% !important;
+    max-width: 368px;
+    line-height: 1.6!important;
+    border: none;
+    letter-spacing: 1px;
+    text-decoration: none;
+    display: inline-block;
+    text-align: center;
+    padding: 14px 24px;
+  }
+
+  /* Bottom Image */
+  #dgf-tci-{{ sid }} .dgf-tci-bottom-image {
+    width: 100%;
+    line-height: 0;
+  }
+
+  #dgf-tci-{{ sid }} .dgf-tci-bottom-image img {
+    width: 100%;
+    height: 100%;
+    display: block;
+    object-fit: cover;
+  }
+
+  /* Mobile */
+  @media (max-width: 768px) {
+    #dgf-tci-{{ sid }} .dgf-tci-columns {
+      flex-direction: column;
+    }
+
+    #dgf-tci-{{ sid }} .dgf-tci-col-left {
+      border-radius: {{ columns_border_radius }}px {{ columns_border_radius }}px 0 0;
+    }
+
+    #dgf-tci-{{ sid }} .dgf-tci-col-right {
+      border-radius: 0;
+    }
+
+    #dgf-tci-{{ sid }} .dgf-tci-col-title,
+    #dgf-tci-{{ sid }} .dgf-tci-col-title h1,
+    #dgf-tci-{{ sid }} .dgf-tci-col-title h2,
+    #dgf-tci-{{ sid }} .dgf-tci-col-title h3,
+    #dgf-tci-{{ sid }} .dgf-tci-col-title h4,
+    #dgf-tci-{{ sid }} .dgf-tci-col-title h5,
+    #dgf-tci-{{ sid }} .dgf-tci-col-title h6,
+    #dgf-tci-{{ sid }} .dgf-tci-col-title p,
+    #dgf-tci-{{ sid }} .dgf-tci-col-title span,
+    #dgf-tci-{{ sid }} .dgf-tci-col-title strong,
+    #dgf-tci-{{ sid }} .dgf-tci-col-title em,
+    #dgf-tci-{{ sid }} .dgf-tci-col-title i,
+    #dgf-tci-{{ sid }} .dgf-tci-col-title u,
+    #dgf-tci-{{ sid }} .dgf-tci-col-title a {
+      font-size: {{ col_title_font_size_mobile }}px !important;
+    }
+
+    #dgf-tci-{{ sid }} .dgf-tci-item-text,
+    #dgf-tci-{{ sid }} .dgf-tci-item-text h1,
+    #dgf-tci-{{ sid }} .dgf-tci-item-text h2,
+    #dgf-tci-{{ sid }} .dgf-tci-item-text h3,
+    #dgf-tci-{{ sid }} .dgf-tci-item-text h4,
+    #dgf-tci-{{ sid }} .dgf-tci-item-text h5,
+    #dgf-tci-{{ sid }} .dgf-tci-item-text h6,
+    #dgf-tci-{{ sid }} .dgf-tci-item-text p,
+    #dgf-tci-{{ sid }} .dgf-tci-item-text span,
+    #dgf-tci-{{ sid }} .dgf-tci-item-text strong,
+    #dgf-tci-{{ sid }} .dgf-tci-item-text em,
+    #dgf-tci-{{ sid }} .dgf-tci-item-text i,
+    #dgf-tci-{{ sid }} .dgf-tci-item-text u,
+    #dgf-tci-{{ sid }} .dgf-tci-item-text a {
+      font-size: {{ item_text_font_size_mobile }}px !important;
+    }
+
+    #dgf-tci-{{ sid }} .dgf-tci-cta .btn {
+      font-size: {{ button_font_size_mobile }}px !important;
+      width: 100% !important;
+      max-width: 368px;
+    }
+
+    #dgf-tci-{{ sid }} .dgf-tci-cta-mobile .btn {
+      font-size: {{ button_font_size_mobile }}px !important;
+    }
+
+    #dgf-tci-{{ sid }} .dgf-tci-col {
+    flex: 1;
+    padding: 3rem 3rem 2rem 3rem;
+  }
+  #dgf-tci-{{ sid }} .dgf-tci-bottom-image{
+    height: 229px;
+  }
+  
+  }
+</style>
+
+{% schema %}
+  {
+    "name": "[DGF] Text-CTA-Image",
+    "tag": "section",
+    "class": "section",
+    "settings": [
+      {
+        "type": "header",
+        "content": "Content"
+      },
+      {
+        "type": "html",
+        "id": "left_title",
+        "label": "Left Column Title (HTML)"
+      },
+      {
+        "type": "html",
+        "id": "right_title",
+        "label": "Right Column Title (HTML)"
+      },
+      {
+        "type": "color",
+        "id": "background_color",
+        "label": "Section Background Color",
+        "default": "#ffffff"
+      },
+      {
+        "type": "header",
+        "content": "Column Styling"
+      },
+      {
+        "type": "color",
+        "id": "left_bg_color",
+        "label": "Left Column Background",
+        "default": "#4A6B5D"
+      },
+      {
+        "type": "color",
+        "id": "right_bg_color",
+        "label": "Right Column Background",
+        "default": "#F5EDE3"
+      },
+      {
+        "type": "range",
+        "id": "columns_border_radius",
+        "label": "Columns Border Radius",
+        "min": 0,
+        "max": 30,
+        "step": 1,
+        "default": 12,
+        "unit": "px"
+      },
+      {
+        "type": "range",
+        "id": "columns_gap",
+        "label": "Gap Between Columns",
+        "min": 0,
+        "max": 30,
+        "step": 1,
+        "default": 0,
+        "unit": "px"
+      },
+      {
+        "type": "header",
+        "content": "Column Title Font"
+      },
+      {
+        "type": "select",
+        "id": "col_title_font",
+        "label": "Column Title Font Family",
+        "options": [
+          { "value": "HypatiaSansPro", "label": "Hypatia Sans Pro" },
+          { "value": "'Superior Title Italic'", "label": "Superior Title Italic" },
+          { "value": "inherit", "label": "Inherit" }
+        ],
+        "default": "HypatiaSansPro"
+      },
+      {
+        "type": "range",
+        "id": "col_title_font_size",
+        "label": "Column Title Font Size (Desktop)",
+        "min": 12,
+        "max": 60,
+        "step": 1,
+        "default": 22,
+        "unit": "px"
+      },
+      {
+        "type": "range",
+        "id": "col_title_font_size_mobile",
+        "label": "Column Title Font Size (Mobile)",
+        "min": 12,
+        "max": 40,
+        "step": 1,
+        "default": 18,
+        "unit": "px"
+      },
+      {
+        "type": "select",
+        "id": "col_title_font_weight",
+        "label": "Column Title Font Weight",
+        "options": [
+          { "value": "400", "label": "Normal" },
+          { "value": "600", "label": "Semi Bold" },
+          { "value": "700", "label": "Bold" },
+          { "value": "800", "label": "Extra Bold" }
+        ],
+        "default": "700"
+      },
+      {
+        "type": "select",
+        "id": "col_title_transform",
+        "label": "Column Title Text Transform",
+        "options": [
+          { "value": "none", "label": "None" },
+          { "value": "uppercase", "label": "Uppercase" },
+          { "value": "lowercase", "label": "Lowercase" },
+          { "value": "capitalize", "label": "Capitalize" }
+        ],
+        "default": "uppercase"
+      },
+      {
+        "type": "color",
+        "id": "left_title_color",
+        "label": "Left Column Title Color",
+        "default": "#ffffff"
+      },
+      {
+        "type": "color",
+        "id": "right_title_color",
+        "label": "Right Column Title Color",
+        "default": "#333333"
+      },
+      {
+        "type": "range",
+        "id": "col_title_margin_bottom",
+        "label": "Column Title Margin Bottom",
+        "min": 0,
+        "max": 60,
+        "step": 1,
+        "default": 20,
+        "unit": "px"
+      },
+      {
+        "type": "header",
+        "content": "Item Text Font"
+      },
+      {
+        "type": "select",
+        "id": "item_text_font",
+        "label": "Item Text Font Family",
+        "options": [
+          { "value": "HypatiaSansPro", "label": "Hypatia Sans Pro" },
+          { "value": "'Superior Title Italic'", "label": "Superior Title Italic" },
+          { "value": "inherit", "label": "Inherit" }
+        ],
+        "default": "HypatiaSansPro"
+      },
+      {
+        "type": "range",
+        "id": "item_text_font_size",
+        "label": "Item Text Font Size (Desktop)",
+        "min": 10,
+        "max": 40,
+        "step": 1,
+        "default": 15,
+        "unit": "px"
+      },
+      {
+        "type": "range",
+        "id": "item_text_font_size_mobile",
+        "label": "Item Text Font Size (Mobile)",
+        "min": 10,
+        "max": 30,
+        "step": 1,
+        "default": 14,
+        "unit": "px"
+      },
+      {
+        "type": "select",
+        "id": "item_text_font_weight",
+        "label": "Item Text Font Weight",
+        "options": [
+          { "value": "400", "label": "Normal" },
+          { "value": "600", "label": "Semi Bold" },
+          { "value": "700", "label": "Bold" },
+          { "value": "800", "label": "Extra Bold" }
+        ],
+        "default": "400"
+      },
+      {
+        "type": "select",
+        "id": "item_text_transform",
+        "label": "Item Text Transform",
+        "options": [
+          { "value": "none", "label": "None" },
+          { "value": "uppercase", "label": "Uppercase" },
+          { "value": "lowercase", "label": "Lowercase" },
+          { "value": "capitalize", "label": "Capitalize" }
+        ],
+        "default": "none"
+      },
+      {
+        "type": "color",
+        "id": "left_item_color",
+        "label": "Left Column Item Color",
+        "default": "#ffffff"
+      },
+      {
+        "type": "color",
+        "id": "right_item_color",
+        "label": "Right Column Item Color",
+        "default": "#333333"
+      },
+      {
+        "type": "range",
+        "id": "icon_size",
+        "label": "Icon Size",
+        "min": 8,
+        "max": 40,
+        "step": 1,
+        "default": 16,
+        "unit": "px"
+      },
+      {
+        "type": "range",
+        "id": "item_gap",
+        "label": "Gap Between Items",
+        "min": 0,
+        "max": 30,
+        "step": 1,
+        "default": 12,
+        "unit": "px"
+      },
+      {
+        "type": "header",
+        "content": "CTA Button"
+      },
+      {
+        "type": "text",
+        "id": "button_text",
+        "label": "Button Text",
+        "default": "ORDER NOW"
+      },
+      {
+        "type": "text",
+        "id": "button_text_mobile",
+        "label": "Button Text (Mobile)",
+        "info": "Button shown at the end of left column on mobile"
+      },
+      {
+        "type": "url",
+        "id": "button_url",
+        "label": "Button URL"
+      },
+      {
+        "type": "select",
+        "id": "button_font",
+        "label": "Button Font Family",
+        "options": [
+          { "value": "HypatiaSansPro", "label": "Hypatia Sans Pro" },
+          { "value": "'Superior Title Italic'", "label": "Superior Title Italic" },
+          { "value": "inherit", "label": "Inherit" }
+        ],
+        "default": "HypatiaSansPro"
+      },
+      {
+        "type": "range",
+        "id": "button_font_size",
+        "label": "Button Font Size (Desktop)",
+        "min": 12,
+        "max": 40,
+        "step": 1,
+        "default": 18,
+        "unit": "px"
+      },
+      {
+        "type": "range",
+        "id": "button_font_size_mobile",
+        "label": "Button Font Size (Mobile)",
+        "min": 12,
+        "max": 30,
+        "step": 1,
+        "default": 15,
+        "unit": "px"
+      },
+      {
+        "type": "color",
+        "id": "button_bg_color",
+        "label": "Button Background Color",
+        "default": "#AC853B"
+      },
+      {
+        "type": "color",
+        "id": "button_text_color",
+        "label": "Button Text Color",
+        "default": "#ffffff"
+      },
+      {
+        "type": "header",
+        "content": "Bottom Image"
+      },
+      {
+        "type": "image_picker",
+        "id": "bottom_image",
+        "label": "Bottom Image"
+      },
+      {
+        "type": "header",
+        "content": "Spacing"
+      },
+      {
+        "type": "range",
+        "id": "padding_top",
+        "label": "Padding Top",
+        "min": 0,
+        "max": 150,
+        "step": 5,
+        "default": 0,
+        "unit": "px"
+      },
+      {
+        "type": "range",
+        "id": "padding_bottom",
+        "label": "Padding Bottom",
+        "min": 0,
+        "max": 150,
+        "step": 5,
+        "default": 0,
+        "unit": "px"
+      },
+      {
+        "type": "range",
+        "id": "padding_left",
+        "label": "Padding Left",
+        "min": 0,
+        "max": 150,
+        "step": 5,
+        "default": 0,
+        "unit": "px"
+      },
+      {
+        "type": "range",
+        "id": "padding_right",
+        "label": "Padding Right",
+        "min": 0,
+        "max": 150,
+        "step": 5,
+        "default": 0,
+        "unit": "px"
+      }
+    ],
+    "blocks": [
+      {
+        "type": "item",
+        "name": "List Item",
+        "limit": 20,
+        "settings": [
+          {
+            "type": "select",
+            "id": "column",
+            "label": "Column",
+            "options": [
+              { "value": "left", "label": "Left" },
+              { "value": "right", "label": "Right" }
+            ],
+            "default": "left"
+          },
+          {
+            "type": "image_picker",
+            "id": "icon",
+            "label": "Icon Image"
+          },
+          {
+            "type": "html",
+            "id": "text",
+            "label": "Item Text (HTML)"
+          }
+        ]
+      }
+    ],
+    "presets": [
+      {
+        "name": "[DGF] Text-CTA-Image",
+        "blocks": [
+          {
+            "type": "item",
+            "settings": {
+              "column": "left"
+            }
+          },
+          {
+            "type": "item",
+            "settings": {
+              "column": "left"
+            }
+          },
+          {
+            "type": "item",
+            "settings": {
+              "column": "right"
+            }
+          },
+          {
+            "type": "item",
+            "settings": {
+              "column": "right"
+            }
+          }
+        ]
+      }
+    ]
+  }
+{% endschema %}

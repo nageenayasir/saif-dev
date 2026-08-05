@@ -1,0 +1,804 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "3895d52f-391f-4fc3-83b9-e927850fff64": {
+      "type": "product-breadcrumbs",
+      "settings": {
+        "enable_breadcrumb": true
+      }
+    },
+    "main": {
+      "type": "main-product",
+      "blocks": {
+        "title": {
+          "type": "title",
+          "settings": {}
+        },
+        "dd7dc177-421d-4ef9-836f-824c3f8cd416": {
+          "type": "shopify://apps/judge-me-reviews/blocks/preview_badge/61ccd3b1-a9f2-4160-9fe9-4fec8413e5d8",
+          "settings": {}
+        },
+        "fe62f623-9b51-4ed6-89bc-4657f1807ce3": {
+          "type": "product_certified_icon",
+          "settings": {}
+        },
+        "448a1729-1ecf-429f-8a46-bf6bf47d225e": {
+          "type": "category",
+          "disabled": true,
+          "settings": {}
+        },
+        "c7b1b4a3-47b1-4b56-8c96-ad46b18d147f": {
+          "type": "custom_html",
+          "settings": {
+            "custom_html": "<div id=\"move-faq-button-top\"></div>"
+          }
+        },
+        "17b987e1-d0a0-4f7b-9f5d-54bd8de977a7": {
+          "type": "custom_liquid",
+          "settings": {
+            "custom_liquid": "<div class=\"desc\" >{{product.metafields.custom.description | newline_to_br }}</div>"
+          }
+        },
+        "custom_text_GHfVP4": {
+          "type": "custom_text",
+          "settings": {
+            "choose_size": "Choose Your Size",
+            "choose_price": "Choose Your Price"
+          }
+        },
+        "price": {
+          "type": "price",
+          "settings": {
+            "show_tax": false
+          }
+        },
+        "3dc49f32-d5ad-428e-9f65-918e0c827b0b": {
+          "type": "shopify://apps/sezzle-widget/blocks/widget-block/f3a53793-e118-4764-a86b-a79bfedb0d5f",
+          "disabled": true,
+          "settings": {
+            "heading": "Sezzle Widget",
+            "font_size": 14,
+            "font_family": "inherit"
+          }
+        },
+        "variant_picker": {
+          "type": "variant_picker",
+          "settings": {
+            "picker_type": "button"
+          }
+        },
+        "a090f462-42e0-4dc4-8658-c1be040d0c37": {
+          "type": "custom_liquid",
+          "settings": {
+            "custom_liquid": "<div class=\"desc\">{{product.metafields.custom.content | newline_to_br }}</div>"
+          }
+        },
+        "quantity_selector": {
+          "type": "quantity_selector",
+          "settings": {
+            "text": "Quantity"
+          }
+        },
+        "buy_buttons": {
+          "type": "buy_buttons",
+          "settings": {
+            "show_dynamic_checkout": false
+          }
+        },
+        "149c08bd-ddf9-455a-8c1a-9cd5f5f18af9": {
+          "type": "custom_icon",
+          "settings": {
+            "face_svg": true,
+            "icon_text_1": "100% money-back guarantee*",
+            "delivery_svg": true,
+            "icon_text_2": "Free US shipping over $75"
+          }
+        },
+        "2e446f18-a693-4f69-9de4-aa8ac8de76c9": {
+          "type": "social",
+          "disabled": true,
+          "settings": {
+            "title": "Share"
+          }
+        },
+        "d0280b95-4b77-4ed9-9d97-acc8a3538d42": {
+          "type": "icon",
+          "disabled": true,
+          "settings": {
+            "title_1": "Organic",
+            "title_2": "Gluten Free",
+            "title_3": "Non GMO",
+            "title_4": "Kosher",
+            "title_5": "GMP",
+            "title_6": "Made In The USA",
+            "title_7": "Made In The USA"
+          }
+        },
+        "c819702b-eb05-4f2c-b9a3-67f09f9da3d3": {
+          "type": "tab",
+          "disabled": true,
+          "settings": {
+            "title": "It’s great for you",
+            "title_1": "It’s great for you",
+            "liquid": "{{ product.metafields.custom.content_tab_2 | newline_to_br }}"
+          }
+        },
+        "2c8d70fb-c592-4256-a0d9-bc84580c358e": {
+          "type": "tab",
+          "disabled": true,
+          "settings": {
+            "title": "INGREDIENTS",
+            "title_1": "DETAILS",
+            "liquid": "{{ product.metafields.custom.content_tab_3 | newline_to_br }}"
+          }
+        },
+        "a2e6274b-16e8-496f-b1ad-342c23abfdf7": {
+          "type": "tab",
+          "disabled": true,
+          "settings": {
+            "title": "How to use",
+            "title_1": "How to use",
+            "liquid": "{{ product.metafields.custom.content_tab_1 }}"
+          }
+        },
+        "4702019d-f0be-4190-8641-deff47649078": {
+          "type": "products",
+          "disabled": true,
+          "settings": {}
+        },
+        "aab7170b-0d15-4338-afc7-f0e8957b533f": {
+          "type": "text",
+          "disabled": true,
+          "settings": {
+            "text": "100% NATURAL & DRUG-FREE: NO Magnesium Stearate, NO Stearic Acid, NO Dioxides, NO  Sulfates, NO Artificial Ingredients, No Preservatives, No Fillers or Binders. NO  adulteration with low-quality extracts."
+          }
+        },
+        "rebuy_personalization_engine_rebuy_widget_tk4XPR": {
+          "type": "shopify://apps/rebuy-personalization-engine/blocks/rebuy-widget/a26ae9b9-933b-40bf-bbc6-bf1220bbc4dc",
+          "disabled": true,
+          "settings": {
+            "enabled": true,
+            "id": "185357",
+            "product_id_enabled": true,
+            "collection_id_enabled": false
+          }
+        },
+        "rich_text_nmqEmW": {
+          "type": "rich_text",
+          "settings": {
+            "the_text": "*REFUND & RETURN POLICY"
+          }
+        },
+        "pairs_well_product_aKNcRm": {
+          "type": "pairs_well_product",
+          "settings": {
+            "pairs_well_title": "Pairs well with..."
+          }
+        }
+      },
+      "block_order": [
+        "title",
+        "dd7dc177-421d-4ef9-836f-824c3f8cd416",
+        "fe62f623-9b51-4ed6-89bc-4657f1807ce3",
+        "448a1729-1ecf-429f-8a46-bf6bf47d225e",
+        "c7b1b4a3-47b1-4b56-8c96-ad46b18d147f",
+        "17b987e1-d0a0-4f7b-9f5d-54bd8de977a7",
+        "custom_text_GHfVP4",
+        "price",
+        "3dc49f32-d5ad-428e-9f65-918e0c827b0b",
+        "variant_picker",
+        "a090f462-42e0-4dc4-8658-c1be040d0c37",
+        "quantity_selector",
+        "buy_buttons",
+        "149c08bd-ddf9-455a-8c1a-9cd5f5f18af9",
+        "2e446f18-a693-4f69-9de4-aa8ac8de76c9",
+        "d0280b95-4b77-4ed9-9d97-acc8a3538d42",
+        "c819702b-eb05-4f2c-b9a3-67f09f9da3d3",
+        "2c8d70fb-c592-4256-a0d9-bc84580c358e",
+        "a2e6274b-16e8-496f-b1ad-342c23abfdf7",
+        "4702019d-f0be-4190-8641-deff47649078",
+        "aab7170b-0d15-4338-afc7-f0e8957b533f",
+        "rebuy_personalization_engine_rebuy_widget_tk4XPR",
+        "rich_text_nmqEmW",
+        "pairs_well_product_aKNcRm"
+      ],
+      "custom_css": [],
+      "settings": {
+        "title_1": "OVERVIEW",
+        "button": "Certificate of Analysis",
+        "title_2": "Dosage",
+        "popup_text": "<h3><strong>REFUNDS, RETURNS & MONEY-BACK GUARANTEE</strong></h3><p>At Tribe Organics, your trust means everything to us. We understand that you might have questions about returns or refunds if something doesn’t meet your expectations. Here’s what you need to know:</p><h3><strong>MONEY-BACK GUARANTEE</strong></h3><p>We mindfully produce our supplements with the intention of complementing your health and wellness journey and it’s very important to us that you benefit from them. We mean business on this one. </p><p>If you're not 100% satisfied with your <em>first-time purchase</em> of any Tribe Organics product—even after giving it a full two weeks of use from the date it ships—just reach out to us at <a href=\"mailto:info@tribe-organics.com\" title=\"mailto:info@tribe-organics.com\">info@tribe-organics.com</a> within 30 days of receiving your order. We’ll issue a full refund, no questions asked.*</p><p><strong>*PLEASE NOTE: This guarantee only applies to first-time purchases of individual products. It does not cover multipacks (3-packs or 6-packs) or multiple units of the same item.</strong></p><p>To prevent abuse, we limit the use of this guarantee to 3 individual products per any 12 month period for first-time purchase of that item. If you purchase 3 of the same item, the money-back guarantee will cover a refund of one of those items, you may return the rest but as per policy, you customer is responsible for shipping costs.</p><h3><strong>RETURN POLICY</strong></h3><p>If you're not satisfied with your purchase, you can contact us directly at info@tribe-organics.com to request a return label. Returns must be sent back within 30 days of purchase, and we’ll issue a refund once the item is received.</p><p>As per our policy, return shipping costs are the customer’s responsibility. To ensure your refund is processed properly and in a timely manner, kindly follow the exact instructions provided by our customer service team.</p><p><strong>PLEASE NOTE:</strong> <strong>All return labels are calculated individually and will be deducted from your refund, if your return is approved.</strong></p><h4>What’s not returnable?</h4><ul><li>Please note that all of our jars are sealed with a plastic cover. If this one is torn or removed, the product is considered opened and is not eligible for return.</li><li>Opened products are not returnable.</li><li>Products with broken seals are not returnable.</li><li>Items not purchased at www.tribe-organics.com.</li><li>Items without an order number.</li><li>Any purchase made with a gift card is non-refundable.</li></ul><h4>How do I return unopened products?</h4><ul><li>Unopened product return requests must be submitted within 30-days of delivery by contacting us.</li><li>Unopened product/s being returned must be mailed or shipped within 14-days of the date the return was authorized by Tribe Organics' Customer Service Department.</li><li>If the returned product(s) is opened and/or damaged in any way, you will not be eligible for a refund.</li><li>If you have initiated the return after the 30-day period has passed, you will not be eligible for a refund.</li><li>If we have not received your return within 30-days, you will not be eligible for a refund.</li><li>To initiate a return please contact Customer Service at <a href=\"mailto:info@tribe-organics.com\" title=\"mailto:info@tribe-organics.com\">info@tribe-organics.com</a></li></ul><h3><strong>DAMAGED ITEMS</strong></h3><p>If you receive a damaged or defective item(s), please contact our customer service team with your order number and details. A customer service representative will contact you within 48 hours of receiving your request. Damaged item(s) must be reported to Tribe Organics' customer service within 10 days of receiving your shipment, or they are not eligible for a refund or replacement.</p><p>Please contact us at <a href=\"mailto:info@tribe-organics.com\" title=\"mailto:info@tribe-organics.com\">info@tribe-organics.com</a> to resolve the issue immediately. If you refuse to accept your package because there is obvious damage to the package or to the items in the package, you will not be charged for the cost of return shipping.<br/></p><h3><strong>QUALITY-RELATED RETURNS</strong></h3><p>We stand behind the quality of our products. Any requests for a quality-related issue need to be evaluated. Please contact Customer Service at <a href=\"mailto:info@tribe-organics.com\" title=\"mailto:info@tribe-organics.com\">info@tribeorganics.com</a> with your order number and additional relevant issues.</p><h3><strong>ORDER CANCELLATIONS</strong></h3><p>Orders placed on tribe-organics.com are processed immediately and packed in order to ship orders as fast as possible. Because of this, we are usually unable to change or cancel orders after they have been placed. Once an order is processed or shipped, it cannot be canceled. </p><p><strong>PLEASE NOTE: If you have a subscription, we cannot refund you in full for an already processed, in transit or received order. </strong><br/><br/>If you are a subscriber, you receive an email 3 days prior to any subscription product processing and being shipped, so you can modify or cancel before it ships if you no longer want the product. Once the product has shipped, we cannot cancel it as it goes into our third party logistics team. You can process a return, but as per policy, you are responsible for shipping costs.</p><h3><strong>EXCHANGES</strong></h3><p>We do not offer exchanges.</p><h3><strong>ADDITIONAL INFORMATION</strong></h3><p>Please allow approximately 1-2 weeks for return processing. Once the product is returned to our warehouse, it will take an additional 5-7 business days to credit back to your original form of payment.In the event that method is no longer available the refund will be forfeited. You will receive a refund notification from us when your return has been processed. </p><p>If after 5-7 business days you still do not see the refund in your account, please contact your bank or credit card company to make sure there are no pending refunds. You can always reach back out to our customer experience team and we will be happy to confirm the refund has been processed. </p><p><em>This Refund Policy is subject to change without notice.</em></p>",
+        "cstm_subscribe_Text": "",
+        "the_text": "",
+        "text_1": "",
+        "text_2": "",
+        "text_3": "",
+        "text_4": "",
+        "bottom_text": ""
+      }
+    },
+    "8fd6e9de-4a6b-4b43-b80f-f0b53ecf9b73": {
+      "type": "product-custom-icons",
+      "blocks": {
+        "4452ae2e-1978-4336-9bb7-0bb408df3fbf": {
+          "type": "icon_text",
+          "settings": {
+            "icon": "shopify://shop_images/icon1.png",
+            "the_text": "Made in USA with imported & domestic ingredients"
+          }
+        },
+        "45c6e665-3498-4f6f-8601-8751784c0667": {
+          "type": "icon_text",
+          "settings": {
+            "icon": "shopify://shop_images/icon_2.png",
+            "the_text": "Third-party Lab Tested"
+          }
+        }
+      },
+      "block_order": [
+        "4452ae2e-1978-4336-9bb7-0bb408df3fbf",
+        "45c6e665-3498-4f6f-8601-8751784c0667"
+      ],
+      "disabled": true,
+      "settings": {
+        "section_bg_color": "#06211e"
+      }
+    },
+    "6e3ad2e8-f4d6-49ff-b83a-a77af265f99c": {
+      "type": "custom-scroll-text",
+      "blocks": {
+        "6faede56-08ab-423f-b309-9b168beb4754": {
+          "type": "scroll_blocks",
+          "settings": {
+            "svg_code": "<svg width=\"40\" height=\"40\" viewbox=\"0 0 40 40\" fill=\"none\" xmlns=\"http://www.w3.org/2000/svg\">\n<g clip-path=\"url(#clip0_113_148)\">\n<path opacity=\"0.1\" d=\"M40 19.4595C40 24.254 38.2376 29.1602 35.3846 32.4324C32.1978 36.0876 25.0805 40 19.9995 40C14.9186 40 9.85352 38.2498 6.66667 34.5946C3.81369 31.3224 0 24.254 0 19.4595C0 14.665 1.76241 8.13709 4.61538 4.86487C7.80224 1.2097 14.9186 0 19.9995 0C25.0805 0 30.1465 1.2097 33.3333 4.86487C36.1863 8.13709 40 14.665 40 19.4595Z\" fill=\"#F3D9CF\"></path>\n<path d=\"M19.9778 6.00061V8.13897H27.4369C25.2814 6.78456 22.732 6 19.998 6C19.9913 6.00061 19.9845 6.00061 19.9778 6.00061Z\" fill=\"white\"></path>\n<path d=\"M19.9778 12.4485H31.7891C31.2965 11.6812 30.7309 10.9653 30.1022 10.3096H19.9778V12.4485Z\" fill=\"white\"></path>\n<path d=\"M19.9778 16.7601H33.6201C33.4453 16.0227 33.2122 15.3081 32.9263 14.6211H19.9778V16.7601Z\" fill=\"white\"></path>\n<path d=\"M19.9778 21.069H33.9575C33.9839 20.7163 33.998 20.3593 33.998 19.9998C33.998 19.6398 33.9845 19.2834 33.9575 18.9307H19.9778V21.069Z\" fill=\"white\"></path>\n<path d=\"M7.07048 25.3792H32.9265C33.2129 24.6922 33.4454 23.9776 33.6202 23.2402H6.37671C6.55092 23.9776 6.78402 24.6922 7.07048 25.3792Z\" fill=\"white\"></path>\n<path d=\"M9.89404 29.6898H30.1023C30.7311 29.0346 31.2966 28.3188 31.7892 27.5508H8.20776C8.70033 28.3188 9.2659 29.0346 9.89404 29.6898Z\" fill=\"white\"></path>\n<path d=\"M19.9978 33.9993C22.7312 33.9993 25.2812 33.2154 27.4367 31.8604H12.5596C14.7145 33.2148 17.2645 33.9993 19.9978 33.9993Z\" fill=\"white\"></path>\n<path d=\"M14.629 7.06836C14.4726 7.13338 14.3174 7.20086 14.1641 7.2714H14.5634L14.629 7.06836Z\" fill=\"white\"></path>\n<path d=\"M14.8792 6.96649L14.9773 7.27136H15.657L15.1073 7.66578L15.3147 8.30802L14.7706 7.91053L14.2265 8.30802L14.4338 7.66578L13.9946 7.35049C11.8526 8.36875 10.0105 9.91517 8.63584 11.821H9.24312L9.45045 11.1788L9.65778 11.821H10.3374L9.78783 12.2155L9.99516 12.8577L9.45106 12.4602L8.90697 12.8577L9.1143 12.2155L8.61191 11.8548C8.32361 12.2572 8.05616 12.6755 7.81141 13.108L7.88563 13.3374H8.5653L8.01568 13.7318L8.22301 14.3741L7.67891 13.9766L7.19738 14.3281C7.33663 14.0146 7.4863 13.7079 7.64702 13.4067C6.8551 14.8869 6.32143 16.5259 6.10673 18.2631C6.12207 18.1374 6.13924 18.0116 6.15826 17.8871H6.79192L6.2423 18.2815L6.44963 18.9238L6.06564 18.6434C6.0779 18.5165 6.0914 18.3901 6.10735 18.2643C6.0368 18.833 6 19.412 6 20.0003C6 20.3604 6.0135 20.7168 6.04049 21.0695H19.9779V6.00098C18.1781 6.00343 16.4587 6.34571 14.8792 6.96649ZM16.3366 8.78833L16.544 8.14608L16.7513 8.78833H17.431L16.8813 9.18275L17.0887 9.825L16.5446 9.4275L16.0005 9.825L16.2078 9.18275L15.6582 8.78833H16.3366ZM17.0881 15.891L16.544 15.4935L15.9999 15.891L16.2072 15.2488L15.6576 14.8544H16.3372L16.5446 14.2121L16.7519 14.8544H17.4316L16.882 15.2488L17.0881 15.891ZM15.3147 17.4074L14.7706 17.0099L14.2265 17.4074L14.4338 16.7652L13.8842 16.3707H14.5639L14.7712 15.7285L14.9785 16.3707H15.6582L15.1086 16.7652L15.3147 17.4074ZM13.5413 15.891L12.9972 15.4935L12.4531 15.891L12.6604 15.2488L12.1108 14.8544H12.7905L12.9978 14.2121L13.2052 14.8544H13.8848L13.3352 15.2488L13.5413 15.891ZM13.5413 12.8577L12.9972 12.4602L12.4531 12.8577L12.6604 12.2155L12.1108 11.821H12.7905L12.9978 11.1788L13.2052 11.821H13.8848L13.3352 12.2155L13.5413 12.8577ZM15.3147 14.3747L14.7706 13.9772L14.2265 14.3747L14.4338 13.7324L13.8842 13.338H14.5639L14.7712 12.6958L14.9785 13.338H15.6582L15.1086 13.7324L15.3147 14.3747ZM17.0881 12.8577L16.544 12.4602L15.9999 12.8577L16.2072 12.2155L15.6576 11.821H16.3372L16.5446 11.1788L16.7519 11.821H17.4316L16.882 12.2155L17.0881 12.8577ZM14.5633 10.3047L14.7706 9.66244L14.9779 10.3047H15.6576L15.108 10.6991L15.3153 11.3414L14.7712 10.9439L14.2271 11.3414L14.4344 10.6991L13.8848 10.3047H14.5633ZM12.7899 8.78833L12.9972 8.14608L13.2045 8.78833H13.8842L13.3346 9.18275L13.5419 9.825L12.9978 9.4275L12.4537 9.825L12.6611 9.18275L12.1114 8.78833H12.7899ZM11.0165 10.3047L11.2238 9.66244L11.4312 10.3047H12.1108L11.5612 10.6991L11.7685 11.3414L11.2244 10.9439L10.6803 11.3414L10.8877 10.6991L10.3381 10.3047H11.0165ZM11.0165 13.338L11.2238 12.6958L11.4312 13.338H12.1108L11.5612 13.7324L11.7685 14.3747L11.2244 13.9772L10.6803 14.3747L10.8877 13.7324L10.3381 13.338H11.0165ZM11.7679 17.4074L11.2238 17.0099L10.6797 17.4074L10.8871 16.7652L10.3374 16.3707H11.0171L11.2244 15.7285L11.4318 16.3707H12.1114L11.5618 16.7652L11.7679 17.4074ZM9.24373 14.855L9.45106 14.2127L9.6584 14.855H10.3381L9.78844 15.2494L9.99578 15.8917L9.45168 15.4942L8.90758 15.8917L9.11491 15.2494L8.5653 14.855H9.24373ZM7.47035 16.3713L7.67769 15.7291L7.88502 16.3713H8.56468L8.01506 16.7658L8.2224 17.408L7.6783 17.0105L7.1342 17.408L7.34154 16.7658L6.79192 16.3713H7.47035ZM8.22178 20.4407L7.67769 20.0432L7.13359 20.4407L7.34092 19.7985L6.7913 19.4041H7.47035L7.67769 18.7618L7.88502 19.4041H8.56468L8.01506 19.7985L8.22178 20.4407ZM9.45045 18.5269L8.90635 18.9244L9.11369 18.2821L8.56407 17.8877H9.24373L9.45106 17.2455L9.6584 17.8877H10.3381L9.78844 18.2821L9.99578 18.9244L9.45045 18.5269ZM11.7679 20.4407L11.2238 20.0432L10.6797 20.4407L10.8871 19.7985L10.3374 19.4041H11.0171L11.2244 18.7618L11.4318 19.4041H12.1114L11.5618 19.7985L11.7679 20.4407ZM12.9972 18.5269L12.4531 18.9244L12.6604 18.2821L12.1108 17.8877H12.7905L12.9978 17.2455L13.2052 17.8877H13.8848L13.3352 18.2821L13.5425 18.9244L12.9972 18.5269ZM15.3147 20.4407L14.7706 20.0432L14.2265 20.4407L14.4338 19.7985L13.8842 19.4041H14.5639L14.7712 18.7618L14.9785 19.4041H15.6582L15.1086 19.7985L15.3147 20.4407ZM16.544 18.5269L15.9999 18.9244L16.2072 18.2821L15.6576 17.8877H16.3372L16.5446 17.2455L16.7519 17.8877H17.4316L16.882 18.2821L17.0893 18.9244L16.544 18.5269ZM18.8614 20.4407L18.3173 20.0432L17.7732 20.4407L17.9806 19.7985L17.431 19.4041H18.1106L18.318 18.7618L18.5253 19.4041H19.205L18.6553 19.7985L18.8614 20.4407ZM18.6541 16.7658L18.8614 17.408L18.3173 17.0105L17.7732 17.408L17.9806 16.7658L17.431 16.3713H18.1106L18.318 15.7291L18.5253 16.3713H19.205L18.6541 16.7658ZM18.6541 13.7324L18.8614 14.3747L18.3173 13.9772L17.7732 14.3747L17.9806 13.7324L17.431 13.338H18.1106L18.318 12.6958L18.5253 13.338H19.205L18.6541 13.7324ZM18.6541 10.6991L18.8614 11.3414L18.3173 10.9439L17.7732 11.3414L17.9806 10.6991L17.431 10.3047H18.1106L18.318 9.66244L18.5253 10.3047H19.205L18.6541 10.6991ZM18.6541 7.66578L18.8614 8.30802L18.3173 7.91053L17.7732 8.30802L17.9806 7.66578L17.431 7.27136H18.1106L18.318 6.62911L18.5253 7.27136H19.205L18.6541 7.66578Z\" fill=\"white\"></path>\n<path d=\"M14.7395 7.021C14.7806 7.00383 14.8223 6.98665 14.864 6.9707C14.8217 6.98665 14.7806 7.00383 14.7395 7.021Z\" fill=\"white\"></path>\n<path d=\"M7.64648 13.4055C7.69985 13.3056 7.75506 13.2062 7.81088 13.1074C7.75445 13.2062 7.69985 13.3056 7.64648 13.4055Z\" fill=\"white\"></path>\n<path d=\"M14.8823 6.96777C14.8756 6.97 14.8697 6.97296 14.863 6.97593C14.8697 6.97296 14.8764 6.97074 14.8823 6.96777Z\" fill=\"white\"></path>\n<path d=\"M14.6292 7.07017C14.666 7.05545 14.7021 7.04011 14.739 7.02539C14.7028 7.04011 14.666 7.05483 14.6292 7.07017Z\" fill=\"white\"></path>\n<path d=\"M14.1639 7.27148C14.1075 7.29725 14.0504 7.32362 13.9946 7.35061C14.0511 7.32424 14.1075 7.29786 14.1639 7.27148Z\" fill=\"white\"></path>\n<path d=\"M8.63586 11.8203C8.62789 11.8314 8.6193 11.843 8.61133 11.854C8.6193 11.8424 8.62789 11.8314 8.63586 11.8203Z\" fill=\"white\"></path>\n<path d=\"M7.64575 13.407C7.64575 13.407 7.64575 13.4062 7.64655 13.4062C7.64655 13.4071 7.64575 13.407 7.64575 13.407Z\" fill=\"white\"></path>\n</g>\n<defs>\n<clippath id=\"clip0_113_148\">\n<rect width=\"40\" height=\"40\" fill=\"white\"></rect>\n</clippath>\n</defs>\n</svg>",
+            "marquee_text": "Made in USA with globally sourced ingredients"
+          }
+        },
+        "0ccbfef7-b679-4979-9aef-309f367de333": {
+          "type": "scroll_blocks",
+          "settings": {
+            "svg_code": "<svg width=\"40\" height=\"40\" viewbox=\"0 0 40 40\" fill=\"none\" xmlns=\"http://www.w3.org/2000/svg\">\n<g clip-path=\"url(#clip0_113_460)\">\n<path d=\"M29.7222 28.4669C29.5105 28.2787 29.2245 28.1911 28.9353 28.2248L26.5962 28.5011C27.5461 27.1567 27.8785 25.8679 27.978 24.9469C28.2073 22.8226 27.4744 20.7261 25.9146 19.0434C25.3341 18.4169 24.6349 17.8706 23.8555 17.413C23.7256 16.5102 23.228 15.7265 22.5181 15.2176L23.9657 10.984C24.1576 10.4222 24.118 9.81923 23.8534 9.28629C23.5888 8.75281 23.1328 8.35618 22.5694 8.16908L19.3915 7.11389C18.2289 6.72741 16.9599 7.35657 16.5633 8.51654L12.2505 21.1313C12.0581 21.6931 12.0982 22.2961 12.3628 22.829C12.4478 23.0006 12.5547 23.1562 12.6766 23.2968L12.297 24.4375C12.1858 24.771 12.212 25.1292 12.3703 25.4451C12.5285 25.761 12.7995 25.9957 13.1336 26.1069L15.7454 26.9744C15.8817 27.0199 16.0212 27.0423 16.1613 27.0423C16.3639 27.0423 16.5659 26.9948 16.753 26.9012C17.0689 26.743 17.3036 26.472 17.4148 26.1379L17.7564 25.0971C18.5999 25.0089 19.3616 24.4498 19.6529 23.5988L20.489 21.1527C20.5312 21.1543 20.5724 21.1591 20.6151 21.1591C20.9786 21.1591 21.3271 21.0971 21.6537 20.9875C22.1076 21.2436 22.5079 21.544 22.8356 21.8968C23.5391 22.6558 23.8705 23.595 23.793 24.6123C23.6161 26.9504 21.4308 28.9026 18.3545 29.4735L10.6731 30.3806C10.2 30.4362 9.69967 30.7852 9.48318 31.2097L9.11006 31.942C8.96146 32.2333 8.9636 32.5428 9.11488 32.7903C9.26669 33.0378 9.54091 33.18 9.86805 33.18H28.9915C29.5773 33.18 30.0542 32.7032 30.0542 32.1173V29.219C30.0547 28.9298 29.9333 28.6551 29.7222 28.4669ZM20.6151 20.1269C19.3771 20.1269 18.3706 19.1198 18.3706 17.8818C18.3706 16.6443 19.3776 15.6372 20.6151 15.6372C21.8531 15.6372 22.8602 16.6443 22.8602 17.8818C22.8597 19.1198 21.8526 20.1269 20.6151 20.1269ZM16.2896 25.9781C16.2495 25.9984 16.1677 26.0272 16.0709 25.9946L13.4591 25.1271C13.3619 25.095 13.3137 25.0228 13.294 24.9827C13.2737 24.9426 13.2448 24.8614 13.2774 24.7641L13.5602 23.9131C13.589 23.9238 13.6168 23.9366 13.6462 23.9468L16.7119 24.9651L16.4334 25.8129C16.4018 25.9102 16.3297 25.9577 16.2896 25.9781ZM18.6747 23.2652C18.4609 23.8906 17.7767 24.2295 17.1497 24.0216L13.9723 22.9659C13.6724 22.8659 13.4292 22.6548 13.2881 22.3704C13.147 22.086 13.1256 21.7648 13.2282 21.4654L17.5409 8.85063C17.712 8.3503 18.1845 8.03331 18.6875 8.03331C18.8132 8.03331 18.9409 8.05309 19.066 8.09425L22.2434 9.14944C22.5432 9.24887 22.7864 9.46055 22.9276 9.74493C23.0687 10.0293 23.0901 10.3506 22.988 10.6499L21.5859 14.7504C21.279 14.6553 20.953 14.6034 20.6151 14.6034C18.8078 14.6034 17.3373 16.074 17.3373 17.8813C17.3373 19.2845 18.2252 20.4808 19.4674 20.9474L18.6747 23.2652ZM24.8231 24.6914C24.9225 23.3796 24.497 22.171 23.5931 21.1955C23.3263 20.9079 23.02 20.6518 22.686 20.4198C23.2435 19.9644 23.6465 19.3283 23.8101 18.6024C24.311 18.9413 24.7648 19.3235 25.1561 19.7458C26.5101 21.2061 27.1467 23.014 26.95 24.8357C26.8458 25.7995 26.4411 27.2358 25.1304 28.6738L22.1423 29.0266C23.7 27.9409 24.6932 26.4078 24.8231 24.6914ZM29.0219 32.1184C29.0219 32.1334 29.0075 32.1478 28.9925 32.1478H10.1658L10.4037 31.6801C10.4619 31.5657 10.6661 31.4229 10.7939 31.408L29.0214 29.2554V32.1184H29.0219Z\" fill=\"white\"></path>\n<path opacity=\"0.1\" d=\"M40 19.4595C40 24.254 38.2376 29.1602 35.3846 32.4324C32.1978 36.0876 25.0805 40 19.9995 40C14.9186 40 9.85352 38.2498 6.66667 34.5946C3.81369 31.3224 0 24.254 0 19.4595C0 14.665 1.76241 8.13709 4.61538 4.86487C7.80224 1.2097 14.9186 0 19.9995 0C25.0805 0 30.1465 1.2097 33.3333 4.86487C36.1863 8.13709 40 14.665 40 19.4595Z\" fill=\"#F3D9CF\"></path>\n</g>\n<defs>\n<clippath id=\"clip0_113_460\">\n<rect width=\"40\" height=\"40\" fill=\"white\"></rect>\n</clippath>\n</defs>\n</svg>",
+            "marquee_text": "Third-party Lab Tested"
+          }
+        },
+        "3dc2aed5-f696-48f0-8cfc-7d8caace0dcb": {
+          "type": "scroll_blocks",
+          "settings": {
+            "svg_code": "<svg width=\"40\" height=\"40\" viewbox=\"0 0 40 40\" fill=\"none\" xmlns=\"http://www.w3.org/2000/svg\">\n<g clip-path=\"url(#clip0_113_382)\">\n<path opacity=\"0.1\" d=\"M40 19.4595C40 24.254 38.2376 29.1602 35.3846 32.4324C32.1978 36.0876 25.0805 40 19.9995 40C14.9186 40 9.85352 38.2498 6.66667 34.5946C3.81369 31.3224 0 24.254 0 19.4595C0 14.665 1.76241 8.13709 4.61538 4.86487C7.80224 1.2097 14.9186 0 19.9995 0C25.0805 0 30.1465 1.2097 33.3333 4.86487C36.1863 8.13709 40 14.665 40 19.4595Z\" fill=\"#F3D9CF\"></path>\n<path d=\"M27.9768 32.9897C28.9222 32.9897 29.4731 31.9641 28.9152 31.2332C27.1697 28.9456 23.7229 25.79 19.7227 25.79C15.722 25.79 12.2751 28.9456 10.5302 31.2332C9.97227 31.9641 10.5232 32.9897 11.4686 32.9897H27.9768Z\" stroke=\"white\" stroke-miterlimit=\"10\" stroke-linecap=\"round\" stroke-linejoin=\"round\"></path>\n<path d=\"M30.5731 19.0692C28.5035 21.0508 25.1487 21.0508 23.0797 19.0692C21.0102 17.0876 21.0102 13.8752 23.0797 11.8935C25.1487 9.91192 32.4469 10.0995 32.4469 10.0995C32.4469 10.0995 32.642 17.0882 30.5731 19.0692Z\" stroke=\"white\" stroke-miterlimit=\"10\" stroke-linecap=\"round\" stroke-linejoin=\"round\"></path>\n<path d=\"M19.7256 25.8096C19.7221 25.8096 19.7197 25.8073 19.7197 25.8038C19.7197 23.6492 20.3176 21.575 21.4487 19.8044C22.0583 18.8502 22.8185 17.9933 23.7076 17.2584C24.6571 16.4736 25.7589 15.8236 26.9845 15.3248C26.9851 15.3242 26.9862 15.3242 26.9868 15.3242C26.9892 15.3242 26.9915 15.3254 26.9921 15.3277C26.9939 15.3307 26.9921 15.3342 26.9892 15.3354C25.7648 15.8341 24.6641 16.4835 23.7158 17.2672C22.8273 18.0015 22.0671 18.8573 21.4587 19.8103C20.3287 21.5791 19.7314 23.6522 19.7314 25.8038C19.732 25.8073 19.7297 25.8096 19.7256 25.8096Z\" stroke=\"white\" stroke-miterlimit=\"10\" stroke-linecap=\"round\" stroke-linejoin=\"round\"></path>\n<path d=\"M8.87815 16.9739C10.9477 18.9555 14.3025 18.9555 16.3715 16.9739C18.441 14.9923 18.441 11.7798 16.3715 9.79823C14.3025 7.8172 7.00496 8.00475 7.00496 8.00475C7.00496 8.00475 6.8092 14.9923 8.87815 16.9739Z\" stroke=\"white\" stroke-miterlimit=\"10\" stroke-linecap=\"round\" stroke-linejoin=\"round\"></path>\n<path d=\"M19.724 25.8079C19.7205 25.8079 19.7181 25.8056 19.7181 25.8021V23.7097C19.7181 21.5575 19.1209 19.485 17.9909 17.7167C17.3819 16.7637 16.6223 15.9074 15.7338 15.1731C14.7855 14.3894 13.6848 13.74 12.4604 13.2413C12.4575 13.2401 12.4557 13.2366 12.4575 13.2336C12.4581 13.2307 12.461 13.2278 12.4651 13.2307C13.6907 13.7295 14.7925 14.3795 15.742 15.1643C16.6311 15.8992 17.3919 16.7561 18.0009 17.7103C19.132 19.4809 19.7299 21.5563 19.7299 23.7097V25.8021C19.7305 25.8056 19.7281 25.8079 19.724 25.8079Z\" stroke=\"white\" stroke-miterlimit=\"10\" stroke-linecap=\"round\" stroke-linejoin=\"round\"></path>\n</g>\n<defs>\n<clippath id=\"clip0_113_382\">\n<rect width=\"40\" height=\"40\" fill=\"white\"></rect>\n</clippath>\n</defs>\n</svg>",
+            "marquee_text": "Ethically grown and sourced"
+          }
+        },
+        "5da44d58-dcd6-4dad-aa07-1c1e7f845724": {
+          "type": "scroll_blocks",
+          "settings": {
+            "svg_code": "<svg width=\"40\" height=\"40\" viewbox=\"0 0 40 40\" fill=\"none\" xmlns=\"http://www.w3.org/2000/svg\">\n<g clip-path=\"url(#clip0_113_226)\">\n<path opacity=\"0.1\" d=\"M40 19.4595C40 24.254 38.2376 29.1602 35.3846 32.4324C32.1978 36.0876 25.0805 40 19.9995 40C14.9186 40 9.85352 38.2498 6.66667 34.5946C3.81369 31.3224 0 24.254 0 19.4595C0 14.665 1.76241 8.13709 4.61538 4.86487C7.80224 1.2097 14.9186 0 19.9995 0C25.0805 0 30.1465 1.2097 33.3333 4.86487C36.1863 8.13709 40 14.665 40 19.4595Z\" fill=\"#F3D9CF\"></path>\n<path d=\"M21.8489 19.8989C21.309 19.8989 20.7481 19.8312 20.1714 19.6952C20.0576 19.6684 19.9578 19.5995 19.8924 19.5026C19.8236 19.401 18.2261 16.9829 19.5621 13.7558C20.9104 10.499 25.6007 9.55343 29.1721 10.5439C29.3665 10.5982 29.5042 10.771 29.5136 10.9723C29.5229 11.1743 29.4015 11.3587 29.213 11.4305C29.1692 11.4486 28.0194 11.9406 27.8712 13.9257C27.755 15.4747 26.8754 17.5958 25.1717 18.8436C24.2157 19.5435 23.0868 19.8989 21.8489 19.8989ZM20.5753 18.8285C22.1419 19.1565 23.5024 18.9084 24.6195 18.0901C26.0758 17.0238 26.8427 15.1479 26.9396 13.8562C27.0377 12.5482 27.5081 11.7293 27.9616 11.2344C24.9336 10.7406 21.4321 11.6791 20.4242 14.1136C19.4489 16.4693 20.2823 18.3008 20.5753 18.8285Z\" fill=\"white\"></path>\n<path d=\"M19.3593 22.6033C19.3272 22.6033 19.2945 22.5998 19.2618 22.5928C19.0097 22.5391 18.8486 22.2916 18.9017 22.0395C19.5187 19.1287 20.8739 16.5822 22.9296 14.4693C23.1094 14.2843 23.4053 14.2808 23.5897 14.4606C23.7748 14.6404 23.7783 14.9363 23.5985 15.1207C21.6671 17.1046 20.3942 19.4976 19.8146 22.2327C19.7691 22.4527 19.5753 22.6033 19.3593 22.6033Z\" fill=\"white\"></path>\n<path d=\"M16.1493 19.1614C14.6102 19.1614 13.2269 18.7172 12.0187 17.8324C9.87779 16.2646 8.77291 13.5996 8.62758 11.6537C8.43146 9.03125 6.89409 8.38455 6.8293 8.35829C6.6437 8.28358 6.52404 8.09797 6.53513 7.89836C6.54622 7.69874 6.68163 7.52715 6.87424 7.47345C11.3784 6.2244 17.2874 7.40691 18.9806 11.4961C20.6593 15.5502 18.6579 18.5789 18.5721 18.7061C18.5067 18.803 18.4069 18.8719 18.2931 18.8987C17.5483 19.0738 16.8333 19.1614 16.1493 19.1614ZM8.12095 8.14233C8.72855 8.7295 9.42428 9.78301 9.55852 11.5836C9.68401 13.2599 10.6797 15.6944 12.5702 17.0788C14.0405 18.1557 15.83 18.4756 17.8898 18.0314C18.2452 17.4115 19.4161 14.9899 18.1174 11.8527C16.7376 8.52054 12.0695 7.40458 8.12095 8.14233Z\" fill=\"white\"></path>\n<path d=\"M19.3591 22.613C19.1432 22.613 18.9494 22.4624 18.9027 22.2429C18.1579 18.7293 16.5231 15.6551 14.0419 13.1068C13.8621 12.9218 13.8662 12.6265 14.0507 12.4467C14.2351 12.2669 14.531 12.271 14.7108 12.4555C17.3169 15.1327 19.034 18.3604 19.8155 22.0498C19.8692 22.3019 19.7076 22.55 19.4554 22.6031C19.4239 22.6101 19.3912 22.613 19.3591 22.613Z\" fill=\"white\"></path>\n<path d=\"M17.7219 29.0363C17.2526 29.0363 16.7419 28.8034 16.2405 28.3528C15.6399 27.8129 15.0971 27.0005 14.7125 26.0654C13.8463 23.9596 14.0529 22.0177 15.1934 21.5485C16.3339 21.0792 17.8474 22.3136 18.7141 24.4195C19.0987 25.3545 19.2849 26.3135 19.2376 27.1201C19.184 28.047 18.8267 28.6925 18.2326 28.9365C18.0703 29.0036 17.8993 29.0363 17.7219 29.0363ZM15.6965 22.3854C15.6417 22.3854 15.5921 22.3942 15.5483 22.4123C15.0849 22.6031 14.8648 23.9829 15.5757 25.7106C15.9032 26.5067 16.373 27.2164 16.8645 27.6588C17.2619 28.0161 17.6402 28.1707 17.8771 28.0733C18.1141 27.9758 18.274 27.5993 18.305 27.0658C18.3435 26.4063 18.1771 25.5711 17.8497 24.775C17.2065 23.2096 16.2213 22.3854 15.6965 22.3854Z\" fill=\"white\"></path>\n<path d=\"M17.8772 28.0715L11.1614 30.834L11.5166 31.6976L18.2325 28.9352L17.8772 28.0715Z\" fill=\"white\"></path>\n<path d=\"M15.1927 21.5445L8.47705 24.3086L8.83248 25.1721L15.5482 22.408L15.1927 21.5445Z\" fill=\"white\"></path>\n<path d=\"M9.99674 32.0005C9.47552 32.0005 8.95489 31.8972 8.45936 31.6906C7.47472 31.2797 6.70895 30.5104 6.30272 29.5235C5.89648 28.5371 5.8994 27.4509 6.30972 26.4662C6.72062 25.4816 7.48989 24.7158 8.47687 24.3096L8.83232 25.1734C8.07648 25.4845 7.48697 26.0711 7.17179 26.8258C6.8572 27.5804 6.85486 28.4122 7.16596 29.168C7.47705 29.9239 8.06364 30.5134 8.81832 30.8285C9.573 31.1431 10.4047 31.1449 11.1606 30.8338L11.516 31.6976C11.0263 31.8996 10.5115 32.0005 9.99674 32.0005Z\" fill=\"white\"></path>\n<path d=\"M21.4209 29.0355C21.2458 29.0355 21.0754 29.0034 20.9125 28.9363C20.3184 28.6918 19.9617 28.0468 19.9075 27.1199C19.8608 26.3133 20.0464 25.3544 20.431 24.4193C21.2978 22.3135 22.8112 21.0796 23.9517 21.5483C25.0922 22.0175 25.2994 23.9594 24.4326 26.0653C23.6902 27.8705 22.4721 29.0355 21.4209 29.0355ZM23.4486 22.3852C22.9239 22.3852 21.9386 23.21 21.2948 24.7748C20.9674 25.5709 20.8016 26.4061 20.8396 27.0657C20.8705 27.5985 21.0304 27.9756 21.2674 28.0731C21.732 28.2651 22.8585 27.438 23.5694 25.7104C24.2803 23.9827 24.0602 22.603 23.5968 22.4121C23.553 22.394 23.5034 22.3852 23.4486 22.3852Z\" fill=\"white\"></path>\n<path d=\"M21.2679 28.0709L20.9126 28.9346L27.6285 31.6978L27.9838 30.8341L21.2679 28.0709Z\" fill=\"white\"></path>\n<path d=\"M23.9525 21.5465L23.5972 22.4102L30.3136 25.1736L30.6689 24.3099L23.9525 21.5465Z\" fill=\"white\"></path>\n<path d=\"M29.1495 32.0005C28.6347 32.0005 28.1199 31.8996 27.6296 31.6976L27.9851 30.8338C28.7409 31.1449 29.5732 31.1431 30.3273 30.8285C31.082 30.5139 31.6686 29.9244 31.9797 29.168C32.2908 28.4122 32.2885 27.5804 31.9739 26.8258C31.6593 26.0711 31.0698 25.4845 30.3133 25.1734L30.6688 24.3096C32.7058 25.1477 33.6811 27.4865 32.8429 29.5235C32.4367 30.5104 31.6709 31.2797 30.6863 31.6906C30.1913 31.8972 29.6701 32.0005 29.1495 32.0005Z\" fill=\"white\"></path>\n</g>\n<defs>\n<clippath id=\"clip0_113_226\">\n<rect width=\"40\" height=\"40\" fill=\"white\"></rect>\n</clippath>\n</defs>\n</svg>",
+            "marquee_text": "No harmful additives or preservatives"
+          }
+        },
+        "f88f713a-47c8-4bbf-8189-cf8afe2a53ae": {
+          "type": "scroll_blocks",
+          "settings": {
+            "svg_code": "<svg width=\"40\" height=\"40\" viewbox=\"0 0 40 40\" fill=\"none\" xmlns=\"http://www.w3.org/2000/svg\">\n<g clip-path=\"url(#clip0_113_304)\">\n<path opacity=\"0.1\" d=\"M40 19.4595C40 24.254 38.2376 29.1602 35.3846 32.4324C32.1978 36.0876 25.0805 40 19.9995 40C14.9186 40 9.85352 38.2498 6.66667 34.5946C3.81369 31.3224 0 24.254 0 19.4595C0 14.665 1.76241 8.13709 4.61538 4.86487C7.80224 1.2097 14.9186 0 19.9995 0C25.0805 0 30.1465 1.2097 33.3333 4.86487C36.1863 8.13709 40 14.665 40 19.4595Z\" fill=\"#F3D9CF\"></path>\n<path d=\"M28.5122 12.4876L25.6931 7.60554C25.1193 6.61192 24.0597 6 22.9128 6H18.0586C17.8326 6 17.612 6.03029 17.3958 6.07573L22.9509 15.6981L21.097 16.768L27.8712 17.7998L30.3649 11.417L28.5122 12.4876Z\" stroke=\"white\" stroke-miterlimit=\"10\" stroke-linecap=\"round\" stroke-linejoin=\"round\"></path>\n<path d=\"M17.7104 6.02148C16.7011 6.13175 15.7935 6.71217 15.2791 7.6034L12.9956 11.5591L18.5562 14.7696L20.4865 11.4264L17.3966 6.0748C17.5002 6.05238 17.605 6.03481 17.7104 6.02148Z\" stroke=\"white\" stroke-miterlimit=\"10\" stroke-linecap=\"round\" stroke-linejoin=\"round\"></path>\n<path d=\"M9.24941 18.0525L6.43032 22.9352C5.85656 23.9282 5.85656 25.1527 6.43032 26.1457L8.85802 30.3492C8.97071 30.5449 9.10763 30.7212 9.25546 30.8854L14.8106 21.263L16.6646 22.333L14.1708 15.9502L7.39606 16.982L9.24941 18.0525Z\" stroke=\"white\" stroke-miterlimit=\"10\" stroke-linecap=\"round\" stroke-linejoin=\"round\"></path>\n<path d=\"M9.25497 30.8874C9.18408 30.8086 9.11622 30.7268 9.052 30.642C9.65241 31.4611 10.6085 31.9567 11.6378 31.9567H16.2055V25.5352H12.3449L9.25497 30.8874Z\" stroke=\"white\" stroke-miterlimit=\"10\" stroke-linecap=\"round\" stroke-linejoin=\"round\"></path>\n<path d=\"M23.6971 31.9492H29.3346C30.4815 31.9492 31.5418 31.3373 32.1149 30.3436L34.542 26.1401C34.6547 25.9444 34.739 25.7378 34.8074 25.5282H23.6971V23.3877L19.416 28.7387L23.6971 34.0897V31.9492Z\" stroke=\"white\" stroke-miterlimit=\"10\" stroke-linecap=\"round\" stroke-linejoin=\"round\"></path>\n<path d=\"M34.6966 25.826C35.1056 24.8966 35.0565 23.8206 34.5421 22.9293L32.2586 18.9736L26.698 22.1841L28.6283 25.5273H34.8081C34.7754 25.6285 34.7384 25.7284 34.6966 25.826Z\" stroke=\"white\" stroke-miterlimit=\"10\" stroke-linecap=\"round\" stroke-linejoin=\"round\"></path>\n</g>\n<defs>\n<clippath id=\"clip0_113_304\">\n<rect width=\"40\" height=\"40\" fill=\"white\"></rect>\n</clippath>\n</defs>\n</svg>",
+            "marquee_text": "Recyclable"
+          }
+        },
+        "3afe8c91-fb42-4763-899a-d06c622fec80": {
+          "type": "scroll_blocks",
+          "settings": {
+            "svg_code": "<svg width=\"40\" height=\"40\" viewbox=\"0 0 40 40\" fill=\"none\" xmlns=\"http://www.w3.org/2000/svg\">\n<g clip-path=\"url(#clip0_113_148)\">\n<path opacity=\"0.1\" d=\"M40 19.4595C40 24.254 38.2376 29.1602 35.3846 32.4324C32.1978 36.0876 25.0805 40 19.9995 40C14.9186 40 9.85352 38.2498 6.66667 34.5946C3.81369 31.3224 0 24.254 0 19.4595C0 14.665 1.76241 8.13709 4.61538 4.86487C7.80224 1.2097 14.9186 0 19.9995 0C25.0805 0 30.1465 1.2097 33.3333 4.86487C36.1863 8.13709 40 14.665 40 19.4595Z\" fill=\"#F3D9CF\"></path>\n<path d=\"M19.9778 6.00061V8.13897H27.4369C25.2814 6.78456 22.732 6 19.998 6C19.9913 6.00061 19.9845 6.00061 19.9778 6.00061Z\" fill=\"white\"></path>\n<path d=\"M19.9778 12.4485H31.7891C31.2965 11.6812 30.7309 10.9653 30.1022 10.3096H19.9778V12.4485Z\" fill=\"white\"></path>\n<path d=\"M19.9778 16.7601H33.6201C33.4453 16.0227 33.2122 15.3081 32.9263 14.6211H19.9778V16.7601Z\" fill=\"white\"></path>\n<path d=\"M19.9778 21.069H33.9575C33.9839 20.7163 33.998 20.3593 33.998 19.9998C33.998 19.6398 33.9845 19.2834 33.9575 18.9307H19.9778V21.069Z\" fill=\"white\"></path>\n<path d=\"M7.07048 25.3792H32.9265C33.2129 24.6922 33.4454 23.9776 33.6202 23.2402H6.37671C6.55092 23.9776 6.78402 24.6922 7.07048 25.3792Z\" fill=\"white\"></path>\n<path d=\"M9.89404 29.6898H30.1023C30.7311 29.0346 31.2966 28.3188 31.7892 27.5508H8.20776C8.70033 28.3188 9.2659 29.0346 9.89404 29.6898Z\" fill=\"white\"></path>\n<path d=\"M19.9978 33.9993C22.7312 33.9993 25.2812 33.2154 27.4367 31.8604H12.5596C14.7145 33.2148 17.2645 33.9993 19.9978 33.9993Z\" fill=\"white\"></path>\n<path d=\"M14.629 7.06836C14.4726 7.13338 14.3174 7.20086 14.1641 7.2714H14.5634L14.629 7.06836Z\" fill=\"white\"></path>\n<path d=\"M14.8792 6.96649L14.9773 7.27136H15.657L15.1073 7.66578L15.3147 8.30802L14.7706 7.91053L14.2265 8.30802L14.4338 7.66578L13.9946 7.35049C11.8526 8.36875 10.0105 9.91517 8.63584 11.821H9.24312L9.45045 11.1788L9.65778 11.821H10.3374L9.78783 12.2155L9.99516 12.8577L9.45106 12.4602L8.90697 12.8577L9.1143 12.2155L8.61191 11.8548C8.32361 12.2572 8.05616 12.6755 7.81141 13.108L7.88563 13.3374H8.5653L8.01568 13.7318L8.22301 14.3741L7.67891 13.9766L7.19738 14.3281C7.33663 14.0146 7.4863 13.7079 7.64702 13.4067C6.8551 14.8869 6.32143 16.5259 6.10673 18.2631C6.12207 18.1374 6.13924 18.0116 6.15826 17.8871H6.79192L6.2423 18.2815L6.44963 18.9238L6.06564 18.6434C6.0779 18.5165 6.0914 18.3901 6.10735 18.2643C6.0368 18.833 6 19.412 6 20.0003C6 20.3604 6.0135 20.7168 6.04049 21.0695H19.9779V6.00098C18.1781 6.00343 16.4587 6.34571 14.8792 6.96649ZM16.3366 8.78833L16.544 8.14608L16.7513 8.78833H17.431L16.8813 9.18275L17.0887 9.825L16.5446 9.4275L16.0005 9.825L16.2078 9.18275L15.6582 8.78833H16.3366ZM17.0881 15.891L16.544 15.4935L15.9999 15.891L16.2072 15.2488L15.6576 14.8544H16.3372L16.5446 14.2121L16.7519 14.8544H17.4316L16.882 15.2488L17.0881 15.891ZM15.3147 17.4074L14.7706 17.0099L14.2265 17.4074L14.4338 16.7652L13.8842 16.3707H14.5639L14.7712 15.7285L14.9785 16.3707H15.6582L15.1086 16.7652L15.3147 17.4074ZM13.5413 15.891L12.9972 15.4935L12.4531 15.891L12.6604 15.2488L12.1108 14.8544H12.7905L12.9978 14.2121L13.2052 14.8544H13.8848L13.3352 15.2488L13.5413 15.891ZM13.5413 12.8577L12.9972 12.4602L12.4531 12.8577L12.6604 12.2155L12.1108 11.821H12.7905L12.9978 11.1788L13.2052 11.821H13.8848L13.3352 12.2155L13.5413 12.8577ZM15.3147 14.3747L14.7706 13.9772L14.2265 14.3747L14.4338 13.7324L13.8842 13.338H14.5639L14.7712 12.6958L14.9785 13.338H15.6582L15.1086 13.7324L15.3147 14.3747ZM17.0881 12.8577L16.544 12.4602L15.9999 12.8577L16.2072 12.2155L15.6576 11.821H16.3372L16.5446 11.1788L16.7519 11.821H17.4316L16.882 12.2155L17.0881 12.8577ZM14.5633 10.3047L14.7706 9.66244L14.9779 10.3047H15.6576L15.108 10.6991L15.3153 11.3414L14.7712 10.9439L14.2271 11.3414L14.4344 10.6991L13.8848 10.3047H14.5633ZM12.7899 8.78833L12.9972 8.14608L13.2045 8.78833H13.8842L13.3346 9.18275L13.5419 9.825L12.9978 9.4275L12.4537 9.825L12.6611 9.18275L12.1114 8.78833H12.7899ZM11.0165 10.3047L11.2238 9.66244L11.4312 10.3047H12.1108L11.5612 10.6991L11.7685 11.3414L11.2244 10.9439L10.6803 11.3414L10.8877 10.6991L10.3381 10.3047H11.0165ZM11.0165 13.338L11.2238 12.6958L11.4312 13.338H12.1108L11.5612 13.7324L11.7685 14.3747L11.2244 13.9772L10.6803 14.3747L10.8877 13.7324L10.3381 13.338H11.0165ZM11.7679 17.4074L11.2238 17.0099L10.6797 17.4074L10.8871 16.7652L10.3374 16.3707H11.0171L11.2244 15.7285L11.4318 16.3707H12.1114L11.5618 16.7652L11.7679 17.4074ZM9.24373 14.855L9.45106 14.2127L9.6584 14.855H10.3381L9.78844 15.2494L9.99578 15.8917L9.45168 15.4942L8.90758 15.8917L9.11491 15.2494L8.5653 14.855H9.24373ZM7.47035 16.3713L7.67769 15.7291L7.88502 16.3713H8.56468L8.01506 16.7658L8.2224 17.408L7.6783 17.0105L7.1342 17.408L7.34154 16.7658L6.79192 16.3713H7.47035ZM8.22178 20.4407L7.67769 20.0432L7.13359 20.4407L7.34092 19.7985L6.7913 19.4041H7.47035L7.67769 18.7618L7.88502 19.4041H8.56468L8.01506 19.7985L8.22178 20.4407ZM9.45045 18.5269L8.90635 18.9244L9.11369 18.2821L8.56407 17.8877H9.24373L9.45106 17.2455L9.6584 17.8877H10.3381L9.78844 18.2821L9.99578 18.9244L9.45045 18.5269ZM11.7679 20.4407L11.2238 20.0432L10.6797 20.4407L10.8871 19.7985L10.3374 19.4041H11.0171L11.2244 18.7618L11.4318 19.4041H12.1114L11.5618 19.7985L11.7679 20.4407ZM12.9972 18.5269L12.4531 18.9244L12.6604 18.2821L12.1108 17.8877H12.7905L12.9978 17.2455L13.2052 17.8877H13.8848L13.3352 18.2821L13.5425 18.9244L12.9972 18.5269ZM15.3147 20.4407L14.7706 20.0432L14.2265 20.4407L14.4338 19.7985L13.8842 19.4041H14.5639L14.7712 18.7618L14.9785 19.4041H15.6582L15.1086 19.7985L15.3147 20.4407ZM16.544 18.5269L15.9999 18.9244L16.2072 18.2821L15.6576 17.8877H16.3372L16.5446 17.2455L16.7519 17.8877H17.4316L16.882 18.2821L17.0893 18.9244L16.544 18.5269ZM18.8614 20.4407L18.3173 20.0432L17.7732 20.4407L17.9806 19.7985L17.431 19.4041H18.1106L18.318 18.7618L18.5253 19.4041H19.205L18.6553 19.7985L18.8614 20.4407ZM18.6541 16.7658L18.8614 17.408L18.3173 17.0105L17.7732 17.408L17.9806 16.7658L17.431 16.3713H18.1106L18.318 15.7291L18.5253 16.3713H19.205L18.6541 16.7658ZM18.6541 13.7324L18.8614 14.3747L18.3173 13.9772L17.7732 14.3747L17.9806 13.7324L17.431 13.338H18.1106L18.318 12.6958L18.5253 13.338H19.205L18.6541 13.7324ZM18.6541 10.6991L18.8614 11.3414L18.3173 10.9439L17.7732 11.3414L17.9806 10.6991L17.431 10.3047H18.1106L18.318 9.66244L18.5253 10.3047H19.205L18.6541 10.6991ZM18.6541 7.66578L18.8614 8.30802L18.3173 7.91053L17.7732 8.30802L17.9806 7.66578L17.431 7.27136H18.1106L18.318 6.62911L18.5253 7.27136H19.205L18.6541 7.66578Z\" fill=\"white\"></path>\n<path d=\"M14.7395 7.021C14.7806 7.00383 14.8223 6.98665 14.864 6.9707C14.8217 6.98665 14.7806 7.00383 14.7395 7.021Z\" fill=\"white\"></path>\n<path d=\"M7.64648 13.4055C7.69985 13.3056 7.75506 13.2062 7.81088 13.1074C7.75445 13.2062 7.69985 13.3056 7.64648 13.4055Z\" fill=\"white\"></path>\n<path d=\"M14.8823 6.96777C14.8756 6.97 14.8697 6.97296 14.863 6.97593C14.8697 6.97296 14.8764 6.97074 14.8823 6.96777Z\" fill=\"white\"></path>\n<path d=\"M14.6292 7.07017C14.666 7.05545 14.7021 7.04011 14.739 7.02539C14.7028 7.04011 14.666 7.05483 14.6292 7.07017Z\" fill=\"white\"></path>\n<path d=\"M14.1639 7.27148C14.1075 7.29725 14.0504 7.32362 13.9946 7.35061C14.0511 7.32424 14.1075 7.29786 14.1639 7.27148Z\" fill=\"white\"></path>\n<path d=\"M8.63586 11.8203C8.62789 11.8314 8.6193 11.843 8.61133 11.854C8.6193 11.8424 8.62789 11.8314 8.63586 11.8203Z\" fill=\"white\"></path>\n<path d=\"M7.64575 13.407C7.64575 13.407 7.64575 13.4062 7.64655 13.4062C7.64655 13.4071 7.64575 13.407 7.64575 13.407Z\" fill=\"white\"></path>\n</g>\n<defs>\n<clippath id=\"clip0_113_148\">\n<rect width=\"40\" height=\"40\" fill=\"white\"></rect>\n</clippath>\n</defs>\n</svg>",
+            "marquee_text": "Made in USA with globally sourced ingredients"
+          }
+        },
+        "1a315b92-db48-4e84-ada0-8208ed9971f9": {
+          "type": "scroll_blocks",
+          "settings": {
+            "svg_code": "<svg width=\"40\" height=\"40\" viewbox=\"0 0 40 40\" fill=\"none\" xmlns=\"http://www.w3.org/2000/svg\">\n<g clip-path=\"url(#clip0_113_460)\">\n<path d=\"M29.7222 28.4669C29.5105 28.2787 29.2245 28.1911 28.9353 28.2248L26.5962 28.5011C27.5461 27.1567 27.8785 25.8679 27.978 24.9469C28.2073 22.8226 27.4744 20.7261 25.9146 19.0434C25.3341 18.4169 24.6349 17.8706 23.8555 17.413C23.7256 16.5102 23.228 15.7265 22.5181 15.2176L23.9657 10.984C24.1576 10.4222 24.118 9.81923 23.8534 9.28629C23.5888 8.75281 23.1328 8.35618 22.5694 8.16908L19.3915 7.11389C18.2289 6.72741 16.9599 7.35657 16.5633 8.51654L12.2505 21.1313C12.0581 21.6931 12.0982 22.2961 12.3628 22.829C12.4478 23.0006 12.5547 23.1562 12.6766 23.2968L12.297 24.4375C12.1858 24.771 12.212 25.1292 12.3703 25.4451C12.5285 25.761 12.7995 25.9957 13.1336 26.1069L15.7454 26.9744C15.8817 27.0199 16.0212 27.0423 16.1613 27.0423C16.3639 27.0423 16.5659 26.9948 16.753 26.9012C17.0689 26.743 17.3036 26.472 17.4148 26.1379L17.7564 25.0971C18.5999 25.0089 19.3616 24.4498 19.6529 23.5988L20.489 21.1527C20.5312 21.1543 20.5724 21.1591 20.6151 21.1591C20.9786 21.1591 21.3271 21.0971 21.6537 20.9875C22.1076 21.2436 22.5079 21.544 22.8356 21.8968C23.5391 22.6558 23.8705 23.595 23.793 24.6123C23.6161 26.9504 21.4308 28.9026 18.3545 29.4735L10.6731 30.3806C10.2 30.4362 9.69967 30.7852 9.48318 31.2097L9.11006 31.942C8.96146 32.2333 8.9636 32.5428 9.11488 32.7903C9.26669 33.0378 9.54091 33.18 9.86805 33.18H28.9915C29.5773 33.18 30.0542 32.7032 30.0542 32.1173V29.219C30.0547 28.9298 29.9333 28.6551 29.7222 28.4669ZM20.6151 20.1269C19.3771 20.1269 18.3706 19.1198 18.3706 17.8818C18.3706 16.6443 19.3776 15.6372 20.6151 15.6372C21.8531 15.6372 22.8602 16.6443 22.8602 17.8818C22.8597 19.1198 21.8526 20.1269 20.6151 20.1269ZM16.2896 25.9781C16.2495 25.9984 16.1677 26.0272 16.0709 25.9946L13.4591 25.1271C13.3619 25.095 13.3137 25.0228 13.294 24.9827C13.2737 24.9426 13.2448 24.8614 13.2774 24.7641L13.5602 23.9131C13.589 23.9238 13.6168 23.9366 13.6462 23.9468L16.7119 24.9651L16.4334 25.8129C16.4018 25.9102 16.3297 25.9577 16.2896 25.9781ZM18.6747 23.2652C18.4609 23.8906 17.7767 24.2295 17.1497 24.0216L13.9723 22.9659C13.6724 22.8659 13.4292 22.6548 13.2881 22.3704C13.147 22.086 13.1256 21.7648 13.2282 21.4654L17.5409 8.85063C17.712 8.3503 18.1845 8.03331 18.6875 8.03331C18.8132 8.03331 18.9409 8.05309 19.066 8.09425L22.2434 9.14944C22.5432 9.24887 22.7864 9.46055 22.9276 9.74493C23.0687 10.0293 23.0901 10.3506 22.988 10.6499L21.5859 14.7504C21.279 14.6553 20.953 14.6034 20.6151 14.6034C18.8078 14.6034 17.3373 16.074 17.3373 17.8813C17.3373 19.2845 18.2252 20.4808 19.4674 20.9474L18.6747 23.2652ZM24.8231 24.6914C24.9225 23.3796 24.497 22.171 23.5931 21.1955C23.3263 20.9079 23.02 20.6518 22.686 20.4198C23.2435 19.9644 23.6465 19.3283 23.8101 18.6024C24.311 18.9413 24.7648 19.3235 25.1561 19.7458C26.5101 21.2061 27.1467 23.014 26.95 24.8357C26.8458 25.7995 26.4411 27.2358 25.1304 28.6738L22.1423 29.0266C23.7 27.9409 24.6932 26.4078 24.8231 24.6914ZM29.0219 32.1184C29.0219 32.1334 29.0075 32.1478 28.9925 32.1478H10.1658L10.4037 31.6801C10.4619 31.5657 10.6661 31.4229 10.7939 31.408L29.0214 29.2554V32.1184H29.0219Z\" fill=\"white\"></path>\n<path opacity=\"0.1\" d=\"M40 19.4595C40 24.254 38.2376 29.1602 35.3846 32.4324C32.1978 36.0876 25.0805 40 19.9995 40C14.9186 40 9.85352 38.2498 6.66667 34.5946C3.81369 31.3224 0 24.254 0 19.4595C0 14.665 1.76241 8.13709 4.61538 4.86487C7.80224 1.2097 14.9186 0 19.9995 0C25.0805 0 30.1465 1.2097 33.3333 4.86487C36.1863 8.13709 40 14.665 40 19.4595Z\" fill=\"#F3D9CF\"></path>\n</g>\n<defs>\n<clippath id=\"clip0_113_460\">\n<rect width=\"40\" height=\"40\" fill=\"white\"></rect>\n</clippath>\n</defs>\n</svg>",
+            "marquee_text": "Third-party Lab Tested"
+          }
+        },
+        "e95ffa07-73e5-4242-b097-8c4582a4260d": {
+          "type": "scroll_blocks",
+          "settings": {
+            "svg_code": "<svg width=\"40\" height=\"40\" viewbox=\"0 0 40 40\" fill=\"none\" xmlns=\"http://www.w3.org/2000/svg\">\n<g clip-path=\"url(#clip0_113_382)\">\n<path opacity=\"0.1\" d=\"M40 19.4595C40 24.254 38.2376 29.1602 35.3846 32.4324C32.1978 36.0876 25.0805 40 19.9995 40C14.9186 40 9.85352 38.2498 6.66667 34.5946C3.81369 31.3224 0 24.254 0 19.4595C0 14.665 1.76241 8.13709 4.61538 4.86487C7.80224 1.2097 14.9186 0 19.9995 0C25.0805 0 30.1465 1.2097 33.3333 4.86487C36.1863 8.13709 40 14.665 40 19.4595Z\" fill=\"#F3D9CF\"></path>\n<path d=\"M27.9768 32.9897C28.9222 32.9897 29.4731 31.9641 28.9152 31.2332C27.1697 28.9456 23.7229 25.79 19.7227 25.79C15.722 25.79 12.2751 28.9456 10.5302 31.2332C9.97227 31.9641 10.5232 32.9897 11.4686 32.9897H27.9768Z\" stroke=\"white\" stroke-miterlimit=\"10\" stroke-linecap=\"round\" stroke-linejoin=\"round\"></path>\n<path d=\"M30.5731 19.0692C28.5035 21.0508 25.1487 21.0508 23.0797 19.0692C21.0102 17.0876 21.0102 13.8752 23.0797 11.8935C25.1487 9.91192 32.4469 10.0995 32.4469 10.0995C32.4469 10.0995 32.642 17.0882 30.5731 19.0692Z\" stroke=\"white\" stroke-miterlimit=\"10\" stroke-linecap=\"round\" stroke-linejoin=\"round\"></path>\n<path d=\"M19.7256 25.8096C19.7221 25.8096 19.7197 25.8073 19.7197 25.8038C19.7197 23.6492 20.3176 21.575 21.4487 19.8044C22.0583 18.8502 22.8185 17.9933 23.7076 17.2584C24.6571 16.4736 25.7589 15.8236 26.9845 15.3248C26.9851 15.3242 26.9862 15.3242 26.9868 15.3242C26.9892 15.3242 26.9915 15.3254 26.9921 15.3277C26.9939 15.3307 26.9921 15.3342 26.9892 15.3354C25.7648 15.8341 24.6641 16.4835 23.7158 17.2672C22.8273 18.0015 22.0671 18.8573 21.4587 19.8103C20.3287 21.5791 19.7314 23.6522 19.7314 25.8038C19.732 25.8073 19.7297 25.8096 19.7256 25.8096Z\" stroke=\"white\" stroke-miterlimit=\"10\" stroke-linecap=\"round\" stroke-linejoin=\"round\"></path>\n<path d=\"M8.87815 16.9739C10.9477 18.9555 14.3025 18.9555 16.3715 16.9739C18.441 14.9923 18.441 11.7798 16.3715 9.79823C14.3025 7.8172 7.00496 8.00475 7.00496 8.00475C7.00496 8.00475 6.8092 14.9923 8.87815 16.9739Z\" stroke=\"white\" stroke-miterlimit=\"10\" stroke-linecap=\"round\" stroke-linejoin=\"round\"></path>\n<path d=\"M19.724 25.8079C19.7205 25.8079 19.7181 25.8056 19.7181 25.8021V23.7097C19.7181 21.5575 19.1209 19.485 17.9909 17.7167C17.3819 16.7637 16.6223 15.9074 15.7338 15.1731C14.7855 14.3894 13.6848 13.74 12.4604 13.2413C12.4575 13.2401 12.4557 13.2366 12.4575 13.2336C12.4581 13.2307 12.461 13.2278 12.4651 13.2307C13.6907 13.7295 14.7925 14.3795 15.742 15.1643C16.6311 15.8992 17.3919 16.7561 18.0009 17.7103C19.132 19.4809 19.7299 21.5563 19.7299 23.7097V25.8021C19.7305 25.8056 19.7281 25.8079 19.724 25.8079Z\" stroke=\"white\" stroke-miterlimit=\"10\" stroke-linecap=\"round\" stroke-linejoin=\"round\"></path>\n</g>\n<defs>\n<clippath id=\"clip0_113_382\">\n<rect width=\"40\" height=\"40\" fill=\"white\"></rect>\n</clippath>\n</defs>\n</svg>",
+            "marquee_text": "Ethically grown and sourced"
+          }
+        },
+        "ab62ed8f-c414-4ba9-9731-7d31ca877056": {
+          "type": "scroll_blocks",
+          "settings": {
+            "svg_code": "<svg width=\"40\" height=\"40\" viewbox=\"0 0 40 40\" fill=\"none\" xmlns=\"http://www.w3.org/2000/svg\">\n<g clip-path=\"url(#clip0_113_226)\">\n<path opacity=\"0.1\" d=\"M40 19.4595C40 24.254 38.2376 29.1602 35.3846 32.4324C32.1978 36.0876 25.0805 40 19.9995 40C14.9186 40 9.85352 38.2498 6.66667 34.5946C3.81369 31.3224 0 24.254 0 19.4595C0 14.665 1.76241 8.13709 4.61538 4.86487C7.80224 1.2097 14.9186 0 19.9995 0C25.0805 0 30.1465 1.2097 33.3333 4.86487C36.1863 8.13709 40 14.665 40 19.4595Z\" fill=\"#F3D9CF\"></path>\n<path d=\"M21.8489 19.8989C21.309 19.8989 20.7481 19.8312 20.1714 19.6952C20.0576 19.6684 19.9578 19.5995 19.8924 19.5026C19.8236 19.401 18.2261 16.9829 19.5621 13.7558C20.9104 10.499 25.6007 9.55343 29.1721 10.5439C29.3665 10.5982 29.5042 10.771 29.5136 10.9723C29.5229 11.1743 29.4015 11.3587 29.213 11.4305C29.1692 11.4486 28.0194 11.9406 27.8712 13.9257C27.755 15.4747 26.8754 17.5958 25.1717 18.8436C24.2157 19.5435 23.0868 19.8989 21.8489 19.8989ZM20.5753 18.8285C22.1419 19.1565 23.5024 18.9084 24.6195 18.0901C26.0758 17.0238 26.8427 15.1479 26.9396 13.8562C27.0377 12.5482 27.5081 11.7293 27.9616 11.2344C24.9336 10.7406 21.4321 11.6791 20.4242 14.1136C19.4489 16.4693 20.2823 18.3008 20.5753 18.8285Z\" fill=\"white\"></path>\n<path d=\"M19.3593 22.6033C19.3272 22.6033 19.2945 22.5998 19.2618 22.5928C19.0097 22.5391 18.8486 22.2916 18.9017 22.0395C19.5187 19.1287 20.8739 16.5822 22.9296 14.4693C23.1094 14.2843 23.4053 14.2808 23.5897 14.4606C23.7748 14.6404 23.7783 14.9363 23.5985 15.1207C21.6671 17.1046 20.3942 19.4976 19.8146 22.2327C19.7691 22.4527 19.5753 22.6033 19.3593 22.6033Z\" fill=\"white\"></path>\n<path d=\"M16.1493 19.1614C14.6102 19.1614 13.2269 18.7172 12.0187 17.8324C9.87779 16.2646 8.77291 13.5996 8.62758 11.6537C8.43146 9.03125 6.89409 8.38455 6.8293 8.35829C6.6437 8.28358 6.52404 8.09797 6.53513 7.89836C6.54622 7.69874 6.68163 7.52715 6.87424 7.47345C11.3784 6.2244 17.2874 7.40691 18.9806 11.4961C20.6593 15.5502 18.6579 18.5789 18.5721 18.7061C18.5067 18.803 18.4069 18.8719 18.2931 18.8987C17.5483 19.0738 16.8333 19.1614 16.1493 19.1614ZM8.12095 8.14233C8.72855 8.7295 9.42428 9.78301 9.55852 11.5836C9.68401 13.2599 10.6797 15.6944 12.5702 17.0788C14.0405 18.1557 15.83 18.4756 17.8898 18.0314C18.2452 17.4115 19.4161 14.9899 18.1174 11.8527C16.7376 8.52054 12.0695 7.40458 8.12095 8.14233Z\" fill=\"white\"></path>\n<path d=\"M19.3591 22.613C19.1432 22.613 18.9494 22.4624 18.9027 22.2429C18.1579 18.7293 16.5231 15.6551 14.0419 13.1068C13.8621 12.9218 13.8662 12.6265 14.0507 12.4467C14.2351 12.2669 14.531 12.271 14.7108 12.4555C17.3169 15.1327 19.034 18.3604 19.8155 22.0498C19.8692 22.3019 19.7076 22.55 19.4554 22.6031C19.4239 22.6101 19.3912 22.613 19.3591 22.613Z\" fill=\"white\"></path>\n<path d=\"M17.7219 29.0363C17.2526 29.0363 16.7419 28.8034 16.2405 28.3528C15.6399 27.8129 15.0971 27.0005 14.7125 26.0654C13.8463 23.9596 14.0529 22.0177 15.1934 21.5485C16.3339 21.0792 17.8474 22.3136 18.7141 24.4195C19.0987 25.3545 19.2849 26.3135 19.2376 27.1201C19.184 28.047 18.8267 28.6925 18.2326 28.9365C18.0703 29.0036 17.8993 29.0363 17.7219 29.0363ZM15.6965 22.3854C15.6417 22.3854 15.5921 22.3942 15.5483 22.4123C15.0849 22.6031 14.8648 23.9829 15.5757 25.7106C15.9032 26.5067 16.373 27.2164 16.8645 27.6588C17.2619 28.0161 17.6402 28.1707 17.8771 28.0733C18.1141 27.9758 18.274 27.5993 18.305 27.0658C18.3435 26.4063 18.1771 25.5711 17.8497 24.775C17.2065 23.2096 16.2213 22.3854 15.6965 22.3854Z\" fill=\"white\"></path>\n<path d=\"M17.8772 28.0715L11.1614 30.834L11.5166 31.6976L18.2325 28.9352L17.8772 28.0715Z\" fill=\"white\"></path>\n<path d=\"M15.1927 21.5445L8.47705 24.3086L8.83248 25.1721L15.5482 22.408L15.1927 21.5445Z\" fill=\"white\"></path>\n<path d=\"M9.99674 32.0005C9.47552 32.0005 8.95489 31.8972 8.45936 31.6906C7.47472 31.2797 6.70895 30.5104 6.30272 29.5235C5.89648 28.5371 5.8994 27.4509 6.30972 26.4662C6.72062 25.4816 7.48989 24.7158 8.47687 24.3096L8.83232 25.1734C8.07648 25.4845 7.48697 26.0711 7.17179 26.8258C6.8572 27.5804 6.85486 28.4122 7.16596 29.168C7.47705 29.9239 8.06364 30.5134 8.81832 30.8285C9.573 31.1431 10.4047 31.1449 11.1606 30.8338L11.516 31.6976C11.0263 31.8996 10.5115 32.0005 9.99674 32.0005Z\" fill=\"white\"></path>\n<path d=\"M21.4209 29.0355C21.2458 29.0355 21.0754 29.0034 20.9125 28.9363C20.3184 28.6918 19.9617 28.0468 19.9075 27.1199C19.8608 26.3133 20.0464 25.3544 20.431 24.4193C21.2978 22.3135 22.8112 21.0796 23.9517 21.5483C25.0922 22.0175 25.2994 23.9594 24.4326 26.0653C23.6902 27.8705 22.4721 29.0355 21.4209 29.0355ZM23.4486 22.3852C22.9239 22.3852 21.9386 23.21 21.2948 24.7748C20.9674 25.5709 20.8016 26.4061 20.8396 27.0657C20.8705 27.5985 21.0304 27.9756 21.2674 28.0731C21.732 28.2651 22.8585 27.438 23.5694 25.7104C24.2803 23.9827 24.0602 22.603 23.5968 22.4121C23.553 22.394 23.5034 22.3852 23.4486 22.3852Z\" fill=\"white\"></path>\n<path d=\"M21.2679 28.0709L20.9126 28.9346L27.6285 31.6978L27.9838 30.8341L21.2679 28.0709Z\" fill=\"white\"></path>\n<path d=\"M23.9525 21.5465L23.5972 22.4102L30.3136 25.1736L30.6689 24.3099L23.9525 21.5465Z\" fill=\"white\"></path>\n<path d=\"M29.1495 32.0005C28.6347 32.0005 28.1199 31.8996 27.6296 31.6976L27.9851 30.8338C28.7409 31.1449 29.5732 31.1431 30.3273 30.8285C31.082 30.5139 31.6686 29.9244 31.9797 29.168C32.2908 28.4122 32.2885 27.5804 31.9739 26.8258C31.6593 26.0711 31.0698 25.4845 30.3133 25.1734L30.6688 24.3096C32.7058 25.1477 33.6811 27.4865 32.8429 29.5235C32.4367 30.5104 31.6709 31.2797 30.6863 31.6906C30.1913 31.8972 29.6701 32.0005 29.1495 32.0005Z\" fill=\"white\"></path>\n</g>\n<defs>\n<clippath id=\"clip0_113_226\">\n<rect width=\"40\" height=\"40\" fill=\"white\"></rect>\n</clippath>\n</defs>\n</svg>",
+            "marquee_text": "No harmful additives or preservatives"
+          }
+        },
+        "80e453f7-dca8-487c-8de1-40333745da35": {
+          "type": "scroll_blocks",
+          "settings": {
+            "svg_code": "<svg width=\"40\" height=\"40\" viewbox=\"0 0 40 40\" fill=\"none\" xmlns=\"http://www.w3.org/2000/svg\">\n<g clip-path=\"url(#clip0_113_304)\">\n<path opacity=\"0.1\" d=\"M40 19.4595C40 24.254 38.2376 29.1602 35.3846 32.4324C32.1978 36.0876 25.0805 40 19.9995 40C14.9186 40 9.85352 38.2498 6.66667 34.5946C3.81369 31.3224 0 24.254 0 19.4595C0 14.665 1.76241 8.13709 4.61538 4.86487C7.80224 1.2097 14.9186 0 19.9995 0C25.0805 0 30.1465 1.2097 33.3333 4.86487C36.1863 8.13709 40 14.665 40 19.4595Z\" fill=\"#F3D9CF\"></path>\n<path d=\"M28.5122 12.4876L25.6931 7.60554C25.1193 6.61192 24.0597 6 22.9128 6H18.0586C17.8326 6 17.612 6.03029 17.3958 6.07573L22.9509 15.6981L21.097 16.768L27.8712 17.7998L30.3649 11.417L28.5122 12.4876Z\" stroke=\"white\" stroke-miterlimit=\"10\" stroke-linecap=\"round\" stroke-linejoin=\"round\"></path>\n<path d=\"M17.7104 6.02148C16.7011 6.13175 15.7935 6.71217 15.2791 7.6034L12.9956 11.5591L18.5562 14.7696L20.4865 11.4264L17.3966 6.0748C17.5002 6.05238 17.605 6.03481 17.7104 6.02148Z\" stroke=\"white\" stroke-miterlimit=\"10\" stroke-linecap=\"round\" stroke-linejoin=\"round\"></path>\n<path d=\"M9.24941 18.0525L6.43032 22.9352C5.85656 23.9282 5.85656 25.1527 6.43032 26.1457L8.85802 30.3492C8.97071 30.5449 9.10763 30.7212 9.25546 30.8854L14.8106 21.263L16.6646 22.333L14.1708 15.9502L7.39606 16.982L9.24941 18.0525Z\" stroke=\"white\" stroke-miterlimit=\"10\" stroke-linecap=\"round\" stroke-linejoin=\"round\"></path>\n<path d=\"M9.25497 30.8874C9.18408 30.8086 9.11622 30.7268 9.052 30.642C9.65241 31.4611 10.6085 31.9567 11.6378 31.9567H16.2055V25.5352H12.3449L9.25497 30.8874Z\" stroke=\"white\" stroke-miterlimit=\"10\" stroke-linecap=\"round\" stroke-linejoin=\"round\"></path>\n<path d=\"M23.6971 31.9492H29.3346C30.4815 31.9492 31.5418 31.3373 32.1149 30.3436L34.542 26.1401C34.6547 25.9444 34.739 25.7378 34.8074 25.5282H23.6971V23.3877L19.416 28.7387L23.6971 34.0897V31.9492Z\" stroke=\"white\" stroke-miterlimit=\"10\" stroke-linecap=\"round\" stroke-linejoin=\"round\"></path>\n<path d=\"M34.6966 25.826C35.1056 24.8966 35.0565 23.8206 34.5421 22.9293L32.2586 18.9736L26.698 22.1841L28.6283 25.5273H34.8081C34.7754 25.6285 34.7384 25.7284 34.6966 25.826Z\" stroke=\"white\" stroke-miterlimit=\"10\" stroke-linecap=\"round\" stroke-linejoin=\"round\"></path>\n</g>\n<defs>\n<clippath id=\"clip0_113_304\">\n<rect width=\"40\" height=\"40\" fill=\"white\"></rect>\n</clippath>\n</defs>\n</svg>",
+            "marquee_text": "Recyclable"
+          }
+        }
+      },
+      "block_order": [
+        "6faede56-08ab-423f-b309-9b168beb4754",
+        "0ccbfef7-b679-4979-9aef-309f367de333",
+        "3dc2aed5-f696-48f0-8cfc-7d8caace0dcb",
+        "5da44d58-dcd6-4dad-aa07-1c1e7f845724",
+        "f88f713a-47c8-4bbf-8189-cf8afe2a53ae",
+        "3afe8c91-fb42-4763-899a-d06c622fec80",
+        "1a315b92-db48-4e84-ada0-8208ed9971f9",
+        "e95ffa07-73e5-4242-b097-8c4582a4260d",
+        "ab62ed8f-c414-4ba9-9731-7d31ca877056",
+        "80e453f7-dca8-487c-8de1-40333745da35"
+      ],
+      "settings": {
+        "add_class": "",
+        "section_bg_color": "#06211e"
+      }
+    },
+    "3031b6dd-9cf3-4895-80e5-858b9d19f90d": {
+      "type": "tabs-image-text",
+      "blocks": {
+        "2ff74f53-2555-4b1d-9c93-1e969f09be41": {
+          "type": "icon_text",
+          "settings": {
+            "svg_code": "<svg width=\"17\" height=\"16\" viewbox=\"0 0 17 16\" fill=\"none\" xmlns=\"http://www.w3.org/2000/svg\">\n<path d=\"M2.02994 9.01803L7.99986 14.5376C8.15069 14.677 8.2261 14.7468 8.30856 14.7809C8.43113 14.8317 8.56887 14.8317 8.69144 14.7809C8.7739 14.7468 8.84931 14.677 9.00013 14.5376L9.00014 14.5376L14.9701 9.01803C16.6806 7.4365 16.8876 4.80554 15.4454 2.976L15.2153 2.68418C13.5081 0.518546 10.1234 0.885611 8.92017 3.36688C8.74998 3.71783 8.25002 3.71783 8.07983 3.36688C6.87659 0.885611 3.49188 0.518545 1.78469 2.68418L1.55465 2.976C0.112401 4.80554 0.319362 7.4365 2.02994 9.01803Z\" stroke=\"#06211E\"></path>\n</svg>",
+            "the_text": "It’s great for you",
+            "the_text_1": "It’s great for you",
+            "liquid": "{{ product.metafields.custom.content_tab_2 | newline_to_br }}"
+          }
+        },
+        "69dfaa94-ba53-4671-bc55-1ddc6968d340": {
+          "type": "icon_text",
+          "settings": {
+            "svg_code": "<svg width=\"16\" height=\"20\" viewbox=\"0 0 16 20\" fill=\"none\" xmlns=\"http://www.w3.org/2000/svg\">\n                                    <path d=\"M7.089 14V8.225H7.87V14H7.089ZM7.485 6.949C7.32367 6.949 7.188 6.894 7.078 6.784C6.968 6.674 6.913 6.542 6.913 6.388C6.913 6.234 6.968 6.10567 7.078 6.003C7.188 5.893 7.32367 5.838 7.485 5.838C7.64633 5.838 7.782 5.88933 7.892 5.992C8.002 6.09467 8.057 6.223 8.057 6.377C8.057 6.53833 8.002 6.674 7.892 6.784C7.78933 6.894 7.65367 6.949 7.485 6.949Z\" fill=\"#06211E\"></path>\n                                    <circle cx=\"8\" cy=\"10\" r=\"7.5\" stroke=\"#06211E\"></circle>\n                                    </svg>",
+            "the_text": "How to use",
+            "the_text_1": "How to use",
+            "liquid": "{{ product.metafields.custom.content_tab_1 }}"
+          }
+        },
+        "aabff12e-6e7d-410d-bcb5-90792c6e7ffd": {
+          "type": "icon_text",
+          "settings": {
+            "svg_code": "<svg width=\"14\" height=\"17\" viewbox=\"0 0 14 17\" fill=\"none\" xmlns=\"http://www.w3.org/2000/svg\">\n<path d=\"M9.78677 13.5172C13.8994 10.2852 12.8908 1 12.8908 1C12.8908 1 3.30268 3.6672 1.4725 8.44828C0.409375 11.2255 1.4725 16 1.4725 16C1.4725 16 7.17919 15.5665 9.78677 13.5172Z\" fill=\"#FAEEE9\" stroke=\"#06211E\"></path>\n</svg>",
+            "the_text": "INGREDIENTS",
+            "the_text_1": "DETAILS",
+            "liquid": "{{ product.metafields.custom.content_tab_3 | newline_to_br }}"
+          }
+        }
+      },
+      "block_order": [
+        "2ff74f53-2555-4b1d-9c93-1e969f09be41",
+        "69dfaa94-ba53-4671-bc55-1ddc6968d340",
+        "aabff12e-6e7d-410d-bcb5-90792c6e7ffd"
+      ],
+      "disabled": true,
+      "settings": {
+        "the_image": "shopify://shop_images/Image_1.jpg"
+      }
+    },
+    "493fb393-eaca-485b-98cd-91126bb61b76": {
+      "type": "kids-tabs-image-text",
+      "blocks": {
+        "8d9f38d9-144b-4f5a-a37d-efb3e63e505a": {
+          "type": "icon_text",
+          "settings": {
+            "svg_code": "<svg width=\"17\" height=\"16\" viewbox=\"0 0 17 16\" fill=\"none\" xmlns=\"http://www.w3.org/2000/svg\">\n<path d=\"M2.02994 9.01803L7.99986 14.5376C8.15069 14.677 8.2261 14.7468 8.30856 14.7809C8.43113 14.8317 8.56887 14.8317 8.69144 14.7809C8.7739 14.7468 8.84931 14.677 9.00013 14.5376L9.00014 14.5376L14.9701 9.01803C16.6806 7.4365 16.8876 4.80554 15.4454 2.976L15.2153 2.68418C13.5081 0.518546 10.1234 0.885611 8.92017 3.36688C8.74998 3.71783 8.25002 3.71783 8.07983 3.36688C6.87659 0.885611 3.49188 0.518545 1.78469 2.68418L1.55465 2.976C0.112401 4.80554 0.319362 7.4365 2.02994 9.01803Z\" stroke=\"#06211E\"></path>\n</svg>",
+            "the_text": "It’s great for you",
+            "the_text_1": "It’s great for you",
+            "liquid": "{{ product.metafields.custom.content_tab_2 | newline_to_br }}"
+          }
+        },
+        "d8382aec-9a15-4ede-87e1-3109f893c6a5": {
+          "type": "icon_text",
+          "settings": {
+            "svg_code": "<svg width=\"16\" height=\"20\" viewbox=\"0 0 16 20\" fill=\"none\" xmlns=\"http://www.w3.org/2000/svg\">\n                                    <path d=\"M7.089 14V8.225H7.87V14H7.089ZM7.485 6.949C7.32367 6.949 7.188 6.894 7.078 6.784C6.968 6.674 6.913 6.542 6.913 6.388C6.913 6.234 6.968 6.10567 7.078 6.003C7.188 5.893 7.32367 5.838 7.485 5.838C7.64633 5.838 7.782 5.88933 7.892 5.992C8.002 6.09467 8.057 6.223 8.057 6.377C8.057 6.53833 8.002 6.674 7.892 6.784C7.78933 6.894 7.65367 6.949 7.485 6.949Z\" fill=\"#06211E\"></path>\n                                    <circle cx=\"8\" cy=\"10\" r=\"7.5\" stroke=\"#06211E\"></circle>\n                                    </svg>",
+            "the_text": "How to use",
+            "the_text_1": "How to use",
+            "liquid": "{{ product.metafields.custom.content_tab_1 }}"
+          }
+        },
+        "935a9849-b16c-4cd9-9a3a-a8e986f459b5": {
+          "type": "icon_text",
+          "settings": {
+            "svg_code": "<svg width=\"14\" height=\"17\" viewbox=\"0 0 14 17\" fill=\"none\" xmlns=\"http://www.w3.org/2000/svg\">\n<path d=\"M9.78677 13.5172C13.8994 10.2852 12.8908 1 12.8908 1C12.8908 1 3.30268 3.6672 1.4725 8.44828C0.409375 11.2255 1.4725 16 1.4725 16C1.4725 16 7.17919 15.5665 9.78677 13.5172Z\" fill=\"#FAEEE9\" stroke=\"#06211E\"></path>\n</svg>",
+            "the_text": "INGREDIENTS",
+            "the_text_1": "DETAILS",
+            "liquid": "{{ product.metafields.custom.content_tab_3 | newline_to_br }}"
+          }
+        }
+      },
+      "block_order": [
+        "8d9f38d9-144b-4f5a-a37d-efb3e63e505a",
+        "d8382aec-9a15-4ede-87e1-3109f893c6a5",
+        "935a9849-b16c-4cd9-9a3a-a8e986f459b5"
+      ],
+      "settings": {}
+    },
+    "mushroom_blend_benefits_section_AgHfff": {
+      "type": "mushroom-blend-benefits-section",
+      "settings": {
+        "section_bg_color": "#ad863a",
+        "the_image": "shopify://shop_images/80_boost_in_Microbiota_biomass.png",
+        "the_title": "80%",
+        "the_text": "boost in Microbiota biomass*",
+        "the_title_2": "100%",
+        "the_text_2": "increase in Butyrate production*",
+        "btn_text": "READ MORE",
+        "popup_text": "<p><strong>80% Boost in Microbiota Biomass & 100% Increase in Butyrate Production*</strong></p><p>The Colon-on-a-plate® study revealed that our blend significantly enhances gut health by increasing butyrate production by up to 100% and overall microbiota biomass by 80%, promoting a healthier gut environment and improved digestion.</p><p><em>\"Massimo M. et al. Intermediate Report April 2024. “A Colon-on-a-plate® Study to Assess Prebiotic Activity of Functional Mushrooms”. Our Ref: 2015780/D2876/A COAP study to Assess Prebiotic Activity.</em></p><p><em>The study aimed to compare the impact of six products on gut microbial activity in ten healthy adults using Pro Digest’s Colon-on-a-plate® technology platform. The most substantial effect on these fermentation parameters was attributed to Cordyceps militaris, which primarily stimulated butyrate production.<br/>Fermentation profiles of Lion’s Mane, GRAS Blend, and MaxSpectrum were highly similar. Likewise, Turkey Tail and Reishi exhibited identical impacts on the fermentation profile but were less pronounced than the other products tested. The most considerable metabolic impact was observed for MaxSpectrum, resulting in<br/>a unique metabolic fingerprint of this particular treatment compared to the different treatments in this study.</em></p>"
+      }
+    },
+    "711dae1f-49a8-45fe-a100-fb3f0453f2d3": {
+      "type": "custom-description-slider",
+      "settings": {
+        "title_1": "OVERVIEW",
+        "button": "Certificate of Analysis",
+        "title_2": "Dosage"
+      }
+    },
+    "blend_made_of_Tw4Axx": {
+      "type": "blend-made-of",
+      "blocks": {
+        "blend_blocks_bHybGK": {
+          "type": "blend_blocks",
+          "settings": {
+            "icon_img": "shopify://shop_images/lION_S_MANE_b6d3f48a-8fae-43c7-a4df-2c935e0b2eae.png",
+            "the_title": "LiON’S MANE",
+            "the_text": "Known for its brain-boosting power, Lion’s Mane supports memory, focus, and mental clarity. It promotes the production of Nerve Growth Factor (NGF), essential for nerve health and cognitive function. Additionally, it enhances neurite outgrowth, helping to slow or even reverse brain cell degeneration. It also provides antioxidant support, protecting brain cells from daily stress.*"
+          }
+        },
+        "blend_blocks_qMF6zP": {
+          "type": "blend_blocks",
+          "settings": {
+            "icon_img": "shopify://shop_images/REISHI_da355711-3663-4000-bf96-c3caa218eddf.png",
+            "the_title": "REISHI",
+            "the_text": "Known as the “mushroom of immortality”, Reishi is a revered adaptogen that may help reduce occasional stress and balance immune function. Rich in beta-glucans and triterpenoids, it supports immunity, healthy blood sugar, and heart health. Reishi has a long history in traditional medicine for enhancing vitality and longevity.*"
+          }
+        },
+        "blend_blocks_N6W6yb": {
+          "type": "blend_blocks",
+          "settings": {
+            "icon_img": "shopify://shop_images/TURKEY_TAIL_f8f1c0b8-bc25-407a-afa2-06db565cc875.png",
+            "the_title": "TURKEY TAIL",
+            "the_text": "With a rich profile of polysaccharides, Turkey Tail is one of the most researched mushrooms for immune health. It acts as a powerful immune booster and supports a balanced gut microbiome, which further strengthens immunity.*"
+          }
+        },
+        "blend_blocks_AULNEf": {
+          "type": "blend_blocks",
+          "settings": {
+            "icon_img": "shopify://shop_images/CHAGA_5f7046c0-a0d9-4918-b9ac-1f6e5ad88d63.png",
+            "the_title": "CHAGA",
+            "the_text": "“King of medicinal mushrooms”, known for its high antioxidant content, Chaga protects cells from oxidative stress and supports immune health. It also promotes skin health and youthful appearance, helping to fight free radicals that contribute to aging.*"
+          }
+        },
+        "blend_blocks_6knrNq": {
+          "type": "blend_blocks",
+          "settings": {
+            "icon_img": "shopify://shop_images/CORDYCEPS_48dac42f-6df6-4d0e-ba56-a9176ac093dc.png",
+            "the_title": "CORDYCEPS",
+            "the_text": "Cordyceps enhances energy, stamina, and athletic performance by supporting oxygen flow and ATP production. It is also known to promote heart health and respiratory function, making it a favorite among athletes and active individuals.*"
+          }
+        },
+        "blend_blocks_qTnEy4": {
+          "type": "blend_blocks",
+          "settings": {
+            "icon_img": "shopify://shop_images/SHIITAKE_bbfa5987-2fb1-47b4-9fb7-7aa2f6b1cbe5.png",
+            "the_title": "SHIITAKE",
+            "the_text": "Shiitake is packed with essential nutrients like vitamins B and D, supporting immunity and cardiovascular health. Known for promoting healthy cholesterol levels, Shiitake also provides natural energy support, contributing to overall wellness.*"
+          }
+        },
+        "blend_blocks_NXwBqF": {
+          "type": "blend_blocks",
+          "settings": {
+            "icon_img": "shopify://shop_images/MAITAKE_87a14729-1a4e-46fe-87f1-40d6ba63bc35.png",
+            "the_title": "MAITAKE",
+            "the_text": "Maitake supports cardiovascular health by regulating cholesterol and blood sugar levels. This nutrient-rich mushroom is high in beta-glucans, which enhance immune function and contribute to metabolic health.*"
+          }
+        },
+        "blend_blocks_djcCF4": {
+          "type": "blend_blocks",
+          "settings": {
+            "icon_img": "shopify://shop_images/ANTRODIA_a32786ee-c027-40fe-ac30-b202cffade43.png",
+            "the_title": "ANTRODIA",
+            "the_text": "Unique to Taiwan, Antrodia Camphorata is highly valued for its immune-enhancing and liver-supporting properties. It provides antioxidant protection, helps fight fatigue, and has been used in traditional medicine to support overall vitality.*"
+          }
+        },
+        "blend_blocks_hX8rcK": {
+          "type": "blend_blocks",
+          "settings": {
+            "icon_img": "shopify://shop_images/ROYAL_SUN_474b05c5-c600-4d6b-b329-504fdb23701e.png",
+            "the_title": "ROYAL SUN",
+            "the_text": "Royal Sun Mushroom helps balance hormones, supports immune health, and aids liver function. It also assists in managing blood sugar levels, promoting heart health, and maintaining a balanced metabolic profile.*"
+          }
+        },
+        "blend_blocks_BEV8Eg": {
+          "type": "blend_blocks",
+          "settings": {
+            "icon_img": "shopify://shop_images/KING_TRUMPET_ac833ee5-4060-43f2-a231-0be50727bdb7.png",
+            "the_title": "KING TRUMPET",
+            "the_text": "High in the master antioxidant L-Ergothioneine, King Trumpet supports heart and bone health. It is known to help regulate cholesterol levels, boost immunity, and enhance overall vitality.*"
+          }
+        }
+      },
+      "block_order": [
+        "blend_blocks_bHybGK",
+        "blend_blocks_qMF6zP",
+        "blend_blocks_N6W6yb",
+        "blend_blocks_AULNEf",
+        "blend_blocks_6knrNq",
+        "blend_blocks_qTnEy4",
+        "blend_blocks_NXwBqF",
+        "blend_blocks_djcCF4",
+        "blend_blocks_hX8rcK",
+        "blend_blocks_BEV8Eg"
+      ],
+      "settings": {
+        "section_bg_color": "#06211e",
+        "the_title": "MEET THE MUSHROOMS INSIDE\nOUR <span>GOLDEN BLEND</span>",
+        "sub_title": "SCIENTIFICALLY-STUDIED | EXPERT RECOMMENDED "
+      }
+    },
+    "blends_free_allergen_3D7j3p": {
+      "type": "blends-free-allergen",
+      "blocks": {
+        "icon_lists_wyDnxj": {
+          "type": "icon_lists",
+          "settings": {
+            "icon_img": "shopify://shop_images/yeast.svg"
+          }
+        },
+        "icon_lists_4yhzwV": {
+          "type": "icon_lists",
+          "settings": {
+            "icon_img": "shopify://shop_images/dairy.svg"
+          }
+        },
+        "icon_lists_4rz6Gy": {
+          "type": "icon_lists",
+          "settings": {
+            "icon_img": "shopify://shop_images/soy.svg"
+          }
+        },
+        "icon_lists_4MFkQb": {
+          "type": "icon_lists",
+          "settings": {
+            "icon_img": "shopify://shop_images/peanuts.svg"
+          }
+        },
+        "icon_lists_MBm4dB": {
+          "type": "icon_lists",
+          "settings": {
+            "icon_img": "shopify://shop_images/wheat.svg"
+          }
+        },
+        "icon_lists_TDXWk7": {
+          "type": "icon_lists",
+          "settings": {
+            "icon_img": "shopify://shop_images/egg_1.svg"
+          }
+        },
+        "icon_lists_fhbnxH": {
+          "type": "icon_lists",
+          "settings": {
+            "icon_img": "shopify://shop_images/fish.svg"
+          }
+        },
+        "icon_lists_7DgMcC": {
+          "type": "icon_lists",
+          "settings": {
+            "icon_img": "shopify://shop_images/shellfish.svg"
+          }
+        }
+      },
+      "block_order": [
+        "icon_lists_wyDnxj",
+        "icon_lists_4yhzwV",
+        "icon_lists_4rz6Gy",
+        "icon_lists_4MFkQb",
+        "icon_lists_MBm4dB",
+        "icon_lists_TDXWk7",
+        "icon_lists_fhbnxH",
+        "icon_lists_7DgMcC"
+      ],
+      "settings": {
+        "section_bg_color": "#faeee9",
+        "left_the_image": "shopify://shop_images/Free_of_allergens_928508bf-9d5c-4f58-b992-dcc5b30ae07d.svg",
+        "text_under_text": "<p>Our MUSHROOM BLEND does not contain yeast, dairy, soy, peanut/tree nuts, wheat, eggs, fish, or shellfish.</p><p>It is paleo and keto friendly.</p><p>Does not contain harmful additives, artificial flavors, synthetic colors or preservatives.</p>",
+        "the_title": "THE FULL-SPECTRUM FOR MAXIMUM POTENCY",
+        "the_text": "<p>Our blend uses both fruiting bodies and mycelium. This approach captures the complete range of bioactive compounds found naturally in each mushroom. By using the entire mushroom, we maximize each mushroom's unique benefits for a truly holistic wellness experience.</p>",
+        "the_title_2": "ENHANCED BETA-D-GLUCAN CONTENT",
+        "the_text_2": "<p>Each serving provides over 20% Beta-D-Glucans, scientifically proven to strengthen immune defenses and promote cellular health, helping you stay resilient every day.</p>",
+        "right_the_image": "shopify://shop_images/A_10-1_Mushroom_Super_blend.svg"
+      }
+    },
+    "16633442945a2bca6e": {
+      "type": "text-image-product",
+      "settings": {
+        "title": "SHARPEN YOUR MIND,LIFT YOUR SPIRIT",
+        "sub_title": "From €20",
+        "content": "Resistance is the gateway to growth. This truth defines, drives, and inspires us. Challenge. Evolution. Achievement. Whether we're hitting the mountain, the desert, the street, the beach, the gym, the office, or the studio, our activities are shaped by determination. Grit is a skill. Talent is something to master. Our bodies and minds are elements to push. Made to perform at the heights of excellence, there's nothing we can't do or become. The warrior is within.",
+        "background": "section-bund",
+        "show_icon": false
+      }
+    },
+    "product-related": {
+      "type": "product-related",
+      "disabled": true,
+      "settings": {
+        "title": "You May Also Like",
+        "sub_title": "Here are the crowd pleasers.",
+        "button": "SHOP COLLECTION",
+        "url": "shopify://collections/seasonal-picks",
+        "class": "sea"
+      }
+    },
+    "17282961562e1655c9": {
+      "type": "apps",
+      "blocks": {
+        "rebuy_personalization_engine_rebuy_widget_fw6rFP": {
+          "type": "shopify://apps/rebuy-personalization-engine/blocks/rebuy-widget/a26ae9b9-933b-40bf-bbc6-bf1220bbc4dc",
+          "settings": {
+            "enabled": true,
+            "id": "166341",
+            "product_id_enabled": true,
+            "collection_id_enabled": false
+          }
+        }
+      },
+      "block_order": [
+        "rebuy_personalization_engine_rebuy_widget_fw6rFP"
+      ],
+      "settings": {
+        "section_bg_color": "",
+        "title": "You May Also Like",
+        "the_text": "Here are the crowd pleasers.",
+        "btn_text": "Shop Collection",
+        "the_url": "shopify://collections/seasonal-picks",
+        "image": "leaf-n18.svg",
+        "enable_svg": false,
+        "class_text": "recommended-rebuy-products",
+        "text": ""
+      }
+    },
+    "16633174580171c989": {
+      "type": "apps",
+      "blocks": {
+        "75c28b4b-71b1-422f-b78e-012bfaa19ba7": {
+          "type": "shopify://apps/judge-me-reviews/blocks/review_widget/61ccd3b1-a9f2-4160-9fe9-4fec8413e5d8",
+          "settings": {
+            "review_data": "sample_data",
+            "max_width": 1200,
+            "show_shop_reviews": false,
+            "empty_state": "empty_widget"
+          }
+        }
+      },
+      "block_order": [
+        "75c28b4b-71b1-422f-b78e-012bfaa19ba7"
+      ],
+      "settings": {
+        "section_bg_color": "#faeee9",
+        "title": "WHAT OTHER CUSTOMERS SAY",
+        "the_text": "",
+        "btn_text": "",
+        "the_url": "",
+        "image": "leaf-review-btm.svg",
+        "enable_svg": true,
+        "class_text": "jdgeme-reviews-wrapper",
+        "text": ""
+      }
+    },
+    "0e389521-6c1c-46db-83f0-6da21b464039": {
+      "type": "custom-featured-blog",
+      "settings": {
+        "show_kids": false,
+        "text_area": "",
+        "heading": "LEARN SOMETHING TODAY",
+        "button": "View All",
+        "url": "shopify://blogs/all",
+        "image_1": "leaf-n06.svg",
+        "image_2": "leaf-n07.svg",
+        "class_1": "right-top",
+        "class_2": "right-top",
+        "top": "top: -30px",
+        "bottom": "bottom: -120px"
+      }
+    },
+    "faq-product": {
+      "type": "faq-product",
+      "settings": {
+        "title": "Frequently Asked Questions"
+      }
+    },
+    "1663344215f9151aa8": {
+      "type": "featured-blog",
+      "blocks": {
+        "8f578c65-f794-4dfc-b375-8bfc603322d1": {
+          "type": "post",
+          "settings": {
+            "article": "wellness/immune-system-supplements"
+          }
+        },
+        "bfa20b08-0e35-4fc6-9685-2b3ffae7fa2e": {
+          "type": "post",
+          "settings": {
+            "article": "lifestyle/what-are-nootropics"
+          }
+        },
+        "0ac38247-491f-4325-8219-fbc91de79728": {
+          "type": "post",
+          "settings": {
+            "article": "lifestyle/definitive-guide-lions-mane-mushrooms"
+          }
+        },
+        "7b45a0ff-bbc4-47af-882a-5ca2f32f56d1": {
+          "type": "post",
+          "settings": {
+            "article": "lifestyle/moringa-superfood-breastfeeding-moms"
+          }
+        }
+      },
+      "block_order": [
+        "8f578c65-f794-4dfc-b375-8bfc603322d1",
+        "bfa20b08-0e35-4fc6-9685-2b3ffae7fa2e",
+        "0ac38247-491f-4325-8219-fbc91de79728",
+        "7b45a0ff-bbc4-47af-882a-5ca2f32f56d1"
+      ],
+      "disabled": true,
+      "settings": {
+        "show_kids": false,
+        "heading": "LEARN SOMETHING TODAY",
+        "button": "View All",
+        "url": "",
+        "image_1": "leaf-n06.svg",
+        "image_2": "leaf-n07.svg",
+        "class_1": "right-top",
+        "class_2": "right-top",
+        "top": "top: -30px",
+        "bottom": "bottom: -120px"
+      }
+    },
+    "16814443450a7fd8a2": {
+      "type": "apps",
+      "disabled": true,
+      "settings": {
+        "section_bg_color": "",
+        "title": "",
+        "the_text": "",
+        "btn_text": "",
+        "the_url": "",
+        "image": "leaf-n18.svg",
+        "enable_svg": false,
+        "class_text": "",
+        "text": ""
+      }
+    }
+  },
+  "order": [
+    "3895d52f-391f-4fc3-83b9-e927850fff64",
+    "main",
+    "8fd6e9de-4a6b-4b43-b80f-f0b53ecf9b73",
+    "6e3ad2e8-f4d6-49ff-b83a-a77af265f99c",
+    "3031b6dd-9cf3-4895-80e5-858b9d19f90d",
+    "493fb393-eaca-485b-98cd-91126bb61b76",
+    "mushroom_blend_benefits_section_AgHfff",
+    "711dae1f-49a8-45fe-a100-fb3f0453f2d3",
+    "blend_made_of_Tw4Axx",
+    "blends_free_allergen_3D7j3p",
+    "16633442945a2bca6e",
+    "product-related",
+    "17282961562e1655c9",
+    "16633174580171c989",
+    "0e389521-6c1c-46db-83f0-6da21b464039",
+    "faq-product",
+    "1663344215f9151aa8",
+    "16814443450a7fd8a2"
+  ]
+}

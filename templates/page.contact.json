@@ -1,0 +1,58 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+ {
+  "sections": {
+    "5ede0552-c902-4d69-9d7c-6c753e30dc0a": {
+      "type": "page-breadcrumbs",
+      "settings": {
+        "enable_breadcrumb": true
+      }
+    },
+    "main": {
+      "type": "main-contact",
+      "blocks": {
+        "cdd48bd2-c51b-406f-a986-203fd7aec4f8": {
+          "type": "content",
+          "settings": {
+            "title": "Email Us",
+            "content": "<a class=\"color-dark\" href=\"mailto:info@tribe-organics.com\">info@tribe-organics.com</a>"
+          }
+        },
+        "18c1c352-da6b-4dfe-ba4e-2e0904f231f3": {
+          "type": "content",
+          "settings": {
+            "title": "Chat With Us",
+            "content": "<a class=\"color-dark\" href=\"https://www.facebook.com/triibeorganics\">Facebook</a><br>\n                                <a class=\"color-dark\" href=\"https://www.instagram.com/tribe.organics/\">Instagram</a>"
+          }
+        },
+        "84700f09-1b35-4b33-9514-f03bf428ff27": {
+          "type": "content",
+          "settings": {
+            "title": "Tribe Organics",
+            "content": "40 Exchange Pl, New York, NY, United States 10005"
+          }
+        }
+      },
+      "block_order": [
+        "cdd48bd2-c51b-406f-a986-203fd7aec4f8",
+        "18c1c352-da6b-4dfe-ba4e-2e0904f231f3",
+        "84700f09-1b35-4b33-9514-f03bf428ff27"
+      ],
+      "settings": {
+        "title": "Contact Us",
+        "content": "We’re trying to remove some of the stress from your busy life, not add to it. If you have a question, concern of feedback we would love to hear it and help."
+      }
+    }
+  },
+  "order": [
+    "5ede0552-c902-4d69-9d7c-6c753e30dc0a",
+    "main"
+  ]
+}

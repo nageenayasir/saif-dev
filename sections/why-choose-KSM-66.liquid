@@ -1,0 +1,148 @@
+<style>
+  #id-{{ section.id }}{
+  	background-color:{{ section.settings.section_bg_color }};
+  }
+</style>
+<section id="id-{{section.id}}" class="why-choose-ksm-section">
+  <div class="why-choose-ksm-wrapper">
+    <div class="container">
+      <div class="row why-choose-ksm-row">
+        <div class="col-lg-12 col-md-12 col-sm-12">
+          <div class="why-choose-ksm-head">
+            <h2 class="custom-heading-h2">
+            {{ section.settings.main_title }}
+          </h2>
+          </div>
+        </div>
+      </div>
+      <div class="row ksm-certified-row">
+        {% if section.settings.alignment == 'left' %}
+          <div class="col-lg-6 col-md-6 col-sm-12">
+            <div class="custom-img-wrap">
+              {% if section.settings.the_image != blank %}<img loading="lazy" src="{{ section.settings.the_image | image_url: width: 2000 }}">{% endif %}
+            </div>
+          </div>
+        {% endif %}
+        <div class="col-lg-6 col-md-6 col-sm-12">
+          <div class="custom-img--content-wrap">
+            <p>{{ section.settings.img_txt_text }}</p>
+          </div>
+        </div>
+        {% if section.settings.alignment == 'right' %}
+          <div class="col-lg-6 col-md-6 col-sm-12">
+            <div class="custom-img-wrap">
+              {% if section.settings.the_image != blank %}<img loading="lazy" src="{{ section.settings.the_image | image_url: width: 2000 }}">{% endif %}
+            </div>
+          </div>
+        {% endif %}
+      </div>
+      <div class="row ksm-certified-number-rows">
+        <div class="col-lg-12 col-md-12 col-sm-12">
+          <ul class="ksm-certified-number-lists">
+            {% for block in section.blocks %}
+              <li class="ksm-certified-num-blocks">
+                <div class="ksm-certified-num-wrap">
+                  <div class="ksm-certified-nums">
+                    <p>{{ block.settings.num_text }}</p>
+                  </div>
+                  <div class="ksm-certified-txt">
+                    <p>{{ block.settings.the_text }}</p>
+                  </div>
+                </div>
+              </li>
+            {% endfor %}
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+{% schema %}
+  {
+    "name": "Why Choose KSM-66",
+    "settings": [
+      {
+            "type": "header",
+            "content": "Content Style"
+        },
+	    {
+           "type": "color",
+           "id": "section_bg_color",
+           "label": "Section background color"
+        },
+        {
+          "type": "header",
+          "content": "Content Settings"
+      	},
+        {
+          "type": "text",
+          "id": "main_title",
+          "label": "Title"
+      	},
+        {
+          "type": "header",
+          "content": "Image-text Settings"
+      	},
+        {
+          "type": "image_picker",
+          "id": "the_image",
+          "label": "Image"
+      	},
+        {
+          "type": "select",
+          "id": "alignment",
+          "label": "Image position",
+          "default": "left",
+          "options": [
+            {
+              "value": "left",
+              "label": "Left"
+            },
+            {
+              "value": "right",
+              "label": "Right"
+            }
+          ]
+      	},
+        {
+           "type": "text",
+           "id": "img_txt_text",
+           "label": "Image Text"
+      	}
+        
+    ],
+	"blocks": [
+      {
+        "type": "ksm_certified",
+        "name": "Ksm Certfied",
+        "settings": [
+		  {
+            "type": "header",
+            "content": "Content Settings"
+        },
+		{
+          "type": "text",
+          "id": "num_text",
+          "label": "NumberText"
+      	},
+	     {
+          "type": "text",
+          "id": "the_text",
+          "label": "Text"
+      	}
+
+        ]
+      }
+	
+	],
+	"presets": [{
+      "name": "Why Choose KSM-66"
+    }]
+  }
+{% endschema %}
+
+{% stylesheet %}
+{% endstylesheet %}
+
+{% javascript %}
+{% endjavascript %}

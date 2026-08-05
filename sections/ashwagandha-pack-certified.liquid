@@ -1,0 +1,77 @@
+<section id="id-{{ section.id }}" class="ashwagandha-certified-section">
+  <div class="ashwagandha-certified-wrapper">
+    <div class="container">
+      <div class="row">
+         <div class="col-sm-12 col-md-12 col-lg-12">
+          <div class="ashwagandha-certified-head common-custom-heading-wrapper">
+            <h2>{{ section.settings.the_title }}</h2>
+          </div>
+         </div>
+        <div class="row ashwagandha-certified-row">
+           <div class="col-sm-12 col-md-6 col-lg-6">
+            <div class="ashwagandha-certified-img">
+              {% if section.settings.the_image != blank %}<img loading="lazy"  src="{{ section.settings.the_image | image_url: width: 2000 }}">{% endif %}
+            </div>
+          </div>
+          <div class="col-sm-12 col-md-6 col-lg-6">
+            <div class="ashwagandha-certified-content">
+              <div class="ashwagandha-certified-text">
+                {{ section.settings.the_text }}
+              </div>
+              <div class="ashwagandha-certified-logo">
+                {% if section.settings.the_logo != blank %}<img loading="lazy"  src="{{ section.settings.the_logo | image_url: width: 2000 }}">{% endif %}
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+{% schema %}
+  {
+    "name": "Ashwanandha Certified",
+    "settings": [
+       {
+            "type": "header",
+            "content": "Content Style"
+      },
+  	  {
+           "type": "color",
+           "id": "section_bg_color",
+           "label": "Section background color"
+      },
+      {
+          "type": "text",
+          "id": "the_title",
+          "label": "Title" 
+      },
+      {
+            "type": "header",
+            "content": "Left Image Settings"
+      },
+      {
+          "type": "image_picker",
+          "id": "the_image",
+          "label": "Image"
+      },
+      {
+            "type": "header",
+            "content": "Right Content Settings"
+      },
+      {
+          "type": "richtext",
+          "id": "the_text",
+          "label": "Text" 
+      },
+      {
+          "type": "image_picker",
+          "id": "the_logo",
+          "label": "Logo"
+      }
+    ],
+	"presets": [{
+      "name": "Ashwanandha Certified"
+    }]
+  }
+{% endschema %}

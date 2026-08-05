@@ -1,0 +1,115 @@
+{% comment %}  
+ <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.css" />
+{% endcomment %}
+<link rel="stylesheet" href="{{ 'slick-1.8.1.min.css' | asset_url }}" type="text/css" media="all">
+<style>
+  #id-{{ section.id }}{
+  	background-color:{{ section.settings.section_bg_color }};
+  }
+</style>
+<section id="id-{{section.id}}" class="homepage-reviews-section">
+  <div class="container">
+    <div class="row">
+        <div class="customer-reviews-slider">
+          {% for block in section.blocks %}
+            <div class="customer-reviews-blocks">
+              <div class="customer-image-wrap" data-aos="fade-up" data-aos-delay="200">
+                {% if block.settings.image != blank %}<img class="lazyload" src="{{ block.settings.image | image_url: width: 2000 }}" alt="{{ block.settings.title }}" width="395" height="525">{% endif %}
+              </div>
+              <div class="customer-content-wrap" data-aos="fade-up" data-aos-delay="200">
+                {% if block.settings.enable_rating %}
+                <div class="customer-rating">
+                  <span>
+                    <svg width="193" height="37" viewBox="0 0 193 37" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M17.7245 26.5919L26.8526 32.3353L24.4303 21.5107L32.4949 14.2275L21.875 13.2883L17.7245 3.07956L13.574 13.2883L2.9541 14.2275L11.0187 21.5107L8.5964 32.3353L17.7245 26.5919Z" fill="#CC992F"/>
+                    <path d="M96.4979 26.5919L105.626 32.3353L103.204 21.5107L111.268 14.2275L100.648 13.2883L96.4979 3.07956L92.3475 13.2883L81.7275 14.2275L89.7922 21.5107L87.3698 32.3353L96.4979 26.5919Z" fill="#CC992F"/>
+                    <path d="M57.1151 26.5919L66.2432 32.3353L63.8209 21.5107L71.8855 14.2275L61.2656 13.2883L57.1151 3.07956L52.9646 13.2883L42.3447 14.2275L50.4094 21.5107L47.987 32.3353L57.1151 26.5919Z" fill="#CC992F"/>
+                    <path d="M135.889 26.5919L145.017 32.3353L142.594 21.5107L150.659 14.2275L140.039 13.2883L135.889 3.07956L131.738 13.2883L121.118 14.2275L129.183 21.5107L126.76 32.3353L135.889 26.5919Z" fill="#CC992F"/>
+                    <path d="M175.279 26.5919L184.407 32.3353L181.985 21.5107L190.05 14.2275L179.43 13.2883L175.279 3.07956L171.129 13.2883L160.509 14.2275L168.573 21.5107L166.151 32.3353L175.279 26.5919Z" fill="#CC992F"/>
+                    <path d="M171.129 13.2883L175.279 3.07956L175.279 26.5919L166.151 32.3353L168.573 21.5107L160.509 14.2275L171.129 13.2883Z" fill="#CC992F"/>
+                    </svg>
+                  </span>
+                </div>
+                {% endif %}
+                <div class="customer-reviews-text">
+                  {{ block.settings.the_text }}
+                </div>
+              </div>
+            </div>
+          {% endfor %}
+        </div>
+    </div>
+  </div>
+</section>
+{% comment %} RGD: 2026-01-07 {% endcomment %} 
+{% comment %} 
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js"></script>
+{% endcomment %}
+{% # theme-check-disable ParserBlockingScript %}
+<script type="text/javascript" src="{{ 'jquery-3.5.1.min.js' | asset_url }}"></script>
+<script type="text/javascript" src="{{ 'slick-1.8.1.min.js' | asset_url }}"></script>
+{% # theme-check-enable ParserBlockingScript %}
+<script>
+$('.customer-reviews-slider').slick({
+  dots: false,
+  arrows:true,
+  infinite: true,
+  slidesToShow: 1,
+  slidesToScroll: 1,
+  responsive: [
+    {
+      breakpoint: 768,
+      settings: {
+        centerMode: true,
+        centerPadding: '10px',
+        slidesToShow: 1,
+        slidesToScroll: 1
+      }
+    }
+  ]
+});
+</script>                      
+{% schema %}
+  {
+    "name": "Customer Reviews Section",
+    "settings": [
+      {
+            "type": "header",
+            "content": "Content Style"
+      },
+  	  {
+           "type": "color",
+           "id": "section_bg_color",
+           "label": "Section background color"
+      }
+    ],
+	"blocks": [
+     {
+      "type": "content",
+      "name": "Content",
+      "settings": [
+        {
+          "type": "image_picker",
+          "id": "image",
+          "label": "Image"
+        },
+        {
+          "type": "checkbox",
+          "id": "enable_rating",
+          "label": "Enable Rating",
+          "default": true
+        },
+        {
+          "type": "richtext",
+          "id": "the_text",
+          "label": "Text"
+        }
+      ]
+     }
+	],
+    "presets": [{
+      "name": "Customer Reviews Section"
+    }]
+  }
+{% endschema %}

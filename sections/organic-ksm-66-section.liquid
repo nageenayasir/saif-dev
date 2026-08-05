@@ -1,0 +1,425 @@
+<style>
+  #id-{{ section.id }}{
+  	background-color:{{ section.settings.section_bg_color }};
+  }
+</style>
+<section id="id-{{section.id}}" class="organic-kss-66-section">
+  <div class="organic-kss-66-wrapper">
+    <div class="container">
+      <div class="row common-section-head-row">
+        <div class="col-lg-12 col-md-12 col-sm-12">
+            <div class="common-section-head-content">
+              <h2 class="custom-heading-h2 organic-kss-66-title">
+                {{ section.settings.the_title }}
+              </h2>
+              {% if section.settings.the_image != blank %}<img loading="lazy"  src="{{ section.settings.the_image | image_url: width: 2000 }}">{% endif %}
+            </div>
+          </div>
+      </div>
+      {% for block in section.blocks %}
+        {% case block.type %}
+          {% comment %}
+            Custom Video
+          {% endcomment %}
+          {% when 'custom_video' %}
+          <div class="row organic-ksm66-video-row">
+            <div class="col-lg-12 col-md-12 col-sm-12">
+              <div class="ksm66-video-head">
+                <h2 class="custom-heading-h2">{{ block.settings.video_title }}</h2>
+              </div>
+              <div class="ksm66-video-wrap">
+                <div class="custom-embed-responsive custom-embed-responsive-16by9">
+                  {% assign videoId = block.settings.video_url | split: '?v=' %}
+                    <iframe width="560" height="315" src="https://www.youtube.com/embed/{{ videoId[1] }}" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+                </div>
+              </div>
+            </div>
+          </div>
+          {% comment %}
+            Benefits Blocks
+          {% endcomment %}
+          {% when 'benefits_blocks' %}
+          <div class="row organic-ksm66-benefits-row">
+            <div class="col-lg-12 col-md-12 col-sm-12">
+              <div class="ksm66-benefits-head">
+                <h2 class="custom-heading-h2">{{ block.settings.benefits_title }}</h2>
+              </div>
+              <div class="ksm66-benefits-blocks-wrap">
+                <div class="ksm66-benefits-blocks">
+                  <h3>{{ block.settings.block_title_1 }}</h3>
+                  <p>{{ block.settings.block_text_1 }}</p>
+                </div>
+                <div class="ksm66-benefits-blocks">
+                  <h3>{{ block.settings.block_title_2 }}</h3>
+                  <p>{{ block.settings.block_text_2 }}</p>
+                </div>
+                <div class="ksm66-benefits-blocks">
+                  <h3>{{ block.settings.block_title_3 }}</h3>
+                  <p>{{ block.settings.block_text_3 }}</p>
+                </div>
+                <div class="ksm66-benefits-blocks">
+                  <h3>{{ block.settings.block_title_4 }}</h3>
+                  <p>{{ block.settings.block_text_4 }}</p>
+                </div>
+              </div>
+            </div>
+          </div>
+          {% comment %}
+              rich_text
+            {% endcomment %}
+          {% when 'rich_text' %}
+            <div class="row organic-ksm66-rich-text-row">
+                <div class="col-lg-12 col-md-12 col-sm-12">
+                  <div class="common-section-head-content">
+                    <h2 class="custom-heading-h2">
+                      {{ block.settings.the_title }}
+                    </h2>
+                    {% if block.settings.the_text != blank  %}{{ block.settings.the_text }}{% endif %}
+                    {% if block.settings.button_text != blank %}<a class="custom-button-wrap" href="#custom-product-offers">{{ block.settings.button_text }}</a>{% endif %}
+                  </div>
+                </div>
+           </div>
+           {% comment %}
+              Reviews Section
+            {% endcomment %}
+            {% when 'review_section' %}
+            <div class="row reviews-testimonail-row">
+              <div class="col-lg-12 col-md-12 col-sm-12">
+                <div class="testimonial-content-wrap">
+                  <span class="testimonial-rating">
+                    <i class="fa fa-star" aria-hidden="true"></i>
+                    <i class="fa fa-star" aria-hidden="true"></i>
+                    <i class="fa fa-star" aria-hidden="true"></i>
+                    <i class="fa fa-star" aria-hidden="true"></i>
+                    <i class="fa fa-star" aria-hidden="true"></i>
+                  </span>
+                  <p>{{ block.settings.rating_text }}</p>
+                  <h4>{{ block.settings.author_name }}</h4>
+                </div>
+              </div>
+          </div>
+          {% comment %}
+              Image Blocks
+          {% endcomment %}
+          {% when 'image_blocks' %}
+          <div class="row orgainc-kss66-images-row">
+            <div class="col-lg-6 col-md-6 col-sm-12">
+              <div class="orgaince-kss66-left-img">
+                {% if block.settings.image_block_1 != blank %}<img loading="lazy"  src="{{ block.settings.image_block_1 | image_url: width: 2000 }}">{% endif %}
+              </div>
+            </div>
+            <div class="col-lg-6 col-md-6 col-sm-12">
+              <div class="organic-kss66-right-img">
+                {% if block.settings.image_block_2 != blank %}<img loading="lazy"  src="{{ block.settings.image_block_2 | image_url: width: 2000 }}">{% endif %}
+              </div>
+            </div>
+          </div>
+          {% comment %}
+              Tribe Icons
+            {% endcomment %}
+            {% when 'tribe_icons' %}
+            <div class="row tribe-icon-row">
+              <div class="tribe-icon-lists">
+                <div class="tribe-orgainics-img">
+                  {% if block.settings.tribe_image != blank %}<img loading="lazy"  src="{{ block.settings.tribe_image | image_url: width: 2000 }}">{% endif %}
+                </div>
+                <div class="tribe-icons-wrap">
+                  <ul>
+                    <li>
+                      {% if block.settings.tribe_icon_1 != blank %}<img loading="lazy"  src="{{ block.settings.tribe_icon_1 | image_url: width: 2000 }}">{% endif %}
+                      <p>{{ block.settings.icon_text_1 }}</p>
+                    </li>
+                    <li>
+                      {% if block.settings.tribe_icon_2 != blank %}<img loading="lazy"  src="{{ block.settings.tribe_icon_2 | image_url: width: 2000 }}">{% endif %}
+                      <p>{{ block.settings.icon_text_2 }}</p>
+                    </li>
+                    <li>
+                      {% if block.settings.tribe_icon_3 != blank %}<img loading="lazy"  src="{{ block.settings.tribe_icon_3 | image_url: width: 2000 }}">{% endif %}
+                      <p>{{ block.settings.icon_text_3 }}</p>
+                    </li>
+                    <li>
+                      {% if block.settings.tribe_icon_4 != blank %}<img loading="lazy"  src="{{ block.settings.tribe_icon_4 | image_url: width: 2000 }}">{% endif %}
+                      <p>{{ block.settings.icon_text_4 }}</p>
+                    </li>
+                    <li>
+                      {% if block.settings.tribe_icon_5 != blank %}<img loading="lazy"  src="{{ block.settings.tribe_icon_5 | image_url: width: 2000 }}">{% endif %}
+                      <p>{{ block.settings.icon_text_5 }}</p>
+                    </li>
+                    <li>
+                      {% if block.settings.tribe_icon_6 != blank %}<img loading="lazy"  src="{{ block.settings.tribe_icon_6 | image_url: width: 2000 }}">{% endif %}
+                      <p>{{ block.settings.icon_text_6 }}</p>
+                    </li>
+                    <li>
+                      {% if block.settings.tribe_icon_7 != blank %}<img loading="lazy"  src="{{ block.settings.tribe_icon_7 | image_url: width: 2000 }}">{% endif %}
+                      <p>{{ block.settings.icon_text_7 }}</p>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+        {% endcase %}
+      {% endfor %}
+    </div>
+  </div>
+</section>
+{% schema %}
+  {
+    "name": "Organic KSM-66",
+    "settings": [
+         {
+            "type": "header",
+            "content": "Content Style"
+         },
+  	     {
+           "type": "color",
+           "id": "section_bg_color",
+           "label": "Section background color"
+        },
+        {
+          "type": "text",
+          "id": "the_title",
+          "label": "Title",
+          "info": "Usin <br> tag to start text on new line"
+      	},
+        {
+           "type": "image_picker",
+           "id": "the_image",
+           "label": "Image"
+        }
+    ],
+	"blocks": [
+        {
+          "type": "custom_video",
+          "name": "Custom Video",
+          "settings": [
+        		{
+                  "type": "text",
+                  "id": "video_title",
+                  "label": "Title"
+              	},
+                {
+                    "type": "text",
+                    "id": "video_url",
+                    "label": "YouTube video URL"
+                 }
+            ]
+      },
+      {
+          "type": "benefits_blocks",
+          "name": "Benefits Blocks",
+          "settings": [
+        		{
+                  "type": "text",
+                  "id": "benefits_title",
+                  "label": "Title"
+              	},
+                {
+                    "type": "header",
+                    "content": "Benefit Block-1 Style"
+                },
+                {
+                  "type": "text",
+                  "id": "block_title_1",
+                  "label": "Block Title-1"
+              	},
+                {
+                  "type": "text",
+                  "id": "block_text_1",
+                  "label": "Block Text-1"
+              	},
+                {
+                    "type": "header",
+                    "content": "Benefit Block-2 Style"
+                },
+                {
+                  "type": "text",
+                  "id": "block_title_2",
+                  "label": "Block Title-2"
+              	},
+                {
+                  "type": "text",
+                  "id": "block_text_2",
+                  "label": "Block Text-2"
+              	},
+                {
+                    "type": "header",
+                    "content": "Benefit Block-3 Style"
+                },
+                {
+                  "type": "text",
+                  "id": "block_title_3",
+                  "label": "Block Title-3"
+              	},
+                {
+                  "type": "text",
+                  "id": "block_text_3",
+                  "label": "Block Text-3"
+              	},
+                {
+                    "type": "header",
+                    "content": "Benefit Block-4 Style"
+                },
+                {
+                  "type": "text",
+                  "id": "block_title_4",
+                  "label": "Block Title-4"
+              	},
+                {
+                  "type": "text",
+                  "id": "block_text_4",
+                  "label": "Block Text-4"
+              	}
+            ]
+      },
+      {
+          "type": "rich_text",
+          "name": "Rich Text",
+          "settings": [
+        		{
+                  "type": "text",
+                  "id": "the_title",
+                  "label": "Title"
+              	},
+                {
+                  "type": "richtext",
+                  "id": "the_text",
+                  "label": "Text"
+              	},
+                {
+                   "type": "text",
+                   "id": "button_text",
+                   "label": "Text"
+                }
+            ]
+      },
+      {
+              "type": "review_section",
+              "name": "Reviews Section",
+              "settings": [
+                    {
+                      "type": "text",
+                      "id": "rating_text",
+                      "label": "Rating Text"
+                  	},
+                    {
+                      "type": "text",
+                      "id": "author_name",
+                      "label": "Author Name"
+                  	}
+                    
+                ]
+        },
+	    {
+              "type": "image_blocks",
+              "name": "Image Blocks",
+              "settings": [
+                    {
+                       "type": "image_picker",
+                       "id": "image_block_1",
+                       "label": "Image Block-1"
+                    },
+                    {
+                       "type": "image_picker",
+                       "id": "image_block_2",
+                       "label": "Image Block-2"
+                    }
+                    
+                ]
+        },
+        {
+          "type": "tribe_icons",
+          "name": "Tribe Icons",
+          "settings": [
+        		{
+                  "type": "image_picker",
+                  "id": "tribe_image",
+                  "label": "Tribe Image"
+              	},
+                {
+                  "type": "header",
+                  "content": "Tribe Icon Settings"
+              	},
+                {
+                  "type": "image_picker",
+                  "id": "tribe_icon_1",
+                  "label": "Tribe Icon-1"
+              	},
+                {
+                   "type": "text",
+                   "id": "icon_text_1",
+                   "label": "Icon Text-1"
+                },
+                {
+                  "type": "image_picker",
+                  "id": "tribe_icon_2",
+                  "label": "Tribe Icon-2"
+              	},
+                {
+                   "type": "text",
+                   "id": "icon_text_2",
+                   "label": "Icon Text-2"
+                },
+                {
+                  "type": "image_picker",
+                  "id": "tribe_icon_3",
+                  "label": "Tribe Icon-3"
+              	},
+                {
+                   "type": "text",
+                   "id": "icon_text_3",
+                   "label": "Icon Text-3"
+                },
+                {
+                  "type": "image_picker",
+                  "id": "tribe_icon_4",
+                  "label": "Tribe Icon-4"
+              	},
+                {
+                   "type": "text",
+                   "id": "icon_text_4",
+                   "label": "Icon Text-4"
+                },
+                {
+                  "type": "image_picker",
+                  "id": "tribe_icon_5",
+                  "label": "Tribe Icon-5"
+              	},
+                {
+                   "type": "text",
+                   "id": "icon_text_5",
+                   "label": "Icon Text-5"
+                },
+                {
+                  "type": "image_picker",
+                  "id": "tribe_icon_6",
+                  "label": "Tribe Icon-6"
+              	},
+                {
+                   "type": "text",
+                   "id": "icon_text_6",
+                   "label": "Icon Text-6"
+                },
+                {
+                  "type": "image_picker",
+                  "id": "tribe_icon_7",
+                  "label": "Tribe Icon-7"
+              	},
+                {
+                   "type": "text",
+                   "id": "icon_text_7",
+                   "label": "Icon Text-7"
+                }
+            ]
+          }
+	],
+	"presets": [{
+      "name": "Organic KSM-66"
+    }]
+  }
+{% endschema %}
+
+{% stylesheet %}
+{% endstylesheet %}
+
+{% javascript %}
+{% endjavascript %}

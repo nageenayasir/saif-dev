@@ -1,0 +1,23 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+ {
+  "sections": {
+    "main-worriers": {
+      "type": "main-worriers",
+      "settings": {
+        "title": "Triibe Warriors",
+        "content": "<li>\n                            As part of a global community, TRIIBE supports individuals from inspiring athletes, adventurers, to wellness advocates and entrepreneurs, who are active in their communities and motivated to help elevate others and make the world a better place.\n                        </li>\n                        <li>\n                            Our mission is to inspire generations of savvy and innovative individuals to thrive in the healthiest and most sustainable way possible.\n                        </li>\n                        <li>\n                            Through this platform we hope to inspire and motivate others so we can all maximize our own potential.\n                            TRIIBE Warriors share their story, rituals, training techniques and what helps them get through their days.\n                        </li>"
+      }
+    }
+  },
+  "order": [
+    "main-worriers"
+  ]
+}

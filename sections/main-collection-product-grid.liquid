@@ -1,0 +1,304 @@
+{% if collection.title == 'Products' %}
+<style>
+  {% if section.settings.image != blank and collection.title == 'Products' %}
+ 	#id-{{ section.id }}{
+        background-image:url("{{ section.settings.image | image_url: width: 2000}}");
+        background-repeat: no-repeat;
+        background-size: cover;
+  	}
+    @media only screen and (max-width: 767px){
+          #id-{{ section.id }} {
+             background-image: url({{ section.settings.mob_image | image_url: width: 2000}}) !important;
+          }
+  }
+  {% endif %}
+</style>
+{% endif %}
+{% if collection.title == 'Products' %}
+<section id="id-{{section.id}}" class="section-banner section-title collection-page-wraper section-page-child cstm-banner-page-wrapper {% if collection.title == 'Products'%} all-products-banner-wrapper {% endif %}">
+    {% if section.settings.enable_breadcrumb == true and collection.title == 'Products' %}
+    <div class="common-page-breadcrumb">
+      {%- unless template == 'index' or template == 'cart' or template == 'list-collections' or template == '404' -%}
+      {%- assign t = template | split: '.' | first -%}
+      <div class="container">
+        <nav class="breadcrumbs" role="navigation" aria-label="breadcrumbs">
+          <ol class="breadcrumbs__list">
+            <li class="breadcrumbs__item">
+              <a class="breadcrumbs__link" href="/">Home</a>
+            </li>
+            {%- case t -%}
+              {%- when 'page' -%}
+                <li class="breadcrumbs__item">
+                  <a class="breadcrumbs__link" href="{{ page.url }}" aria-current="page">{{ page.title }}</a>
+                </li>
+              {%- when 'product' -%}
+                {%- if collection.url -%}
+                  <li class="breadcrumbs__item">
+                    {{ collection.title | link_to: collection.url }}
+                  </li>
+                {%- endif -%}
+                <li class="breadcrumbs__item">
+                  <a class="breadcrumbs__link" href="{{ product.url }}" aria-current="page">{{ product.title }}</a>
+                </li>
+              {%- when 'collection' and collection.handle -%}
+                {%- if current_tags -%}
+                  <li class="breadcrumbs__item">
+                    {{ collection.title | link_to: collection.url }}
+                  </li>
+                  <li class="breadcrumbs__item">
+                    {%- capture tag_url -%}{{ collection.url }}/{{ current_tags | join: "+"}}{%- endcapture -%}
+                    <a class="breadcrumbs__link" href="{{ tag_url }}" aria-current="page">{{ current_tags | join: " + "}}</a>
+                  </li>
+                {%- else -%}
+                  <li class="breadcrumbs__item">
+                    <a class="breadcrumbs__link" href="{{ collection.url }}" aria-current="page">{{ collection.title }}</a>
+                  </li>
+                {%- endif -%}
+              {%- when 'blog' -%}
+                {%- if current_tags -%}
+                  <li class="breadcrumbs__item">
+                    {{ blog.title | link_to: blog.url }}
+                  </li>
+                  <li class="breadcrumbs__item">
+                    {%- capture tag_url -%}{{blog.url}}/tagged/{{ current_tags | join: "+" }}{%- endcapture -%}
+                    <a class="breadcrumbs__link" href="{{ tag_url }}" aria-current="page">{{ current_tags | join: " + " }}</a>
+                  </li>
+                {%- else -%}
+                  <li class="breadcrumbs__item">
+                    <a class="breadcrumbs__link" href="{{ blog.url }}" aria-current="page">{{ blog.title }}</a>
+                  </li>
+                {%- endif -%}
+              {%- when 'article' -%}
+                <li class="breadcrumbs__item">
+                  {{ blog.title | link_to: blog.url }}
+                </li>
+                <li class="breadcrumbs__item">
+                  <a class="breadcrumbs__link" href="{{ article.url }}" aria-current="page">{{ article.title }}</a>
+                </li>
+              {%- else -%}
+                <li class="breadcrumbs__item">
+                  <a class="breadcrumbs__link" href="{{ request.path }}" aria-current="page">{{ page_title }}</a>
+                </li>
+            {%- endcase -%}
+          </ol>
+        </nav>
+      </div>
+      {%- endunless -%}
+    </div>
+  {% endif %}
+  
+    <div class="content">
+        <div class="container">
+            {% comment %}
+            <h1 class="text-uppercase" data-aos="fade-up">{% if collection.title == 'Products' %}WE’VE GOT YOU{% else %}{{ collection.title }}{% endif %}</h1>
+            {% endcomment %}
+            <div class="subtitle all-products-subtitle" data-aos="fade-up" data-aos-delay="200">
+                {{ section.settings.content }}
+            </div>
+          {% comment %}
+            <div class="btn-group">
+                <div data-aos="fade-up" data-aos-delay="400">
+                    <a class="btn btn-bg" href="{{ section.settings.url }}" target="_self">
+                       {{ section.settings.button  }}
+                    </a>
+                </div>
+            </div>
+          {% endcomment %}
+        </div>
+    </div>
+  
+</section>
+{% endif %}
+<div class="main-content">
+    {% if  collection.title == 'All products' or collection.title == 'Products' %}
+      <div class="container">
+        <h1 class="text-uppercase text-center all-product-title" data-aos="fade-up">ALL PRODUCTS</h1>
+      </div>
+    {% elsif collection.metafields.custom.default_banner_image == true %}
+    <div class="container">
+        <h1 class="text-uppercase text-center all-product-title" data-aos="fade-up">{{ collection.title }}</h1>
+      </div>
+    {% endif %}
+    <div class="container">
+        <div class="">
+<!--             <div class="col-md-3 position-relative">
+                <div id="sidebar">
+                    <div class="sidebar menu-footer-group mobile-dropdown">
+                        <h5 class="mobile-dropdown-click text-uppercase">Filter</h5>
+                        <div class="mobile-dropdown-menu">
+                            <div class="mobile-button d-block d-md-none">
+                                <div class="row">
+                                    <div class="col-6">
+                                        <a href="#" class="mobile-clear">Clear</a>
+                                    </div>
+                                    <div class="col-6 text-end">
+                                        <a href="#" class="mobile-close">Close</a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="menu-footer">
+                                <h2 class="text-uppercase" data-aos="fade-up" data-aos-delay="000">Sort<img loading="lazy" 
+                                        class="d-none d-md-block float-end mt-1" src="assets/down.svg"></h2>
+                                <div class="menu-s" style="display: none">
+                                    <ul data-aos="fade-up" data-aos-delay="000">
+                                        <li><a href="#">Bundle</a></li>
+                                        <li class="choose"><a href="#">Most Popular</a></li>
+                                        <li><a href="#">Price Low-High</a></li>
+                                        <li><a href="#">Price High-Low</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="menu-footer">
+                                <h2 class="text-uppercase" data-aos="fade-up" data-aos-delay="000">Benefits<img loading="lazy" 
+                                        class="d-none d-md-block float-end mt-1" src="assets/down.svg"></h2>
+                                <div class="menu-s" style="display: none">
+                                    <ul data-aos="fade-up" data-aos-delay="000">
+                                        <li><a href="#">Bundle</a></li>
+                                        <li><a href="#">Most Popular</a></li>
+                                        <li><a href="#">Price Low-High</a></li>
+                                        <li><a href="#">Price High-Low</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="menu-footer">
+                                <h2 class="text-uppercase" data-aos="fade-up" data-aos-delay="000">
+                                    Ingredient<img loading="lazy" 
+                                        class="d-none d-md-block float-end mt-1" src="assets/down.svg"></h2>
+                                <div class="menu-s" style="display: none">
+                                    <ul data-aos="fade-up" data-aos-delay="000">
+                                        <li><a href="#">Bundle</a></li>
+                                        <li><a href="#">Most Popular</a></li>
+                                        <li><a href="#">Price Low-High</a></li>
+                                        <li><a href="#">Price High-Low</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="menu-footer">
+                                <h2 class="text-uppercase" data-aos="fade-up" data-aos-delay="000">Now
+                                    Trending<img loading="lazy" 
+                                            class="d-none d-md-block float-end mt-1" src="assets/down.svg"></h2>
+                                <div class="menu-s" style="display: none">
+                                    <ul data-aos="fade-up" data-aos-delay="000">
+                                        <li><a href="#">Bundle</a></li>
+                                        <li><a href="#">Most Popular</a></li>
+                                        <li><a href="#">Price Low-High</a></li>
+                                        <li><a href="#">Price High-Low</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div> -->
+           
+                <div data-section-id="{% if section.id %}{{section.id}}{% endif %}" data-sectionId="{% if section.id %}{{section.id}}{% endif %}" {% if section.blocks %}data-blocks='{ {%- capture blocks_json -%}{% for block in section.blocks %}{%- capture block_json -%}"{{ block.type }}":{{ block.settings | json }}{%- endcapture -%}{{ block_json | prepend: ","  }}{% endfor %}{%- endcapture -%}{{ blocks_json | remove_first: "," }} }' {% endif %} data-settings='{% if section.settings %}{{section.settings | json}}{% endif %}' data-quick-add="{% if collection.metafields.custom.quick_add == true %}true{% else %}false{% endif %}" data-globo-filter-items  class="row">
+                  
+                  
+                </div>
+<!--                 <div class="mt-5 mb-5">
+                    <a class="btn btn-trans mx-auto" href="#">
+                        Load More
+                    </a>
+                </div>
+                <div class="page-desc mx-auto text-center mt-2">
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor Lorem ipsum
+                    dolor sit
+                    amet, consectetur adipiscing elit, sed do eiusmod tempor .
+                </div> -->
+            
+        </div>
+    </div>
+</div>
+<script>
+  $(document).ready(function() {
+    var targetNode = document.body;
+
+    var observer = new MutationObserver(function(mutationsList, observer) {
+      for (var mutation of mutationsList) {
+        if (mutation.type === 'childList') {
+          // Select all elements with class `.custom-products-loop`
+          var elements = $('.custom-products-loop');
+
+          // Check if there are at least 3 such elements
+          if (elements.length >= 3) {
+            // Add the `checking-3rd-element` class to the third `.custom-products-loop` element (index 2)
+            if (!$(elements[2]).hasClass('checking-3rd-element')) {
+              $(elements[2]).addClass('checking-3rd-element');
+            }
+
+            // Append a new div with custom text after the third element if not already added
+            if ($('.custom-subscribe-image-div').length === 0) {
+              $(elements[2]).after(
+                '<div class="custom-subscribe-image-div spf-col-xl-4 spf-col-lg-4 spf-col-md-6 spf-col-sm-6 spf-col-6  mb-5">' +
+                '<a>' +
+                '<img loading="lazy" class="leaf" src="{{ section.settings.subscribe_image | image_url: width: 2000 }}">' +
+                '</a></div>'
+              );
+            }
+          }
+        }
+      }
+    });
+
+    // Observer configuration: listen for childList changes within the subtree
+    var config = { childList: true, subtree: true };
+
+    // Start observing
+    observer.observe(targetNode, config);
+  });
+</script>
+
+{% render 'quick-add-modal-wrapper' %}
+
+{% schema %}
+{
+  "name": "t:sections.main-collection-product-grid.name",
+  "class": "section",
+  "settings": [
+      {
+        "type": "checkbox",
+        "id": "enable_breadcrumb",
+        "label": "Enable Breadcrumb",
+        "default": true
+      },
+      {
+        "type": "image_picker",
+        "id": "image",
+        "label": "Background",
+        "info": "This Banner Image will show only on Default Shopify All Products Collection"
+      },
+      {
+        "type": "image_picker",
+        "id": "mob_image",
+        "label": "Mobile Background",
+        "info": "This Banner Image will show only on Default Shopify All Products Collection"
+      },
+      {
+        "type": "richtext",
+        "id": "content",
+        "label": "Content"
+      },
+     {
+      "type": "text",
+      "id": "button",
+      "label": "Button",
+      "default" : "Take the Quiz"
+    },
+    {
+      "type": "url",
+      "id": "url",
+      "label": "Url"
+    },
+    {
+      "type": "image_picker",
+      "id": "subscribe_image",
+      "label": "Subscribe Image"
+    },
+    {
+      "type": "url",
+      "id": "subscribe_link",
+      "label": "Subscribe Link"
+    }
+  ]
+}
+{% endschema %}

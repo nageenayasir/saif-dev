@@ -1,0 +1,42 @@
+<style>
+  #id-{{ section.id }}{
+  	background-color:{{ section.settings.section_bg_color }};
+  }
+</style>
+<section id="id-{{section.id}}" class="col-rvw-pg-cta">
+  <div class="container">
+      <div class="inn-rvw-pg-cta" data-aos="fade-up">
+        <p>{{ section.settings.the_text }}</p>
+      </div>
+  </div>
+</section>
+{% schema %}
+  {
+    "name": "Gift Card Info",
+    "settings": [
+      {
+            "type": "header",
+            "content": "Content Style"
+      },
+  	  {
+           "type": "color",
+           "id": "section_bg_color",
+           "label": "Section background color"
+      },
+      {
+          "type": "text",
+          "id": "the_text",
+          "label": "Text"
+      }
+    ],
+	"presets": [{
+      "name": "Gift Card Info"
+    }]
+  }
+{% endschema %}
+
+{% stylesheet %}
+{% endstylesheet %}
+
+{% javascript %}
+{% endjavascript %}

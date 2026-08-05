@@ -1,0 +1,318 @@
+<style>
+  #id-{{ section.id }}{
+  	background-color:{{ section.settings.section_bg_color }};
+  }
+</style>
+<section id="id-{{section.id}}" class="why-choose-tribe-section">
+  <div class="why-choose-tribe-wrapper">
+    <div class="container">
+        <div class="row common-section-head-row">
+          <div class="col-lg-12 col-md-12 col-sm-12">
+            <div class="common-section-head-content">
+              <h2 class="custom-heading-h2">
+                {{ section.settings.the_title }}
+              </h2>
+              <p>{{ section.settings.the_text }}</p>
+            </div>
+          </div>
+        </div>
+        {% for block in section.blocks %}
+          {% case block.type %}
+            {% comment %}
+              Tribe Icons
+            {% endcomment %}
+            {% when 'tribe_icons' %}
+            <div class="row tribe-icon-row">
+              <div class="tribe-icon-lists">
+                <div class="tribe-orgainics-img">
+                  {% if block.settings.tribe_image != blank %}<img loading="lazy" src="{{ block.settings.tribe_image | image_url: width: 2000 }}">{% endif %}
+                </div>
+                <div class="tribe-icons-wrap">
+                  <ul>
+                    <li>
+                      {% if block.settings.tribe_icon_1 != blank %}<img loading="lazy" src="{{ block.settings.tribe_icon_1 | image_url: width: 2000 }}">{% endif %}
+                      <p>{{ block.settings.icon_text_1 }}</p>
+                    </li>
+                    <li>
+                      {% if block.settings.tribe_icon_2 != blank %}<img loading="lazy" src="{{ block.settings.tribe_icon_2 | image_url: width: 2000 }}">{% endif %}
+                      <p>{{ block.settings.icon_text_2 }}</p>
+                    </li>
+                    <li>
+                      {% if block.settings.tribe_icon_3 != blank %}<img loading="lazy" src="{{ block.settings.tribe_icon_3 | image_url: width: 2000 }}">{% endif %}
+                      <p>{{ block.settings.icon_text_3 }}</p>
+                    </li>
+                    <li>
+                      {% if block.settings.tribe_icon_4 != blank %}<img loading="lazy" src="{{ block.settings.tribe_icon_4 | image_url: width: 2000 }}">{% endif %}
+                      <p>{{ block.settings.icon_text_4 }}</p>
+                    </li>
+                    <li>
+                      {% if block.settings.tribe_icon_5 != blank %}<img loading="lazy" src="{{ block.settings.tribe_icon_5 | image_url: width: 2000 }}">{% endif %}
+                      <p>{{ block.settings.icon_text_5 }}</p>
+                    </li>
+                    <li>
+                      {% if block.settings.tribe_icon_6 != blank %}<img loading="lazy" src="{{ block.settings.tribe_icon_6 | image_url: width: 2000 }}">{% endif %}
+                      <p>{{ block.settings.icon_text_6 }}</p>
+                    </li>
+                    <li>
+                      {% if block.settings.tribe_icon_7 != blank %}<img loading="lazy" src="{{ block.settings.tribe_icon_7 | image_url: width: 2000 }}">{% endif %}
+                      <p>{{ block.settings.icon_text_7 }}</p>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+            {% comment %}
+              Reviews Section
+            {% endcomment %}
+            {% when 'review_section' %}
+            <div class="row reviews-testimonail-row">
+              <div class="col-lg-12 col-md-12 col-sm-12">
+                <div class="testimonial-content-wrap">
+                  <span class="testimonial-rating">
+                    <i class="fa fa-star" aria-hidden="true"></i>
+                    <i class="fa fa-star" aria-hidden="true"></i>
+                    <i class="fa fa-star" aria-hidden="true"></i>
+                    <i class="fa fa-star" aria-hidden="true"></i>
+                    <i class="fa fa-star" aria-hidden="true"></i>
+                  </span>
+                  <p>{{ block.settings.rating_text }}</p>
+                  <h4>{{ block.settings.author_name }}</h4>
+                </div>
+              </div>
+          </div>
+            {% comment %}
+              rich_text
+            {% endcomment %}
+            {% when 'rich_text' %}
+            <div class="row tribe-rich-text-row">
+                <div class="col-lg-12 col-md-12 col-sm-12">
+                  <div class="common-section-head-content">
+                    <h2 class="custom-heading-h2">
+                      {{ block.settings.the_title }}
+                    </h2>
+                    {% if block.settings.the_text != blank  %}{{ block.settings.the_text }}{% endif %}
+                    {% if block.settings.button_text != blank %}<a class="custom-button-wrap" href="#custom-product-offers">{{ block.settings.button_text }}</a>{% endif %}
+                  </div>
+                </div>
+            </div>
+            {% comment %}
+            Testimonial Section
+            {% endcomment %}
+            {% when 'image_with_text' %}
+            <div class="row tribe-testimonial-row">
+              <div class="col-lg-6 col-md-6 col-sm-12">
+                <div class="tribe-testimonial-content">
+                  <span class="testimonial-rating">
+                    <i class="fa fa-star" aria-hidden="true"></i>
+                    <i class="fa fa-star" aria-hidden="true"></i>
+                    <i class="fa fa-star" aria-hidden="true"></i>
+                    <i class="fa fa-star" aria-hidden="true"></i>
+                    <i class="fa fa-star" aria-hidden="true"></i>
+                  </span>
+                  <p>{{ block.settings.rating_text }}</p>
+                  <h4>{{ block.settings.author_name }}</h4>
+                  {% if block.settings.author_position != blank %}<h6>{{ block.settings.author_position }}</h6>{% endif %}
+                </div>
+              </div>
+              <div class="col-lg-6 col-md-6 col-sm-12">
+                <div class="tribe-testimonial-img">
+                  {% if block.settings.author_image != blank %}<img loading="lazy" src="{{ block.settings.author_image | image_url: width: 2000 }}">{% endif %}
+                </div>
+              </div>
+            </div>
+          {% endcase %}
+        {% endfor %}
+    </div>
+  </div>
+</section>
+{% schema %}
+  {
+    "name": "Why Choose Tribe",
+    "settings": [
+         {
+            "type": "header",
+            "content": "Content Style"
+         },
+  	     {
+           "type": "color",
+           "id": "section_bg_color",
+           "label": "Section background color"
+        },
+        {
+          "type": "header",
+          "content": "Content Settings"
+      	},
+        {
+          "type": "text",
+          "id": "the_title",
+          "label": "Title"
+      	},
+        {
+           "type": "richtext",
+           "id": "the_text",
+           "label": "Text"
+        }
+    ],
+	"blocks": [
+        {
+          "type": "tribe_icons",
+          "name": "Tribe Icons",
+          "settings": [
+        		{
+                  "type": "image_picker",
+                  "id": "tribe_image",
+                  "label": "Tribe Image"
+              	},
+                {
+                  "type": "header",
+                  "content": "Tribe Icon Settings"
+              	},
+                {
+                  "type": "image_picker",
+                  "id": "tribe_icon_1",
+                  "label": "Tribe Icon-1"
+              	},
+                {
+                   "type": "text",
+                   "id": "icon_text_1",
+                   "label": "Icon Text-1"
+                },
+                {
+                  "type": "image_picker",
+                  "id": "tribe_icon_2",
+                  "label": "Tribe Icon-2"
+              	},
+                {
+                   "type": "text",
+                   "id": "icon_text_2",
+                   "label": "Icon Text-2"
+                },
+                {
+                  "type": "image_picker",
+                  "id": "tribe_icon_3",
+                  "label": "Tribe Icon-3"
+              	},
+                {
+                   "type": "text",
+                   "id": "icon_text_3",
+                   "label": "Icon Text-3"
+                },
+                {
+                  "type": "image_picker",
+                  "id": "tribe_icon_4",
+                  "label": "Tribe Icon-4"
+              	},
+                {
+                   "type": "text",
+                   "id": "icon_text_4",
+                   "label": "Icon Text-4"
+                },
+                {
+                  "type": "image_picker",
+                  "id": "tribe_icon_5",
+                  "label": "Tribe Icon-5"
+              	},
+                {
+                   "type": "text",
+                   "id": "icon_text_5",
+                   "label": "Icon Text-5"
+                },
+                {
+                  "type": "image_picker",
+                  "id": "tribe_icon_6",
+                  "label": "Tribe Icon-6"
+              	},
+                {
+                   "type": "text",
+                   "id": "icon_text_6",
+                   "label": "Icon Text-6"
+                },
+                {
+                  "type": "image_picker",
+                  "id": "tribe_icon_7",
+                  "label": "Tribe Icon-7"
+              	},
+                {
+                   "type": "text",
+                   "id": "icon_text_7",
+                   "label": "Icon Text-7"
+                }
+            ]
+          },
+          {
+              "type": "review_section",
+              "name": "Reviews Section",
+              "settings": [
+                    {
+                      "type": "text",
+                      "id": "rating_text",
+                      "label": "Rating Text"
+                  	},
+                    {
+                      "type": "text",
+                      "id": "author_name",
+                      "label": "Author Name"
+                  	}
+                    
+                ]
+          },
+        {
+          "type": "rich_text",
+          "name": "Rich Text",
+          "settings": [
+        		{
+                  "type": "text",
+                  "id": "the_title",
+                  "label": "Title"
+              	},
+                {
+                  "type": "richtext",
+                  "id": "the_text",
+                  "label": "Text"
+              	},
+                {
+                   "type": "text",
+                   "id": "button_text",
+                   "label": "Text"
+                }
+            ]
+      },
+      {
+          "type": "image_with_text",
+          "name": "Image-with-Text",
+          "settings": [
+        		    {
+                      "type": "image_picker",
+                      "id": "author_image",
+                      "label": "Image"
+                  	},
+                    {
+                      "type": "text",
+                      "id": "rating_text",
+                      "label": "Rating Text"
+                  	},
+                    {
+                      "type": "text",
+                      "id": "author_name",
+                      "label": "Author Name"
+                  	},
+                    {
+                      "type": "text",
+                      "id": "author_position",
+                      "label": "Author Position"
+                  	}
+            ]
+          }
+	
+	],
+	"presets": [{
+      "name": "Why Choose Tribe"
+    }]
+  }
+{% endschema %}
+
+{% stylesheet %}
+{% endstylesheet %}
+
+{% javascript %}
+{% endjavascript %}

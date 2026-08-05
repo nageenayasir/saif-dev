@@ -1,0 +1,52 @@
+<section class="section section-bund">
+    <div class="leaf-box right-top">
+        <img loading="lazy"  class="leaf" src="{{ 'leaf-n02.svg' | asset_url }}">
+    </div>
+    <div class="container">
+        <h2 class="text-uppercase text-center d-block d-md-none" data-aos="fade-up">{{ section.settings.text }}</h2>
+        <div class="row align-items-center">
+            <div class="col-md-6 mt-4 mt-md-0">
+                 <div style="max-width: 550px;" class="ms-md-auto">
+                    <h2 class="text-uppercase d-none d-md-block" data-aos="fade-up">{{ section.settings.title }}</h2>
+                    <ul class="big-dot mt-5" data-aos="fade-up">
+                       {{ section.settings.content }}
+                    </ul>
+                </div>
+            </div>
+            <div class="col-md-6 order-first order-md-first">
+               <div data-aos="fade-up" data-aos-delay="400">
+                    <img loading="lazy"  src="{{ section.settings.image | image_url: width: 800 }}" alt="{{ section.settings.title }}">
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+{% schema %}
+  {
+    "name": "Section The reward",
+    "settings": [
+       {
+        "type": "text",
+        "id": "text",
+        "label": "Text",
+        "default" : "The reward"
+      },
+      {
+        "type": "text",
+        "id": "title",
+        "label": "Title",
+        "default" : "There’s nothing we take  more seriously than your health, and that means."
+      },
+      {
+        "type": "html",
+        "id": "content",
+        "label": "Content"
+      },
+    {
+      "type": "image_picker",
+      "id": "image",
+      "label": "Image"
+    }
+	]
+  }
+{% endschema %}

@@ -1,0 +1,402 @@
+<style>
+  #id-{{ section.id }}{
+  	background-color:{{ section.settings.section_bg_color }};
+  }
+</style>
+<section id="id-{{ section.id }}" class="homepage-our-products-section">
+  <div class="homepage-our-products-wrapper">
+    {% if section.settings.left_image != blank %}
+    <div class="homepage-our-products-left-top">
+        {%- assign img = section.settings.left_image -%}
+        <img
+          src="{{ img | image_url: width : img.width }}" 
+          alt="Decorative graphic 01"
+          width="{{ img.width }}"
+          height="{{ img.height }}"
+          style="aspect-ratio: {{ img.width }} / {{ img.height }};"
+        >
+        {% comment %} <img loading="lazy" src="{{ section.settings.left_image | img_url : '170x' }}" alt="Decorative graphic" width="170" height="170"> {% endcomment %} 
+    </div>
+    {% endif %}
+    {% if section.settings.right_image != blank %}
+    <div class="homepage-our-products-right-top">
+        {%- assign img = section.settings.right_image -%}
+        <img
+          src="{{ img | image_url: width : img.width }}" 
+          alt="Decorative graphic 02"
+          width="{{ img.width }}"
+          height="{{ img.height }}"
+          style="aspect-ratio: {{ img.width }} / {{ img.height }};"
+        >
+        {% comment %} <img loading="lazy" src="{{ section.settings.right_image | img_url : '170x' }}" alt="Decorative graphic" width="170" height="170"> {% endcomment %} 
+    </div>
+    {% endif %}
+    <div class="container">
+      <h2 class="text-center text-uppercase" data-aos="fade-up" data-aos-delay="000">{{ section.settings.title }}</h2>
+      <div class="row">
+        {% for block in section.blocks %}
+          {% case block.type %}
+             {% when 'left_coloumn_content' %}
+            <div class="col-sm-12 col-md- col-lg-6 our-products-left-column">
+              <div class="our-products-icon-lists-wrapper">
+                <h3>
+                  {{ block.settings.the_title }}
+                </h3>
+                <ul class="our-products-icon-lists">
+                  <li>
+                    <div class="our-products-icon-wrapper">
+                      <div class="our-products-icon">
+                        {% if block.settings.icon_1 != blank %}<img loading="lazy"  src="{{ block.settings.icon_1 | image_url: width: 40 }}" alt="Product feature icon" width="40" height="40">{% endif %}
+                      </div>
+                      <div class="our-product-icon-content">
+                        {{ block.settings.the_text_1 }}
+                      </div>
+                    </div>
+                  </li>
+                  <li>
+                    <div class="our-products-icon-wrapper">
+                      <div class="our-products-icon">
+                        {% if block.settings.icon_2 != blank %}<img loading="lazy"  src="{{ block.settings.icon_2 | image_url: width: 40 }}" alt="Product feature icon" width="40" height="40">{% endif %}
+                      </div>
+                      <div class="our-product-icon-content">
+                        {{ block.settings.the_text_2 }}
+                      </div>
+                    </div>
+                  </li>
+                  <li>
+                    <div class="our-products-icon-wrapper">
+                      <div class="our-products-icon">
+                        {% if block.settings.icon_3 != blank %}<img loading="lazy"  src="{{ block.settings.icon_3 | image_url: width: 40 }}" alt="Product feature icon" width="40" height="40">{% endif %}
+                      </div>
+                      <div class="our-product-icon-content">
+                        {{ block.settings.the_text_3 }}
+                      </div>
+                    </div>
+                  </li>
+                  <li>
+                    <div class="our-products-icon-wrapper">
+                      <div class="our-products-icon">
+                        {% if block.settings.icon_4 != blank %}<img loading="lazy"  src="{{ block.settings.icon_4 | image_url: width: 40 }}" alt="Product feature icon" width="40" height="40">{% endif %}
+                      </div>
+                      <div class="our-product-icon-content">
+                        {{ block.settings.the_text_4 }}
+                      </div>
+                    </div>
+                  </li>
+                  <li>
+                    <div class="our-products-icon-wrapper">
+                      <div class="our-products-icon">
+                        {% if block.settings.icon_5 != blank %}<img loading="lazy"  src="{{ block.settings.icon_5 | image_url: width: 40 }}" alt="Product feature icon" width="40" height="40">{% endif %}
+                      </div>
+                      <div class="our-product-icon-content">
+                        {{ block.settings.the_text_5 }}
+                      </div>
+                    </div>
+                  </li>
+                  <li>
+                    <div class="our-products-icon-wrapper">
+                      <div class="our-products-icon">
+                        {% if block.settings.icon_6 != blank %}<img loading="lazy"  src="{{ block.settings.icon_6 | image_url: width: 40 }}" alt="Product feature icon" width="40" height="40">{% endif %}
+                      </div>
+                      <div class="our-product-icon-content">
+                        {{ block.settings.the_text_6 }}
+                      </div>
+                    </div>
+                  </li>
+                  <li>
+                    <div class="our-products-icon-wrapper">
+                      <div class="our-products-icon">
+                        {% if block.settings.icon_7 != blank %}<img loading="lazy"  src="{{ block.settings.icon_7 | image_url: width: 40 }}" alt="Product feature icon" width="40" height="40">{% endif %}
+                      </div>
+                      <div class="our-product-icon-content">
+                        {{ block.settings.the_text_7 }}
+                      </div>
+                    </div>
+                  </li>
+                  <li>
+                    <div class="our-products-icon-wrapper">
+                      <div class="our-products-icon">
+                        {% if block.settings.icon_8 != blank %}<img loading="lazy"  src="{{ block.settings.icon_8 | image_url: width: 40 }}" alt="Product feature icon" width="40" height="40"> {% endif %}
+                      </div>
+                      <div class="our-product-icon-content">
+                        {{ block.settings.the_text_8 }}
+                      </div>
+                    </div>
+                  </li>
+                </ul>
+              </div>
+            </div>
+            {% when 'right_coloumn_content' %}
+            <div class="col-sm-12 col-md- col-lg-6 our-products-right-column">
+              <div class="our-products-icon-lists-wrapper">
+                <h3>
+                  {{ block.settings.the_title }}
+                </h3>
+                <ul class="our-products-icon-lists">
+                  <li>
+                    <div class="our-products-icon-wrapper">
+                      <div class="our-products-icon">
+                        {% if block.settings.icon_1 != blank %}<img loading="lazy"  src="{{ block.settings.icon_1 | image_url: width: 40 }}" alt="Product feature icon" width="40" height="40">{% endif %}
+                      </div>
+                      <div class="our-product-icon-content">
+                        {{ block.settings.the_text_1 }}
+                      </div>
+                    </div>
+                  </li>
+                  <li>
+                    <div class="our-products-icon-wrapper">
+                      <div class="our-products-icon">
+                        {% if block.settings.icon_2 != blank %}<img loading="lazy"  src="{{ block.settings.icon_2 | image_url: width: 40 }}" alt="Product feature icon" width="40" height="40">{% endif %}
+                      </div>
+                      <div class="our-product-icon-content">
+                        {{ block.settings.the_text_2 }}
+                      </div>
+                    </div>
+                  </li>
+                  <li>
+                    <div class="our-products-icon-wrapper">
+                      <div class="our-products-icon">
+                        {% if block.settings.icon_3 != blank %}<img loading="lazy"  src="{{ block.settings.icon_3 | image_url: width: 40 }}" alt="Product feature icon" width="40" height="40">{% endif %}
+                      </div>
+                      <div class="our-product-icon-content">
+                        {{ block.settings.the_text_3 }}
+                      </div>
+                    </div>
+                  </li>
+                  <li>
+                    <div class="our-products-icon-wrapper">
+                      <div class="our-products-icon">
+                        {% if block.settings.icon_4 != blank %}<img loading="lazy"  src="{{ block.settings.icon_4 | image_url: width: 40 }}" alt="Product feature icon" width="40" height="40">{% endif %}
+                      </div>
+                      <div class="our-product-icon-content">
+                        {{ block.settings.the_text_4 }}
+                      </div>
+                    </div>
+                  </li>
+                  <li>
+                    <div class="our-products-icon-wrapper">
+                      <div class="our-products-icon">
+                        {% if block.settings.icon_5 != blank %}<img loading="lazy"  src="{{ block.settings.icon_5 | image_url: width: 40 }}" alt="Product feature icon" width="40" height="40">{% endif %}
+                      </div>
+                      <div class="our-product-icon-content">
+                        {{ block.settings.the_text_5 }}
+                      </div>
+                    </div>
+                  </li>
+                  <li>
+                    <div class="our-products-icon-wrapper">
+                      <div class="our-products-icon">
+                        {% if block.settings.icon_6 != blank %}<img loading="lazy"  src="{{ block.settings.icon_6 | image_url: width: 40 }}" alt="Product feature icon" width="40" height="40">{% endif %}
+                      </div>
+                      <div class="our-product-icon-content">
+                        {{ block.settings.the_text_6 }}
+                      </div>
+                    </div>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          {% endcase %}
+        {% endfor %}
+      </div>
+    </div>
+  </div>
+</section>
+{% schema %}
+  {
+    "name": "Homepage Our Products",
+    "settings": [
+      {
+            "type": "header",
+            "content": "Content Style"
+      },
+  	  {
+           "type": "color",
+           "id": "section_bg_color",
+           "label": "Section background color"
+      },
+      {
+        "type": "text",
+        "id": "title",
+        "label": "Title"
+      },
+      {
+          "type": "image_picker",
+          "id": "left_image",
+          "label": "Left Image"
+      },
+      {
+          "type": "image_picker",
+          "id": "right_image",
+          "label": "Right Image"
+      }
+    ],
+	"blocks": [
+        {
+          "type": "left_coloumn_content",
+          "name": "Left Column Content",
+          "settings": [
+        		{
+                  "type": "text",
+                  "id": "the_title",
+                  "label": "Title"
+              	},
+                {
+                    "type": "image_picker",
+                    "id": "icon_1",
+                    "label": "Icon_1"
+                },
+                {
+                  "type": "richtext",
+                  "id": "the_text_1",
+                  "label": "Text-1"
+              	},
+                {
+                    "type": "image_picker",
+                    "id": "icon_2",
+                    "label": "Icon-2"
+                },
+                {
+                  "type": "richtext",
+                  "id": "the_text_2",
+                  "label": "Text-2"
+              	},
+                {
+                    "type": "image_picker",
+                    "id": "icon_3",
+                    "label": "Icon-3"
+                },
+                {
+                  "type": "richtext",
+                  "id": "the_text_3",
+                  "label": "Text-3"
+              	},
+                {
+                    "type": "image_picker",
+                    "id": "icon_4",
+                    "label": "Icon-4"
+                },
+                {
+                  "type": "richtext",
+                  "id": "the_text_4",
+                  "label": "Text-4"
+              	},
+                {
+                    "type": "image_picker",
+                    "id": "icon_5",
+                    "label": "Icon-5"
+                },
+                {
+                  "type": "richtext",
+                  "id": "the_text_5",
+                  "label": "Text-5"
+              	},
+                {
+                    "type": "image_picker",
+                    "id": "icon_6",
+                    "label": "Icon-6"
+                },
+                {
+                  "type": "richtext",
+                  "id": "the_text_6",
+                  "label": "Text-6"
+              	},
+                {
+                    "type": "image_picker",
+                    "id": "icon_7",
+                    "label": "Icon-7"
+                },
+                {
+                  "type": "richtext",
+                  "id": "the_text_7",
+                  "label": "Text-7"
+              	},
+                {
+                    "type": "image_picker",
+                    "id": "icon_8",
+                    "label": "Icon-8"
+                },
+                {
+                  "type": "richtext",
+                  "id": "the_text_8",
+                  "label": "Text-8"
+              	}
+            ]
+      },
+      {
+          "type": "right_coloumn_content",
+          "name": "Right Column Content",
+          "settings": [
+        		{
+                  "type": "text",
+                  "id": "the_title",
+                  "label": "Title"
+              	},
+                {
+                    "type": "image_picker",
+                    "id": "icon_1",
+                    "label": "Icon_1"
+                },
+                {
+                  "type": "richtext",
+                  "id": "the_text_1",
+                  "label": "Text-1"
+              	},
+                {
+                    "type": "image_picker",
+                    "id": "icon_2",
+                    "label": "Icon-2"
+                },
+                {
+                  "type": "richtext",
+                  "id": "the_text_2",
+                  "label": "Text-2"
+              	},
+                {
+                    "type": "image_picker",
+                    "id": "icon_3",
+                    "label": "Icon-3"
+                },
+                {
+                  "type": "richtext",
+                  "id": "the_text_3",
+                  "label": "Text-3"
+              	},
+                {
+                    "type": "image_picker",
+                    "id": "icon_4",
+                    "label": "Icon-4"
+                },
+                {
+                  "type": "richtext",
+                  "id": "the_text_4",
+                  "label": "Text-4"
+              	},
+                {
+                    "type": "image_picker",
+                    "id": "icon_5",
+                    "label": "Icon-5"
+                },
+                {
+                  "type": "richtext",
+                  "id": "the_text_5",
+                  "label": "Text-5"
+              	},
+                {
+                    "type": "image_picker",
+                    "id": "icon_6",
+                    "label": "Icon-6"
+                },
+                {
+                  "type": "richtext",
+                  "id": "the_text_6",
+                  "label": "Text-6"
+              	}
+            ]
+      }
+	],
+	"presets": [{
+      "name": "Homepage Our Products"
+    }]
+  }
+{% endschema %}

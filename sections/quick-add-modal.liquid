@@ -1,0 +1,892 @@
+<!-- Quick Add Modal Section -->
+<div class="quick-add-modal-body">
+  <div class="quick-add-modal-columns" style="display: flex">
+    <!-- Left Column: Image Gallery -->
+    <div class="quick-add-modal-left" style="width: 50%">
+      <div class="quick-add-product-images">
+        <!-- Main Swiper Gallery -->
+        <div class="swiper main-gallery quick-add-swipper product__photo">
+          <div class="swiper-wrapper">
+            {% for image in product.images %}
+              <div class="swiper-slide">
+                <div class="product__photo sami-custom-pdp">
+                  <img src="{{ image | image_url: width: 2000 }}" alt="{{ image.alt }}">
+                </div>
+              </div>
+            {% endfor %}
+          </div>
+          <div class="swiper-button-prev product-gallery-prev"></div>
+          <div class="swiper-button-next product-gallery-next"></div>
+          <div class="swiper-pagination"></div>
+        </div>
+
+        <!-- Thumbnail Swiper -->
+        <div class="swiper thumbnail-gallery product__thumbnails thumbnails">
+          <div class="swiper-wrapper">
+            {% for image in product.images %}
+              <div class="swiper-slide">
+                <div class="product__thumbnail" data-image-index="{{ forloop.index }}">
+                  <img src="{{ image | image_url: width: 2000 }}" alt="{{ image.alt }}">
+                </div>
+              </div>
+            {% endfor %}
+          </div>
+          <div class="swiper-button-prev product-thumbnail-prev"></div>
+          <div class="swiper-button-next product-thumbnail-next"></div>
+        </div>
+      </div>
+
+      <!-- Tabs usando metafields do produto -->
+      {% assign has_tab_1 = false %}
+      {% assign has_tab_2 = false %}
+      {% assign has_tab_3 = false %}
+
+      {% if product.metafields.custom.content_tab_2 != blank %}
+        {% assign has_tab_1 = true %}
+      {% endif %}
+
+      {% if product.metafields.custom.content_tab_1 != blank %}
+        {% assign has_tab_2 = true %}
+      {% endif %}
+
+      {% if product.metafields.custom.content_tab_3 != blank %}
+        {% assign has_tab_3 = true %}
+      {% endif %}
+
+      {% if has_tab_1 or has_tab_2 or has_tab_3 %}
+      <div class="quick-add-tabs-section tabs-desktop">
+        <div class="product-tabs-image-wrapper">
+          <div class="prdct-tabs-wrapper cstm-menu-footer-group">
+
+            <!-- Tab 1: It's great for you -->
+            {% if has_tab_1 %}
+            <div class="cstm-menu-footer menu-page">
+              <h2>
+                <span>
+                  <svg width="17" height="16" viewBox="0 0 17 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M2.02994 9.01803L7.99986 14.5376C8.15069 14.677 8.2261 14.7468 8.30856 14.7809C8.43113 14.8317 8.56887 14.8317 8.69144 14.7809C8.7739 14.7468 8.84931 14.677 9.00013 14.5376L9.00014 14.5376L14.9701 9.01803C16.6806 7.4365 16.8876 4.80554 15.4454 2.976L15.2153 2.68418C13.5081 0.518546 10.1234 0.885611 8.92017 3.36688C8.74998 3.71783 8.25002 3.71783 8.07983 3.36688C6.87659 0.885611 3.49188 0.518545 1.78469 2.68418L1.55465 2.976C0.112401 4.80554 0.319362 7.4365 2.02994 9.01803Z" stroke="#06211E"></path>
+                  </svg>
+                  It's great for you
+                </span>
+                <img loading="lazy" class="d-md-block float-end mt-1" src="{{ '__down.svg' | asset_url }}">
+              </h2>
+              <div class="cstm-menu-s" style="display: none;">
+                {{ product.metafields.custom.content_tab_2 | newline_to_br }}
+              </div>
+            </div>
+            {% endif %}
+
+            <!-- Tab 2: How to use -->
+            {% if has_tab_2 %}
+            <div class="cstm-menu-footer menu-page">
+              <h2>
+                <span>
+                  <svg width="16" height="20" viewBox="0 0 16 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M7.089 14V8.225H7.87V14H7.089ZM7.485 6.949C7.32367 6.949 7.188 6.894 7.078 6.784C6.968 6.674 6.913 6.542 6.913 6.388C6.913 6.234 6.968 6.10567 7.078 6.003C7.188 5.893 7.32367 5.838 7.485 5.838C7.64633 5.838 7.782 5.88933 7.892 5.992C8.002 6.09467 8.057 6.223 8.057 6.377C8.057 6.53833 8.002 6.674 7.892 6.784C7.78933 6.894 7.65367 6.949 7.485 6.949Z" fill="#06211E"></path>
+                    <circle cx="8" cy="10" r="7.5" stroke="#06211E"></circle>
+                  </svg>
+                  How to use
+                </span>
+                <img loading="lazy" class="d-md-block float-end mt-1" src="{{ '__down.svg' | asset_url }}">
+              </h2>
+              <div class="cstm-menu-s" style="display: none;">
+                {{ product.metafields.custom.content_tab_1 }}
+              </div>
+            </div>
+            {% endif %}
+
+            <!-- Tab 3: INGREDIENTS -->
+            {% if has_tab_3 %}
+            <div class="cstm-menu-footer menu-page">
+              <h2>
+                <span>
+                  <svg width="14" height="17" viewBox="0 0 14 17" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M9.78677 13.5172C13.8994 10.2852 12.8908 1 12.8908 1C12.8908 1 3.30268 3.6672 1.4725 8.44828C0.409375 11.2255 1.4725 16 1.4725 16C1.4725 16 7.17919 15.5665 9.78677 13.5172Z" fill="#FAEEE9" stroke="#06211E"></path>
+                  </svg>
+                  INGREDIENTS
+                </span>
+                <img loading="lazy" class="d-md-block float-end mt-1" src="{{ '__down.svg' | asset_url }}">
+              </h2>
+              <div class="cstm-menu-s" style="display: none;">
+                {{ product.metafields.custom.content_tab_3 | newline_to_br }}
+              </div>
+            </div>
+            {% endif %}
+
+          </div>
+        </div>
+      </div>
+      {% endif %}
+    </div>
+
+    <!-- Right Column: Product Details -->
+    <div class="quick-add-modal-right" style="width: 50%">
+      <h2>{{ product.title }}</h2>
+
+      <!-- Judge.me Reviews - Same as dgf-featured-product -->
+      <div class="quick-add-product-rating dgf-product-rating">
+        {% render 'judgeme_widgets', widget_type: 'judgeme_preview_badge', product: product %}
+      </div>
+
+      <!-- Product Certified Icons - Same as main-product.liquid -->
+      {% if product.metafields.custom.enable_certified_icons == true %}
+      <div class="custom-product-certified-icn">
+        <div class="custom-wrap">
+          {% if product.metafields.custom.certified_icon_1 != blank %}
+            <div class="product-certified-icon">
+              <img loading="lazy" src="{{ product.metafields.custom.certified_icon_1 | image_url: width: 2000 }}">
+            </div>
+          {% endif %}
+          {% if product.metafields.custom.certified_hover_text_1 != blank %}
+            <div class="product-certified-icon-text">
+              {{ product.metafields.custom.certified_hover_text_1 }}
+            </div>
+          {% endif %}
+        </div>
+        <div class="custom-wrap">
+          {% if product.metafields.custom.certified_icon_2 != blank %}
+            <div class="product-certified-icon">
+              <img loading="lazy" src="{{ product.metafields.custom.certified_icon_2 | image_url: width: 2000 }}">
+            </div>
+          {% endif %}
+          {% if product.metafields.custom.certiied_hover_text_2 != blank %}
+            <div class="product-certified-icon-text">
+              {{ product.metafields.custom.certiied_hover_text_2 }}
+            </div>
+          {% endif %}
+        </div>
+        <div class="custom-wrap">
+          {% if product.metafields.custom.certfied_icon_3 != blank %}
+            <div class="product-certified-icon">
+              <img loading="lazy" src="{{ product.metafields.custom.certfied_icon_3 | image_url: width: 2000 }}">
+            </div>
+          {% endif %}
+          {% if product.metafields.custom.certified_hover_text_3 != blank %}
+            <div class="product-certified-icon-text">
+              {{ product.metafields.custom.certified_hover_text_3 }}
+            </div>
+          {% endif %}
+        </div>
+        <div class="custom-wrap">
+          {% if product.metafields.custom.certifed_icon_4 != blank %}
+            <div class="product-certified-icon">
+              <img loading="lazy" src="{{ product.metafields.custom.certifed_icon_4 | image_url: width: 2000 }}">
+            </div>
+          {% endif %}
+          {% if product.metafields.custom.certified_hover_text_4 != blank %}
+            <div class="product-certified-icon-text">
+              {{ product.metafields.custom.certified_hover_text_4 }}
+            </div>
+          {% endif %}
+        </div>
+        <div class="custom-wrap">
+          {% if product.metafields.custom.certified_icon_5 != blank %}
+            <div class="product-certified-icon">
+              <img loading="lazy" src="{{ product.metafields.custom.certified_icon_5 | image_url: width: 2000 }}">
+            </div>
+          {% endif %}
+          {% if product.metafields.custom.certified_hover_text_5 != blank %}
+            <div class="product-certified-icon-text">
+              {{ product.metafields.custom.certified_hover_text_5 }}
+            </div>
+          {% endif %}
+        </div>
+      </div>
+      {% endif %}
+
+      <div class="quick-add-product-info">
+
+          <div class="product-content" style="margin-bottom: 20px; line-height: 1.6;">
+            <p>{{ product.metafields.custom.description| newline_to_br }}</p>
+          </div>
+
+        {%- assign product_form_id = 'quick-add-product-form-' | append: product.id -%}
+
+        {% if product.tags contains 'Bundles' %}
+
+        {% render 'dgf_bundles_crd', product: product %}
+
+        {% else %}
+
+        {% render 'dgf_subscription_wdg', product: product %}
+
+        {% endif %}
+
+        <!-- Product Form with Add to Cart Button -->
+        <product-form class="product-form">
+          {%- form 'product', product, id: product_form_id, novalidate: 'novalidate', data-type: 'add-to-cart-form' -%}
+            <input type="hidden" name="id" value="{{ product.selected_or_first_available_variant.id }}" disabled>
+            <input type="hidden" class="selling-plan-id" name="selling_plan" value="{% for selling_plan_group in product.selling_plan_groups %}{% for plan in selling_plan_group.selling_plans %}{% if forloop.last %}{{ plan.id }}{% endif %}{% endfor %}{% endfor %}" disabled>
+
+            <div class="product-form__buttons">
+              <!-- Quantity Selector + Add to Cart Button on same line -->
+              <div class="add-to-cart-block-with-quantity" {% unless product.selected_or_first_available_variant.available %}style="display: none;"{% endunless %}>
+                <div class="product-quantity-wrap">
+                  <div class="p-quantity">
+                    <input type='button' value='-' class="qtyminus minus" field='quantity'/>
+                    <input id="Quantity-quick-add-{{ product.id }}" form="{{ product_form_id }}" type='text' name="quantity" min="1" value='1' class='qty input-quantity'/>
+                    <input type='button' value='+' class='qtyplus plus' field='quantity'/>
+                  </div>
+                  <span class="quantity-label">Quantity</span>
+                </div>
+                <div class="cart-btn-wrap">
+                  <button
+                    type="button"
+                    name="add"
+                    class="subscription-addtocartMine btn btn-bg btn-bg-full mt-4 mb-4"
+                  >
+                    <span>
+                      {{ 'products.product.add_to_cart' | t | default: 'Add to Cart' }}
+                    </span>
+                    <span id="suscribe-price-button-{{ section.id }}" class="subscribe-price-wrap">
+                      | {{ product.selected_or_first_available_variant.price | money }}
+                    </span>
+                  </button>
+                </div>
+              </div>
+            </div>
+          {%- endform -%}
+        </product-form>
+
+        <!-- Guarantees - Same as dgf-featured-product -->
+        <div class="quick-add-guarantees">
+          <div class="quick-add-guarantee">
+            <span>
+              <svg width="25" height="25" viewBox="0 0 21 21" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <g clip-path="url(#clip0_1720_12599)">
+                  <path d="M10.5003 17.2661C7.43232 17.2661 4.7425 15.1973 3.95929 12.2343C3.90032 12.0119 4.03337 11.7835 4.25562 11.7248C4.47835 11.6661 4.70644 11.799 4.76541 12.0214C5.45212 14.6186 7.81053 16.4322 10.5003 16.4322C13.1063 16.4322 15.4448 14.6893 16.187 12.194C16.2528 11.9731 16.4848 11.8477 16.7056 11.9134C16.9264 11.9791 17.0521 12.2109 16.9863 12.4319C16.5794 13.8001 15.7255 15.0311 14.5816 15.8974C13.3988 16.793 11.9878 17.2661 10.5003 17.2661Z" fill="#06211E"/>
+                  <path d="M10.5 21C4.71048 21 0 16.2896 0 10.5C0 4.7104 4.71048 0 10.5 0C16.2895 0 21 4.7104 21 10.5C21 16.2896 16.29 21 10.5 21ZM10.5 0.83391C5.17007 0.83391 0.833898 5.17014 0.833898 10.5C0.833898 15.8299 5.17007 20.1661 10.5 20.1661C15.8299 20.1661 20.1661 15.8299 20.1661 10.5C20.1661 5.17014 15.8299 0.83391 10.5 0.83391Z" fill="#06211E"/>
+                  <path d="M7.13788 9.22954C7.66276 9.22954 8.08826 8.79515 8.08826 8.2593C8.08826 7.72345 7.66276 7.28906 7.13788 7.28906C6.613 7.28906 6.1875 7.72345 6.1875 8.2593C6.1875 8.79515 6.613 9.22954 7.13788 9.22954Z" fill="#06211E"/>
+                  <path d="M13.8644 9.22954C14.3893 9.22954 14.8148 8.79515 14.8148 8.2593C14.8148 7.72345 14.3893 7.28906 13.8644 7.28906C13.3396 7.28906 12.9141 7.72345 12.9141 8.2593C12.9141 8.79515 13.3396 9.22954 13.8644 9.22954Z" fill="#06211E"/>
+                </g>
+                <defs>
+                  <clipPath id="clip0_1720_12599">
+                    <rect width="21" height="21" fill="white"/>
+                  </clipPath>
+                </defs>
+              </svg>
+            </span>
+            <span>100% money-back guarantee</span>
+          </div>
+          <div class="quick-add-guarantee">
+            <span>
+              <svg width="25" height="25" viewBox="0 0 29 26" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <g clip-path="url(#clip0_1720_12606)">
+                  <path d="M28.481 12.1072L26.1277 9.46511C25.7874 9.08309 25.1296 8.79451 24.5979 8.79451H21.6478L21.8114 7.23113C21.8448 6.91112 21.7448 6.59463 21.5368 6.36297C21.3302 6.13215 21.0295 6 20.712 6H6.68147C6.04543 6 5.49478 6.49961 5.42787 7.1378L5.3595 7.79044H3.39968C3.15364 7.79044 2.95423 7.99104 2.95423 8.23799C2.95423 8.48494 3.15364 8.68554 3.39968 8.68554H10.4164C10.6622 8.68554 10.8619 8.48494 10.8619 8.23799C10.8619 7.99104 10.6622 7.79044 10.4164 7.79044H6.25571L6.31429 7.23137C6.33277 7.05541 6.50791 6.89522 6.68147 6.89522H20.712C20.7973 6.89522 20.8475 6.93175 20.8744 6.96209C20.9027 6.99352 20.9347 7.04946 20.9252 7.1378L19.8736 17.1903H11.75C11.7019 16.7401 11.522 16.3248 11.2216 15.9895C10.8161 15.5374 10.2448 15.288 9.61312 15.288C8.48452 15.288 7.45956 16.1111 7.15676 17.1903H5.51085C5.42606 17.1903 5.37557 17.1538 5.34815 17.1235C5.32013 17.092 5.28836 17.0361 5.29742 16.9477L5.59986 14.0572H7.71477C7.96057 14.0572 8.16022 13.8568 8.16022 13.6096C8.16022 13.3624 7.96057 13.162 7.71477 13.162H0.445448C0.199413 13.162 0 13.3624 0 13.6096C0 13.8568 0.199413 14.0572 0.445448 14.0572H4.70402L4.4116 16.8542C4.37814 17.1742 4.47815 17.4904 4.6859 17.7226C4.89304 17.9531 5.19343 18.0855 5.51097 18.0855H7.07825C7.12608 18.5358 7.30616 18.951 7.60679 19.2863C8.01226 19.7385 8.58332 19.9879 9.21502 19.9879C10.344 19.9879 11.3688 19.1647 11.6714 18.0855H21.8089C21.8575 18.5358 22.0373 18.9513 22.3376 19.2866C22.7431 19.7387 23.3145 19.9879 23.9463 19.9879C25.0752 19.9879 26.1004 19.1645 26.4024 18.0855H27.3866C28.0231 18.0855 28.5734 17.5859 28.6399 16.9477L28.9789 13.7104C29.0348 13.1779 28.8208 12.4889 28.481 12.1072ZM10.8644 17.5911C10.8464 17.7642 10.7981 17.9303 10.7278 18.0855C10.4631 18.6708 9.86568 19.0926 9.21502 19.0926C8.83914 19.0926 8.50324 18.9484 8.2688 18.687C8.11758 18.5183 8.01951 18.3119 7.9782 18.0854C7.95489 17.9571 7.94921 17.8227 7.96383 17.6846C7.98207 17.5115 8.03014 17.3454 8.10019 17.1902C8.36543 16.6049 8.96246 16.1831 9.61312 16.1831C9.989 16.1831 10.3251 16.3274 10.5593 16.5888C10.7108 16.7576 10.8089 16.9639 10.8502 17.1903C10.8734 17.3186 10.879 17.453 10.8644 17.5911ZM25.5951 17.5911C25.5773 17.7642 25.5289 17.9303 25.4591 18.0855C25.1941 18.6708 24.5969 19.0926 23.9464 19.0926C23.5703 19.0926 23.2347 18.9484 23.0002 18.6874C22.849 18.5186 22.7509 18.312 22.7094 18.0855C22.6861 17.9573 22.6803 17.8228 22.6948 17.6847C22.713 17.5117 22.7613 17.3455 22.8311 17.1903C23.0965 16.605 23.6934 16.1832 24.3443 16.1832C24.7204 16.1832 25.0561 16.3275 25.2902 16.5889C25.4417 16.7577 25.5394 16.964 25.581 17.1904C25.6043 17.3186 25.61 17.453 25.5951 17.5911ZM28.0929 13.6168L27.754 16.8544C27.7358 17.0301 27.5609 17.1903 27.3868 17.1903H26.4812C26.4326 16.7401 26.2534 16.3251 25.9525 15.9895C25.5473 15.5374 24.9762 15.288 24.3443 15.288C23.2155 15.288 22.1903 16.1111 21.8877 17.1903H20.7694L21.5542 9.68973H24.5979C24.8725 9.68973 25.2932 9.87055 25.4637 10.0622L27.8166 12.7041C27.9876 12.896 28.122 13.3397 28.0929 13.6168Z" fill="#06211E" stroke="#06211E" stroke-width="0.1" stroke-miterlimit="10"/>
+                  <path d="M1.61744 10.4733H5.97445H9.07978C9.32557 10.4733 9.52523 10.2726 9.52523 10.0257C9.52523 9.77872 9.32557 9.57812 9.07978 9.57812H1.61744C1.37141 9.57812 1.17188 9.77872 1.17188 10.0257C1.172 10.2727 1.37141 10.4733 1.61744 10.4733Z" fill="#06211E" stroke="#06211E" stroke-width="0.1" stroke-miterlimit="10"/>
+                  <path d="M2.50795 11.375C2.26191 11.375 2.0625 11.5756 2.0625 11.8227C2.0625 12.0696 2.26191 12.2702 2.50795 12.2702H4.89063H11.084C11.3298 12.2702 11.5296 12.0696 11.5296 11.8227C11.5296 11.5757 11.3299 11.375 11.084 11.375H2.50795Z" fill="#06211E" stroke="#06211E" stroke-width="0.1" stroke-miterlimit="10"/>
+                </g>
+                <defs>
+                  <clipPath id="clip0_1720_12606">
+                    <rect width="29" height="26" fill="white"/>
+                  </clipPath>
+                </defs>
+              </svg>
+            </span>
+            <span>Free shipping on orders over $50</span>
+          </div>
+        </div>
+
+        <!-- Refund & Return Policy Link -->
+        <div class="product_rich_text_wrapper" style="margin-top: 1rem;">
+          <p><a href="https://www.tribe-organics.com/policies/refund-policy" target="_blank">*REFUND & RETURN POLICY</a></p>
+        </div>
+
+        {% if has_tab_1 or has_tab_2 or has_tab_3 %}
+          <div class="quick-add-tabs-section tabs-mobile">
+            <div class="product-tabs-image-wrapper">
+              <div class="prdct-tabs-wrapper cstm-menu-footer-group">
+    
+                <!-- Tab 1: It's great for you -->
+                {% if has_tab_1 %}
+                <div class="cstm-menu-footer menu-page">
+                  <h2>
+                    <span>
+                      <svg width="17" height="16" viewBox="0 0 17 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M2.02994 9.01803L7.99986 14.5376C8.15069 14.677 8.2261 14.7468 8.30856 14.7809C8.43113 14.8317 8.56887 14.8317 8.69144 14.7809C8.7739 14.7468 8.84931 14.677 9.00013 14.5376L9.00014 14.5376L14.9701 9.01803C16.6806 7.4365 16.8876 4.80554 15.4454 2.976L15.2153 2.68418C13.5081 0.518546 10.1234 0.885611 8.92017 3.36688C8.74998 3.71783 8.25002 3.71783 8.07983 3.36688C6.87659 0.885611 3.49188 0.518545 1.78469 2.68418L1.55465 2.976C0.112401 4.80554 0.319362 7.4365 2.02994 9.01803Z" stroke="#06211E"></path>
+                      </svg>
+                      It's great for you
+                    </span>
+                    <img loading="lazy" class="d-md-block float-end mt-1" src="{{ '__down.svg' | asset_url }}">
+                  </h2>
+                  <div class="cstm-menu-s" style="display: none;">
+                    {{ product.metafields.custom.content_tab_2 | newline_to_br }}
+                  </div>
+                </div>
+                {% endif %}
+    
+                <!-- Tab 2: How to use -->
+                {% if has_tab_2 %}
+                <div class="cstm-menu-footer menu-page">
+                  <h2>
+                    <span>
+                      <svg width="16" height="20" viewBox="0 0 16 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M7.089 14V8.225H7.87V14H7.089ZM7.485 6.949C7.32367 6.949 7.188 6.894 7.078 6.784C6.968 6.674 6.913 6.542 6.913 6.388C6.913 6.234 6.968 6.10567 7.078 6.003C7.188 5.893 7.32367 5.838 7.485 5.838C7.64633 5.838 7.782 5.88933 7.892 5.992C8.002 6.09467 8.057 6.223 8.057 6.377C8.057 6.53833 8.002 6.674 7.892 6.784C7.78933 6.894 7.65367 6.949 7.485 6.949Z" fill="#06211E"></path>
+                        <circle cx="8" cy="10" r="7.5" stroke="#06211E"></circle>
+                      </svg>
+                      How to use
+                    </span>
+                    <img loading="lazy" class="d-md-block float-end mt-1" src="{{ '__down.svg' | asset_url }}">
+                  </h2>
+                  <div class="cstm-menu-s" style="display: none;">
+                    {{ product.metafields.custom.content_tab_1 }}
+                  </div>
+                </div>
+                {% endif %}
+    
+                <!-- Tab 3: INGREDIENTS -->
+                {% if has_tab_3 %}
+                <div class="cstm-menu-footer menu-page">
+                  <h2>
+                    <span>
+                      <svg width="14" height="17" viewBox="0 0 14 17" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M9.78677 13.5172C13.8994 10.2852 12.8908 1 12.8908 1C12.8908 1 3.30268 3.6672 1.4725 8.44828C0.409375 11.2255 1.4725 16 1.4725 16C1.4725 16 7.17919 15.5665 9.78677 13.5172Z" fill="#FAEEE9" stroke="#06211E"></path>
+                      </svg>
+                      INGREDIENTS
+                    </span>
+                    <img loading="lazy" class="d-md-block float-end mt-1" src="{{ '__down.svg' | asset_url }}">
+                  </h2>
+                  <div class="cstm-menu-s" style="display: none;">
+                    {{ product.metafields.custom.content_tab_3 | newline_to_br }}
+                  </div>
+                </div>
+                {% endif %}
+    
+              </div>
+            </div>
+          </div>
+          {% endif %}
+
+        <div class="product_rich_text_wrapper text-center" style="margin-top: 3.5rem; margin-bottom: 3rem;">
+          <p><a href="{{ product.url }}" style="color: #31006F; text-transform: uppercase;">Still need more?</a></p>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</div>
+
+<style>
+  /* Force black text for title, description and quantity */
+  .quick-add-modal-right h2, p, span {
+    color: #000;
+  }
+
+  .quick-add-modal-right h2 {
+    font-size: 24px;
+    font-family: HypatiaSansPro;
+    text-transform: uppercase;
+    margin: 0!important;
+  }
+
+  /* Judge.me Reviews Styles - Same as dgf-featured-product */
+  .dgf-product-rating {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin-bottom: 15px;
+  }
+
+  .product-certified-icon-text {
+    display: none;
+    position: absolute;
+    bottom: -100px!important;
+    background: #fff;
+    width: 300px;
+    padding: 10px;
+    border-radius: 0 12px;
+    text-align: center;
+    z-index: 999!important;
+  }
+
+  .prdct-tabs-wrapper {
+    padding: 3rem 5rem!important;
+  }
+
+  /* Tab icons size */
+  .quick-add-tabs-section .cstm-menu-footer h2 svg {
+    width: 32px;
+    height: 32px;
+  }
+
+  /* Tab arrow (expand/collapse) size */
+  .quick-add-tabs-section .cstm-menu-footer h2 img {
+    width: 21px;
+    transition: transform 0.3s ease;
+  }
+
+  /* Rotate arrow when tab is active */
+  .quick-add-tabs-section .cstm-menu-footer.active h2 img {
+    transform: rotate(180deg);
+  }
+
+  /* Smooth animation for tab content */
+  .quick-add-tabs-section .cstm-menu-s {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.4s ease, opacity 0.3s ease;
+    opacity: 0;
+  }
+
+  .quick-add-tabs-section .cstm-menu-footer.active .cstm-menu-s {
+    max-height: 1000px;
+    opacity: 1;
+  }
+
+  .widget-selection-option {
+    min-height: 55px!important;
+  }
+
+
+  /* Force Judge.me badge to display in modal */
+  .quick-add-modal-right .jdgm-prev-badge {
+    display: flex !important;
+    align-items: center;
+    gap: 0.5rem;
+  }
+
+  .cart-btn-wrap span {
+    color: #ffffff!important;
+  }
+
+  /* Guarantees - Same as dgf-featured-product */
+  .quick-add-guarantees {
+    display: flex;
+    justify-content: space-between;
+    gap: 1rem;
+    margin-top: 1.5rem;
+    margin-bottom: 1rem;
+  }
+
+  .quick-add-guarantee {
+    font-size: 13px;
+    font-weight: 500;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    flex: 1;
+    line-height: 1.2;
+  }
+
+  .quick-add-guarantee svg {
+    width: 25px;
+    height: 25px;
+    flex-shrink: 0;
+  }
+
+  /* Tabs Section in Modal */
+  .quick-add-tabs-section {
+    margin-top: 2rem;
+    width: 100%;
+    max-width: 100%;
+    display: flex;
+    justify-content: center;
+  }
+
+  .quick-add-tabs-section .product-tabs-image-wrapper {
+    width: 100%;
+  }
+
+  .quick-add-tabs-section .prdct-tabs-wrapper {
+    width: 100%;
+  }
+
+  /* Two Column Layout */
+  .quick-add-modal-columns {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+    height: 100%;
+  }
+
+  .quick-add-modal-left,
+  .quick-add-modal-right {
+    overflow-y: auto;
+  }
+
+  /* Gallery Styles - Same as dgf-featured-product */
+  .quick-add-product-images {
+    width: 100%;
+  }
+
+  .main-gallery {
+    margin-bottom: 1rem;
+    position: relative;
+    width: 100%;
+   
+  }
+
+  .quick-add-swipper {
+    max-width: 450px!important;
+  }
+
+  .main-gallery .swiper {
+    width: 100%;
+    height: auto;
+  }
+
+  .main-gallery .swiper-wrapper {
+    align-items: stretch;
+  }
+
+  .product__photo {
+    aspect-ratio: 1;
+    overflow: hidden;
+    width: 100% !important;
+    height: auto !important;
+    display: flex !important;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .tabs-mobile{
+    display: none;
+  }
+
+  .product__photo img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+  }
+
+  /* Main Gallery Navigation Buttons - Same as dgf-featured-product */
+  .product-gallery-prev:after,
+  .product-gallery-next:after {
+    display: none !important;
+  }
+
+  .product-gallery-prev {
+    background: url(https://cdn.shopify.com/s/files/1/0499/0425/5134/files/left-arrow-new.svg) !important;
+    transition: .3s ease !important;
+    height: 34px !important;
+    width: 35px !important;
+    background-repeat: no-repeat !important;
+    background-size: 100% !important;
+    background-position: center !important;
+    border-radius: 24px !important;
+    outline: none !important;
+    box-shadow: none !important;
+    left: 0px !important;
+    margin: 0 !important;
+    transform: translate(0px, -50%) !important;
+  }
+
+  .add-to-cart-block-with-quantity{
+    display: flex;
+    align-content: center;
+    align-items: center;
+    width: 100%;
+    justify-content: space-between;
+  }
+
+  .product-gallery-next {
+    background: url(https://cdn.shopify.com/s/files/1/0499/0425/5134/files/right-arrowe-new.svg) !important;
+    transition: .3s ease !important;
+    height: 34px !important;
+    width: 35px !important;
+    background-repeat: no-repeat !important;
+    background-size: 100% !important;
+    background-position: center !important;
+    border-radius: 30px !important;
+    outline: none !important;
+    box-shadow: none !important;
+    right: 0px !important;
+    margin: 0 !important;
+    transform: translate(0px, -50%) !important;
+  }
+
+  .product-gallery-next,
+  .product-gallery-prev {
+    visibility: hidden !important;
+    transition: 0.3s ease !important;
+  }
+
+  .main-gallery.product__photo:hover .product-gallery-next,
+  .main-gallery.product__photo:hover .product-gallery-prev {
+    visibility: visible !important;
+    transition: 0.3s ease !important;
+  }
+
+  /* Thumbnails - Same as dgf-featured-product */
+  .product__thumbnails.thumbnails {
+    max-width: 354px;
+    margin: 12px auto !important;
+    padding: 0 1rem;
+    width: 100%;
+    position: initial;
+    transform: translateY(0) !important;
+    text-align: center;
+  }
+
+  .product__thumbnails.thumbnails .product__thumbnail {
+    padding: 0 6px;
+    display: inline-block;
+  }
+
+  .product__thumbnail img {
+    border-radius: 0 8px;
+    border: 1.5px solid #cdcdcd;
+    cursor: pointer;
+    width: 61px!important;
+    height: 61px;
+    object-fit: cover;
+  }
+
+  .swiper-slide-thumb-active .product__thumbnail img {
+    border: 1px solid #000000;
+  }
+
+  /* Thumbnail Navigation Buttons - Same as dgf-featured-product */
+  .product-thumbnail-prev:after,
+  .product-thumbnail-next:after {
+    display: none !important;
+  }
+
+  .product-thumbnail-prev {
+    background: url(https://cdn.shopify.com/s/files/1/0499/0425/5134/files/single-arrow-left.svg) !important;
+    transition: .3s ease !important;
+    height: 22px !important;
+    width: 9px !important;
+    background-repeat: no-repeat !important;
+    background-size: 100% !important;
+    background-position: center !important;
+    outline: none !important;
+    box-shadow: none !important;
+    left: 0px !important;
+    margin: 0 !important;
+    transform: translate(0px, -50%) !important;
+  }
+
+  .product-thumbnail-next {
+    background: url(https://cdn.shopify.com/s/files/1/0499/0425/5134/files/single-arrow-rgt.svg) !important;
+    transition: .3s ease !important;
+    height: 22px !important;
+    width: 9px !important;
+    background-repeat: no-repeat !important;
+    background-size: 100% !important;
+    background-position: center !important;
+    outline: none !important;
+    box-shadow: none !important;
+    right: 0px !important;
+    margin: 0 !important;
+    transform: translate(0px, -50%) !important;
+  }
+
+  /* Responsive */
+  @media screen and (max-width: 767px) {
+    .quick-add-modal-columns {
+      grid-template-columns: 1fr;
+      gap: 1rem;
+    }
+
+    /* Quantity e Add to Cart um abaixo do outro */
+    .add-to-cart-block-with-quantity {
+      flex-direction: column !important;
+      align-items: stretch !important;
+      gap: 1rem;
+    }
+
+    .product-quantity-wrap {
+      width: 100% !important;
+      justify-content: center;
+    }
+
+    .cart-btn-wrap {
+      width: 100% !important;
+    }
+
+    .cart-btn-wrap button {
+      width: 100% !important;
+    }
+
+    .quick-add-guarantees {
+      gap: 1.5rem;
+      margin-bottom: 2rem;
+    }
+
+    .quick-add-guarantee {
+      flex-direction: column !important;
+      align-items: center !important;
+      text-align: center;
+      gap: 0.5rem !important;
+    }
+
+    .quick-add-guarantee svg {
+      margin-bottom: 0.5rem;
+    }
+
+    /* Mobile Swiper - esconder thumbnails e mostrar dots */
+    .thumbnail-gallery {
+      display: none !important;
+    }
+
+    .main-gallery {
+      margin-bottom: 0 !important;
+    }
+
+    /* Dots de navegação para mobile - copiado de main-product.liquid */
+    .quick-add-modal-left .swiper-pagination {
+      position: relative !important;
+      bottom: auto !important;
+      margin-top: 1rem;
+      display: block !important;
+    }
+
+    .quick-add-modal-left .swiper-pagination-bullet {
+      width: 10px;
+      height: 10px;
+      background: #000;
+      opacity: 1;
+      background: linear-gradient(180deg, #F3D9CF 0%, #F3D9CF 100%);
+    }
+
+    .quick-add-modal-left .swiper-pagination-bullet-active {
+      background: #A7833E;
+    }
+
+    /* Esconder botões de navegação em mobile */
+    .product-gallery-prev,
+    .product-gallery-next {
+      display: none !important;
+    }
+
+    .tabs-mobile{
+      display: block;
+    }
+
+    .widget-tab-content{
+      padding: 5px!imporant;
+    }
+
+
+    .tabs-desktop{
+      display: none;
+    }
+
+    .prdct-tabs-wrapper{
+      padding: 0!important;
+    }
+
+    .quick-add-tabs-section .cstm-menu-footer h2 svg {
+        width: 25px;
+        height: 25px;
+    }
+
+  }
+</style>
+
+<script>
+  // Initialize Swiper when section loads - Same as dgf-featured-product
+  (function() {
+    console.log('[MODAL SWIPER] Script executing...');
+
+    // Get modal context - search within modal body only
+    const modalBody = document.querySelector('#quickAddModalBody .quick-add-modal-body');
+    console.log('[MODAL SWIPER] Modal body found:', modalBody);
+
+    if (!modalBody) {
+      console.error('[MODAL SWIPER] Modal body not found');
+      return;
+    }
+
+    const mainGalleryEl = modalBody.querySelector('.main-gallery');
+    console.log('[MODAL SWIPER] Main gallery element:', mainGalleryEl);
+
+    const images = modalBody.querySelectorAll('.main-gallery .swiper-slide');
+    const imageCount = images.length;
+
+    console.log('[MODAL SWIPER] Found', imageCount, 'images in modal');
+    console.log('[MODAL SWIPER] All slides:', Array.from(images));
+
+    if (imageCount > 0) {
+      setTimeout(() => {
+        const thumbnailGalleryEl = modalBody.querySelector('.thumbnail-gallery');
+        const mainGalleryEl = modalBody.querySelector('.main-gallery');
+
+        if (!thumbnailGalleryEl || !mainGalleryEl) {
+          console.error('[MODAL SWIPER] Gallery elements not found');
+          return;
+        }
+
+        const thumbnailGallery = new Swiper(thumbnailGalleryEl, {
+          spaceBetween: 10,
+          slidesPerView: 4,
+          watchSlidesProgress: true,
+          loop: imageCount > 4,
+          navigation: {
+            nextEl: modalBody.querySelector('.product-thumbnail-next'),
+            prevEl: modalBody.querySelector('.product-thumbnail-prev'),
+          },
+          slideToClickedSlide: true,
+        });
+
+        const mainGallery = new Swiper(mainGalleryEl, {
+          spaceBetween: 10,
+          navigation: {
+            nextEl: modalBody.querySelector('.product-gallery-next'),
+            prevEl: modalBody.querySelector('.product-gallery-prev'),
+          },
+          pagination: {
+            el: modalBody.querySelector('.swiper-pagination'),
+            clickable: true,
+          },
+          thumbs: {
+            swiper: thumbnailGallery,
+          },
+          loop: true,
+        });
+
+        console.log('[MODAL SWIPER] Galleries initialized successfully');
+
+        // Setup gallery synchronization
+        thumbnailGallery.on('slideChangeTransitionEnd', function () {
+          const activeIndex = thumbnailGallery.realIndex;
+          mainGallery.slideToLoop(activeIndex, 0);
+        });
+
+        mainGallery.on('slideChangeTransitionEnd', function () {
+          const activeIndex = mainGallery.realIndex;
+          thumbnailGallery.slideToLoop(activeIndex, 0);
+        });
+
+        // Setup thumbnail navigation visibility
+        const prevArrow = modalBody.querySelector('.product-thumbnail-prev');
+        const nextArrow = modalBody.querySelector('.product-thumbnail-next');
+
+        if (prevArrow && nextArrow) {
+          if (imageCount <= 4) {
+            prevArrow.style.display = 'none';
+            nextArrow.style.display = 'none';
+          } else {
+            thumbnailGallery.on('slideChange', function () {
+              prevArrow.style.display = 'block';
+              nextArrow.style.display = 'block';
+
+              if (thumbnailGallery.isBeginning) {
+                prevArrow.classList.add('swiper-button-disabled');
+              } else {
+                prevArrow.classList.remove('swiper-button-disabled');
+              }
+
+              if (thumbnailGallery.isEnd) {
+                nextArrow.classList.add('swiper-button-disabled');
+              } else {
+                nextArrow.classList.remove('swiper-button-disabled');
+              }
+            });
+          }
+        }
+      }, 100);
+    }
+  })();
+
+  // Quantity selector is now initialized in quick-add-modal-wrapper.liquid
+</script>
+
+{% schema %}
+{
+  "name": "Quick Add Modal",
+  "settings": []
+}
+{% endschema %}

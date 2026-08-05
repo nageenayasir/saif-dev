@@ -1,0 +1,53 @@
+/**/
+@import url('https://fonts.googleapis.com/css2?family=Work+Sans:ital,wght@0,100..900;1,100..900&display=swap');
+@font-face {
+    font-family: 'HypatiaSansPro';
+    src: url('https://cdn.shopify.com/s/files/1/0499/0425/5134/files/HypatiaSansPro-Bold_0537f0e3-4c32-451e-980a-4bd182cfc2a5.woff2') format('woff2'),
+        url('https://cdn.shopify.com/s/files/1/0499/0425/5134/files/HypatiaSansPro-Bold_a0ecce29-5c0b-492e-b3b2-46f233510f8e.woff') format('woff');
+    font-weight: bold;
+    font-style: normal;
+    font-display: swap;
+}
+@font-face {
+    font-family: 'HypatiaSansPro';
+    src: url('https://cdn.shopify.com/s/files/1/0499/0425/5134/files/HypatiaSansPro-Regular.woff2') format('woff2'),
+        url('https://cdn.shopify.com/s/files/1/0499/0425/5134/files/HypatiaSansPro-Regular.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+.klaviyo-bis-close select {
+    appearance: none;
+    -webkit-appearance: none;
+    background: url(https://cdn.shopify.com/s/files/1/0499/0425/5134/files/Expand_down.svg?v=1713876800);
+    background-repeat: no-repeat;
+    background-position: 97%;
+}
+.klaviyo-bis-close .modal-title {
+    line-height: 30px!important;
+    font-weight: 700;
+    text-transform: uppercase;
+}
+.klaviyo-bis-close #container {
+    background: #faeee9;
+    border: 1px solid #06211E;
+    border-radius: 0 16px;
+}
+.klaviyo-bis-close .close {
+    color: #000;
+    font-weight: 400;
+}
+.klaviyo-bis-close p, .klaviyo-bis-close select, .klaviyo-bis-close input, .klaviyo-bis-close button {
+    font-family: "Work Sans", sans-serif;
+}
+
+@media only screen and (max-width: 767px) {
+.klaviyo-bis-close #klaviyo-bis-modal {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 95%;
+}
+}

@@ -1,0 +1,127 @@
+<section id="id-{{section.id}}" class="subscribe-save-image-text-second common-kids-teenager-section">
+  <div class="leaf-box subscribe-save-image-text-second-left-bot left-top">
+        <img loading="lazy"  class="leaf subscribe-save-image-text-second-left-top" src="{{ 'subscribe-leaf.svg' | asset_url }}">
+  </div>
+  <div class="leaf-box subscribe-save-image-text-second-left-bot right-bot">
+        <img loading="lazy"  class="leaf subscribe-save-image-text-second-right-bot" src="{{ 'subscribe-right-leaf.svg' | asset_url }}">
+  </div>
+  <div class="container">
+    <div class="row">
+      <div class="col-sm-12 mob-subscribe-save-img-text-scnd-wrapper">
+          <div class="subscribe-save-img-text-second-wrapper" data-aos="fade-up">
+            {{ section.settings.mob_text }}
+          </div>
+        </div>
+        {% if section.settings.image_position == 'left' %}
+          <div class="col-sm-12 col-md-6 col-lg-6">
+            <div class="susbscibe-save-img-scnd-wrapper" data-aos="fade-up">
+              {% if section.settings.the_image != blank %}<img loading="lazy"  src="{{ section.settings.the_image | image_url: width: 2000 }}">{% endif %}
+            </div>
+          </div>
+        {% endif %}
+        <div class="col-sm-12 col-md-6 col-lg-6 web-subscribe-save-img-text-scnd-wrapper">
+          <div class="subscibe-save-img-text-scnd-wrapper" data-aos="fade-up">
+            {{ section.settings.the_text }}
+          </div>
+          <div class="subscribe-img-text-btn">
+            <div class="btn-group">
+                  <div data-aos="fade-up" data-aos-delay="400">
+                      <a class="btn btn-bg" href="{{ section.settings.url_1 }}" target="_self">
+                          {{ section.settings.button_1 }}
+                      </a>
+                  </div>
+                  <div data-aos="fade-up" data-aos-delay="500">
+                      <a class="btn btn-trans" href="{{ section.settings.url_2 }}" target="_self">
+                          {{ section.settings.button_2 }}
+                      </a>
+                  </div>
+              </div>
+          </div>
+        </div>
+        {% if section.settings.image_position == 'right' %}
+          <div class="col-sm-12 col-md-6 col-lg-6">
+            <div class="subscribe-save-img-scnd-wrapper" data-aos="fade-up">
+              {% if section.settings.the_image != blank %}<img loading="lazy"  src="{{ section.settings.the_image | image_url: width: 2000 }}">{% endif %}
+            </div>
+          </div>
+        {% endif %}
+    </div>
+  </div>
+</section>
+{% schema %}
+  {
+    "name": "S&S Image Text ",
+    "settings": [
+        {
+              "type": "header",
+              "content": "Image Settings"
+        },
+        {
+              "type": "image_picker",
+              "id": "the_image",
+              "label": "Image"
+        },
+        {
+          "type": "select",
+          "id": "image_position",
+          "options": [
+              {
+                "value": "left",
+                "label": "Image Left"
+              },
+              {
+                "value": "right",
+                "label": "Image Right"
+              }
+            ],
+            "default": "left",
+            "label": "Choose Position"
+          },
+          {
+                "type": "header",
+                "content": "Content Settings"
+          },
+          {
+              "type": "richtext",
+              "id": "the_text",
+              "label": "Text"
+          },
+          {
+              "type": "richtext",
+              "id": "mob_text",
+              "label": "Mobile-heading"
+          },
+          {
+            "type": "text",
+            "id": "button_1",
+            "label": "Button 1",
+            "default" : "Explore"
+          },
+          {
+            "type": "url",
+            "id": "url_1",
+            "label": "Url 1"
+          },
+          {
+            "type": "text",
+            "id": "button_2",
+            "label": "Button 2",
+            "default" : "Take the Quiz"
+          },
+          {
+            "type": "url",
+            "id": "url_2",
+            "label": "Url 2"
+          }
+    ],
+	"presets": [{
+      "name": "S&S Image Text"
+    }]
+  }
+{% endschema %}
+
+{% stylesheet %}
+{% endstylesheet %}
+
+{% javascript %}
+{% endjavascript %}

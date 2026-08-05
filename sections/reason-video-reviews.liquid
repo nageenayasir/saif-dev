@@ -1,0 +1,63 @@
+<style>
+  #id-{{ section.id }}{
+  	background-color:{{ section.settings.section_bg_color }};
+  }
+</style>
+<section id="id-{{ section.id }}" class="reason-video-reviews">
+  <div class="container">
+    <div class="row reason-videos-reviews-row" data-aos="fade-up">
+      {% for block in section.blocks %}
+        <div class="col-sm-12 col-md-4 col-lg-4">
+          <div class="reason-video-blocks">
+            <video width="100%" height="auto" controls poster="{% if block.settings.poster_image != blank %}{{ block.settings.poster_image | image_url: width: 2000 }}{% endif %}">
+                <source src="{{ block.settings.video_url_link }}" type="video/mp4">
+            </video>
+          </div>
+        </div>
+      {% endfor %}
+    </div>
+  </div>
+</section>
+{% schema %}
+  {
+    "name": "Reason Video Reviews",
+    "settings": [
+      {
+            "type": "header",
+            "content": "Content Style"
+         },
+  	     {
+           "type": "color",
+           "id": "section_bg_color",
+           "label": "Section background color"
+        }
+    ],
+	"blocks": [
+     {
+      "type": "video_reviews",
+      "name": "Video Reviews",
+      "settings": [
+        {
+          "type": "image_picker",
+          "id": "poster_image",
+          "label": "Poster Image"
+      	 },
+        {
+          "type": "url",
+          "id": "video_url_link",
+          "label": "Video Url"
+        }
+      ]
+     }
+	],
+	"presets": [{
+      "name": "Reason Video Reviews"
+    }]
+  }
+{% endschema %}
+
+{% stylesheet %}
+{% endstylesheet %}
+
+{% javascript %}
+{% endjavascript %}

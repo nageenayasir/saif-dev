@@ -1,0 +1,866 @@
+{% comment %}
+  [DGF] Upsell Popup Snippet - Single Step Progressive Discount
+  Author: Rodrigo Gesser
+  Date: 2026-03-23
+  Offers +3 pack with progressive discount (35%/40%/45%) based on initial purchase
+
+  Usage: {% render 'dgf-upsell-popup', settings: section.settings %}
+{% endcomment %}
+
+{% liquid
+  assign popup_bg = settings.upsell_popup_bg_color | default: '#FAEEE9'
+  assign cta_bg = settings.upsell_cta_bg_color | default: '#AC853B'
+  assign cta_text_color = settings.upsell_cta_text_color | default: '#ffffff'
+%}
+
+{% if settings.hide_claim_reward %}
+<style>
+  [id^="alia-root"] {
+    display: none !important;
+    visibility: hidden !important;
+  }
+</style>
+{% endif %}
+
+<style>
+  /* ==================== BLOCK REBUY CART ==================== */
+  /* Block Rebuy SmartCart on pages where upsell popup is enabled */
+  #rebuy-smartcart,
+  #rebuy-cart,
+  .rebuy-cart,
+  [data-rebuy-cart] {
+    display: none !important;
+    visibility: hidden !important;
+    opacity: 0 !important;
+    pointer-events: none !important;
+  }
+
+  /* ==================== POPUP OVERLAY ==================== */
+  .dgf-upsell-popup {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 99999;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .dgf-upsell-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.7);
+  }
+
+  /* ==================== POPUP CONTENT ==================== */
+  .dgf-upsell-content {
+    position: relative;
+    background: {{ popup_bg }};
+    width: 95%;
+    max-width: 900px;
+    overflow-y: auto;
+    z-index: 1;
+    padding: 2.5rem;
+  }
+  
+  @media (min-width: 1025px){
+    .dgf-upsell-content{
+      border-radius: 20px;
+    }
+  }
+
+  .dgf-upsell-content::-webkit-scrollbar {
+    width: 6px;
+  }
+  .dgf-upsell-content::-webkit-scrollbar-thumb {
+    background: #ccc;
+    border-radius: 3px;
+  }
+
+  /* ==================== PROGRESS BAR ==================== */
+  .dgf-upsell-progress {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 0;
+    margin: -2.5rem -2.5rem 2rem -2.5rem;
+    padding: 16px 20px;
+    background: linear-gradient(101.4deg, #AC853B 26.01%, #CFA34E 68.58%);
+    border-radius: 4px 4px 0 0;
+    position: relative;
+  }
+
+  .dgf-upsell-step {
+    flex: 0 0 auto;
+    text-align: center;
+    padding: 8px 20px;
+    position: relative;
+    z-index: 2;
+  }
+
+  .dgf-upsell-step-label {
+    font-family: inherit;
+    font-size: 14px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    color: #fff;
+    white-space: nowrap;
+  }
+
+  .dgf-upsell-step.active .dgf-upsell-step-label {
+    background: #06211E;
+    padding: 8px 16px;
+    border-radius: 4px;
+  }
+
+  @media (min-width: 1025px){
+    /* White connecting line */
+    .dgf-upsell-progress::before {
+      content: '';
+      position: absolute;
+      top: 50%;
+      left: 47.4%;
+      transform: translate(-50%, -50%);
+      width: 64%;
+      height: 1px;
+      background: #fff;
+      z-index: 1;
+    }
+
+    .dgf-upsell-heading,
+  .dgf-upsell-heading p,
+  .dgf-upsell-heading span,
+  .dgf-upsell-heading strong {
+    padding: 0 15rem;
+  }
+
+  }
+  /* ==================== HEADER ==================== */
+  .dgf-upsell-header {
+    text-align: center;
+    margin-bottom: 1.5rem;
+  }
+
+  .dgf-upsell-title,
+  .dgf-upsell-title p,
+  .dgf-upsell-title span,
+  .dgf-upsell-title em,
+  .dgf-upsell-title i {
+    font-family: 'Superior Title Italic', serif;
+    font-size: 24px;
+    font-style: italic;
+    color: #07211F;
+    margin-bottom: 1.5rem;
+  }
+
+  .dgf-upsell-heading,
+  .dgf-upsell-heading p,
+  .dgf-upsell-heading span,
+  .dgf-upsell-heading strong {
+    font-family: HypatiaSansPro, sans-serif;
+    font-size: 45px;
+    font-weight: 700;
+    text-transform: uppercase;
+    color: #07211F;
+    line-height: 1.15;
+    margin-bottom: 1.5rem;
+  }
+
+  .dgf-upsell-description,
+  .dgf-upsell-description p,
+  .dgf-upsell-description span {
+    font-family: inherit;
+    font-size: 24px;
+    color: #07211F;
+    line-height: 32px;
+  }
+
+  /* ==================== PRODUCT CARD ==================== */
+  .dgf-upsell-product {
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+    background: #fff;
+    border: 2px solid #e0d5ce;
+    border-radius: 20px;
+    padding: 0 2rem;
+    margin: 1.5rem 3rem;
+  }
+
+  .dgf-upsell-product-image {
+    flex: 0 0 120px;
+  }
+
+  .dgf-upsell-product-image img {
+    width: 100%;
+    height: auto;
+    border-radius: 4px;
+  }
+
+  .dgf-upsell-product-info {
+    flex: 1;
+  }
+
+  .dgf-upsell-product-title {
+    font-family: HypatiaSansPro, sans-serif;
+    font-size: 24px;
+    font-weight: 700;
+    color: #000000;
+    margin-bottom: -0.5rem;
+  }
+
+  .dgf-upsell-product-subtitle {
+    font-family: inherit;
+    font-size: 14px;
+    color: #07211F;
+  }
+
+  .dgf-upsell-product-price {
+    text-align: right;
+  }
+
+  .dgf-upsell-product-compare {
+    font-size: 22px;
+    color: #586A67;
+    text-decoration: line-through;
+    display: block;
+    margin-bottom: 4px;
+  }
+
+  .dgf-upsell-product-sale {
+    font-family: HypatiaSansPro, sans-serif;
+    font-size: 37px;
+    font-weight: 700;
+    color: #06211E;
+  }
+
+  /* ==================== BREAKDOWN BOX ==================== */
+  .dgf-upsell-breakdown {
+    background: #D5E4E1;
+    border-radius: 20px;
+    border: 1px solid rgba(88, 106, 103, 0.7);
+    padding: 3rem;
+    margin: 1.5rem 3rem;
+  }
+
+  .dgf-upsell-breakdown-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-family: inherit;
+    font-size: 16px;
+  }
+
+  .dgf-upsell-breakdown-label {
+    color: #06211E;
+  }
+
+  .dgf-upsell-breakdown-value {
+    font-weight: 500;
+    color: #06211E;
+  }
+
+  .dgf-upsell-breakdown-discount {
+    color: #AC853B !important;
+    text-transform: uppercase;
+    font-weight: 500;
+  }
+
+  .dgf-upsell-breakdown-total {
+    font-size: 16px;
+    font-weight: 700;
+    padding-top: 1rem;
+    border-top: 1px solid rgba(0, 0, 0, 0.2);
+    margin-top: 0.5rem;
+  }
+
+  .dgf-upsell-breakdown-total .dgf-upsell-breakdown-value {
+    font-size: 20px;
+  }
+
+  /* ==================== ACTIONS (CTAs) ==================== */
+  .dgf-upsell-actions {
+    text-align: center;
+  }
+
+  .dgf-upsell-cta {
+    display: inline-block;
+    width: 100%;
+    max-width: 500px;
+    padding: 18px 40px;
+    background: linear-gradient(101.4deg, {{ cta_bg }} 26.01%, {{ cta_bg | color_lighten: 10 }} 68.58%);
+    color: {{ cta_text_color }} !important;
+    font-family: inherit;
+    font-size: 25px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 10%;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: opacity 0.2s ease;
+  }
+
+  .dgf-upsell-cta:hover {
+    opacity: 0.9;
+  }
+
+  .dgf-upsell-cta:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+  }
+
+  .dgf-upsell-decline {
+    display: inline-block;
+    font-family: inherit;
+    font-size: 14px;
+    color: #07211F;
+    text-decoration: underline;
+    cursor: pointer;
+    background: none;
+    border: none;
+    padding: 0;
+  }
+
+  .dgf-upsell-decline:hover {
+    color: #000;
+  }
+
+  /* ==================== BLOCK REBUY SMARTCART ==================== */
+  body.dgf-upsell-active #rebuy-smartcart,
+  body.dgf-upsell-active #rebuy-cart,
+  body.dgf-upsell-active .rebuy-cart,
+  body.dgf-upsell-active [data-rebuy-id] {
+    display: none !important;
+    visibility: hidden !important;
+    opacity: 0 !important;
+    pointer-events: none !important;
+  }
+
+  /* ==================== MOBILE ==================== */
+  @media (max-width: 767px) {
+    .dgf-upsell-header{
+      margin-bottom: 0.75rem;
+    }
+
+    .dgf-upsell-content {
+      width: 100%;
+      max-width: 100%;
+      max-height: 100vh;
+      height: 100vh;
+      border-radius: 0;
+      padding: 1.5rem 1rem;
+    }
+
+    .dgf-upsell-progress {
+      margin: -1.5rem -1rem 1.5rem -1rem;
+      padding: 12px 8px;
+    }
+
+    .dgf-upsell-step {
+      padding: 6px 8px;
+    }
+
+    .dgf-upsell-step-label {
+      font-size: 11px;
+      letter-spacing: 0.3px;
+    }
+
+    .dgf-upsell-step.active .dgf-upsell-step-label {
+      padding: 6px 10px;
+    }
+
+    .dgf-upsell-heading,
+    .dgf-upsell-heading p,
+    .dgf-upsell-heading span,
+    .dgf-upsell-heading strong {
+      font-size: 29px;
+      margin-bottom: 0.75rem;
+    }
+
+    .dgf-upsell-title,
+    .dgf-upsell-title p,
+    .dgf-upsell-title span,
+    .dgf-upsell-title em,
+    .dgf-upsell-title i {
+      font-size: 18px;
+      margin-bottom: 0.75rem;
+    }
+
+    .dgf-upsell-description,
+    .dgf-upsell-description p,
+    .dgf-upsell-description span {
+      font-size: 16px;
+    }
+
+    .dgf-upsell-product {
+      flex-wrap: wrap;
+      gap: 0.75rem;
+      margin: 0.75rem 0;
+      padding: 1rem;
+    }
+
+    .dgf-upsell-product-image {
+      flex: 0 0 100%;
+      text-align: center;
+    }
+
+    .dgf-upsell-product-image img {
+      max-width: 160px;
+    }
+
+    .dgf-upsell-product-info {
+      flex: 1;
+      text-align: left;
+    }
+
+    .dgf-upsell-product-title {
+      font-size: 18px;
+    }
+
+    .dgf-upsell-product-subtitle {
+      font-size: 14px;
+    }
+
+    .dgf-upsell-product-price {
+      text-align: right;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+
+    .dgf-upsell-product-sale {
+      font-size: 26px;
+    }
+
+    .dgf-upsell-product-compare {
+      font-size: 15px;
+    }
+
+    .dgf-upsell-cta {
+      font-size: 18px;
+      padding: 16px 30px;
+    }
+
+    .dgf-upsell-breakdown{
+      margin: 0.75rem 0;
+    }
+
+    .dgf-upsell-breakdown-row{
+      font-size: 14px;
+    }
+
+    .dgf-upsell-decline{
+      font-size: 12px;
+    }
+  }
+</style>
+
+<!-- Popup HTML -->
+<div id="dgf-upsell-popup" class="dgf-upsell-popup" style="display: none;">
+  <div class="dgf-upsell-overlay"></div>
+  <div class="dgf-upsell-content">
+
+    <!-- Progress Bar -->
+    <div class="dgf-upsell-progress">
+      <div class="dgf-upsell-step completed">
+        <span class="dgf-upsell-step-label">Add To Cart</span>
+      </div>
+      <div class="dgf-upsell-step active">
+        <span class="dgf-upsell-step-label">Upgrade Options</span>
+      </div>
+      <div class="dgf-upsell-step">
+        <span class="dgf-upsell-step-label">Secure Checkout</span>
+      </div>
+    </div>
+
+    <!-- Header (dynamic content rendered by JS) -->
+    <div class="dgf-upsell-header">
+      <div class="dgf-upsell-title" id="dgf-upsell-title"></div>
+      <div class="dgf-upsell-heading" id="dgf-upsell-heading"></div>
+      <div class="dgf-upsell-description" id="dgf-upsell-description"></div>
+    </div>
+
+    <!-- Product Card (dynamic content rendered by JS) -->
+    <div class="dgf-upsell-product" id="dgf-upsell-product"></div>
+
+    <!-- Price Breakdown (dynamic content rendered by JS) -->
+    {% if settings.upsell_show_breakdown %}
+      <div class="dgf-upsell-breakdown" id="dgf-upsell-breakdown"></div>
+    {% endif %}
+
+    <!-- Actions -->
+    <div class="dgf-upsell-actions">
+      <button class="dgf-upsell-cta" id="dgf-upsell-cta">
+        {{ settings.upsell_step1_cta_text | default: 'YES! UPGRADE MY SAVINGS' }}
+      </button>
+      <br>
+      <a class="dgf-upsell-decline" id="dgf-upsell-decline">
+        {{ settings.upsell_step1_decline_text | default: "No thanks, I'll pass on this one-time offer." }}
+      </a>
+    </div>
+
+  </div>
+</div>
+
+<script>
+(function() {
+  'use strict';
+
+  var addedVariantId = null;
+  var threePackVariantId = null;
+  var discountCode = '';
+  var declineDiscountCode = '';
+  var originalPrice = 0;
+  var upsellPrice = 0;
+  var discountPercent = 0;
+  var declineDiscountPercent = 0;
+  var shouldClearCart = {{ settings.upsell_clear_cart | default: true }};
+
+  // ==================== XHR HELPER ====================
+  function cartXHR(method, url, data) {
+    return new Promise(function(resolve, reject) {
+      try {
+        var xhr = new XMLHttpRequest();
+        xhr.open(method, url, true);
+        xhr.setRequestHeader('Content-Type', 'application/json');
+        xhr.onload = function() {
+          try { resolve(JSON.parse(xhr.responseText)); }
+          catch(e) { resolve({}); }
+        };
+        xhr.onerror = function() { resolve({}); };
+        xhr.send(data ? JSON.stringify(data) : null);
+      } catch(e) { resolve({}); }
+    });
+  }
+
+  // ==================== SCROLL UNLOCK (FIX) ====================
+  function unlockBodyScroll() {
+    try {
+      document.body.style.overflow = '';
+      document.body.style.removeProperty('overflow');
+      document.body.classList.remove('dgf-upsell-active');
+    } catch(e) { null; }
+  }
+
+  window.dgfUnlockScroll = unlockBodyScroll;
+
+  // ==================== OPEN POPUP ====================
+  window.openUpsellPopup = function(variantId) {
+    try {
+      addedVariantId = String(variantId);
+      var popup = document.getElementById('dgf-upsell-popup');
+      if (!popup) return;
+
+      function showPopup() {
+        try { calculateUpsellOffer(); } catch(e) { null; }
+        try { renderPopupContent(); } catch(e) { null; }
+
+        popup.style.display = 'flex';
+        document.body.style.overflow = 'hidden';
+        document.body.classList.add('dgf-upsell-active');
+      }
+
+      if (shouldClearCart) {
+        cartXHR('POST', '/cart/clear.js')
+          .then(function() {
+            return cartXHR('POST', '/cart/add.js', {
+              items: [{ id: parseInt(variantId), quantity: 1 }]
+            });
+          })
+          .then(function() { showPopup(); })
+          .catch(function() { showPopup(); });
+      } else {
+        showPopup();
+      }
+    } catch(e) { null; }
+  };
+
+  // ==================== CLOSE POPUP (FIX) ====================
+  function closeUpsellPopup() {
+    try {
+      var popup = document.getElementById('dgf-upsell-popup');
+      if (popup) popup.style.display = 'none';
+      unlockBodyScroll();
+    } catch(e) { null; }
+  }
+
+  // ==================== CALCULATE UPSELL OFFER ====================
+  function calculateUpsellOffer() {
+    try {
+      var productDataEl = document.getElementById('dgf-product-data');
+      if (!productDataEl) return;
+      var productData = JSON.parse(productDataEl.textContent);
+      if (!productData || !productData.variants) return;
+
+      var addedVariant = productData.variants.find(function(v) { return String(v.id) === addedVariantId; });
+      if (!addedVariant) return;
+
+      var threePackVariant = productData.variants.find(function(v) {
+        return v.title.toLowerCase().includes('3-pack') || v.title.toLowerCase().includes('3 pack');
+      });
+      if (!threePackVariant) return;
+
+
+
+      threePackVariantId = String(threePackVariant.id);
+      originalPrice = addedVariant.price;
+      upsellPrice = threePackVariant.price;
+
+      var addedTitle = addedVariant.title.toLowerCase();
+      if (addedTitle.includes('1-pack') || addedTitle.includes('1 pack')) {
+        discountPercent = 35;
+        discountCode = 'upsell35_1';
+        declineDiscountPercent = 15;
+        declineDiscountCode = 'no-upsell-15';
+      } else if (addedTitle.includes('3-pack') || addedTitle.includes('3 pack')) {
+        discountPercent = 40;
+        discountCode = 'upsell40_1';
+        declineDiscountPercent = 35;
+        declineDiscountCode = 'no-upsell-35';
+      } else if (addedTitle.includes('6-pack') || addedTitle.includes('6 pack')) {
+        discountPercent = 45;
+        discountCode = 'upsell45_1';
+        declineDiscountPercent = 40;
+        declineDiscountCode = 'no-upsell-40';
+      } else {
+        discountPercent = 35;
+        discountCode = 'upsell35_1';
+        declineDiscountPercent = 15;
+        declineDiscountCode = 'no-upsell-15';
+      }
+    } catch(e) { null; }
+  }
+
+  // ==================== RENDER POPUP CONTENT ====================
+  function renderPopupContent() {
+    try {
+      var productDataEl = document.getElementById('dgf-product-data');
+      if (!productDataEl) return;
+      var productData = JSON.parse(productDataEl.textContent);
+
+      var addedVariant = productData.variants.find(function(v) { return String(v.id) === addedVariantId; });
+      var threePackVariant = productData.variants.find(function(v) { return String(v.id) === threePackVariantId; });
+      if (!addedVariant || !threePackVariant) return;
+
+      var headingText = '';
+      var addedTitle = addedVariant.title.toLowerCase();
+      if (addedTitle.includes('1-pack')) {
+        headingText = 'SAVE 35% WHEN YOU ADD 3 MORE UNITS';
+      } else if (addedTitle.includes('3-pack')) {
+        headingText = 'SAVE 40% WHEN YOU DOUBLE YOUR ORDER';
+      } else if (addedTitle.includes('6-pack')) {
+        headingText = 'SAVE 45% WHEN YOU DOUBLE YOUR ORDER';
+      }
+
+      var titleEl = document.getElementById('dgf-upsell-title');
+      var headingEl = document.getElementById('dgf-upsell-heading');
+      var descEl = document.getElementById('dgf-upsell-description');
+
+      if (titleEl) titleEl.innerHTML = '{{ settings.upsell_step1_title | default: "New Customer One-Time Special Offer" }}';
+      if (headingEl) headingEl.innerHTML = headingText;
+      if (descEl) descEl.innerHTML = '{{ settings.upsell_step1_description | default: "You\'ve found our new customer special - our biggest savings anywhere in our store. You only get this deal one-time." }}';
+
+      var is1Pack = addedTitle.includes('1-pack') || addedTitle.includes('1 pack');
+      var is6Pack = addedTitle.includes('6-pack') || addedTitle.includes('6 pack');
+
+      var productEl = document.getElementById('dgf-upsell-product');
+      if (productEl) {
+        var imageMap = {
+          '1-pack': '{{ settings.upsell_image_1pack | image_url: width: 240 }}',
+          '3-pack': '{{ settings.upsell_image_3pack | image_url: width: 240 }}',
+          '6-pack': '{{ settings.upsell_image_6pack | image_url: width: 240 }}'
+        };
+        var fallbackImage = '{{ settings.upsell_step1_image | image_url: width: 240 }}';
+        var productImage = '';
+        if (addedTitle.includes('1-pack') || addedTitle.includes('1 pack')) {
+          productImage = imageMap['1-pack'] || fallbackImage;
+        } else if (addedTitle.includes('3-pack') || addedTitle.includes('3 pack')) {
+          productImage = imageMap['3-pack'] || fallbackImage;
+        } else if (addedTitle.includes('6-pack') || addedTitle.includes('6 pack')) {
+          productImage = imageMap['6-pack'] || fallbackImage;
+        } else {
+          productImage = fallbackImage;
+        }
+
+        var customName = '{{ settings.upsell_product_name }}';
+        var productTitle = customName !== '' ? customName : (productData.title || 'Product');
+
+        var productSubtitle;
+        if (is1Pack) {
+          productSubtitle = 'Upgrade to ' + threePackVariant.title;
+        } else if (is6Pack) {
+          productSubtitle = addedVariant.title + ' x2';
+        } else {
+          productSubtitle = addedVariant.title + ' + ' + threePackVariant.title;
+        }
+
+        var subtotal;
+        if (is1Pack) {
+          subtotal = upsellPrice;
+        } else if (is6Pack) {
+          subtotal = originalPrice * 2;
+        } else {
+          subtotal = originalPrice + upsellPrice;
+        }
+        var discountAmount = Math.round(subtotal * (discountPercent / 100));
+        var totalWithDiscount = subtotal - discountAmount;
+
+        productEl.innerHTML =
+          (productImage !== '' ? '<div class="dgf-upsell-product-image"><img src="' + productImage + '" alt="Product"></div>' : '') +
+          '<div class="dgf-upsell-product-info">' +
+            '<div class="dgf-upsell-product-title">' + productTitle + '</div>' +
+            '<div class="dgf-upsell-product-subtitle">' + productSubtitle + '</div>' +
+          '</div>' +
+          '<div class="dgf-upsell-product-price">' +
+            '<span class="dgf-upsell-product-sale">$' + (totalWithDiscount / 100).toFixed(2) + '</span>' +
+            '<span class="dgf-upsell-product-compare">$' + (subtotal / 100).toFixed(2) + '</span>' +
+          '</div>';
+      }
+
+      var breakdownEl = document.getElementById('dgf-upsell-breakdown');
+      if (breakdownEl) {
+        var brkSubtotal;
+        if (is1Pack) {
+          brkSubtotal = upsellPrice;
+        } else if (is6Pack) {
+          brkSubtotal = originalPrice * 2;
+        } else {
+          brkSubtotal = originalPrice + upsellPrice;
+        }
+        var discountAmount = Math.round(brkSubtotal * (discountPercent / 100));
+        var total = brkSubtotal - discountAmount;
+
+        breakdownEl.className = 'dgf-upsell-breakdown';
+
+        var breakdownRows = '';
+
+        if (is1Pack) {
+          breakdownRows =
+            '<div class="dgf-upsell-breakdown-row">' +
+              '<span class="dgf-upsell-breakdown-label">' + threePackVariant.title + ' order</span>' +
+              '<span class="dgf-upsell-breakdown-value">$' + (upsellPrice / 100).toFixed(2) + '</span>' +
+            '</div>';
+        } else if (is6Pack) {
+          breakdownRows =
+            '<div class="dgf-upsell-breakdown-row">' +
+              '<span class="dgf-upsell-breakdown-label">' + addedVariant.title + ' x2</span>' +
+              '<span class="dgf-upsell-breakdown-value">$' + (originalPrice * 2 / 100).toFixed(2) + '</span>' +
+            '</div>';
+        } else {
+          breakdownRows =
+            '<div class="dgf-upsell-breakdown-row">' +
+              '<span class="dgf-upsell-breakdown-label">Your ' + addedVariant.title + ' order</span>' +
+              '<span class="dgf-upsell-breakdown-value">$' + (originalPrice / 100).toFixed(2) + '</span>' +
+            '</div>' +
+            '<div class="dgf-upsell-breakdown-row">' +
+              '<span class="dgf-upsell-breakdown-label">+ ' + threePackVariant.title + ' added</span>' +
+              '<span class="dgf-upsell-breakdown-value">$' + (upsellPrice / 100).toFixed(2) + '</span>' +
+            '</div>';
+        }
+
+        breakdownEl.innerHTML = breakdownRows +
+          '<div class="dgf-upsell-breakdown-row">' +
+            '<span class="dgf-upsell-breakdown-label dgf-upsell-breakdown-discount">SPECIAL DISCOUNT - ' + discountPercent + '% OFF</span>' +
+            '<span class="dgf-upsell-breakdown-value dgf-upsell-breakdown-discount">-$' + (discountAmount / 100).toFixed(2) + '</span>' +
+          '</div>' +
+          '<div class="dgf-upsell-breakdown-row dgf-upsell-breakdown-total">' +
+            '<span class="dgf-upsell-breakdown-label">Your total today</span>' +
+            '<span class="dgf-upsell-breakdown-value">$' + (total / 100).toFixed(2) + '</span>' +
+          '</div>';
+      }
+    } catch(e) { null; }
+  }
+
+  // ==================== HANDLE ACCEPT ====================
+  function handleAccept() {
+    try {
+      if (!threePackVariantId) { closeUpsellPopup(); window.location.href = '/checkout'; return; }
+
+      var cta = document.getElementById('dgf-upsell-cta');
+      if (cta) { cta.disabled = true; cta.textContent = 'ADDING...'; }
+
+      var productDataEl = document.getElementById('dgf-product-data');
+      var productData = JSON.parse(productDataEl.textContent);
+      var addedVariant = productData.variants.find(function(v) { return String(v.id) === addedVariantId; });
+      var addedTitle = addedVariant.title.toLowerCase();
+
+      var is1Pack = addedTitle.includes('1-pack') || addedTitle.includes('1 pack');
+      var is3Pack = addedTitle.includes('3-pack') || addedTitle.includes('3 pack');
+      var is6Pack = addedTitle.includes('6-pack') || addedTitle.includes('6 pack');
+
+      function goToCheckout() {
+        closeUpsellPopup();
+        window.location.href = '/checkout?discount=' + discountCode;
+      }
+
+      if (is1Pack) {
+        // 1-pack UPGRADE: clear cart and add only 3-pack
+        cartXHR('POST', '/cart/clear.js')
+          .then(function() {
+            return cartXHR('POST', '/cart/add.js', { items: [{ id: parseInt(threePackVariantId), quantity: 1 }] });
+          })
+          .then(function() { goToCheckout(); })
+          .catch(function() { goToCheckout(); });
+      } else if (is3Pack || is6Pack) {
+        // 3-pack or 6-pack: double the order (increase quantity to 2)
+        cartXHR('GET', '/cart.json')
+          .then(function(cart) {
+            try {
+              var item = cart.items && cart.items.find(function(i) { return String(i.variant_id) === addedVariantId; });
+              if (!item) { goToCheckout(); return; }
+              return cartXHR('POST', '/cart/change.js', { id: item.key, quantity: item.quantity + 1 })
+                .then(function() { goToCheckout(); });
+            } catch(e) { goToCheckout(); }
+          })
+          .catch(function() { goToCheckout(); });
+      } else {
+        cartXHR('POST', '/cart/add.js', { items: [{ id: parseInt(threePackVariantId), quantity: 1 }] })
+          .then(function() { goToCheckout(); })
+          .catch(function() { goToCheckout(); });
+      }
+    } catch(e) { try { closeUpsellPopup(); } catch(e2) { null; } window.location.href = '/checkout'; }
+  }
+
+  // ==================== HANDLE DECLINE ====================
+  function handleDecline() {
+    try {
+      closeUpsellPopup();
+      window.location.href = '/checkout?discount=' + declineDiscountCode;
+    } catch(e) {
+      window.location.href = '/checkout';
+    }
+  }
+
+  // ==================== EVENT LISTENERS ====================
+  function setupEventListeners() {
+    try {
+      var cta = document.getElementById('dgf-upsell-cta');
+      var decline = document.getElementById('dgf-upsell-decline');
+      if (cta) cta.addEventListener('click', handleAccept);
+      if (decline) decline.addEventListener('click', handleDecline);
+
+      // FIX: safety net — desbloqueia body apenas se o popup do upsell estiver aberto
+      document.querySelectorAll('a[href^="#"]').forEach(function(el) {
+        el.addEventListener('click', function() {
+          var popup = document.getElementById('dgf-upsell-popup');
+          if (popup && popup.style.display === 'flex') {
+            unlockBodyScroll();
+          }
+        });
+      });
+    } catch(e) { null; }
+  }
+
+  try {
+    if (document.readyState === 'loading') { document.addEventListener('DOMContentLoaded', setupEventListeners); }
+    else { setupEventListeners(); }
+  } catch(e) { null; }
+})();
+</script>

@@ -1,0 +1,114 @@
+<style>
+  #id-{{ section.id }}{
+  	background-color:{{ section.settings.section_bg_color }};
+  }
+</style>
+<style>
+  #id-{{ section.id }}{
+  	background-color:{{ section.settings.section_bg_color }};
+  }
+</style>
+<section id="id-{{section.id}}" class="support-donate-section">
+  <div class="support-donate-wrapper">
+    <div class="container">
+      {% for block in section.blocks %}
+        {% case block.type %}
+          {% comment %}
+            Image Block
+          {% endcomment %}
+          {% when 'image_block' %}
+          <div class="row support-donate-img-block-row">
+            <div class="col-lg-12 col-md-12 col-sm-12">
+              <div class="support-donate-img-wrap">
+                {% if block.settings.the_image != blank %}<img loading="lazy"  src="{{ block.settings.the_image | image_url: width: 2000 }}">{% endif %}
+                 <h2 class="custom-heading-h2">{{ block.settings.the_title }}</h2>
+              </div>
+              <div class="support-donate-txt-wrap">
+                {{ block.settings.the_text }}
+              </div>
+            </div>
+          </div>
+          {% comment %}
+            Tribe Logos
+          {% endcomment %}
+          {% when 'tribe_logos' %}
+          <div class="row support-donate-tribe-logos-row">
+            <div class="tribe-logos-wrap">
+              <div class="tribe-donate-logo">
+                 {% if block.settings.the_image1 != blank %}<img loading="lazy"  src="{{ block.settings.the_image1 | image_url: width: 2000 }}">{% endif %}
+              </div>
+              <div class="tribe-logo-img">
+                 {% if block.settings.the_image2 != blank %}<img loading="lazy"  src="{{ block.settings.the_image2 | image_url: width: 2000 }}">{% endif %}
+              </div>
+            </div>
+          </div>
+        {% endcase %}
+      {% endfor %}
+    </div>
+  </div>
+</section>
+{% schema %}
+  {
+    "name": "Support Donate Section",
+    "settings": [
+        {
+            "type": "header",
+            "content": "Content Style"
+         },
+  	     {
+           "type": "color",
+           "id": "section_bg_color",
+           "label": "Section background color"
+        }
+    ],
+	"blocks": [
+    	{
+              "type": "image_block",
+              "name": "Image Block",
+              "settings": [
+                    {
+                       "type": "image_picker",
+                       "id": "the_image",
+                       "label": "Image"
+                    },
+                    {
+                      "type": "text",
+                      "id": "the_title",
+                      "label": "Title"
+                  	},
+                    {
+                      "type": "richtext",
+                      "id": "the_text",
+                      "label": "Text"
+                  	}
+                    
+                ]
+        },
+        {
+              "type": "tribe_logos",
+              "name": "Tribe Logos",
+              "settings": [
+                    {
+                       "type": "image_picker",
+                       "id": "the_image1",
+                       "label": "Image-1"
+                    },
+                    {
+                       "type": "image_picker",
+                       "id": "the_image2",
+                       "label": "Image-2"
+                    }
+                  ]
+        }
+	],
+    "presets": [{
+      "name": "Support Donate Section"
+    }]
+  }
+{% endschema %}
+
+{% stylesheet %}
+{% endstylesheet %}
+
+{% javascript %}
+{% endjavascript %}

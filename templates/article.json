@@ -1,0 +1,143 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+ {
+  "sections": {
+    "1664882449dfa584dd": {
+      "type": "banner-subpage",
+      "disabled": true,
+      "settings": {
+        "enable_breadcrumb": true,
+        "title": "",
+        "sub_title": "",
+        "image": "shopify://shop_images/Screen_Shot_2022-12-08_at_10.37.44_AM.png"
+      }
+    },
+    "655a7e48-a799-48b7-9a43-aa40b0f203f8": {
+      "type": "article-banner-subpage",
+      "disabled": true,
+      "settings": {
+        "enable_breadcrumb": true,
+        "title": "{{ article.title }}",
+        "image": "shopify://shop_images/Screen_Shot_2022-12-08_at_10.37-optimized.png"
+      }
+    },
+    "20d98ce9-8c94-4453-b827-d2b747746b2c": {
+      "type": "article-top-banner",
+      "settings": {
+        "enable_breadcrumb": true,
+        "title": "{{ article.title }}",
+        "show_social": false,
+        "text": "Visit",
+        "social_spotify_link": "https://open.spotify.com/user/8yaaywq2a4gtbxl0w7csryv2o?si=28d61f70a2cc496c"
+      }
+    },
+    "main": {
+      "type": "main-article",
+      "settings": {
+        "title": "Related Product"
+      }
+    },
+    "faq_blogs_twkHzM": {
+      "type": "faq-blogs",
+      "settings": {
+        "section_bg_color": "#faeee9",
+        "title": "Frequently Asked Questions"
+      }
+    },
+    "article_featured_product_rgL8Yb": {
+      "type": "article-featured-product",
+      "blocks": {
+        "product_NnUewr": {
+          "type": "product",
+          "settings": {
+            "product": "lions-mane-mushroom"
+          }
+        },
+        "product_8MkGEL": {
+          "type": "product",
+          "settings": {
+            "product": "ashwagandha-ksm-66"
+          }
+        },
+        "product_CqfJM3": {
+          "type": "product",
+          "settings": {
+            "product": "ashwagandha-gummies-kids"
+          }
+        },
+        "product_Rmqjib": {
+          "type": "product",
+          "settings": {
+            "product": "turmeric-complex"
+          }
+        },
+        "product_TzCibz": {
+          "type": "product",
+          "settings": {
+            "product": "boswellia-complex"
+          }
+        },
+        "product_nzYKaT": {
+          "type": "product",
+          "settings": {
+            "product": "warrior-trio"
+          }
+        },
+        "product_DAgrj3": {
+          "type": "product",
+          "settings": {
+            "product": "nootropic-duo"
+          }
+        },
+        "product_BqGWPt": {
+          "type": "product",
+          "settings": {
+            "product": "organic-moringa"
+          }
+        }
+      },
+      "block_order": [
+        "product_NnUewr",
+        "product_8MkGEL",
+        "product_CqfJM3",
+        "product_Rmqjib",
+        "product_TzCibz",
+        "product_nzYKaT",
+        "product_DAgrj3",
+        "product_BqGWPt"
+      ],
+      "settings": {
+        "title": "Shop best sellers",
+        "sub_title": "Explore our collection of favorite items that have gained popularity for their quality and satisfaction.",
+        "button": "Shop all products",
+        "url": "shopify://collections/best-sellers",
+        "class": "big",
+        "background": "section-sea"
+      }
+    },
+    "related_article_slider_KTGaPF": {
+      "type": "related-article-slider",
+      "settings": {
+        "title_2": "READ MORE",
+        "button": "View All",
+        "url": "shopify://blogs/all"
+      }
+    }
+  },
+  "order": [
+    "1664882449dfa584dd",
+    "655a7e48-a799-48b7-9a43-aa40b0f203f8",
+    "20d98ce9-8c94-4453-b827-d2b747746b2c",
+    "main",
+    "faq_blogs_twkHzM",
+    "article_featured_product_rgL8Yb",
+    "related_article_slider_KTGaPF"
+  ]
+}

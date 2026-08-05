@@ -1,0 +1,99 @@
+<style>
+  #id-{{ section.id }}{
+  	background-color:{{ section.settings.section_bg_color }};
+  }
+</style>
+<section id="id-{{section.id}}" class="guarantee-satisfy-section">
+  <div class="guarantee-satisfy-wrapper">
+    <div class="container">
+      <div class="row guarantee-satisfy-content-row">
+        <div class="guarantee-satisfy-txt">
+          <p>{{ section.settings.the_text }}</p>
+        </div>
+      </div>
+      <div class="row guarantee-reviews-row">
+        {% for block in section.blocks %}
+          <div class="col-lg-6 col-md-6 col-sm-12 guarantee-reviews-blocks">
+            <div class="guarantee-reviews-img">
+              {% if block.settings.the_image != blank %}<img loading="lazy"  src="{{ block.settings.the_image | image_url: width: 2000 }}">{% endif %}
+              <div class="testimonial-content-wrap">
+                <span class="testimonial-rating">
+                  <i class="fa fa-star" aria-hidden="true"></i>
+                  <i class="fa fa-star" aria-hidden="true"></i>
+                  <i class="fa fa-star" aria-hidden="true"></i>
+                  <i class="fa fa-star" aria-hidden="true"></i>
+                  <i class="fa fa-star" aria-hidden="true"></i>
+                </span>
+                <p>{{ block.settings.rating_text }}</p>
+                <h4>{{ block.settings.author_name }}</h4>
+              </div>
+            </div>
+          </div>
+        {% endfor %}
+      </div>
+    </div>
+  </div>
+</section>
+{% schema %}
+  {
+    "name": "Guarantee Satisfy Section",
+    "settings": [
+        {
+            "type": "header",
+            "content": "Content Style"
+        },
+	    {
+           "type": "color",
+           "id": "section_bg_color",
+           "label": "Section background color"
+        },
+        {
+          "type": "header",
+          "content": "Content Settings"
+      	},
+        {
+          "type": "text",
+          "id": "the_text",
+          "label": "Text"
+      	}
+    ],
+	"blocks": [
+        {
+          "type": "reviews_section",
+          "name": "Reviews Section",
+          "settings": [
+    		{
+              "type": "header",
+              "content": "Testimonial Content Settings"
+            },
+            {
+              "type": "image_picker",
+              "id": "the_image",
+              "label": "Image"
+          	},
+            {
+              "type": "text",
+              "id": "rating_text",
+              "label": "Rating Text"
+            },
+            {
+              "type": "text",
+              "id": "author_name",
+              "label": "Author Name"
+            }
+
+        ]
+      }
+	
+	],
+    "presets": [{
+      "name": "Guarantee Satisfy Section"
+    }]
+  }
+{% endschema %}
+
+{% stylesheet %}
+{% endstylesheet %}
+
+{% javascript %}
+{% endjavascript %}

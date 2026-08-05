@@ -1,0 +1,2970 @@
+{% comment %}
+  DigiFlow Subscription Widget
+  This widget is used to display the subscription widget for the product page.
+  Author: Rodrigo Gesser
+  Date: 2025-08-09
+  Version: 1.0.0
+  Email: rodrigo.gesser@digiflow.com.br
+{% endcomment %}
+
+
+{%- liquid
+  comment
+    Define selected index for selling plans based on product handle like original widget
+  endcomment
+  assign selected_index = 0
+  if product.handle == 'ashwagandha-ksm-66'
+    if product.selected_or_first_available_variant.title contains '120'
+      assign selected_index = 3
+    else
+      assign selected_index = 3
+    endif
+  elsif product.handle == 'ashwagandha-vegan'
+    assign selected_index = 2
+  elsif product.handle == 'amla-complex'
+    assign selected_index = 3
+  elsif product.handle == 'lions-mane-mushroom'
+    assign selected_index = 3
+  elsif product.handle == 'mushroom-complex'
+    assign selected_index = 3
+  elsif product.handle == 'boswellia-complex'
+    assign selected_index = 3
+  elsif product.handle == 'turmeric-complex'
+    assign selected_index = 1
+  elsif product.handle == 'organic-moringa'
+    assign selected_index = 3
+  elsif product.handle == 'organic-shatavari'
+    assign selected_index = 3  
+  elsif product.handle == 'mushroom-golden-blend'
+    assign selected_index = 1
+  elsif product.handle contains 'shatavari'
+    assign selected_index = 3
+  elsif product.handle == 'adrenal-support-duo'
+    assign selected_index = 3
+  elsif product.handle == 'ashwagandha-ksm-66-powder'
+    if product.selected_or_first_available_variant.title contains '90'
+      assign selected_index = 3
+    else
+      assign selected_index = 3
+    endif
+  elsif product.handle == 'balance-duo'
+    assign selected_index = 3
+  elsif product.handle == 'nootropic-duo'
+    assign selected_index = 3
+  elsif product.handle == 'warrior-trio'
+    assign selected_index = 2
+  elsif product.handle == 'boost-duo'
+    assign selected_index = 2
+  elsif product.handle == 'resilience-duo'
+    assign selected_index = 3
+  elsif product.handle == 'recovery-trio'
+    assign selected_index = 3
+  elsif product.handle == 'endurance-duo'
+    assign selected_index = 2
+  elsif product.handle == 'functional-duo'
+    assign selected_index = 3
+  elsif product.handle == 'revitalize-trio'
+    assign selected_index = 3
+  elsif product.handle == 'new-mom-bundle'
+    assign selected_index = 2
+  elsif product.handle == 'hormonal-balance-duo'
+    assign selected_index = 3
+  elsif product.handle == 'immunity-bundle'
+    assign selected_index = 2
+  elsif product.handle == 'ashwagandha-gummies-kids'
+    assign selected_index = 1
+  elsif product.handle == 'ashwagandha-ksm-66-gummies'
+    assign selected_index = 1
+  elsif product.handle == 'testing-loop-ashwagandha-ksm-66'
+    assign selected_index = 2
+  endif
+-%}
+
+<style>
+
+  .subscription-widget-container * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+  }
+
+  .widget-purchase-header{
+    display: flex;
+    flex-direction: row;
+    gap: 1rem;
+    align-items: center;
+    margin-left: 1px;
+    margin-bottom: 3rem;
+    margin-top: 1rem;
+  }
+
+  .subscription-widget-container {
+    font-family: 'Work Sans', sans-serif;
+    max-width: 100%;
+    margin: 20px 0;
+  }
+
+  /* Variant Selection Styles */
+  .widget-variant-selection {
+    margin-bottom: 20px;
+  }
+
+  .variant-options-grid {
+    display: flex;
+    flex-wrap: wrap;
+    margin: 0 -6px; /* Negative margin for Bootstrap spacing */
+  }
+
+  .variant-option {
+    padding: 0 6px; /* Padding for Bootstrap spacing */
+    margin-bottom: 12px;
+  }
+  
+  /* Bootstrap grid system for variant options */
+  .variant-option.col-6 {
+    flex: 0 0 50%;
+    max-width: 50%;
+  }
+  
+  @media (min-width: 576px) {
+    .variant-option.col-sm-4 {
+      flex: 0 0 33.333333%;
+      max-width: 33.333333%;
+    }
+  }
+  
+  @media (min-width: 992px) {
+    .variant-option.col-lg-4 {
+      flex: 0 0 33.333333%;
+      max-width: 33.333333%;
+    }
+  }
+
+  .variant-option-input {
+    display: none;
+  }
+
+  .variant-option-label {
+    display: block;
+    padding: 12px 16px;
+    border: 2px solid #111;
+    border-radius: 0 8px 0 8px;
+    cursor: pointer;
+    text-align: center;
+    background: #FFFFFF;
+    transition: all 0.3s ease;
+  }
+
+  .variant-option-label:hover {
+    border-color: #AC853B;
+  }
+
+
+  .variant-option-input:checked + .variant-option-label {
+    border-color: #06211E;
+    background: rgba(170, 181, 177, 1);
+  }
+
+  .variant-option-text {
+    font-family: 'Work Sans', sans-serif;
+    font-size: 14px;
+    font-weight: 600;
+    color: #06211E;
+  }
+
+  /* Choose Your Price Section */
+  .widget-choose-price {
+    margin-bottom: 16px;
+  }
+
+  .widget-choose-price p {
+    font-family: 'Work Sans', sans-serif;
+    font-size: 17px;
+    text-transform: uppercase;
+    font-weight: 700;
+    color: #06211E;
+    margin: 0;
+  }
+
+  /* Preço e Badge de Membros */
+  .widget-price-section {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+  }
+
+  .widget-price-display {
+    display: flex;
+    align-items: baseline;
+    gap: 12px;
+  }
+
+  .widget-price-original {
+    font-size: 24px;
+    color: #06211E;
+    text-decoration: line-through;
+    opacity: 0.6;
+  }
+
+  .widget-price-sale {
+    font-size: 28px;
+    font-weight: 700;
+    color: #06211E;
+  }
+
+  .widget-members-badge {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-family: 'Work Sans', sans-serif;
+    font-size: 14px;
+    font-weight: 700;
+    color: rgba(7, 33, 31, 1);
+  }
+
+  .widget-members-badge svg {
+    width: 20px;
+    height: 20px;
+  }
+
+  /* Tabs Container */
+  .widget-tabs-container {
+    overflow: hidden;
+  }
+
+  /* Tab Headers */
+  .widget-tab-headers {
+    display: flex;
+    position: relative;
+    background: #F7F9F8;
+  }
+
+  .widget-tab-radio {
+    width: 20px;
+    height: 20px;
+    border: 2px solid #586A67;
+    border-radius: 50%;
+    background: transparent;
+    position: relative;
+    flex-shrink: 0;
+  }
+
+  .widget-purchase-header .widget-tab-radio {
+    border-color: #AC853B;
+    background: #AC853B;
+  }
+
+
+  .widget-tab-label {
+    font-family: 'Work Sans', sans-serif;
+    font-size: 14px;
+    font-weight: 600;
+    text-transform: uppercase;
+    color: #586A67;
+    letter-spacing: 0.5px;
+  }
+
+  .widget-purchase-header .widget-tab-label {
+    font-weight: 700;
+    color: #06211E;
+  }
+
+  .widget-popular-badge {
+    background: linear-gradient(90deg, #AC853B 0%, #9A6C14 100%);
+    color: white;
+    padding: 4px 6px;
+    font-family: 'Work Sans', sans-serif;
+    font-size: 11px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    display: flex;
+    align-items: center;
+    gap: 4px;
+  }
+
+  .widget-popular-badge svg {
+    width: 15px;
+    height: 15px;
+    fill: white;
+    stroke: white;
+  }
+
+  .widget-popular-badge svg .cls-1 {
+    stroke: white;
+    stroke-width: 1.5;
+  }
+
+  /* Tab Content - Fixed Height */
+  .widget-tab-content {
+    display: none;
+    padding: 0.5rem 2.3rem;
+    border: 2px solid #06211E;
+    border-radius: 0 15px 0 15px;
+    position: relative;
+    background: #FFFFFF;
+  }
+
+  .widget-tab-content.active {
+    display: block;
+  }
+
+
+  /* Subscription/One-time Benefits Box */
+  .widget-benefits-box {
+    border-radius: 8px;
+    margin-bottom: 20px;
+    list-style: none;
+    padding-left: 0;
+  }
+
+  .widget-benefits-title {
+    font-family: 'Work Sans', sans-serif;
+    font-size: 14px;
+    font-weight: 700;
+    color: #06211E;
+    margin-bottom: 8px;
+  }
+
+  .widget-benefits-title span {
+    font-family: 'Work Sans', sans-serif;
+    font-size: 13px;
+    font-weight: 600;
+    color: #586A67;
+  }
+
+  .widget-benefits-text {
+    font-family: 'Work Sans', sans-serif;
+    font-size: 13px;
+    font-weight: 700;
+    color: #586A67;
+    line-height: 1.5;
+  }
+
+  .widget-benefits-link {
+    color: #111111;
+    text-decoration: underline;
+    cursor: pointer;
+  }
+
+  /* Seletores Unificados - Usados em ambas as abas */
+  .widget-selection-grid {
+    display: flex;
+    gap: 12px;
+    margin-bottom: 20px;
+    flex-wrap: wrap;
+  }
+
+  .widget-selection-option {
+    flex: 1;
+    min-width: calc(33.333% - 8px);
+    padding: 16px;
+    border: 2px solid #111;
+    border-radius: 0 8px 0 8px;
+    cursor: pointer;
+    text-align: center;
+    position: relative;
+    min-height: 80px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .widget-selection-option:hover {
+    border-color: #AC853B;
+  }
+
+  .widget-selection-option.selected {
+    border-color: #06211E;
+    background: rgba(170, 181, 177, 1);
+  }
+
+  .widget-selection-option.recommended {
+    background: transparent;
+  }
+
+  .widget-selection-option.recommended.selected {
+    background: rgba(170, 181, 177, 1);
+  }
+
+  .widget-selection-radio {
+    display: none;
+  }
+
+  .widget-selection-title {
+    font-family: 'Work Sans', sans-serif;
+    font-size: 16px;
+    font-weight: 700;
+    color: #06211E;
+    margin-bottom: 0px;
+  }
+
+  .widget-selection-subtitle {
+    font-family: 'Work Sans', sans-serif;
+    font-size: 14px;
+    font-weight: 400;
+    color: #586A67;
+    margin-top: 2px;
+  }
+
+  .product-custom-text{
+    display:none;
+  }
+
+  .widget-selection-badge {
+    position: absolute;
+    top: -13px;
+    right: 8px;
+    background: #2F443C;
+    color: white;
+    padding: 2px 8px;
+    border-radius: 4px;
+    font-family: 'Work Sans', sans-serif;
+    font-size: 10px;
+    font-weight: 700;
+    text-transform: uppercase;
+  }
+
+  .widget-selection-badge.recommended {
+    background: #2F443C;
+  }
+
+  .best-seller-badge {
+    display: block;
+    background: #2F443C;
+    color: white;
+    padding: 2px 6px;
+    border-radius: 4px;
+    font-family: 'Work Sans', sans-serif;
+    font-size: 9px;
+    font-weight: 700;
+    text-transform: uppercase;
+    margin-top: 4px;
+  }
+
+  /* Features List */
+  .widget-features {
+    list-style: none;
+    margin-top: 20px;
+    margin-bottom: 2rem;
+  }
+
+  .widget-feature {
+    display: flex;
+    align-items: center;
+    margin-bottom: 1rem;
+    font-family: 'Work Sans', sans-serif;
+    font-size: 14px;
+    font-weight: 700;
+    color: #06211E;
+    gap: 0.5rem;
+  }
+
+  .widget-feature-icon {
+    width: 24px;
+    height: 24px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+  }
+
+  .widget-feature-icon img {
+    width: 64px;
+    height: 64px;
+    object-fit: contain;
+  }
+
+  /* Payment Options */
+  .payment-options {
+    border-radius: 8px;
+    margin-bottom: 16px;
+    list-style: none;
+    padding-left: 0;
+  }
+
+  .payment-option {
+    display: flex;
+    align-items: center;
+    margin-bottom: 1rem;
+    font-family: 'Work Sans', sans-serif;
+    font-size: 14px;
+    font-weight: 700;
+    color: #06211E;
+    gap: 0.5rem;
+  }
+
+  .payment-option:last-child {
+    margin-bottom: 0;
+  }
+
+  /* Payment Terms Styling (ShopPay, etc.) */
+  .widget-payment-terms {
+    margin: 0 0 16px 0;
+  }
+
+  .widget-payment-terms .payment-option {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-bottom: 0;
+  }
+
+  .widget-payment-terms .widget-feature-icon {
+    flex-shrink: 0;
+    margin-top: 2px;
+  }
+
+  .widget-payment-terms .payment-terms-content {
+    flex: 1;
+  }
+
+  .widget-payment-terms .installment {
+    margin: 0;
+    font-family: 'Work Sans', sans-serif;
+    font-size: 14px;
+    font-weight: 700;
+    color: #06211E;
+  }
+
+  .widget-payment-terms .shopify-payment-terms {
+    margin: 0;
+    line-height: 1.4;
+    font-family: 'Work Sans', sans-serif !important;
+    font-size: 14px !important;
+    font-weight: 700 !important;
+    color: #06211E !important;
+  }
+
+  /* Hide ALL Sezzle elements globally */
+  .sezzle-shopify-info-button {
+    display: none !important;
+  }
+  
+  /* Show and reposition the specific Sezzle we want to use */
+  .sezzle-repositioned {
+    display: block !important;
+    position: relative !important;
+    z-index: 1 !important;
+    width: 100% !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    transform: none !important;
+    opacity: 1 !important;
+    visibility: visible !important;
+    height: auto !important;
+  }
+  
+  /* Style the payment terms container to have relative positioning */
+  .payment-terms-content {
+    position: relative;
+  }
+  
+  /* Sezzle placeholder to maintain space and show repositioned Sezzle */
+  .sezzle-placeholder {
+    height: auto;
+    display: block !important;
+    position: relative;
+    visibility: visible !important;
+    opacity: 1 !important;
+  }
+
+  .sezzle-shopify-info-button div.sezzle-button-text{
+    font-size: 14px !important;
+    font-weight: 700!important;
+    font-family: ui-sans-serif, system-ui, sans-serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol, Noto Color Emoji!important;
+
+  }
+  
+  /* Smooth transition only for price changes */
+  .sezzle-repositioned .sezzle-payment-amount {
+    transition: opacity 0.1s ease-in-out;
+  }
+  
+  /* Style Sezzle text to match widget li elements */
+  .sezzle-repositioned,
+  .sezzle-repositioned * {
+    font-family: ui-sans-serif, system-ui, sans-serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol, Noto Color Emoji!important;
+    font-size: 14px !important;
+    color: #06211E !important;
+    line-height: 1.4 !important;
+  }
+
+  :host(shopify-payment-terms){
+    font-weight: 700!important;
+    font-family: 'Work Sans', sans-serif !important;
+    font-size: 14px !important;
+    color: #06211E !important;
+    line-height: 1.4 !important;
+  }
+
+
+  
+  
+  /* Preserve original styling for Sezzle logo */
+  .sezzle-repositioned .sezzle-logo {
+    height: 18px !important;
+    width: 72px !important;
+  }
+  
+  /* Ensure Sezzle info icon maintains its styling */
+  .sezzle-repositioned .sezzle-info-icon {
+    font-size: 14px !important;
+    color: #06211E !important;
+  }
+
+  .widget-sezzle {
+    margin: 8px 0 16px 0;
+  }
+
+  .widget-sezzle .payment-option {
+    display: flex;
+    align-items: flex-start;
+    gap: 8px;
+    margin-bottom: 0;
+  }
+
+  .widget-sezzle .widget-feature-icon {
+    flex-shrink: 0;
+    margin-top: 2px;
+  }
+
+  .widget-sezzle .sezzle-content {
+    flex: 1;
+  }
+
+  .widget-sezzle #sezzle-widget-dgf-render-reference {
+    font-family: 'Work Sans', sans-serif;
+    font-size: 14px;
+    font-weight: 700;
+    color: #06211E;
+  }
+
+  .payment-option-icon {
+    display: none;
+  }
+
+  /* Info Section */
+  .widget-info-section {
+    border-top: 1px solid #E5E8E7;
+    padding-top: 16px;
+    margin-top: 20px;
+  }
+
+  .widget-info-text {
+    font-family: 'Work Sans', sans-serif;
+    font-size: 13px;
+    font-weight: 700;
+    color: #586A67;
+    line-height: 1.5;
+    display: flex;
+    align-items: flex-start;
+    margin-bottom: 10px;
+  }
+
+  .widget-info-text svg {
+    width: 16px;
+    height: 16px;
+    margin-right: 8px;
+    flex-shrink: 0;
+    margin-top: 2px;
+    color: #2A7F3E;
+  }
+
+  .widget-info-text strong {
+    color: #06211E;
+    font-weight: 600;
+  }
+
+  /* Mobile popular badge - hidden on desktop */
+  .widget-mobile-popular-badge {
+    display: none;
+    text-align: left;
+    margin-bottom: 16px;
+  }
+
+  .widget-mobile-popular-badge .widget-popular-badge {
+    display: inline-flex;
+    width: auto;
+  }
+
+
+  /* Mobile Responsive */
+  @media (max-width: 768px) {
+    .widget-price-section {
+      gap: 12px;
+    }
+
+    .widget-price-original {
+      font-size: 20px;
+    }
+
+    .widget-price-sale {
+      font-size: 24px;
+    }
+
+    .widget-purchase-header {
+      padding: 12px 0;
+      font-size: 12px;
+      margin-top: 0;
+      margin-bottom: 1rem;
+    }
+
+    .widget-tab-label {
+      font-size: 12px;
+    }
+
+    .widget-popular-badge {
+      font-size: 10px;
+      padding: 2px 6px;
+    }
+    
+    .widget-popular-badge svg {
+      width: 14px;
+      height: 14px;
+    }
+    
+    
+    /* Show Most Popular badge inside content on mobile */
+    .widget-mobile-popular-badge {
+      display: block;
+      text-align: left;
+    }
+    
+    .widget-mobile-popular-badge .widget-popular-badge {
+      display: inline-flex;
+      width: auto;
+    }
+
+    .widget-mobile-popular-badge .widget-popular-badge{
+      font-size: 10px!important;
+      padding: 4px 10px;
+    }
+
+    .widget-selection-option {
+      min-width: calc(33.333% - 8px);
+      padding: 12px 8px;
+      font-size: 14px;
+    }
+    
+    .widget-selection-title {
+      font-size: 12px;
+      margin-bottom: 0px;
+    }
+    
+    .widget-selection-subtitle {
+      font-size: 10px;
+      margin-top: -7px;
+    }
+    
+    .widget-selection-price {
+      font-size: 14px;
+    }
+    
+    .widget-selection-badge {
+      font-size: 9px;
+      padding: 2px 4px;
+    }
+
+    .widget-tab-content {
+      min-height: auto;
+      font-size: 11px;
+    }
+    
+    .widget-price-original,
+    .widget-price-sale,
+    .widget-price-label {
+      font-size: 18px!important;
+    }
+    
+    /* Specific elements that need 11px */
+    .widget-benefits-title,
+    .widget-benefits-title span,
+    .widget-benefits-link,
+    .widget-info-text,
+    .widget-payment-terms,
+    .widget-sezzle,
+    .widget-feature,
+    .installment {
+      font-size: 11px !important;
+    }
+
+    .sezzle-repositioned .sezzle-logo {
+    height: 18px !important;
+    width: 63px !important;
+  }
+  
+  .sezzle-shopify-info-button .sezzle-button-text {
+    font-size: 11px !important;
+}
+
+  /* Learn More Modal */
+  .learn-more-modal {
+    display: none;
+    position: fixed !important;
+    z-index: 99999 !important;
+    left: 0 !important;
+    top: 0 !important;
+    right: 0 !important;
+    bottom: 0 !important;
+    width: 100vw !important;
+    height: 100vh !important;
+    background-color: rgba(0, 0, 0, 0.5);
+    margin: 0 !important;
+    padding: 0 !important;
+  }
+
+  .learn-more-modal.show {
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+  }
+
+  .learn-more-modal-content {
+    background: white;
+    border-radius: 16px;
+    max-width: 820px;
+    width: 100%;
+    max-height: 80vh;
+    overflow-y: auto;
+    position: relative;
+    padding: 32px;
+    box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+    margin: auto !important;
+    transform: none !important;
+  }
+
+  .learn-more-modal-header {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 16px;
+    position: relative;
+  }
+
+  .learn-more-modal-icon {
+    width: 40px;
+    height: 40px;
+    flex-shrink: 0;
+  }
+
+  .learn-more-modal-icon img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+  }
+
+  .learn-more-modal-title {
+    font-family: 'Work Sans', sans-serif;
+    font-size: 24px;
+    font-weight: 700;
+    color: #1F2937;
+    margin: 0;
+    text-align: center;
+    flex: 1;
+  }
+
+  .learn-more-modal-close {
+    background: none;
+    border: none;
+    font-family: 'Futura Bk BT', Arial, sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 32px;
+    line-height: 62px;
+    letter-spacing: 3.1%;
+    text-align: center;
+    cursor: pointer;
+    padding: 0;
+    width: 32px;
+    height: 32px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #111111;
+    position: absolute;
+    right: 0;
+    top: 0;
+  }
+
+  .learn-more-modal-close:hover {
+    color: #374151;
+  }
+
+  .learn-more-modal-subtitle {
+    text-align: center;
+    font-family: 'Work Sans', sans-serif;
+    font-size: 16px;
+    color: #6B7280;
+    margin-bottom: 8px;
+  }
+
+  .learn-more-modal-subtitle strong {
+    color: #1F2937;
+  }
+
+  .learn-more-modal-description {
+    text-align: center;
+    font-family: 'Work Sans', sans-serif;
+    font-size: 14px;
+    color: #6B7280;
+    margin-bottom: 32px;
+    line-height: 1.5;
+  }
+
+  .subscription-benefits-image {
+    width: 100%;
+    max-width: 100%;
+    height: auto;
+    margin-bottom: 32px;
+    border-radius: 8px;
+  }
+
+  .subscription-benefits-image-mobile {
+    display: none;
+    width: 100%;
+    max-width: 100%;
+    height: auto;
+    margin-bottom: 32px;
+    border-radius: 8px;
+  }
+
+  .learn-more-modal-disclaimer {
+    background: linear-gradient(42.38deg, #AC853B 22.06%, #DAA744 108.8%);
+    border-radius: 8px;
+    padding: 16px 20px;
+    font-family: 'Work Sans', sans-serif;
+    font-size: 14px;
+    font-weight: 600;
+    color: white;
+    line-height: 1.4;
+    text-align: center;
+    display: inline-block;
+    margin: 0 auto;
+    max-width: 420px;
+    word-wrap: break-word;
+  }
+
+  .learn-more-modal-disclaimer-container {
+    text-align: center;
+  }
+
+  @media (max-width: 768px) {
+    .learn-more-modal-content {
+      margin: 20px;
+      width: calc(100% - 40px);
+      padding: 20px;
+    }
+    
+    .learn-more-modal-title {
+      font-size: 20px;
+    }
+    
+    .learn-more-modal-copy {
+      font-size: 14px;
+    }
+
+    .subscription-benefits-image {
+      display: none;
+    }
+
+    .subscription-benefits-image-mobile {
+      display: block;
+    }
+
+    .learn-more-modal-close {
+      right: -14px;
+      top: -7px;
+    }
+  }
+
+</style>
+
+
+<div class="subscription-widget-container">
+  <!-- Seção de Seleção de Variantes -->
+  {% if product.options_with_values.size > 1 %}
+  <div class="widget-variant-selection">
+    {% assign option = product.options_with_values[0] %}
+    <div class="variant-options-grid">
+      {%- for value in option.values -%}
+        {% if value != 'Default Title' %}
+          <div class="variant-option col-6 col-lg-4 col-sm-4">
+            <input type="radio" 
+                   id="widget-variant-{{ forloop.index0 }}"
+                   name="widget-variant-{{ option.name }}"
+                   value="{{ value | escape }}"
+                   data-variant-value="{{ value | escape }}"
+                   {% if option.selected_value == value %}checked{% endif %}
+                   class="variant-option-input">
+            <label for="widget-variant-{{ forloop.index0 }}" class="variant-option-label">
+              <span class="variant-option-text">{{ value }}</span>
+            </label>
+          </div>
+        {% endif %}
+      {%- endfor -%}
+    </div>
+  </div>
+  {% endif %}
+
+  <!-- Seção de Preço -->
+  <div class="widget-price-section" id="dgf-widget-price-section">
+    <div class="widget-price-display">
+      <span class="widget-price-original">{{ product.selected_or_first_available_variant.price | money }}</span>
+      <span class="widget-price-sale">{{ product.selected_or_first_available_variant.price | money }}</span>
+    </div>
+  </div>
+
+
+  <!-- Widget Content -->
+  <div class="widget-tabs-container">
+    <!-- One-Time Purchase Content -->
+    <div class="widget-tab-content active" data-content="onetime">
+      
+      <!-- Purchase Type Header -->
+      <div class="widget-purchase-header">
+        <span class="widget-tab-radio"></span>
+        <span class="widget-tab-label">One-Time Purchase</span>
+      </div>
+      
+      <!-- Payment Terms (ShopPay, etc.) -->
+      <div class="widget-payment-terms">
+        <div class="payment-option">
+          <div class="widget-feature-icon">
+            <img src="https://cdn.shopify.com/s/files/1/0499/0425/5134/files/subs-icon-li.webp?v=1754636635" alt="Feature icon" width="14" height="14">
+          </div>
+          <div class="payment-terms-content">
+            {%- assign product_form_installment_id = 'product-form-installment-dgf-' | append: section.id -%}
+            {%- form 'product', product, id: product_form_installment_id, class: 'installment caption-large' -%}
+              <input type="hidden" name="id" value="{{ product.selected_or_first_available_variant.id }}">
+              {{ form | payment_terms }}
+            {%- endform -%}
+          </div>
+        </div>
+      </div>
+
+      {% if product.options_with_values.size > 1 %}
+      <div class="widget-selection-grid">
+        {% assign option = product.options_with_values[0] %}
+        {% if product.options_with_values.size > 1 %}
+          {% assign option = product.options_with_values[1] %}
+        {% endif %}
+        {%- for value in option.values -%}
+          {% if value != 'Default Title' %}
+            <div class="widget-selection-option {% if option.selected_value == value %}selected{% endif %}" data-variant-value="{{ value | escape }}">
+              <span class="widget-selection-radio"></span>
+              {% if value contains '3-Pack' %}
+                <span class="widget-selection-badge">Save 10%</span>
+              {% elsif value == '4-Pack' %}
+                <span class="widget-selection-badge">Save 12%</span>
+              {% elsif value == '6-Pack' %}
+                <span class="widget-selection-badge">Save 15%</span>
+              {% endif %}
+              <div class="widget-selection-title">{{ value }}</div>
+              <div class="widget-selection-subtitle" data-variant-value="{{ value | escape }}">
+                <!-- Dynamic pricing will be populated by JavaScript -->
+              </div>
+            </div>
+          {% endif %}
+        {%- endfor -%}
+      </div>
+      {% endif %}
+
+             <ul class="widget-features">
+         <li class="widget-feature">
+           <div class="widget-feature-icon">
+             <img src="https://cdn.shopify.com/s/files/1/0499/0425/5134/files/subs-icon-li.webp?v=1754636635" alt="Feature icon" width="14" height="14">
+           </div>
+           30 Day Moneyback Guarantee
+         </li>
+       </ul>
+    </div>
+  </div>
+</div>
+
+
+<script>
+// Utilitário simples de log
+(function(){
+  if (!window.__DGF) window.__DGF = {};
+  window.__DGF.logError = function(context, err){
+    try {
+      console.error(`[SubscriptionWidget] ${context}:`, err);
+    } catch(_) {}
+  };
+})();
+
+
+
+// Initialize widget when DOM is ready or immediately if already loaded
+function initializeSubscriptionWidget() {
+  try {
+    
+    const widgetContainer = document.querySelector('.subscription-widget-container');
+    
+    if (!widgetContainer) {
+      console.warn('Widget container not found');
+      return;
+    }
+
+    // Get current variant from the main VariantRadios system
+    let currentVariant = null;
+    let currentSellingPlan = null;
+    
+    // Function to get current variant from multiple sources
+    function getCurrentVariantFromSystem() {
+      try {
+        let foundVariant = null;
+        
+        // Method 1: Try VariantRadios system
+        const variantRadios = document.querySelector('variant-radios');
+        if (variantRadios && variantRadios.currentVariant) {
+          foundVariant = variantRadios.currentVariant;
+          return foundVariant;
+        }
+        
+        // Method 1.5: Try VariantSelects system
+        const variantSelects = document.querySelector('variant-selects');
+        if (variantSelects && variantSelects.currentVariant) {
+          foundVariant = variantSelects.currentVariant;
+          return foundVariant;
+        }
+        
+        // Method 2: Get from form input with variant data
+        const selectedVariantInput = document.querySelector('input[name="id"]');
+        if (selectedVariantInput && selectedVariantInput.value) {
+          const variantId = parseInt(selectedVariantInput.value);
+          
+          // Try multiple script sources
+          const scripts = document.querySelectorAll('script[type="application/json"]');
+          for (let script of scripts) {
+            try {
+              const data = JSON.parse(script.textContent);
+              let variants = [];
+              
+              if (Array.isArray(data)) {
+                variants = data;
+              } else if (data.variants && Array.isArray(data.variants)) {
+                variants = data.variants;
+              }
+              
+              if (variants.length > 0) {
+                const variant = variants.find(v => v.id == variantId);
+                if (variant) {
+                  return variant;
+                }
+              }
+            } catch (_) {
+              // Continue to next script
+            }
+          }
+        }
+        
+        // Method 3: Try to get from URL params
+        const urlParams = new URLSearchParams(window.location.search);
+        const variantParam = urlParams.get('variant');
+        if (variantParam) {
+          const scripts = document.querySelectorAll('script[type="application/json"]');
+          for (let script of scripts) {
+            try {
+              const data = JSON.parse(script.textContent);
+              let variants = Array.isArray(data) ? data : (data.variants || []);
+              const variant = variants.find(v => v.id == variantParam);
+              if (variant) {
+                return variant;
+              }
+            } catch (_) {
+              // Continue
+            }
+          }
+        }
+        
+        // Method 4: Get first available variant as fallback
+        const scripts = document.querySelectorAll('script[type="application/json"]');
+        for (let script of scripts) {
+          try {
+            const data = JSON.parse(script.textContent);
+            let variants = Array.isArray(data) ? data : (data.variants || []);
+            if (variants.length > 0 && variants[0].available) {
+              return variants[0];
+            }
+          } catch (_) {
+            // Continue
+          }
+        }
+        
+        
+        // Last resort: try to reconstruct variant from form input
+        const variantInput = document.querySelector('input[name="id"]');
+        if (variantInput && variantInput.value) {
+          const variantId = parseInt(variantInput.value);
+          
+          // Search through scripts for variant data
+          const scripts = document.querySelectorAll('script[type="application/json"]');
+          for (let script of scripts) {
+            try {
+              const data = JSON.parse(script.textContent);
+              let variants = Array.isArray(data) ? data : (data.variants || []);
+              const variant = variants.find(v => v.id == variantId);
+              if (variant) {
+                return variant;
+              }
+            } catch (_) {
+              continue;
+            }
+          }
+        }
+        
+        return null;
+      } catch (e) {null;
+        return null;
+      }
+    }
+
+    // Initialize current variant with retry mechanism
+    function initializeCurrentVariant() {
+      try {
+        currentVariant = getCurrentVariantFromSystem();
+        
+        if (!currentVariant) {
+          setTimeout(() => {
+            try {
+              currentVariant = getCurrentVariantFromSystem();
+              if (currentVariant) {
+                initializeWidget();
+                refreshThemePriceBlocks(currentVariant.id);
+              } else {
+                setTimeout(() => {
+                  try {
+                    currentVariant = getCurrentVariantFromSystem();
+                    if (currentVariant) {
+                      initializeWidget();
+                      refreshThemePriceBlocks(currentVariant.id);
+                    }
+                  } catch (e3) {null;
+                  }
+                }, 500);
+              }
+            } catch (e2) {null;
+            }
+          }, 200);
+        } else {
+          initializeWidget();
+          refreshThemePriceBlocks(currentVariant.id);
+        }
+      } catch (e) {null;
+      }
+    }
+    
+    initializeCurrentVariant();
+
+
+    // Get the VariantSelects element to use its toggleAddButton method
+    function getVariantElement() {
+      try {
+        return document.querySelector('variant-radios') || document.querySelector('variant-selects');
+      } catch (e) {null;
+        return null;
+      }
+    }
+
+    // Disable add to cart button using the same method as global.js
+    function disableAddToCartButton() {
+      try {
+        const variantElement = getVariantElement();
+        
+        if (variantElement && typeof variantElement.toggleAddButton === 'function') {
+          variantElement.toggleAddButton(true, '', false);
+        } else {
+          // Fallback: direct button manipulation
+          const addToCartButton = document.querySelector('.subscription-addtocartMine');
+          if (addToCartButton) {
+            addToCartButton.setAttribute('disabled', 'disabled');
+            addToCartButton.style.opacity = '0.6';
+            addToCartButton.style.cursor = 'not-allowed';
+          }
+        }
+      } catch (e) {null;
+      }
+    }
+
+    // Enable add to cart button using the same method as global.js
+    function enableAddToCartButton() {
+      try {
+        const variantElement = getVariantElement();
+        
+        if (variantElement && typeof variantElement.toggleAddButton === 'function') {
+          variantElement.toggleAddButton(false, '', false);
+        } else {
+          // Fallback: direct button manipulation
+          const addToCartButton = document.querySelector('.subscription-addtocartMine');
+          if (addToCartButton) {
+            addToCartButton.removeAttribute('disabled');
+            addToCartButton.style.opacity = '1';
+            addToCartButton.style.cursor = 'pointer';
+          }
+        }
+      } catch (e) {null;
+      }
+    }
+
+    // Listen for variant changes from the main VariantRadios/VariantSelects system
+    document.addEventListener('change', function(e) {
+      try {
+        // Check if the change is from a variant input or select
+        if (e.target.matches('variant-radios input[type="radio"]') || 
+            e.target.matches('variant-selects select') ||
+            e.target.matches('input[name="id"]') ||
+            e.target.closest('variant-radios') ||
+            e.target.closest('variant-selects')) {
+          
+          // Disable add to cart button immediately during variant change
+          disableAddToCartButton();
+          
+          // Small delay to ensure the VariantSelects has updated currentVariant
+          setTimeout(() => {
+            try {
+              // Update current variant
+              currentVariant = getCurrentVariantFromSystem();
+              
+              if (currentVariant) {
+                // If Subscribe & Save tab is active, force 1-Pack
+                // No tab switching logic needed since we only have onetime
+                
+                updateWidgetPrices();
+                updateOnetimeOptions();
+                syncWidgetVariants();
+                refreshThemePriceBlocks(currentVariant.id);
+                
+                // Re-enable add to cart button after updates
+                setTimeout(() => {
+                  try { enableAddToCartButton(); } catch(e){null;}
+                }, 100);
+              } else {
+                // Re-enable button even if we couldn't get variant
+                setTimeout(() => {
+                  try { enableAddToCartButton(); } catch(e){null;}
+                }, 100);
+              }
+            } catch (e1) {null;
+              // tentar reabilitar
+              try { enableAddToCartButton(); } catch(_) {}
+            }
+          }, 50);
+        }
+      } catch (e) {null;
+        try { enableAddToCartButton(); } catch(_) {}
+      }
+    });
+
+
+    // Also listen for custom variant-changed event (fallback)
+    window.addEventListener('variant-changed', function(e) {
+      try {
+        currentVariant = e.detail.variant;
+        if (currentVariant) {
+          // If Subscribe & Save tab is active, force 1-Pack
+          // No tab switching logic needed since we only have onetime
+          
+          updateWidgetPrices();
+          updateOnetimeOptions();
+          syncWidgetVariants();
+          refreshThemePriceBlocks(currentVariant.id);
+        }
+      } catch (err) {null;
+      }
+    });
+
+    // Listen for widget's own variant option changes
+    try {
+      const variantOptions = widgetContainer.querySelectorAll('.variant-option-input');
+      variantOptions.forEach(option => {
+        try {
+          option.addEventListener('change', function() {
+            try {
+              if (this.checked) {
+                updateMainVariantSystem(this.value);
+              }
+            } catch (err) {null;
+            }
+          });
+        } catch (err) {null;
+        }
+      });
+    } catch (e) {null;
+    }
+
+    // No tab switching needed since we only have one tab
+
+    // Selection option handler - works for both subscribe and one-time options
+    const selectionOptions = widgetContainer.querySelectorAll('.widget-selection-option');
+    
+    selectionOptions.forEach(option => {
+      try {
+        option.addEventListener('click', function() {
+          try {
+            // Disable add to cart button during option change
+            disableAddToCartButton();
+            
+            // Find parent tab content
+            const parentContent = this.closest('.widget-tab-content');
+            const isSubscribe = parentContent.dataset.content === 'subscribe';
+            
+            // Clear selection in same group
+            parentContent.querySelectorAll('.widget-selection-option').forEach(opt => {
+              opt.classList.remove('selected');
+            });
+            
+            // Add selected class
+            this.classList.add('selected');
+            
+            // Handle different actions based on tab
+            if (isSubscribe) {
+              const planId = this.dataset.sellingPlan;
+              updateSellingPlan(planId);
+              // Re-enable button after subscription selection
+              setTimeout(() => {
+                try { enableAddToCartButton(); } catch(e){null;}
+              }, 100);
+            } else {
+              // For one-time purchases, update variant in the main system
+              const variantValue = this.dataset.variantValue;
+              if (variantValue) {
+                // Update main variant system using standard pattern
+                updateMainVariantSystem(variantValue);
+                // Re-enable button will be handled by the main variant change listener
+              } else {
+                // Re-enable if no variant update needed
+                setTimeout(() => {
+                  try { enableAddToCartButton(); } catch(e){null;}
+                }, 100);
+              }
+            }
+            
+            // Always update prices after selection
+            updateWidgetPrices();
+
+          } catch (e) {null;
+            try { enableAddToCartButton(); } catch(_) {}
+          }
+        });
+      } catch (err) {null;
+      }
+    });
+
+    // Update prices based on current variant - similar to global.js logic
+    function updateWidgetPrices() {
+      try {
+        // Try to get current variant if we don't have one
+        if (!currentVariant) {
+          currentVariant = getCurrentVariantFromSystem();
+        }
+        
+        
+        if (!currentVariant) {
+          // Retry after a short delay
+          setTimeout(() => {
+            try {
+              currentVariant = getCurrentVariantFromSystem();
+              if (currentVariant) {
+                updateWidgetPrices(); // Recursive call after getting variant
+              } else {
+              }
+            } catch (e2) {null;
+            }
+          }, 100);
+          return;
+        }
+
+        // Update installment form variant ID
+        updateInstallmentForm();
+
+        const priceOriginal = widgetContainer.querySelector('.widget-price-original');
+        const priceSale = widgetContainer.querySelector('.widget-price-sale');
+
+        if (!priceOriginal || !priceSale) {
+          return;
+        }
+
+        // Always use onetime purchase pricing
+        // One-time purchase pricing - based on pack type, similar to global.js logic
+        if (currentVariant.title.indexOf('Pack') >= 0) {
+          let originalPrice = currentVariant.price;
+          
+          // Calculate original price based on pack type - matching global.js logic
+          if (currentVariant.title.indexOf('3-Pack') >= 0) {
+            originalPrice = Math.round(originalPrice / 0.85); // Reverse the 15% discount to get original
+          } else if (currentVariant.title.indexOf('4-Pack') >= 0) {
+            originalPrice = Math.round(originalPrice / 0.88); // Reverse the 12% discount to get original
+          } else if (currentVariant.title.indexOf('6-Pack') >= 0) {
+            originalPrice = Math.round(originalPrice / 0.8); // Reverse the 20% discount to get original
+          }
+          
+          // Only show original price if it's greater than current price
+          if (originalPrice > currentVariant.price) {
+            priceOriginal.style.display = 'block';
+            priceOriginal.textContent = formatMoney(originalPrice);
+          } else {
+            priceOriginal.style.display = 'none';
+          }
+          priceSale.textContent = formatMoney(currentVariant.price);
+        } else {
+          // Single pack - check for compare_at_price first
+          if (currentVariant.compare_at_price && currentVariant.compare_at_price > currentVariant.price) {
+            priceOriginal.style.display = 'block';
+            priceOriginal.textContent = formatMoney(currentVariant.compare_at_price);
+          } else {
+            priceOriginal.style.display = 'none';
+          }
+          priceSale.textContent = formatMoney(currentVariant.price);
+        }
+        
+        // Always update button price to current variant price (no subscription discount)
+        updateButtonPrice(currentVariant.price);
+      } catch (e) {null;
+      }
+    }
+
+    // Update main price blocks when widget changes variant
+    function refreshThemePriceBlocks(variantId) {
+      try {
+        const variantElement = document.querySelector('variant-radios, variant-selects');
+
+        // Get section key
+        let sectionKey = null;
+        let baseUrl = window.location.pathname;
+        if (variantElement) {
+          sectionKey = variantElement.dataset.originalSection || variantElement.dataset.section;
+          baseUrl = variantElement.dataset.url || baseUrl;
+        }
+        if (!sectionKey) {
+          const sectionRoot = widgetContainer.closest('section[id^="shopify-section-"]');
+          if (sectionRoot && sectionRoot.id) {
+            sectionKey = sectionRoot.id.replace('shopify-section-', '');
+          }
+        }
+        if (!sectionKey) return;
+
+        // Get effective variant ID
+        const idInput = document.querySelector('input[name="id"]');
+        const effectiveVariantId = (idInput && idInput.value) ? idInput.value : variantId;
+        if (!effectiveVariantId) return;
+
+        fetch(`${baseUrl}?variant=${effectiveVariantId}&section_id=${sectionKey}`)
+          .then((response) => response.text())
+          .then((responseText) => {
+            try {
+              const html = new DOMParser().parseFromString(responseText, 'text/html');
+
+              const subsId = `suscribe-price-button-${sectionKey}`;
+              const destSubs = document.getElementById(subsId);
+              const srcSubs = html.getElementById(subsId);
+              if (destSubs && srcSubs) destSubs.innerHTML = srcSubs.innerHTML;
+
+              const oneId = `price-button-${sectionKey}`;
+              const destOne = document.getElementById(oneId);
+              const srcOne = html.getElementById(oneId);
+              if (destOne && srcOne) destOne.innerHTML = srcOne.innerHTML;
+
+              const priceId = `price-${sectionKey}`;
+              const destPrice = document.getElementById(priceId);
+              const srcPrice = html.getElementById(priceId);
+              if (destPrice && srcPrice) destPrice.innerHTML = srcPrice.innerHTML;
+
+              // For Pack variants, prevent extra discount on subscribe price
+              const cur = getCurrentVariantFromSystem();
+              const isPackVariant = cur && cur.title && cur.title.indexOf('Pack') >= 0;
+
+              if (isPackVariant && destSubs && destOne) {
+                destSubs.innerHTML = destOne.innerHTML;
+              }
+            } catch (e2) {null;
+            }
+          })
+          .catch((e) => {null;});
+      } catch (e) {null;
+      }
+    }
+
+
+    function updateOnetimeOptions() {
+      try {
+        // Update the one-time purchase options based on current variant
+        const onetimeOptions = widgetContainer.querySelectorAll('.widget-tab-content[data-content="onetime"] .widget-selection-option');
+        
+        onetimeOptions.forEach(option => {
+          try {
+            const variantValue = option.dataset.variantValue;
+            if (variantValue && currentVariant && 
+                (currentVariant.option1 === variantValue || currentVariant.option2 === variantValue)) {
+              option.classList.add('selected');
+            } else {
+              option.classList.remove('selected');
+            }
+          } catch (e2) {null;
+          }
+        });
+        
+        // Update subtitle prices dynamically
+        updateOnetimeSubtitles();
+      } catch (e) {null;
+      }
+    }
+
+    function updateOnetimeSubtitles() {
+      try {
+        // Get all variants data
+        const scripts = document.querySelectorAll('script[type="application/json"]');
+        let variants = [];
+        
+        for (let script of scripts) {
+          try {
+            const data = JSON.parse(script.textContent);
+            if (Array.isArray(data) && data[0] && data[0].id && data[0].title) {
+              variants = data;
+              break;
+            } else if (data.variants && Array.isArray(data.variants)) {
+              variants = data.variants;
+              break;
+            }
+          } catch (_) {
+            continue;
+          }
+        }
+        
+        if (variants.length === 0) return;
+        
+        // Update subtitles for one-time purchase options
+        const subtitleElements = widgetContainer.querySelectorAll('.widget-tab-content[data-content="onetime"] .widget-selection-subtitle[data-variant-value]');
+        
+        subtitleElements.forEach(subtitle => {
+          try {
+            const variantValue = subtitle.dataset.variantValue;
+            
+            // Find the variant that matches this option value
+            let matchingVariant = null;
+            
+            if (currentVariant) {
+              // Determine which option to maintain (capsule count)
+              const currentCapsuleOption = currentVariant.option1?.includes('Capsules') ? currentVariant.option1 : 
+                                         currentVariant.option2?.includes('Capsules') ? currentVariant.option2 : null;
+              
+              if (currentCapsuleOption) {
+                // Find variant with same capsule option and desired pack option
+                matchingVariant = variants.find(v => {
+                  const hasCapsuleOption = v.option1 === currentCapsuleOption || v.option2 === currentCapsuleOption;
+                  const hasPackOption = v.option1 === variantValue || v.option2 === variantValue;
+                  return hasCapsuleOption && hasPackOption;
+                });
+              }
+            }
+            
+            // Fallback to any matching variant
+            if (!matchingVariant) {
+              matchingVariant = variants.find(v => 
+                v.option1 === variantValue || 
+                v.option2 === variantValue || 
+                v.title.includes(variantValue)
+              );
+            }
+            
+            if (matchingVariant) {
+              let subtitleHTML = '';
+              
+              // Calculate subtitle based on pack type
+              if (variantValue.includes('3-Pack')) {
+                const unitPrice = Math.round(matchingVariant.price / 3);
+                subtitleHTML = `(${formatMoney(unitPrice)} each)`;
+                
+                // Add best seller badge for organic-moringa
+                const productHandle = window.location.pathname.split('/').pop() || '';
+                if (productHandle === 'organic-moringa') {
+                  subtitleHTML += '<span class="best-seller-badge">Best Seller</span>';
+                }
+              } else if (variantValue.includes('4-Pack')) {
+                const unitPrice = Math.round(matchingVariant.price / 4);
+                subtitleHTML = `(${formatMoney(unitPrice)} each)`;
+              } else if (variantValue.includes('6-Pack')) {
+                const unitPrice = Math.round(matchingVariant.price / 6);
+                subtitleHTML = `(${formatMoney(unitPrice)} each)`;
+              } else {
+                // For 1-Pack, just show the total price
+                subtitleHTML = "";
+              }
+              
+              subtitle.innerHTML = subtitleHTML;
+            }
+          } catch (e2) {null;
+          }
+        });
+      } catch (e) {null;
+      }
+    }
+
+    function syncWidgetVariants() {
+      try {
+        // Sync the widget's variant options with the current variant
+        if (!currentVariant) return;
+        
+        const variantOptions = widgetContainer.querySelectorAll('.variant-option-input');
+        variantOptions.forEach(option => {
+          try {
+            const optionValue = option.dataset.variantValue;
+            if (optionValue && (currentVariant.option1 === optionValue || currentVariant.option2 === optionValue)) {
+              option.checked = true;
+            } else {
+              option.checked = false;
+            }
+          } catch (e2) {null;
+          }
+        });
+      } catch (e) {null;
+      }
+    }
+
+    // Apply a full variant (all option values) to native controls so global handler runs
+    function applyVariantToNativeControls(matchingVariant) {
+      try {
+        const variantElement = document.querySelector('variant-radios, variant-selects');
+        if (!variantElement || !matchingVariant) return false;
+
+        const desiredOptions = matchingVariant.options || [matchingVariant.option1, matchingVariant.option2, matchingVariant.option3].filter(Boolean);
+        if (!desiredOptions || desiredOptions.length === 0) return false;
+
+        const isRadios = variantElement.tagName.toLowerCase() === 'variant-radios';
+        if (isRadios) {
+          const fieldsets = Array.from(variantElement.querySelectorAll('fieldset'));
+          fieldsets.forEach((fieldset, idx) => {
+            try {
+              const desired = desiredOptions[idx];
+              if (!desired) return;
+              const input = Array.from(fieldset.querySelectorAll('input[type="radio"]')).find(r => r.value === desired);
+              if (input) {
+                if (!input.checked) input.checked = true;
+                // Use input.click() to better emulate user interaction and trigger any bound listeners
+                input.click();
+              }
+            } catch (e2) {null;
+            }
+          });
+          return true;
+        } else {
+          const selects = Array.from(variantElement.querySelectorAll('select'));
+          selects.forEach((select, idx) => {
+            try {
+              const desired = desiredOptions[idx];
+              if (!desired) return;
+              const opt = Array.from(select.options).find(o => o.value === desired);
+              if (opt) {
+                select.value = opt.value;
+                // Use native change event and also blur/focus to mimic real selection
+                select.dispatchEvent(new Event('change', { bubbles: true }));
+                // In some themes, a second microtask ensures price render; queue a refresh
+                setTimeout(() => {
+                  try {
+                    const idInput = document.querySelector('input[name="id"]');
+                    if (idInput && idInput.value) {
+                      refreshThemePriceBlocks(idInput.value);
+                    }
+                  } catch (e3) {null;
+                  }
+                }, 0);
+              }
+            } catch (e2) {null;
+            }
+          });
+          return true;
+        }
+      } catch (e) {null;
+        return false;
+      }
+    }
+
+    function updateMainVariantSystem(variantValue) {
+      try {
+        // Support both variant-radios and variant-selects
+        let variantElement = document.querySelector('variant-radios');
+        let isRadios = true;
+        
+        if (!variantElement) {
+          variantElement = document.querySelector('variant-selects');
+          isRadios = false;
+        }
+        
+        if (!variantElement) {
+          // Try fallback approach using form input directly; global will still pick up change
+          tryDirectVariantUpdate(variantValue);
+          return;
+        }
+        
+        
+        // Try to find the exact input or select with this value
+        let mainVariantInput = null;
+        
+        if (isRadios) {
+          mainVariantInput = variantElement.querySelector(`input[value="${variantValue}"]`);
+          if (mainVariantInput && !mainVariantInput.checked) {
+            mainVariantInput.checked = true;
+            mainVariantInput.dispatchEvent(new Event('change', { bubbles: true }));
+            return;
+          }
+        } else {
+          // For variant-selects, look for select option
+          const selectElement = variantElement.querySelector('select');
+          if (selectElement) {
+            const option = selectElement.querySelector(`option[value="${variantValue}"]`);
+            if (option) {
+              selectElement.value = variantValue;
+              selectElement.dispatchEvent(new Event('change', { bubbles: true }));
+              return;
+            }
+          }
+        }
+        
+        // If not found by exact value, try alternative approach
+        
+        // Get variant data from script tag inside variant element
+        const variantScript = variantElement.querySelector('script[type="application/json"]');
+        if (!variantScript) {
+          return;
+        }
+        
+        try {
+          const variants = JSON.parse(variantScript.textContent);
+          
+          // Find variant that matches the option value while maintaining consistency
+          let matchingVariant = null;
+          
+          // Get current variant for consistency check
+          if (currentVariant) {
+            
+            // Find variant that matches desired option AND maintains consistency
+            matchingVariant = variants.find(v => {
+              const hasDesiredOption = v.option1 === variantValue || v.option2 === variantValue || v.option3 === variantValue;
+              if (!hasDesiredOption) return false;
+              
+              // Maintain capsule consistency (90 vs 120)
+              const currentCapsuleOption = currentVariant.option1?.includes('Capsules') ? currentVariant.option1 : 
+                                         currentVariant.option2?.includes('Capsules') ? currentVariant.option2 : null;
+              
+              if (currentCapsuleOption) {
+                return (v.option1 === currentCapsuleOption || v.option2 === currentCapsuleOption);
+              }
+              
+              return true;
+            });
+          }
+          
+          // Fallback to any match if no consistent variant found
+          if (!matchingVariant) {
+            matchingVariant = variants.find(v => 
+              v.option1 === variantValue || 
+              v.option2 === variantValue || 
+              v.option3 === variantValue ||
+              v.title.includes(variantValue)
+            );
+          }
+          
+          if (matchingVariant) {
+
+              // Apply all option values to native controls so global handler runs
+              if (applyVariantToNativeControls(matchingVariant)) return;
+            
+            // Last resort: update form input directly
+            const variantInput = document.querySelector('input[name="id"]');
+            if (variantInput) {
+              variantInput.value = matchingVariant.id;
+              variantInput.dispatchEvent(new Event('change', { bubbles: true }));
+            }
+          } else {
+          }
+        } catch (e2) {null;
+        }
+      } catch (e) {null;
+      }
+    }
+
+    function tryDirectVariantUpdate(variantValue) {
+      try {
+        // Get variant data from any available script tag
+        const scripts = document.querySelectorAll('script[type="application/json"]');
+        let variants = [];
+        
+        for (let script of scripts) {
+          try {
+            const data = JSON.parse(script.textContent);
+            if (Array.isArray(data) && data[0] && data[0].id && data[0].title) {
+              variants = data;
+              break;
+            } else if (data.variants && Array.isArray(data.variants)) {
+              variants = data.variants;
+              break;
+            }
+          } catch (_) {
+            continue;
+          }
+        }
+        
+        if (variants.length === 0) {
+          return;
+        }
+        
+        
+        // Get current variant to maintain consistency (e.g., keep 90 vs 120 Capsules)
+        const currentVariantInput = document.querySelector('input[name="id"]');
+        let cur = null;
+        
+        if (currentVariantInput && currentVariantInput.value) {
+          const currentVariantId = parseInt(currentVariantInput.value);
+          cur = variants.find(v => v.id === currentVariantId);
+        }
+        
+        // Find variant that matches the option value while maintaining consistency
+        let matchingVariant = null;
+        
+        if (cur) {
+          // First, try to find a variant that matches the desired option AND keeps other options consistent
+          matchingVariant = variants.find(v => {
+            // Check if this variant has the desired pack option
+            const hasDesiredOption = v.option1 === variantValue || v.option2 === variantValue || v.option3 === variantValue;
+            
+            if (!hasDesiredOption) return false;
+            
+            // If current variant has multiple options, try to maintain the non-pack option (like 90 vs 120 Capsules)
+            if (cur.option1 && cur.option2) {
+              // Determine which option is the "capsules" option and which is the "pack" option
+              const currentCapsuleOption = cur.option1.includes('Capsules') ? cur.option1 : 
+                                         cur.option2.includes('Capsules') ? cur.option2 : null;
+              
+              if (currentCapsuleOption) {
+                // Look for variant that has same capsule count but different pack option
+                return (v.option1 === currentCapsuleOption || v.option2 === currentCapsuleOption) && hasDesiredOption;
+              }
+            }
+            
+            return true; // fallback if we can't determine consistency rules
+          });
+        }
+        
+        // If no consistent match found, fall back to any match
+        if (!matchingVariant) {
+          matchingVariant = variants.find(v => 
+            v.option1 === variantValue || 
+            v.option2 === variantValue || 
+            v.option3 === variantValue ||
+            v.title.includes(variantValue)
+          );
+        }
+        
+        if (matchingVariant) {
+          
+          // Update the form input directly
+          const variantInput = document.querySelector('input[name="id"]');
+          if (variantInput) {
+            const oldValue = variantInput.value;
+            variantInput.value = matchingVariant.id;
+            
+            // Trigger change event
+            variantInput.dispatchEvent(new Event('change', { bubbles: true }));
+            
+            // Also trigger a custom event that might be listened to
+            window.dispatchEvent(new CustomEvent('variant-changed', { 
+              detail: { 
+                variant: matchingVariant,
+                oldVariantId: oldValue,
+                newVariantId: matchingVariant.id
+              } 
+            }));
+          } else {
+          }
+        } else {
+        }
+      } catch (e) {null;
+      }
+    }
+
+    function forceOnePack() {
+      try {
+        if (!currentVariant) {
+          currentVariant = getCurrentVariantFromSystem();
+        }
+        
+        if (!currentVariant) {
+          return;
+        }
+        
+        // Determine what capsule option to maintain (90 vs 120)
+        const currentCapsuleOption = currentVariant.option1?.includes('Capsules') ? currentVariant.option1 : 
+                                   currentVariant.option2?.includes('Capsules') ? currentVariant.option2 : null;
+        
+        if (!currentCapsuleOption) {
+          return;
+        }
+        
+        // Find the 1-Pack variant for this capsule option
+        const scripts = document.querySelectorAll('script[type="application/json"]');
+        let variants = [];
+        
+        for (let script of scripts) {
+          try {
+            const data = JSON.parse(script.textContent);
+            if (Array.isArray(data) && data[0] && data[0].id && data[0].title) {
+              variants = data;
+              break;
+            } else if (data.variants && Array.isArray(data.variants)) {
+              variants = data.variants;
+              break;
+            }
+          } catch (_) {
+            continue;
+          }
+        }
+        
+        if (variants.length === 0) {
+          console.error('No variants found for 1-Pack forcing');
+          return;
+        }
+        
+        // Find the 1-Pack variant that matches the current capsule option
+        const onePackVariant = variants.find(v => {
+          const hasCapsuleOption = v.option1 === currentCapsuleOption || v.option2 === currentCapsuleOption;
+          const isOnePack = v.title.includes('1-Pack') || 
+                            (!v.title.includes('3-Pack') && !v.title.includes('4-Pack') && !v.title.includes('6-Pack'));
+          return hasCapsuleOption && isOnePack;
+        });
+        
+        if (onePackVariant) {
+
+          // Prefer updating via native variant controls so global onVariantChange runs
+          const variantElement = document.querySelector('variant-radios, variant-selects');
+          let updatedViaControls = false;
+          if (variantElement) {
+            updatedViaControls = applyVariantToNativeControls(onePackVariant);
+            // If native controls were applied, also force a price refresh explicitly (theme can be async)
+            if (updatedViaControls) {
+              refreshThemePriceBlocks(onePackVariant.id);
+            }
+          }
+
+          if (!updatedViaControls) {
+            // Fallback to updating the hidden input, and manually refresh price blocks
+            const variantInput = document.querySelector('input[name="id"]');
+            if (variantInput && variantInput.value != onePackVariant.id) {
+              variantInput.value = onePackVariant.id;
+              variantInput.dispatchEvent(new Event('change', { bubbles: true }));
+            }
+            refreshThemePriceBlocks(onePackVariant.id);
+          }
+
+          // Keep local state in sync
+          currentVariant = onePackVariant;
+        } else {
+          console.error('Could not find 1-Pack variant for capsule option:', currentCapsuleOption);
+        }
+      } catch (e) {null;
+      }
+    }
+
+    function formatMoney(cents) {
+      try {
+        // Shopify prices are always in cents
+        let amount = cents;
+        if (typeof cents === 'string') {
+          amount = parseInt(cents);
+        }
+        if (isNaN(amount) || amount < 0) {
+          console.warn('Invalid price value:', cents);
+          return '$0.00';
+        }
+        
+        // Convert cents to dollars
+        const dollars = amount / 100;
+        return '$' + dollars.toFixed(2);
+      } catch (e) {null;
+        return '$0.00';
+      }
+    }
+
+    // Simple price update like product-subscription with protection
+    function updateButtonPrice(price) {
+      try {
+        const formattedPrice = formatMoney(price);
+        
+        // Clear any selling plan selection first to prevent theme interference
+        const sellingPlanInputs = document.querySelectorAll('input[name="selling_plan"], select[name="selling_plan"]');
+        sellingPlanInputs.forEach(input => {
+          input.value = '';
+        });
+        
+        // Update the specific price elements in the button
+        const elements = [
+          '#suscribe-price-button-{{ section.id }}',
+          '#price-button-{{ section.id }}',
+          '.add-to-cart-block .subscribe-price-wrap',
+          '.add-to-cart-block .one-time-price-wrap'
+        ];
+        
+        elements.forEach(selector => {
+          try {
+            const element = $(selector);
+            if (element.length > 0) {
+              element.text('| ' + formattedPrice);
+              // Mark element to prevent overwrites
+              element.attr('data-custom-price', 'true');
+              element.attr('data-onetime-price', price); // Store original price
+            }
+          } catch (e2) {null;
+          }
+        });
+        
+        // Single reapplication after a shorter delay (MutationObserver will handle the rest)
+        setTimeout(() => {
+          try {
+            elements.forEach(selector => {
+              try {
+                const element = $(selector);
+                if (element.length > 0 && element.attr('data-custom-price')) {
+                  element.text('| ' + formattedPrice);
+                }
+              } catch (e3) {null;
+              }
+            });
+          } catch (e1) {null;
+          }
+        }, 300);
+        
+        // Store the current price for quick reapplication
+        window.lastWidgetPrice = formattedPrice;
+        
+      } catch (e) {null;
+      }
+    }
+
+    // Price protection observer to prevent theme from overriding widget prices
+    function initializePriceProtection() {
+      try {
+        const priceElements = document.querySelectorAll('#suscribe-price-button-{{ section.id }}, #price-button-{{ section.id }}, .add-to-cart-block .subscribe-price-wrap, .add-to-cart-block .one-time-price-wrap');
+        
+        priceElements.forEach(element => {
+          if (element && window.MutationObserver) {
+            const observer = new MutationObserver(mutations => {
+              mutations.forEach(mutation => {
+                if (mutation.type === 'childList' || mutation.type === 'characterData') {
+                  // Always protect onetime price since we only have onetime tab now
+                  if (window.lastWidgetPrice && element.hasAttribute('data-custom-price')) {
+                    const currentText = element.textContent || element.innerText;
+                    const expectedText = '| ' + window.lastWidgetPrice;
+                    const originalPrice = element.getAttribute('data-onetime-price');
+                    
+                    // If the text doesn't match our widget price, restore it immediately
+                    if (currentText !== expectedText) {
+                      element.textContent = expectedText;
+                      
+                      // Clear any selling plan that might be interfering
+                      const sellingPlanInputs = document.querySelectorAll('input[name="selling_plan"], select[name="selling_plan"]');
+                      sellingPlanInputs.forEach(input => input.value = '');
+                    }
+                  }
+                }
+              });
+            });
+            
+            observer.observe(element, {
+              childList: true,
+              subtree: true,
+              characterData: true
+            });
+          }
+        });
+      } catch (e) {null;
+      }
+    }
+
+
+    // Update installment form with current variant
+    function updateInstallmentForm() {
+      try {
+        if (!currentVariant) return;
+        
+        // Update the hidden input in the installment form
+        const installmentForm = document.querySelector('form[id*="product-form-installment-dgf-"]');
+        if (installmentForm) {
+          const variantInput = installmentForm.querySelector('input[name="id"]');
+          if (variantInput) {
+            variantInput.value = currentVariant.id;
+          }
+        }
+        
+        // Update Sezzle widget price
+        const sezzlePriceElement = document.getElementById('sezzle-widget-dgf-price');
+        if (sezzlePriceElement && currentVariant.price) {
+          // Format price for Sezzle
+          const formattedPrice = formatMoney(currentVariant.price);
+          sezzlePriceElement.textContent = formattedPrice;
+          sezzlePriceElement.innerHTML = formattedPrice;
+        }
+      } catch (e) {null;
+      }
+    }
+
+
+    function updateSellingPlan(planId) {
+      // No-op for onetime purchase only
+    }
+
+
+    function clearSellingPlan() {
+      try {
+        // Clear all selling plan inputs aggressively
+        const sellingPlanInputs = document.querySelectorAll('input[name="selling_plan"], select[name="selling_plan"]');
+        sellingPlanInputs.forEach(input => {
+          input.value = '';
+          // Trigger change event to notify theme
+          input.dispatchEvent(new Event('change', { bubbles: true }));
+        });
+        
+        // Clear any global selling plan variables
+        if (window.currentWidgetSellingPlan) window.currentWidgetSellingPlan = null;
+        if (window.DGF_SELLING_PLAN_ID) window.DGF_SELLING_PLAN_ID = null;
+        
+        // Force update button price with current variant
+        if (currentVariant && currentVariant.price) {
+          setTimeout(() => {
+            updateButtonPrice(currentVariant.price);
+          }, 50);
+        }
+        
+      } catch (e) {null;
+      }
+    }
+
+
+    // Initialize widget
+    function initializeWidget() {
+      try {
+        // Update current variant
+        currentVariant = getCurrentVariantFromSystem();
+        
+        // Set initial prices
+        updateWidgetPrices();
+        
+        // Always use onetime purchase price (no subscription discounts)
+        setTimeout(() => {
+          try { updateButtonPrice(currentVariant.price); } catch(e){null;}
+        }, 100);
+        
+        // Initialize one-time options and subtitles
+        updateOnetimeOptions();
+        
+        // Sync widget variants with current state
+        syncWidgetVariants();
+        
+        // Initialize price protection after a short delay
+        setTimeout(() => {
+          initializePriceProtection();
+        }, 200);
+        
+      } catch (e) {null;
+      }
+    }
+
+    // Listen for URL changes caused by VariantSelects system (simplified)
+    let lastUrl = window.location.href;
+    const checkForUrlChanges = () => {
+      try {
+        const currentUrl = window.location.href;
+        if (currentUrl !== lastUrl) {
+          lastUrl = currentUrl;
+          setTimeout(() => {
+            try {
+              currentVariant = getCurrentVariantFromSystem();
+              if (currentVariant) {
+                updateWidgetPrices();
+                updateOnetimeOptions();
+                syncWidgetVariants();
+              }
+            } catch (e2) {null;
+            }
+          }, 100);
+        }
+      } catch (e) {null;
+      }
+    };
+    
+    // Check for URL changes less frequently
+    try { setInterval(checkForUrlChanges, 2000); } catch(e){null;}
+
+    // Add coupon event listener like product-subscription
+    try {
+      $('body').on('change', 'input[name="coupanMine"]', function(e){
+        try {
+          e.preventDefault();
+          if($(this).prop('checked') == true){
+            $('label[for="coupanMineCode"] span').html('5% coupon applied at checkout. For Subscribe & Save orders only');
+            $('form[action="/cart/add"]').prepend('<input type="hidden" name="properties[coupon]" value="true" />');
+            if (window.Rebuy && window.Rebuy.Cart && typeof window.Rebuy.Cart.applyShopifyDiscount === 'function') {
+              console.log('applyShopifyDiscount está disponível');
+              window.Rebuy.Cart.applyShopifyDiscount('FIRSTTIMESUB5');
+            }
+          } else {
+            // Remove coupon input when unchecked
+            //$('input[name="properties[coupon]"]').remove();
+           // $('label[for="coupanMineCode"] span').html('Save an extra 5% on your first Subscribe and Save order.');
+            
+            // Remove cupom da sessão Rebuy - SEMPRE, independente da aba
+            //  console.log('Removendo cupom FIRSTTIMESUB5');
+            //  window.Rebuy.Cart.removeShopifyDiscount('FIRSTTIMESUB5');
+
+          }
+          
+          // Update widget prices to reflect coupon state
+          updateWidgetPrices();
+          
+          // Also update add-to-cart button price immediately for better UX
+          setTimeout(() => {
+            try {
+              // Always use onetime price
+              if (currentVariant) {
+                updateButtonPrice(currentVariant.price);
+              }
+            } catch (e2) {null;
+            }
+          }, 100);
+        } catch (err) {null;
+        }
+      });
+    } catch (e) {null;
+    }
+
+    // Widget initialization is now handled by initializeCurrentVariant()
+    
+    // Ensure onetime pricing after everything loads
+    setTimeout(() => {
+      if (window.forceOnetimePricing) {
+        window.forceOnetimePricing();
+      }
+    }, 1500);
+  } catch (e) {null;
+  }
+}
+
+// Simple jQuery approach like product-subscription
+$(document).ready(function() {
+  try {
+    // Initialize the widget first
+    initializeSubscriptionWidget();
+    
+    // Ensure onetime content is active
+    $('.widget-tab-content[data-content="onetime"]').addClass('active');
+    
+    // Clear any selling plan selection for onetime purchase
+    $('.selling-plan-id').val('');
+    
+    // Função para aguardar elemento estar disponível
+    function waitForElement(selector, timeout = 10000) {
+      return new Promise((resolve, reject) => {
+        try {
+          const element = document.getElementById(selector);
+          if (element) {
+            resolve(element);
+            return;
+          }
+          
+          const startTime = Date.now();
+          const checkInterval = setInterval(() => {
+            try {
+              const element = document.getElementById(selector);
+              if (element) {
+                clearInterval(checkInterval);
+                resolve(element);
+              } else if (Date.now() - startTime >= timeout) {
+                clearInterval(checkInterval);
+                reject(new Error(`Elemento ${selector} não encontrado após ${timeout}ms`));
+              }
+            } catch (e) {null;
+              clearInterval(checkInterval);
+              reject(e);
+            }
+          }, 100);
+        } catch (e) {null;
+          reject(e);
+        }
+      });
+    }
+    
+    // Função para aguardar Rebuy.Cart estar disponível
+    function waitForRebuyCart(timeout = 10000) {
+      return new Promise((resolve, reject) => {
+        try {
+          if (window.Rebuy && window.Rebuy.Cart && typeof window.Rebuy.Cart.removeShopifyDiscount === 'function') {
+            resolve(window.Rebuy.Cart);
+            return;
+          }
+          
+          const startTime = Date.now();
+          const checkInterval = setInterval(() => {
+            try {
+              if (window.Rebuy && window.Rebuy.Cart && typeof window.Rebuy.Cart.removeShopifyDiscount === 'function') {
+                clearInterval(checkInterval);
+                resolve(window.Rebuy.Cart);
+              } else if (Date.now() - startTime >= timeout) {
+                clearInterval(checkInterval);
+                reject(new Error('Rebuy.Cart not exist ' + timeout + 'ms'));
+              }
+            } catch (e) {null;
+              clearInterval(checkInterval);
+              reject(e);
+            }
+          }, 100);
+        } catch (e) {null;
+          reject(e);
+        }
+      });
+    }
+    
+    
+    // Apply initial onetime pricing (debug function)
+    window.applyInitialPricing = function() {
+      try {
+        const variant = getCurrentVariantFromSystem();
+        if (variant && updateButtonPrice) {
+          currentVariant = variant;
+          updateButtonPrice(variant.price);
+        } else {
+        }
+      } catch (e) {null;
+      }
+    }
+    
+    // Initial pricing is handled by initializeWidget()
+    
+    // Global function to force onetime pricing (for edge cases)
+    window.forceOnetimePricing = function() {
+      try {
+        // Clear selling plans directly without relying on local function
+        const sellingPlanInputs = document.querySelectorAll('input[name="selling_plan"], select[name="selling_plan"]');
+        sellingPlanInputs.forEach(input => {
+          input.value = '';
+          input.dispatchEvent(new Event('change', { bubbles: true }));
+        });
+        
+        // Clear global variables
+        if (window.currentWidgetSellingPlan) window.currentWidgetSellingPlan = null;
+        if (window.DGF_SELLING_PLAN_ID) window.DGF_SELLING_PLAN_ID = null;
+        
+        // Try to get variant from multiple sources
+        let variant = null;
+        
+        // Method 1: Try VariantRadios system
+        const variantRadios = document.querySelector('variant-radios');
+        if (variantRadios && variantRadios.currentVariant) {
+          variant = variantRadios.currentVariant;
+        }
+        
+        // Method 2: Try VariantSelects system
+        if (!variant) {
+          const variantSelects = document.querySelector('variant-selects');
+          if (variantSelects && variantSelects.currentVariant) {
+            variant = variantSelects.currentVariant;
+          }
+        }
+        
+        // Method 3: Try from form input
+        if (!variant) {
+          const selectedVariantInput = document.querySelector('input[name="id"]');
+          if (selectedVariantInput && selectedVariantInput.value) {
+            // This is a simplified fallback - get price from variant script
+            try {
+              const scripts = document.querySelectorAll('script[type="application/json"]');
+              for (let script of scripts) {
+                const data = JSON.parse(script.textContent);
+                const variants = Array.isArray(data) ? data : (data.variants || []);
+                const foundVariant = variants.find(v => v.id == selectedVariantInput.value);
+                if (foundVariant) {
+                  variant = foundVariant;
+                  break;
+                }
+              }
+            } catch (_) {}
+          }
+        }
+        
+        if (variant && variant.price) {
+          // Update button price directly
+          const elements = [
+            '#suscribe-price-button-{{ section.id }}',
+            '#price-button-{{ section.id }}',
+            '.add-to-cart-block .subscribe-price-wrap',
+            '.add-to-cart-block .one-time-price-wrap'
+          ];
+          
+          const formattedPrice = '$' + (variant.price / 100).toFixed(2);
+          elements.forEach(selector => {
+            try {
+              const element = $(selector);
+              if (element.length > 0) {
+                element.text('| ' + formattedPrice);
+                element.attr('data-custom-price', 'true');
+                element.attr('data-onetime-price', variant.price);
+              }
+            } catch (_) {}
+          });
+          
+          // Store for price protection
+          window.lastWidgetPrice = formattedPrice;
+        }
+      } catch (e) {null;
+      }
+    };
+    
+  } catch (e) {null;
+  }
+});
+
+// Function to get discount from selling plan
+function getSellingPlanDiscount(planId) {
+  try {
+    const sellingPlansData = document.getElementById('selling-plans-data');
+    if (!sellingPlansData) return 0.9; // fallback to 10% discount
+    
+    const planGroups = JSON.parse(sellingPlansData.textContent);
+    
+    for (let group of planGroups) {
+      for (let plan of group.selling_plans) {
+        if (plan.id == planId) {
+          // Check if plan has price adjustments
+          if (plan.price_adjustments && plan.price_adjustments.length > 0) {
+            const adjustment = plan.price_adjustments[0];
+            if (adjustment.value_type === 'percentage') {
+              // Return the multiplier (e.g., 10% off = 0.9)
+              return (100 - adjustment.value) / 100;
+            } else if (adjustment.value_type === 'fixed_amount') {
+              // For fixed amounts, we'll need the original price to calculate
+              // This is more complex, so we'll stick with percentage for now
+              console.warn('Fixed amount discounts not yet supported');
+            }
+          }
+          break;
+        }
+      }
+    }
+  } catch (e) {null;
+  }
+  
+  // Fallback to 10% discount if we can't determine from selling plan
+  return 0.9;
+}
+
+// Function to get current selling plan ID
+function getCurrentSellingPlanId() {
+  try {
+    const selectedOption = document.querySelector('.widget-selection-option.selected');
+    if (selectedOption) {
+      return selectedOption.dataset.sellingPlan;
+    }
+  } catch (e) {null;
+  }
+  return null;
+}
+
+
+// Reposition Sezzle by moving it into the placeholder
+function repositionSezzle() {
+  try {
+    const paymentTermsContent = document.querySelector('.payment-terms-content');
+    if (!paymentTermsContent) {
+      return false;
+    }
+    
+    // Check if we already have a repositioned Sezzle in placeholder
+    let placeholder = paymentTermsContent.querySelector('.sezzle-placeholder');
+    if (placeholder && placeholder.querySelector('.sezzle-repositioned')) {
+      return true;
+    }
+    
+    // Find any Sezzle widget to reposition
+    const allSezzleWidgets = document.querySelectorAll('.sezzle-shopify-info-button');
+    if (allSezzleWidgets.length === 0) {
+      return false;
+    }
+    
+    // Use the first available Sezzle
+    const sezzleWidget = allSezzleWidgets[0];
+    
+    // Create placeholder if it doesn't exist
+    if (!placeholder) {
+      placeholder = document.createElement('div');
+      placeholder.className = 'sezzle-placeholder';
+      paymentTermsContent.appendChild(placeholder);
+    }
+    
+    // Add repositioning class and move to placeholder
+    sezzleWidget.classList.add('sezzle-repositioned');
+    
+    // Clear any existing inline styles that might hide it
+    sezzleWidget.style.cssText = '';
+    
+    // Remove any inline font-size styles from Sezzle child elements
+    const sezzleElements = sezzleWidget.querySelectorAll('*');
+    sezzleElements.forEach(el => {
+      if (el.style.fontSize) {
+        el.style.fontSize = '';
+      }
+      if (el.style.lineHeight) {
+        el.style.lineHeight = '';
+      }
+    });
+    
+    // Move the Sezzle widget into the placeholder
+    placeholder.appendChild(sezzleWidget);
+    
+    // Remove any other Sezzle widgets
+    allSezzleWidgets.forEach((widget, index) => {
+      if (index > 0) {
+        widget.remove();
+      }
+    });
+    
+    return true;
+  } catch (e) {
+    return false;
+  }
+}
+
+// Fallback vanilla JS version
+function moveSezzleVanilla() {
+  try {
+    const paymentTermsContent = document.querySelector('.payment-terms-content');
+    if (!paymentTermsContent) return false;
+    
+    // Check if already moved
+    if (paymentTermsContent.querySelector('.sezzle-shopify-info-button')) {
+      return true;
+    }
+    
+    // Find all Sezzle elements
+    const allSezzleElements = document.querySelectorAll('.sezzle-shopify-info-button');
+    if (allSezzleElements.length === 0) {
+      return false;
+    }
+    
+    // Find visible one or first one
+    let sezzleElement = null;
+    for (let element of allSezzleElements) {
+      if (element.style.display !== 'none' && element.offsetParent !== null) {
+        sezzleElement = element;
+        break;
+      }
+    }
+    
+    if (!sezzleElement) {
+      sezzleElement = allSezzleElements[0];
+    }
+    
+    // Remove duplicates (keep only the one we're moving)
+    allSezzleElements.forEach(element => {
+      if (element !== sezzleElement) {
+        element.remove();
+      }
+    });
+    
+    
+    // Make sure the one we're keeping is visible
+    sezzleElement.style.display = '';
+    
+    // Create wrapper
+    const wrapper = document.createElement('div');
+    wrapper.className = 'sezzle-moved-wrapper';
+    wrapper.style.marginTop = '8px';
+    
+    // Move original element
+    wrapper.appendChild(sezzleElement);
+    paymentTermsContent.appendChild(wrapper);
+    
+    return true;
+  } catch (e) {
+    return false;
+  }
+}
+
+// Global flag to prevent multiple simultaneous attempts
+let sezzleMoveInProgress = false;
+
+// Try to move Sezzle multiple times as it loads asynchronously
+function attemptSezzleMove() {
+  if (sezzleMoveInProgress) {
+    return;
+  }
+  
+  sezzleMoveInProgress = true;
+  
+  if (moveSezzleToPaymentTerms()) {
+    sezzleMoveInProgress = false;
+    return; // Exit if successful
+  }
+  
+  // Keep trying for up to 10 seconds
+  let attempts = 0;
+  const maxAttempts = 20;
+  
+  const interval = setInterval(() => {
+    attempts++;
+    
+    if (moveSezzleToPaymentTerms() || attempts >= maxAttempts) {
+      clearInterval(interval);
+      sezzleMoveInProgress = false;
+    }
+  }, 500);
+}
+
+// Start attempting to reposition Sezzle when DOM is ready
+if (document.readyState === 'loading') {
+  document.addEventListener('DOMContentLoaded', throttledRepositionSezzle);
+} else {
+  throttledRepositionSezzle();
+}
+
+// Additional attempt after a delay to catch late-loading Sezzle widgets
+setTimeout(() => {
+  const sezzleWidgets = document.querySelectorAll('.sezzle-shopify-info-button');
+  if (sezzleWidgets.length > 0) {
+    throttledRepositionSezzle();
+  }
+}, 2000);
+
+// Function to ensure Sezzle is properly repositioned
+function ensureSezzleLocation() {
+  const paymentTermsContent = document.querySelector('.payment-terms-content');
+  if (!paymentTermsContent) return false;
+  
+  // Check if we already have a repositioned Sezzle in the placeholder
+  const placeholder = paymentTermsContent.querySelector('.sezzle-placeholder');
+  const repositionedSezzle = placeholder ? placeholder.querySelector('.sezzle-repositioned') : null;
+  
+  if (repositionedSezzle) {
+    
+    // Clean up inline styles from repositioned Sezzle
+    const sezzleElements = repositionedSezzle.querySelectorAll('*');
+    sezzleElements.forEach(el => {
+      if (el.style.fontSize) {
+        el.style.fontSize = '';
+      }
+      if (el.style.lineHeight) {
+        el.style.lineHeight = '';
+      }
+    });
+    
+    // Clean up any other Sezzle elements that aren't repositioned
+    const otherSezzleElements = document.querySelectorAll('.sezzle-shopify-info-button:not(.sezzle-repositioned)');
+    let removed = 0;
+    otherSezzleElements.forEach(element => {
+      element.remove();
+      removed++;
+    });
+    
+    if (removed > 0) {
+    }
+    
+    return true;
+  }
+  
+  // If no repositioned Sezzle, create one
+  return repositionSezzle();
+}
+
+// Throttle function to prevent excessive calls
+let lastRepositionTime = 0;
+function throttledRepositionSezzle() {
+  const now = Date.now();
+  if (now - lastRepositionTime < 200) {
+    return;
+  }
+  lastRepositionTime = now;
+  
+  // Execute immediately since we're not moving DOM elements
+  ensureSezzleLocation();
+}
+
+// Listen for variant changes to ensure Sezzle location
+document.addEventListener('variant:change', function() {
+  // Immediate execution - no DOM movement, just repositioning
+  throttledRepositionSezzle();
+});
+
+// Also listen for form changes (backup method)
+const productForm = document.querySelector('product-form form, form[action*="/cart/add"]');
+if (productForm) {
+  productForm.addEventListener('change', function() {
+    throttledRepositionSezzle();
+  });
+}
+
+// Listen for variant radios changes
+document.addEventListener('change', function(e) {
+  if (e.target.matches('input[name*="options"], input[name="id"], select[name*="options"], select[name="id"]')) {
+    throttledRepositionSezzle();
+  }
+});
+
+// Listen for widget variant changes specifically
+document.addEventListener('change', function(e) {
+  if (e.target.matches('.variant-option-input')) {
+    throttledRepositionSezzle();
+  }
+});
+
+// Optimized observer for Sezzle detection (CSS does the hiding)
+const sezzleObserver = new MutationObserver((mutations) => {
+  let foundNewSezzle = false;
+  
+  mutations.forEach((mutation) => {
+    if (mutation.type === 'childList') {
+      mutation.addedNodes.forEach((node) => {
+        if (node.nodeType === Node.ELEMENT_NODE) {
+          // Skip our own wrapper elements
+          if (node.classList && node.classList.contains('sezzle-moved-wrapper')) {
+            return;
+          }
+          
+          // Check if this node contains a Sezzle widget (CSS already hides it)
+          if ((node.classList && node.classList.contains('sezzle-shopify-info-button')) || 
+              (node.querySelector && node.querySelector('.sezzle-shopify-info-button'))) {
+            foundNewSezzle = true;
+          }
+        }
+      });
+    }
+  });
+  
+  if (foundNewSezzle) {
+    // Immediate execution since CSS already hides it
+    throttledRepositionSezzle();
+  }
+});
+
+// Função para aplicar o estilo
+function aplicarEstilo() {
+    return new Promise((resolve, reject) => {
+        try {
+            const seletores = [
+                '.sezzle-button-text.sezzle-left.szl-light',
+                '.sezzle-payment-amount.sezzle-button-text.sezzleindex-1'
+            ];
+            
+            let elementosEncontrados = 0;
+            
+            seletores.forEach(seletor => {
+                const elementos = document.querySelectorAll(seletor);
+                elementos.forEach(elemento => {
+                    // Remove inline font-size instead of setting it
+                    if (elemento.style.fontSize) {
+                        elemento.style.fontSize = '';
+                    }
+                    elementosEncontrados++;
+                });
+            });
+            
+            elementosEncontrados > 0 ? resolve() : reject();
+        } catch (e) {
+            null;
+        }
+    });
+}
+
+// Função para aguardar elementos
+function aguardarElemento(timeout = 10000) {
+    return new Promise((resolve, reject) => {
+        try {
+            const seletores = [
+                '.sezzle-button-text.sezzle-left.szl-light',
+                '.sezzle-payment-amount.sezzle-button-text.sezzleindex-1'
+            ];
+            
+            for (const seletor of seletores) {
+                if (document.querySelector(seletor)) {
+                    resolve();
+                    return;
+                }
+            }
+
+            const observer = new MutationObserver(() => {
+                try {
+                    for (const seletor of seletores) {
+                        if (document.querySelector(seletor)) {
+                            observer.disconnect();
+                            clearTimeout(timeoutId);
+                            resolve();
+                            return;
+                        }
+                    }
+                } catch (e) {
+                    null;
+                }
+            });
+
+            const timeoutId = setTimeout(() => {
+                observer.disconnect();
+                reject();
+            }, timeout);
+
+            observer.observe(document.body, {
+                childList: true,
+                subtree: true
+            });
+        } catch (e) {
+            null;
+        }
+    });
+}
+
+// Função principal
+async function inicializarSezzleStyle() {
+    try {
+        await aplicarEstilo();
+    } catch {
+        await aguardarElemento();
+        await aplicarEstilo();
+    }
+
+    // Monitor contínuo
+    const observer = new MutationObserver(async () => {
+        try {
+            await aplicarEstilo();
+        } catch {}
+    });
+
+    observer.observe(document.body, {
+        childList: true,
+        subtree: true,
+        attributes: true,
+        attributeFilter: ['class', 'style']
+    });
+
+    // Para após 30 segundos
+    setTimeout(() => observer.disconnect(), 30000);
+}
+
+// Execução
+(async () => {
+    if (document.readyState === 'loading') {
+        await new Promise(resolve => {
+            document.addEventListener('DOMContentLoaded', resolve);
+        });
+    }
+    await inicializarSezzleStyle();
+})();
+</script>
+
+<!-- Product Variants Data for Widget -->
+<script type="application/json">
+  {{ product.variants | json }}
+</script>
+
+<!-- Selling Plans Data for Widget -->
+<script type="application/json" id="selling-plans-data">
+  {{ product.selling_plan_groups | json }}
+</script>
+

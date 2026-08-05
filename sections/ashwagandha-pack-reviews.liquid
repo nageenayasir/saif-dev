@@ -1,0 +1,131 @@
+<style>
+  #id-{{ section.id }}{
+  	background-color:{{ section.settings.section_bg_color }};
+  }
+</style>
+{% comment %} RGD: 2026-01-04 {% endcomment %} 
+{% comment %} 
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.0.7/css/swiper.min.css" media="all" />
+{% endcomment %} 
+<link rel="stylesheet" href="{{ 'swiper.min.css' | asset_url }}" type="text/css" media="all"/> 
+<section id="id-{{ section.id }}" class="ashwagandha-pack-reviews-section">
+  <div class="ashwagandha-pack-reviews-wrapper">
+    <div class="container">
+      <div class="row">
+        <div class="col-sm-12 col-md-12 col-lg-12">
+          <div class="ashwagandha-pack-reviews-head common-custom-heading-wrapper">
+            <h2>{{ section.settings.title }}</h2>
+          </div>
+        </div>
+        <div class="ashwagandha-pack-reviews-slider-wrapper">
+          <div class="swiper ashwagandha-pack-reviews-slider">
+            <div class="swiper-wrapper">
+              {% for block in section.blocks %}
+                <div class="swiper-slide">
+                  <div class="ashwagandha-pack-review-blocks">
+                    <div class="review-rating-html">
+                      <span>
+                        <svg width="130" height="25" viewBox="0 0 130 25" fill="none" xmlns="http://www.w3.org/2000/svg">
+                          <path d="M11.9392 17.9896L18.0877 21.875L16.456 14.5521L21.8882 9.62504L14.7349 8.98962L11.9392 2.08337L9.14355 8.98962L1.99023 9.62504L7.42238 14.5521L5.79074 21.875L11.9392 17.9896Z" fill="#AC853B"/>
+                          <path d="M65.0007 17.9896L71.1492 21.875L69.5176 14.5521L74.9497 9.62504L67.7964 8.98962L65.0007 2.08337L62.2051 8.98962L55.0518 9.62504L60.4839 14.5521L58.8523 21.875L65.0007 17.9896Z" fill="#AC853B"/>
+                          <path d="M38.4695 17.9896L44.618 21.875L42.9863 14.5521L48.4185 9.62504L41.2651 8.98962L38.4695 2.08337L35.6738 8.98962L28.5205 9.62504L33.9527 14.5521L32.321 21.875L38.4695 17.9896Z" fill="#AC853B"/>
+                          <path d="M91.531 17.9896L97.6795 21.875L96.0478 14.5521L101.48 9.62504L94.3267 8.98962L91.531 2.08337L88.7353 8.98962L81.582 9.62504L87.0142 14.5521L85.3825 21.875L91.531 17.9896Z" fill="#AC853B"/>
+                          <path d="M118.061 17.9896L124.21 21.875L122.578 14.5521L128.01 9.62504L120.857 8.98962L118.061 2.08337L115.266 8.98962L108.112 9.62504L113.544 14.5521L111.913 21.875L118.061 17.9896Z" fill="#AC853B"/>
+                          <path d="M115.266 8.98962L118.061 2.08337V17.9896L111.913 21.875L113.544 14.5521L108.112 9.62504L115.266 8.98962Z" fill="#AC853B"/>
+                        </svg>
+                      </span>
+                    </div>
+                    <div class="review-text">
+                      {{ block.settings.the_text }}
+                    </div>
+                  </div>
+                </div>
+              {% endfor %}
+            </div>
+            <!-- If we need navigation buttons -->
+            <div class="swiper-button-prev first-swiper-button-prev"></div>
+            <div class="swiper-button-next first-swiper-button-next"></div>                   
+          </div>
+        </div>
+      </div>
+      <div class="ashwagandha-pack-swiper-wrapper-pagination position-relative">
+       <div class="ashwagandha-pack-swiper-scrollbar"></div>
+      </div>                      
+    </div>
+  </div>
+</section>
+{% comment %} RGD: 2026-01-04 {% endcomment %} 
+{% comment %} 
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script> 
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.5.1/js/swiper.min.js"></script> 
+{% endcomment %}
+{% # theme-check-disable ParserBlockingScript %}
+<script type="text/javascript" src="{{ 'jquery-3.5.1.min.js' | asset_url }}"></script>
+<script type="text/javascript" src="{{ 'swiper.min.js' | asset_url }}"></script>
+{% # theme-check-enable ParserBlockingScript %}
+<script>
+  new Swiper('.ashwagandha-pack-reviews-slider', {
+        loop: false,
+        slidesPerView: 3,
+         navigation: {
+          nextEl: '.first-swiper-button-next',
+          prevEl: '.first-swiper-button-prev',
+        },
+        spaceBetween: 20,
+        breakpoints: {
+            1920: {
+                slidesPerView: 3,
+                spaceBetween: 30
+            },
+            1028: {
+                slidesPerView: 2,
+                spaceBetween: 30
+            },
+            576: {
+                slidesPerView: 1,
+                spaceBetween: 10
+            }
+        },
+        scrollbar: {
+        el: '.ashwagandha-pack-swiper-scrollbar',
+        draggable: true
+      }
+    });
+</script>                            
+{% schema %}
+  {
+    "name": "Ashwagandha Pack Reviews",
+    "settings": [
+      {
+            "type": "header",
+            "content": "Content Style"
+      },
+  	  {
+           "type": "color",
+           "id": "section_bg_color",
+           "label": "Section background color"
+      },
+      {
+        "type": "textarea",
+        "id": "title",
+        "label": "Title"
+      }
+    ],
+	"blocks": [
+     {
+      "type": "content",
+      "name": "Content",
+      "settings": [
+        {
+          "type": "richtext",
+          "id": "the_text",
+          "label": "Text" 
+        }
+      ]
+     }
+	],
+	"presets": [{
+      "name": "Ashwagandha Pack Reviews"
+    }]
+  }
+{% endschema %}

@@ -1,0 +1,95 @@
+<style>
+  #id-{{ section.id }}{
+  	background-color:{{ section.settings.section_bg_color }};
+  }
+</style>
+<section id="id-{{ section.id }}" class="affiliates-works-section">
+  <div class="container">
+    <div class="row">
+      <div class="col-sm-12 col-md-12 col-lg-12 affiliates-work-column">
+        <div class="affiliates-work-head common-heading-wrapper">
+          <h2>{{ section.settings.the_title }}</h2>
+          <h3>{{ section.settings.sub_title }}</h3>
+        </div>
+      </div>
+      <div class="affiliates-work-blocks">
+        {% for block in section.blocks %}
+          <div class="affiliates-work-lists">
+            <div class="affiliates-work-content">
+              <div class="affiliates-number">
+                <span>
+                  {% if block.settings.the_icon != blank %}<img loading="lazy"  src="{{ block.settings.the_icon | image_url: width: 2000 }}">{% endif %}
+                </span>
+              </div>
+              <div class="affiliates-work-text">
+                {{ block.settings.the_text }}
+              </div>
+            </div>
+          </div>  
+        {% endfor %}
+      </div>
+      <div class="col-sm-12 col-md-12 col-lg-12 affiliates-button-column">
+        <div class="affiliates-btn-wrapper">
+          <a href="{{ section.settings.btn_url }}">{{ section.settings.btn_text }}</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+{% schema %}
+  {
+    "name": "Affiliates Work",
+    "settings": [
+       {
+          "type": "header",
+          "content": "Content Style"
+      },
+      {
+          "type": "color",
+          "id": "section_bg_color",
+          "label": "Section background color"
+       },
+       {
+            "type": "textarea",
+            "id": "the_title",
+            "label": "Title"
+      },
+      {
+            "type": "textarea",
+            "id": "sub_title",
+            "label": "Sub Title"
+      },
+      {
+            "type": "text",
+            "id": "btn_text",
+            "label": "Button Text"
+      },
+      {
+            "type": "url",
+            "id": "btn_url",
+            "label": "Button Url"
+      }
+    ],
+    "blocks": [
+       {
+        "type": "tex_blocks",
+        "name": "Text Blocks",
+        "settings": [
+          {
+              "type": "image_picker",
+              "id": "the_icon",
+              "label": "Icon"
+           },
+          {
+            "type": "richtext",
+            "id": "the_text",
+            "label": "Text"
+          }
+        ]
+       }
+	],
+	"presets": [{
+      "name": "Affiliates Work"
+    }]
+  }
+{% endschema %}

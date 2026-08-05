@@ -1,0 +1,187 @@
+{% comment %}
+  [DGF] Blog Posts
+  Author: Rodrigo Gesser
+  Date: 2025-10-07
+  Description: Custom section to filter and display blog posts by tag
+{% endcomment %}
+
+<style>
+</style>
+
+<section id="dgf-blog-posts-{{ section.id }}" class="section section-guides blog-posts-grid section">
+  <div class="container">
+    <div class="row">
+      <div class="col-sm-12 col-md-12 col-lg-12">
+        {% if section.settings.show_title %}
+          <div class="text-center blog-title-wrapper">
+            <h2>{{ section.settings.section_title }}</h2>
+          </div>
+        {% endif %}
+      </div>
+    </div>
+  </div>
+
+  <div class="container">
+
+    <div class="row mt-5">
+      {% assign filter_tag = section.settings.filter_tag %}
+      {% assign filtered_articles = false %}
+
+      {% comment %} Loop through each blog and collect matching articles {% endcomment %}
+      {% assign all_blog_handles = "recipes,lifestyle,wellness,pet-health,news,all,warriors,ashwagandha,moringa,health-lifestyle,turmeric,amla,shatavari,boswellia,functional-mushrooms" | split: "," %}
+
+      {% for blog_handle in all_blog_handles %}
+        {% if blogs[blog_handle] %}
+          {% paginate blogs[blog_handle].articles by 250 %}
+            {% comment %} Filter this blog's articles by tag {% endcomment %}
+            {% for article in blogs[blog_handle].articles %}
+              {% assign should_include = false %}
+
+              {% if filter_tag == blank %}
+                {% assign should_include = true %}
+              {% else %}
+                {% comment %} Check if article has the filter tag {% endcomment %}
+                {% for tag in article.tags %}
+                  {% if tag == filter_tag %}
+                    {% assign should_include = true %}
+                    {% break %}
+                  {% endif %}
+                {% endfor %}
+              {% endif %}
+
+              {% if should_include %}
+                {% comment %} Add this single article to results {% endcomment %}
+                {% assign single_article_array = blogs[blog_handle].articles | where: "id", article.id %}
+                {% if filtered_articles %}
+                  {% assign filtered_articles = filtered_articles | concat: single_article_array %}
+                {% else %}
+                  {% assign filtered_articles = single_article_array %}
+                {% endif %}
+              {% endif %}
+            {% endfor %}
+          {% endpaginate %}
+        {% endif %}
+      {% endfor %}
+
+      {% if filtered_articles and filtered_articles.size > 0 %}
+        {% comment %} Sort by published date (newest first) {% endcomment %}
+        {% assign sorted_articles = filtered_articles | sort: 'published_at' | reverse %}
+
+        {% comment %} Limit articles if specified {% endcomment %}
+        {% if section.settings.max_articles > 0 %}
+          {% assign display_articles = sorted_articles | slice: 0, section.settings.max_articles %}
+        {% else %}
+          {% assign display_articles = sorted_articles %}
+        {% endif %}
+
+        {% comment %} Display articles {% endcomment %}
+        {% for article in display_articles %}
+          {% assign key = forloop.index | modulo: 2 %}
+          <div class="load-more-wrapper {% if key == 0 %}col-6 col-md-3{% else %}col-6 col-md-3 mt-5{% endif %}">
+            <a href="{{ article.url }}" class="cats-item" data-aos="fade-up" data-aos-delay="{% if key == 0 %}300{% else %}100{% endif %}">
+              <div class="img-wrapper">
+                {% if article.image %}
+                  <img loading="lazy" src="{{ article.image | image_url: width: 500 }}" alt="{{ article.title }}">
+                {% else %}
+                  <img loading="lazy" src="{{ 'placeholder.svg' | asset_url }}" alt="{{ article.title }}">
+                {% endif %}
+              </div>
+              <h3 class="text-center my-0">{{ article.title }}</h3>
+            </a>
+          </div>
+        {% endfor %}
+
+        {% comment %} Show load more button if there are more than 12 articles {% endcomment %}
+        {% if display_articles.size > 12 %}
+          <button class="custom-load-more custom-load-more-{{ section.id }}">Load More</button>
+        {% endif %}
+      {% else %}
+        <div class="col-12">
+          <p class="text-center" style="color: #111111">{% if filter_tag != blank %}No articles found with the tag "{{ filter_tag }}".{% else %}No articles found.{% endif %}</p>
+        </div>
+      {% endif %}
+    </div>
+  </div>
+</section>
+{% comment %} RGD: 2026-01-07 {% endcomment %} 
+{% comment %} 
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script> 
+{% endcomment %}
+{% # theme-check-disable ParserBlockingScript %}
+<script type="text/javascript" src="{{ 'jquery-3.5.1.min.js' | asset_url }}"></script>
+{% # theme-check-enable ParserBlockingScript %}
+<script>
+$(function () {
+  try {
+    var sectionId = '{{ section.id }}';
+    var sectionSelector = '#dgf-blog-posts-' + sectionId;
+
+    $(sectionSelector + ' .load-more-wrapper').slice(0, 12).show();
+
+    $("body").on('click touchstart', '.custom-load-more-' + sectionId, function (e) {
+      try {
+        e.preventDefault();
+        $(sectionSelector + ' .load-more-wrapper:hidden').slice(0, 12).slideDown();
+        if ($(sectionSelector + ' .load-more-wrapper:hidden').length == 0) {
+          $('.custom-load-more-' + sectionId).css('visibility', 'hidden');
+        }
+      } catch (error) {
+        null;
+      }
+    });
+  } catch (error) {
+    null;
+  }
+});
+</script>
+
+{% schema %}
+{
+  "name": "[DGF] Blog Posts",
+  "tag": "section",
+  "class": "section",
+  "settings": [
+    {
+      "type": "header",
+      "content": "Filter Settings"
+    },
+    {
+      "type": "text",
+      "id": "filter_tag",
+      "label": "Filter by Tag",
+      "info": "Enter a tag to filter articles from ALL blogs (e.g., lions-mane-learn). Leave blank to show all articles."
+    },
+    {
+      "type": "range",
+      "id": "max_articles",
+      "min": 0,
+      "max": 50,
+      "step": 1,
+      "default": 0,
+      "label": "Maximum Articles to Display",
+      "info": "Set to 0 to show all articles with the specified tag"
+    },
+    {
+      "type": "header",
+      "content": "Section Title"
+    },
+    {
+      "type": "checkbox",
+      "id": "show_title",
+      "label": "Show Section Title",
+      "default": true
+    },
+    {
+      "type": "text",
+      "id": "section_title",
+      "label": "Section Title",
+      "default": "Blog Posts"
+    }
+  ],
+  "presets": [
+    {
+      "name": "[DGF] Blog Posts"
+    }
+  ]
+}
+{% endschema %}

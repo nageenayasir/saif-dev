@@ -1,0 +1,184 @@
+<style>
+  #id-{{ section.id }}{
+  	background-color:{{ section.settings.section_bg_color }};
+  }
+
+  @media (min-width: 1024px) {
+    .homepage-custom-testimonial-button-prev{
+      left: -17px!important;
+    }
+    .homepage-custom-testimonial-button-next{
+      right: -15px!important;
+    }
+  
+
+  }
+</style>
+{% comment %} RGD: 2026-01-04 {% endcomment %} 
+{% comment %} 
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.0.7/css/swiper.min.css" media="all" />
+{% endcomment %} 
+<link rel="stylesheet" href="{{ 'swiper.min.css' | asset_url }}" type="text/css" media="all"/> 
+
+<section id="id-{{section.id}}" class="section section-testi homepage-custom-testimonial-wrapper {{ section.settings.custom_class }}">
+  <div class="container">
+    <h2 class="text-center text-uppercase" data-aos="fade-up" data-aos-delay="000">{{ section.settings.title }}</h2>
+    <div class="row justify-content-center">
+      <div class="col-lg-12">
+        <div class="testimonial-box mt-3" data-aos="fade-in" data-aos-delay="400" data-aos-duration="800">
+          <div class="swiper home-testimonial-slider">
+            <div class="swiper-wrapper">
+              {% for block in section.blocks %}
+                <div class="swiper-slide">
+                  <div class="testi-item testimonial-item-content">
+                    <div class="img-wrapper">
+                        <a href="{{ block.settings.button_link }}">{% if block.settings.image != blank %}<img class="lazyload" data-src="{{ block.settings.image | image_url: width: 2000 }}" alt="{{ block.settings.title }}">{% endif %}</a>
+                    </div>
+                    <div class="stars">
+                        {{ block.settings.stars }}
+                    </div>
+                    <div class="testimonial-review-date">
+                      <p>{{ block.settings.date_text }}</p>
+                    </div>
+                    <h3 class="testimonial-author">{{ block.settings.title }}</h3>
+                    <div class="content">
+                       {{ block.settings.sub_title }}
+                     </div>
+                    <div class="testimonial-bottom-text">
+                      <p>{{ block.settings.bottom_text }}</p>
+                    </div>
+                  </div>
+                </div>
+              {% endfor %}
+            </div>
+            <!-- If we need navigation buttons -->  
+          </div>
+          <div class="swiper-button-prev homepage-custom-testimonial-button-prev"></div>
+          <div class="swiper-button-next homepage-custom-testimonial-button-next"></div>  
+        </div>
+      </div>
+    </div>
+    {% comment %}
+    <div class="testimonial-swiper-wrapper-pagination position-relative">
+     <div class="testimonial-swiper-scrollbar"></div>
+    </div>
+    {% endcomment %}
+  </div>
+</section>
+{% comment %} RGD: 2026-01-04 {% endcomment %} 
+{% comment %} 
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script> 
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.5.1/js/swiper.min.js"></script> 
+{% endcomment %}
+{% # theme-check-disable ParserBlockingScript %}
+<script type="text/javascript" src="{{ 'jquery-3.5.1.min.js' | asset_url }}"></script>
+<script type="text/javascript" src="{{ 'swiper.min.js' | asset_url }}"></script>
+{% # theme-check-enable ParserBlockingScript %}
+<script>
+  new Swiper('.home-testimonial-slider', {
+        loop: false,
+        slidesPerView: 3,
+       navigation: {
+          nextEl: '.homepage-custom-testimonial-button-next',
+          prevEl: '.homepage-custom-testimonial-button-prev',
+        },
+        spaceBetween: 20,
+        breakpoints: {
+            1920: {
+                slidesPerView: 3,
+                spaceBetween: 30
+            },
+            1028: {
+                slidesPerView: 2,
+                spaceBetween: 30
+            },
+            576: {
+                slidesPerView: 1,
+                spaceBetween: 10
+            }
+        }
+    });
+</script>
+{% schema %}
+  {
+    "name": "Custom Testimonial",
+    "tag": "section",
+    "class": "section",
+    "settings": [
+      {
+            "type": "header",
+            "content": "Content Style"
+      },
+  	  {
+           "type": "color",
+           "id": "section_bg_color",
+           "label": "Section background color"
+      },
+      {
+            "type": "textarea",
+            "id": "custom_class",
+            "label": "Add Class to the main section"
+      },
+      {
+        "type": "text",
+        "id": "title",
+        "label": "Title",
+        "default" : "What People Say"
+      }
+    ],
+	"blocks": [
+     {
+      "type": "content",
+      "name": "Content",
+      "settings": [
+        {
+          "type": "image_picker",
+          "id": "image",
+          "label": "Image"
+        },
+        {
+           "type": "url",
+           "id": "button_link",
+           "label": "Link",
+           "info": "Specify the URL address if you want to make the Image clickable."
+         },
+        {
+          "type": "html",
+          "id": "stars",
+          "label": "Stars"
+        },
+        {
+          "type": "text",
+          "id": "date_text",
+          "label": "date_text"
+        },
+        {
+          "type": "text",
+          "id": "title",
+          "label": "Title",
+          "default" : "Title"
+        },
+        {
+          "type": "richtext",
+          "id": "sub_title",
+          "label": "Subtitle" 
+        },
+        {
+          "type": "text",
+          "id": "bottom_text",
+          "label": "Bottom Text" 
+        }
+      ]
+     }
+	],
+    "presets": [{
+      "name": "Custom Testimonial Slider"
+    }]
+  }
+{% endschema %}
+
+{% stylesheet %}
+{% endstylesheet %}
+
+{% javascript %}
+{% endjavascript %}

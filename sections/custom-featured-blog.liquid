@@ -1,0 +1,192 @@
+{% unless product.handle == 'triibe-organics-gift-card-25' %}
+  <section class="section section-guides bg-cream color-dark custom-featured-blog">
+    {% comment %}
+  {% if section.settings.show_kids != true  %}
+        <div class="leaf-box left-top" style="top: -50px;">
+            <img loading="lazy"  class="leaf" src="{{ 'leaf-n05.svg' | asset_url }}">
+        </div>
+    {% else %}
+      <div class="leaf-box {{ section.settings.class_1 }}" style="{{ section.settings.top }};">
+        {% assign image_1 = section.settings.image_1 %}
+          <img loading="lazy"  class="leaf" src="{{ image_1 | asset_url }}">
+      </div>
+      <div class="leaf-box {{ section.settings.class_2 }}" style="{{ section.settings.bottom }};">
+        {% assign image_2 = section.settings.image_2 %}
+          <img loading="lazy"  class="leaf" src="{{ image_2 | asset_url }}">
+      </div>
+    {% endif %}
+    {% endcomment %}
+      <div class="container">
+          <h2 class="text-center text-uppercase" data-aos="fade-up" data-aos-delay="000">{{ section.settings.heading }}</h2>
+          <div class="row mt-5">
+            {% assign renderedCount = 0 %}
+            {% for link in linklists.blogs.links %}
+              {% if renderedCount >= 4 %}{% break %}{% endif %}
+              {% assign blog = link.object %}
+              {% paginate blog.articles by 250 %}
+                {% for article in blog.articles %}
+                  {% if renderedCount >= 4 %}{% break %}{% endif %}
+                  {% if article.tags contains product.handle %}
+                    <div class="col-6 col-md-3">
+                      <a href="{{ article.url }}" class="cats-item" data-aos="fade-up" data-aos-delay="100">
+                        <div class="img-wrapper">
+                          <img loading="lazy" src="{{ article.image | image_url: width: 800 }}" alt="{{ article.title }}">
+                        </div>
+                        <h3 class="text-center color-dark my-0">{{ article.title }}</h3>
+                      </a>
+                    </div>
+                    {% assign renderedCount = renderedCount | plus: 1 %}
+                  {% endif %}
+                {% endfor %}
+              {% endpaginate %}
+            {% endfor %}
+   
+          
+      </div>
+        <div class="mt-5" data-aos="fade-up" data-aos-delay="200">
+              <a class="btn btn-trans m-auto color-dark" href="{{ section.settings.url }}" target="_self">
+                  {{ section.settings.button }}
+              </a>
+          </div>
+      </div>
+  </section>
+  {% endunless %}
+  {% schema %}
+  {
+    "name": "Custom-featured-blog",
+    "tag": "section",
+    "class": "section",
+    "settings": [
+      {
+            "type": "checkbox",
+            "id": "show_kids",
+            "label": "Layout Kids",
+            "default": false
+      },
+      {
+        "type": "textarea",
+        "id": "text_area",
+        "label":"text"
+      },
+      {
+        "type": "text",
+        "id": "heading",
+        "default": "Guides and Articles",
+        "label": "t:sections.featured-blog.settings.heading.label"
+      },
+      {
+        "type": "text",
+        "id": "button",
+        "label": "Button",
+        "default" : "View All"
+      },
+      {
+        "type": "url",
+        "id": "url",
+        "label": "Url"
+      },
+      {
+          "type": "select",
+          "id": "image_1",
+          "options": [
+            {
+              "value": "leaf-n06.svg",
+              "label": "SVG 1"
+            },
+            {
+              "value": "leaf-n19.svg",
+              "label": "SVG 2"
+            }
+          ],
+          "default": "leaf-n06.svg",
+          "label": "Choose Image Svg 1"
+        },
+        {
+          "type": "select",
+          "id": "image_2",
+          "options": [
+            {
+              "value": "leaf-n07.svg",
+              "label": "SVG 1"
+            },
+            {
+              "value": "leaf-n20.svg",
+              "label": "SVG 2"
+            }
+          ],
+          "default": "leaf-n07.svg",
+          "label": "Choose Image Svg 2"
+        },
+        {
+              "type": "select",
+              "id": "class_1",
+              "options": [
+                {
+                  "value": "right-top",
+                  "label": "Class Right"
+                },
+                {
+                  "value": "left-top d-none d-md-block",
+                  "label": "Class Left"
+                }
+              ],
+              "default": "right-top",
+              "label": "Choose Class 1"
+        },
+        {
+              "type": "select",
+              "id": "class_2",
+              "options": [
+                {
+                  "value": "right-top",
+                  "label": "Class Right 1"
+                },
+                {
+                  "value": "right-bot d-none d-md-block",
+                  "label": "Class Right 2"
+                }
+              ],
+              "default": "right-top",
+              "label": "Choose Class 2"
+        },
+        {
+          "type": "select",
+          "id": "top",
+          "options": [
+            {
+              "value": "top: -30px",
+              "label": "Top 1"
+            },
+            {
+              "value": "top: -80px",
+              "label": "Top 2"
+            }
+          ],
+          "default": "top: -30px",
+          "label": "Choose Top"
+        },
+        {
+          "type": "select",
+          "id": "bottom",
+          "options": [
+            {
+              "value": "bottom: -120px",
+              "label": "Bottom 1"
+            },
+            {
+              "value": "bottom: -80px",
+              "label": "Bottom 2"
+            }
+          ],
+          "default": "bottom: -120px",
+          "label": "Choose Bottom"
+        }    
+    ],
+    "presets": [
+      {
+        "name": "Custom-featured-blog"
+      }
+    ]
+  }
+  {% endschema %}
+  

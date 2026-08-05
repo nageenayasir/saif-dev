@@ -1,0 +1,217 @@
+<section class="section-banner cstm-banner-page-wrapper" style="background-image: url('{{ section.settings.image | image_url : width: 1920 }}')">
+    {% if section.settings.enable_breadcrumb == true %}
+    <div class="common-page-breadcrumb">
+      {%- unless template == 'index' or template == 'cart' or template == 'list-collections' or template == '404' -%}
+      {%- assign t = template | split: '.' | first -%}
+      <div class="container">
+      <nav class="breadcrumbs" role="navigation" aria-label="breadcrumbs">
+        <ol class="breadcrumbs__list">
+          <li class="breadcrumbs__item">
+            <a class="breadcrumbs__link" href="/">Home</a>
+          </li>
+          {%- case t -%}
+            {%- when 'page' -%}
+              <li class="breadcrumbs__item">
+                <a class="breadcrumbs__link" href="{{ page.url }}" aria-current="page">{{ page.title }}</a>
+              </li>
+            {%- when 'product' -%}
+              {%- if collection.url -%}
+                <li class="breadcrumbs__item">
+                  {{ collection.title | link_to: collection.url }}
+                </li>
+              {%- endif -%}
+              <li class="breadcrumbs__item">
+                <a class="breadcrumbs__link" href="{{ product.url }}" aria-current="page">{{ product.title }}</a>
+              </li>
+            {%- when 'collection' and collection.handle -%}
+              {%- if current_tags -%}
+                <li class="breadcrumbs__item">
+                  {{ collection.title | link_to: collection.url }}
+                </li>
+                <li class="breadcrumbs__item">
+                  {%- capture tag_url -%}{{ collection.url }}/{{ current_tags | join: "+"}}{%- endcapture -%}
+                  <a class="breadcrumbs__link" href="{{ tag_url }}" aria-current="page">{{ current_tags | join: " + "}}</a>
+                </li>
+              {%- else -%}
+                <li class="breadcrumbs__item">
+                  <a class="breadcrumbs__link" href="{{ collection.url }}" aria-current="page">{{ collection.title }}</a>
+                </li>
+              {%- endif -%}
+            {%- when 'blog' -%}
+              {%- if current_tags -%}
+                <li class="breadcrumbs__item">
+                  {{ blog.title | link_to: blog.url }}
+                </li>
+                <li class="breadcrumbs__item">
+                  {%- capture tag_url -%}{{blog.url}}/tagged/{{ current_tags | join: "+" }}{%- endcapture -%}
+                  <a class="breadcrumbs__link" href="{{ tag_url }}" aria-current="page">{{ current_tags | join: " + " }}</a>
+                </li>
+              {%- else -%}
+                <li class="breadcrumbs__item">
+                  <a class="breadcrumbs__link" href="{{ blog.url }}" aria-current="page">{{ blog.title }}</a>
+                </li>
+              {%- endif -%}
+            {%- when 'article' -%}
+              <li class="breadcrumbs__item">
+                {{ blog.title | link_to: blog.url }}
+              </li>
+              <li class="breadcrumbs__item">
+                <a class="breadcrumbs__link" href="{{ article.url }}" aria-current="page">{{ article.title }}</a>
+              </li>
+            {%- else -%}
+              <li class="breadcrumbs__item">
+                <a class="breadcrumbs__link" href="{{ request.path }}" aria-current="page">{{ page_title }}</a>
+              </li>
+          {%- endcase -%}
+        </ol>
+      </nav>
+      </div>
+      {%- endunless -%}
+    </div>
+  {% endif %}
+    <div class="content">
+        <div class="container">
+            <h2 class="toptitle text-uppercase" data-aos="fade-up">{{ section.settings.title }}</h2>
+            <h1 class="subtitle" data-aos="fade-up" data-aos-delay="200">
+                {{ section.settings.sub_title }}
+            </h1>
+          {% if section.settings.button_1 != empty %}
+            <div class="btn-group">
+                <div data-aos="fade-up" data-aos-delay="400">
+                    <a class="btn btn-bg" href="{{ section.settings.url_1 }}" target="_self">
+                        {{ section.settings.button_1 }}
+                    </a>
+                </div>
+                <div data-aos="fade-up" data-aos-delay="500">
+                    <a class="btn btn-trans" href="{{ section.settings.url_2 }}" target="_self">
+                        {{ section.settings.button_2 }}
+                    </a>
+                </div>
+            </div>
+          {% endif %}
+        </div>
+    </div>
+  {%- if section.settings.show_social -%}
+    <div class="social-banner">
+        <span>{{ section.settings.text }}</span>
+        {%- if settings.social_instagram_link != blank -%}
+            <a href="{{ settings.social_instagram_link }}" aria-label="Follow us on Instagram" target="_blank" rel="noopener">{%- render 'icon-instagram' -%}</a>
+        {%- endif -%}
+         {%- if settings.social_facebook_link != blank -%}
+            <a href="{{ settings.social_facebook_link }}" aria-label="Follow us on Facebook" target="_blank" rel="noopener">{%- render 'icon-facebook' -%}</a>
+        {%- endif -%}
+        <a href="{{ section.settings.social_spotify_link }}" aria-label="Listen on Spotify" target="_blank" rel="noopener"><i class="fab fa-spotify"></i> </a>
+        {%- if settings.social_youtube_link != blank -%}
+            <a href="{{ settings.social_youtube_link }}" aria-label="Subscribe on YouTube" target="_blank" rel="noopener">{%- render 'icon-youtube' -%}</a>
+        {%- endif -%}
+        {%- if settings.social_twitter_link != blank -%}
+          <a href="{{ settings.social_twitter_link }}" aria-label="Follow us on Twitter" target="_blank" rel="noopener">{%- render 'icon-twitter' -%}</a>
+        {%- endif -%}
+
+        {%- if settings.social_pinterest_link != blank -%}
+            <a href="{{ settings.social_pinterest_link }}" aria-label="Follow us on Pinterest" target="_blank" rel="noopener">{%- render 'icon-pinterest' -%}</a>
+        {%- endif -%}
+
+        {%- if settings.social_tiktok_link != blank -%}
+            <a href="{{ settings.social_tiktok_link }}" aria-label="Follow us on TikTok" target="_blank" rel="noopener">{%- render 'icon-tiktok' -%}</a>
+        {%- endif -%}
+        {%- if settings.social_tumblr_link != blank -%}
+            <a href="{{ settings.social_tumblr_link }}" aria-label="Follow us on Tumblr" target="_blank" rel="noopener">{%- render 'icon-tumblr' -%}</a>
+        {%- endif -%}
+        {%- if settings.social_snapchat_link != blank -%}
+            <a href="{{ settings.social_snapchat_link }}" aria-label="Follow us on Snapchat" target="_blank" rel="noopener">{%- render 'icon-snapchat' -%}</a>
+        {%- endif -%}
+
+        {%- if settings.social_vimeo_link != blank -%}
+            <a href="{{ settings.social_vimeo_link }}" aria-label="Watch us on Vimeo" target="_blank" rel="noopener">{%- render 'icon-vimeo' -%} </a>
+        {%- endif -%}
+    </div>
+  {% endif %}
+</section>
+
+
+{% schema %}
+{
+  "name": "t:sections.image-banner.name",
+  "tag": "section",
+  "class": "section",
+  "settings": [
+    {
+        "type": "checkbox",
+        "id": "enable_breadcrumb",
+        "label": "Enable Breadcrumb",
+        "default": true
+      },
+     {
+      "type": "header",
+      "content": "Banner"
+    },
+    {
+      "type": "image_picker",
+      "id": "image",
+      "label": "t:sections.image-banner.settings.image.label"
+    },
+    {
+      "type": "text",
+      "id": "title",
+      "label": "Title",
+      "default" : "live longer, stronger, wiser"
+    },
+    {
+      "type": "textarea",
+      "id": "sub_title",
+      "label": "Subtitle",
+      "default" : "Mushrooms, roots, herbs. Ancient remedies, the healing powers of nature revived for a modern world."
+    },
+    {
+      "type": "text",
+      "id": "button_1",
+      "label": "Button 1",
+      "default" : "Take The Quiz"
+    },
+    {
+      "type": "url",
+      "id": "url_1",
+      "label": "Url 1"
+    },
+    {
+      "type": "text",
+      "id": "button_2",
+      "label": "Button 2",
+      "default" : "Shop New Arrivals"
+    },
+    {
+      "type": "url",
+      "id": "url_2",
+      "label": "Url 2"
+    },
+    {
+      "type": "header",
+      "content": "Social"
+    },
+     {
+      "type": "checkbox",
+      "id": "show_social",
+      "default": true,
+      "label": "Show social"
+    },
+    {
+      "type": "text",
+      "id": "text",
+      "label": "Text",
+      "default" : "Visit"
+    },
+    {
+      "type": "text",
+      "id": "social_spotify_link",
+      "label": "Link Social spotify",
+      "default": "https://open.spotify.com/user/8yaaywq2a4gtbxl0w7csryv2o?si=28d61f70a2cc496c"
+    }
+  ],
+  "presets": [
+    {
+      "name": "t:sections.image-banner.presets.name" 
+    }
+  ]
+}
+{% endschema %}

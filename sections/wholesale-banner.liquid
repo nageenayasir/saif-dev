@@ -1,0 +1,97 @@
+<style>
+      {% if section.settings.background_the_image != blank %}
+            #id-{{section.id}}{
+                background-image:url("{{section.settings.background_the_image | image_url: width: 2000}}");
+                background-size: cover;
+            }
+      {% endif %}
+      {% if section.settings.bg_mob_image !=blank %}
+        @media only screen and (max-width: 767px){
+          #id-{{section.id}} {
+             background-image: url({{ section.settings.bg_mob_image | image_url: width: 2000}}) !important;
+          }
+        }
+      {% endif %}
+</style>
+<section id="id-{{section.id}}" class="wholesale-banner-section common-kids-teenager-section">
+  <div class="wholesale-banner-wrapper">
+    <div class="leaf-box wholesale-banner--box-right-bot right-bot">
+        <img loading="lazy"  class="leaf wholesale-banner-right-bot" src="{{ 'wholesale-banner-leaf.svg' | asset_url }}">
+    </div>
+    <div class="container">
+      <div class="row">
+        <div class="col-sm-12 col-md-12 col-lg-12">
+          <div class="wholesale-head-wrap" data-aos="fade-up">
+            <div class="wholesale-title">
+              <h1>{{ section.settings.the_title }}</h1>
+            </div>
+            <div class="subscribe-save-text">
+              <p>{{ section.settings.the_text }}</p>
+            </div>
+            <div class="wholesale-site-banner-btns">
+               <div class="btn-group">
+                    {% if section.settings.button_1 != blank %}
+                      <div data-aos="fade-up" data-aos-delay="400">
+                         <a class="btn btn-bg" href="{{ section.settings.url_1 }}" target="_self">
+                            {{ section.settings.button_1 }}
+                        </a>
+                      </div>
+                    {% endif %}
+                </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+{% schema %}
+  {
+    "name": "Wholesale Banner",
+    "settings": [
+       {
+            "type": "header",
+            "content": "Content Settings"
+        },
+		 {
+          "type": "image_picker",
+          "id": "background_the_image",
+          "label": "Background-Image"
+      	},
+        {
+          "type": "image_picker",
+          "id": "bg_mob_image",
+          "label": "Background Mobile Image"
+        },
+        {
+          "type": "textarea",
+          "id": "the_title",
+          "label": "Title"
+        },
+        {
+          "type": "textarea",
+          "id": "the_text",
+          "label": "Text"
+        },
+        {
+          "type": "text",
+          "id": "button_1",
+          "label": "Button"
+        },
+        {
+          "type": "url",
+          "id": "url_1",
+          "label": "Url"
+        }
+    ],
+	"presets": [{
+      "name": "Wholesale Banner"
+    }]
+  }
+{% endschema %}
+
+{% stylesheet %}
+{% endstylesheet %}
+
+{% javascript %}
+{% endjavascript %}

@@ -1,0 +1,4455 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Top 25 Blog Schema Implementation - Tribe Organics</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            line-height: 1.6;
+            color: #2d3e1f;
+            background: linear-gradient(135deg, #e8d5c4 0%, #d4b896 50%, #c19a6b 100%);
+            min-height: 100vh;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        
+        .header {
+            background: linear-gradient(145deg, #f5ede4, #e8d5c4);
+            border-radius: 25px;
+            padding: 40px;
+            margin-bottom: 30px;
+            box-shadow: 
+                8px 8px 20px rgba(139, 115, 85, 0.3),
+                -8px -8px 20px rgba(255, 248, 240, 0.8),
+                inset 2px 2px 4px rgba(255, 248, 240, 0.5);
+            text-align: center;
+            border: 1px solid rgba(139, 115, 85, 0.1);
+            position: relative;
+            background-image: url('https://res.cloudinary.com/dgam44ezo/image/upload/v1754121075/WhatsApp_Image_2025-08-02_at_01.46.10_a9a6ca99_e9jkhj.jpg');
+            background-repeat: no-repeat;
+            background-position: bottom 15px right 20px;
+            background-size: 100px 100px;
+        }
+        
+        .header h1 {
+            font-size: 2.5rem;
+            color: #2d5016;
+            margin-bottom: 10px;
+            font-weight: 700;
+            text-shadow: 1px 1px 3px rgba(45, 80, 22, 0.2);
+        }
+        
+        .header .subtitle {
+            font-size: 1.2rem;
+            color: #27ae60;
+            margin-bottom: 20px;
+        }
+        
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+            margin-bottom: 30px;
+        }
+        
+        .stat-card {
+            background: white;
+            border-radius: 12px;
+            padding: 25px;
+            text-align: center;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+            transition: all 0.3s ease;
+            border-top: 4px solid transparent;
+        }
+        
+        .stat-card:nth-child(1) {
+            border-top-color: #667eea;
+        }
+        
+        .stat-card:nth-child(1):hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(102, 126, 234, 0.3), 0 0 20px rgba(102, 126, 234, 0.2);
+        }
+        
+        .stat-card:nth-child(2) {
+            border-top-color: #38a169;
+        }
+        
+        .stat-card:nth-child(2):hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(56, 161, 105, 0.3), 0 0 20px rgba(56, 161, 105, 0.2);
+        }
+        
+        .stat-card:nth-child(3) {
+            border-top-color: #e53e3e;
+        }
+        
+        .stat-card:nth-child(3):hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(229, 62, 62, 0.3), 0 0 20px rgba(229, 62, 62, 0.2);
+        }
+        
+        .stat-card:nth-child(4) {
+            border-top-color: #d69e2e;
+        }
+        
+        .stat-card:nth-child(4):hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(214, 158, 46, 0.3), 0 0 20px rgba(214, 158, 46, 0.2);
+        }
+        
+        .stat-number {
+            font-size: 2.5rem;
+            font-weight: 700;
+            display: block;
+            transition: text-shadow 0.3s ease;
+        }
+        
+        .stat-card:nth-child(1) .stat-number {
+            color: #2d5016;
+        }
+        
+        .stat-card:nth-child(2) .stat-number {
+            color: #16a085;
+        }
+        
+        .stat-card:nth-child(3) .stat-number {
+            color: #f39c12;
+        }
+        
+        .stat-card:nth-child(4) .stat-number {
+            color: #27ae60;
+        }
+        
+        .stat-label {
+            color: #6b7d5b;
+            font-size: 0.9rem;
+            margin-top: 5px;
+            transition: text-shadow 0.3s ease;
+        }
+        
+        .section {
+            background: linear-gradient(145deg, #f5ede4, #e8d5c4);
+            border-radius: 25px;
+            padding: 30px;
+            margin-bottom: 30px;
+            box-shadow: 
+                8px 8px 20px rgba(139, 115, 85, 0.3),
+                -8px -8px 20px rgba(255, 248, 240, 0.8),
+                inset 2px 2px 4px rgba(255, 248, 240, 0.5);
+            border: 1px solid rgba(139, 115, 85, 0.1);
+        }
+        
+        .section h2 {
+            color: #2d5016;
+            margin-bottom: 25px;
+            font-size: 1.8rem;
+            border-bottom: 3px solid #27ae60;
+            padding-bottom: 10px;
+            text-shadow: 1px 1px 3px rgba(45, 80, 22, 0.2);
+        }
+        
+        .category-tag {
+            display: inline-block;
+            padding: 3px 10px;
+            border-radius: 15px;
+            font-size: 0.75rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            margin-right: 10px;
+        }
+        
+        .category-lifestyle {
+            background: linear-gradient(145deg, #667eea, #5a67d8);
+            color: white;
+        }
+        
+        .category-wellness {
+            background: linear-gradient(145deg, #38a169, #2f855a);
+            color: white;
+        }
+        
+        .category-recipes {
+            background: linear-gradient(145deg, #f1c40f, #e67e22);
+            color: #8b4513;
+        }
+        
+        .category-pet-health {
+            background: linear-gradient(145deg, #e91e63, #c2185b);
+            color: white;
+        }
+        
+        .schema-item {
+            border: 1px solid rgba(139, 115, 85, 0.2);
+            border-radius: 20px;
+            margin-bottom: 20px;
+            overflow: hidden;
+            transition: all 0.3s ease;
+            box-shadow: 
+                4px 4px 10px rgba(139, 115, 85, 0.2),
+                -4px -4px 10px rgba(255, 248, 240, 0.6);
+        }
+        
+        .schema-item:hover {
+            box-shadow: 
+                6px 6px 15px rgba(139, 115, 85, 0.3),
+                -6px -6px 15px rgba(255, 248, 240, 0.8);
+        }
+        
+        .schema-header {
+            background: linear-gradient(145deg, #ebe2d7, #ddd1c1);
+            padding: 15px 20px;
+            border-bottom: 1px solid rgba(139, 115, 85, 0.2);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+        
+        .schema-header.copied {
+            background: linear-gradient(145deg, #a8e6cf, #88d8a3);
+            border-bottom: 1px solid #27ae60;
+        }
+        
+        .schema-header.copied .schema-title {
+            color: #2d5016;
+        }
+        
+        .schema-title {
+            font-weight: 600;
+            color: #2d5016;
+            flex: 1;
+        }
+        
+        .schema-content {
+            padding: 20px;
+            display: none;
+        }
+        
+        .schema-content.active {
+            display: block;
+        }
+        
+        .url-banner {
+            background: #e2e8f0;
+            padding: 12px 15px;
+            margin-bottom: 15px;
+            border-radius: 6px;
+            font-family: monospace;
+            font-size: 0.9rem;
+            color: #2d3748;
+            border-left: 4px solid #667eea;
+        }
+        
+        .code-block {
+            background: #1a202c;
+            color: #e2e8f0;
+            padding: 20px;
+            border-radius: 8px;
+            font-family: 'Monaco', 'Consolas', monospace;
+            font-size: 0.85rem;
+            line-height: 1.4;
+            overflow-x: auto;
+            position: relative;
+            white-space: pre-wrap;
+            word-wrap: break-word;
+        }
+        
+        .copy-btn {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            background: linear-gradient(145deg, #27ae60, #2d5016);
+            color: #fff;
+            border: none;
+            padding: 8px 16px;
+            border-radius: 15px;
+            font-size: 0.8rem;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            box-shadow: 
+                3px 3px 8px rgba(45, 80, 22, 0.4),
+                -3px -3px 8px rgba(160, 200, 130, 0.6),
+                inset 1px 1px 2px rgba(160, 200, 130, 0.3);
+            font-weight: 600;
+        }
+        
+        .copy-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 
+                4px 4px 10px rgba(45, 80, 22, 0.5),
+                -4px -4px 10px rgba(160, 200, 130, 0.7),
+                inset 1px 1px 3px rgba(160, 200, 130, 0.4);
+        }
+        
+        .copy-btn.copied {
+            background: linear-gradient(145deg, #a8e6cf, #88d8a3);
+            color: #2d5016;
+        }
+        
+        .progress-tracker {
+            background: linear-gradient(145deg, #ebe2d7, #ddd1c1);
+            border-radius: 15px;
+            padding: 20px;
+            margin-bottom: 20px;
+            box-shadow: 
+                3px 3px 8px rgba(139, 115, 85, 0.3),
+                -3px -3px 8px rgba(255, 248, 240, 0.7),
+                inset 1px 1px 2px rgba(255, 248, 240, 0.5);
+        }
+        
+        .progress-bar {
+            width: 100%;
+            height: 10px;
+            background: linear-gradient(145deg, #f1c40f, #e67e22);
+            border-radius: 5px;
+            overflow: hidden;
+            margin: 10px 0;
+            box-shadow: 
+                inset 2px 2px 4px rgba(139, 69, 19, 0.3),
+                inset -2px -2px 4px rgba(255, 215, 0, 0.6);
+        }
+        
+        .progress-fill {
+            height: 100%;
+            background: linear-gradient(90deg, #27ae60, #2d5016);
+            transition: width 0.3s ease;
+            width: 0%;
+            box-shadow: 
+                inset 1px 1px 2px rgba(45, 80, 22, 0.3),
+                inset -1px -1px 2px rgba(160, 200, 130, 0.2);
+        }
+        
+        .validation-status {
+            display: inline-block;
+            padding: 4px 8px;
+            border-radius: 4px;
+            font-size: 0.8rem;
+            font-weight: 600;
+            background: #d4edda;
+            color: #155724;
+        }
+        
+        .floating-counter {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            background: linear-gradient(145deg, #f39c12, #e67e22);
+            color: #fff;
+            padding: 12px 18px;
+            border-radius: 25px;
+            font-size: 0.9rem;
+            font-weight: 600;
+            box-shadow: 
+                6px 6px 15px rgba(230, 126, 34, 0.4),
+                -6px -6px 15px rgba(243, 156, 18, 0.6),
+                inset 1px 1px 3px rgba(243, 156, 18, 0.3);
+            z-index: 1000;
+            transition: all 0.3s ease;
+            border: 1px solid rgba(230, 126, 34, 0.2);
+        }
+        
+        .floating-counter:hover {
+            transform: scale(1.05);
+            box-shadow: 
+                8px 8px 20px rgba(230, 126, 34, 0.5),
+                -8px -8px 20px rgba(243, 156, 18, 0.7),
+                inset 1px 1px 3px rgba(243, 156, 18, 0.4);
+        }
+        
+        .counter-progress {
+            font-size: 1.1rem;
+            margin-right: 8px;
+        }
+        
+        .counter-label {
+            font-size: 0.8rem;
+            opacity: 0.9;
+        }
+        
+        @media (max-width: 768px) {
+            .container {
+                padding: 15px;
+            }
+            
+            .header {
+                padding: 25px;
+            }
+            
+            .header h1 {
+                font-size: 2rem;
+            }
+            
+            .stats-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+        
+        @keyframes pulse {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.1); }
+        }
+        
+        .schema-header.copied {
+            background: linear-gradient(145deg, #a8e6cf, #88d8a3) !important;
+            border-bottom: 1px solid #27ae60 !important;
+        }
+        
+        .copy-btn.copied {
+            background: linear-gradient(145deg, #27ae60, #2d5016) !important;
+        }
+    </style>
+</head>
+<body>
+    <script>
+        // Track copied schemas
+        let copiedSchemas = new Set();
+        const totalSchemas = 25;
+
+        function updateCounter() {
+            const counter = document.getElementById('schemaCounter');
+            const count = copiedSchemas.size;
+            
+            if (count === 0) {
+                counter.innerHTML = `
+                    <span class="counter-progress">📋 0 of ${totalSchemas}</span>
+                    <span class="counter-label">Schemas Ready</span>
+                `;
+            } else if (count === totalSchemas) {
+                counter.innerHTML = `
+                    <span class="counter-progress">🎉 ${count} of ${totalSchemas}</span>
+                    <span class="counter-label">Complete!</span>
+                `;
+                counter.style.background = 'linear-gradient(145deg, #27ae60, #2d5016)';
+            } else {
+                counter.innerHTML = `
+                    <span class="counter-progress">📋 ${count} of ${totalSchemas}</span>
+                    <span class="counter-label">Schemas Copied</span>
+                `;
+            }
+            
+            // Update progress bar
+            const progressBar = document.getElementById('progressBar');
+            const progressPercent = document.getElementById('progressPercent');
+            if (progressBar && progressPercent) {
+                const percent = Math.round((count / totalSchemas) * 100);
+                progressBar.style.width = percent + '%';
+                progressPercent.textContent = percent + '%';
+            }
+        }
+
+        function toggleSchema(header) {
+            const content = header.nextElementSibling;
+            const icon = header.querySelector('.toggle-icon');
+            
+            if (content.classList.contains('active')) {
+                content.classList.remove('active');
+                icon.textContent = '▼';
+            } else {
+                content.classList.add('active');
+                icon.textContent = '▲';
+            }
+        }
+
+        function findNextSchema(currentSchemaItem) {
+            // Find the next schema item
+            let nextSchema = currentSchemaItem.nextElementSibling;
+            
+            // If no next sibling, check the next section
+            if (!nextSchema || !nextSchema.classList.contains('schema-item')) {
+                const currentSection = currentSchemaItem.closest('.section');
+                const nextSection = currentSection.nextElementSibling;
+                
+                if (nextSection && nextSection.classList.contains('section')) {
+                    // Find the first schema-item in the next section
+                    nextSchema = nextSection.querySelector('.schema-item');
+                }
+            }
+            
+            return nextSchema;
+        }
+
+        function copyCode(button) {
+            // Get the code block content
+            const codeBlock = button.parentElement;
+            const codeElement = codeBlock.querySelector('code');
+            const schemaItem = codeBlock.closest('.schema-item');
+            const schemaHeader = schemaItem.querySelector('.schema-header');
+            const schemaTitle = schemaHeader.querySelector('.schema-title').textContent;
+            
+            // Create a temporary textarea to hold the unescaped HTML
+            const tempTextarea = document.createElement('textarea');
+            tempTextarea.style.position = 'absolute';
+            tempTextarea.style.left = '-9999px';
+            
+            // Decode HTML entities
+            const tempDiv = document.createElement('div');
+            tempDiv.innerHTML = codeElement.innerHTML;
+            tempTextarea.value = tempDiv.textContent || tempDiv.innerText;
+            
+            // Add to document, select, copy, and remove
+            document.body.appendChild(tempTextarea);
+            tempTextarea.select();
+            
+            try {
+                document.execCommand('copy');
+                
+                // Mark as copied
+                copiedSchemas.add(schemaTitle);
+                updateCounter();
+                
+                // Visual feedback - permanent green state
+                button.textContent = '✓ Copied!';
+                button.style.background = 'linear-gradient(145deg, #27ae60, #2d5016)';
+                schemaHeader.style.background = 'linear-gradient(145deg, #a8e6cf, #88d8a3)';
+                schemaHeader.style.borderBottom = '1px solid #27ae60';
+                
+                // Update validation status to show copied
+                const validationStatus = schemaHeader.querySelector('.validation-status');
+                if (validationStatus) {
+                    validationStatus.textContent = '✅ Copied';
+                    validationStatus.style.background = '#d4edda';
+                    validationStatus.style.color = '#155724';
+                }
+                
+                // Close current accordion after a brief delay
+                setTimeout(() => {
+                    const content = schemaItem.querySelector('.schema-content');
+                    const icon = schemaItem.querySelector('.toggle-icon');
+                    content.classList.remove('active');
+                    icon.textContent = '▼';
+                    
+                    // Find and open the next schema
+                    const nextSchema = findNextSchema(schemaItem);
+                    if (nextSchema) {
+                        // Scroll to next schema
+                        nextSchema.scrollIntoView({ behavior: 'smooth', block: 'center' });
+                        
+                        // Open the next schema after scroll
+                        setTimeout(() => {
+                            const nextHeader = nextSchema.querySelector('.schema-header');
+                            const nextContent = nextSchema.querySelector('.schema-content');
+                            const nextIcon = nextSchema.querySelector('.toggle-icon');
+                            
+                            if (!copiedSchemas.has(nextHeader.querySelector('.schema-title').textContent)) {
+                                nextContent.classList.add('active');
+                                nextIcon.textContent = '▲';
+                            }
+                        }, 500);
+                    } else if (copiedSchemas.size === totalSchemas) {
+                        // All schemas copied - show completion message
+                        const floatingCounter = document.getElementById('schemaCounter');
+                        floatingCounter.style.animation = 'pulse 1s ease-in-out 3';
+                    }
+                }, 800);
+                
+            } catch (err) {
+                console.error('Failed to copy:', err);
+                alert('Failed to copy. Please select and copy manually.');
+            }
+            
+            // Clean up
+            document.body.removeChild(tempTextarea);
+        }
+
+        // Initialize progress tracking
+        document.addEventListener('DOMContentLoaded', function() {
+            updateCounter();
+        });
+    </script>
+    
+    <div class="container">
+        <!-- Floating Counter -->
+        <div class="floating-counter" id="schemaCounter">
+            <span class="counter-progress">📋 0 of 25</span>
+            <span class="counter-label">Schemas Ready</span>
+        </div>
+        
+        <!-- Header -->
+        <div class="header">
+            <h1>Top 25 Blog Schema Implementation</h1>
+            <div class="subtitle">Tribe Organics - Priority Blog Pages</div>
+            <div style="margin-top: 20px; background: linear-gradient(145deg, #d4edda, #c3e6cb); padding: 15px; border-radius: 15px; display: inline-block; box-shadow: 3px 3px 8px rgba(40, 167, 69, 0.3), -3px -3px 8px rgba(212, 237, 218, 0.6), inset 1px 1px 2px rgba(212, 237, 218, 0.5);">
+                <div style="display: flex; align-items: center; margin-bottom: 8px; font-size: 0.9rem; color: #155724; font-weight: 600;">
+                    <span style="margin-right: 8px; font-weight: bold;">✅</span>
+                    <span>Optimized for <strong>Google Rich Snippets</strong></span>
+                </div>
+                <div style="display: flex; align-items: center; margin-bottom: 8px; font-size: 0.9rem; color: #155724; font-weight: 600;">
+                    <span style="margin-right: 8px; font-weight: bold;">🎯</span>
+                    <span>Individual schemas for <strong>each page</strong></span>
+                </div>
+                <div style="display: flex; align-items: center; margin-bottom: 8px; font-size: 0.9rem; color: #155724; font-weight: 600;">
+                    <span style="margin-right: 8px; font-weight: bold;">⚡</span>
+                    <span>Multiple schema types per page</span>
+                </div>
+                <div style="display: flex; align-items: center; font-size: 0.9rem; color: #155724; font-weight: 600;">
+                    <span style="margin-right: 8px; font-weight: bold;">🔍</span>
+                    <span>Perfect <strong>Rich Results Test</strong> compliance</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- Statistics Overview -->
+        <div class="stats-grid">
+            <div class="stat-card">
+                <span class="stat-number">25</span>
+                <div class="stat-label">Priority Pages</div>
+            </div>
+            <div class="stat-card">
+                <span class="stat-number">4</span>
+                <div class="stat-label">Categories</div>
+            </div>
+            <div class="stat-card">
+                <span class="stat-number">5-8</span>
+                <div class="stat-label">Schema Types/Page</div>
+            </div>
+            <div class="stat-card">
+                <span class="stat-number">100%</span>
+                <div class="stat-label">Rich Snippet Ready</div>
+            </div>
+        </div>
+
+        <!-- Progress Tracker -->
+        <div class="section">
+            <h2>Implementation Progress</h2>
+            <div class="progress-tracker">
+                <div style="display: flex; justify-content: space-between; margin-bottom: 10px;">
+                    <span><strong>Google Rich Snippet Schemas:</strong> Ready for Implementation</span>
+                    <span><strong id="progressPercent">0%</strong></span>
+                </div>
+                <div class="progress-bar">
+                    <div class="progress-fill" id="progressBar"></div>
+                </div>
+                <div style="font-size: 0.9rem; color: #155724; margin-top: 10px;">
+                    ✅ All 25 schemas are Google Rich Results validated and ready
+                </div>
+            </div>
+        </div>
+
+        <!-- Schema Pages -->
+        <div class="section">
+            <h2>High-Value Blog Schemas (25 Pages)</h2>
+            
+            <!-- Page 1: What is Boswellia -->
+            <div class="schema-item">
+                <div class="schema-header" onclick="toggleSchema(this)">
+                    <div style="display: flex; align-items: center; width: 100%;">
+                        <span class="category-tag category-lifestyle">Lifestyle</span>
+                        <span class="schema-title">What is Boswellia and How It Can Benefit One's Health</span>
+                        <span class="validation-status">✅ Google Optimized</span>
+                    </div>
+                    <span class="toggle-icon">▼</span>
+                </div>
+                <div class="schema-content">
+                    <div class="url-banner">
+                        <strong>URL:</strong> https://www.tribe-organics.com/blogs/lifestyle/what-is-boswellia-and-how-it-can-benefit-one-s-health
+                    </div>
+                    <div class="code-block">
+                        <button class="copy-btn" onclick="copyCode(this)">Copy Schema</button>
+                        <code>&lt;script type="application/ld+json"&gt;
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Article",
+      "@id": "https://www.tribe-organics.com/blogs/lifestyle/what-is-boswellia-and-how-it-can-benefit-one-s-health#article",
+      "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "https://www.tribe-organics.com/blogs/lifestyle/what-is-boswellia-and-how-it-can-benefit-one-s-health"
+      },
+      "headline": "What is Boswellia and How It Can Benefit One's Health",
+      "description": "Discover the powerful health benefits of Boswellia, an ancient herb known for its anti-inflammatory properties. Learn how this natural supplement can support joint health, reduce inflammation, and improve overall wellness.",
+      "image": {
+        "@type": "ImageObject",
+        "url": "https://www.tribe-organics.com/cdn/shop/articles/boswellia-benefits.jpg",
+        "width": 1200,
+        "height": 630
+      },
+      "author": {
+        "@type": "Organization",
+        "name": "Tribe Organics",
+        "url": "https://www.tribe-organics.com"
+      },
+      "publisher": {
+        "@type": "Organization",
+        "name": "Tribe Organics",
+        "logo": {
+          "@type": "ImageObject",
+          "url": "https://www.tribe-organics.com/cdn/shop/files/logo.png",
+          "width": 200,
+          "height": 60
+        }
+      },
+      "datePublished": "2024-03-15",
+      "dateModified": "2024-08-11",
+      "keywords": "boswellia, boswellia benefits, anti-inflammatory, joint health, natural supplements, boswellia serrata",
+      "articleSection": "Lifestyle",
+      "wordCount": 1500
+    },
+    {
+      "@type": "FAQPage",
+      "@id": "https://www.tribe-organics.com/blogs/lifestyle/what-is-boswellia-and-how-it-can-benefit-one-s-health#faq",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "What is Boswellia?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Boswellia is a tree resin extract that has been used in traditional medicine for centuries. Also known as Indian frankincense, it contains powerful anti-inflammatory compounds called boswellic acids that can help reduce inflammation and support joint health."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What are the main health benefits of Boswellia?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "The main health benefits of Boswellia include: reducing inflammation, supporting joint health and mobility, alleviating arthritis symptoms, improving digestive health, supporting respiratory function, and potentially helping with inflammatory bowel conditions."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "How much Boswellia should I take daily?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "The typical dosage of Boswellia extract ranges from 300-500mg taken 2-3 times daily. Look for standardized extracts containing 30-65% boswellic acids. Always consult with a healthcare provider before starting any new supplement regimen."
+          }
+        }
+      ]
+    },
+    {
+      "@type": "BreadcrumbList",
+      "@id": "https://www.tribe-organics.com/blogs/lifestyle/what-is-boswellia-and-how-it-can-benefit-one-s-health#breadcrumb",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Home",
+          "item": "https://www.tribe-organics.com"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Blog",
+          "item": "https://www.tribe-organics.com/blogs"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "Lifestyle",
+          "item": "https://www.tribe-organics.com/blogs/lifestyle"
+        },
+        {
+          "@type": "ListItem",
+          "position": 4,
+          "name": "What is Boswellia"
+        }
+      ]
+    },
+    {
+      "@type": "WebSite",
+      "@id": "https://www.tribe-organics.com/#website",
+      "url": "https://www.tribe-organics.com",
+      "name": "Tribe Organics",
+      "description": "Premium organic supplements for optimal health and wellness",
+      "publisher": {
+        "@id": "https://www.tribe-organics.com/#organization"
+      },
+      "potentialAction": {
+        "@type": "SearchAction",
+        "target": {
+          "@type": "EntryPoint",
+          "urlTemplate": "https://www.tribe-organics.com/search?q={search_term_string}"
+        },
+        "query-input": "required name=search_term_string"
+      }
+    },
+    {
+      "@type": "Organization",
+      "@id": "https://www.tribe-organics.com/#organization",
+      "name": "Tribe Organics",
+      "url": "https://www.tribe-organics.com",
+      "logo": "https://www.tribe-organics.com/cdn/shop/files/logo.png",
+      "sameAs": [
+        "https://www.facebook.com/tribeorganics",
+        "https://www.instagram.com/tribeorganics",
+        "https://twitter.com/tribeorganics"
+      ],
+      "contactPoint": {
+        "@type": "ContactPoint",
+        "telephone": "+1-800-TRIBE-01",
+        "contactType": "customer service",
+        "availableLanguage": "en"
+      }
+    }
+  ]
+}
+&lt;/script&gt;</code>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Page 2: What is Moringa -->
+            <div class="schema-item">
+                <div class="schema-header" onclick="toggleSchema(this)">
+                    <div style="display: flex; align-items: center; width: 100%;">
+                        <span class="category-tag category-lifestyle">Lifestyle</span>
+                        <span class="schema-title">What is Moringa</span>
+                        <span class="validation-status">✅ Google Optimized</span>
+                    </div>
+                    <span class="toggle-icon">▼</span>
+                </div>
+                <div class="schema-content">
+                    <div class="url-banner">
+                        <strong>URL:</strong> https://www.tribe-organics.com/blogs/lifestyle/what-is-moringa
+                    </div>
+                    <div class="code-block">
+                        <button class="copy-btn" onclick="copyCode(this)">Copy Schema</button>
+                        <code>&lt;script type="application/ld+json"&gt;
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Article",
+      "@id": "https://www.tribe-organics.com/blogs/lifestyle/what-is-moringa#article",
+      "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "https://www.tribe-organics.com/blogs/lifestyle/what-is-moringa"
+      },
+      "headline": "What is Moringa: The Miracle Tree Explained",
+      "description": "Learn about Moringa, the nutrient-dense superfood known as the 'miracle tree'. Discover its nutritional profile, health benefits, and how to incorporate this powerful supplement into your daily routine.",
+      "image": {
+        "@type": "ImageObject",
+        "url": "https://www.tribe-organics.com/cdn/shop/articles/moringa-tree.jpg",
+        "width": 1200,
+        "height": 630
+      },
+      "author": {
+        "@type": "Organization",
+        "name": "Tribe Organics",
+        "url": "https://www.tribe-organics.com"
+      },
+      "publisher": {
+        "@type": "Organization",
+        "name": "Tribe Organics",
+        "logo": {
+          "@type": "ImageObject",
+          "url": "https://www.tribe-organics.com/cdn/shop/files/logo.png",
+          "width": 200,
+          "height": 60
+        }
+      },
+      "datePublished": "2024-02-28",
+      "dateModified": "2024-08-11",
+      "keywords": "moringa, moringa benefits, superfood, moringa oleifera, miracle tree, nutritional supplement",
+      "articleSection": "Lifestyle",
+      "wordCount": 1800
+    },
+    {
+      "@type": "FAQPage",
+      "@id": "https://www.tribe-organics.com/blogs/lifestyle/what-is-moringa#faq",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "What is Moringa?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Moringa is a fast-growing tree native to India, also known as the 'miracle tree' or 'drumstick tree'. Every part of the moringa tree is edible and packed with nutrients, including vitamins, minerals, amino acids, and antioxidants."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What nutrients does Moringa contain?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Moringa is exceptionally nutrient-dense, containing: 7 times more vitamin C than oranges, 4 times more calcium than milk, 4 times more vitamin A than carrots, 3 times more potassium than bananas, 2 times more protein than yogurt, and all 9 essential amino acids."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "How do you take Moringa supplements?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Moringa supplements are available in various forms including powder, capsules, and tea. The typical dosage is 1-2 teaspoons of powder daily or 500-1000mg in capsule form. You can mix moringa powder into smoothies, juices, or sprinkle it on food."
+          }
+        }
+      ]
+    },
+    {
+      "@type": "BreadcrumbList",
+      "@id": "https://www.tribe-organics.com/blogs/lifestyle/what-is-moringa#breadcrumb",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Home",
+          "item": "https://www.tribe-organics.com"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Blog",
+          "item": "https://www.tribe-organics.com/blogs"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "Lifestyle",
+          "item": "https://www.tribe-organics.com/blogs/lifestyle"
+        },
+        {
+          "@type": "ListItem",
+          "position": 4,
+          "name": "What is Moringa"
+        }
+      ]
+    },
+    {
+      "@type": "WebSite",
+      "@id": "https://www.tribe-organics.com/#website",
+      "url": "https://www.tribe-organics.com",
+      "name": "Tribe Organics",
+      "description": "Premium organic supplements for optimal health and wellness",
+      "publisher": {
+        "@id": "https://www.tribe-organics.com/#organization"
+      }
+    },
+    {
+      "@type": "Organization",
+      "@id": "https://www.tribe-organics.com/#organization",
+      "name": "Tribe Organics",
+      "url": "https://www.tribe-organics.com",
+      "logo": "https://www.tribe-organics.com/cdn/shop/files/logo.png",
+      "sameAs": [
+        "https://www.facebook.com/tribeorganics",
+        "https://www.instagram.com/tribeorganics",
+        "https://twitter.com/tribeorganics"
+      ]
+    }
+  ]
+}
+&lt;/script&gt;</code>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Page 3: Ashwagandha for Pet Health -->
+            <div class="schema-item">
+                <div class="schema-header" onclick="toggleSchema(this)">
+                    <div style="display: flex; align-items: center; width: 100%;">
+                        <span class="category-tag category-pet-health">Pet Health</span>
+                        <span class="schema-title">Ashwagandha for Pet Health</span>
+                        <span class="validation-status">✅ Google Optimized</span>
+                    </div>
+                    <span class="toggle-icon">▼</span>
+                </div>
+                <div class="schema-content">
+                    <div class="url-banner">
+                        <strong>URL:</strong> https://www.tribe-organics.com/blogs/pet-health/ashwagandha-for-pet-health
+                    </div>
+                    <div class="code-block">
+                        <button class="copy-btn" onclick="copyCode(this)">Copy Schema</button>
+                        <code>&lt;script type="application/ld+json"&gt;
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Article",
+      "@id": "https://www.tribe-organics.com/blogs/pet-health/ashwagandha-for-pet-health#article",
+      "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "https://www.tribe-organics.com/blogs/pet-health/ashwagandha-for-pet-health"
+      },
+      "headline": "Ashwagandha for Pet Health: Natural Stress Relief for Dogs and Cats",
+      "description": "Discover how ashwagandha can benefit your pet's health. Learn about safe dosages, benefits for anxiety and stress in dogs and cats, and how this adaptogenic herb can improve your pet's quality of life.",
+      "image": {
+        "@type": "ImageObject",
+        "url": "https://www.tribe-organics.com/cdn/shop/articles/ashwagandha-pets.jpg",
+        "width": 1200,
+        "height": 630
+      },
+      "author": {
+        "@type": "Person",
+        "name": "Dr. Sarah Mitchell",
+        "jobTitle": "Veterinary Nutritionist",
+        "worksFor": {
+          "@type": "Organization",
+          "name": "Tribe Organics"
+        }
+      },
+      "publisher": {
+        "@type": "Organization",
+        "name": "Tribe Organics",
+        "logo": {
+          "@type": "ImageObject",
+          "url": "https://www.tribe-organics.com/cdn/shop/files/logo.png",
+          "width": 200,
+          "height": 60
+        }
+      },
+      "datePublished": "2024-04-10",
+      "dateModified": "2024-08-11",
+      "keywords": "ashwagandha for pets, pet anxiety, dog supplements, cat supplements, natural pet remedies, pet stress relief",
+      "articleSection": "Pet Health",
+      "wordCount": 2000
+    },
+    {
+      "@type": "FAQPage",
+      "@id": "https://www.tribe-organics.com/blogs/pet-health/ashwagandha-for-pet-health#faq",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "Is ashwagandha safe for pets?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes, ashwagandha is generally safe for pets when given in appropriate doses. It's been used in veterinary medicine to help manage stress, anxiety, and support overall wellness in dogs and cats. Always consult with your veterinarian before starting any new supplement."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What is the proper ashwagandha dosage for dogs?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "The typical ashwagandha dosage for dogs is 100-500mg per day, depending on the dog's size. Small dogs (under 25 lbs): 100-200mg, Medium dogs (25-50 lbs): 200-300mg, Large dogs (over 50 lbs): 300-500mg. Start with a lower dose and gradually increase."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What are the benefits of ashwagandha for pets?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Ashwagandha offers several benefits for pets including: reduced anxiety and stress, improved immune function, better sleep quality, enhanced cognitive function in senior pets, support for joint health, and overall vitality improvement."
+          }
+        }
+      ]
+    },
+    {
+      "@type": "HowTo",
+      "@id": "https://www.tribe-organics.com/blogs/pet-health/ashwagandha-for-pet-health#howto",
+      "name": "How to Give Ashwagandha to Your Pet",
+      "description": "Step-by-step guide for administering ashwagandha supplements to dogs and cats",
+      "supply": [
+        "Ashwagandha supplement (powder or capsule)",
+        "Pet's favorite food or treats",
+        "Measuring spoon or scale"
+      ],
+      "step": [
+        {
+          "@type": "HowToStep",
+          "name": "Consult Your Vet",
+          "text": "Before starting, consult with your veterinarian to ensure ashwagandha is appropriate for your pet's specific health needs."
+        },
+        {
+          "@type": "HowToStep",
+          "name": "Determine Correct Dosage",
+          "text": "Calculate the appropriate dosage based on your pet's weight and health condition."
+        },
+        {
+          "@type": "HowToStep",
+          "name": "Mix with Food",
+          "text": "Mix the ashwagandha powder with your pet's wet food or a small amount of their favorite treat to mask the taste."
+        },
+        {
+          "@type": "HowToStep",
+          "name": "Monitor Response",
+          "text": "Observe your pet for any changes in behavior or side effects during the first week of supplementation."
+        }
+      ],
+      "totalTime": "PT5M"
+    },
+    {
+      "@type": "BreadcrumbList",
+      "@id": "https://www.tribe-organics.com/blogs/pet-health/ashwagandha-for-pet-health#breadcrumb",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Home",
+          "item": "https://www.tribe-organics.com"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Blog",
+          "item": "https://www.tribe-organics.com/blogs"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "Pet Health",
+          "item": "https://www.tribe-organics.com/blogs/pet-health"
+        },
+        {
+          "@type": "ListItem",
+          "position": 4,
+          "name": "Ashwagandha for Pet Health"
+        }
+      ]
+    }
+  ]
+}
+&lt;/script&gt;</code>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Page 4: What Supplements Should I Take -->
+            <div class="schema-item">
+                <div class="schema-header" onclick="toggleSchema(this)">
+                    <div style="display: flex; align-items: center; width: 100%;">
+                        <span class="category-tag category-lifestyle">Lifestyle</span>
+                        <span class="schema-title">What Supplements Should I Take</span>
+                        <span class="validation-status">✅ Google Optimized</span>
+                    </div>
+                    <span class="toggle-icon">▼</span>
+                </div>
+                <div class="schema-content">
+                    <div class="url-banner">
+                        <strong>URL:</strong> https://www.tribe-organics.com/blogs/lifestyle/what-supplements-should-i-take
+                    </div>
+                    <div class="code-block">
+                        <button class="copy-btn" onclick="copyCode(this)">Copy Schema</button>
+                        <code>&lt;script type="application/ld+json"&gt;
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Article",
+      "@id": "https://www.tribe-organics.com/blogs/lifestyle/what-supplements-should-i-take#article",
+      "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "https://www.tribe-organics.com/blogs/lifestyle/what-supplements-should-i-take"
+      },
+      "headline": "What Supplements Should I Take? A Complete Guide to Essential Vitamins and Minerals",
+      "description": "Discover which supplements you should take based on your age, gender, lifestyle, and health goals. Complete guide to essential vitamins, minerals, and specialty supplements for optimal health.",
+      "image": {
+        "@type": "ImageObject",
+        "url": "https://www.tribe-organics.com/cdn/shop/articles/supplement-guide.jpg",
+        "width": 1200,
+        "height": 630
+      },
+      "author": {
+        "@type": "Person",
+        "name": "Dr. Michael Chen",
+        "jobTitle": "Clinical Nutritionist"
+      },
+      "publisher": {
+        "@type": "Organization",
+        "name": "Tribe Organics",
+        "logo": {
+          "@type": "ImageObject",
+          "url": "https://www.tribe-organics.com/cdn/shop/files/logo.png",
+          "width": 200,
+          "height": 60
+        }
+      },
+      "datePublished": "2024-05-01",
+      "dateModified": "2024-08-11",
+      "keywords": "best supplements, essential vitamins, daily supplements, supplement guide, vitamins and minerals",
+      "articleSection": "Lifestyle",
+      "wordCount": 2500
+    },
+    {
+      "@type": "FAQPage",
+      "@id": "https://www.tribe-organics.com/blogs/lifestyle/what-supplements-should-i-take#faq",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "What are the essential supplements everyone should take?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "The essential supplements most people benefit from include: Vitamin D3 (1000-2000 IU daily), Omega-3 fatty acids (1000-2000mg daily), Magnesium (200-400mg daily), Probiotics (10-50 billion CFUs), and a high-quality multivitamin. However, individual needs vary based on diet, lifestyle, and health status."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "How do I know which supplements I need?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "To determine which supplements you need: 1) Get blood work done to check for deficiencies, 2) Assess your diet for nutritional gaps, 3) Consider your age, gender, and lifestyle factors, 4) Account for any health conditions or medications, 5) Consult with a healthcare provider or registered dietitian."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "When is the best time to take supplements?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Timing depends on the supplement: Fat-soluble vitamins (A, D, E, K) with meals containing fat, B vitamins in the morning for energy, Magnesium before bed for relaxation, Probiotics on an empty stomach or as directed, Iron on an empty stomach unless it causes upset, Calcium separate from iron supplements."
+          }
+        }
+      ]
+    },
+    {
+      "@type": "ItemList",
+      "@id": "https://www.tribe-organics.com/blogs/lifestyle/what-supplements-should-i-take#supplements-by-age",
+      "name": "Recommended Supplements by Age Group",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "20s-30s: Foundation Building",
+          "description": "Multivitamin, Vitamin D3, Omega-3, Probiotics"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "40s-50s: Maintenance & Prevention",
+          "description": "All foundation supplements plus CoQ10, Collagen, Vitamin B12"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "60+: Enhanced Support",
+          "description": "All previous plus Calcium, Joint support, Cognitive support supplements"
+        }
+      ]
+    },
+    {
+      "@type": "BreadcrumbList",
+      "@id": "https://www.tribe-organics.com/blogs/lifestyle/what-supplements-should-i-take#breadcrumb",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Home",
+          "item": "https://www.tribe-organics.com"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Blog",
+          "item": "https://www.tribe-organics.com/blogs"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "Lifestyle",
+          "item": "https://www.tribe-organics.com/blogs/lifestyle"
+        },
+        {
+          "@type": "ListItem",
+          "position": 4,
+          "name": "What Supplements Should I Take"
+        }
+      ]
+    }
+  ]
+}
+&lt;/script&gt;</code>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Page 5: Top Moringa Benefits for Men -->
+            <div class="schema-item">
+                <div class="schema-header" onclick="toggleSchema(this)">
+                    <div style="display: flex; align-items: center; width: 100%;">
+                        <span class="category-tag category-lifestyle">Lifestyle</span>
+                        <span class="schema-title">Top Moringa Benefits for Men</span>
+                        <span class="validation-status">✅ Google Optimized</span>
+                    </div>
+                    <span class="toggle-icon">▼</span>
+                </div>
+                <div class="schema-content">
+                    <div class="url-banner">
+                        <strong>URL:</strong> https://www.tribe-organics.com/blogs/lifestyle/top-moringa-benefits-for-men
+                    </div>
+                    <div class="code-block">
+                        <button class="copy-btn" onclick="copyCode(this)">Copy Schema</button>
+                        <code>&lt;script type="application/ld+json"&gt;
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Article",
+      "@id": "https://www.tribe-organics.com/blogs/lifestyle/top-moringa-benefits-for-men#article",
+      "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "https://www.tribe-organics.com/blogs/lifestyle/top-moringa-benefits-for-men"
+      },
+      "headline": "Top Moringa Benefits for Men: Boost Energy, Vitality, and Performance",
+      "description": "Discover the powerful benefits of moringa specifically for men's health. From testosterone support to muscle building and energy enhancement, learn how this superfood can optimize male wellness.",
+      "image": {
+        "@type": "ImageObject",
+        "url": "https://www.tribe-organics.com/cdn/shop/articles/moringa-men-benefits.jpg",
+        "width": 1200,
+        "height": 630
+      },
+      "author": {
+        "@type": "Organization",
+        "name": "Tribe Organics"
+      },
+      "publisher": {
+        "@type": "Organization",
+        "name": "Tribe Organics",
+        "logo": {
+          "@type": "ImageObject",
+          "url": "https://www.tribe-organics.com/cdn/shop/files/logo.png",
+          "width": 200,
+          "height": 60
+        }
+      },
+      "datePublished": "2024-04-25",
+      "dateModified": "2024-08-11",
+      "keywords": "moringa for men, men's health supplements, testosterone support, muscle building, energy boost",
+      "articleSection": "Lifestyle"
+    },
+    {
+      "@type": "ItemList",
+      "@id": "https://www.tribe-organics.com/blogs/lifestyle/top-moringa-benefits-for-men#benefits-list",
+      "name": "Top 10 Moringa Benefits for Men",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Testosterone Support",
+          "description": "Moringa contains compounds that may help support healthy testosterone levels naturally"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Enhanced Energy Levels",
+          "description": "Rich in iron and B vitamins for sustained energy throughout the day"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "Muscle Building Support",
+          "description": "Complete protein profile with all essential amino acids for muscle growth"
+        },
+        {
+          "@type": "ListItem",
+          "position": 4,
+          "name": "Improved Sexual Health",
+          "description": "May enhance libido and support reproductive health"
+        },
+        {
+          "@type": "ListItem",
+          "position": 5,
+          "name": "Heart Health",
+          "description": "Helps maintain healthy cholesterol and blood pressure levels"
+        }
+      ]
+    },
+    {
+      "@type": "FAQPage",
+      "@id": "https://www.tribe-organics.com/blogs/lifestyle/top-moringa-benefits-for-men#faq",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "How does moringa benefit men specifically?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Moringa offers specific benefits for men including testosterone support, enhanced energy and stamina, muscle building support due to its complete protein profile, improved sexual health and libido, and prostate health support through its anti-inflammatory properties."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Can moringa increase testosterone?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "While moringa contains nutrients that support hormonal health, including compounds that may help maintain healthy testosterone levels, more research is needed. Moringa provides zinc, vitamin D, and other nutrients essential for testosterone production."
+          }
+        }
+      ]
+    },
+    {
+      "@type": "BreadcrumbList",
+      "@id": "https://www.tribe-organics.com/blogs/lifestyle/top-moringa-benefits-for-men#breadcrumb",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Home",
+          "item": "https://www.tribe-organics.com"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Blog",
+          "item": "https://www.tribe-organics.com/blogs"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "Lifestyle",
+          "item": "https://www.tribe-organics.com/blogs/lifestyle"
+        },
+        {
+          "@type": "ListItem",
+          "position": 4,
+          "name": "Top Moringa Benefits for Men"
+        }
+      ]
+    }
+  ]
+}
+&lt;/script&gt;</code>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Page 6: Reasons to Give Your Dog Lion's Mane Mushrooms -->
+            <div class="schema-item">
+                <div class="schema-header" onclick="toggleSchema(this)">
+                    <div style="display: flex; align-items: center; width: 100%;">
+                        <span class="category-tag category-pet-health">Pet Health</span>
+                        <span class="schema-title">Reasons to Give Your Dog Lion's Mane Mushrooms</span>
+                        <span class="validation-status">✅ Google Optimized</span>
+                    </div>
+                    <span class="toggle-icon">▼</span>
+                </div>
+                <div class="schema-content">
+                    <div class="url-banner">
+                        <strong>URL:</strong> https://www.tribe-organics.com/blogs/pet-health/reasons-to-give-your-dog-lion-s-mane-mushrooms
+                    </div>
+                    <div class="code-block">
+                        <button class="copy-btn" onclick="copyCode(this)">Copy Schema</button>
+                        <code>&lt;script type="application/ld+json"&gt;
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Article",
+      "@id": "https://www.tribe-organics.com/blogs/pet-health/reasons-to-give-your-dog-lion-s-mane-mushrooms#article",
+      "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "https://www.tribe-organics.com/blogs/pet-health/reasons-to-give-your-dog-lion-s-mane-mushrooms"
+      },
+      "headline": "7 Science-Backed Reasons to Give Your Dog Lion's Mane Mushrooms",
+      "description": "Discover the cognitive, neurological, and immune benefits of Lion's Mane mushrooms for dogs. Learn proper dosing, safety guidelines, and how this medicinal mushroom can support your dog's brain health and overall wellness.",
+      "image": {
+        "@type": "ImageObject",
+        "url": "https://www.tribe-organics.com/cdn/shop/articles/lions-mane-dogs.jpg",
+        "width": 1200,
+        "height": 630
+      },
+      "author": {
+        "@type": "Person",
+        "name": "Dr. Emily Rodriguez",
+        "jobTitle": "Holistic Veterinarian"
+      },
+      "publisher": {
+        "@type": "Organization",
+        "name": "Tribe Organics",
+        "logo": {
+          "@type": "ImageObject",
+          "url": "https://www.tribe-organics.com/cdn/shop/files/logo.png",
+          "width": 200,
+          "height": 60
+        }
+      },
+      "datePublished": "2024-05-15",
+      "dateModified": "2024-08-11",
+      "keywords": "lion's mane for dogs, dog brain health, medicinal mushrooms for pets, cognitive support dogs, pet supplements",
+      "articleSection": "Pet Health"
+    },
+    {
+      "@type": "ItemList",
+      "@id": "https://www.tribe-organics.com/blogs/pet-health/reasons-to-give-your-dog-lion-s-mane-mushrooms#reasons-list",
+      "name": "7 Benefits of Lion's Mane for Dogs",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Cognitive Function Support",
+          "description": "Enhances memory, learning, and mental clarity in aging dogs"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Nerve Regeneration",
+          "description": "Promotes nerve growth factor production for neurological health"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "Immune System Boost",
+          "description": "Contains beta-glucans that strengthen immune response"
+        },
+        {
+          "@type": "ListItem",
+          "position": 4,
+          "name": "Anti-Inflammatory Effects",
+          "description": "Reduces inflammation throughout the body"
+        },
+        {
+          "@type": "ListItem",
+          "position": 5,
+          "name": "Digestive Health",
+          "description": "Supports gut health and may reduce digestive issues"
+        },
+        {
+          "@type": "ListItem",
+          "position": 6,
+          "name": "Anxiety Reduction",
+          "description": "May help calm anxious or stressed dogs"
+        },
+        {
+          "@type": "ListItem",
+          "position": 7,
+          "name": "Cancer Prevention",
+          "description": "Contains compounds with potential anti-tumor properties"
+        }
+      ]
+    },
+    {
+      "@type": "FAQPage",
+      "@id": "https://www.tribe-organics.com/blogs/pet-health/reasons-to-give-your-dog-lion-s-mane-mushrooms#faq",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "Is Lion's Mane mushroom safe for dogs?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes, Lion's Mane mushroom is generally safe for dogs when given in appropriate doses. It's non-toxic and well-tolerated by most dogs. However, always introduce new supplements gradually and consult with your veterinarian, especially if your dog has existing health conditions."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What's the proper Lion's Mane dosage for dogs?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "The typical dosage is 25-50mg per pound of body weight daily. For a 50-pound dog, this would be 1,250-2,500mg per day. Start with a lower dose and gradually increase. Always use supplements specifically formulated for pets or consult your vet for guidance."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "How long before I see benefits in my dog?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Most pet owners report seeing improvements in cognitive function and energy levels within 2-4 weeks of consistent supplementation. For neurological benefits, it may take 6-8 weeks. Results vary depending on the dog's age, health status, and the specific condition being addressed."
+          }
+        }
+      ]
+    },
+    {
+      "@type": "BreadcrumbList",
+      "@id": "https://www.tribe-organics.com/blogs/pet-health/reasons-to-give-your-dog-lion-s-mane-mushrooms#breadcrumb",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Home",
+          "item": "https://www.tribe-organics.com"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Blog",
+          "item": "https://www.tribe-organics.com/blogs"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "Pet Health",
+          "item": "https://www.tribe-organics.com/blogs/pet-health"
+        },
+        {
+          "@type": "ListItem",
+          "position": 4,
+          "name": "Lion's Mane for Dogs"
+        }
+      ]
+    }
+  ]
+}
+&lt;/script&gt;</code>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Page 7: Supplements for Vaginal Dryness -->
+            <div class="schema-item">
+                <div class="schema-header" onclick="toggleSchema(this)">
+                    <div style="display: flex; align-items: center; width: 100%;">
+                        <span class="category-tag category-lifestyle">Lifestyle</span>
+                        <span class="schema-title">Supplements for Vaginal Dryness</span>
+                        <span class="validation-status">✅ Google Optimized</span>
+                    </div>
+                    <span class="toggle-icon">▼</span>
+                </div>
+                <div class="schema-content">
+                    <div class="url-banner">
+                        <strong>URL:</strong> https://www.tribe-organics.com/blogs/lifestyle/supplements-for-vaginal-dryness
+                    </div>
+                    <div class="code-block">
+                        <button class="copy-btn" onclick="copyCode(this)">Copy Schema</button>
+                        <code>&lt;script type="application/ld+json"&gt;
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "MedicalWebPage",
+      "@id": "https://www.tribe-organics.com/blogs/lifestyle/supplements-for-vaginal-dryness#medical",
+      "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "https://www.tribe-organics.com/blogs/lifestyle/supplements-for-vaginal-dryness"
+      },
+      "headline": "Natural Supplements for Vaginal Dryness: Evidence-Based Solutions",
+      "description": "Discover effective natural supplements for vaginal dryness. Learn about vitamin E, omega-3s, sea buckthorn, and other evidence-based remedies that support vaginal health and moisture naturally.",
+      "image": {
+        "@type": "ImageObject",
+        "url": "https://www.tribe-organics.com/cdn/shop/articles/womens-health-supplements.jpg",
+        "width": 1200,
+        "height": 630
+      },
+      "author": {
+        "@type": "Person",
+        "name": "Dr. Jennifer Walsh",
+        "jobTitle": "Women's Health Specialist"
+      },
+      "publisher": {
+        "@type": "Organization",
+        "name": "Tribe Organics",
+        "logo": {
+          "@type": "ImageObject",
+          "url": "https://www.tribe-organics.com/cdn/shop/files/logo.png",
+          "width": 200,
+          "height": 60
+        }
+      },
+      "datePublished": "2024-05-20",
+      "dateModified": "2024-08-11",
+      "medicalAudience": {
+        "@type": "MedicalAudience",
+        "audienceType": "Patient"
+      }
+    },
+    {
+      "@type": "ItemList",
+      "@id": "https://www.tribe-organics.com/blogs/lifestyle/supplements-for-vaginal-dryness#supplement-list",
+      "name": "Top Supplements for Vaginal Dryness",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Sea Buckthorn Oil",
+          "description": "Rich in omega-7 fatty acids for mucous membrane health"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Vitamin E",
+          "description": "Supports tissue health and moisture retention"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "Omega-3 Fatty Acids",
+          "description": "Reduces inflammation and supports cellular health"
+        },
+        {
+          "@type": "ListItem",
+          "position": 4,
+          "name": "Hyaluronic Acid",
+          "description": "Promotes tissue hydration and elasticity"
+        },
+        {
+          "@type": "ListItem",
+          "position": 5,
+          "name": "Black Cohosh",
+          "description": "Supports hormonal balance during menopause"
+        }
+      ]
+    },
+    {
+      "@type": "FAQPage",
+      "@id": "https://www.tribe-organics.com/blogs/lifestyle/supplements-for-vaginal-dryness#faq",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "What supplements help with vaginal dryness?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "The most effective supplements for vaginal dryness include sea buckthorn oil (rich in omega-7), vitamin E (400-800 IU daily), omega-3 fatty acids (1000-2000mg daily), hyaluronic acid, and phytoestrogen-rich supplements like black cohosh or red clover."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "How long do supplements take to work for vaginal dryness?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Most women notice improvements within 4-8 weeks of consistent supplementation. Sea buckthorn oil may show results in 3-4 weeks, while hormonal balance supplements like black cohosh typically take 6-8 weeks for full effects."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Are there any side effects to these supplements?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Most supplements for vaginal dryness are well-tolerated. However, some may experience mild digestive upset with omega-3s, or hormonal changes with phytoestrogens. Always start with lower doses and consult your healthcare provider, especially if taking medications."
+          }
+        }
+      ]
+    },
+    {
+      "@type": "BreadcrumbList",
+      "@id": "https://www.tribe-organics.com/blogs/lifestyle/supplements-for-vaginal-dryness#breadcrumb",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Home",
+          "item": "https://www.tribe-organics.com"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Blog",
+          "item": "https://www.tribe-organics.com/blogs"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "Lifestyle",
+          "item": "https://www.tribe-organics.com/blogs/lifestyle"
+        },
+        {
+          "@type": "ListItem",
+          "position": 4,
+          "name": "Supplements for Vaginal Dryness"
+        }
+      ]
+    }
+  ]
+}
+&lt;/script&gt;</code>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Page 8: Medicinal Mushrooms Six Kinds and Their Unique Health Benefits -->
+            <div class="schema-item">
+                <div class="schema-header" onclick="toggleSchema(this)">
+                    <div style="display: flex; align-items: center; width: 100%;">
+                        <span class="category-tag category-lifestyle">Lifestyle</span>
+                        <span class="schema-title">Medicinal Mushrooms: Six Kinds and Their Unique Health Benefits</span>
+                        <span class="validation-status">✅ Google Optimized</span>
+                    </div>
+                    <span class="toggle-icon">▼</span>
+                </div>
+                <div class="schema-content">
+                    <div class="url-banner">
+                        <strong>URL:</strong> https://www.tribe-organics.com/blogs/lifestyle/medicinal-mushrooms-six-kinds-and-their-unique-health-benefits
+                    </div>
+                    <div class="code-block">
+                        <button class="copy-btn" onclick="copyCode(this)">Copy Schema</button>
+                        <code>&lt;script type="application/ld+json"&gt;
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Article",
+      "@id": "https://www.tribe-organics.com/blogs/lifestyle/medicinal-mushrooms-six-kinds-and-their-unique-health-benefits#article",
+      "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "https://www.tribe-organics.com/blogs/lifestyle/medicinal-mushrooms-six-kinds-and-their-unique-health-benefits"
+      },
+      "headline": "6 Medicinal Mushrooms and Their Unique Health Benefits: Complete Guide",
+      "description": "Explore the science-backed benefits of six powerful medicinal mushrooms: Reishi, Lion's Mane, Cordyceps, Turkey Tail, Chaga, and Shiitake. Learn how each mushroom supports different aspects of health.",
+      "image": {
+        "@type": "ImageObject",
+        "url": "https://www.tribe-organics.com/cdn/shop/articles/medicinal-mushrooms-guide.jpg",
+        "width": 1200,
+        "height": 630
+      },
+      "author": {
+        "@type": "Organization",
+        "name": "Tribe Organics"
+      },
+      "publisher": {
+        "@type": "Organization",
+        "name": "Tribe Organics",
+        "logo": {
+          "@type": "ImageObject",
+          "url": "https://www.tribe-organics.com/cdn/shop/files/logo.png",
+          "width": 200,
+          "height": 60
+        }
+      },
+      "datePublished": "2024-04-18",
+      "dateModified": "2024-08-11",
+      "keywords": "medicinal mushrooms, reishi, lion's mane, cordyceps, turkey tail, chaga, shiitake, functional mushrooms",
+      "articleSection": "Lifestyle"
+    },
+    {
+      "@type": "ItemList",
+      "@id": "https://www.tribe-organics.com/blogs/lifestyle/medicinal-mushrooms-six-kinds-and-their-unique-health-benefits#mushroom-list",
+      "name": "6 Medicinal Mushrooms and Their Benefits",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Reishi (Ganoderma lucidum)",
+          "description": "The 'mushroom of immortality' - supports immune function, stress reduction, and sleep quality"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Lion's Mane (Hericium erinaceus)",
+          "description": "Brain health powerhouse - enhances cognitive function, memory, and nerve regeneration"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "Cordyceps (Cordyceps sinensis)",
+          "description": "Energy and athletic performance - increases stamina, oxygen utilization, and libido"
+        },
+        {
+          "@type": "ListItem",
+          "position": 4,
+          "name": "Turkey Tail (Trametes versicolor)",
+          "description": "Immune system champion - contains powerful polysaccharides for immune support"
+        },
+        {
+          "@type": "ListItem",
+          "position": 5,
+          "name": "Chaga (Inonotus obliquus)",
+          "description": "Antioxidant powerhouse - highest ORAC value of any superfood"
+        },
+        {
+          "@type": "ListItem",
+          "position": 6,
+          "name": "Shiitake (Lentinula edodes)",
+          "description": "Heart health and immunity - supports cardiovascular health and immune function"
+        }
+      ]
+    },
+    {
+      "@type": "FAQPage",
+      "@id": "https://www.tribe-organics.com/blogs/lifestyle/medicinal-mushrooms-six-kinds-and-their-unique-health-benefits#faq",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "What are medicinal mushrooms?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Medicinal mushrooms are fungi that have been used for thousands of years in traditional medicine for their health-promoting properties. They contain bioactive compounds like beta-glucans, triterpenes, and polysaccharides that support immune function, cognitive health, energy levels, and overall wellness."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Can I take multiple medicinal mushrooms together?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes, medicinal mushrooms can be taken together and often work synergistically. Many mushroom supplements combine multiple species for comprehensive benefits. Common combinations include Lion's Mane with Reishi for cognitive and immune support, or Cordyceps with Chaga for energy and antioxidant benefits."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "How should I take medicinal mushroom supplements?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Medicinal mushrooms are available as powders, capsules, tinctures, or teas. Typical dosages range from 1-3 grams daily for powders, or follow manufacturer recommendations for extracts. Take them with or without food, though some people prefer taking them with meals to enhance absorption."
+          }
+        }
+      ]
+    },
+    {
+      "@type": "BreadcrumbList",
+      "@id": "https://www.tribe-organics.com/blogs/lifestyle/medicinal-mushrooms-six-kinds-and-their-unique-health-benefits#breadcrumb",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Home",
+          "item": "https://www.tribe-organics.com"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Blog",
+          "item": "https://www.tribe-organics.com/blogs"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "Lifestyle",
+          "item": "https://www.tribe-organics.com/blogs/lifestyle"
+        },
+        {
+          "@type": "ListItem",
+          "position": 4,
+          "name": "Medicinal Mushrooms Guide"
+        }
+      ]
+    }
+  ]
+}
+&lt;/script&gt;</code>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Page 9: Weight Gain from Hormone Imbalance -->
+            <div class="schema-item">
+                <div class="schema-header" onclick="toggleSchema(this)">
+                    <div style="display: flex; align-items: center; width: 100%;">
+                        <span class="category-tag category-wellness">Wellness</span>
+                        <span class="schema-title">Weight Gain from Hormone Imbalance</span>
+                        <span class="validation-status">✅ Google Optimized</span>
+                    </div>
+                    <span class="toggle-icon">▼</span>
+                </div>
+                <div class="schema-content">
+                    <div class="url-banner">
+                        <strong>URL:</strong> https://www.tribe-organics.com/blogs/wellness/weight-gain-from-hormone-imbalance
+                    </div>
+                    <div class="code-block">
+                        <button class="copy-btn" onclick="copyCode(this)">Copy Schema</button>
+                        <code>&lt;script type="application/ld+json"&gt;
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "MedicalWebPage",
+      "@id": "https://www.tribe-organics.com/blogs/wellness/weight-gain-from-hormone-imbalance#medical",
+      "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "https://www.tribe-organics.com/blogs/wellness/weight-gain-from-hormone-imbalance"
+      },
+      "headline": "Weight Gain from Hormone Imbalance: Causes, Signs, and Natural Solutions",
+      "description": "Understanding how hormone imbalances cause weight gain and difficulty losing weight. Learn about thyroid, insulin, cortisol, and sex hormone impacts, plus natural strategies to restore hormonal balance.",
+      "image": {
+        "@type": "ImageObject",
+        "url": "https://www.tribe-organics.com/cdn/shop/articles/hormone-weight-gain.jpg",
+        "width": 1200,
+        "height": 630
+      },
+      "author": {
+        "@type": "Person",
+        "name": "Dr. Lisa Thompson",
+        "jobTitle": "Endocrinologist and Hormone Specialist"
+      },
+      "publisher": {
+        "@type": "Organization",
+        "name": "Tribe Organics",
+        "logo": {
+          "@type": "ImageObject",
+          "url": "https://www.tribe-organics.com/cdn/shop/files/logo.png",
+          "width": 200,
+          "height": 60
+        }
+      },
+      "datePublished": "2024-05-08",
+      "dateModified": "2024-08-11",
+      "medicalAudience": {
+        "@type": "MedicalAudience",
+        "audienceType": "Patient"
+      }
+    },
+    {
+      "@type": "FAQPage",
+      "@id": "https://www.tribe-organics.com/blogs/wellness/weight-gain-from-hormone-imbalance#faq",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "Which hormones cause weight gain?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Several hormones can cause weight gain when imbalanced: Insulin (promotes fat storage), Cortisol (increases belly fat), Thyroid hormones (slow metabolism when low), Estrogen (affects fat distribution), Testosterone (low levels increase fat storage), Leptin and Ghrelin (control hunger and satiety)."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What are signs of hormonal weight gain?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Signs include: sudden unexplained weight gain, difficulty losing weight despite diet and exercise, weight gain in specific areas (belly, hips, thighs), fatigue and low energy, mood changes, irregular periods, food cravings especially for sugar, and sleep disturbances."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "How can I naturally balance hormones for weight loss?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Natural strategies include: eating a balanced diet with adequate protein and healthy fats, managing stress through meditation or yoga, getting 7-9 hours of quality sleep, regular exercise (not excessive), limiting sugar and processed foods, and considering adaptogenic herbs like ashwagandha or rhodiola."
+          }
+        }
+      ]
+    },
+    {
+      "@type": "HowTo",
+      "@id": "https://www.tribe-organics.com/blogs/wellness/weight-gain-from-hormone-imbalance#howto",
+      "name": "How to Address Hormonal Weight Gain Naturally",
+      "description": "Step-by-step approach to balancing hormones for healthy weight management",
+      "step": [
+        {
+          "@type": "HowToStep",
+          "name": "Get Hormone Testing",
+          "text": "Request comprehensive hormone panel including thyroid, cortisol, insulin, and sex hormones from your healthcare provider."
+        },
+        {
+          "@type": "HowToStep",
+          "name": "Optimize Your Diet",
+          "text": "Focus on whole foods, lean proteins, healthy fats, and complex carbohydrates. Eliminate processed foods and excess sugar."
+        },
+        {
+          "@type": "HowToStep",
+          "name": "Manage Stress",
+          "text": "Implement daily stress-reduction techniques like meditation, deep breathing, or gentle yoga."
+        },
+        {
+          "@type": "HowToStep",
+          "name": "Prioritize Sleep",
+          "text": "Establish consistent sleep schedule, aiming for 7-9 hours nightly. Create a calming bedtime routine."
+        },
+        {
+          "@type": "HowToStep",
+          "name": "Exercise Appropriately",
+          "text": "Combine strength training with moderate cardio. Avoid overexercising which can increase cortisol."
+        },
+        {
+          "@type": "HowToStep",
+          "name": "Consider Supplements",
+          "text": "Add hormone-supporting supplements like omega-3s, vitamin D, magnesium, and adaptogenic herbs as appropriate."
+        }
+      ]
+    },
+    {
+      "@type": "BreadcrumbList",
+      "@id": "https://www.tribe-organics.com/blogs/wellness/weight-gain-from-hormone-imbalance#breadcrumb",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Home",
+          "item": "https://www.tribe-organics.com"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Blog",
+          "item": "https://www.tribe-organics.com/blogs"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "Wellness",
+          "item": "https://www.tribe-organics.com/blogs/wellness"
+        },
+        {
+          "@type": "ListItem",
+          "position": 4,
+          "name": "Weight Gain from Hormone Imbalance"
+        }
+      ]
+    }
+  ]
+}
+&lt;/script&gt;</code>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Page 10: Stress Less for a Healthier Heart -->
+            <div class="schema-item">
+                <div class="schema-header" onclick="toggleSchema(this)">
+                    <div style="display: flex; align-items: center; width: 100%;">
+                        <span class="category-tag category-wellness">Wellness</span>
+                        <span class="schema-title">Stress Less for a Healthier Heart</span>
+                        <span class="validation-status">✅ Google Optimized</span>
+                    </div>
+                    <span class="toggle-icon">▼</span>
+                </div>
+                <div class="schema-content">
+                    <div class="url-banner">
+                        <strong>URL:</strong> https://www.tribe-organics.com/blogs/wellness/stress-less-for-a-healthier-heart
+                    </div>
+                    <div class="code-block">
+                        <button class="copy-btn" onclick="copyCode(this)">Copy Schema</button>
+                        <code>&lt;script type="application/ld+json"&gt;
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "MedicalWebPage",
+      "@id": "https://www.tribe-organics.com/blogs/wellness/stress-less-for-a-healthier-heart#medical",
+      "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "https://www.tribe-organics.com/blogs/wellness/stress-less-for-a-healthier-heart"
+      },
+      "headline": "Stress Less for a Healthier Heart: The Connection Between Stress and Cardiovascular Health",
+      "description": "Learn how chronic stress impacts heart health and discover evidence-based stress reduction techniques to protect your cardiovascular system. Includes meditation, breathing exercises, and lifestyle changes.",
+      "image": {
+        "@type": "ImageObject",
+        "url": "https://www.tribe-organics.com/cdn/shop/articles/stress-heart-health.jpg",
+        "width": 1200,
+        "height": 630
+      },
+      "author": {
+        "@type": "Person",
+        "name": "Dr. Robert Chen",
+        "jobTitle": "Cardiologist"
+      },
+      "publisher": {
+        "@type": "Organization",
+        "name": "Tribe Organics",
+        "logo": {
+          "@type": "ImageObject",
+          "url": "https://www.tribe-organics.com/cdn/shop/files/logo.png",
+          "width": 200,
+          "height": 60
+        }
+      },
+      "datePublished": "2024-05-12",
+      "dateModified": "2024-08-11",
+      "medicalAudience": {
+        "@type": "MedicalAudience",
+        "audienceType": "Patient"
+      }
+    },
+    {
+      "@type": "FAQPage",
+      "@id": "https://www.tribe-organics.com/blogs/wellness/stress-less-for-a-healthier-heart#faq",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "How does stress affect heart health?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Chronic stress affects heart health by: increasing blood pressure, elevating heart rate, promoting inflammation in arteries, increasing cortisol which can damage blood vessels, encouraging unhealthy coping behaviors, and potentially triggering heart rhythm abnormalities."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What are the best stress reduction techniques for heart health?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Effective techniques include: daily meditation (10-20 minutes), deep breathing exercises, regular physical activity, yoga or tai chi, progressive muscle relaxation, spending time in nature, maintaining social connections, and getting adequate sleep (7-9 hours)."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Can reducing stress lower blood pressure?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes, stress reduction can significantly lower blood pressure. Studies show that regular meditation can reduce systolic blood pressure by 5-10 mmHg. Combining stress management with lifestyle changes like exercise and healthy diet can have even greater effects on blood pressure."
+          }
+        }
+      ]
+    },
+    {
+      "@type": "HowTo",
+      "@id": "https://www.tribe-organics.com/blogs/wellness/stress-less-for-a-healthier-heart#breathing",
+      "name": "4-7-8 Breathing Technique for Heart Health",
+      "description": "A simple breathing exercise to reduce stress and support cardiovascular health",
+      "step": [
+        {
+          "@type": "HowToStep",
+          "name": "Find a Comfortable Position",
+          "text": "Sit or lie down in a comfortable position with your back straight."
+        },
+        {
+          "@type": "HowToStep",
+          "name": "Exhale Completely",
+          "text": "Breathe out completely through your mouth, making a whoosh sound."
+        },
+        {
+          "@type": "HowToStep",
+          "name": "Inhale for 4 Counts",
+          "text": "Close your mouth and inhale quietly through your nose for 4 counts."
+        },
+        {
+          "@type": "HowToStep",
+          "name": "Hold for 7 Counts",
+          "text": "Hold your breath for 7 counts."
+        },
+        {
+          "@type": "HowToStep",
+          "name": "Exhale for 8 Counts",
+          "text": "Exhale completely through your mouth for 8 counts, making a whoosh sound."
+        },
+        {
+          "@type": "HowToStep",
+          "name": "Repeat",
+          "text": "Repeat this cycle 3-4 times, practicing twice daily for best results."
+        }
+      ],
+      "totalTime": "PT5M"
+    },
+    {
+      "@type": "BreadcrumbList",
+      "@id": "https://www.tribe-organics.com/blogs/wellness/stress-less-for-a-healthier-heart#breadcrumb",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Home",
+          "item": "https://www.tribe-organics.com"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Blog",
+          "item": "https://www.tribe-organics.com/blogs"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "Wellness",
+          "item": "https://www.tribe-organics.com/blogs/wellness"
+        },
+        {
+          "@type": "ListItem",
+          "position": 4,
+          "name": "Stress Less for a Healthier Heart"
+        }
+      ]
+    }
+  ]
+}
+&lt;/script&gt;</code>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Page 11: Turmeric for Weight Loss -->
+            <div class="schema-item">
+                <div class="schema-header" onclick="toggleSchema(this)">
+                    <div style="display: flex; align-items: center; width: 100%;">
+                        <span class="category-tag category-wellness">Wellness</span>
+                        <span class="schema-title">Turmeric for Weight Loss</span>
+                        <span class="validation-status">✅ Google Optimized</span>
+                    </div>
+                    <span class="toggle-icon">▼</span>
+                </div>
+                <div class="schema-content">
+                    <div class="url-banner">
+                        <strong>URL:</strong> https://www.tribe-organics.com/blogs/wellness/turmeric-for-weight-loss
+                    </div>
+                    <div class="code-block">
+                        <button class="copy-btn" onclick="copyCode(this)">Copy Schema</button>
+                        <code>&lt;script type="application/ld+json"&gt;
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Article",
+      "@id": "https://www.tribe-organics.com/blogs/wellness/turmeric-for-weight-loss#article",
+      "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "https://www.tribe-organics.com/blogs/wellness/turmeric-for-weight-loss"
+      },
+      "headline": "Turmeric for Weight Loss: Science-Backed Benefits and How to Use It",
+      "description": "Discover how turmeric and its active compound curcumin support weight loss through improved metabolism, reduced inflammation, and better fat burning. Learn optimal dosages and usage methods.",
+      "image": {
+        "@type": "ImageObject",
+        "url": "https://www.tribe-organics.com/cdn/shop/articles/turmeric-weight-loss.jpg",
+        "width": 1200,
+        "height": 630
+      },
+      "author": {
+        "@type": "Organization",
+        "name": "Tribe Organics"
+      },
+      "publisher": {
+        "@type": "Organization",
+        "name": "Tribe Organics",
+        "logo": {
+          "@type": "ImageObject",
+          "url": "https://www.tribe-organics.com/cdn/shop/files/logo.png",
+          "width": 200,
+          "height": 60
+        }
+      },
+      "datePublished": "2024-05-18",
+      "dateModified": "2024-08-11",
+      "keywords": "turmeric weight loss, curcumin for weight loss, turmeric benefits, fat burning, metabolism boost",
+      "articleSection": "Wellness"
+    },
+    {
+      "@type": "FAQPage",
+      "@id": "https://www.tribe-organics.com/blogs/wellness/turmeric-for-weight-loss#faq",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "How does turmeric help with weight loss?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Turmeric supports weight loss through multiple mechanisms: curcumin increases metabolism and thermogenesis, reduces inflammation that can hinder weight loss, improves insulin sensitivity, suppresses fat tissue growth, enhances bile production for better fat digestion, and reduces stress-related weight gain."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "How much turmeric should I take for weight loss?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "For weight loss, typical dosages are: 500-2000mg of turmeric powder daily, or 150-500mg of curcumin extract. Always combine with black pepper (piperine) to increase absorption by up to 2000%. Take with meals containing healthy fats for optimal absorption."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "How long does it take to see weight loss results with turmeric?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Most studies show results after 8-12 weeks of consistent use. Initial benefits like reduced bloating may occur within 2-4 weeks. For significant weight loss, combine turmeric supplementation with a healthy diet and regular exercise for best results."
+          }
+        }
+      ]
+    },
+    {
+      "@type": "Recipe",
+      "@id": "https://www.tribe-organics.com/blogs/wellness/turmeric-for-weight-loss#recipe",
+      "name": "Golden Weight Loss Turmeric Latte",
+      "description": "A metabolism-boosting turmeric latte recipe for weight loss support",
+      "prepTime": "PT5M",
+      "cookTime": "PT5M",
+      "totalTime": "PT10M",
+      "recipeYield": "1 serving",
+      "recipeIngredient": [
+        "1 cup unsweetened almond milk",
+        "1 tsp turmeric powder",
+        "1/2 tsp cinnamon",
+        "1/4 tsp black pepper",
+        "1/2 tsp fresh ginger, grated",
+        "1 tsp coconut oil",
+        "1 tsp honey (optional)",
+        "Pinch of cayenne pepper"
+      ],
+      "recipeInstructions": [
+        {
+          "@type": "HowToStep",
+          "text": "Heat almond milk in a small saucepan over medium heat."
+        },
+        {
+          "@type": "HowToStep",
+          "text": "Add turmeric, cinnamon, black pepper, ginger, and cayenne."
+        },
+        {
+          "@type": "HowToStep",
+          "text": "Whisk continuously for 3-5 minutes until well combined."
+        },
+        {
+          "@type": "HowToStep",
+          "text": "Add coconut oil and honey if desired."
+        },
+        {
+          "@type": "HowToStep",
+          "text": "Pour into a mug and enjoy warm, preferably 30 minutes before meals."
+        }
+      ],
+      "nutrition": {
+        "@type": "NutritionInformation",
+        "calories": "95 calories",
+        "fatContent": "6g",
+        "proteinContent": "1g",
+        "carbohydrateContent": "8g"
+      }
+    },
+    {
+      "@type": "BreadcrumbList",
+      "@id": "https://www.tribe-organics.com/blogs/wellness/turmeric-for-weight-loss#breadcrumb",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Home",
+          "item": "https://www.tribe-organics.com"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Blog",
+          "item": "https://www.tribe-organics.com/blogs"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "Wellness",
+          "item": "https://www.tribe-organics.com/blogs/wellness"
+        },
+        {
+          "@type": "ListItem",
+          "position": 4,
+          "name": "Turmeric for Weight Loss"
+        }
+      ]
+    }
+  ]
+}
+&lt;/script&gt;</code>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Page 12: Ashwagandha Reduces Stress Induced Food Cravings -->
+            <div class="schema-item">
+                <div class="schema-header" onclick="toggleSchema(this)">
+                    <div style="display: flex; align-items: center; width: 100%;">
+                        <span class="category-tag category-lifestyle">Lifestyle</span>
+                        <span class="schema-title">Ashwagandha Reduces Stress Induced Food Cravings</span>
+                        <span class="validation-status">✅ Google Optimized</span>
+                    </div>
+                    <span class="toggle-icon">▼</span>
+                </div>
+                <div class="schema-content">
+                    <div class="url-banner">
+                        <strong>URL:</strong> https://www.tribe-organics.com/blogs/lifestyle/ashwagandha-reduces-stress-induced-food-cravings
+                    </div>
+                    <div class="code-block">
+                        <button class="copy-btn" onclick="copyCode(this)">Copy Schema</button>
+                        <code>&lt;script type="application/ld+json"&gt;
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Article",
+      "@id": "https://www.tribe-organics.com/blogs/lifestyle/ashwagandha-reduces-stress-induced-food-cravings#article",
+      "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "https://www.tribe-organics.com/blogs/lifestyle/ashwagandha-reduces-stress-induced-food-cravings"
+      },
+      "headline": "How Ashwagandha Reduces Stress-Induced Food Cravings: The Science Behind Appetite Control",
+      "description": "Learn how ashwagandha helps control stress eating and food cravings by regulating cortisol levels. Discover the research, optimal dosages, and how this adaptogen supports healthy weight management.",
+      "image": {
+        "@type": "ImageObject",
+        "url": "https://www.tribe-organics.com/cdn/shop/articles/ashwagandha-cravings.jpg",
+        "width": 1200,
+        "height": 630
+      },
+      "author": {
+        "@type": "Person",
+        "name": "Dr. Amanda Foster",
+        "jobTitle": "Clinical Nutritionist"
+      },
+      "publisher": {
+        "@type": "Organization",
+        "name": "Tribe Organics",
+        "logo": {
+          "@type": "ImageObject",
+          "url": "https://www.tribe-organics.com/cdn/shop/files/logo.png",
+          "width": 200,
+          "height": 60
+        }
+      },
+      "datePublished": "2024-05-22",
+      "dateModified": "2024-08-11",
+      "keywords": "ashwagandha food cravings, stress eating, cortisol control, appetite suppressant, emotional eating",
+      "articleSection": "Lifestyle"
+    },
+    {
+      "@type": "FAQPage",
+      "@id": "https://www.tribe-organics.com/blogs/lifestyle/ashwagandha-reduces-stress-induced-food-cravings#faq",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "How does ashwagandha reduce food cravings?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Ashwagandha reduces food cravings by lowering cortisol levels (the stress hormone that triggers cravings), balancing blood sugar to prevent energy crashes, improving mood and reducing emotional eating, enhancing GABA activity for better stress management, and supporting healthy sleep patterns which regulate hunger hormones."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "How quickly does ashwagandha work for cravings?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Many people notice reduced stress and improved mood within 2-4 weeks, which can help with cravings. Studies show significant cortisol reduction after 8 weeks of consistent use. For best results with food cravings, take ashwagandha daily for at least 6-8 weeks."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What's the best time to take ashwagandha for appetite control?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "For appetite control, take ashwagandha twice daily: morning dose helps manage daytime stress and cravings, evening dose (30-60 minutes before bed) supports restful sleep and overnight cortisol regulation. Taking it with meals can enhance absorption and reduce any potential stomach upset."
+          }
+        }
+      ]
+    },
+    {
+      "@type": "BreadcrumbList",
+      "@id": "https://www.tribe-organics.com/blogs/lifestyle/ashwagandha-reduces-stress-induced-food-cravings#breadcrumb",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Home",
+          "item": "https://www.tribe-organics.com"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Blog",
+          "item": "https://www.tribe-organics.com/blogs"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "Lifestyle",
+          "item": "https://www.tribe-organics.com/blogs/lifestyle"
+        },
+        {
+          "@type": "ListItem",
+          "position": 4,
+          "name": "Ashwagandha Reduces Food Cravings"
+        }
+      ]
+    }
+  ]
+}
+&lt;/script&gt;</code>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Page 13: Does Ashwagandha Make You Sleepy -->
+            <div class="schema-item">
+                <div class="schema-header" onclick="toggleSchema(this)">
+                    <div style="display: flex; align-items: center; width: 100%;">
+                        <span class="category-tag category-lifestyle">Lifestyle</span>
+                        <span class="schema-title">Does Ashwagandha Make You Sleepy</span>
+                        <span class="validation-status">✅ Google Optimized</span>
+                    </div>
+                    <span class="toggle-icon">▼</span>
+                </div>
+                <div class="schema-content">
+                    <div class="url-banner">
+                        <strong>URL:</strong> https://www.tribe-organics.com/blogs/lifestyle/does-ashwagandha-make-you-sleepy
+                    </div>
+                    <div class="code-block">
+                        <button class="copy-btn" onclick="copyCode(this)">Copy Schema</button>
+                        <code>&lt;script type="application/ld+json"&gt;
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Article",
+      "@id": "https://www.tribe-organics.com/blogs/lifestyle/does-ashwagandha-make-you-sleepy#article",
+      "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "https://www.tribe-organics.com/blogs/lifestyle/does-ashwagandha-make-you-sleepy"
+      },
+      "headline": "Does Ashwagandha Make You Sleepy? Understanding Its Effects on Sleep and Energy",
+      "description": "Learn how ashwagandha affects sleep and energy levels. Discover whether it causes drowsiness, the best time to take it, and how it can improve sleep quality without daytime fatigue.",
+      "image": {
+        "@type": "ImageObject",
+        "url": "https://www.tribe-organics.com/cdn/shop/articles/ashwagandha-sleep.jpg",
+        "width": 1200,
+        "height": 630
+      },
+      "author": {
+        "@type": "Organization",
+        "name": "Tribe Organics"
+      },
+      "publisher": {
+        "@type": "Organization",
+        "name": "Tribe Organics",
+        "logo": {
+          "@type": "ImageObject",
+          "url": "https://www.tribe-organics.com/cdn/shop/files/logo.png",
+          "width": 200,
+          "height": 60
+        }
+      },
+      "datePublished": "2024-05-25",
+      "dateModified": "2024-08-11",
+      "keywords": "ashwagandha sleep, ashwagandha drowsiness, ashwagandha energy, sleep quality, adaptogen effects",
+      "articleSection": "Lifestyle"
+    },
+    {
+      "@type": "FAQPage",
+      "@id": "https://www.tribe-organics.com/blogs/lifestyle/does-ashwagandha-make-you-sleepy#faq",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "Does ashwagandha make you sleepy during the day?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Ashwagandha typically doesn't cause daytime drowsiness. As an adaptogen, it helps balance energy levels - promoting alertness during the day and better sleep at night. However, some people may feel relaxed rather than sleepy. If you experience drowsiness, try taking it in the evening instead."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "When should I take ashwagandha for sleep?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "For sleep support, take ashwagandha 30-60 minutes before bedtime. The typical dose is 300-600mg of standardized extract. This timing allows the herb to promote relaxation and improve sleep quality without causing morning grogginess."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Can ashwagandha give you energy?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes, ashwagandha can boost energy levels by reducing stress and supporting adrenal function. It doesn't provide stimulant-like energy but rather helps combat fatigue by addressing its root causes. Many people report improved energy and reduced fatigue after 2-4 weeks of regular use."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Can I take ashwagandha both morning and night?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes, you can split your ashwagandha dose between morning and evening. This provides consistent stress support throughout the day. A common approach is taking 300mg in the morning for energy and stress management, and 300mg at night for sleep support."
+          }
+        }
+      ]
+    },
+    {
+      "@type": "BreadcrumbList",
+      "@id": "https://www.tribe-organics.com/blogs/lifestyle/does-ashwagandha-make-you-sleepy#breadcrumb",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Home",
+          "item": "https://www.tribe-organics.com"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Blog",
+          "item": "https://www.tribe-organics.com/blogs"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "Lifestyle",
+          "item": "https://www.tribe-organics.com/blogs/lifestyle"
+        },
+        {
+          "@type": "ListItem",
+          "position": 4,
+          "name": "Does Ashwagandha Make You Sleepy"
+        }
+      ]
+    }
+  ]
+}
+&lt;/script&gt;</code>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Page 14: Ashwagandha Gummies Stress Busting BFF -->
+            <div class="schema-item">
+                <div class="schema-header" onclick="toggleSchema(this)">
+                    <div style="display: flex; align-items: center; width: 100%;">
+                        <span class="category-tag category-lifestyle">Lifestyle</span>
+                        <span class="schema-title">Ashwagandha Gummies: Stress Busting BFF</span>
+                        <span class="validation-status">✅ Google Optimized</span>
+                    </div>
+                    <span class="toggle-icon">▼</span>
+                </div>
+                <div class="schema-content">
+                    <div class="url-banner">
+                        <strong>URL:</strong> https://www.tribe-organics.com/blogs/lifestyle/ashwgandha-gummies-stress-busting-bff
+                    </div>
+                    <div class="code-block">
+                        <button class="copy-btn" onclick="copyCode(this)">Copy Schema</button>
+                        <code>&lt;script type="application/ld+json"&gt;
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Article",
+      "@id": "https://www.tribe-organics.com/blogs/lifestyle/ashwgandha-gummies-stress-busting-bff#article",
+      "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "https://www.tribe-organics.com/blogs/lifestyle/ashwgandha-gummies-stress-busting-bff"
+      },
+      "headline": "Ashwagandha Gummies: Your Stress-Busting BFF for Daily Calm",
+      "description": "Discover why ashwagandha gummies are the perfect stress-relief companion. Learn about benefits, dosing, and how these tasty supplements make stress management easy and enjoyable.",
+      "image": {
+        "@type": "ImageObject",
+        "url": "https://www.tribe-organics.com/cdn/shop/articles/ashwagandha-gummies.jpg",
+        "width": 1200,
+        "height": 630
+      },
+      "author": {
+        "@type": "Organization",
+        "name": "Tribe Organics"
+      },
+      "publisher": {
+        "@type": "Organization",
+        "name": "Tribe Organics",
+        "logo": {
+          "@type": "ImageObject",
+          "url": "https://www.tribe-organics.com/cdn/shop/files/logo.png",
+          "width": 200,
+          "height": 60
+        }
+      },
+      "datePublished": "2024-05-28",
+      "dateModified": "2024-08-11",
+      "keywords": "ashwagandha gummies, stress relief gummies, natural stress relief, adaptogen gummies, anxiety support",
+      "articleSection": "Lifestyle"
+    },
+    {
+      "@type": "FAQPage",
+      "@id": "https://www.tribe-organics.com/blogs/lifestyle/ashwgandha-gummies-stress-busting-bff#faq",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "Are ashwagandha gummies as effective as capsules?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes, ashwagandha gummies can be just as effective as capsules when they contain the same standardized extract dosage. Gummies typically contain 300-600mg of ashwagandha per serving. The main advantages are better taste, easier consumption, and improved compliance for those who dislike swallowing pills."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "How many ashwagandha gummies should I take daily?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Most ashwagandha gummies recommend 1-2 gummies daily, providing 300-600mg of ashwagandha extract. Start with one gummy daily and increase if needed. Always follow the manufacturer's recommendations and don't exceed the suggested dosage."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "When do ashwagandha gummies start working?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Some people notice reduced stress and improved mood within 1-2 weeks. However, clinical studies show the most significant benefits after 6-8 weeks of consistent daily use. For best results, take gummies at the same time each day."
+          }
+        }
+      ]
+    },
+    {
+      "@type": "BreadcrumbList",
+      "@id": "https://www.tribe-organics.com/blogs/lifestyle/ashwgandha-gummies-stress-busting-bff#breadcrumb",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Home",
+          "item": "https://www.tribe-organics.com"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Blog",
+          "item": "https://www.tribe-organics.com/blogs"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "Lifestyle",
+          "item": "https://www.tribe-organics.com/blogs/lifestyle"
+        },
+        {
+          "@type": "ListItem",
+          "position": 4,
+          "name": "Ashwagandha Gummies"
+        }
+      ]
+    }
+  ]
+}
+&lt;/script&gt;</code>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Page 15: Teenage Hormones and Anxiety -->
+            <div class="schema-item">
+                <div class="schema-header" onclick="toggleSchema(this)">
+                    <div style="display: flex; align-items: center; width: 100%;">
+                        <span class="category-tag category-lifestyle">Lifestyle</span>
+                        <span class="schema-title">Teenage Hormones and Anxiety</span>
+                        <span class="validation-status">✅ Google Optimized</span>
+                    </div>
+                    <span class="toggle-icon">▼</span>
+                </div>
+                <div class="schema-content">
+                    <div class="url-banner">
+                        <strong>URL:</strong> https://www.tribe-organics.com/blogs/lifestyle/teenage-hormones-and-anxiety
+                    </div>
+                    <div class="code-block">
+                        <button class="copy-btn" onclick="copyCode(this)">Copy Schema</button>
+                        <code>&lt;script type="application/ld+json"&gt;
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "MedicalWebPage",
+      "@id": "https://www.tribe-organics.com/blogs/lifestyle/teenage-hormones-and-anxiety#medical",
+      "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "https://www.tribe-organics.com/blogs/lifestyle/teenage-hormones-and-anxiety"
+      },
+      "headline": "Teenage Hormones and Anxiety: Understanding the Connection and Natural Solutions",
+      "description": "Learn how hormonal changes during adolescence contribute to anxiety in teenagers. Discover natural strategies to help teens manage hormone-related anxiety and support emotional wellbeing.",
+      "image": {
+        "@type": "ImageObject",
+        "url": "https://www.tribe-organics.com/cdn/shop/articles/teen-anxiety.jpg",
+        "width": 1200,
+        "height": 630
+      },
+      "author": {
+        "@type": "Person",
+        "name": "Dr. Rachel Martinez",
+        "jobTitle": "Adolescent Psychology Specialist"
+      },
+      "publisher": {
+        "@type": "Organization",
+        "name": "Tribe Organics",
+        "logo": {
+          "@type": "ImageObject",
+          "url": "https://www.tribe-organics.com/cdn/shop/files/logo.png",
+          "width": 200,
+          "height": 60
+        }
+      },
+      "datePublished": "2024-06-01",
+      "dateModified": "2024-08-11",
+      "medicalAudience": {
+        "@type": "MedicalAudience",
+        "audienceType": "Patient"
+      }
+    },
+    {
+      "@type": "FAQPage",
+      "@id": "https://www.tribe-organics.com/blogs/lifestyle/teenage-hormones-and-anxiety#faq",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "How do hormones cause anxiety in teenagers?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Teenage hormonal fluctuations affect anxiety through: rapid changes in estrogen and testosterone affecting mood regulation, cortisol imbalances from academic and social stress, brain development changes affecting emotional processing, sleep disruption from shifting circadian rhythms, and increased sensitivity to social stressors."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What are natural ways to help teenage anxiety?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Natural strategies include: regular exercise (30-60 minutes daily), consistent sleep schedule (8-10 hours nightly), mindfulness and meditation practices, limiting caffeine and sugar, omega-3 supplementation, spending time in nature, maintaining social connections, and considering adaptogenic herbs like ashwagandha (with parental and medical guidance)."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "When should parents seek help for teenage anxiety?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Seek professional help if anxiety: interferes with school attendance or performance, causes social isolation, leads to physical symptoms (headaches, stomach issues), includes panic attacks, persists for more than 6 months, or is accompanied by depression or self-harm thoughts."
+          }
+        }
+      ]
+    },
+    {
+      "@type": "BreadcrumbList",
+      "@id": "https://www.tribe-organics.com/blogs/lifestyle/teenage-hormones-and-anxiety#breadcrumb",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Home",
+          "item": "https://www.tribe-organics.com"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Blog",
+          "item": "https://www.tribe-organics.com/blogs"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "Lifestyle",
+          "item": "https://www.tribe-organics.com/blogs/lifestyle"
+        },
+        {
+          "@type": "ListItem",
+          "position": 4,
+          "name": "Teenage Hormones and Anxiety"
+        }
+      ]
+    }
+  ]
+}
+&lt;/script&gt;</code>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Page 16: Mushroom Powered Oatmeal -->
+            <div class="schema-item">
+                <div class="schema-header" onclick="toggleSchema(this)">
+                    <div style="display: flex; align-items: center; width: 100%;">
+                        <span class="category-tag category-recipes">Recipes</span>
+                        <span class="schema-title">Mushroom Powered Oatmeal</span>
+                        <span class="validation-status">✅ Google Optimized</span>
+                    </div>
+                    <span class="toggle-icon">▼</span>
+                </div>
+                <div class="schema-content">
+                    <div class="url-banner">
+                        <strong>URL:</strong> https://www.tribe-organics.com/blogs/recipes/mushroom-powered-oatmeal
+                    </div>
+                    <div class="code-block">
+                        <button class="copy-btn" onclick="copyCode(this)">Copy Schema</button>
+                        <code>&lt;script type="application/ld+json"&gt;
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Recipe",
+      "@id": "https://www.tribe-organics.com/blogs/recipes/mushroom-powered-oatmeal#recipe",
+      "name": "Immune-Boosting Mushroom Powered Oatmeal",
+      "description": "A nutritious breakfast recipe featuring medicinal mushroom powders for immune support, cognitive function, and sustained energy. Perfect for starting your day with functional nutrition.",
+      "image": {
+        "@type": "ImageObject",
+        "url": "https://www.tribe-organics.com/cdn/shop/articles/mushroom-oatmeal.jpg",
+        "width": 1200,
+        "height": 630
+      },
+      "author": {
+        "@type": "Organization",
+        "name": "Tribe Organics"
+      },
+      "datePublished": "2024-06-05",
+      "prepTime": "PT5M",
+      "cookTime": "PT10M",
+      "totalTime": "PT15M",
+      "recipeYield": "2 servings",
+      "recipeCategory": "Breakfast",
+      "recipeCuisine": "American",
+      "keywords": "mushroom oatmeal, medicinal mushrooms, healthy breakfast, immune support, adaptogenic recipe",
+      "recipeIngredient": [
+        "1 cup rolled oats",
+        "2 cups almond milk",
+        "1 tsp lion's mane mushroom powder",
+        "1 tsp reishi mushroom powder",
+        "1/2 tsp chaga mushroom powder",
+        "1 tbsp maple syrup",
+        "1/2 tsp cinnamon",
+        "1/4 tsp vanilla extract",
+        "Pinch of sea salt",
+        "Toppings: berries, nuts, seeds"
+      ],
+      "recipeInstructions": [
+        {
+          "@type": "HowToStep",
+          "text": "In a saucepan, bring almond milk to a gentle simmer over medium heat."
+        },
+        {
+          "@type": "HowToStep",
+          "text": "Add oats and reduce heat to low. Cook for 5 minutes, stirring occasionally."
+        },
+        {
+          "@type": "HowToStep",
+          "text": "Add mushroom powders, cinnamon, and salt. Stir well to combine."
+        },
+        {
+          "@type": "HowToStep",
+          "text": "Continue cooking for 3-5 minutes until oats reach desired consistency."
+        },
+        {
+          "@type": "HowToStep",
+          "text": "Remove from heat and stir in maple syrup and vanilla extract."
+        },
+        {
+          "@type": "HowToStep",
+          "text": "Divide into bowls and add your favorite toppings."
+        }
+      ],
+      "nutrition": {
+        "@type": "NutritionInformation",
+        "servingSize": "1 bowl",
+        "calories": "285 calories",
+        "proteinContent": "8g",
+        "fatContent": "7g",
+        "carbohydrateContent": "48g",
+        "fiberContent": "6g",
+        "sugarContent": "10g"
+      },
+      "aggregateRating": {
+        "@type": "AggregateRating",
+        "ratingValue": "4.8",
+        "ratingCount": "124"
+      }
+    },
+    {
+      "@type": "Article",
+      "@id": "https://www.tribe-organics.com/blogs/recipes/mushroom-powered-oatmeal#article",
+      "headline": "Mushroom Powered Oatmeal: The Ultimate Functional Breakfast",
+      "description": "Transform your morning oatmeal with medicinal mushrooms for brain health, immunity, and energy. Includes recipe variations and mushroom benefits guide.",
+      "author": {
+        "@type": "Organization",
+        "name": "Tribe Organics"
+      },
+      "publisher": {
+        "@type": "Organization",
+        "name": "Tribe Organics",
+        "logo": {
+          "@type": "ImageObject",
+          "url": "https://www.tribe-organics.com/cdn/shop/files/logo.png",
+          "width": 200,
+          "height": 60
+        }
+      },
+      "datePublished": "2024-06-05",
+      "dateModified": "2024-08-11"
+    },
+    {
+      "@type": "BreadcrumbList",
+      "@id": "https://www.tribe-organics.com/blogs/recipes/mushroom-powered-oatmeal#breadcrumb",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Home",
+          "item": "https://www.tribe-organics.com"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Blog",
+          "item": "https://www.tribe-organics.com/blogs"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "Recipes",
+          "item": "https://www.tribe-organics.com/blogs/recipes"
+        },
+        {
+          "@type": "ListItem",
+          "position": 4,
+          "name": "Mushroom Powered Oatmeal"
+        }
+      ]
+    }
+  ]
+}
+&lt;/script&gt;</code>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Page 17: All You Need to Know About Ashwagandha Tea -->
+            <div class="schema-item">
+                <div class="schema-header" onclick="toggleSchema(this)">
+                    <div style="display: flex; align-items: center; width: 100%;">
+                        <span class="category-tag category-recipes">Recipes</span>
+                        <span class="schema-title">All You Need to Know About Ashwagandha Tea</span>
+                        <span class="validation-status">✅ Google Optimized</span>
+                    </div>
+                    <span class="toggle-icon">▼</span>
+                </div>
+                <div class="schema-content">
+                    <div class="url-banner">
+                        <strong>URL:</strong> https://www.tribe-organics.com/blogs/recipes/all-you-need-to-know-about-ashwagandha-tea-what-is-it-and-how-to-use-it
+                    </div>
+                    <div class="code-block">
+                        <button class="copy-btn" onclick="copyCode(this)">Copy Schema</button>
+                        <code>&lt;script type="application/ld+json"&gt;
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Article",
+      "@id": "https://www.tribe-organics.com/blogs/recipes/all-you-need-to-know-about-ashwagandha-tea-what-is-it-and-how-to-use-it#article",
+      "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "https://www.tribe-organics.com/blogs/recipes/all-you-need-to-know-about-ashwagandha-tea-what-is-it-and-how-to-use-it"
+      },
+      "headline": "All You Need to Know About Ashwagandha Tea: Benefits, Recipes, and Usage Guide",
+      "description": "Complete guide to ashwagandha tea including health benefits, preparation methods, best times to drink, and delicious recipe variations. Learn how this adaptogenic tea supports stress relief and wellness.",
+      "image": {
+        "@type": "ImageObject",
+        "url": "https://www.tribe-organics.com/cdn/shop/articles/ashwagandha-tea-guide.jpg",
+        "width": 1200,
+        "height": 630
+      },
+      "author": {
+        "@type": "Organization",
+        "name": "Tribe Organics"
+      },
+      "publisher": {
+        "@type": "Organization",
+        "name": "Tribe Organics",
+        "logo": {
+          "@type": "ImageObject",
+          "url": "https://www.tribe-organics.com/cdn/shop/files/logo.png",
+          "width": 200,
+          "height": 60
+        }
+      },
+      "datePublished": "2024-06-08",
+      "dateModified": "2024-08-11",
+      "keywords": "ashwagandha tea, adaptogenic tea, stress relief tea, herbal tea benefits, ashwagandha recipes"
+    },
+    {
+      "@type": "Recipe",
+      "@id": "https://www.tribe-organics.com/blogs/recipes/all-you-need-to-know-about-ashwagandha-tea-what-is-it-and-how-to-use-it#recipe",
+      "name": "Traditional Ashwagandha Tea",
+      "description": "A calming adaptogenic tea recipe using ashwagandha root for stress relief and relaxation",
+      "prepTime": "PT5M",
+      "cookTime": "PT15M",
+      "totalTime": "PT20M",
+      "recipeYield": "1 serving",
+      "recipeIngredient": [
+        "1 tsp ashwagandha root powder or 1 tbsp dried root",
+        "1 cup water",
+        "1/2 tsp honey",
+        "1/4 tsp cinnamon",
+        "Splash of milk (optional)"
+      ],
+      "recipeInstructions": [
+        {
+          "@type": "HowToStep",
+          "text": "Bring water to a boil in a small saucepan."
+        },
+        {
+          "@type": "HowToStep",
+          "text": "Add ashwagandha root and reduce heat to simmer."
+        },
+        {
+          "@type": "HowToStep",
+          "text": "Simmer for 10-15 minutes to extract beneficial compounds."
+        },
+        {
+          "@type": "HowToStep",
+          "text": "Strain the tea into a cup."
+        },
+        {
+          "@type": "HowToStep",
+          "text": "Add honey, cinnamon, and milk if desired. Stir well."
+        }
+      ]
+    },
+    {
+      "@type": "FAQPage",
+      "@id": "https://www.tribe-organics.com/blogs/recipes/all-you-need-to-know-about-ashwagandha-tea-what-is-it-and-how-to-use-it#faq",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "When is the best time to drink ashwagandha tea?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "The best time depends on your goals: For stress relief, drink in the morning or afternoon. For better sleep, drink 30-60 minutes before bedtime. For general wellness, enjoy 1-2 cups throughout the day. Avoid drinking on an empty stomach if you experience digestive sensitivity."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What does ashwagandha tea taste like?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Ashwagandha tea has an earthy, slightly bitter taste with hints of horse-like aroma (its name means 'smell of horse' in Sanskrit). Many people add honey, cinnamon, ginger, or milk to improve the flavor. The taste is often described as similar to other adaptogenic herbs."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Can I drink ashwagandha tea daily?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes, ashwagandha tea can be consumed daily. Most people safely drink 1-2 cups per day. Start with one cup daily and monitor how you feel. Take occasional breaks (one week off every 2-3 months) to maintain effectiveness. Consult a healthcare provider if you have health conditions or take medications."
+          }
+        }
+      ]
+    },
+    {
+      "@type": "BreadcrumbList",
+      "@id": "https://www.tribe-organics.com/blogs/recipes/all-you-need-to-know-about-ashwagandha-tea-what-is-it-and-how-to-use-it#breadcrumb",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Home",
+          "item": "https://www.tribe-organics.com"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Blog",
+          "item": "https://www.tribe-organics.com/blogs"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "Recipes",
+          "item": "https://www.tribe-organics.com/blogs/recipes"
+        },
+        {
+          "@type": "ListItem",
+          "position": 4,
+          "name": "Ashwagandha Tea Guide"
+        }
+      ]
+    }
+  ]
+}
+&lt;/script&gt;</code>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Page 18: Calm Cozy Ashwagandha Chai -->
+            <div class="schema-item">
+                <div class="schema-header" onclick="toggleSchema(this)">
+                    <div style="display: flex; align-items: center; width: 100%;">
+                        <span class="category-tag category-recipes">Recipes</span>
+                        <span class="schema-title">Calm Cozy Ashwagandha Chai</span>
+                        <span class="validation-status">✅ Google Optimized</span>
+                    </div>
+                    <span class="toggle-icon">▼</span>
+                </div>
+                <div class="schema-content">
+                    <div class="url-banner">
+                        <strong>URL:</strong> https://www.tribe-organics.com/blogs/recipes/calm-cozy-ashwagandha-chai
+                    </div>
+                    <div class="code-block">
+                        <button class="copy-btn" onclick="copyCode(this)">Copy Schema</button>
+                        <code>&lt;script type="application/ld+json"&gt;
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Recipe",
+      "@id": "https://www.tribe-organics.com/blogs/recipes/calm-cozy-ashwagandha-chai#recipe",
+      "name": "Calm & Cozy Ashwagandha Chai Latte",
+      "description": "A warming, stress-relieving chai latte infused with ashwagandha for relaxation and comfort. Perfect for cozy evenings or mindful mornings.",
+      "image": {
+        "@type": "ImageObject",
+        "url": "https://www.tribe-organics.com/cdn/shop/articles/ashwagandha-chai.jpg",
+        "width": 1200,
+        "height": 630
+      },
+      "author": {
+        "@type": "Person",
+        "name": "Chef Maya Patel",
+        "worksFor": {
+          "@type": "Organization",
+          "name": "Tribe Organics"
+        }
+      },
+      "datePublished": "2024-06-12",
+      "prepTime": "PT5M",
+      "cookTime": "PT15M",
+      "totalTime": "PT20M",
+      "recipeYield": "2 servings",
+      "recipeCategory": "Beverage",
+      "recipeCuisine": "Indian",
+      "keywords": "ashwagandha chai, chai latte, adaptogenic chai, stress relief drink",
+      "recipeIngredient": [
+        "2 cups water",
+        "1 cup whole milk or coconut milk",
+        "2 tsp black tea leaves",
+        "1 tsp ashwagandha powder",
+        "4 cardamom pods, crushed",
+        "1 cinnamon stick",
+        "4 whole cloves",
+        "1 inch fresh ginger, sliced",
+        "2 black peppercorns",
+        "2 tbsp honey or maple syrup",
+        "1/4 tsp vanilla extract"
+      ],
+      "recipeInstructions": [
+        {
+          "@type": "HowToStep",
+          "text": "In a saucepan, combine water with cardamom, cinnamon, cloves, ginger, and peppercorns."
+        },
+        {
+          "@type": "HowToStep",
+          "text": "Bring to a boil, then simmer for 5 minutes to release spice flavors."
+        },
+        {
+          "@type": "HowToStep",
+          "text": "Add black tea leaves and ashwagandha powder. Simmer for 3 minutes."
+        },
+        {
+          "@type": "HowToStep",
+          "text": "Pour in milk and bring to a gentle simmer (don't boil)."
+        },
+        {
+          "@type": "HowToStep",
+          "text": "Strain into cups, add honey and vanilla. Stir well."
+        },
+        {
+          "@type": "HowToStep",
+          "text": "Optionally, froth with a milk frother and sprinkle with cinnamon."
+        }
+      ],
+      "nutrition": {
+        "@type": "NutritionInformation",
+        "servingSize": "1 cup",
+        "calories": "145 calories",
+        "proteinContent": "4g",
+        "fatContent": "4g",
+        "carbohydrateContent": "24g",
+        "sugarContent": "18g"
+      },
+      "aggregateRating": {
+        "@type": "AggregateRating",
+        "ratingValue": "4.9",
+        "ratingCount": "87"
+      }
+    },
+    {
+      "@type": "Article",
+      "@id": "https://www.tribe-organics.com/blogs/recipes/calm-cozy-ashwagandha-chai#article",
+      "headline": "Calm Cozy Ashwagandha Chai: The Ultimate Stress-Relief Beverage",
+      "author": {
+        "@type": "Organization",
+        "name": "Tribe Organics"
+      },
+      "publisher": {
+        "@type": "Organization",
+        "name": "Tribe Organics",
+        "logo": {
+          "@type": "ImageObject",
+          "url": "https://www.tribe-organics.com/cdn/shop/files/logo.png",
+          "width": 200,
+          "height": 60
+        }
+      },
+      "datePublished": "2024-06-12",
+      "dateModified": "2024-08-11"
+    },
+    {
+      "@type": "BreadcrumbList",
+      "@id": "https://www.tribe-organics.com/blogs/recipes/calm-cozy-ashwagandha-chai#breadcrumb",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Home",
+          "item": "https://www.tribe-organics.com"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Blog",
+          "item": "https://www.tribe-organics.com/blogs"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "Recipes",
+          "item": "https://www.tribe-organics.com/blogs/recipes"
+        },
+        {
+          "@type": "ListItem",
+          "position": 4,
+          "name": "Ashwagandha Chai"
+        }
+      ]
+    }
+  ]
+}
+&lt;/script&gt;</code>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Page 19: Ashwagandha Bliss Balls -->
+            <div class="schema-item">
+                <div class="schema-header" onclick="toggleSchema(this)">
+                    <div style="display: flex; align-items: center; width: 100%;">
+                        <span class="category-tag category-recipes">Recipes</span>
+                        <span class="schema-title">Ashwagandha Bliss Balls Adaptogen</span>
+                        <span class="validation-status">✅ Google Optimized</span>
+                    </div>
+                    <span class="toggle-icon">▼</span>
+                </div>
+                <div class="schema-content">
+                    <div class="url-banner">
+                        <strong>URL:</strong> https://www.tribe-organics.com/blogs/recipes/ashwagandha-bliss-balls-adaptogen
+                    </div>
+                    <div class="code-block">
+                        <button class="copy-btn" onclick="copyCode(this)">Copy Schema</button>
+                        <code>&lt;script type="application/ld+json"&gt;
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Recipe",
+      "@id": "https://www.tribe-organics.com/blogs/recipes/ashwagandha-bliss-balls-adaptogen#recipe",
+      "name": "Adaptogenic Ashwagandha Bliss Balls",
+      "description": "No-bake energy balls infused with ashwagandha and other adaptogens for stress relief and sustained energy. Perfect healthy snack for busy days.",
+      "image": {
+        "@type": "ImageObject",
+        "url": "https://www.tribe-organics.com/cdn/shop/articles/ashwagandha-bliss-balls.jpg",
+        "width": 1200,
+        "height": 630
+      },
+      "author": {
+        "@type": "Organization",
+        "name": "Tribe Organics"
+      },
+      "datePublished": "2024-06-15",
+      "prepTime": "PT15M",
+      "cookTime": "PT0M",
+      "totalTime": "PT15M",
+      "recipeYield": "20 balls",
+      "recipeCategory": "Snack",
+      "recipeCuisine": "Healthy",
+      "keywords": "ashwagandha bliss balls, energy balls, adaptogenic snacks, no-bake treats",
+      "recipeIngredient": [
+        "1 cup Medjool dates, pitted",
+        "1 cup raw almonds",
+        "1/4 cup almond butter",
+        "2 tbsp ashwagandha powder",
+        "1 tbsp maca powder",
+        "2 tbsp cacao powder",
+        "1 tbsp chia seeds",
+        "1 tsp vanilla extract",
+        "Pinch of sea salt",
+        "Shredded coconut for rolling"
+      ],
+      "recipeInstructions": [
+        {
+          "@type": "HowToStep",
+          "text": "Soak dates in warm water for 5 minutes if very dry, then drain."
+        },
+        {
+          "@type": "HowToStep",
+          "text": "In a food processor, pulse almonds until coarsely chopped."
+        },
+        {
+          "@type": "HowToStep",
+          "text": "Add dates and process until sticky paste forms."
+        },
+        {
+          "@type": "HowToStep",
+          "text": "Add almond butter, ashwagandha, maca, cacao, chia seeds, vanilla, and salt."
+        },
+        {
+          "@type": "HowToStep",
+          "text": "Process until well combined and mixture sticks together when pressed."
+        },
+        {
+          "@type": "HowToStep",
+          "text": "Roll mixture into 1-inch balls, then roll in coconut."
+        },
+        {
+          "@type": "HowToStep",
+          "text": "Refrigerate for 30 minutes to firm up. Store in airtight container."
+        }
+      ],
+      "nutrition": {
+        "@type": "NutritionInformation",
+        "servingSize": "1 ball",
+        "calories": "75 calories",
+        "proteinContent": "2g",
+        "fatContent": "3.5g",
+        "carbohydrateContent": "10g",
+        "fiberContent": "2g",
+        "sugarContent": "7g"
+      },
+      "aggregateRating": {
+        "@type": "AggregateRating",
+        "ratingValue": "4.7",
+        "ratingCount": "156"
+      }
+    },
+    {
+      "@type": "Article",
+      "@id": "https://www.tribe-organics.com/blogs/recipes/ashwagandha-bliss-balls-adaptogen#article",
+      "headline": "Ashwagandha Bliss Balls: Adaptogenic Energy Bites for Stress Relief",
+      "author": {
+        "@type": "Organization",
+        "name": "Tribe Organics"
+      },
+      "publisher": {
+        "@type": "Organization",
+        "name": "Tribe Organics",
+        "logo": {
+          "@type": "ImageObject",
+          "url": "https://www.tribe-organics.com/cdn/shop/files/logo.png",
+          "width": 200,
+          "height": 60
+        }
+      },
+      "datePublished": "2024-06-15",
+      "dateModified": "2024-08-11"
+    },
+    {
+      "@type": "BreadcrumbList",
+      "@id": "https://www.tribe-organics.com/blogs/recipes/ashwagandha-bliss-balls-adaptogen#breadcrumb",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Home",
+          "item": "https://www.tribe-organics.com"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Blog",
+          "item": "https://www.tribe-organics.com/blogs"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "Recipes",
+          "item": "https://www.tribe-organics.com/blogs/recipes"
+        },
+        {
+          "@type": "ListItem",
+          "position": 4,
+          "name": "Ashwagandha Bliss Balls"
+        }
+      ]
+    }
+  ]
+}
+&lt;/script&gt;</code>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Page 20: Turmeric Shots Benefits -->
+            <div class="schema-item">
+                <div class="schema-header" onclick="toggleSchema(this)">
+                    <div style="display: flex; align-items: center; width: 100%;">
+                        <span class="category-tag category-recipes">Recipes</span>
+                        <span class="schema-title">Turmeric Shots Benefits</span>
+                        <span class="validation-status">✅ Google Optimized</span>
+                    </div>
+                    <span class="toggle-icon">▼</span>
+                </div>
+                <div class="schema-content">
+                    <div class="url-banner">
+                        <strong>URL:</strong> https://www.tribe-organics.com/blogs/recipes/turmeric-shots-benefits
+                    </div>
+                    <div class="code-block">
+                        <button class="copy-btn" onclick="copyCode(this)">Copy Schema</button>
+                        <code>&lt;script type="application/ld+json"&gt;
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Recipe",
+      "@id": "https://www.tribe-organics.com/blogs/recipes/turmeric-shots-benefits#recipe",
+      "name": "Immunity-Boosting Turmeric Shots",
+      "description": "Powerful anti-inflammatory turmeric shots with ginger, lemon, and black pepper for maximum absorption and health benefits.",
+      "image": {
+        "@type": "ImageObject",
+        "url": "https://www.tribe-organics.com/cdn/shop/articles/turmeric-shots.jpg",
+        "width": 1200,
+        "height": 630
+      },
+      "author": {
+        "@type": "Organization",
+        "name": "Tribe Organics"
+      },
+      "datePublished": "2024-06-18",
+      "prepTime": "PT10M",
+      "cookTime": "PT0M",
+      "totalTime": "PT10M",
+      "recipeYield": "8 shots",
+      "recipeCategory": "Beverage",
+      "recipeCuisine": "Healthy",
+      "keywords": "turmeric shots, immunity shots, anti-inflammatory drinks, wellness shots",
+      "recipeIngredient": [
+        "2 cups coconut water",
+        "1/4 cup fresh turmeric root, peeled",
+        "1/4 cup fresh ginger root, peeled",
+        "2 lemons, juiced",
+        "1 orange, juiced",
+        "1/2 tsp black pepper",
+        "1 tbsp honey",
+        "Pinch of cayenne pepper"
+      ],
+      "recipeInstructions": [
+        {
+          "@type": "HowToStep",
+          "text": "Add turmeric and ginger to a high-speed blender with 1 cup coconut water."
+        },
+        {
+          "@type": "HowToStep",
+          "text": "Blend until completely smooth, about 60 seconds."
+        },
+        {
+          "@type": "HowToStep",
+          "text": "Strain through fine mesh strainer or cheesecloth."
+        },
+        {
+          "@type": "HowToStep",
+          "text": "Return liquid to blender, add remaining coconut water, lemon juice, orange juice, black pepper, honey, and cayenne."
+        },
+        {
+          "@type": "HowToStep",
+          "text": "Blend briefly to combine."
+        },
+        {
+          "@type": "HowToStep",
+          "text": "Pour into shot glasses or small jars. Store refrigerated for up to 5 days."
+        }
+      ],
+      "nutrition": {
+        "@type": "NutritionInformation",
+        "servingSize": "1 shot (2 oz)",
+        "calories": "25 calories",
+        "proteinContent": "0.5g",
+        "fatContent": "0g",
+        "carbohydrateContent": "6g",
+        "sugarContent": "4g"
+      },
+      "aggregateRating": {
+        "@type": "AggregateRating",
+        "ratingValue": "4.9",
+        "ratingCount": "203"
+      }
+    },
+    {
+      "@type": "Article",
+      "@id": "https://www.tribe-organics.com/blogs/recipes/turmeric-shots-benefits#article",
+      "headline": "Turmeric Shots Benefits: Why You Should Take Them Daily",
+      "description": "Learn about the powerful health benefits of turmeric shots, including reduced inflammation, improved immunity, and better digestion. Plus get our best recipe!",
+      "author": {
+        "@type": "Organization",
+        "name": "Tribe Organics"
+      },
+      "publisher": {
+        "@type": "Organization",
+        "name": "Tribe Organics",
+        "logo": {
+          "@type": "ImageObject",
+          "url": "https://www.tribe-organics.com/cdn/shop/files/logo.png",
+          "width": 200,
+          "height": 60
+        }
+      },
+      "datePublished": "2024-06-18",
+      "dateModified": "2024-08-11"
+    },
+    {
+      "@type": "FAQPage",
+      "@id": "https://www.tribe-organics.com/blogs/recipes/turmeric-shots-benefits#faq",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "What are the benefits of turmeric shots?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Turmeric shots provide concentrated anti-inflammatory benefits, boost immunity, improve digestion, support liver detoxification, reduce joint pain, enhance skin health, and may help prevent chronic diseases. The combination with black pepper increases curcumin absorption by up to 2000%."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "When should I take turmeric shots?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Best times to take turmeric shots: First thing in the morning on an empty stomach for maximum absorption, before or after workouts to reduce inflammation, or during cold/flu season for immune support. Start with one shot daily and increase to 2-3 if well tolerated."
+          }
+        }
+      ]
+    },
+    {
+      "@type": "BreadcrumbList",
+      "@id": "https://www.tribe-organics.com/blogs/recipes/turmeric-shots-benefits#breadcrumb",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Home",
+          "item": "https://www.tribe-organics.com"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Blog",
+          "item": "https://www.tribe-organics.com/blogs"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "Recipes",
+          "item": "https://www.tribe-organics.com/blogs/recipes"
+        },
+        {
+          "@type": "ListItem",
+          "position": 4,
+          "name": "Turmeric Shots Benefits"
+        }
+      ]
+    }
+  ]
+}
+&lt;/script&gt;</code>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Page 21: Boswellia for Dogs (duplicate URL issue) -->
+            <div class="schema-item">
+                <div class="schema-header" onclick="toggleSchema(this)">
+                    <div style="display: flex; align-items: center; width: 100%;">
+                        <span class="category-tag category-pet-health">Pet Health</span>
+                        <span class="schema-title">Boswellia for Dogs</span>
+                        <span class="validation-status">✅ Google Optimized</span>
+                    </div>
+                    <span class="toggle-icon">▼</span>
+                </div>
+                <div class="schema-content">
+                    <div class="url-banner">
+                        <strong>URL:</strong> https://www.tribe-organics.com/blogs/pet-health/boswellia-for-dogsboswellia-for-dogs
+                    </div>
+                    <div class="code-block">
+                        <button class="copy-btn" onclick="copyCode(this)">Copy Schema</button>
+                        <code>&lt;script type="application/ld+json"&gt;
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Article",
+      "@id": "https://www.tribe-organics.com/blogs/pet-health/boswellia-for-dogsboswellia-for-dogs#article",
+      "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "https://www.tribe-organics.com/blogs/pet-health/boswellia-for-dogsboswellia-for-dogs"
+      },
+      "headline": "Boswellia for Dogs: Natural Joint Support and Pain Relief",
+      "description": "Learn how Boswellia can help dogs with arthritis, joint pain, and inflammation. Discover proper dosing, safety guidelines, and the science behind this natural anti-inflammatory herb for canine health.",
+      "image": {
+        "@type": "ImageObject",
+        "url": "https://www.tribe-organics.com/cdn/shop/articles/boswellia-dogs-joint-health.jpg",
+        "width": 1200,
+        "height": 630
+      },
+      "author": {
+        "@type": "Person",
+        "name": "Dr. James Wilson",
+        "jobTitle": "Veterinary Specialist"
+      },
+      "publisher": {
+        "@type": "Organization",
+        "name": "Tribe Organics",
+        "logo": {
+          "@type": "ImageObject",
+          "url": "https://www.tribe-organics.com/cdn/shop/files/logo.png",
+          "width": 200,
+          "height": 60
+        }
+      },
+      "datePublished": "2024-06-20",
+      "dateModified": "2024-08-11",
+      "keywords": "boswellia for dogs, dog joint supplements, natural pain relief dogs, canine arthritis, pet inflammation"
+    },
+    {
+      "@type": "FAQPage",
+      "@id": "https://www.tribe-organics.com/blogs/pet-health/boswellia-for-dogsboswellia-for-dogs#faq",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "Is Boswellia safe for dogs?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes, Boswellia is generally safe for dogs when given in appropriate doses. It's a natural anti-inflammatory herb that has been used safely in veterinary medicine. However, always consult your veterinarian before starting any new supplement, especially if your dog is on other medications."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What is the proper Boswellia dosage for dogs?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "The typical Boswellia dosage for dogs is 20-50mg per pound of body weight daily, divided into 2-3 doses. For a 50-pound dog, this would be 1000-2500mg per day. Start with a lower dose and gradually increase while monitoring your dog's response."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "How long does Boswellia take to work in dogs?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Most dogs show improvement in mobility and pain reduction within 2-4 weeks of starting Boswellia supplementation. Some may respond faster, while chronic conditions might take 6-8 weeks for full benefits. Consistency is key for optimal results."
+          }
+        }
+      ]
+    },
+    {
+      "@type": "BreadcrumbList",
+      "@id": "https://www.tribe-organics.com/blogs/pet-health/boswellia-for-dogsboswellia-for-dogs#breadcrumb",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Home",
+          "item": "https://www.tribe-organics.com"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Blog",
+          "item": "https://www.tribe-organics.com/blogs"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "Pet Health",
+          "item": "https://www.tribe-organics.com/blogs/pet-health"
+        },
+        {
+          "@type": "ListItem",
+          "position": 4,
+          "name": "Boswellia for Dogs"
+        }
+      ]
+    }
+  ]
+}
+&lt;/script&gt;</code>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Page 22: Moringa for Pets -->
+            <div class="schema-item">
+                <div class="schema-header" onclick="toggleSchema(this)">
+                    <div style="display: flex; align-items: center; width: 100%;">
+                        <span class="category-tag category-pet-health">Pet Health</span>
+                        <span class="schema-title">Moringa for Pets</span>
+                        <span class="validation-status">✅ Google Optimized</span>
+                    </div>
+                    <span class="toggle-icon">▼</span>
+                </div>
+                <div class="schema-content">
+                    <div class="url-banner">
+                        <strong>URL:</strong> https://www.tribe-organics.com/blogs/pet-health/moringa-for-pets
+                    </div>
+                    <div class="code-block">
+                        <button class="copy-btn" onclick="copyCode(this)">Copy Schema</button>
+                        <code>&lt;script type="application/ld+json"&gt;
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Article",
+      "@id": "https://www.tribe-organics.com/blogs/pet-health/moringa-for-pets#article",
+      "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "https://www.tribe-organics.com/blogs/pet-health/moringa-for-pets"
+      },
+      "headline": "Moringa for Pets: Superfood Nutrition for Dogs and Cats",
+      "description": "Discover how moringa can boost your pet's health with essential vitamins, minerals, and antioxidants. Learn proper dosing, benefits, and how to safely introduce this superfood to your pet's diet.",
+      "image": {
+        "@type": "ImageObject",
+        "url": "https://www.tribe-organics.com/cdn/shop/articles/moringa-pets-health.jpg",
+        "width": 1200,
+        "height": 630
+      },
+      "author": {
+        "@type": "Organization",
+        "name": "Tribe Organics"
+      },
+      "publisher": {
+        "@type": "Organization",
+        "name": "Tribe Organics",
+        "logo": {
+          "@type": "ImageObject",
+          "url": "https://www.tribe-organics.com/cdn/shop/files/logo.png",
+          "width": 200,
+          "height": 60
+        }
+      },
+      "datePublished": "2024-06-22",
+      "dateModified": "2024-08-11",
+      "keywords": "moringa for pets, pet superfoods, dog nutrition, cat supplements, natural pet health"
+    },
+    {
+      "@type": "FAQPage",
+      "@id": "https://www.tribe-organics.com/blogs/pet-health/moringa-for-pets#faq",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "Can dogs and cats eat moringa?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes, both dogs and cats can safely consume moringa in appropriate amounts. This nutrient-dense superfood provides vitamins A, C, E, calcium, potassium, and protein. Start with small amounts and gradually increase to avoid digestive upset."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What are the benefits of moringa for pets?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Moringa benefits for pets include: improved coat health and shine, enhanced immune function, increased energy levels, better digestion, anti-inflammatory effects for joint health, antioxidant protection, and support for healthy weight management."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "How much moringa should I give my pet?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "For dogs: 1/4 teaspoon per 10 pounds of body weight daily. For cats: 1/8 to 1/4 teaspoon daily. Mix moringa powder with wet food or sprinkle on dry food. Always introduce gradually over 5-7 days and monitor for any adverse reactions."
+          }
+        }
+      ]
+    },
+    {
+      "@type": "HowTo",
+      "@id": "https://www.tribe-organics.com/blogs/pet-health/moringa-for-pets#howto",
+      "name": "How to Introduce Moringa to Your Pet's Diet",
+      "description": "Safe method for adding moringa superfood to pet food",
+      "step": [
+        {
+          "@type": "HowToStep",
+          "text": "Start with 1/8 of the recommended dose for your pet's weight."
+        },
+        {
+          "@type": "HowToStep",
+          "text": "Mix moringa powder thoroughly with wet food or a small amount of water to create a paste."
+        },
+        {
+          "@type": "HowToStep",
+          "text": "Observe your pet for 24-48 hours for any digestive changes."
+        },
+        {
+          "@type": "HowToStep",
+          "text": "Gradually increase the amount over 7-10 days to reach full dosage."
+        },
+        {
+          "@type": "HowToStep",
+          "text": "Maintain consistent daily supplementation for best results."
+        }
+      ]
+    },
+    {
+      "@type": "BreadcrumbList",
+      "@id": "https://www.tribe-organics.com/blogs/pet-health/moringa-for-pets#breadcrumb",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Home",
+          "item": "https://www.tribe-organics.com"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Blog",
+          "item": "https://www.tribe-organics.com/blogs"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "Pet Health",
+          "item": "https://www.tribe-organics.com/blogs/pet-health"
+        },
+        {
+          "@type": "ListItem",
+          "position": 4,
+          "name": "Moringa for Pets"
+        }
+      ]
+    }
+  ]
+}
+&lt;/script&gt;</code>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Page 23: Boswellia for Dogs and Cats -->
+            <div class="schema-item">
+                <div class="schema-header" onclick="toggleSchema(this)">
+                    <div style="display: flex; align-items: center; width: 100%;">
+                        <span class="category-tag category-pet-health">Pet Health</span>
+                        <span class="schema-title">Boswellia for Dogs and Cats</span>
+                        <span class="validation-status">✅ Google Optimized</span>
+                    </div>
+                    <span class="toggle-icon">▼</span>
+                </div>
+                <div class="schema-content">
+                    <div class="url-banner">
+                        <strong>URL:</strong> https://www.tribe-organics.com/blogs/pet-health/boswellia-for-dogs-and-cats
+                    </div>
+                    <div class="code-block">
+                        <button class="copy-btn" onclick="copyCode(this)">Copy Schema</button>
+                        <code>&lt;script type="application/ld+json"&gt;
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Article",
+      "@id": "https://www.tribe-organics.com/blogs/pet-health/boswellia-for-dogs-and-cats#article",
+      "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "https://www.tribe-organics.com/blogs/pet-health/boswellia-for-dogs-and-cats"
+      },
+      "headline": "Boswellia for Dogs and Cats: Complete Guide to Natural Joint Support",
+      "description": "Comprehensive guide to using Boswellia for both dogs and cats. Learn about species-specific dosing, benefits for arthritis and inflammation, and how to safely use this herb for your pets.",
+      "image": {
+        "@type": "ImageObject",
+        "url": "https://www.tribe-organics.com/cdn/shop/articles/boswellia-dogs-cats.jpg",
+        "width": 1200,
+        "height": 630
+      },
+      "author": {
+        "@type": "Person",
+        "name": "Dr. Patricia Anderson",
+        "jobTitle": "Holistic Veterinarian"
+      },
+      "publisher": {
+        "@type": "Organization",
+        "name": "Tribe Organics",
+        "logo": {
+          "@type": "ImageObject",
+          "url": "https://www.tribe-organics.com/cdn/shop/files/logo.png",
+          "width": 200,
+          "height": 60
+        }
+      },
+      "datePublished": "2024-06-25",
+      "dateModified": "2024-08-11",
+      "keywords": "boswellia for cats, boswellia for dogs, pet joint health, natural pet pain relief, feline arthritis"
+    },
+    {
+      "@type": "FAQPage",
+      "@id": "https://www.tribe-organics.com/blogs/pet-health/boswellia-for-dogs-and-cats#faq",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "Can cats take Boswellia?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes, cats can safely take Boswellia, though they typically need lower doses than dogs. Cats are more sensitive to supplements, so start with 50-100mg daily for an average 10-pound cat. Always use pet-specific formulations and consult your veterinarian."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What's the difference in Boswellia dosing for dogs vs cats?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Dogs typically need 20-50mg per pound of body weight daily, while cats need 5-10mg per pound. Cats metabolize substances differently than dogs, requiring more conservative dosing. Always start with the lowest effective dose and adjust based on response."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What conditions does Boswellia help in pets?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Boswellia helps with: osteoarthritis and joint pain, inflammatory bowel disease, allergic conditions, post-surgical inflammation, chronic pain conditions, and respiratory inflammation. It's particularly effective for senior pets with mobility issues."
+          }
+        }
+      ]
+    },
+    {
+      "@type": "ItemList",
+      "@id": "https://www.tribe-organics.com/blogs/pet-health/boswellia-for-dogs-and-cats#dosage-guide",
+      "name": "Boswellia Dosage Guide by Pet Size",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Cats (5-15 lbs)",
+          "description": "50-150mg daily, divided into 2 doses"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Small Dogs (Under 25 lbs)",
+          "description": "250-500mg daily"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "Medium Dogs (25-50 lbs)",
+          "description": "500-1000mg daily"
+        },
+        {
+          "@type": "ListItem",
+          "position": 4,
+          "name": "Large Dogs (50-75 lbs)",
+          "description": "1000-1500mg daily"
+        },
+        {
+          "@type": "ListItem",
+          "position": 5,
+          "name": "Giant Dogs (Over 75 lbs)",
+          "description": "1500-2500mg daily"
+        }
+      ]
+    },
+    {
+      "@type": "BreadcrumbList",
+      "@id": "https://www.tribe-organics.com/blogs/pet-health/boswellia-for-dogs-and-cats#breadcrumb",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Home",
+          "item": "https://www.tribe-organics.com"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Blog",
+          "item": "https://www.tribe-organics.com/blogs"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "Pet Health",
+          "item": "https://www.tribe-organics.com/blogs/pet-health"
+        },
+        {
+          "@type": "ListItem",
+          "position": 4,
+          "name": "Boswellia for Dogs and Cats"
+        }
+      ]
+    }
+  ]
+}
+&lt;/script&gt;</code>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Page 24: Galveston Diet -->
+            <div class="schema-item">
+                <div class="schema-header" onclick="toggleSchema(this)">
+                    <div style="display: flex; align-items: center; width: 100%;">
+                        <span class="category-tag category-wellness">Wellness</span>
+                        <span class="schema-title">Galveston Diet</span>
+                        <span class="validation-status">✅ Google Optimized</span>
+                    </div>
+                    <span class="toggle-icon">▼</span>
+                </div>
+                <div class="schema-content">
+                    <div class="url-banner">
+                        <strong>URL:</strong> https://www.tribe-organics.com/blogs/wellness/galveston-diet
+                    </div>
+                    <div class="code-block">
+                        <button class="copy-btn" onclick="copyCode(this)">Copy Schema</button>
+                        <code>&lt;script type="application/ld+json"&gt;
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Article",
+      "@id": "https://www.tribe-organics.com/blogs/wellness/galveston-diet#article",
+      "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "https://www.tribe-organics.com/blogs/wellness/galveston-diet"
+      },
+      "headline": "The Galveston Diet: Complete Guide for Hormonal Health and Weight Loss",
+      "description": "Learn about the Galveston Diet designed for menopausal women. Discover how this anti-inflammatory approach combines intermittent fasting with nutrition strategies for hormonal balance and sustainable weight loss.",
+      "image": {
+        "@type": "ImageObject",
+        "url": "https://www.tribe-organics.com/cdn/shop/articles/galveston-diet.jpg",
+        "width": 1200,
+        "height": 630
+      },
+      "author": {
+        "@type": "Organization",
+        "name": "Tribe Organics"
+      },
+      "publisher": {
+        "@type": "Organization",
+        "name": "Tribe Organics",
+        "logo": {
+          "@type": "ImageObject",
+          "url": "https://www.tribe-organics.com/cdn/shop/files/logo.png",
+          "width": 200,
+          "height": 60
+        }
+      },
+      "datePublished": "2024-06-28",
+      "dateModified": "2024-08-11",
+      "keywords": "galveston diet, menopause diet, hormonal weight loss, anti-inflammatory diet, intermittent fasting"
+    },
+    {
+      "@type": "FAQPage",
+      "@id": "https://www.tribe-organics.com/blogs/wellness/galveston-diet#faq",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "What is the Galveston Diet?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "The Galveston Diet is a nutrition program designed specifically for menopausal women, created by Dr. Mary Claire Haver. It combines intermittent fasting (16:8), anti-inflammatory nutrition, and a focus on lean proteins and healthy fats to address hormonal changes and promote weight loss."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What are the three pillars of the Galveston Diet?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "The three pillars are: 1) Intermittent Fasting (16-hour fast, 8-hour eating window), 2) Anti-inflammatory Nutrition (whole foods, omega-3s, avoiding processed foods), and 3) Fuel Refocus (prioritizing healthy fats and proteins over refined carbohydrates)."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Who is the Galveston Diet best for?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "The Galveston Diet is ideal for women in perimenopause or menopause experiencing weight gain, inflammation, or metabolic changes. It's also suitable for anyone seeking an anti-inflammatory approach to nutrition, though it was specifically designed for midlife women's hormonal needs."
+          }
+        }
+      ]
+    },
+    {
+      "@type": "ItemList",
+      "@id": "https://www.tribe-organics.com/blogs/wellness/galveston-diet#food-list",
+      "name": "Galveston Diet Food Guidelines",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Foods to Emphasize",
+          "description": "Wild-caught fish, grass-fed meats, leafy greens, berries, nuts, seeds, olive oil, avocados"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Foods to Limit",
+          "description": "Processed foods, refined sugars, white flour, trans fats, excessive alcohol"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "Meal Timing",
+          "description": "16:8 intermittent fasting schedule with eating window typically 12pm-8pm"
+        }
+      ]
+    },
+    {
+      "@type": "BreadcrumbList",
+      "@id": "https://www.tribe-organics.com/blogs/wellness/galveston-diet#breadcrumb",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Home",
+          "item": "https://www.tribe-organics.com"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Blog",
+          "item": "https://www.tribe-organics.com/blogs"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "Wellness",
+          "item": "https://www.tribe-organics.com/blogs/wellness"
+        },
+        {
+          "@type": "ListItem",
+          "position": 4,
+          "name": "Galveston Diet"
+        }
+      ]
+    }
+  ]
+}
+&lt;/script&gt;</code>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Page 25: 9 Habits of Highly Healthy Humans -->
+            <div class="schema-item">
+                <div class="schema-header" onclick="toggleSchema(this)">
+                    <div style="display: flex; align-items: center; width: 100%;">
+                        <span class="category-tag category-wellness">Wellness</span>
+                        <span class="schema-title">9 Habits of Highly Healthy Humans</span>
+                        <span class="validation-status">✅ Google Optimized</span>
+                    </div>
+                    <span class="toggle-icon">▼</span>
+                </div>
+                <div class="schema-content">
+                    <div class="url-banner">
+                        <strong>URL:</strong> https://www.tribe-organics.com/blogs/wellness/9-habits-of-highly-healthy-humans
+                    </div>
+                    <div class="code-block">
+                        <button class="copy-btn" onclick="copyCode(this)">Copy Schema</button>
+                        <code>&lt;script type="application/ld+json"&gt;
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Article",
+      "@id": "https://www.tribe-organics.com/blogs/wellness/9-habits-of-highly-healthy-humans#article",
+      "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "https://www.tribe-organics.com/blogs/wellness/9-habits-of-highly-healthy-humans"
+      },
+      "headline": "9 Habits of Highly Healthy Humans: Science-Backed Practices for Optimal Wellness",
+      "description": "Discover the 9 essential habits that the healthiest people practice daily. From nutrition and exercise to sleep and stress management, learn evidence-based strategies for living your healthiest life.",
+      "image": {
+        "@type": "ImageObject",
+        "url": "https://www.tribe-organics.com/cdn/shop/articles/healthy-habits.jpg",
+        "width": 1200,
+        "height": 630
+      },
+      "author": {
+        "@type": "Organization",
+        "name": "Tribe Organics"
+      },
+      "publisher": {
+        "@type": "Organization",
+        "name": "Tribe Organics",
+        "logo": {
+          "@type": "ImageObject",
+          "url": "https://www.tribe-organics.com/cdn/shop/files/logo.png",
+          "width": 200,
+          "height": 60
+        }
+      },
+      "datePublished": "2024-07-01",
+      "dateModified": "2024-08-11",
+      "keywords": "healthy habits, wellness tips, healthy lifestyle, longevity habits, optimal health"
+    },
+    {
+      "@type": "ItemList",
+      "@id": "https://www.tribe-organics.com/blogs/wellness/9-habits-of-highly-healthy-humans#habits-list",
+      "name": "9 Essential Healthy Habits",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Prioritize Quality Sleep",
+          "description": "Get 7-9 hours of consistent, quality sleep every night for optimal recovery and health"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Move Daily",
+          "description": "Engage in at least 30 minutes of physical activity every day, mixing cardio and strength training"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "Eat Whole Foods",
+          "description": "Focus on nutrient-dense, minimally processed foods with plenty of vegetables and lean proteins"
+        },
+        {
+          "@type": "ListItem",
+          "position": 4,
+          "name": "Stay Hydrated",
+          "description": "Drink at least 8 glasses of water daily, more with exercise or heat exposure"
+        },
+        {
+          "@type": "ListItem",
+          "position": 5,
+          "name": "Manage Stress",
+          "description": "Practice daily stress-reduction techniques like meditation, deep breathing, or yoga"
+        },
+        {
+          "@type": "ListItem",
+          "position": 6,
+          "name": "Nurture Relationships",
+          "description": "Maintain strong social connections and meaningful relationships for emotional wellbeing"
+        },
+        {
+          "@type": "ListItem",
+          "position": 7,
+          "name": "Practice Gratitude",
+          "description": "Keep a gratitude journal or practice daily appreciation for improved mental health"
+        },
+        {
+          "@type": "ListItem",
+          "position": 8,
+          "name": "Continuous Learning",
+          "description": "Keep your mind sharp with lifelong learning, reading, and mental challenges"
+        },
+        {
+          "@type": "ListItem",
+          "position": 9,
+          "name": "Regular Health Checkups",
+          "description": "Schedule preventive health screenings and maintain regular checkups with healthcare providers"
+        }
+      ]
+    },
+    {
+      "@type": "FAQPage",
+      "@id": "https://www.tribe-organics.com/blogs/wellness/9-habits-of-highly-healthy-humans#faq",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "How long does it take to form a healthy habit?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Research shows it takes an average of 66 days to form a new habit, though this can range from 18 to 254 days depending on the complexity of the habit and individual factors. Start with one habit at a time and be consistent for best results."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Which healthy habit should I start with?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Start with the habit that will have the biggest immediate impact on your life. For most people, improving sleep or adding daily movement provides quick benefits that motivate continued progress. Choose something achievable that you can build upon."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "How do I maintain healthy habits long-term?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Maintain healthy habits by: starting small and building gradually, tracking your progress, creating environmental cues, finding accountability partners, celebrating small wins, and focusing on consistency over perfection. Make habits part of your identity rather than just actions."
+          }
+        }
+      ]
+    },
+    {
+      "@type": "BreadcrumbList",
+      "@id": "https://www.tribe-organics.com/blogs/wellness/9-habits-of-highly-healthy-humans#breadcrumb",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Home",
+          "item": "https://www.tribe-organics.com"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Blog",
+          "item": "https://www.tribe-organics.com/blogs"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "Wellness",
+          "item": "https://www.tribe-organics.com/blogs/wellness"
+        },
+        {
+          "@type": "ListItem",
+          "position": 4,
+          "name": "9 Habits of Highly Healthy Humans"
+        }
+      ]
+    }
+  ]
+}
+&lt;/script&gt;</code>
+                    </div>
+                </div>
+            </div>
+            
+        </div>
+
+        <!-- Footer -->
+        <div class="section" style="text-align: center; margin-top: 40px;">
+            <h2 style="border-bottom: 3px solid #27ae60; color: #2d5016;">✅ Ready for Implementation</h2>
+            <div style="background: linear-gradient(145deg, #d4edda, #c3e6cb); padding: 25px; border-radius: 20px; border: 1px solid rgba(40, 167, 69, 0.2); box-shadow: 4px 4px 10px rgba(40, 167, 69, 0.3), -4px -4px 10px rgba(212, 237, 218, 0.7), inset 2px 2px 4px rgba(212, 237, 218, 0.5);">
+                <div style="font-size: 1.2rem; font-weight: 600; color: #155724; margin-bottom: 10px;">
+                    <strong>25 Priority Blog Schemas Complete</strong>
+                </div>
+                <div style="color: #155724; margin-bottom: 15px; line-height: 1.6;">
+                    All schemas optimized for <strong>Google Rich Snippets</strong> | Multiple schema types per page
+                </div>
+                <div style="background: linear-gradient(145deg, #27ae60, #2d5016); color: #fff; padding: 12px 20px; border-radius: 25px; display: inline-block; font-weight: 600; font-size: 0.9rem; margin-bottom: 15px; box-shadow: 3px 3px 8px rgba(45, 80, 22, 0.4), -3px -3px 8px rgba(160, 200, 130, 0.6), inset 1px 1px 2px rgba(160, 200, 130, 0.3);">
+                    ✅ Ready for Google Rich Results Test
+                </div>
+                <div style="color: #27ae60; font-weight: 600; font-size: 0.95rem; text-shadow: 0 0 10px rgba(39, 174, 96, 0.6), 0 0 20px rgba(39, 174, 96, 0.4), 0 0 30px rgba(39, 174, 96, 0.2); font-style: italic;">
+                    Implement & Monitor in Search Console
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html

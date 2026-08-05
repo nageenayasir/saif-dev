@@ -1,0 +1,91 @@
+<style>
+      {% if section.settings.background_the_image != blank %}
+            #id-{{section.id}}{
+                background-image:url("{{section.settings.background_the_image | image_url: width: 2000}}");
+            }
+      {% endif %}
+      {% if section.settings.bg_mob_image !=blank %}
+        @media only screen and (max-width: 767px){
+          #id-{{section.id}} {
+             background-image: url({{ section.settings.bg_mob_image | image_url: width: 2000}}) !important;
+          }
+        }
+      {% endif %}
+</style>
+<section id="id-{{section.id}}" class="kids-teen-new-banner-section">
+  <div class="container">
+    <div class="row">
+      <div class="col-sm-12 col-md-12 col-lg-12 kids-teen-new-banner-full-column">
+        <div class="kids-teen-hidden-title hide">
+          <h1>{{ section.settings.seo_title }}</h1>
+        </div>
+        <div class="kids-teen-logo-wrap" data-aos="fade-up">
+          {% if section.settings.logo_image != blank %}<img loading="lazy"  src="{{ section.settings.logo_image | image_url: width: 2000 }}">{% endif %}
+        </div>
+        <div class="kids-teens-ashwagandha-wrapper" data-aos="fade-up">
+          <div class="kids-teens-ashwagandha-page-content">
+            {% if section.settings.the_image != blank %}<img loading="lazy"  src="{{ section.settings.the_image | image_url: width: 2000 }}">{% endif %}
+            <div class="kids-teens-ashwagandha-page-btn web-kids-teen-new-banner-btn">
+              <a href="{{ section.settings.btn_url }}">{{ section.settings.btn_text }}</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+{% schema %}
+  {
+    "name": "New Kids Teen Banner",
+    "settings": [
+      {
+            "type": "header",
+            "content": "Content Settings"
+        },
+		 {
+          "type": "image_picker",
+          "id": "background_the_image",
+          "label": "Background-Image"
+      	},
+        {
+          "type": "image_picker",
+          "id": "bg_mob_image",
+          "label": "Background Mobile Image"
+        },
+        {
+          "type": "image_picker",
+          "id": "logo_image",
+          "label": "Logo Image"
+      	},
+        {
+          "type": "text",
+          "id": "seo_title",
+          "label": "Seo Title"
+        },
+        {
+          "type": "image_picker",
+          "id": "the_image",
+          "label": "Image"
+      	},
+        {
+          "type": "text",
+          "id": "btn_text",
+          "label": "Button Text"
+        },
+        {
+          "type": "url",
+          "id": "btn_url",
+          "label": "Button Url"
+        }
+    ],
+	"presets": [{
+      "name": "New Kids Teen Banner"
+    }]
+  }
+{% endschema %}
+
+{% stylesheet %}
+{% endstylesheet %}
+
+{% javascript %}
+{% endjavascript %}

@@ -1,0 +1,309 @@
+<style>
+  {% if section.settings.background_the_image != blank %}
+    #id-{{ section.id }} {
+      background-image: url("{{section.settings.background_the_image | image_url: width: 2000}}");
+      background-size: cover;
+    }
+  {% endif %}
+  {% if section.settings.bg_mob_image !=blank %}
+    @media only screen and (max-width: 767px) {
+      #id-{{ section.id }} {
+        background-image: url('{{ section.settings.bg_mob_image | image_url: width: 2000}}') !important;
+      }
+    }
+  {% endif %}
+
+  .subscibe-save-img-text-wrapper h2,
+  .subscibe-save-img-text-wrapper h3,
+  .subscibe-save-img-text-wrapper li {
+    color: #fff !important;
+  }
+
+  .subscibe-save-img-text-wrapper ol {
+    counter-reset: list-counter !important;
+  }
+
+  .subscibe-save-img-text-wrapper li {
+    counter-increment: list-counter !important;
+  }
+
+  .subscibe-save-img-text-wrapper li:before {
+    content: counter(list-counter) !important;
+    position: absolute;
+    top: 4px;
+    left: 1px;
+    height: 27px;
+    width: 29px;
+    /* background: url(/cdn/shop/files/dot-subscribe.png?v=1693974978); */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #3b514f !important;
+    color: #fff !important;
+    font-size: 15px;
+    font-weight: 500;
+    border-radius: 100%;
+  }
+
+  .subscibe-save-img-text-wrapper p{
+    font-family: Superior Title;
+    font-weight: 500;
+    font-style: italic;
+    font-size: 32px;
+    margin-top: -16px;
+    line-height: 120%;
+    vertical-align: middle;
+   
+
+  }
+  
+
+ .subscibe-save-img-text-wrapper p:nth-of-type(2){
+    font-family: Work Sans;
+    font-weight: 700;
+    font-style: normal!important;
+    margin-top: 0!important;
+    font-size: 15px;
+    line-height: 180%;
+  }
+
+ #id-template--19715501719775__358f92ec-e991-4543-acb6-3996b346bdfd h2,
+ #id-template--19715501719775__358f92ec-e991-4543-acb6-3996b346bdfd h5,
+ #id-template--19715501719775__358f92ec-e991-4543-acb6-3996b346bdfd p {
+  color: #111 !important;
+}
+.dgf-icons            { margin-top: 4rem; }
+.dgf-icons__title     {
+  font-family: "Superior Title", serif;
+  font-size: 32px;
+  font-style: italic;
+  font-weight: 500;
+  line-height: 120%;
+  color: #fff;
+  margin-bottom: 1.5rem;
+}
+
+.img-ctn{
+  background-image: url('https://cdn.shopify.com/s/files/1/0499/0425/5134/files/Ellipse_68.png?v=1752652890');
+  background-size: contain;          
+  background-position: center center;
+  background-repeat: no-repeat;
+  width: 48px;                     
+  height: 48px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;                    
+}
+.dgf-icons__grid      {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.5rem;
+  margin-top: 4rem;
+}
+@media(max-width: 767px){         
+  .dgf-icons__grid{ grid-template-columns: repeat(2, 1fr); }
+  
+  .web-subscribe-save-img-text-wrapper h2 {
+    font-size: 22px!important;
+  }
+
+  .web-subscribe-save-img-text-wrapper p{
+    font-weight: 500!important;
+    font-style: italic;
+    font-size: 22px;
+    margin-top: -23px!important;
+    margin-bottom: 1rem!important;
+    line-height: 30px!important;
+    vertical-align: middle;
+    text-transform: lowercase;
+  }
+}
+
+.dgf-icons__item      {
+  display: flex;
+  align-items: center;
+  gap: .75rem;
+  max-width: 150px;
+}
+
+.dgf-icons__img       { width: 28px; height: 28px; object-fit: contain; }
+
+.dgf-icons__text      {
+  font-family: "Work Sans", sans-serif;
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 1.6;
+  color: #fff;
+}
+
+
+</style>
+<section id="id-{{section.id}}" class="subscribe-save-image-text">
+  <div class="container">
+    <div class="row">
+      <div class="col-sm-12 mob-subscribe-save-img-text-wrapper">
+        <div class="subscribe-save-img-text-wrapper" data-aos="fade-up">
+          {{ section.settings.mob_text }}
+        </div>
+      </div>
+      {% if section.settings.image_position == 'left' %}
+        <div class="col-sm-12 col-md-6 col-lg-6">
+          <div class="susbscibe-save-img-wrapper" data-aos="fade-up">
+            {% if section.settings.the_image != blank %}<img loading="lazy" src="{{ section.settings.the_image | image_url: width: 2000 }}">{% endif %}
+          </div>
+        </div>
+      {% endif %}
+      <div class="col-sm-12 col-md-6 col-lg-6 web-subscribe-save-img-text-wrapper">
+        <div class="subscibe-save-img-text-wrapper" data-aos="fade-up">
+          {{ section.settings.the_text }}
+        </div>
+        <div class="btn-group">
+            <div data-aos="fade-up" data-aos-delay="400">
+              <a
+                class="btn btn-bg"
+                href="{{ section.settings.btn_url}}"
+                target="_self">
+                {{ section.settings.btn_txt }}
+              </a>
+            </div>
+        </div>
+        <div class="dgf-icons" data-aos="fade-up">
+          {%- if section.settings.icons_title != blank -%}
+            <p class="dgf-icons__title">{{ section.settings.icons_title }}</p>
+          {%- endif -%}
+
+          <div class="dgf-icons__grid">
+            {%- for block in section.blocks -%}
+              <div class="dgf-icons__item" {{ block.shopify_attributes }}>
+                {%- if block.settings.icon != blank -%}
+                  <div class="img-ctn">
+                  <img
+                    loading="lazy"
+                    class="dgf-icons__img"
+                    src="{{ block.settings.icon | image_url: width: 64 }}"
+                    alt="{{ block.settings.text | strip_html | escape }}">
+                  </div>
+                {%- endif -%}
+
+                <span class="dgf-icons__text">{{ block.settings.text }}</span>
+              </div>
+            {%- endfor -%}
+          </div>
+        </div>
+      </div>
+      {% if section.settings.image_position == 'right' %}
+        <div class="col-sm-12 col-md-6 col-lg-6">
+          <div class="subscribe-save-img-wrapper" data-aos="fade-up">
+            {% if section.settings.the_image != blank %}<img loading="lazy" src="{{ section.settings.the_image | image_url: width: 2000 }}">{% endif %}
+          </div>
+        </div>
+      {% endif %}
+    </div>
+  </div>
+</section>
+{% schema %}
+  {
+    "name": "Subscribe Save Image Text",
+    "settings": [
+      {
+        "type": "header",
+        "content": "Content Settings"
+      },
+      {
+        "type": "image_picker",
+        "id": "background_the_image",
+        "label": "Background-Image"
+      },
+      {
+        "type": "image_picker",
+        "id": "bg_mob_image",
+        "label": "Background Mobile Image"
+      },
+      {
+        "type": "header",
+        "content": "Image Settings"
+      }, {
+        "type": "image_picker",
+        "id": "the_image",
+        "label": "Image"
+      }, {
+        "type": "select",
+        "id": "image_position",
+        "options": [
+          {
+            "value": "left",
+            "label": "Image Left"
+          }, {
+            "value": "right",
+            "label": "Image Right"
+          }
+        ],
+        "default": "left",
+        "label": "Choose Position"
+      }, {
+        "type": "header",
+        "content": "Content Settings"
+      }, {
+        "type": "richtext",
+        "id": "the_text",
+        "label": "Text"
+      }, {
+        "type": "richtext",
+        "id": "mob_text",
+        "label": "Mobile-heading"
+      },
+            {
+        "type": "header",
+        "content": "Button Settings"
+      },
+       {
+          "type": "text",
+          "id": "btn_txt",
+          "label": "Button Text"
+      },
+      {
+          "type": "url",
+          "id": "btn_url",
+          "label": "Button Url"
+      },
+      {
+        "type": "text",
+        "id": "icons_title",
+        "label": "Icon title",
+        "default": "Our commitment to you"
+      }
+    ],
+    "blocks": [
+      {
+        "type": "icon",
+        "name": "Ícon + Text",
+        "settings": [
+          {
+            "type": "image_picker",
+            "id": "icon",
+            "label": "Ícon"
+          },
+          {
+            "type": "text",
+            "id": "text",
+            "label": "Icon Text",
+            "default": "Enter copy here"
+          }
+        ]
+      }
+    ],
+    "max_blocks": 4,
+    "presets": [
+      {
+        "name": "Subscribe Save Image Text"
+      }
+    ]
+  }
+{% endschema %}
+
+{% stylesheet %}
+{% endstylesheet %}
+
+{% javascript %}
+{% endjavascript %}

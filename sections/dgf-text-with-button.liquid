@@ -1,0 +1,135 @@
+<style>
+#id-{{ section.id }}{
+  	background: linear-gradient(88.45deg, #F3D9CF 1.32%, #FFC7B2 101.32%);
+
+  }
+
+  .dgf-img-with-text{
+    padding: 7rem 0;
+  }
+  .dgf-img-with-text-wrp{
+    text-align: center;
+  }
+
+   .dgf-img-with-text-wrp h2,
+ .dgf-img-with-text-wrp h5,
+ .dgf-img-with-text-wrp p {
+  color: #111 !important;
+}
+
+   .mob-dgf-img-with-text-wrp h2,
+ .mob-dgf-img-with-text-wrp h5,
+ .mob-dgf-img-with-text-wrp p {
+  color: #111 !important;
+}
+
+.mob-dgf-img-with-text-wrp{
+  display: none;
+}
+
+.mob-dgf-img-with-text-wrp{
+  margin: 0
+}
+
+@media (max-width: 767px){
+  .dgf-img-with-text-wrp .subscibe-save-img-text-scnd-wrapper h2{
+    font-size: 22px!important;
+    margin: 0!important
+  }
+
+    .dgf-img-with-text-wrp .subscibe-save-img-text-scnd-wrapper p{
+    font-family: WorkSans!important;
+    font-weight: 400!important;
+    font-size: 14px!important;
+    text-align: center;
+    margin: 0!important
+
+  }
+
+}
+</style>
+
+<section id="id-{{section.id}}" class="dgf-img-with-text common-kids-teenager-section">
+  <div class="container justify-content-center">
+    <div class="row justify-content-center">
+        <div class="col-sm-12 col-md-6 col-lg-6 dgf-img-with-text-wrp">
+          <div class="subscibe-save-img-text-scnd-wrapper" data-aos="fade-up">
+            {{ section.settings.the_text }}
+          </div>
+          <div class="dgf-subscribe-img-text-btn">
+            <div class="btn-group">
+                  <div data-aos="fade-up" data-aos-delay="400">
+                      <a class="btn btn-bg" href="{{ section.settings.url_1 }}" target="_self" style="color: {{ section.settings.btn1_txt_color }};">
+                          {{ section.settings.button_1 }}
+                      </a>
+                  </div>
+                  <div data-aos="fade-up" data-aos-delay="500">
+                      <a class="btn btn-trans" href="{{ section.settings.url_2 }}" target="_self" style="color: {{ section.settings.btn2_txt_color }};">
+                          {{ section.settings.button_2 }}
+                      </a>
+                  </div>
+              </div>
+          </div>
+        </div>
+    </div>
+  </div>
+</section>
+{% schema %}
+  {
+    "name": "[DGF] Text With Button ",
+    "settings": [
+          {
+                "type": "header",
+                "content": "Content Settings"
+          },
+          {
+              "type": "richtext",
+              "id": "the_text",
+              "label": "Text"
+          },
+          {
+            "type": "text",
+            "id": "button_1",
+            "label": "Button 1",
+            "default" : "Explore"
+          },
+          {
+            "type": "url",
+            "id": "url_1",
+            "label": "Url 1"
+          },
+          {
+            "type": "text",
+            "id": "button_2",
+            "label": "Button 2",
+            "default" : "Take the Quiz"
+          },
+          {
+            "type": "url",
+            "id": "url_2",
+            "label": "Url 2"
+          },
+        {
+        "type": "color",
+        "id": "btn1_txt_color",
+        "label": "Button Text Color",
+        "default": "#FFF"
+        },
+        {
+        "type": "color",
+        "id": "btn2_txt_color",
+        "label": "Button Text Color",
+        "default": "#111"
+        }
+    ],
+	"presets": [{
+      "name": "[DGF] Text With Button"
+    }]
+  }
+{% endschema %}
+
+{% stylesheet %}
+{% endstylesheet %}
+
+{% javascript %}
+{% endjavascript %}

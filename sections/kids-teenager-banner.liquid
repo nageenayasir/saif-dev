@@ -1,0 +1,70 @@
+<style>
+      {% if section.settings.background_the_image != blank %}
+            #id-{{section.id}}{
+                background-image:url("{{section.settings.background_the_image | image_url: width: 2000}}");
+            }
+      {% endif %}
+      {% if section.settings.bg_mob_image !=blank %}
+        @media only screen and (max-width: 767px){
+          #id-{{section.id}} {
+             background-image: url({{ section.settings.bg_mob_image | image_url: width: 2000}}) !important;
+          }
+        }
+      {% endif %}
+</style>
+<section id="id-{{section.id}}" class="kids-teenager-banner-section">
+  <div class="container">
+    <div class="row">
+      <div class="col-sm-12 col-md-12 col-lg-12">
+        <div class="kids-tennager-head-wrap" data-aos="fade-up">
+          <div class="kids-tennager-title">
+            <h1>{{ section.settings.the_title }}</h1>
+          </div>
+          <div class="kids-teenager-sub-title" data-aos="fade-up">
+            <h2>{{ section.settings.sub_title }}</h2>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+{% schema %}
+  {
+    "name": "Kids Teenager Banner",
+    "settings": [
+        {
+            "type": "header",
+            "content": "Content Settings"
+        },
+		 {
+          "type": "image_picker",
+          "id": "background_the_image",
+          "label": "Background-Image"
+      	},
+        {
+          "type": "image_picker",
+          "id": "bg_mob_image",
+          "label": "Background Mobile Image"
+        },
+        {
+          "type": "textarea",
+          "id": "the_title",
+          "label": "Title"
+        },
+        {
+          "type": "textarea",
+          "id": "sub_title",
+          "label": "SubTitle"
+        }
+    ],
+	"presets": [{
+      "name": "Kids Teenager Banner"
+    }]
+  }
+{% endschema %}
+
+{% stylesheet %}
+{% endstylesheet %}
+
+{% javascript %}
+{% endjavascript %}

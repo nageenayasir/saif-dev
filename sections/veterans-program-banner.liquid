@@ -1,0 +1,162 @@
+<style>
+      {% if section.settings.background_the_image != blank %}
+            #id-{{section.id}}{
+                background-image:url("{{section.settings.background_the_image | image_url: width: 2000}}");
+                background-size: cover;
+            }
+      {% endif %}
+      {% if section.settings.bg_mob_image !=blank %}
+        @media only screen and (max-width: 767px){
+          #id-{{section.id}} {
+             background-image: url({{ section.settings.bg_mob_image | image_url: width: 2000}}) !important;
+          }
+        }
+      {% endif %}
+</style>
+<section id="id-{{section.id}}" class="common-kids-teenager-section veterans-program-banner-section">
+   {% if section.settings.enable_breadcrumb == true %}
+    <div class="common-page-breadcrumb">
+      {%- unless template == 'index' or template == 'cart' or template == 'list-collections' or template == '404' -%}
+      {%- assign t = template | split: '.' | first -%}
+      <div class="container">
+      <nav class="breadcrumbs" role="navigation" aria-label="breadcrumbs">
+        <ol class="breadcrumbs__list">
+          <li class="breadcrumbs__item">
+            <a class="breadcrumbs__link" href="/">Home</a>
+          </li>
+          {%- case t -%}
+            {%- when 'page' -%}
+              <li class="breadcrumbs__item">
+                <a class="breadcrumbs__link" href="{{ page.url }}" aria-current="page">{{ page.title }}</a>
+              </li>
+            {%- when 'product' -%}
+              {%- if collection.url -%}
+                <li class="breadcrumbs__item">
+                  {{ collection.title | link_to: collection.url }}
+                </li>
+              {%- endif -%}
+              <li class="breadcrumbs__item">
+                <a class="breadcrumbs__link" href="{{ product.url }}" aria-current="page">{{ product.title }}</a>
+              </li>
+            {%- when 'collection' and collection.handle -%}
+              {%- if current_tags -%}
+                <li class="breadcrumbs__item">
+                  {{ collection.title | link_to: collection.url }}
+                </li>
+                <li class="breadcrumbs__item">
+                  {%- capture tag_url -%}{{ collection.url }}/{{ current_tags | join: "+"}}{%- endcapture -%}
+                  <a class="breadcrumbs__link" href="{{ tag_url }}" aria-current="page">{{ current_tags | join: " + "}}</a>
+                </li>
+              {%- else -%}
+                <li class="breadcrumbs__item">
+                  <a class="breadcrumbs__link" href="{{ collection.url }}" aria-current="page">{{ collection.title }}</a>
+                </li>
+              {%- endif -%}
+            {%- when 'blog' -%}
+              {%- if current_tags -%}
+                <li class="breadcrumbs__item">
+                  {{ blog.title | link_to: blog.url }}
+                </li>
+                <li class="breadcrumbs__item">
+                  {%- capture tag_url -%}{{blog.url}}/tagged/{{ current_tags | join: "+" }}{%- endcapture -%}
+                  <a class="breadcrumbs__link" href="{{ tag_url }}" aria-current="page">{{ current_tags | join: " + " }}</a>
+                </li>
+              {%- else -%}
+                <li class="breadcrumbs__item">
+                  <a class="breadcrumbs__link" href="{{ blog.url }}" aria-current="page">{{ blog.title }}</a>
+                </li>
+              {%- endif -%}
+            {%- when 'article' -%}
+              <li class="breadcrumbs__item">
+                {{ blog.title | link_to: blog.url }}
+              </li>
+              <li class="breadcrumbs__item">
+                <a class="breadcrumbs__link" href="{{ article.url }}" aria-current="page">{{ article.title }}</a>
+              </li>
+            {%- else -%}
+              <li class="breadcrumbs__item">
+                <a class="breadcrumbs__link" href="{{ request.path }}" aria-current="page">{{ page_title }}</a>
+              </li>
+          {%- endcase -%}
+        </ol>
+      </nav>
+      </div>
+      {%- endunless -%}
+    </div>
+  {% endif %}  
+  <div class="verterans-program-wrapper">
+    <div class="leaf-box verterans-program-banner--box-right-bot left-bot">
+        <img loading="lazy"  class="leaf verterans-program-banner-right-bot" src="{{ 'Leaf-left.svg' | asset_url }}">
+    </div>
+    <div class="leaf-box verterans-program-banner--box-right-bot right-bot">
+        <img loading="lazy"  class="leaf verterans-program-banner-right-bot" src="{{ 'Right-leaf.svg' | asset_url }}">
+    </div>
+    <div class="container">
+      <div class="row">
+        <div class="col-sm-12 col-md-12 col-lg-12">
+          <div class="verterans-program-head-wrap" data-aos="fade-up">
+            <div class="verterans-program-title">
+              <h1>{{ section.settings.the_title }}</h1>
+            </div>
+            <div class="verterans-program-text">
+              <p>{{ section.settings.the_text }}</p>
+            </div>
+            <div class="veterans-program-btn">
+              <a class="btn btn-bg" href="{{ section.settings.url_1 }}" target="_self">{{ section.settings.button_1 }}</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+ </div>
+</section>
+{% schema %}
+  {
+    "name": "Veterans Program Banner",
+    "settings": [
+        {
+          "type": "checkbox",
+          "id": "enable_breadcrumb",
+          "label": "Enable Breadcrumb",
+          "default": true
+        },
+        {
+            "type": "header",
+            "content": "Content Settings"
+        },
+		 {
+          "type": "image_picker",
+          "id": "background_the_image",
+          "label": "Background-Image"
+      	},
+        {
+          "type": "image_picker",
+          "id": "bg_mob_image",
+          "label": "Background Mobile Image"
+        },
+        {
+          "type": "textarea",
+          "id": "the_title",
+          "label": "Title"
+        },
+        {
+          "type": "textarea",
+          "id": "the_text",
+          "label": "Text"
+        },
+        {
+          "type": "text",
+          "id": "button_1",
+          "label": "Button 1"
+        },
+        {
+          "type": "url",
+          "id": "url_1",
+          "label": "Url 1"
+        }
+    ],
+	"presets": [{
+      "name": "Veterans Program Banner"
+    }]
+  }
+{% endschema %}

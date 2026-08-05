@@ -1,0 +1,135 @@
+<style>
+  #id-{{ section.id }}{
+  	background-color:{{ section.settings.section_bg_color }};
+  }
+  .read-modal {
+  display: none;
+  position: fixed;
+  z-index: 1;
+  padding-top: 100px;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgb(0,0,0);
+  background-color: rgba(0,0,0,0.4);
+}
+
+.read-modal-content {
+  background-color: #fefefe;
+  margin: auto;
+  padding: 20px;
+  border: 1px solid #888;
+  width: 80%;
+}
+
+.read-close {
+  color: #aaaaaa;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+}
+
+.read-close:hover,
+.read-close:focus {
+  color: #000;
+  text-decoration: none;
+  cursor: pointer;
+}
+</style>
+<section id="id-{{section.id}}" class="gummies-reduce-stress-section">
+  <div class="gummies-reduce-stress-wrapper">
+    <div class="gummies-reduce-stress-container">
+      <div class="gummies-reduce-stress-row">
+        <div class="gummies-reduce-stress-content">
+          <div class="gummies-reduce-stress-image">
+            {% if section.settings.the_image != blank %}<img loading="lazy"  src="{{ section.settings.the_image | image_url: width: 2000 }}">{% endif %}
+          </div>
+          <div class="gummies-reduce-stres-text">
+            <h2>{{ section.settings.the_title }}</h2>
+            <p>{{ section.settings.the_text }}</p>
+            <button id="read-more-btn-popup">{{ section.settings.btn_text }}</button>
+          </div>
+        </div>
+        <div id="read-myModal" class="read-modal">
+          <div class="read-modal-content">
+            <span class="read-close">&times;</span>
+            {{ section.settings.popup_text }}
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+{% comment %} RGD: 2026-01-07 {% endcomment %} 
+{% comment %} 
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script> 
+{% endcomment %}
+{% # theme-check-disable ParserBlockingScript %}
+<script type="text/javascript" src="{{ 'jquery-3.5.1.min.js' | asset_url }}"></script>
+{% # theme-check-enable ParserBlockingScript %}
+<script>
+  $(document).ready(function(){
+    $('#read-more-btn-popup').click(function(){
+    	$('#read-myModal').show();
+    });
+    $('.read-close').click(function(){
+    	$('#read-myModal').hide();
+    });
+  });
+</script>
+{% schema %}
+  {
+    "name": "Gummies Reduce Stress",
+    "settings": [
+         {
+            "type": "header",
+            "content": "Content Style"
+         },
+  	     {
+           "type": "color",
+           "id": "section_bg_color",
+           "label": "Section background color"
+        },
+        {
+          "type": "header",
+          "content": "Left Image Settings"
+      	},
+        {
+           "type": "image_picker",
+           "id": "the_image",
+           "label": "Image"
+         },
+         {
+             "type": "text",
+             "id": "the_title",
+            "label": "Title"
+          },
+          {
+             "type": "textarea",
+             "id": "the_text",
+             "label": "Text"
+          },
+         {
+             "type": "text",
+             "id": "btn_text",
+             "label": "Read More Button"
+          },
+          {
+             "type": "richtext",
+             "id": "popup_text",
+             "label": "Popup Text"
+           }
+    ],
+	"presets": [{
+      "name": "Gummies Reduce Stress"
+    }]
+  }
+{% endschema %}
+
+{% stylesheet %}
+{% endstylesheet %}
+
+{% javascript %}
+{% endjavascript %}

@@ -1,0 +1,177 @@
+<style>
+  #id-{{ section.id }}{
+  	background-color:{{ section.settings.section_bg_color }};
+  }
+</style>
+<section id="id-{{section.id}}" class="stress-cycle-section">
+  <div class="stress-cycle-wrapper">
+    <div class="container">
+      <div class="row common-section-head-row">
+        <div class="col-lg-12 col-md-12 col-sm-12">
+          <div class="common-section-head-content">
+            <h2 class="custom-heading-h2">
+              {{ section.settings.the_title }}
+            </h2>
+            <a class="custom-button-wrap" href="#custom-product-offers">{{ section.settings.button_text }}</a>
+          </div>
+        </div>
+      </div>
+      <div class="row guarantee-satisfy-content-row">
+        <div class="guarantee-satisfy-txt">
+          <p>{{ section.settings.the_text }}</p>
+        </div>
+      </div>
+      {% for block in section.blocks %}
+        {% case block.type %}
+          {% comment %}
+            Rich Text
+          {% endcomment %}
+          {% when 'rich_text' %}
+          <div class="row stress-cycle-rich-text-row">
+            <div class="col-lg-12 col-md-12 col-sm-12">
+              <h2 class="custom-heading-h2">{{ block.settings.the_title }}</h2>
+              {% if block.settings.the_text != blank %}<p>{{ block.settings.the_text }}</p>{% endif %}
+            </div>
+          </div>
+          {% comment %}
+            Two Text Blocks
+          {% endcomment %}
+          {% when 'text_two_blocks' %}
+          <div class="row stress-cycle-text-blocks-row">
+            <div class="col-lg-6 col-md-6 col-sm-12">
+              <h3>{{ block.settings.the_title }}</h3>
+              <ul class="stress-cycle-lists">
+                <li>{{ block.settings.list_text1 }}</li>
+                <li>{{ block.settings.list_text2 }}</li>
+                <li>{{ block.settings.list_text3 }}</li>
+                <li>{{ block.settings.list_text4 }}</li>
+                <li>{{ block.settings.list_text5 }}</li>
+                <li>{{ block.settings.list_text6 }}</li>
+              </ul>
+            </div>
+            <div class="col-lg-6 col-md-6 col-sm-12">
+              {{ block.settings.the_text  }}
+            </div>
+          </div>
+        {% endcase %}
+      {% endfor %}
+    </div>
+  </div>
+</section>
+{% schema %}
+  {
+    "name": "Stess Cycle Section",
+    "settings": [
+      {
+            "type": "header",
+            "content": "Content Style"
+         },
+  	     {
+           "type": "color",
+           "id": "section_bg_color",
+           "label": "Section background color"
+        },
+        {
+          "type": "header",
+          "content": "Content Settings"
+      	},
+        {
+          "type": "text",
+          "id": "the_title",
+          "label": "Title",
+          "info": "Usin <br> tag to start text on new line"
+      	},
+        {
+           "type": "text",
+           "id": "button_text",
+           "label": "Text"
+        },
+        {
+          "type": "text",
+          "id": "the_text",
+          "label": "Text"
+      	}
+    ],
+	"blocks": [
+        {
+          "type": "rich_text",
+          "name": "Rich Text",
+          "settings": [
+        		{
+                  "type": "text",
+                  "id": "the_title",
+                  "label": "Title"
+              	},
+                {
+                  "type": "richtext",
+                  "id": "the_text",
+                  "label": "Text"
+              	}
+            ]
+      },  
+	  {
+          "type": "text_two_blocks",
+          "name": "Two text Blocks",
+          "settings": [
+                {
+                "type": "header",
+                "content": "Left Content Settings"
+            	},
+        		{
+                  "type": "text",
+                  "id": "the_title",
+                  "label": "Title"
+              	},
+                {
+                  "type": "text",
+                  "id": "list_text1",
+                  "label": "List Text-1"
+              	},
+                {
+                  "type": "text",
+                  "id": "list_text2",
+                  "label": "List Text-2"
+              	},
+                {
+                  "type": "text",
+                  "id": "list_text3",
+                  "label": "List Text-3"
+              	},
+                {
+                  "type": "text",
+                  "id": "list_text4",
+                  "label": "List Text-4"
+              	},
+                {
+                  "type": "text",
+                  "id": "list_text5",
+                  "label": "List Text-5"
+              	},
+                {
+                  "type": "text",
+                  "id": "list_text6",
+                  "label": "List Text-6"
+              	},
+                {
+                "type": "header",
+                "content": "Right Content Settings"
+            	},
+                {
+                  "type": "richtext",
+                  "id": "the_text",
+                  "label": "Text"
+              	}
+            ]
+      }
+	],
+    "presets": [{
+      "name": "Stess Cycle Section"
+    }]
+  }
+{% endschema %}
+
+{% stylesheet %}
+{% endstylesheet %}
+
+{% javascript %}
+{% endjavascript %}

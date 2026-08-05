@@ -1,0 +1,69 @@
+<section id="id-{{section.id}}" class="col-gift-card">
+  <div class="container">
+    <div class="gtf-card-row">
+      <div class="col-sm-12 col-md-6 col-lg-6 gft-card-left">
+        <h2 data-aos="fade-up">{{ section.settings.the_title }}</h2>
+        <p data-aos="fade-up">{{ section.settings.the_text }}</p>
+        <div class="gft-get-started">
+          <h3 data-aos="fade-up">{{ section.settings.sub_title }}</h3>
+          <p data-aos="fade-up">{{ section.settings.sub_text }}</p>
+        </div>
+      </div>
+      <div class="col-sm-12 col-md-6 col-lg-6 gft-card-rgt">
+        <div data-aos="fade-up" data-aos-delay="000">
+          {% if section.settings.the_image !=blank %}<img loading="lazy"  src="{{ section.settings.the_image | image_url: width: 2000 }}">{% endif %}
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+{% schema %}
+  {
+    "name": "Gift Card Image Text",
+    "settings": [
+      {
+          "type": "header",
+          "content": "Content Settings"
+      },
+      {
+          "type": "textarea",
+          "id": "the_title",
+          "label": "Title"
+      },
+      {
+          "type": "text",
+          "id": "the_text",
+          "label": "Text",
+          "info": "using <span> for change the text color"
+      },
+      {
+          "type": "text",
+          "id": "sub_title",
+          "label": "Sub Title"
+      },
+      {
+          "type": "text",
+          "id": "sub_text",
+          "label": "Text"
+      },
+      {
+          "type": "header",
+          "content": "Image Settings"
+      },
+      {
+          "type": "image_picker",
+          "id": "the_image",
+          "label": "Image"
+      }
+    ],
+	"presets": [{
+      "name": "Gift Card Image Text"
+    }]
+  }
+{% endschema %}
+
+{% stylesheet %}
+{% endstylesheet %}
+
+{% javascript %}
+{% endjavascript %}

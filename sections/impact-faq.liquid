@@ -1,0 +1,112 @@
+<section class="section section-bund pb-4">
+    <div class="leaf-box right-top">
+        <img loading="lazy"  class="leaf" src="{{ 'leaf-n02.svg' | asset_url }}">
+    </div>
+
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-md-12">
+                <h2 class="text-uppercase" data-aos="fade-up">
+                     {{ section.settings.title }}
+                </h2>
+                <div class="row">
+                    <div class="col-md-6">
+                        <p data-aos="fade-up">
+                            {{ section.settings.content }}
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<section class="section-faqs section-impact-faq">
+    <div class="container">
+        <div class="menu-footer-group" style="max-width: 100% !important;">
+            <div class="row">
+                <div class="col-md-6">
+                    {% for block in section.blocks  %}
+                        {% if block.type == 'faq_left' %}
+                          <div class="menu-footer menu-page {% if forloop.index == 1 %}active{% endif %}" data-aos="fade-up">
+                              <h2>{{ block.settings.title }}<img loading="lazy"  class="d-none d-md-block float-end mt-1" src="{{ '__down.svg' | asset_url }}"></h2>
+                              <div class="menu-s" {% if forloop.index != 1 %}style="display: none"{% endif %}>
+                                  {{ block.settings.content }}
+                              </div>
+                          </div>
+                        {% endif %}
+                    {% endfor %}  
+                </div>
+                <div class="col-md-6">
+                   {% for block in section.blocks  %}
+                        {% if block.type == 'faq_right' %}
+                          <div class="menu-footer menu-page" data-aos="fade-up">
+                              <h2>{{ block.settings.title }}<img loading="lazy"  class="d-none d-md-block float-end mt-1" src="{{ '__down.svg' | asset_url }}"></h2>
+                              <div class="menu-s" style="display: none">
+                                  {{ block.settings.content }}
+                              </div>
+                          </div>
+                        {% endif %}
+                    {% endfor %}  
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+{% schema %}
+  {
+    "name": "Section Faqs",
+    "settings": [
+        {
+        "type": "text",
+        "id": "title",
+        "label": "Title",
+        "default" : "See Our Results"
+      },
+      {
+        "type": "textarea",
+        "id": "content",
+        "label": "Content",
+        "default" : "As part of a global community, TRIIBE supports individuals from inspiring athletes, adventurers, to wellness advocates and entrepreneurs, who are active in their communities and motivated to help elevate others and make the world a better place."
+      }
+    ],
+     "blocks": [
+     {
+      "type": "faq_left",
+      "name": "Faq Left",
+      "settings": [
+    	 {
+          "type": "text",
+          "id": "title",
+          "label": "Title",
+		  "default" : "Text"
+        },
+        {
+          "type": "richtext",
+          "id": "content",
+          "label": "Content",
+		  "default" : "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor Lorem ipsum dolor sit amet.</p>"
+        }
+      ]
+     },
+      {
+      "type": "faq_right",
+      "name": "Faq right",
+      "settings": [
+    	 {
+          "type": "text",
+          "id": "title",
+          "label": "Title",
+		  "default" : "Text"
+        },
+        {
+          "type": "richtext",
+          "id": "content",
+          "label": "Content",
+		  "default" : "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor Lorem ipsum dolor sit amet.</p>"
+        }
+      ]
+     }
+	]
+  }
+{% endschema %}
+

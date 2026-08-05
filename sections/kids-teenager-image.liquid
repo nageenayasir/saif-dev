@@ -1,0 +1,55 @@
+<style>
+  #id-{{ section.id }}{
+  	background-color:{{ section.settings.section_bg_color }};
+  }
+</style>
+<section id="id-{{section.id}}" class="custom-kids-teenager-image common-kids-teenager-section">
+  <div class="custom-kids-teenager-image-wrapper">
+    <div class="leaf-box kids-teenager-image-box-left-top left-top">
+        <img loading="lazy"  class="leaf kids-teenager-image-left-top" src="{{ 'kids-teenager-left-top.svg' | asset_url }}">
+    </div>
+    <div class="container">
+      <div class="row">
+        <div class="col-sm-12 col-md-12 col-lg-12">
+          <div class="kids-teenager-image-wrap" data-aos="fade-up">
+            {% if section.settings.the_image != blank %}<img loading="lazy"  src="{{ section.settings.the_image | image_url: width: 2000 }}">{% endif %}
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+{% schema %}
+  {
+    "name": "Kids Teenager Image",
+    "settings": [
+       {
+            "type": "header",
+            "content": "Content Style"
+      },
+  	  {
+           "type": "color",
+           "id": "section_bg_color",
+           "label": "Section background color"
+      },
+      {
+            "type": "header",
+            "content": "Image Text Content Settings"
+      },
+      {
+            "type": "image_picker",
+            "id": "the_image",
+            "label": "Image"
+      }
+    ],
+	"presets": [{
+      "name": "Kids Teenager Image"
+    }]
+  }
+{% endschema %}
+
+{% stylesheet %}
+{% endstylesheet %}
+
+{% javascript %}
+{% endjavascript %}

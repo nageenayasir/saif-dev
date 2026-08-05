@@ -1,0 +1,119 @@
+<style>
+  #id-{{ section.id }}{
+  	background-color:{{ section.settings.section_bg_color }};
+  }
+  .teenager-product-img-text-wrap {
+    text-align: center;
+}
+</style>
+<section id="id-{{section.id}}" class="new-kids-teenager-product-section common-kids-teenager-section">
+  <div class="new-kids-teenager-product-wrapper">
+    <div class="leaf-box kids-teenager-product-box-left-top left-top">
+        <img loading="lazy"  class="leaf kids-teenager-product-left-top" src="{{ 'side-character.svg' | asset_url }}">
+    </div>
+    <div class="container">
+      <div class="row">
+        <div class="col-sm-12 col-md-6 col-lg-6 new-kids-teenager-product-left">
+          <div class="new-kids-teenager-product-content" data-aos="fade-up">
+            <h2><span>{{ section.settings.the_title }}</h2></span></h2>
+            <ul class="new-kids-teenager-product-gummies">
+              <li>
+                {% if section.settings.img_1 != blank %}<img loading="lazy"  src="{{ section.settings.img_1 | image_url: width: 2000 }}">{% endif %}
+              </li>
+              <li>
+                {% if section.settings.img_2 != blank %}<img loading="lazy"  src="{{ section.settings.img_2 | image_url: width: 2000 }}">{% endif %}
+              </li>
+            </ul>
+            <h3>{{ section.settings.sub_title }}</h3>
+            <p>{{ section.settings.the_text }}</p>
+          </div>
+        </div>
+        <div class="col-sm-12 col-md-6 col-lg-6 new-kids-teenager-product-right">
+          <div class="new-kids-teenager-product-img" data-aos="fade-up">
+             <a href="{{ section.settings.button_url }}">
+               <div class="kids-teen-image-wrapper">
+                {% if section.settings.the_image != blank %}<img loading="lazy"  src="{{ section.settings.the_image | image_url: width: 2000 }}" class="new-kids-teenager-product-img">{% endif %}
+               </div>
+               </a>
+             <div class="new-kids-teenager-product-btn-wrap" data-aos="fade-up">
+              <a href="{{ section.settings.button_url }}">{{ section.settings.button_text }}</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+{% schema %}
+  {
+    "name": "New Kids Teenager Product",
+    "settings": [
+      {
+            "type": "header",
+            "content": "Content Style"
+      },
+  	  {
+           "type": "color",
+           "id": "section_bg_color",
+           "label": "Section background color"
+      },
+      {
+            "type": "header",
+            "content": "Left Content Settings"
+      },
+      {
+          "type": "text",
+          "id": "the_title",
+          "label": "Title"
+      },
+      {
+            "type": "image_picker",
+            "id": "img_1",
+            "label": "Image-1"
+      },
+      {
+            "type": "image_picker",
+            "id": "img_2",
+            "label": "Image-2"
+      },
+      {
+          "type": "text",
+          "id": "sub_title",
+          "label": "Sub Title"
+      },
+      {
+          "type": "text",
+          "id": "the_text",
+          "label": "Text"
+      },
+      {
+            "type": "header",
+            "content": "Right Content Settings"
+      },
+      {
+            "type": "image_picker",
+            "id": "the_image",
+            "label": "Image"
+      },
+      {
+          "type": "text",
+          "id": "button_text",
+          "label": "Text"
+      },
+      {
+          "type": "url",
+          "id": "button_url",
+          "label": "Url"
+      }
+    ],
+	"presets": [{
+      "name": "New Kids Teenager Product"
+    }]
+  }
+{% endschema %}
+
+{% stylesheet %}
+{% endstylesheet %}
+
+{% javascript %}
+{% endjavascript %}

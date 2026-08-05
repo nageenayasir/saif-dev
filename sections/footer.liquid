@@ -1,0 +1,339 @@
+  <footer class="site-footer">
+<!--   {% if request.page_type == '404' or request.page_type == 'customers/login' or request.page_type == 'customers/register' or request.path == '/pages/account-forgot' or request.page_type == 'page' or request.page_type == 'customers/account' or request.page_type == 'customers/addresses' or request.path == '/policies/privacy-policy' or request.path == '/policies/terms-of-service' or request.path == '/policies/shipping-policy' or request.path == '/policies/refund-policy' %}
+     <div class="leaf-box left-top" >
+        <img loading="lazy"  class="leaf" src="{{ 'leaf-06.png' | asset_url }}" alt="Decorative leaf graphic">
+    </div>
+    <div class="leaf-box right-bot" >
+        <img loading="lazy"  class="leaf" src="{{ 'leaf-10.png' | asset_url }}" alt="Decorative leaf graphic">
+    </div>
+  {% else %}
+    <div class="leaf-box left-top">
+        <img loading="lazy"  class="leaf" src="{{ 'leaf-n08.svg' | asset_url }}" alt="Decorative leaf graphic">
+    </div>
+    <div class="leaf-box left-bot" style="bottom: 0;">
+        <img loading="lazy"  class="leaf__" src="{{ 'leaf-n09.svg' | asset_url }}" alt="Decorative leaf graphic">
+    </div>
+    <div class="leaf-box right-bot" style="bottom: 0;">
+        <img loading="lazy"  class="leaf__" src="{{ 'leaf-n10.svg' | asset_url }}" alt="Decorative leaf graphic">
+    </div>
+  {% endif %} -->
+    {% unless request.path == '/products/ashwagandha-gummies-kids' %}
+    <div class="leaf-box left-top">
+        <img loading="lazy"  class="leaf" src="{{ 'leaf-n08.svg' | asset_url }}" alt="Decorative leaf graphic">
+    </div>
+    {% endunless %}
+    {% if request.page_type == '404' or request.page_type == 'customers/login' or request.page_type == 'customers/register' or request.path == '/pages/account-forgot' or request.path == '/products/ashwagandha-gummies-kids' %}
+      {% else %}
+    <div class="leaf-box right-top" style="top: -60px;">
+        <img loading="lazy"  class="leaf__" src="{{ 'leaf-n06.svg' | asset_url }}" alt="Decorative leaf graphic">
+    </div>
+    {% endif %}
+    <div class="leaf-box left-bot" style="bottom: 0;">
+        <img loading="lazy"  class="leaf__" src="{{ 'leaf-n09.svg' | asset_url }}" alt="Decorative leaf graphic">
+    </div>
+
+    <div class="leaf-box right-bot" style="bottom: 0;">
+        <img loading="lazy"  class="leaf__" src="{{ 'leaf-n10.svg' | asset_url }}" alt="Decorative leaf graphic">
+    </div>
+    
+    <div class="container">
+        <div class="text-center">
+            <a href="{{ routes.root_url }}" class="logo" data-aos="fade-up" data-aos-delay="000">
+                <img loading="lazy"  src="{{ section.settings.logo | image_url : width: 600 }}" alt="{{ section.settings.logo.alt | default: shop.name }}">
+            </a>
+        </div>
+        <div id="here-anchor" class="row">
+              <div class="col-lg-6 left-side-footer">
+              {%- for block in section.blocks -%}
+                {% if block.type == 'subscribe' %}
+                  <h2 class="text-uppercase footer-join-subscribe-text" data-aos="fade-up" data-aos-delay="000">{{ block.settings.title }}</h2>
+                  <p class="footer-lifestyle-text" data-aos="fade-up" data-aos-delay="000">{{ block.settings.the_text }}</p>
+                   {%- form 'customer', id: 'ContactFooter', class: 'newsletter-footer d-flex',data-aos : 'fade-up',data-aos-delay : '000'  -%}
+                    <input id="NewsletterForm--{{ section.id }}" type="email" name="contact[email]" value="{{ form.email }}" placeholder="{{ 'newsletter.label' | t }}" required>
+                    <button type="submit" class="btn btn-bg" name="commit" id="Subscribe">{{ 'newsletter.button_label' | t }}</button>
+                  {% endform %}
+                  <p class="note font-s text-uppercase mt-3" data-aos="fade-up" data-aos-delay="000">{{ block.settings.content }}</p>
+                {% endif %}
+                {% if block.type == 'copyright' %}
+                  <div class="d-none d-lg-block footer-social-right">
+                     <div class="footer-social-media-custom-icons">
+                <div class="footer-custom-new-icons">
+                  <ul class="footer-iconnew-icons-lists">
+                    <li>
+                       {% if block.settings.icon_1 != blank %}<img loading="lazy" src="{{ block.settings.icon_1 | image_url: width: 2000 }}" alt="Certification badge">{% endif %}
+                    </li>
+                    <li>
+                       {% if block.settings.icon_2 != blank %}<img loading="lazy" src="{{ block.settings.icon_2 | image_url: width: 2000 }}" alt="Certification badge">{% endif %}
+                    </li>
+                  </ul>
+                </div>
+                <div class="footer-social-media-icons">
+                <h2 class="text-uppercase mt-4 pt-4 mt-md-5 pt-md-5 mb-2" data-aos="fade-up" data-aos-delay="000"  data-aos-anchor="#here-anchor">{{ block.settings.title }}</h2>
+                <div class="socials mb-5 pb-lg-5" data-aos="fade-up" data-aos-delay="000"
+                     data-aos-anchor="#here-anchor">
+
+
+                              <a href="{{ settings.social_instagram_link }}" aria-label="Follow us on Instagram" target="_blank" rel="noopener">{%- render 'icon-instagram' -%}</a>
+
+
+                              <a href="{{ settings.social_facebook_link }}" aria-label="Follow us on Facebook" target="_blank" rel="noopener">{%- render 'icon-facebook' -%}</a>
+
+                              <a href="{{ section.settings.social_spotify_link }}" target="_blank" aria-label="Listen on Spotify" target="_blank" rel="noopener"><i class="fab fa-spotify"></i> </a>
+                              <a href="{{ settings.social_youtube_link }}" aria-label="Subscribe on YouTube" target="_blank" rel="noopener">{%- render 'icon-youtube' -%}</a>
+                              <a href="{{ settings.social_tiktok_link }}" aria-label="Follow us on TikTok" target="_blank" rel="noopener">{%- render 'icon-tiktok' -%}</a>
+
+
+                    </div>
+                  </div>
+                </div>
+                    {% if block.settings.show_icon_payment %}
+                      {%- for type in shop.enabled_payment_types -%}
+                          <li class="list-payment__item">
+                            {{ type | payment_type_svg_tag: class: 'icon icon--full-color' }}
+                          </li>
+                      {%- endfor -%}
+                    {% endif %}
+                    {% if block.settings.image %}
+                      <div class="pay">
+                      <img loading="lazy"  src="{{ block.settings.image | image_url : width: 600 }}" alt="Payment methods accepted" data-aos="fade-up" data-aos-delay="000" width="332" height="25">
+                      </div>
+                    {% endif %}
+                      <p class="font-s text-uppercase" data-aos="fade-up" data-aos-delay="000">{{ block.settings.copyright | newline_to_br }}</p>
+                                          <p class="font-s disclaimer-text" style="text-transform: none !important; max-width: 500px;">{{ block.settings.content }}</p>
+
+                  </div>
+                {% endif %}
+                {% endfor %}
+              </div>
+              <div class="col-lg-6 mt-5 mt-lg-0">
+                  <div class="row menu-footer-group">
+                     {%- for block in section.blocks -%} 
+                      {%- case block.type -%}
+                        {%- when 'link_list' -%}
+                          <div class="col-md-6">
+                            <div class="menu-footer">
+                                <h2 class="text-uppercase" data-aos="fade-up" data-aos-delay="000">{{ block.settings.heading }}</h2>
+                                <div class="menu-s">
+                                    <ul data-aos="fade-up" data-aos-delay="000">
+                                        {%- for link in block.settings.menu.links -%}
+                                          <li><a href="{{ link.url }}" aria-label="Reach out to Tribe Organics for {{ link.title }} and more">{{ link.title }}</a></li>
+                                        {% endfor %}
+                                    </ul>
+                                </div>
+                            </div>
+                          </div>
+                           {%- when 'contact' -%} 
+                             <div class="col-md-6">
+                              <div class="menu-footer">
+                                  <h2 class="text-uppercase" data-aos="fade-up" data-aos-delay="000">{{ block.settings.heading }}</h2>
+                                  <div class="menu-s">
+                                      <ul data-aos="fade-up" data-aos-delay="000">
+                                          {{ block.settings.custom_html }}
+                                      </ul>
+                                  </div>
+                            </div>
+                          </div>
+                        {% endcase %}
+                       {%- endfor -%} 
+                      
+                  </div>
+              </div>
+          </div>
+          <div class="d-block d-lg-none footer-social-right">
+          {%- for block in section.blocks -%}
+            {% if block.type == 'copyright' %}
+              <div class="footer-social-media-custom-icons">
+                <div class="footer-custom-new-icons">
+                  <ul class="footer-iconnew-icons-lists">
+                    <li>
+                       {% if block.settings.icon_1 != blank %}<img loading="lazy" src="{{ block.settings.icon_1 | image_url: width: 2000 }}" alt="Certification badge">{% endif %}
+                    </li>
+                    <li>
+                       {% if block.settings.icon_2 != blank %}<img loading="lazy" src="{{ block.settings.icon_2 | image_url: width: 2000 }}" alt="Certification badge">{% endif %}
+                    </li>
+                  </ul>
+                </div>
+                <div class="footer-social-media-icons">
+                <h2 class="text-uppercase mt-4 pt-4 mt-md-5 pt-md-5 mb-2" data-aos="fade-up" data-aos-delay="000"  data-aos-anchor="#here-anchor">{{ block.settings.title }}</h2>
+                <div class="socials mb-5 pb-lg-5" data-aos="fade-up" data-aos-delay="000"
+                     data-aos-anchor="#here-anchor">
+
+
+                              <a href="{{ settings.social_instagram_link }}" aria-label="Follow us on Instagram" target="_blank" rel="noopener">{%- render 'icon-instagram' -%}</a>
+
+
+                              <a href="{{ settings.social_facebook_link }}" aria-label="Follow us on Facebook" target="_blank" rel="noopener">{%- render 'icon-facebook' -%}</a>
+
+                              <a href="{{ section.settings.social_spotify_link }}" target="_blank" rel="noopener" aria-label="Listen on Spotify"><i class="fab fa-spotify"></i> </a>
+                              <a href="{{ settings.social_youtube_link }}" aria-label="Subscribe on YouTube" target="_blank" rel="noopener">{%- render 'icon-youtube' -%}</a>
+                              <a href="{{ settings.social_tiktok_link }}" aria-label="Follow us on TikTok" target="_blank" rel="noopener">{%- render 'icon-tiktok' -%}</a>
+
+
+                    </div>
+                  </div>
+                </div>
+                      {% if block.settings.show_icon_payment %}
+                        {%- for type in shop.enabled_payment_types -%}
+                            <li class="list-payment__item">
+                              {{ type | payment_type_svg_tag: class: 'icon icon--full-color' }}
+                            </li>
+                        {%- endfor -%}
+                      {% endif %}
+                      {% if block.settings.image %}
+                        <img loading="lazy"  src="{{ block.settings.image | image_url : width: 600 }}" alt="Payment methods accepted" data-aos="fade-up" data-aos-delay="000" data-aos-anchor="#here-anchor">
+                      {% endif %}
+                      <p class="font-s text-uppercase" data-aos="fade-up" data-aos-delay="000" data-aos-anchor="#here-anchor">{{ block.settings.copyright }}</p>
+                                          <p class="font-s disclaimer-text" style="text-transform: none !important;">{{ block.settings.content }}</p>
+              {% endif %}
+            {% endfor %}
+          </div>
+          {% if section.settings.the_text != blank %}
+          <div class="col-sm-12 col-md-12 col-lg-12">
+            <div class="footer-bottom-developed">
+              {{ section.settings.the_text }}
+            </div>
+          </div>
+        {% endif %}
+    </div>
+</footer>
+ 
+{% schema %}
+{
+  "name": "t:sections.footer.name",
+  "blocks": [
+    {
+      "type": "link_list",
+      "name": "t:sections.footer.blocks.link_list.name",
+      "settings": [
+        {
+          "type": "text",
+          "id": "heading",
+          "default": "Quick links",
+          "label": "t:sections.footer.blocks.link_list.settings.heading.label"
+        },
+        {
+          "type": "link_list",
+          "id": "menu",
+          "default": "footer",
+          "label": "t:sections.footer.blocks.link_list.settings.menu.label",
+          "info": "t:sections.footer.blocks.link_list.settings.menu.info"
+        }
+      ]
+    },
+    {
+      "type": "copyright",
+      "name": "Copyright",
+      "limit" : 1,
+      "settings": [
+        {
+          "type": "checkbox",
+          "id": "show_social",
+          "label": "Show Social",
+          "default": true
+        },
+        {
+          "type": "text",
+          "id": "title",
+          "default": "Follow",
+          "label": "Title"
+        },
+        {
+          "type": "text",
+          "id": "social_spotify_link",
+          "label": "Link Social spotify" 
+        },
+        {
+          "type": "checkbox",
+          "id": "show_icon_payment",
+          "label": "Show icon payment auto",
+          "default": true
+        },
+        {
+          "type": "image_picker",
+          "id": "image",
+          "label": "Image"
+        },
+        {
+          "type": "html",
+          "id": "copyright",
+          "label": "Copyright"
+        },
+        {
+          "type": "textarea",
+          "id": "content",
+          "label": "Content"
+        },
+        {
+          "type": "image_picker",
+          "id": "icon_1",
+          "label": "Icon-1"
+        },
+        {
+          "type": "image_picker",
+          "id": "icon_2",
+          "label": "Icon-2"
+        }
+      ]
+    },
+    {
+      "type": "subscribe",
+      "name": "Subscribe",
+      "limit" : 1,
+      "settings": [
+        {
+            "type": "text",
+            "id": "title",
+            "default": "Subscribe",
+            "label": "Title"
+        },
+        {
+            "type": "text",
+            "id": "the_text",
+            "label": "Text"
+        },
+        {
+            "type": "textarea",
+            "id": "content",
+            "default": "You agree with the privacy policy and terms of use by subscibing.",
+            "label": "Content"
+        }
+      ]
+    }
+    
+  ],
+  "settings": [
+    {
+      "type": "image_picker",
+      "id": "logo",
+      "label": "Logo"
+    },
+    {
+       "type": "richtext",
+       "id": "the_text",
+        "label": "Text"
+    }
+  ],
+  "default": {
+    "blocks": [
+      {
+        "type": "subscribe"
+      },
+      {
+        "type": "copyright"
+      }, 
+      {
+        "type": "link_list"
+      },
+      {
+        "type": "link_list"
+      },
+      {
+        "type": "link_list"
+      },
+      {
+        "type": "link_list"
+      }
+    ]
+  }
+}
+{% endschema %}

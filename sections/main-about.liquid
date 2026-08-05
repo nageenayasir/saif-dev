@@ -1,0 +1,25 @@
+<section class="section section-bund">
+    <div class="leaf-box right-top">
+        <img loading="lazy"  class="leaf" src="{{ 'leaf-n02.svg' | asset_url }}">
+    </div>
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-md-8">
+               {{ section.settings.content }}
+            </div>
+        </div>
+    </div>
+</section>
+{% schema %}
+  {
+    "name": "Section Text",
+    "settings": [
+      {
+          "type": "richtext",
+          "id": "content",
+          "default": "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor.</p>",
+          "label": "Content"
+      }
+    ]
+  }
+{% endschema %}

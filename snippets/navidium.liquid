@@ -1,0 +1,61 @@
+<!-- navidium script start -->
+<style>
+          .cart-popup .cart-popup-footer {
+          padding: 20px 35px 20px 40px;
+      }
+        .cart-popup .appearance-right-previw-ld .d-flexCstm-ld { max-width: 100%;}
+        [data-samitapbl-handle="navidium-shipping-protection"]{
+          display: none !important;
+        }
+        .appearance-right-previw-ld {
+      margin-top: -16px !important;
+  }
+        .appearance-right-previw-ld .d-flexCstm-ld {
+      margin-bottom: 7px !important;
+      padding-left: 10px;
+  }
+    .cart-popup .grid__item:has([href*="navidium"]) {
+      display: none !important;
+  }
+</style>
+
+<script>
+   // nvdShop and nvdShopCurrency are declared by Navidium App Block
+   var nvdControls = nvdControls || {
+     subtotal_item: '.rebuy-cart__flyout-subtotal-amount,[data-ocu-subtotal]',
+     CheckoutBtns: '[name="checkout"],.rebuy-cart__checkout-button',
+     clickTriggers: '[value="Add to cart"],[value="Add to cart"] *,.rebuy-product-actions button,.rebuy-product-actions button *,.rebuy-cart__flyout-item-quantity-widget-button, .rebuy-cart__flyout-item-quantity-widget-button *, .rebuy-cart__flyout-item-remove, .rebuy-cart__flyout-item-remove *, [name="add"],[name="add"] *, .spf-product__form-btn-addtocart, .spf-product__form-btn-addtocart *, .product-remove, .product-remove *, .cart-btn-show, .cart-btn-show *',
+     changeTrigger: '.form-default',
+  cursorControl: '.nvd-mini, [name="checkout"]',
+     showConsoleMessage:true,
+     iosDeviceListener:'click',
+     trackWidget:false,
+     forceClick: false,
+     forceCheckout: false,
+     redirectCheckout: {
+       upsaleOff: true,
+       noProtection: false
+     },
+  nvdInject:{
+       status:true, // Inject nvd-mini div
+       parent:'.rebuy-cart__flyout-footer', // parent class for nvd-mini div
+       container:'.rebuy-cart__flyout-actions' // nvd-mini will added before this div/button
+     }
+   }
+</script>
+=
+
+<!-- <script src="https://navidium-static-assets.s3.amazonaws.com/navidium-widgets/js/nvd-js-asset.js"></script> -->
+<script src="https://navidium-static-assets.s3.amazonaws.com/navidium-widgets/js/nvd-widget-v-jquery.js" defer></script>
+<!-- navidium script end -->
+{% if template.name == 'cart' %}
+  <script>
+    let navInterval = setInterval(() =>{
+      let nvdMini = document.querySelector('.nvd-mini');
+      if(nvdMini.length === 2){
+        reload()
+      }
+      console.log("nvdMini now only one")
+    },1700);
+  </script>
+{% endif %}

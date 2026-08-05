@@ -1,0 +1,137 @@
+<style>
+  #id-{{ section.id }}{
+  	background-color:{{ section.settings.section_bg_color }};
+  }
+</style>
+<section id="id-{{section.id}}" class="kids-teenager-image-text {{ section.settings.custom_text }}">
+  <div class="container">
+    {% if section.settings.the_title %}
+      <div class="row">
+        <div class="col-sm-12 col-md-12 col-lg-12">
+          <div class="kids-teenager-image-text-head" data-aos="fade-up">
+            <h2>{{ section.settings.the_title }}</h2>
+          </div>
+        </div>
+      </div>
+    {% endif %}
+    <div class="row kids-teenager-image-text-row">
+      <div class="col-sm-12 mob-kids-teenager-the-text-wrapper">
+        <div class="kids-teenager-the-text-wrapper" data-aos="fade-up">
+          {{ section.settings.mob_text }}
+        </div>
+      </div>
+      {% if section.settings.image_position == 'left' %}
+      <div class="col-sm-12 col-md-6 col-lg-6">
+        {% if section.settings.logo_image != blank %}
+          <div class="kids-teenager-the-image-logo" data-aos="fade-up">
+             <img loading="lazy"  src="{{ section.settings.logo_image | image_url: width: 2000 }}">
+          </div>
+        {% endif %}
+        <div class="kids-teenager-the-image-wrapper" data-aos="fade-up">
+          {% if section.settings.the_image != blank %}<img loading="lazy"  src="{{ section.settings.the_image | image_url: width: 2000 }}">{% endif %}
+        </div>
+      </div>
+      {% endif %}
+      <div class="col-sm-12 col-md-6 col-lg-6 web-kids-teenager-the-text-wrapper">
+        <div class="kids-teenager-the-text-wrapper" data-aos="fade-up">
+          {{ section.settings.the_text }}
+        </div>
+      </div>
+      {% if section.settings.image_position == 'right' %}
+        <div class="col-sm-12 col-md-6 col-lg-6">
+        {% if section.settings.logo_image != blank %}
+          <div class="kids-teenager-the-image-logo" data-aos="fade-up">
+             <img loading="lazy"  src="{{ section.settings.logo_image | image_url: width: 2000 }}">
+          </div>
+        {% endif %}
+          <div class="kids-teenager-the-image-wrapper" data-aos="fade-up">
+            {% if section.settings.the_image != blank %}<img loading="lazy"  src="{{ section.settings.the_image | image_url: width: 2000 }}">{% endif %}
+          </div>
+        </div>
+      {% endif %}
+    </div>
+  </div>
+</section>
+{% schema %}
+  {
+    "name": "Image With Text",
+    "settings": [
+        {
+            "type": "header",
+            "content": "Content Style"
+        },
+  	     {
+           "type": "color",
+           "id": "section_bg_color",
+           "label": "Section background color"
+      },
+      {
+            "type": "header",
+            "content": "Content Settings"
+      },
+      {
+          "type": "textarea",
+          "id": "custom_text",
+          "label": "Add Class"
+      },
+      {
+          "type": "text",
+          "id": "the_title",
+          "label": "Title"
+      },
+      {
+            "type": "header",
+            "content": "Image Settings"
+      },
+      {
+            "type": "image_picker",
+            "id": "logo_image",
+            "label": "Logo Image"
+      },
+      {
+            "type": "image_picker",
+            "id": "the_image",
+            "label": "Image"
+      },
+      {
+        "type": "select",
+        "id": "image_position",
+        "options": [
+          {
+            "value": "left",
+            "label": "Image Left"
+          },
+          {
+            "value": "right",
+            "label": "Image Right"
+          }
+        ],
+        "default": "left",
+        "label": "Choose Position"
+      },
+      {
+            "type": "header",
+            "content": "Content Settings"
+      },
+      {
+          "type": "richtext",
+          "id": "the_text",
+          "label": "Text"
+      },
+      {
+          "type": "richtext",
+          "id": "mob_text",
+          "label": "Mobile-heading"
+      }
+    ],
+	"presets": [{
+      "name": "Image With Text"
+    }]
+  }
+{% endschema %}
+
+{% stylesheet %}
+{% endstylesheet %}
+
+{% javascript %}
+{% endjavascript %}

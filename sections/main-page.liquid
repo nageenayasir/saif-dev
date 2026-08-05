@@ -1,0 +1,65 @@
+<section class="section bg-line-02">
+  <div class="leaf-box right-top">
+      <img loading="lazy"  class="leaf" src="{{ 'leaf-n02.svg' | asset_url }}">
+  </div>
+   <div class="leaf-box left-top">
+      <img loading="lazy"  class="leaf" src="{{ 'leaf-n01.svg' | asset_url }}">
+  </div>
+  <div class="content">
+    {% if request.path == '/pages/transparency' %}
+      {{ page.content }}
+      {% else %}
+      <div class="container">
+           {% if request.path == '/policies/privacy-policy' %}
+        <div class="row justify-content-center policy-page-wraper">
+            <div class="col-md-8">
+                           <h2 class="text-center text-uppercase policy-title-wrapper" data-aos="fade-up">{{ page_title | escape }}</h2>
+
+              {{ shop.privacy_policy }}
+              </div>
+  </div>
+          {% elsif request.path == '/policies/terms-of-service' %}
+              <div class="row justify-content-center policy-page-wraper">
+            <div class="col-md-8">
+                            <h2 class="text-center text-uppercase policy-title-wrapper" data-aos="fade-up">{{ page_title | escape }}</h2>
+
+               {{ shop.terms_of_service }}
+              </div>
+  </div>
+          {% elsif request.path == '/policies/shipping-policy' %}  
+              <div class="row justify-content-center policy-page-wraper">
+            <div class="col-md-8">
+                       <h2 class="text-center text-uppercase policy-title-wrapper" data-aos="fade-up">{{ page_title | escape }}</h2>
+
+                 {{ shop.shipping_policy }}
+              </div>
+  </div>
+          {% elsif request.path == '/policies/refund-policy' %}
+             <div class="row justify-content-center policy-page-wraper">
+            <div class="col-md-8">
+              <h2 class="text-center text-uppercase policy-title-wrapper" data-aos="fade-up">{{ page_title | escape }}</h2>
+                {{ shop.refund_policy }}
+              </div>
+  </div>
+          {% else %}
+<!--              <h2 class="text-center text-uppercase" data-aos="fade-up">{{ page.title | escape }}</h2> -->
+        <div class="row justify-content-center">
+            <div class="col-md-8">
+              {{ page.content }}
+                </div>
+  </div>
+          {% endif %}
+      </div>
+    {% endif %}
+  </div>
+</section>
+{% schema %}
+{
+  "name": "t:sections.main-page.name",
+  "tag": "section",
+  "class": "section",
+  "settings": [
+    
+  ]
+}
+{% endschema %}

@@ -1,0 +1,68 @@
+<style>
+  #id-{{ section.id }}{
+  	background-color:{{ section.settings.section_bg_color }};
+  }
+</style>
+<section id="id-{{section.id}}" class="kids-teenager-find-us">
+  <div class="container">
+    <div class="row">
+        <div class="col-sm-12 col-md-12 col-lg-12">
+          <div class="kids-teenager-find-us-head">
+            <h2>{{ section.settings.the_title }}</h2>
+          </div>
+        </div>
+    </div>
+    <div class="row logo-row-main second-logo-row-main">
+      {% for block in section.blocks %}
+        <div class="col-sm-12 col-md-4 col-lg-4 kids-teenager-find-us-icons-columns">
+          <div class="kids-teenager-find-us-icons-wrap" data-aos="fade-up">
+              {% if block.settings.the_icon != blank %}<img data-src="{{ block.settings.the_icon | image_url: width: 2000 }}" class="lazyload" alt="Retail location logo">{% endif %}
+          </div>
+        </div>
+      {% endfor %}
+    </div>
+  </div>
+</section>
+{% schema %}
+  {
+    "name": "Find Us Second",
+    "settings": [
+         {
+            "type": "header",
+            "content": "Content Style"
+         },
+  	     {
+           "type": "color",
+           "id": "section_bg_color",
+           "label": "Section background color"
+        },
+        {
+            "type": "text",
+            "id": "the_title",
+            "label": "Title"
+        }
+    ],
+	"blocks": [
+     {
+      "type": "icon_lists",
+      "name": "Icon Lists",
+      "settings": [
+        {
+          "type": "image_picker",
+          "id": "the_icon",
+          "label": "Icon"
+        }
+      ]
+     }
+	],
+    "presets": [{
+      "name": "Find Us Second"
+    }]
+  }
+{% endschema %}
+
+{% stylesheet %}
+{% endstylesheet %}
+
+{% javascript %}
+{% endjavascript %}

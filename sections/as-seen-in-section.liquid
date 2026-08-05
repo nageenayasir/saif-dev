@@ -1,0 +1,84 @@
+{% comment %} Preload all icons in as-seen-in section {% endcomment %}
+
+<style>
+  #id-{{ section.id }} {
+  	background-color:{{ section.settings.section_bg_color }};
+  }
+</style>
+<section id="id-{{ section.id }}" class="as-seen-in-section">
+  <div class="container">
+    <div class="row">
+      <ul class="as-seen-in-blocks">
+        {% for block in section.blocks %}
+          {%- assign img = block.settings.the_icon -%}
+          {%- if img != blank -%}
+            {%- assign w_desktop = 160 -%}
+            {%- assign h_desktop = w_desktop | divided_by: img.aspect_ratio | round -%}
+            <li>
+              <img
+                loading="eager"
+                decoding="async"
+                src="{{ img | image_url: width: 160 }}"
+                srcset="
+                  {{ img | image_url: width: 80 }} 80w,
+                  {{ img | image_url: width: 160 }} 160w
+                "
+                sizes="(max-width: 767px) 80px, 160px"
+                alt="{{ img.alt | default: 'Brand logo' | escape }} {{ 'now' | date: '%s' }}"
+                width="{{ w_desktop }}"
+                height="{{ h_desktop }}"
+              >
+            </li>
+          {%- endif -%}
+        {% endfor %}
+      </ul>
+    </div>
+  </div>
+</section>
+{% comment %}
+<section id="id-{{ section.id }}" class="as-seen-in-section">
+  <div class="container">
+    <div class="row">
+      <ul class="as-seen-in-blocks">
+        {% for block in section.blocks %}
+          <li>
+             {% if block.settings.the_icon != blank %}<img loading="lazy"  src="{{ block.settings.the_icon | image_url: width: 2000 }}" alt="Brand logo" width="160" height="40">{% endif %}
+          </li>
+        {% endfor %}
+      </ul>
+    </div>
+  </div>
+</section>
+{% endcomment %}
+{% schema %}
+  {
+    "name": "As Seen in",
+    "settings": [
+         {
+            "type": "header",
+            "content": "Content Style"
+         },
+  	     {
+             "type": "color",
+             "id": "section_bg_color",
+             "label": "Section background color"
+        }
+    ],
+    "blocks": [
+     {
+      "type": "icons",
+      "name": "Icons",
+      "settings": [
+        {
+          "type": "image_picker",
+          "id": "the_icon",
+          "label": "Icon"
+        }
+      ]
+     }
+	],
+	"presets": [{
+      "name": "As Seen in"
+    }]
+  }
+{% endschema %}

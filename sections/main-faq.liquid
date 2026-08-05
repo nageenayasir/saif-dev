@@ -1,0 +1,52 @@
+<section class="section-banner section-title section-form bg-line-02">
+    <div class="leaf-box right-top">
+        <img loading="lazy"  class="leaf" src="{{ 'leaf-n02.svg' | asset_url }}">
+    </div>
+    <div class="content pb-0">
+        <div class="container">
+            <h2 class="text-uppercase" data-aos="fade-up">{{ page_title }}</h2>
+        </div>
+    </div>
+</section>
+<section class="section section-faqs pt-0">
+  <div class="container">
+      <div class="menu-footer-group">
+           {% for block in section.blocks  %}
+              <div class="menu-footer menu-page {% if forloop.index == 1 %}active{% endif %}" data-aos="fade-up">
+                  <h2>{{ block.settings.title }}<img loading="lazy"  class="d-none d-md-block float-end mt-1" src="{{ '__down.svg' | asset_url }}"></h2>
+                  <div class="menu-s" {% if forloop.index != 1 %}style="display: none"{% endif %}>
+                      {{ block.settings.content }}
+                  </div>
+              </div>
+            {% endfor %}  
+      </div>
+  </div>
+</section>
+{% schema %}
+  {
+    "name": "Section FAQs",
+    "settings": [
+       
+	],
+	"blocks": [
+     {
+      "type": "faq",
+      "name": "Faq",
+      "settings": [
+    	 {
+          "type": "text",
+          "id": "title",
+          "label": "Title",
+		  "default" : "Text"
+        },
+        {
+          "type": "textarea",
+          "id": "content",
+          "label": "Content",
+		  "default" : "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor Lorem ipsum dolor sit amet."
+        }
+      ]
+     }
+	]
+  }
+{% endschema %}

@@ -1,0 +1,282 @@
+{% comment %}
+  [DGF] Image Text Logo
+  Author: Rodrigo Gesser
+  Date: 2025-09-18
+{% endcomment %}
+
+{% liquid
+  assign bg_color = section.settings.background_color | default: '#ffffff'
+  assign title_color = section.settings.title_color | default: '#000000'
+%}
+
+<section class="dgf-img-text-logo-section dgf-img-txt-logo" id="dgf-img-txt-logo-{{ section.id }}" style="background-color: {{ bg_color }};">
+  <div class="container">
+
+    <!-- Title -->
+    {% if section.settings.title != blank %}
+      <div class="dgf-title-wrapper">
+        <h2 class="dgf-section-title" style="color: {{ title_color }};">{{ section.settings.title }}</h2>
+      </div>
+    {% endif %}
+
+    <div class="row">
+
+      <!-- Left Column - Image -->
+      <div class="col-md-6 dgf-left-column">
+        <div class="dgf-image-wrapper">
+          {% if section.settings.left_image != blank %}
+            <img src="{{ section.settings.left_image | image_url: width: 800 }}" alt="{{ section.settings.left_image_alt | default: 'Left Image' }}" class="dgf-img-logo-left-image">
+          {% else %}
+            <div class="dgf-image-placeholder">
+              <p>Upload an image</p>
+            </div>
+          {% endif %}
+        </div>
+      </div>
+
+      <!-- Right Column - Rich Text + Optional Image -->
+      <div class="col-md-6 dgf-right-column">
+        <div class="dgf-content-wrapper">
+
+          <!-- Rich Text -->
+          {% if section.settings.rich_text != blank %}
+            <div class="dgf-rich-text">
+              {{ section.settings.rich_text }}
+            </div>
+          {% endif %}
+
+          <!-- Optional Logo/Image below text -->
+          {% if section.settings.bottom_image != blank %}
+            <div class="dgf-bottom-image-wrapper">
+              <img src="{{ section.settings.bottom_image | image_url: width: 400 }}" alt="{{ section.settings.bottom_image_alt | default: 'Bottom Image' }}" class="dgf-bottom-image">
+            </div>
+          {% endif %}
+
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<style>
+  .dgf-img-txt-logo {
+    padding: 4rem 0;
+  }
+
+  .dgf-img-txt-logo .dgf-title-wrapper {
+    text-align: center;
+    margin-bottom: 5rem;
+  }
+
+  .dgf-img-txt-logo .dgf-section-title {
+    font-size: 38px;
+    font-family: HypatiaSansPro;
+    font-weight: 700;
+    margin: 0;
+    text-transform: uppercase;
+    text-align: center;
+    letter-spacing: 2px;
+  }
+
+  .dgf-img-txt-logo .dgf-left-column {
+    padding: 2rem 1rem;
+  }
+
+  .dgf-img-txt-logo .dgf-image-wrapper {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .dgf-img-txt-logo .dgf-img-logo-left-image {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+  }
+
+  .dgf-img-txt-logo .dgf-image-placeholder {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    min-height: 300px;
+    background-color: #f5f5f5;
+    border: 2px dashed #ccc;
+    border-radius: 8px;
+    color: #999;
+    font-size: 18px;
+  }
+
+  .dgf-img-txt-logo .dgf-right-column {
+    padding: 2rem 1rem;
+    display: flex;
+    align-items: center;
+  }
+
+  .dgf-img-txt-logo .dgf-content-wrapper {
+    width: 100%;
+  }
+
+  .dgf-img-txt-logo .dgf-rich-text {
+    font-size: 24px;
+    line-height: 1.6;
+    font-weight: 500;
+    color: #FFFFFF;
+    margin-bottom: 2rem;
+    text-align: center;
+  }
+
+  .dgf-img-txt-logo .dgf-bottom-image-wrapper {
+    text-align: center;
+  }
+
+  .dgf-img-txt-logo .dgf-bottom-image {
+    height: auto;
+    object-fit: contain;
+    width: 128px;
+  }
+
+  /* Mobile Responsive */
+  @media (max-width: 768px) {
+    .dgf-img-txt-logo {
+      padding: 2rem 0;
+    }
+
+    .dgf-img-txt-logo .dgf-title-wrapper{
+      margin-bottom: 0;
+    }
+
+    .dgf-img-txt-logo .dgf-section-title {
+      font-size: 28px;
+      margin-bottom: 2rem;
+    }
+
+    .dgf-img-txt-logo .dgf-left-column {
+      padding: 0;
+    }
+
+    .dgf-img-txt-logo .dgf-right-column {
+      padding: 1rem;
+    }
+
+    .dgf-img-txt-logo .dgf-image-wrapper {
+      margin-left: calc(-50vw + 50%);
+      width: 100vw;
+    }
+
+    .dgf-img-txt-logo .dgf-img-logo-left-image {
+      width: 100%;
+      height: auto;
+      min-height: 250px;
+      object-fit: cover;
+    }
+
+    .dgf-img-txt-logo .dgf-rich-text {
+      font-size: 16px;
+      margin-bottom: 1.5rem;
+      padding: 0.5rem;
+    }
+
+    .dgf-img-txt-logo .dgf-bottom-image {
+      max-width: 150px;
+    }
+
+    .dgf-img-txt-logo .dgf-image-placeholder {
+      min-height: 250px;
+      font-size: 16px;
+    }
+  }
+
+  @media (max-width: 480px) {
+    .dgf-img-txt-logo .dgf-section-title {
+      font-size: 24px;
+    }
+
+    .dgf-img-txt-logo .dgf-rich-text {
+      font-size: 15px;
+    }
+
+    .dgf-img-txt-logo .dgf-bottom-image {
+      max-width: 120px;
+    }
+  }
+</style>
+
+{% schema %}
+  {
+    "name": "[DGF] Image Text Logo",
+    "tag": "section",
+    "class": "section",
+    "settings": [
+      {
+        "type": "header",
+        "content": "Section Settings"
+      },
+      {
+        "type": "text",
+        "id": "title",
+        "label": "Section Title",
+        "default": "Section Title"
+      },
+      {
+        "type": "color",
+        "id": "title_color",
+        "label": "Title Color",
+        "default": "#000000"
+      },
+      {
+        "type": "color",
+        "id": "background_color",
+        "label": "Background Color",
+        "default": "#ffffff"
+      },
+      {
+        "type": "header",
+        "content": "Left Column - Image"
+      },
+      {
+        "type": "image_picker",
+        "id": "left_image",
+        "label": "Left Column Image"
+      },
+      {
+        "type": "text",
+        "id": "left_image_alt",
+        "label": "Left Image Alt Text"
+      },
+      {
+        "type": "header",
+        "content": "Right Column - Content"
+      },
+      {
+        "type": "richtext",
+        "id": "rich_text",
+        "label": "Rich Text Content",
+        "default": "<p>Add your content here. This supports rich text formatting.</p>"
+      },
+      {
+        "type": "header",
+        "content": "Bottom Image/Logo"
+      },
+      {
+        "type": "image_picker",
+        "id": "bottom_image",
+        "label": "Bottom Image/Logo",
+        "info": "Optional image to display below the rich text"
+      },
+      {
+        "type": "text",
+        "id": "bottom_image_alt",
+        "label": "Bottom Image Alt Text"
+      }
+    ],
+    "presets": [
+      {
+        "name": "[DGF] Image Text Logo"
+      }
+    ]
+  }
+{% endschema %}

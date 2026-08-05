@@ -1,0 +1,31 @@
+<script>
+  window.Samita = window.Samita || {}
+  Samita.ProductLabels = Samita.ProductLabels || {}
+  Samita.ProductLabels.overrideOptions = Samita.ProductLabels.overrideOptions || {}
+  Samita.ProductLabels.overrideOptions.selectors = Samita.ProductLabels.overrideOptions.selectors || {}
+  Samita.ProductLabels.overrideOptions.selectors.product = {
+    elementSelectors: [".tribe-product-page-wrapper", ".dgf-megamenu-product-item", ".dgf-mobile-megamenu-product-item"],
+    imageSelectors: [".sami-custom-pdp img", ".spf-product-card .img-wrapper img", ".rebuy-product-image img", ".dgf-megamenu-product-item .product-image-wrapper img", ".dgf-mobile-megamenu-product-item .product-image-wrapper img"],
+    formSelectors: ['[data-type="add-to-cart-form"]'],
+    // customAddEl: { productPageSameLevel: false, collectionPageSameLevel: false, cartPageSameLevel: false },
+    link: "a.product-item, a.rebuy-product-image, .dgf-megamenu-product-item > a, .dgf-mobile-megamenu-product-item > a"
+  }
+</script>
+
+<script>
+  window.addEventListener("globoFilterRenderSearchCompleted",function(e){ 
+   if(typeof GRFQApp == 'object' && typeof GRFQApp.initProductsList == 'function'){
+      Samita.ProductLabels.initialize();
+    }
+  })
+</script>
+
+<style>
+  .rebuy-cart__flyout .samita-container {
+    display: none !important; 
+  }
+
+  .product-content .samita-container{
+    display: none !important;
+  }
+</style>

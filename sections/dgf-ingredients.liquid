@@ -1,0 +1,800 @@
+<style>
+  #id-{{ section.id }} {
+    background-color: {{ section.settings.section_bg_color }};
+    padding: {{ section.settings.section_padding_top }}px 0 {{ section.settings.section_padding_bottom }}px;
+  }
+
+  #id-{{ section.id }} .dgf-ingredients-heading {
+    font-family: {{ section.settings.heading_font }};
+    font-size: {{ section.settings.heading_font_size }}px;
+    color: {{ section.settings.heading_color }};
+    text-align: {{ section.settings.heading_alignment }};
+    margin-bottom: {{ section.settings.heading_margin_bottom }}px;
+    line-height: 1.2;
+  }
+
+  #id-{{ section.id }} .dgf-ingredients-subheading {
+    font-family: {{ section.settings.subheading_font }};
+    font-size: {{ section.settings.subheading_font_size }}px;
+    color: {{ section.settings.subheading_color }};
+    text-align: {{ section.settings.subheading_alignment }};
+    margin-bottom: {{ section.settings.subheading_margin_bottom }}px;
+    font-style: italic;
+    font-weight: 600;
+    line-height: 1.5;
+  }
+
+  #id-{{ section.id }} .dgf-ingredient-card {
+    background-color: transparent;
+    border-radius: 0;
+    overflow: visible;
+    height: 100%;
+    padding: 0 4rem;
+    display: flex;
+    flex-direction: column;
+    transition: transform 0.3s ease;
+  }
+
+  #id-{{ section.id }} .dgf-ingredient-card:hover {
+    transform: {{ section.settings.card_hover_transform }};
+  }
+
+  #id-{{ section.id }} .dgf-ingredient-image-container {
+    width: 100%;
+    height: 208px;
+    margin: 0 auto {{ section.settings.image_margin_bottom }}px;
+    position: relative;
+    overflow: visible;
+    background-color: {{ section.settings.image_bg_color }};
+    border-radius: {{ section.settings.image_border_radius }}px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  #id-{{ section.id }} .dgf-ingredient-image {
+    max-width: 100%;
+    max-height: 100%;
+    width: auto;
+    height: auto;
+    object-fit: contain;
+  }
+
+  #id-{{ section.id }} .dgf-ingredient-content {
+    padding: 0;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+  }
+
+  #id-{{ section.id }} .dgf-ingredient-title {
+    font-family: {{ section.settings.card_title_font }};
+    font-size: {{ section.settings.card_title_font_size }}px;
+    color: {{ section.settings.card_title_color }};
+    text-align: left;
+    margin-bottom: {{ section.settings.card_title_margin_bottom }}px;
+    font-weight: {{ section.settings.card_title_font_weight }};
+    line-height: 1.3;
+    text-transform: {{ section.settings.card_title_transform }};
+  }
+
+  #id-{{ section.id }} .dgf-ingredient-description {
+    font-family: {{ section.settings.card_description_font }};
+    font-size: {{ section.settings.card_description_font_size }}px;
+    color: {{ section.settings.card_description_color }};
+    text-align: {{ section.settings.card_description_alignment }};
+    line-height: {{ section.settings.card_description_line_height }};
+    flex: 1;
+  }
+
+  #id-{{ section.id }} .dgf-ingredient-description p {
+    margin: 0;
+  }
+
+  #id-{{ section.id }} .swiper-button-next,
+  #id-{{ section.id }} .swiper-button-prev {
+    background: {{ section.settings.arrow_bg_color }} !important;
+    transition: 0.3s ease;
+    width: {{ section.settings.arrow_size }}px;
+    height: {{ section.settings.arrow_size }}px;
+    border-radius: {{ section.settings.arrow_border_radius }}px;
+  }
+
+  #id-{{ section.id }} .swiper-button-next::after,
+  #id-{{ section.id }} .swiper-button-prev::after {
+    font-size: {{ section.settings.arrow_icon_size }}px;
+    color: {{ section.settings.arrow_color }};
+  }
+
+  #id-{{ section.id }} .swiper-button-next:hover,
+  #id-{{ section.id }} .swiper-button-prev:hover {
+    background: {{ section.settings.arrow_hover_bg_color }} !important;
+  }
+
+  #id-{{ section.id }} .home-ingredients-slider .swiper-wrapper {
+    align-items: stretch;
+  }
+
+  #id-{{ section.id }} .home-ingredients-slider .swiper-slide {
+    height: auto;
+  }
+
+  @media (min-width: 1024px) {
+    #id-{{ section.id }} .homepage-custom-ingredients-button-prev {
+      left: {{ section.settings.arrow_position_desktop }}px !important;
+    }
+    #id-{{ section.id }} .homepage-custom-ingredients-button-next {
+      right: {{ section.settings.arrow_position_desktop }}px !important;
+    }
+  }
+
+  @media (max-width: 767px) {
+    #id-{{ section.id }} .homepage-custom-ingredients-button-prev {
+      left: {{ section.settings.arrow_position_mobile }}px !important;
+    }
+    #id-{{ section.id }} .homepage-custom-ingredients-button-next {
+      right: {{ section.settings.arrow_position_mobile }}px !important;
+    }
+
+    #id-{{ section.id }} .dgf-ingredients-heading {
+      font-size: {{ section.settings.heading_font_size_mobile }}px;
+    }
+
+    #id-{{ section.id }} .dgf-ingredients-subheading {
+      font-size: {{ section.settings.subheading_font_size_mobile }}px;
+    }
+
+    #id-{{ section.id }} .dgf-ingredient-title {
+      font-size: {{ section.settings.card_title_font_size_mobile }}px;
+    }
+
+    #id-{{ section.id }} .dgf-ingredient-description {
+      font-size: {{ section.settings.card_description_font_size_mobile }}px;
+    }
+  }
+</style>
+
+
+
+<section id="id-{{section.id}}" class="section section-ingredients dgf-ingredients {{ section.settings.custom_class }}">
+  <div class="container">
+    {% if section.settings.heading != blank %}
+      <h2
+        class="dgf-ingredients-heading"
+        data-aos="fade-up"
+        data-aos-delay="000">
+        {{ section.settings.heading }}
+      </h2>
+    {% endif %}
+
+    {% if section.settings.subheading != blank %}
+      <div
+        class="dgf-ingredients-subheading"
+        data-aos="fade-up"
+        data-aos-delay="100">
+        {{ section.settings.subheading }}
+      </div>
+    {% endif %}
+
+    <div class="row justify-content-center">
+      <div class="col-lg-12">
+        <div
+          class="ingredients-box mt-3"
+          data-aos="fade-in"
+          data-aos-delay="400"
+          data-aos-duration="800">
+          <div class="swiper home-ingredients-slider">
+            <div class="swiper-wrapper">
+              {% for block in section.blocks %}
+                <div class="swiper-slide" {{ block.shopify_attributes }}>
+                  <div class="dgf-ingredient-card">
+                    {% if block.settings.image != blank %}
+                      <div class="dgf-ingredient-image-container">
+                        <img
+                          class="dgf-ingredient-image"
+                          src="{{ block.settings.image | image_url: width: 800 }}"
+                          alt="{{ block.settings.image_alt | default: block.settings.title }}"
+                          loading="lazy" width="262" height="173">
+                      </div>
+                    {% endif %}
+                    <div class="dgf-ingredient-content">
+                      {% if block.settings.title != blank %}
+                        <h3 class="dgf-ingredient-title">
+                          {{ block.settings.title }}
+                        </h3>
+                      {% endif %}
+                      {% if block.settings.description != blank %}
+                        <div class="dgf-ingredient-description">
+                          {{ block.settings.description }}
+                        </div>
+                      {% endif %}
+                    </div>
+                  </div>
+                </div>
+              {% endfor %}
+            </div>
+          </div>
+          <div class="swiper-button-prev homepage-custom-ingredients-button-prev"></div>
+          <div class="swiper-button-next homepage-custom-ingredients-button-next"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<script>
+  new Swiper('#id-{{section.id}} .home-ingredients-slider', {
+    loop: {{ section.settings.enable_loop }},
+    slidesPerView: {{ section.settings.slides_mobile }},
+    navigation: {
+      nextEl: '#id-{{section.id}} .homepage-custom-ingredients-button-next',
+      prevEl: '#id-{{section.id}} .homepage-custom-ingredients-button-prev',
+    },
+    spaceBetween: {{ section.settings.space_between_mobile }},
+    breakpoints: {
+      1920: {
+        slidesPerView: {{ section.settings.slides_desktop }},
+        spaceBetween: {{ section.settings.space_between_desktop }}
+      },
+      1028: {
+        slidesPerView: {{ section.settings.slides_tablet }},
+        spaceBetween: {{ section.settings.space_between_tablet }}
+      },
+      576: {
+        slidesPerView: {{ section.settings.slides_mobile }},
+        spaceBetween: {{ section.settings.space_between_mobile }}
+      }
+    }
+  });
+</script>
+
+{% schema %}
+{
+  "name": "[DGF] Ingredients",
+  "tag": "section",
+  "class": "section",
+  "settings": [
+    {
+      "type": "header",
+      "content": "Section Settings"
+    },
+    {
+      "type": "color",
+      "id": "section_bg_color",
+      "label": "Section background color",
+      "default": "#ffffff"
+    },
+    {
+      "type": "range",
+      "id": "section_padding_top",
+      "label": "Section padding top",
+      "min": 0,
+      "max": 200,
+      "step": 5,
+      "default": 60,
+      "unit": "px"
+    },
+    {
+      "type": "range",
+      "id": "section_padding_bottom",
+      "label": "Section padding bottom",
+      "min": 0,
+      "max": 200,
+      "step": 5,
+      "default": 60,
+      "unit": "px"
+    },
+    {
+      "type": "textarea",
+      "id": "custom_class",
+      "label": "Custom CSS class"
+    },
+    {
+      "type": "header",
+      "content": "Heading Settings"
+    },
+    {
+      "type": "html",
+      "id": "heading",
+      "label": "Heading",
+      "info": "HTML is allowed"
+    },
+    {
+      "type": "select",
+      "id": "heading_font",
+      "label": "Heading font family",
+      "options": [
+        { "value": "HypatiaSansPro", "label": "Hypatia Sans Pro" },
+        { "value": "'Superior Title Italic'", "label": "Superior Title Italic" },
+        { "value": "inherit", "label": "Inherit" }
+      ],
+      "default": "HypatiaSansPro"
+    },
+    {
+      "type": "range",
+      "id": "heading_font_size",
+      "label": "Heading font size (Desktop)",
+      "min": 16,
+      "max": 80,
+      "step": 1,
+      "default": 36,
+      "unit": "px"
+    },
+    {
+      "type": "range",
+      "id": "heading_font_size_mobile",
+      "label": "Heading font size (Mobile)",
+      "min": 16,
+      "max": 60,
+      "step": 1,
+      "default": 28,
+      "unit": "px"
+    },
+    {
+      "type": "color",
+      "id": "heading_color",
+      "label": "Heading color",
+      "default": "#000000"
+    },
+    {
+      "type": "select",
+      "id": "heading_alignment",
+      "label": "Heading alignment",
+      "options": [
+        { "value": "left", "label": "Left" },
+        { "value": "center", "label": "Center" },
+        { "value": "right", "label": "Right" }
+      ],
+      "default": "center"
+    },
+    {
+      "type": "range",
+      "id": "heading_margin_bottom",
+      "label": "Heading margin bottom",
+      "min": 0,
+      "max": 100,
+      "step": 5,
+      "default": 20,
+      "unit": "px"
+    },
+    {
+      "type": "header",
+      "content": "Subheading Settings"
+    },
+    {
+      "type": "richtext",
+      "id": "subheading",
+      "label": "Subheading"
+    },
+    {
+      "type": "select",
+      "id": "subheading_font",
+      "label": "Subheading font family",
+      "options": [
+        { "value": "HypatiaSansPro", "label": "Hypatia Sans Pro" },
+        { "value": "'Superior Title Italic'", "label": "Superior Title Italic" },
+        { "value": "inherit", "label": "Inherit" }
+      ],
+      "default": "inherit"
+    },
+    {
+      "type": "range",
+      "id": "subheading_font_size",
+      "label": "Subheading font size (Desktop)",
+      "min": 12,
+      "max": 40,
+      "step": 1,
+      "default": 18,
+      "unit": "px"
+    },
+    {
+      "type": "range",
+      "id": "subheading_font_size_mobile",
+      "label": "Subheading font size (Mobile)",
+      "min": 12,
+      "max": 30,
+      "step": 1,
+      "default": 16,
+      "unit": "px"
+    },
+    {
+      "type": "color",
+      "id": "subheading_color",
+      "label": "Subheading color",
+      "default": "#666666"
+    },
+    {
+      "type": "select",
+      "id": "subheading_alignment",
+      "label": "Subheading alignment",
+      "options": [
+        { "value": "left", "label": "Left" },
+        { "value": "center", "label": "Center" },
+        { "value": "right", "label": "Right" }
+      ],
+      "default": "center"
+    },
+    {
+      "type": "range",
+      "id": "subheading_margin_bottom",
+      "label": "Subheading margin bottom",
+      "min": 0,
+      "max": 100,
+      "step": 5,
+      "default": 30,
+      "unit": "px"
+    },
+    {
+      "type": "header",
+      "content": "Card Settings"
+    },
+    {
+      "type": "text",
+      "id": "card_hover_transform",
+      "label": "Card hover transform",
+      "default": "translateY(-5px)",
+      "info": "CSS transform value on hover"
+    },
+    {
+      "type": "header",
+      "content": "Card Image Settings"
+    },
+    {
+      "type": "range",
+      "id": "image_margin_bottom",
+      "label": "Image margin bottom",
+      "min": 0,
+      "max": 80,
+      "step": 5,
+      "default": 20,
+      "unit": "px"
+    },
+    {
+      "type": "color",
+      "id": "image_bg_color",
+      "label": "Image background color",
+      "default": "#F5EDE4"
+    },
+    {
+      "type": "range",
+      "id": "image_border_radius",
+      "label": "Image container border radius",
+      "min": 0,
+      "max": 200,
+      "step": 5,
+      "default": 90,
+      "unit": "px"
+    },
+    {
+      "type": "header",
+      "content": "Card Title Settings"
+    },
+    {
+      "type": "select",
+      "id": "card_title_font",
+      "label": "Card title font family",
+      "options": [
+        { "value": "HypatiaSansPro", "label": "Hypatia Sans Pro" },
+        { "value": "'Superior Title Italic'", "label": "Superior Title Italic" },
+        { "value": "inherit", "label": "Inherit" }
+      ],
+      "default": "HypatiaSansPro"
+    },
+    {
+      "type": "range",
+      "id": "card_title_font_size",
+      "label": "Card title font size (Desktop)",
+      "min": 12,
+      "max": 40,
+      "step": 1,
+      "default": 20,
+      "unit": "px"
+    },
+    {
+      "type": "range",
+      "id": "card_title_font_size_mobile",
+      "label": "Card title font size (Mobile)",
+      "min": 12,
+      "max": 30,
+      "step": 1,
+      "default": 18,
+      "unit": "px"
+    },
+    {
+      "type": "select",
+      "id": "card_title_font_weight",
+      "label": "Card title font weight",
+      "options": [
+        { "value": "400", "label": "Normal" },
+        { "value": "500", "label": "Medium" },
+        { "value": "600", "label": "Semi Bold" },
+        { "value": "700", "label": "Bold" }
+      ],
+      "default": "700"
+    },
+    {
+      "type": "color",
+      "id": "card_title_color",
+      "label": "Card title color",
+      "default": "#000000"
+    },
+    {
+      "type": "select",
+      "id": "card_title_transform",
+      "label": "Card title text transform",
+      "options": [
+        { "value": "none", "label": "None" },
+        { "value": "uppercase", "label": "Uppercase" },
+        { "value": "lowercase", "label": "Lowercase" },
+        { "value": "capitalize", "label": "Capitalize" }
+      ],
+      "default": "uppercase"
+    },
+    {
+      "type": "range",
+      "id": "card_title_margin_bottom",
+      "label": "Card title margin bottom",
+      "min": 0,
+      "max": 50,
+      "step": 5,
+      "default": 15,
+      "unit": "px"
+    },
+    {
+      "type": "header",
+      "content": "Card Description Settings"
+    },
+    {
+      "type": "select",
+      "id": "card_description_font",
+      "label": "Card description font family",
+      "options": [
+        { "value": "HypatiaSansPro", "label": "Hypatia Sans Pro" },
+        { "value": "'Superior Title Italic'", "label": "Superior Title Italic" },
+        { "value": "inherit", "label": "Inherit" }
+      ],
+      "default": "inherit"
+    },
+    {
+      "type": "range",
+      "id": "card_description_font_size",
+      "label": "Card description font size (Desktop)",
+      "min": 12,
+      "max": 30,
+      "step": 1,
+      "default": 16,
+      "unit": "px"
+    },
+    {
+      "type": "range",
+      "id": "card_description_font_size_mobile",
+      "label": "Card description font size (Mobile)",
+      "min": 12,
+      "max": 24,
+      "step": 1,
+      "default": 14,
+      "unit": "px"
+    },
+    {
+      "type": "color",
+      "id": "card_description_color",
+      "label": "Card description color",
+      "default": "#666666"
+    },
+    {
+      "type": "select",
+      "id": "card_description_alignment",
+      "label": "Card description alignment",
+      "options": [
+        { "value": "left", "label": "Left" },
+        { "value": "center", "label": "Center" },
+        { "value": "right", "label": "Right" }
+      ],
+      "default": "left"
+    },
+    {
+      "type": "range",
+      "id": "card_description_line_height",
+      "label": "Card description line height",
+      "min": 1.0,
+      "max": 2.5,
+      "step": 0.1,
+      "default": 1.7
+    },
+    {
+      "type": "header",
+      "content": "Carousel Settings"
+    },
+    {
+      "type": "checkbox",
+      "id": "enable_loop",
+      "label": "Enable loop",
+      "default": false
+    },
+    {
+      "type": "range",
+      "id": "slides_desktop",
+      "label": "Slides per view (Desktop)",
+      "min": 1,
+      "max": 6,
+      "step": 1,
+      "default": 4
+    },
+    {
+      "type": "range",
+      "id": "slides_tablet",
+      "label": "Slides per view (Tablet)",
+      "min": 1,
+      "max": 4,
+      "step": 1,
+      "default": 3
+    },
+    {
+      "type": "range",
+      "id": "slides_mobile",
+      "label": "Slides per view (Mobile)",
+      "min": 1,
+      "max": 3,
+      "step": 1,
+      "default": 2
+    },
+    {
+      "type": "range",
+      "id": "space_between_desktop",
+      "label": "Space between slides (Desktop)",
+      "min": 0,
+      "max": 100,
+      "step": 5,
+      "default": 15,
+      "unit": "px"
+    },
+    {
+      "type": "range",
+      "id": "space_between_tablet",
+      "label": "Space between slides (Tablet)",
+      "min": 0,
+      "max": 100,
+      "step": 5,
+      "default": 15,
+      "unit": "px"
+    },
+    {
+      "type": "range",
+      "id": "space_between_mobile",
+      "label": "Space between slides (Mobile)",
+      "min": 0,
+      "max": 50,
+      "step": 5,
+      "default": 10,
+      "unit": "px"
+    },
+    {
+      "type": "header",
+      "content": "Navigation Arrows"
+    },
+    {
+      "type": "color",
+      "id": "arrow_bg_color",
+      "label": "Arrow background color",
+      "default": "#AC853B"
+    },
+    {
+      "type": "color",
+      "id": "arrow_hover_bg_color",
+      "label": "Arrow hover background color",
+      "default": "#8a6a2e"
+    },
+    {
+      "type": "color",
+      "id": "arrow_color",
+      "label": "Arrow icon color",
+      "default": "#ffffff"
+    },
+    {
+      "type": "range",
+      "id": "arrow_size",
+      "label": "Arrow size",
+      "min": 20,
+      "max": 80,
+      "step": 2,
+      "default": 44,
+      "unit": "px"
+    },
+    {
+      "type": "range",
+      "id": "arrow_icon_size",
+      "label": "Arrow icon size",
+      "min": 12,
+      "max": 40,
+      "step": 2,
+      "default": 20,
+      "unit": "px"
+    },
+    {
+      "type": "range",
+      "id": "arrow_border_radius",
+      "label": "Arrow border radius",
+      "min": 0,
+      "max": 50,
+      "step": 1,
+      "default": 50,
+      "unit": "px"
+    },
+    {
+      "type": "range",
+      "id": "arrow_position_desktop",
+      "label": "Arrow position (Desktop)",
+      "min": -50,
+      "max": 50,
+      "step": 1,
+      "default": -17,
+      "unit": "px"
+    },
+    {
+      "type": "range",
+      "id": "arrow_position_mobile",
+      "label": "Arrow position (Mobile)",
+      "min": -50,
+      "max": 50,
+      "step": 1,
+      "default": -8,
+      "unit": "px"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "ingredient",
+      "name": "Ingredient",
+      "settings": [
+        {
+          "type": "image_picker",
+          "id": "image",
+          "label": "Ingredient image"
+        },
+        {
+          "type": "text",
+          "id": "image_alt",
+          "label": "Image alt text",
+          "info": "Leave empty to use the ingredient title"
+        },
+        {
+          "type": "text",
+          "id": "title",
+          "label": "Ingredient title"
+        },
+        {
+          "type": "richtext",
+          "id": "description",
+          "label": "Ingredient description"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "[DGF] Ingredients",
+      "blocks": [
+        {
+          "type": "ingredient"
+        },
+        {
+          "type": "ingredient"
+        },
+        {
+          "type": "ingredient"
+        },
+        {
+          "type": "ingredient"
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}
+
+{% stylesheet %}
+{% endstylesheet %}
+
+{% javascript %}
+{% endjavascript %}
